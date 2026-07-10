@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neuroscience — BigCat</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.7;min-height:100vh;
+  background:radial-gradient(1200px 600px at 15% -5%,rgba(52,229,224,0.10),transparent 60%),radial-gradient(1000px 700px at 100% 0%,rgba(232,121,249,0.10),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.wrap{max-width:880px;margin:0 auto;padding:30px 22px 90px}
+header{text-align:center;padding:56px 0 20px}
+.kick{font-size:0.76rem;letter-spacing:3px;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;text-transform:uppercase;margin-bottom:16px;opacity:0.9}
+h1{font-size:2.9rem;font-weight:800;letter-spacing:1px;line-height:1.15;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 42%,#e879f9 72%,#fbbf24 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 22px rgba(167,139,250,0.35))}
+h1 .en{display:block;font-size:1.05rem;font-weight:500;letter-spacing:5px;margin-top:12px;color:#8a84a8;-webkit-text-fill-color:#8a84a8}
+.tagline{margin-top:20px;font-size:0.98rem;color:#b8b2d4;max-width:600px;margin-left:auto;margin-right:auto}
+.tagline b{color:#e879f9;font-weight:600}
+.pos{margin:30px auto 0;max-width:640px;font-size:0.85rem;color:#8f89ad;background:rgba(255,255,255,0.03);border:1px solid rgba(167,139,250,0.15);border-radius:12px;padding:14px 20px;line-height:1.6}
+.pos code{font-family:"SF Mono",Menlo,monospace;color:#34e5e0;font-size:0.82rem}
+.seclabel{font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;letter-spacing:3px;color:#6f6a8c;margin:52px 0 6px;text-transform:uppercase}
+.secsub{font-size:0.88rem;color:#7a7498;margin-bottom:20px}
+.phase{margin:26px 0 10px;display:flex;align-items:center;gap:12px}
+.phase .tag{font-family:"SF Mono",Menlo,monospace;font-size:0.72rem;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;border:1px solid;white-space:nowrap}
+.pA .tag{color:#34e5e0;border-color:rgba(52,229,224,0.4);background:rgba(52,229,224,0.06)}
+.pB .tag{color:#a78bfa;border-color:rgba(167,139,250,0.4);background:rgba(167,139,250,0.06)}
+.pD .tag{color:#fbbf24;border-color:rgba(251,191,36,0.4);background:rgba(251,191,36,0.06)}
+.pC .tag{color:#f472b6;border-color:rgba(244,114,182,0.4);background:rgba(244,114,182,0.06)}
+.pE .tag{color:#5eead4;border-color:rgba(94,234,212,0.4);background:rgba(94,234,212,0.06)}
+.phase .nm{font-size:0.95rem;font-weight:600;color:#cfc9e6}
+.phase .nm small{color:#6f6a8c;font-weight:400;margin-left:6px;font-size:0.78rem}
+.entry{display:flex;align-items:baseline;gap:12px;padding:9px 14px;border-radius:9px;text-decoration:none;transition:all 0.16s;border:1px solid transparent}
+a.entry:hover{background:rgba(255,255,255,0.04);border-color:rgba(52,229,224,0.25);transform:translateX(3px)}
+.entry .d{font-family:"SF Mono",Menlo,monospace;font-size:0.76rem;color:#5b5678;min-width:38px}
+.entry .t{font-size:0.95rem;color:#4d4869}
+a.entry .t{color:#d8d3ec}
+a.entry:hover .t{color:#fff}
+.entry .ai{margin-left:auto;font-family:"SF Mono",Menlo,monospace;font-size:0.72rem;color:#34e5e0;opacity:0.55;white-space:nowrap}
+a.entry .ai{opacity:0.85}
+.entry .live{font-size:0.66rem;font-family:"SF Mono",Menlo,monospace;color:#0a0714;background:#34e5e0;padding:1px 7px;border-radius:20px;font-weight:700;margin-left:8px}
+.reflib{margin-top:14px}
+.refgrp{font-size:0.82rem;color:#8f89ad;font-family:"SF Mono",Menlo,monospace;margin:20px 0 10px;letter-spacing:1px}
+.refgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.refcard{padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);font-size:0.86rem;color:#5b5678;text-decoration:none;transition:all 0.16s}
+a.refcard{color:#c6c0e0;border-color:rgba(167,139,250,0.22)}
+a.refcard:hover{background:rgba(167,139,250,0.08);border-color:rgba(167,139,250,0.5);color:#fff}
+.refcard .rt{display:block;font-family:"SF Mono",Menlo,monospace;font-size:0.66rem;color:#6f6a8c;margin-bottom:3px}
+footer{text-align:center;padding:60px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+footer a{color:#a78bfa;text-decoration:none}
+@media(max-width:600px){h1{font-size:2.1rem}.entry .ai{display:none}.wrap{padding:24px 16px 60px}}
+</style></head><body>
+<div class="wrap">
+<header>
+  <div class="kick">// BigCat's Learning Hub</div>
+  <h1>Neuroscience<span class="en">NEUROSCIENCE</span></h1>
+  <p class="tagline">The mechanistic layer of the brain as a <b>physical + computational system</b>. Cognition and consciousness first, motivation up front, with an <b>AI cross-read</b> running through every issue — biological brains and artificial networks mapped point by point.</p>
+  <div class="pos">
+    <strong style="color:#cfc9e6">Two kinds of page:</strong>
+    <code>Main Track</code> is read in order (cognition → consciousness → self-modulation → clinical → computational);
+    <code>Reference Library</code> holds mechanism pages for building blocks / systems — the main track links to them with <code>→ ref</code> and they're written on demand.
+  </div>
+</header>
+
+<div class="seclabel">// Main Track</div>
+<div class="secsub">38 issues, starting from functions you can connect with and getting more abstract as you go.</div>
+
+<div class="phase pA"><span class="tag">A · Cognition</span><span class="nm">Cognition <small>Topic 1–8</small></span></div>
+<a class="entry" href="perception-inference-topic1.en.html"><span class="d">T1</span><span class="t">Perception as Inference — predictive processing · Bayesian brain</span><span class="live">live</span><span class="ai">↔ generative models</span></a>
+<div class="entry"><span class="d">T2</span><span class="t">Attention</span><span class="ai">↔ Transformer attention</span></div>
+<div class="entry"><span class="d">T3</span><span class="t">Working memory</span><span class="ai">↔ context window</span></div>
+<div class="entry"><span class="d">T4</span><span class="t">Long-term memory & consolidation</span><span class="ai">↔ retrieval / RAG</span></div>
+<div class="entry"><span class="d">T5</span><span class="t">Decision-making (drift-diffusion)</span><span class="ai">↔ RL</span></div>
+<div class="entry"><span class="d">T6</span><span class="t">The language brain</span><span class="ai">↔ LLM</span></div>
+<div class="entry"><span class="d">T7</span><span class="t">The construction of emotion (Barrett)</span><span class="ai">↔ reward modeling</span></div>
+<div class="entry"><span class="d">T8</span><span class="t">The social brain & theory of mind</span><span class="ai">↔ agent ToM</span></div>
+
+<div class="phase pB"><span class="tag">B · Consciousness</span><span class="nm">Consciousness <small>Topic 9–15</small></span></div>
+<div class="entry"><span class="d">T9</span><span class="t">The hard problem · qualia</span></div>
+<div class="entry"><span class="d">T10</span><span class="t">The neural correlates of consciousness (NCC)</span></div>
+<div class="entry"><span class="d">T11</span><span class="t">Global workspace (Dehaene)</span><span class="ai">↔ global workspace</span></div>
+<div class="entry"><span class="d">T12</span><span class="t">Integrated information theory (IIT, Φ)</span></div>
+<div class="entry"><span class="d">T13</span><span class="t">Predictive processing & free energy</span><span class="ai">↔ active inference</span></div>
+<div class="entry"><span class="d">T14</span><span class="t">The consciousness switch: anesthesia · sleep · dreaming</span></div>
+<div class="entry"><span class="d">T15</span><span class="t">The neuroscience of the self · ego dissolution</span></div>
+
+<div class="phase pD"><span class="tag">D · Self-modulation</span><span class="nm">Hacking your nervous system <small>Topic 16–23</small></span></div>
+<div class="entry"><span class="d">T16</span><span class="t">How exercise reshapes the brain (BDNF · neurogenesis)</span></div>
+<div class="entry"><span class="d">T17</span><span class="t">Nutrition & the brain</span></div>
+<div class="entry"><span class="d">T18</span><span class="t">The neuroscience of meditation (DMN down-regulation)</span></div>
+<div class="entry"><span class="d">T19</span><span class="t">Awe & the overview effect</span></div>
+<div class="entry"><span class="d">T20</span><span class="t">Sleep as active intervention</span></div>
+<div class="entry"><span class="d">T21</span><span class="t">Light · circadian rhythm · vagal modulation</span></div>
+<div class="entry"><span class="d">T22</span><span class="t">Prevention ① · depression & bipolar disorder</span></div>
+<div class="entry"><span class="d">T23</span><span class="t">Prevention ② · Alzheimer's & neurodegeneration</span></div>
+
+<div class="phase pC"><span class="tag">C · Clinical/Frontier</span><span class="nm">Clinical & Frontier <small>Topic 24–32</small></span></div>
+<div class="entry"><span class="d">T24</span><span class="t">Mental illness as circuit dysregulation</span></div>
+<div class="entry"><span class="d">T25</span><span class="t">The neuroscience of addiction</span></div>
+<div class="entry"><span class="d">T26</span><span class="t">Neurodegeneration (Alzheimer's / Parkinson's)</span></div>
+<div class="entry"><span class="d">T27</span><span class="t">Brain-computer interfaces</span><span class="ai">↔ neural decoding</span></div>
+<div class="entry"><span class="d">T28</span><span class="t">Neuroplasticity & rehabilitation</span></div>
+<div class="entry"><span class="d">T29</span><span class="t">Psychedelics & neuroscience</span></div>
+<div class="entry"><span class="d">T30</span><span class="t">Sleep & glymphatic clearance</span></div>
+<div class="entry"><span class="d">T31</span><span class="t">The gut-brain axis</span></div>
+<div class="entry"><span class="d">T32</span><span class="t">Neuromyths & the limits of reductionism</span></div>
+
+<div class="phase pE"><span class="tag">E · Computational</span><span class="nm">Computational (finale)<small>Topic 33–38</small></span></div>
+<div class="entry"><span class="d">T33</span><span class="t">Neural coding</span><span class="ai">↔ representation learning</span></div>
+<div class="entry"><span class="d">T34</span><span class="t">Single-neuron computation (dendrites)</span></div>
+<div class="entry"><span class="d">T35</span><span class="t">The debate over the biological plausibility of backprop</span><span class="ai">↔ backprop</span></div>
+<div class="entry"><span class="d">T36</span><span class="t">Spiking networks & neuromorphic computing</span></div>
+<div class="entry"><span class="d">T37</span><span class="t">The 20-watt miracle (energy constraints)</span></div>
+<div class="entry"><span class="d">T38</span><span class="t">Connectomics</span><span class="ai">↔ graphs & networks</span></div>
+
+<div class="seclabel">// Reference Library</div>
+<div class="secsub">Mechanism pages for building blocks and systems, linked on demand by the main track and filling in naturally as it grows (not read in order).</div>
+<div class="reflib">
+  <div class="refgrp">Building blocks</div>
+  <div class="refgrid">
+    <span class="refcard"><span class="rt">ref</span>Neurons & action potentials</span>
+    <span class="refcard"><span class="rt">ref</span>Synaptic transmission</span>
+    <span class="refcard"><span class="rt">ref</span>Neurotransmitter systems</span>
+    <span class="refcard"><span class="rt">ref</span>Synaptic plasticity (LTP/STDP)</span>
+    <span class="refcard"><span class="rt">ref</span>Glial cells</span>
+    <span class="refcard"><span class="rt">ref</span>Neural development</span>
+  </div>
+  <div class="refgrp">Systems</div>
+  <div class="refgrid">
+    <span class="refcard"><span class="rt">ref</span>Brain maps & regions</span>
+    <a class="refcard" href="ref-visual-pathway.en.html"><span class="rt">ref · live</span>Visual pathway</a>
+    <span class="refcard"><span class="rt">ref</span>Hearing / somatosensation / smell</span>
+    <span class="refcard"><span class="rt">ref</span>The motor system & cerebellum</span>
+    <span class="refcard"><span class="rt">ref</span>Basal ganglia</span>
+    <span class="refcard"><span class="rt">ref</span>Hippocampus & entorhinal cortex</span>
+    <span class="refcard"><span class="rt">ref</span>Amygdala</span>
+    <span class="refcard"><span class="rt">ref</span>Hypothalamus</span>
+    <span class="refcard"><span class="rt">ref</span>The default mode network</span>
+  </div>
+</div>
+
+<footer>BigCat · Neuroscience · <a href="https://cissy0802.github.io/">← Learning Hub</a></footer>
+</div>
+</body></html>
