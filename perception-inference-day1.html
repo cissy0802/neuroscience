@@ -19,6 +19,8 @@ header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
 .section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
 .section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
 .section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
 .reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
 .reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
 .reflink::before{content:"→ 参考 · "}
@@ -114,6 +116,8 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 
 <p>这不是眼睛坏了，而是大脑在用它对"背景会影响物体"的经验，主动帮你"脑补"。所以<strong>你看到的从来不是原始像素，而是被大脑的预期塑造过的结果</strong>。（这条从眼睛到大脑的路每一站怎么走，<a class="reflink" href="ref-visual-pathway.html">视觉通路</a>）</p>
 
+<p class="en-brief"><b>EN</b> Perception is mostly top-down prediction, not bottom-up reception — in the visual pathway, feedback connections outnumber feedforward ones. What you "see" is the brain's best guess, shaped by priors: which is exactly why two physically identical grays look different against different backgrounds.</p>
+
 <div class="ai">
 <h4>AI 对读</h4>
 <p>这正是<b>生成模型</b>的思路：与其硬存一堆像素，不如学一个能"生成"世界的内部模型，再让它去解释眼前的输入。你训练一个 <b>VAE 或 diffusion</b> 时那套"先有个假设 → 生成 → 和真实数据比对"的回路，和大脑"先猜 → 往下发 → 拿感官纠错"是同一个骨架。</p>
@@ -151,6 +155,8 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 
 <p>这一下就说通了好多日常小事。<strong>你听不见自己家冰箱的嗡嗡声</strong>——因为它太可预测了，差错为零，压根不上报；可它一停，你反而立刻警觉，因为"预测落空"了。越熟悉的东西越像<strong>隐形</strong>，不是你的耳朵变钝，是它们早被大脑猜到、提前扣掉了。说到底，大脑的注意力，是留给<strong>意外</strong>的。</p>
 
+<p class="en-brief"><b>EN</b> The cortex predicts itself layer by layer and sends only the "prediction error" upward — correctly predicted signals stay silent. That's why the familiar goes invisible (you stop hearing your own fridge), and why attention is reserved for the surprising.</p>
+
 <div class="ai">
 <h4>AI 对读</h4>
 <p>"只传没猜中的部分"你其实很熟——<b>残差、增量编码</b>都是这个思想：不重复已知，只记新增。更贴的对读是 <b>LLM 的训练</b>：模型每一步都在预测下一个词，那个损失（loss）就是"预测差多少"，梯度只沿着<b>没猜准的方向</b>去改权重。大脑用差错实时纠正当下的判断，模型用差错离线纠正参数——都是"被惊讶推着学"。</p>
@@ -163,6 +169,9 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <h2>光线越暗，你越"看见你以为的"</h2>
 <p>把前面两点合起来，就得到一条特别实用的规律：<strong>你最终看到的 = 大脑的预期 + 眼前的证据，各占多少，看谁更靠谱。</strong></p>
 <p>关键在"谁更靠谱"。<strong>光线昏暗时，眼睛送回的证据很不可靠</strong>，大脑就更信自己的预期——于是你把衣架看成蹲着的人，把风声听成有人叫你名字。反过来，大白天证据充足，预期就得让位、老老实实按看到的来。这也顺带给了"注意"一个很准的定义：<strong>注意，就是大脑临时调高某个地方证据的可信度</strong>，让它更有资格改写你眼里的世界（注意本身是 Day 2）。</p>
+
+<p class="en-brief"><b>EN</b> What you perceive ≈ prior × evidence, weighted by reliability (precision). When sensory evidence is weak — say, in dim light — priors take over, the same mechanism behind both illusions and hallucinations. Attention is simply the brain turning up the precision of the evidence somewhere.</p>
+
 <div class="ai">
 <h4>AI 对读</h4>
 <p>这就是<b>按可信度加权的推断</b>：证据不足时更信先验。你手动调的那个"先验强度 / temperature / guidance"，大脑用一个叫<b>精度</b>的量自动、逐个感官、实时地在调。而且——<b>幻觉在两边是同一个故事</b>：先验被过度采信、证据被压过，大脑或模型就"看见"了根本不在那儿的东西。</p>
@@ -176,6 +185,9 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p>预测和现实对不上，怎么办？前面讲的都是<strong>改大脑</strong>——更新猜测去贴合世界。但还有一条对称的路：<strong>改世界去贴合猜测</strong>。这就是<strong>主动推理</strong>，也是它最妙的地方。</p>
 <p>举个最简单的：你预测"眼睛应该正对着桌子中央"，可现在没有——于是<strong>你动了下眼睛，让它真的对准中央</strong>。差错被抹平了，不是靠改信念，是靠动作。把这个推到底，会得到一个惊人的重述：<strong>你的每个动作，其实都是一个"被身体实现出来的预测"</strong>。你伸手去拿杯子，是大脑先预测"手已经握住杯子了"，这个还没实现的预测产生的差错，驱动肌肉去把它变成真。</p>
 <p>所以感知和行动根本是<strong>同一台机器的两个出口</strong>：感知问"世界是啥样"，行动问"我怎么让世界变成我猜的样"。这也是为什么后面讲运动、讲决策、甚至讲冥想（主动去调自己的预测），都能挂回这根主线。</p>
+
+<p class="en-brief"><b>EN</b> Prediction error can be minimized two ways: change the model (perception) or change the world (action). So every action is a prediction the body makes come true — perception and action are two outlets of one error-minimizing engine (active inference).</p>
+
 <div class="ai">
 <h4>AI 对读</h4>
 <p>主动推理是 <b>强化学习一个耐人寻味的替身</b>：RL 追最大化外部奖励，主动推理追最小化预测差错，很多时候两者等价，但后者把"探索"和"目标"揉进了同一个量。它天生就是<b>带世界模型的智能体</b>（像 Dreamer 那一类：先有内部模型、用它想象、再行动去让想象成真）——如今 agent 研究在重新发现的东西，大脑用了上亿年。</p>
