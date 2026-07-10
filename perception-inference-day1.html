@@ -3,7 +3,7 @@
 <title>Day 1 · 感知即推断 — 神经科学</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
   background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
 .container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
 header{text-align:center;padding:52px 0 26px}
@@ -12,24 +12,24 @@ header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;
 header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
 header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
 header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
-.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.97rem;color:#d4cfe8}
-.intro h3{font-size:0.82rem;color:#a78bfa;letter-spacing:2px;margin-bottom:10px;font-family:"SF Mono",Menlo,monospace}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
 .intro strong{color:#fff}
 .section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
 .section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
-.section h2{font-size:1.32rem;color:#fff;margin-bottom:8px;font-weight:700;line-height:1.35}
-.section .claim{font-size:0.94rem;color:#e879f9;font-style:italic;margin-bottom:18px;border-bottom:1px dashed rgba(232,121,249,0.22);padding-bottom:14px}
-.section p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
 .section strong{color:#fff}
-.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:2px 11px;margin:2px 0;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
 .reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
 .reflink::before{content:"→ 参考 · "}
-.ai{margin:18px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+figure{margin:22px 0}
+figure svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:10px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
 .ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
 .ai h4::before{content:"⚡";font-size:0.95rem}
 .ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
 .ai b{color:#7bf0e8;font-weight:600}
-.diagram{background:#070510;border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:22px;margin:20px 0;font-family:"SF Mono",Menlo,monospace;font-size:0.76rem;line-height:1.7;color:#9a94bc;overflow-x:auto;white-space:pre}
 .thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
 .thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
 .thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
@@ -39,7 +39,7 @@ header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
 .thinking summary::before{content:"▸ ";color:#e879f9}
 .thinking details[open] summary::before{content:"▾ "}
 .thinking summary:hover{color:#fff}
-.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d4cfe8;font-size:0.9rem;line-height:1.78}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
 .refs{margin-top:34px}
 .refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
 .refs ul{list-style:none}
@@ -53,88 +53,135 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <header>
 <span class="week-tag">DAY 1 · PHASE A 认知</span>
 <h1>感知即推断</h1>
-<h2>预测加工 · 贝叶斯大脑 · 主动推理</h2>
+<h2>你不是在"看见"，你是在"猜"</h2>
 <div class="date">2026-07-10 · BigCat</div>
-<p class="pitch">你以为你在"看见"世界——其实你在"猜"，世界只负责纠错。</p>
+<p class="pitch">你以为你在看世界——其实你在猜，世界只负责纠错。</p>
 </header>
 
 <div class="intro">
-<h3>// 为什么从这里开始</h3>
-<p>整个神经科学，我们不从神经元、不从离子通道开始，而从<strong>你此刻正在做的事</strong>开始：感知。因为一个反直觉的转向，会重排你对大脑的整个直觉——<strong>大脑不是被动接收信息的相机，而是主动生成假设、再用感官数据纠错的预测机器</strong>。你看到的每一帧，都是大脑的"最佳猜测"。这一期只讲一件事，但讲透它，后面的注意、记忆、意识都会顺下来。碰到需要底层构件的地方，我给 <span class="reflink" style="cursor:default">参考页</span> 的链接，不在这里补地基。</p>
+<p>此刻你正盯着屏幕。感觉很直接对吧——光进了眼睛，大脑就"看到"了。但这几十年的神经科学把这个直觉整个翻了过来：<strong>你的大脑不是一台老实拍下世界的相机，而是一台不停在"猜"世界长什么样、再拿眼睛送回来的信息去纠错的机器。</strong>你看到的每一帧，都是大脑的一个"最佳猜测"。这一期我们就掰扯这一件事——但一旦你信了它，后面的注意、记忆、甚至意识，都会跟着松动。</p>
 </div>
 
 <!-- 1 -->
 <div class="section">
 <span class="num">// 01</span>
-<h2>大脑是预测机器，不是接收器</h2>
-<div class="claim">论断：感知的主流方向不是"感官 → 大脑"，而是"大脑 → 感官"——你先有预测，感官只送回差错。</div>
-<p>老直觉是<strong>自下而上</strong>：光子打到视网膜 → 信号层层上传 → 大脑"看到"。但解剖学早就打脸了这个方向——在视觉通路里，<strong>从高层皮层"下传"到低层的连接，数量远超从感官"上传"的</strong>。大脑主要在忙着<strong>往下发预测</strong>，而不是往上收数据。</p>
-<p>证据就在你眼皮底下：<strong>错觉</strong>。同样的灰色方块，放在不同背景上你会看成不同深浅；一旦你"知道"某张模糊图是什么，就再也"看不回"没意义的斑点。这些都不是眼睛的 bug，而是<strong>先验（大脑的假设）压过了感官输入</strong>——证明你看到的从来不是原始像素，是被预测塑形过的结果。</p>
-<p>感官数据的第一站怎么被组织、"下传预测"具体投射到哪，属于底层通路的活儿：<a class="reflink" href="ref-visual-pathway.html">视觉通路</a></p>
+<h2>大脑是"猜测机器"，不是相机</h2>
+<p>先说那个被推翻的老直觉：光子打到眼睛 → 信号一层层往上传 → 大脑最后"看到"。听起来天经地义。可解剖学早就打脸了：在大脑的视觉通路上，<strong>从"高层"往"低层"倒着走的连接，数量远远多过从眼睛往上走的</strong>。换句话说，大脑绝大部分精力不是在<strong>收</strong>数据，而是在<strong>往下发猜测</strong>。</p>
+
+<figure>
+<svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ac" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#34e5e0"/></marker>
+<marker id="am" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#e879f9"/></marker>
+</defs>
+<rect x="120" y="14" width="240" height="46" rx="11" fill="rgba(167,139,250,0.13)" stroke="#a78bfa" stroke-width="1.3"/>
+<text x="240" y="42" text-anchor="middle" fill="#d8d3ec" font-size="15" font-family="-apple-system,sans-serif">高层大脑 · 先有一个"猜测"</text>
+<rect x="120" y="140" width="240" height="46" rx="11" fill="rgba(52,229,224,0.10)" stroke="#34e5e0" stroke-width="1.3"/>
+<text x="240" y="168" text-anchor="middle" fill="#d8d3ec" font-size="15" font-family="-apple-system,sans-serif">眼睛 · 只回送"没猜中"的差错</text>
+<line x1="195" y1="60" x2="195" y2="138" stroke="#34e5e0" stroke-width="13" opacity="0.85" marker-end="url(#ac)"/>
+<text x="150" y="104" text-anchor="middle" fill="#34e5e0" font-size="12.5" font-family="SF Mono,monospace" transform="rotate(-90 150 104)">预测（大量）</text>
+<line x1="300" y1="138" x2="300" y2="62" stroke="#e879f9" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#am)"/>
+<text x="336" y="104" text-anchor="middle" fill="#e879f9" font-size="12.5" font-family="SF Mono,monospace" transform="rotate(90 336 104)">误差（少量）</text>
+</svg>
+<figcaption>感知的主方向是"脑 → 眼睛"的预测，不是"眼睛 → 脑"的数据</figcaption>
+</figure>
+
+<p>不信？看下面这两个灰块。左边那块在浅色里，右边那块在深色里——你几乎肯定觉得<strong>右边那块更亮</strong>。但它俩的颜色<strong>一模一样</strong>：</p>
+
+<figure>
+<svg viewBox="0 0 460 190" xmlns="http://www.w3.org/2000/svg">
+<rect x="18" y="18" width="200" height="130" rx="12" fill="#d7d3e6"/>
+<rect x="78" y="53" width="80" height="60" rx="6" fill="#8a8a8a"/>
+<text x="118" y="140" text-anchor="middle" fill="#4a4658" font-size="12.5" font-family="-apple-system,sans-serif">浅色背景</text>
+<rect x="242" y="18" width="200" height="130" rx="12" fill="#090614"/>
+<rect x="302" y="53" width="80" height="60" rx="6" fill="#8a8a8a"/>
+<text x="342" y="140" text-anchor="middle" fill="#9a94bc" font-size="12.5" font-family="-apple-system,sans-serif">深色背景</text>
+<text x="230" y="176" text-anchor="middle" fill="#8f89ad" font-size="12.5" font-family="SF Mono,monospace">两块灰的填充完全相同 · #8a8a8a</text>
+</svg>
+<figcaption>你"看到"的深浅，是大脑结合背景猜出来的，不是眼睛量出来的</figcaption>
+</figure>
+
+<p>这不是眼睛坏了，而是大脑在用它对"背景会影响物体"的经验，主动帮你"脑补"。所以<strong>你看到的从来不是原始像素，而是被大脑的预期塑造过的结果</strong>。（这条从眼睛到大脑的路每一站怎么走，<a class="reflink" href="ref-visual-pathway.html">视觉通路</a>）</p>
+
 <div class="ai">
 <h4>AI 对读</h4>
-<p>这正是<b>生成模型</b>的世界观：与其存一堆像素，不如学一个能"生成"世界的内部模型，再让它去解释输入。判别式模型问"这是什么"，生成式模型问"什么样的世界会产生这个输入"——后者才是大脑的默认姿态。你训练一个 <b>VAE / diffusion</b> 时的那个"先验 → 生成 → 比对"回路，和皮层"预测 → 下传 → 纠错"是同一个骨架。</p>
+<p>这正是<b>生成模型</b>的思路：与其硬存一堆像素，不如学一个能"生成"世界的内部模型，再让它去解释眼前的输入。你训练一个 <b>VAE 或 diffusion</b> 时那套"先有个假设 → 生成 → 和真实数据比对"的回路，和大脑"先猜 → 往下发 → 拿感官纠错"是同一个骨架。</p>
 </div>
 </div>
 
 <!-- 2 -->
 <div class="section">
 <span class="num">// 02</span>
-<h2>只有"没猜中的"才值得上传：预测误差</h2>
-<div class="claim">论断：大脑分层地预测自己，每一层只把"预测误差"传给上一层——省带宽，也解释了为什么熟悉=无感。</div>
-<p><strong>分层预测编码</strong>是这套机制的引擎。想象皮层是一叠层：每一层都试图预测<strong>下一层</strong>的活动，把预测<strong>下传</strong>；下层拿预测和实际输入一比，<strong>只把对不上的部分（误差）上传</strong>。猜对的信息根本不往上走——因为它不带新消息。</p>
-<p>这一下解释了一堆日常现象：<strong>你听不见自己家的空调声</strong>（完全可预测 → 零误差 → 不上传），但它一停你立刻警觉（预测落空 → 大误差）。<strong>越熟悉的东西越"隐形"</strong>，不是感官变钝，是它们已经被预测吃掉了。大脑的注意力，本质是留给<strong>意外</strong>的。</p>
-<div class="diagram">   高层皮层  ── 预测 ↓ ──▶  低层皮层  ── 预测 ↓ ──▶  感官
-      ▲                      ▲
-      └──── 误差 ↑ ──────────┴──── 误差 ↑ ────  （只有"没预测到的"往上走）
+<h2>只有"没猜中的"才值得上报</h2>
+<p>大脑怎么高效地猜？靠一个很省的机制：<strong>每一层只把"没猜中的部分"往上报</strong>。你可以把大脑想成一叠楼层，每层都在预测<strong>下面一层</strong>会发生什么，把预测往下发；下层拿预测和实际一比，<strong>只有对不上的地方（差错）才往上传</strong>。猜中的部分，根本不往上走——因为它没带来任何新消息。</p>
 
-   猜中 = 静默（不占带宽）      猜错 = 上传（更新模型）</div>
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="dc" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#34e5e0"/></marker>
+<marker id="dm" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#e879f9"/></marker>
+</defs>
+<rect x="150" y="12" width="180" height="40" rx="9" fill="rgba(167,139,250,0.13)" stroke="#a78bfa" stroke-width="1.2"/><text x="240" y="37" text-anchor="middle" fill="#d8d3ec" font-size="13.5">高层</text>
+<rect x="150" y="88" width="180" height="40" rx="9" fill="rgba(167,139,250,0.09)" stroke="#8a7bc8" stroke-width="1.2"/><text x="240" y="113" text-anchor="middle" fill="#d8d3ec" font-size="13.5">中层</text>
+<rect x="150" y="164" width="180" height="40" rx="9" fill="rgba(52,229,224,0.09)" stroke="#34e5e0" stroke-width="1.2"/><text x="240" y="189" text-anchor="middle" fill="#d8d3ec" font-size="13.5">眼睛 / 低层</text>
+<line x1="205" y1="52" x2="205" y2="86" stroke="#34e5e0" stroke-width="8" opacity="0.8" marker-end="url(#dc)"/>
+<line x1="205" y1="128" x2="205" y2="162" stroke="#34e5e0" stroke-width="8" opacity="0.8" marker-end="url(#dc)"/>
+<line x1="278" y1="162" x2="278" y2="130" stroke="#e879f9" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#dm)"/>
+<line x1="278" y1="86" x2="278" y2="54" stroke="#e879f9" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#dm)"/>
+<text x="120" y="74" text-anchor="middle" fill="#34e5e0" font-size="11.5" font-family="SF Mono,monospace">预测↓</text>
+<text x="360" y="74" text-anchor="middle" fill="#e879f9" font-size="11.5" font-family="SF Mono,monospace">误差↑</text>
+<text x="240" y="232" text-anchor="middle" fill="#8f89ad" font-size="12" font-family="SF Mono,monospace">猜中 = 静默（不占带宽）　猜错 = 上报（更新猜测）</text>
+</svg>
+<figcaption>分层预测：预测往下发，只有"意外"往上走</figcaption>
+</figure>
+
+<p>这一下就说通了好多日常小事。<strong>你听不见自己家冰箱的嗡嗡声</strong>——因为它太可预测了，差错为零，压根不上报；可它一停，你反而立刻警觉，因为"预测落空"了。越熟悉的东西越像<strong>隐形</strong>，不是你的耳朵变钝，是它们早被大脑猜到、提前扣掉了。说到底，大脑的注意力，是留给<strong>意外</strong>的。</p>
+
 <div class="ai">
 <h4>AI 对读</h4>
-<p>"只传残差"你太熟了——<b>残差连接 / 预测编码压缩</b>都是这个思想：不重复已知，只编码增量。更妙的对读是<b>自回归模型的训练信号</b>：LLM 每一步都在预测下一个 token，损失（cross-entropy）就是"预测误差"，梯度只沿着<b>没预测准的方向</b>更新权重。大脑用误差实时调后验，模型用误差离线调参数——同一种"被惊讶驱动的学习"。</p>
+<p>"只传没猜中的部分"你其实很熟——<b>残差、增量编码</b>都是这个思想：不重复已知，只记新增。更贴的对读是 <b>LLM 的训练</b>：模型每一步都在预测下一个词，那个损失（loss）就是"预测差多少"，梯度只沿着<b>没猜准的方向</b>去改权重。大脑用差错实时纠正当下的判断，模型用差错离线纠正参数——都是"被惊讶推着学"。</p>
 </div>
 </div>
 
 <!-- 3 -->
 <div class="section">
 <span class="num">// 03</span>
-<h2>贝叶斯大脑：你看到的是先验 × 证据的后验</h2>
-<div class="claim">论断：感知是一次贝叶斯推断——先验越强/证据越弱，你就越"看见你以为的"，而不是"在那儿的"。</div>
-<p>把上面两点写成一个公式的直觉：<strong>感知 ∝ 先验 × 似然</strong>。先验 = 大脑基于经验的预期，似然 = 当前感官证据。你最终"看到"的，是两者加权后的<strong>后验</strong>。</p>
-<p>关键在<strong>加权</strong>：谁的话更算数，取决于<strong>精度（可信度）</strong>。<strong>光线昏暗时感官证据不可靠</strong>（似然精度低），先验就接管——于是你把衣架看成人影、把风声听成人声。反过来，光天化日下证据充分，先验让位。<strong>这也给了"注意"一个精确定义：注意 = 调高某处感官误差的精度</strong>，让它更有权更新你的世界模型。（注意本身是 Day 2。）</p>
+<h2>光线越暗，你越"看见你以为的"</h2>
+<p>把前面两点合起来，就得到一条特别实用的规律：<strong>你最终看到的 = 大脑的预期 + 眼前的证据，各占多少，看谁更靠谱。</strong></p>
+<p>关键在"谁更靠谱"。<strong>光线昏暗时，眼睛送回的证据很不可靠</strong>，大脑就更信自己的预期——于是你把衣架看成蹲着的人，把风声听成有人叫你名字。反过来，大白天证据充足，预期就得让位、老老实实按看到的来。这也顺带给了"注意"一个很准的定义：<strong>注意，就是大脑临时调高某个地方证据的可信度</strong>，让它更有资格改写你眼里的世界（注意本身是 Day 2）。</p>
 <div class="ai">
 <h4>AI 对读</h4>
-<p>这是<b>不确定性加权的推断</b>：贝叶斯神经网络、Kalman 滤波、乃至扩散模型里的 guidance scale，本质都在做"证据不足时更信先验"。工程师手动调的那个"先验强度 / temperature"，大脑用<b>精度</b>自动、逐感官地在调——而且是实时的。幻觉（hallucination）在两边是同一个故事：<b>先验被过度采信、证据被压过</b>，模型/大脑就"看见"了不在那儿的东西。</p>
+<p>这就是<b>按可信度加权的推断</b>：证据不足时更信先验。你手动调的那个"先验强度 / temperature / guidance"，大脑用一个叫<b>精度</b>的量自动、逐个感官、实时地在调。而且——<b>幻觉在两边是同一个故事</b>：先验被过度采信、证据被压过，大脑或模型就"看见"了根本不在那儿的东西。</p>
 </div>
 </div>
 
 <!-- 4 -->
 <div class="section">
 <span class="num">// 04</span>
-<h2>主动推理：感知与行动是同一枚硬币</h2>
-<div class="claim">论断：减少预测误差有两条路——改模型（感知），或改世界（行动）。大脑两条都用，于是感知和行动本就一体。</div>
-<p>预测误差怎么消？前三节讲的是<strong>更新大脑</strong>（改后验去贴合世界）。但还有一条对称的路：<strong>改世界去贴合预测</strong>——这就是<strong>主动推理</strong>。你预测"眼睛应该看到桌子的中央"，于是<strong>你动眼睛让它真的看到中央</strong>；误差被抹平，不是靠改信念，是靠行动。</p>
-<p>推到底，这给了运动一个惊人的重述：<strong>动作，就是被身体实现的预测</strong>。你伸手拿杯子，是大脑预测"手已经在杯子上了"，这个预测的误差驱动肌肉去实现它。感知问"世界是什么样"，行动问"我怎么让世界变成我预测的样"——<strong>同一个误差最小化引擎，两个出口</strong>。这也是为什么后面讲运动、决策、乃至冥想（主动调节自己的预测），都能挂回这一根主线。</p>
+<h2>还有一招：不改猜测，改世界</h2>
+<p>预测和现实对不上，怎么办？前面讲的都是<strong>改大脑</strong>——更新猜测去贴合世界。但还有一条对称的路：<strong>改世界去贴合猜测</strong>。这就是<strong>主动推理</strong>，也是它最妙的地方。</p>
+<p>举个最简单的：你预测"眼睛应该正对着桌子中央"，可现在没有——于是<strong>你动了下眼睛，让它真的对准中央</strong>。差错被抹平了，不是靠改信念，是靠动作。把这个推到底，会得到一个惊人的重述：<strong>你的每个动作，其实都是一个"被身体实现出来的预测"</strong>。你伸手去拿杯子，是大脑先预测"手已经握住杯子了"，这个还没实现的预测产生的差错，驱动肌肉去把它变成真。</p>
+<p>所以感知和行动根本是<strong>同一台机器的两个出口</strong>：感知问"世界是啥样"，行动问"我怎么让世界变成我猜的样"。这也是为什么后面讲运动、讲决策、甚至讲冥想（主动去调自己的预测），都能挂回这根主线。</p>
 <div class="ai">
 <h4>AI 对读</h4>
-<p>主动推理是 <b>RL 的一个耐人寻味的替身</b>：RL 最大化外部奖励，主动推理最小化预测误差（自由能）——很多时候两者等价，但后者把"探索"和"目标"统一进了同一个量。它天然是<b>基于世界模型的智能体</b>（world-model + planning，像 Dreamer 那一系）：先有内部模型、用它想象、再行动去让想象成真。当下 agent 研究在重新发现的东西，大脑用了几亿年。</p>
+<p>主动推理是 <b>强化学习一个耐人寻味的替身</b>：RL 追最大化外部奖励，主动推理追最小化预测差错，很多时候两者等价，但后者把"探索"和"目标"揉进了同一个量。它天生就是<b>带世界模型的智能体</b>（像 Dreamer 那一类：先有内部模型、用它想象、再行动去让想象成真）——如今 agent 研究在重新发现的东西，大脑用了上亿年。</p>
 </div>
 </div>
 
 <div class="thinking">
 <h3>// 深入思考</h3>
-<details><summary>如果我"看到"的永远是大脑的猜测，那我凭什么相信我看到的世界是真的？</summary><div>严格说你从来没有"直接"接触过世界——你接触的一直是大脑的模型。但这不导致怀疑论：这个模型被<strong>持续的预测误差</strong>拴在现实上，猜错就要付代价（撞墙、抓空）。所以感知不是幻觉，是一个<strong>被现实不断校准的受控幻觉</strong>——够真到让你活下来，但永远不是"像素级的真相"。这也解释了为什么两个人可以"看到"不同的东西：先验不同，后验就不同。</div></details>
-<details><summary>预测加工说"熟悉=零误差=无感"，那为什么我们还会享受重复（重听一首歌、重看一部电影）？</summary><div>因为"误差"不是只有一层。低层（音符、画面）被预测掉了，但<strong>高层</strong>（情绪结构、意义、与记忆的共振）仍在产生新误差；而且完全可预测本身可以变成一种<strong>低误差的安全感</strong>（这正是仪式、ASMR、白噪音起效的机制）。审美的甜区往往在"可预测的骨架 + 恰到好处的意外"之间——太意外是噪声，太可预测是无聊。这一点在 Day 19 敬畏、以及音乐认知里会再回来。</div></details>
-<details><summary>既然大脑和生成模型是同一个骨架，那 LLM 的"幻觉"和人的"错觉/妄想"是同一回事吗？</summary><div>机制层面高度同源：<strong>先验（模型内部）被过度采信、外部证据被压过</strong>，两者都会"生成"不存在的细节。但有一个关键不同——健康大脑有<strong>主动推理</strong>这条腿：它能<strong>去行动、去采样新证据</strong>来证伪自己的猜测（多看一眼、伸手摸一下）。当前 LLM 大多没有这条"主动去查"的闭环，只能在已有先验里往下生成——这也提示了缓解幻觉的方向：给它<strong>取证据、并让证据有权压过先验</strong>的能力（工具调用/检索本质就是给模型接上"感官"）。</div></details>
+<details><summary>如果我"看到"的永远是大脑的猜测，那我凭什么信我看到的世界是真的？</summary><div>严格说，你从没"直接"碰过世界——你碰的一直是大脑的模型。但这不导致怀疑一切：这个模型被<strong>持续的差错</strong>拴在现实上，猜错就要付代价（撞墙、抓空）。所以感知不是幻觉，是一个<strong>被现实不停校准的"受控幻觉"</strong>——真到足够让你活下来，但永远不是像素级的真相。这也解释了为什么两个人能"看到"不同的东西：预期不同，结果就不同。</div></details>
+<details><summary>既然"熟悉 = 零差错 = 无感"，那为什么我们还爱重复——重听一首歌、重看一部电影？</summary><div>因为"差错"不止一层。低层（音符、画面）被猜到了，但<strong>高层</strong>（情绪的走向、意义、和记忆的共振）还在冒新差错；而且"完全可预测"本身能变成一种<strong>安全感</strong>（仪式、白噪音、ASMR 就靠这个）。审美的甜区，往往落在"猜得到的骨架 + 恰到好处的意外"之间——太意外是噪声，太好猜是无聊。这条 Day 19 敬畏、以及音乐认知里还会回来。</div></details>
+<details><summary>大脑和生成模型是同一个骨架，那 LLM 的"幻觉"和人的"错觉/妄想"是一回事吗？</summary><div>机制上高度同源：<strong>先验被过度采信、证据被压过</strong>，两边都会"生成"不存在的细节。但有个关键差别——健康大脑多一条腿：<strong>主动推理</strong>。它能<strong>去动、去采样新证据</strong>来验自己的猜（多看一眼、伸手摸一下）。而现在的 LLM 大多没有这条"主动去查"的闭环，只能在已有先验里往下编——这也指了缓解幻觉的方向：给它<strong>取证据、并让证据有权压过先验</strong>的能力。工具调用、检索，本质就是给模型接上"感官"。</div></details>
 </div>
 
 <div class="refs">
 <h3>// 延伸阅读</h3>
 <ul>
-<li><a href="https://www.nature.com/articles/nrn2787" target="_blank">Friston · The free-energy principle: a unified brain theory?</a> — 预测加工/主动推理的总纲</li>
-<li><a href="https://www.penguinrandomhouse.com/books/565462/the-experience-machine-by-andy-clark/" target="_blank">Andy Clark · Surfing Uncertainty / The Experience Machine</a> — 预测大脑最好读的入门</li>
-<li><a href="https://www.nature.com/articles/nn0199_79" target="_blank">Rao & Ballard · Predictive coding in the visual cortex (1999)</a> — 分层预测编码的奠基</li>
-<li>Anil Seth · Being You — "受控幻觉"与意识的预测加工视角（Day 9–15 会深挖）</li>
+<li>Andy Clark · <em>Surfing Uncertainty</em> / <em>The Experience Machine</em> — 预测大脑最好读的入门</li>
+<li>Anil Seth · <em>Being You</em> — "受控幻觉"与意识的预测视角（Day 9–15 会深挖）</li>
+<li><a href="https://www.nature.com/articles/nrn2787" target="_blank">Friston · The free-energy principle</a> — 预测加工/主动推理的总纲（硬核）</li>
+<li><a href="https://www.nature.com/articles/nn0199_79" target="_blank">Rao &amp; Ballard (1999)</a> — 分层预测编码的奠基论文</li>
 </ul>
 </div>
 
