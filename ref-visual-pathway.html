@@ -18,7 +18,9 @@ h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:fl
 h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
 p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
 strong{color:#fff}
-.diagram{background:#070510;border:1px solid rgba(232,121,249,0.22);border-radius:12px;padding:22px;margin:20px 0;font-family:"SF Mono",Menlo,monospace;font-size:0.75rem;line-height:1.75;color:#b8a8d0;overflow-x:auto;white-space:pre}
+figure{margin:20px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:9px;font-family:"SF Mono",Menlo,monospace}
 .kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
 .kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
 .kv dt:first-child{margin-top:0}
@@ -35,17 +37,25 @@ footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font
 <header>
 <span class="ref-badge">参考库 · REFERENCE</span>
 <h1>视觉通路<span class="en">Visual Pathway</span></h1>
-<p>光从视网膜到皮层、再分成"是什么/在哪里"两条流的完整路径——以及一个反直觉的事实：<strong>大脑往这条路"下传"的信号，比"上传"的还多</strong>。</p>
-<p class="note">// 参考页：讲通用机制，不绑定某一期议题。被主线按需 link。</p>
-</header>
+<p>光从视网膜到皮层、再分成"是什么/在哪里"两条流的完整路径——以及一个反直觉的事实：<strong>大脑往这条路"下传"的信号，比"上传"的还多</strong>。</p></header>
 
 <h2>一条主干：视网膜 → LGN → V1 → 双流</h2>
 <p>视觉不是"眼睛看到 → 大脑知道"这么一步。信号要过好几站，每一站都在<strong>重新编码</strong>而不是简单转发：</p>
-<div class="diagram">  视网膜 ──▶ 视神经 ──▶ LGN ──▶ V1 ──┬─▶ 背侧流（顶叶）："在哪里 / 怎么做"
- (光→电)          (丘脑中继)  (初级     │      空间位置、运动、抓取的引导
-                            视皮层)   │
-                                      └─▶ 腹侧流（颞叶）："是什么"
-                                             物体、面孔、类别识别</div>
+<figure>
+<svg viewBox="0 0 500 196" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="pm" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e879f9"/></marker></defs>
+<rect x="8" y="76" width="92" height="44" rx="9" fill="rgba(167,139,250,0.10)" stroke="#a78bfa" stroke-width="1.2"/><text x="54" y="94" text-anchor="middle" fill="#e8e4f5" font-size="13">视网膜</text><text x="54" y="110" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">光→电</text>
+<rect x="132" y="76" width="92" height="44" rx="9" fill="rgba(167,139,250,0.10)" stroke="#a78bfa" stroke-width="1.2"/><text x="178" y="94" text-anchor="middle" fill="#e8e4f5" font-size="13">LGN</text><text x="178" y="110" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">丘脑中继</text>
+<rect x="256" y="76" width="92" height="44" rx="9" fill="rgba(232,121,249,0.12)" stroke="#e879f9" stroke-width="1.3"/><text x="302" y="94" text-anchor="middle" fill="#fff" font-size="13">V1</text><text x="302" y="110" text-anchor="middle" fill="#c6a8d8" font-size="10" font-family="SF Mono,monospace">初级视皮层</text>
+<line x1="100" y1="98" x2="130" y2="98" stroke="#e879f9" stroke-width="1.8" marker-end="url(#pm)"/>
+<line x1="224" y1="98" x2="254" y2="98" stroke="#e879f9" stroke-width="1.8" marker-end="url(#pm)"/>
+<path d="M348,90 C372,90 372,32 392,32" fill="none" stroke="#34e5e0" stroke-width="1.8" marker-end="url(#pm)" opacity="0.9"/>
+<path d="M348,106 C372,106 372,164 392,164" fill="none" stroke="#fbbf24" stroke-width="1.8" marker-end="url(#pm)" opacity="0.9"/>
+<rect x="394" y="12" width="102" height="40" rx="9" fill="rgba(52,229,224,0.08)" stroke="#34e5e0" stroke-width="1.1"/><text x="445" y="30" text-anchor="middle" fill="#e8e4f5" font-size="12">背侧流</text><text x="445" y="45" text-anchor="middle" fill="#7bf0e8" font-size="10" font-family="SF Mono,monospace">在哪里/怎么做</text>
+<rect x="394" y="144" width="102" height="40" rx="9" fill="rgba(251,191,36,0.08)" stroke="#fbbf24" stroke-width="1.1"/><text x="445" y="162" text-anchor="middle" fill="#e8e4f5" font-size="12">腹侧流</text><text x="445" y="177" text-anchor="middle" fill="#f0cf88" font-size="10" font-family="SF Mono,monospace">是什么</text>
+</svg>
+<figcaption>信号每站都在重新编码；到 V1 后分成"在哪里"与"是什么"两条流</figcaption>
+</figure>
 <dl class="kv">
 <dt>视网膜（Retina）</dt><dd>把光转成神经信号，并已经开始"计算"——不是均匀曝光，而是强调<strong>对比与边缘</strong>（见下）。</dd>
 <dt>LGN（外侧膝状体）</dt><dd>丘脑里的中继站。但它远不止"转发"：约 <strong>90% 的输入其实来自皮层的下传</strong>，只有约 10% 来自眼睛——门控与预测在这里就开始了。</dd>
