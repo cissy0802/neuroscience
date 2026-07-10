@@ -81,8 +81,10 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <marker id="mPred" markerWidth="13" markerHeight="13" refX="4.5" refY="4.5" orient="auto"><path d="M0.5,0.5 L9,4.5 L0.5,8.5 Z" fill="#5ef0ea"/></marker>
 <marker id="mErr" markerWidth="9" markerHeight="9" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#e879f9"/></marker>
 </defs>
-<path d="M198,66 L198,140" stroke="url(#predBeam)" stroke-width="17" stroke-linecap="round" filter="url(#glowA)" marker-end="url(#mPred)"/>
-<path d="M300,140 L300,68" stroke="#e879f9" stroke-width="2.4" stroke-dasharray="1.5 6" stroke-linecap="round" opacity="0.9" marker-end="url(#mErr)"/>
+<path d="M198,66 L198,120" stroke="url(#predBeam)" stroke-width="17" stroke-linecap="round" filter="url(#glowA)"/>
+<path d="M179,119 L217,119 L198,145 Z" fill="#5ef0ea" filter="url(#glowA)"/>
+<path d="M300,140 L300,74" stroke="#e879f9" stroke-width="2.4" stroke-dasharray="1.5 6" stroke-linecap="round" opacity="0.9"/>
+<path d="M293,78 L307,78 L300,66 Z" fill="#e879f9" opacity="0.95"/>
 <rect x="112" y="14" width="256" height="52" rx="26" fill="url(#nV)" stroke="#a78bfa" stroke-width="1.4" filter="url(#glowA)"/>
 <text x="240" y="46" text-anchor="middle" fill="#efe9ff" font-size="15.5" font-weight="600">高层大脑 · 先有一个"猜测"</text>
 <rect x="112" y="148" width="256" height="52" rx="26" fill="url(#nC)" stroke="#34e5e0" stroke-width="1.4" filter="url(#glowA)"/>
@@ -139,10 +141,14 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <marker id="mp2" markerWidth="11" markerHeight="11" refX="4" refY="4" orient="auto"><path d="M0.5,0.5 L8,4 L0.5,7.5 Z" fill="#5ef0ea"/></marker>
 <marker id="me2" markerWidth="8" markerHeight="8" refX="3" refY="3" orient="auto"><path d="M0,0 L5.5,3 L0,6 Z" fill="#e879f9"/></marker>
 </defs>
-<path d="M203,54 L203,86" stroke="url(#pb2)" stroke-width="9" stroke-linecap="round" filter="url(#glowB)" marker-end="url(#mp2)"/>
-<path d="M203,130 L203,162" stroke="url(#pb2)" stroke-width="9" stroke-linecap="round" filter="url(#glowB)" marker-end="url(#mp2)"/>
-<path d="M277,162 L277,132" stroke="#e879f9" stroke-width="2" stroke-dasharray="1.5 5" marker-end="url(#me2)" opacity="0.85"/>
-<path d="M277,86 L277,56" stroke="#e879f9" stroke-width="2" stroke-dasharray="1.5 5" marker-end="url(#me2)" opacity="0.85"/>
+<path d="M203,54 L203,78" stroke="url(#pb2)" stroke-width="9" stroke-linecap="round" filter="url(#glowB)"/>
+<path d="M194,77 L212,77 L203,90 Z" fill="#5ef0ea" filter="url(#glowB)"/>
+<path d="M203,130 L203,154" stroke="url(#pb2)" stroke-width="9" stroke-linecap="round" filter="url(#glowB)"/>
+<path d="M194,153 L212,153 L203,166 Z" fill="#5ef0ea" filter="url(#glowB)"/>
+<path d="M277,162 L277,134" stroke="#e879f9" stroke-width="2" stroke-dasharray="1.5 5" opacity="0.85"/>
+<path d="M271,138 L283,138 L277,127 Z" fill="#e879f9" opacity="0.9"/>
+<path d="M277,86 L277,58" stroke="#e879f9" stroke-width="2" stroke-dasharray="1.5 5" opacity="0.85"/>
+<path d="M271,62 L283,62 L277,51 Z" fill="#e879f9" opacity="0.9"/>
 <rect x="150" y="12" width="160" height="42" rx="21" fill="url(#lay)" stroke="#a78bfa" stroke-width="1.3" filter="url(#glowB)"/><text x="230" y="38" text-anchor="middle" fill="#efe9ff" font-size="14" font-weight="600">高层</text>
 <rect x="150" y="88" width="160" height="42" rx="21" fill="url(#lay)" stroke="#8f7cd0" stroke-width="1.3" filter="url(#glowB)"/><text x="230" y="114" text-anchor="middle" fill="#efe9ff" font-size="14" font-weight="600">中层</text>
 <rect x="150" y="164" width="160" height="42" rx="21" fill="url(#lay)" stroke="#34e5e0" stroke-width="1.3" filter="url(#glowB)"/><text x="230" y="190" text-anchor="middle" fill="#e6faf8" font-size="14" font-weight="600">眼睛 / 低层</text>
