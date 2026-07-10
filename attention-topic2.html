@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 2 · 注意 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 2 · PHASE A 认知</span>
+<h1>注意</h1>
+<h2>你以为你在"看"，其实是一场你没主持的竞赛</h2>
+<div class="date">2026-07-10 · BigCat</div>
+<p class="pitch">注意不是一束你举着的手电，而是脑内一场抢名额的比赛——你只按下了其中一根拇指。</p>
+</header>
+
+<div class="intro">
+<p>此刻你在读这行字，同时——你屁股底下椅子的压力、房间的背景音、余光里的一堆东西，全在那儿，可你几乎没"感觉到"。上一期我们说，感知是大脑在<strong>猜</strong>世界；这一期的问题更进一步：<strong>大脑猜的东西那么多，凭什么是"这几样"进了你的意识，其余全被扔掉？</strong>答案就是注意。而一旦你看清它是怎么运作的，你会发现一件不太舒服的事：<strong>你能主动控制的那部分，比你以为的小得多。</strong></p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>注意不是探照灯，是一场竞赛</h2>
+<p>先拆掉最常见的比喻：注意像一束手电，你把它照到哪，哪就变亮。听着挺对，但机制上是反的。真实情况是：<strong>大脑里代表不同东西的神经元，一直在互相抢</strong>——抢有限的下游处理、抢让你反应的资格。它们本来就在竞争；<strong>注意做的，不是"照亮"某一个，而是给某一个"暗中加码"，让它更容易赢下这场竞争。</strong>这在神经科学里叫<strong>偏向竞争</strong>。</p>
+
+<figure>
+<svg viewBox="0 0 480 232" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="winBeam" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#2aa8cf" stop-opacity="0.5"/><stop offset="1" stop-color="#5ef0ea"/></linearGradient>
+<radialGradient id="nWin" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></radialGradient>
+<radialGradient id="nLose" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#241c46"/><stop offset="1" stop-color="#130d29"/></radialGradient>
+<filter id="glowA" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="96" y="12" width="288" height="44" rx="22" fill="url(#nWin)" stroke="#34e5e0" stroke-width="1.4" filter="url(#glowA)"/>
+<text x="240" y="39" text-anchor="middle" fill="#e6faf8" font-size="15" font-weight="600">进入意识 · 被处理（名额有限）</text>
+<path d="M240,150 L240,60" stroke="url(#winBeam)" stroke-width="15" stroke-linecap="round" filter="url(#glowA)"/>
+<path d="M231,66 L249,66 L240,54 Z" fill="#5ef0ea" filter="url(#glowA)"/>
+<path d="M110,150 L155,62" stroke="#4a4470" stroke-width="2.4" stroke-linecap="round" opacity="0.7"/>
+<path d="M370,150 L325,62" stroke="#4a4470" stroke-width="2.4" stroke-linecap="round" opacity="0.7"/>
+<circle cx="110" cy="168" r="24" fill="url(#nLose)" stroke="#6b6390" stroke-width="1.2"/><text x="110" y="173" text-anchor="middle" fill="#b3abd4" font-size="13">刺激A</text>
+<circle cx="240" cy="168" r="26" fill="url(#nWin)" stroke="#34e5e0" stroke-width="1.6" filter="url(#glowA)"/><text x="240" y="173" text-anchor="middle" fill="#e6faf8" font-size="13" font-weight="700">刺激B</text>
+<circle cx="370" cy="168" r="24" fill="url(#nLose)" stroke="#6b6390" stroke-width="1.2"/><text x="370" y="173" text-anchor="middle" fill="#b3abd4" font-size="13">刺激C</text>
+<path d="M440,168 L286,168" stroke="#e879f9" stroke-width="2.2" stroke-dasharray="2 5" opacity="0.9"/>
+<path d="M292,162 L292,174 L280,168 Z" fill="#e879f9"/>
+<text x="405" y="205" text-anchor="middle" fill="#e879f9" font-size="12" font-family="SF Mono,monospace">自上而下的偏置</text>
+<text x="240" y="223" text-anchor="middle" fill="#8f89ad" font-size="12" font-family="SF Mono,monospace">注意 = 给 B 加码让它赢，不是"照亮"B</text>
+</svg>
+<figcaption>偏向竞争：所有刺激本就在抢名额，注意只是悄悄拨动天平</figcaption>
+</figure>
+
+<p>这个"竞赛+加码"的画面，一下就解释了著名的<strong>鸡尾酒会效应</strong>：满屋子人声鼎沸，你却能锁定一个人的声音听下去——那是你的目标给那条声音"加了码"，压过了别的。可就在你专心听时，房间另一头有人喊了你的名字，你会"唰"地转头——<strong>你并没在听那边，但"你的名字"这个刺激自带高权重，硬是抢赢了竞争。</strong>可见这场比赛，一部分由你定，一部分完全不由你。</p>
+
+<p class="en-brief"><b>EN</b> Attention isn't a spotlight you aim; it's biased competition. Neurons coding different things constantly compete for limited downstream processing, and attention simply tips the scales toward one — which is why you can lock onto one voice at a party (top-down bias), yet your own name from across the room still hijacks you (a stimulus with built-in weight).</p>
+
+<div class="ai">
+<h4>AI 对读 · 同名，未必同机制</h4>
+<p>你多半听过让 ChatGPT 那类模型运转的核心叫「<b>注意力（attention）</b>」。名字撞上了，容易让人以为是一回事——其实<b>只在最抽象的一层是同一件事：都在"按相关性给信息分配权重、只把要紧的挑出来往下送"</b>。但底层机制差得远：Transformer 的注意力是拿每个词生成一组<b>查询/键/值</b>向量，两两做点积算相关度、再一次性并行加权求和（就是"看谁跟谁最相关"的一张全连接权重表）；大脑的注意<b>没有</b>这张表，它靠的是神经元互相竞争、加上下面要讲的丘脑闸门和增益调制，一点点争出来的。<b>抓住这条：功能上像亲戚，机制上是两回事</b>——后面几期一碰到"生物 X ↔ AI 同名 X"，都得这么先分清。</p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>两种力量在抢你：一种你派，一种硬闯</h2>
+<p>刚说竞争一部分由你定、一部分不由你——这正好对应注意的两股来源，方向相反：</p>
+<p><strong>自下而上（被抢占）</strong>：某个刺激太扎眼，不由分说把你的注意拽过去。余光里突然一动、身后"砰"一声、屏幕角落跳出的红点——你根本来不及决定，头和眼已经转过去了。这套是<strong>刺激自己的"显著性"</strong>说了算，进化上刻死的：会动的、突变的、可能是危险的，优先。</p>
+<p><strong>自上而下（你派出去）</strong>：你带着目标去撒注意。在停车场找你那辆红车，于是满场的"红"忽然都跳出来了；换成找车牌号，跳出来的又变成数字。同一个世界，你按需要给它装了不同的<strong>滤镜</strong>。</p>
+
+<figure>
+<svg viewBox="0 0 480 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="hub" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#2b2150"/><stop offset="1" stop-color="#150e2c"/></radialGradient>
+<filter id="glowB" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<circle cx="240" cy="104" r="46" fill="url(#hub)" stroke="#a78bfa" stroke-width="1.5" filter="url(#glowB)"/>
+<text x="240" y="99" text-anchor="middle" fill="#efe9ff" font-size="15" font-weight="700">注意</text>
+<text x="240" y="118" text-anchor="middle" fill="#b6acdd" font-size="10.5" font-family="SF Mono,monospace">选择谁赢</text>
+<path d="M56,166 L188,120" stroke="#e879f9" stroke-width="3" stroke-linecap="round" opacity="0.92"/>
+<path d="M181,113 L192,124 L178,127 Z" fill="#e879f9"/>
+<path d="M22,150 l14,-4 l-4,14 Z" fill="#e879f9" opacity="0.9"/>
+<circle cx="40" cy="150" r="15" fill="none" stroke="#e879f9" stroke-width="2" opacity="0.85"/>
+<text x="44" y="188" text-anchor="middle" fill="#f5b8fb" font-size="12" font-family="SF Mono,monospace">自下而上</text>
+<text x="44" y="204" text-anchor="middle" fill="#9a7bb5" font-size="10" font-family="SF Mono,monospace">显著性硬闯</text>
+<path d="M424,166 L292,120" stroke="#34e5e0" stroke-width="3" stroke-linecap="round" opacity="0.92"/>
+<path d="M299,113 L288,124 L302,127 Z" fill="#34e5e0"/>
+<rect x="404" y="138" width="40" height="26" rx="6" fill="none" stroke="#34e5e0" stroke-width="1.6" opacity="0.85"/>
+<text x="424" y="156" text-anchor="middle" fill="#7bf0e8" font-size="11" font-family="SF Mono,monospace">目标</text>
+<text x="436" y="188" text-anchor="middle" fill="#7bf0e8" font-size="12" font-family="SF Mono,monospace">自上而下</text>
+<text x="436" y="204" text-anchor="middle" fill="#6b9e9a" font-size="10" font-family="SF Mono,monospace">你派出去</text>
+</svg>
+<figcaption>两股方向相反的力：一股由刺激硬闯，一股由你的目标派出</figcaption>
+</figure>
+
+<p>难受的地方在于，这俩会<strong>打架</strong>，而且常常是硬闯的那股赢。你下定决心专心写东西（自上而下），手机"叮"一声（自下而上），注意就被劫走了——整条广告业、整套 App 的红点与推送，做的就是一门生意：<strong>专门制造能压过你目标的显著刺激。</strong>你不是意志力差，你是在跟一台为"抢占你"而优化的机器对抗。</p>
+
+<p class="en-brief"><b>EN</b> Attention has two opposing sources: bottom-up (salience grabs you involuntarily — sudden motion, a bang, a red notification dot) and top-down (you deploy it by goal, like spotting your red car in a lot). They fight, and the involuntary one often wins — which is exactly the business model of every notification and ad.</p>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>瓶颈：为什么你根本没法一心二用</h2>
+<p>为什么大脑非要这么费劲地"选"？因为下游处理是个<strong>瓶颈</strong>——同一时刻能真正被深加工、被送进意识的信息，少得可怜。世界糊了一大堆进来，闸口只有那么窄，<strong>绝大部分东西在你根本没察觉的情况下就被扔掉了。</strong></p>
+<p>最有名的证明是那个「<strong>看不见的大猩猩</strong>」实验：让你数视频里球员传了几次球，你数得聚精会神——结果一个人穿着大猩猩服，大摇大摆走过画面中央、还捶了捶胸，<strong>约一半的人完全没看见。</strong>不是眼睛没拍到，光清清楚楚落在视网膜上；是它没赢下注意的竞争，于是压根没进你的意识。这叫<strong>非注意盲视</strong>。</p>
+
+<figure>
+<svg viewBox="0 0 480 214" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="funnel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa" stop-opacity="0.28"/><stop offset="1" stop-color="#34e5e0" stop-opacity="0.5"/></linearGradient>
+<filter id="glowC" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<path d="M40,26 L40,188 L200,128 L200,86 Z" fill="url(#funnel)" stroke="rgba(167,139,250,0.5)" stroke-width="1.2"/>
+<circle cx="72" cy="52" r="7" fill="#8f7cd0"/><circle cx="98" cy="90" r="7" fill="#8f7cd0"/><circle cx="70" cy="120" r="7" fill="#8f7cd0"/><circle cx="104" cy="150" r="7" fill="#8f7cd0"/><circle cx="130" cy="70" r="7" fill="#8f7cd0"/><circle cx="146" cy="112" r="7" fill="#8f7cd0"/><circle cx="120" cy="170" r="7" fill="#8f7cd0"/>
+<ellipse cx="150" cy="150" rx="12" ry="14" fill="#3a3358" stroke="#e879f9" stroke-width="1.6"/>
+<circle cx="146" cy="146" r="1.8" fill="#e879f9"/><circle cx="154" cy="146" r="1.8" fill="#e879f9"/>
+<text x="150" y="192" text-anchor="middle" fill="#c77fd6" font-size="9.5" font-family="SF Mono,monospace">没注意到</text>
+<path d="M200,96 L296,96 L296,118 L200,118 Z" fill="rgba(52,229,224,0.12)" stroke="#34e5e0" stroke-width="1.2" filter="url(#glowC)"/>
+<circle cx="228" cy="107" r="7" fill="#5ef0ea"/><circle cx="256" cy="107" r="7" fill="#5ef0ea"/>
+<path d="M300,107 L340,107" stroke="#34e5e0" stroke-width="2.2"/><path d="M336,102 L348,107 L336,112 Z" fill="#34e5e0"/>
+<rect x="350" y="82" width="112" height="50" rx="12" fill="url(#hub)" stroke="#34e5e0" stroke-width="1.4" filter="url(#glowC)"/>
+<text x="406" y="103" text-anchor="middle" fill="#e6faf8" font-size="13" font-weight="600">你看到的</text>
+<text x="406" y="121" text-anchor="middle" fill="#7bf0e8" font-size="10" font-family="SF Mono,monospace">= 一小撮</text>
+<text x="118" y="18" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">涌进来的一切</text>
+<text x="240" y="208" text-anchor="middle" fill="#8f89ad" font-size="11.5" font-family="SF Mono,monospace">瓶颈很窄 · 大猩猩就这么被过滤掉了</text>
+</svg>
+<figcaption>意识的入口是个窄瓶颈，没赢下注意的信息（哪怕在正中央）直接出局</figcaption>
+</figure>
+
+<p>同一个瓶颈也戳破了"多任务"的神话：你以为在同时干两件动脑的事，其实大脑是在飞快地<strong>来回切换</strong>，每切一次都要交一笔"重新装载"的税——所以边开车边发消息不是分了心，是每隔一会儿就有几秒<strong>谁都没在管方向盘</strong>。真正的并行只发生在其中一件已经练到不用脑（比如走路）时。</p>
+
+<p class="en-brief"><b>EN</b> Selection exists because downstream processing is a narrow bottleneck. The "invisible gorilla" experiment shows it starkly: absorbed in counting passes, about half of viewers miss a person in a gorilla suit walking through center frame — inattentional blindness. The same bottleneck debunks multitasking: it's really fast switching, each switch paying a reload tax.</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>"注意是稀缺、要付代价的"这点，AI 这边有个尖锐的回声。Transformer 让每个词都去"关注"其它所有词，计算量随长度<b>平方级</b>暴涨——想让模型读一本书那么长的上下文，光注意力这一项的开销就贵到发疯。于是这几年一堆研究都在做同一件事：<b>别让它关注全部，只挑相关的一小撮</b>（稀疏注意力、各种"只看局部/只看要点"的近似）。绕了一圈，人工系统被算力逼着，重新发现了生物大脑一开始就被能量逼出来的结论——<b>关注一切太贵，必须选。</b></p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>闸门在哪：丘脑，大脑的总闸</h2>
+<p>说了半天"选""过滤",这道闸具体装在哪？很关键的一处，在大脑正中央一个叫<strong>丘脑</strong>的核团。它是通往皮层（负责高级加工那层"外壳"）的<strong>总中继站</strong>：除了嗅觉，你几乎所有的感觉——看、听、触——在抵达皮层之前，都得先在丘脑换一趟车。<a class="reflink" href="ref-thalamus.html">丘脑</a></p>
+<p>妙就妙在丘脑外面裹着一层薄薄的、专门管"踩刹车"的神经元，叫<strong>丘脑网状核</strong>。它自己不往皮层送任何信息，只干一件事：<strong>抑制丘脑里的中继细胞</strong>——也就是决定"哪路信号放行、哪路掐掉"。诺奖得主克里克当年就把它比作大脑的<strong>探照灯闸门</strong>：注意要压住的那些通道，可能就是在这儿被悄悄关小的。</p>
+
+<figure>
+<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="thal" cx="0.5" cy="0.4" r="0.9"><stop offset="0" stop-color="#3a1a44"/><stop offset="1" stop-color="#22102e"/></radialGradient>
+<filter id="glowD" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="120" y="12" width="240" height="42" rx="21" fill="url(#hub)" stroke="#a78bfa" stroke-width="1.4" filter="url(#glowD)"/>
+<text x="240" y="38" text-anchor="middle" fill="#efe9ff" font-size="14.5" font-weight="600">皮层 · 高级加工</text>
+<ellipse cx="240" cy="132" rx="66" ry="42" fill="none" stroke="#e879f9" stroke-width="2" stroke-dasharray="3 4" opacity="0.85"/>
+<text x="240" y="188" text-anchor="middle" fill="#e879f9" font-size="10.5" font-family="SF Mono,monospace">丘脑网状核（闸门·只抑制）</text>
+<ellipse cx="240" cy="128" rx="48" ry="30" fill="url(#thal)" stroke="#c98adf" stroke-width="1.4" filter="url(#glowD)"/>
+<text x="240" y="126" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">丘脑</text>
+<text x="240" y="143" text-anchor="middle" fill="#e0a8ea" font-size="9.5" font-family="SF Mono,monospace">中继·换车</text>
+<path d="M222,98 L222,58" stroke="#5ef0ea" stroke-width="8" stroke-linecap="round" filter="url(#glowD)"/>
+<path d="M214,63 L230,63 L222,52 Z" fill="#5ef0ea" filter="url(#glowD)"/>
+<path d="M262,98 L262,58" stroke="#4a4470" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+<path d="M256,63 L268,63 L262,54 Z" fill="#4a4470" opacity="0.8"/>
+<text x="150" y="80" text-anchor="middle" fill="#7bf0e8" font-size="10" font-family="SF Mono,monospace">放行</text>
+<text x="330" y="80" text-anchor="middle" fill="#8a84a8" font-size="10" font-family="SF Mono,monospace">掐掉</text>
+<path d="M240,214 L240,164" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" filter="url(#glowD)"/>
+<path d="M233,169 L247,169 L240,158 Z" fill="#fbbf24" filter="url(#glowD)"/>
+<text x="240" y="230" text-anchor="middle" fill="#f0cf88" font-size="11" font-family="SF Mono,monospace">感官输入：看 · 听 · 触（嗅觉除外）</text>
+</svg>
+<figcaption>感官信号先进丘脑换车，网状核这层"闸"决定哪路放行、哪路掐掉</figcaption>
+</figure>
+
+<p>还有个更狠的推论：这道闸不只调"注意哪儿"，还调"你到底醒不醒着"。深睡和麻醉时，丘脑到皮层这条路会被大面积<strong>关断</strong>，感官信号送不上去了——这正是你"失去意识"的一部分机制。换句话说，<strong>同一套门控系统，往细了拧是注意，往大了关是睡去。</strong>意识怎么被开关，是后面 Phase B 的大戏，这道闸就是最早的伏笔。</p>
+
+<p class="en-brief"><b>EN</b> A key gate sits in the thalamus, the brain's central relay to the cortex — nearly all senses (except smell) change trains there first. Wrapped around it is the thalamic reticular nucleus, an inhibitory shell that sends nothing to cortex and only decides which relay channels pass — Crick's "searchlight" gate. The same system dialed wide shut is what happens in deep sleep and anesthesia: attention and consciousness share a gate.</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>"一个专门的小模块，不干活、只负责决定哪路信号放行"——这在 AI 里有个挺贴的表亲叫<b>门控 / 路由</b>。比如当红的<b>混合专家</b>架构：模型里养着一堆"专家"子网络，前面站一个<b>门控网络</b>，它自己不处理内容，只判断"这个输入该交给哪几个专家、别的闸掉"。丘脑网状核之于皮层，几分像这个门控网络之于专家——都是<b>用一个专职的闸，把宝贵的算力只放给该放的那条路。</b></p>
+</div>
+</div>
+
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"心往哪放，世界就在哪现形"——注意这件事，好几门古老学问早就当成头等大事在练、在想：</p>
+<ul>
+<li><b>佛学 · 唯识 / 禅</b>：唯识把「<b>作意</b>」列为最基本的心理动作之一（遍行心所），意思正是"把心导向某个对象"——这跟神经科学说的注意几乎是一码事。而整个禅修、正念的功夫，说穿了就是<b>反过来训练这套注意系统</b>：让它不再被显著刺激牵着跑，能自己安住。两千年的"制心一处"，练的就是本期讲的自上而下那股力。</li>
+<li><b>现象学 · 胡塞尔</b>：意识总是"关于某物"的，他把注意描述成一束可以投射、可以移动的<b>目光之光</b>（Blickstrahl）——同一个场景，注意之光落处不同，呈现给你的意义就不同。这与"自上而下的滤镜"惊人地同构，只是他从第一人称的体验、而非神经元讲起。</li>
+<li><b>信息论 · 控制论</b>：最早把注意讲成"<b>窄带宽通道 + 一道过滤器</b>"的心理学家布罗德本特，灵感直接来自香农的信息论——把大脑当成一条容量有限的信道，注意就是入口那道选择性闸门。本期的"瓶颈"，血统就在这儿。</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>如果注意大半是自动竞争、我能主动控制的那点很小，那"我在专心"里到底有多少是"我"？</summary><div>诚实的答案：比直觉少。显著刺激的抢占、名字的穿透，都不经你同意就发生了；你能出的力，主要是<strong>持续给目标"加码"</strong>那一股自上而下的偏置——而它又累、又容易被打断。但这恰恰给了"自由"一个可操作的落点：你或许管不住"什么冒出来抢你"，却能练<strong>多快把注意拉回目标</strong>。正念训练的核心动作就是这个"察觉走神→拉回"，练的不是不走神，是回来的速度。这条到 Topic 20 冥想会正面展开。</div></details>
+<details><summary>既然专注时会对眼皮底下的东西"盲视"，那此刻我正漏掉多少东西？</summary><div>原则上：海量，而且你注定不知道漏了啥——因为"没进意识"意味着连"我漏了"这件事都不会报给你。这有点吓人，但也解释了为什么<strong>换个人、换个视角</strong>常能看见你死活看不见的东西：不是他更聪明，是他的注意没被你的目标锁死。它还给"警惕"划了条硬边界：再专注的人也有盲区，安全冗余（后视镜、复核、清单）不是不信任，是在跟瓶颈这条物理事实和解。</div></details>
+<details><summary>注意到底是"一样东西",还是一堆不同的东西共用一个名字？</summary><div>越来越像后者。空间注意（看哪儿）、特征注意（找红色）、物体注意各有回路；更粗地分，还有<strong>警觉、定向、执行控制</strong>三张半独立的注意网络（波斯纳的经典划分）。它们能各自损坏、各自训练。所以"我注意力不好"往往是句糊话——是易被抢占？还是拉回慢？还是维持不住？拆开来，才谈得上改哪个。这也呼应上一期的提醒：生物的"注意"和 AI 的"attention"同名，但连生物这边内部都不是一样东西。</div></details>
+</div>
+
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Attention" target="_blank">注意 Attention</a> — 总览：选择性、容量与分类</li>
+<li><a href="https://en.wikipedia.org/wiki/Inattentional_blindness" target="_blank">非注意盲视 · 看不见的大猩猩</a>（Simons &amp; Chabris 1999）</li>
+<li><a href="https://en.wikipedia.org/wiki/Thalamic_reticular_nucleus" target="_blank">丘脑网状核</a> — 克里克的"探照灯"闸门</li>
+<li><a href="https://en.wikipedia.org/wiki/Attention_(machine_learning)" target="_blank">Attention（机器学习）</a> — Transformer 的注意力：QKV 机制</li>
+<li><a href="https://en.wikipedia.org/wiki/Cocktail_party_effect" target="_blank">鸡尾酒会效应</a> — 选择性听觉注意的经典现象</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 2 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+</body></html>

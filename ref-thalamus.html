@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>参考 · 丘脑 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.html">← 参考库</a>
+<header>
+<span class="ref-badge">参考库 · REFERENCE</span>
+<h1>丘脑<span class="en">Thalamus</span></h1>
+<p>大脑正中央一对蛋形核团，是几乎所有感觉通往皮层的<strong>总中继站</strong>——但它远不止转发：它裹着一层专职"踩刹车"的闸门，还管着你到底醒着还是睡着。</p>
+</header>
+
+<h2>一句话：去皮层，先在这儿换车</h2>
+<p>把丘脑想成大脑的<strong>中央车站</strong>。除了嗅觉（它有自己的私道），你所有的感觉——看、听、触、味，还有很多皮层区之间的往来——在抵达终点之前，都要先在丘脑<strong>换一趟车</strong>。它不是被动的转接盒：每一站都在过滤、加权、按你的状态调门。</p>
+
+<figure>
+<svg viewBox="0 0 500 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="tcore" cx="0.5" cy="0.4" r="0.9"><stop offset="0" stop-color="#3a1a44"/><stop offset="1" stop-color="#22102e"/></radialGradient>
+<radialGradient id="tn" cx="0.5" cy="0.32" r="0.95"><stop offset="0" stop-color="#2a1c44"/><stop offset="1" stop-color="#160e2c"/></radialGradient>
+<filter id="glowT" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="120" y="10" width="260" height="40" rx="20" fill="url(#tn)" stroke="#a78bfa" stroke-width="1.3" filter="url(#glowT)"/>
+<text x="250" y="35" text-anchor="middle" fill="#efe9ff" font-size="14" font-weight="600">皮层 · 高级加工</text>
+<ellipse cx="250" cy="132" rx="78" ry="46" fill="none" stroke="#e879f9" stroke-width="1.8" stroke-dasharray="3 4" opacity="0.8"/>
+<text x="250" y="184" text-anchor="middle" fill="#e879f9" font-size="10" font-family="SF Mono,monospace">网状核（闸门·只抑制）</text>
+<ellipse cx="250" cy="128" rx="58" ry="34" fill="url(#tcore)" stroke="#c98adf" stroke-width="1.4" filter="url(#glowT)"/>
+<text x="250" y="125" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">丘脑</text>
+<text x="250" y="141" text-anchor="middle" fill="#e0a8ea" font-size="9.5" font-family="SF Mono,monospace">中继核团</text>
+<path d="M250,94 L250,52" stroke="#5ef0ea" stroke-width="7" stroke-linecap="round" filter="url(#glowT)"/>
+<path d="M243,58 L257,58 L250,47 Z" fill="#5ef0ea" filter="url(#glowT)"/>
+<path d="M280,58 L280,98" stroke="#e879f9" stroke-width="2.4" stroke-dasharray="1.5 5" opacity="0.85"/>
+<path d="M274,92 L286,92 L280,102 Z" fill="#e879f9" opacity="0.9"/>
+<text x="210" y="78" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">上传</text>
+<text x="312" y="78" text-anchor="middle" fill="#e0a8ea" font-size="9.5" font-family="SF Mono,monospace">下传·更多</text>
+<path d="M250,224 L250,166" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" filter="url(#glowT)"/>
+<path d="M243,171 L257,171 L250,160 Z" fill="#fbbf24" filter="url(#glowT)"/>
+<text x="120" y="214" text-anchor="middle" fill="#f0cf88" font-size="10" font-family="SF Mono,monospace">视 听 触 味</text>
+<text x="392" y="214" text-anchor="middle" fill="#8a84a8" font-size="10" font-family="SF Mono,monospace">嗅觉走私道</text>
+<text x="250" y="232" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">感官 → 丘脑（换车+过滤）→ 皮层</text>
+</svg>
+<figcaption>丘脑是通往皮层的中央车站；网状核这层闸门决定放行还是掐掉</figcaption>
+</figure>
+
+<dl class="kv">
+<dt>感觉中继核（Relay nuclei）</dt><dd>各感觉各有专属换乘站：<strong>LGN</strong> 管视觉、<strong>MGN</strong> 管听觉、<strong>VPL/VPM</strong> 管身体触觉。信号在这儿换一棒，再上皮层。</dd>
+<dt>丘脑网状核（TRN）</dt><dd>包在丘脑外面一层薄薄的抑制性（GABA）神经元。它<strong>不往皮层送任何信息</strong>，只回头抑制丘脑的中继细胞——是"哪路放行、哪路掐掉"的闸门。克里克称它为注意的<strong>探照灯</strong>。</dd>
+<dt>高阶核（如枕核 Pulvinar）</dt><dd>不直接接感官，而是连着多个皮层区，像一块"总机板"，帮不同脑区在注意时对齐、协同。</dd>
+<dt>非特异核（如板内核）</dt><dd>连着广泛皮层，管整体的<strong>觉醒与警觉水平</strong>——你清醒的"总电压"有它一份。</dd>
+</dl>
+
+<h2>反直觉：它不是转发器，下传比上传还多</h2>
+<p>和视觉通路里说过的同一个反直觉：以 LGN 为例，它约 <strong>90% 的输入其实来自皮层的下传</strong>，只有约 10% 来自眼睛。也就是说丘脑的"中继"从来不是照单转发，而是被皮层的预测和注意<strong>反复调制</strong>过的——门控与预测，在信号刚进大脑的这一站就已经开始。</p>
+
+<h2>同一道闸，往大了关就是睡去</h2>
+<p>丘脑和皮层之间连成一圈圈来回振荡的<strong>丘脑-皮层回路</strong>。清醒时这圈路畅通，感官信息能一路上达；到了深睡和麻醉，网状核把闸门大面积压住，丘脑-皮层传导被<strong>切断</strong>，感官信号送不进皮层——这正是"失去意识"的关键一环。所以同一套系统：精细拨动是<strong>注意</strong>，整体关断是<strong>睡眠/麻醉</strong>。这条线会在意识篇（Phase B）正面展开。</p>
+
+<div class="links">
+<h3>// 被这些主线引用</h3>
+<p class="who">Topic 2 注意（丘脑门控）· Topic 1 感知即推断（LGN 下传）· Topic 16 意识的开关（丘脑-皮层）</p>
+<h3 style="margin-top:18px">// 延伸</h3>
+<p><a href="https://en.wikipedia.org/wiki/Thalamus" target="_blank">丘脑 Thalamus</a> · <a href="https://en.wikipedia.org/wiki/Thalamic_reticular_nucleus" target="_blank">丘脑网状核（探照灯）</a> · <a href="https://en.wikipedia.org/wiki/Lateral_geniculate_nucleus" target="_blank">LGN 外侧膝状体</a> · <a href="https://en.wikipedia.org/wiki/Pulvinar_nuclei" target="_blank">枕核 Pulvinar</a> · <a href="https://en.wikipedia.org/wiki/Thalamocortical_radiations" target="_blank">丘脑-皮层回路</a></p>
+</div>
+
+<footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+</body></html>
