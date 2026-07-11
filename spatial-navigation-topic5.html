@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 5 · 空间导航与认知地图 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 5 · PHASE A 认知</span>
+<h1>空间导航与认知地图</h1>
+<h2>你脑子里真有一张地图，甚至铺着一层六边形的坐标网</h2>
+<div class="date">2026-07-11 · BigCat</div>
+<p class="pitch">让你不迷路的那套东西，可能也是你想通一个道理时用的那套东西。</p>
+</header>
+
+<div class="intro">
+<p>半夜摸黑起床，你不用开灯也能走到卫生间——脚知道往哪拐、几步到门口。有人问你家乡在哪个方向，你会下意识抬手一指。这种"我在哪、东西在哪、该往哪走"的笃定，平时你根本不当回事。可它背后藏着大脑最惊人的一手：<strong>你颅骨里真的有一张地图</strong>，不是比喻——是一群会在你走到特定地点时"亮起来"的细胞，拼出的一张活地图。更离谱的是，大脑还给这张地图铺了一层<strong>六边形的坐标网格</strong>。这一期就去看这套"内置 GPS"怎么造出来——以及为什么发现它的人拿了诺贝尔奖，为什么它可能根本不只是用来走路的。</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>脑子里有一张"你在哪"的活地图</h2>
+<p>1971 年，科学家把极细的电极插进老鼠的<a class="reflink" href="ref-hippocampus.html">海马</a>，听单个神经元放电。他们发现一件怪事：<strong>有个细胞只在老鼠走到笼子某个特定角落时才拼命放电</strong>，走到别处就安静。旁边另一个细胞管的是另一个角落。这种细胞后来就叫<strong>位置细胞</strong>——每个都像认领了空间里的一小块地盘，你一踏进它的地盘，它就喊"到这儿了"。</p>
+<p>一个细胞管一小块，那一大群位置细胞连起来，就成了一张<strong>铺满整个空间的活地图</strong>：此刻哪几个细胞在亮，就等于在说"你现在站在这儿"。你在屋里走一圈，脑内就有一串位置细胞像跑马灯一样接力点亮，忠实地跟着你的脚步移动。</p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="glowP" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="40" y="20" width="400" height="210" rx="14" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.4"/>
+<text x="240" y="14" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">一间屋子（俯瞰）· 每个色块 = 一个位置细胞的地盘</text>
+<g filter="url(#glowP)">
+<circle cx="110" cy="70" r="30" fill="rgba(52,229,224,0.18)" stroke="#34e5e0" stroke-width="1.4"/>
+<circle cx="235" cy="60" r="30" fill="rgba(167,139,250,0.18)" stroke="#a78bfa" stroke-width="1.4"/>
+<circle cx="360" cy="85" r="30" fill="rgba(232,121,249,0.18)" stroke="#e879f9" stroke-width="1.4"/>
+<circle cx="150" cy="170" r="30" fill="rgba(251,191,36,0.16)" stroke="#fbbf24" stroke-width="1.4"/>
+<circle cx="315" cy="180" r="30" fill="rgba(94,234,212,0.16)" stroke="#5eead4" stroke-width="1.4"/>
+</g>
+<text x="110" y="74" text-anchor="middle" fill="#cffaf7" font-size="11" font-family="SF Mono,monospace">细胞A</text>
+<text x="235" y="64" text-anchor="middle" fill="#e2d8ff" font-size="11" font-family="SF Mono,monospace">细胞B</text>
+<text x="360" y="89" text-anchor="middle" fill="#f8d8fb" font-size="11" font-family="SF Mono,monospace">细胞C</text>
+<text x="150" y="174" text-anchor="middle" fill="#faeec8" font-size="11" font-family="SF Mono,monospace">细胞D</text>
+<text x="315" y="184" text-anchor="middle" fill="#c7f7ef" font-size="11" font-family="SF Mono,monospace">细胞E</text>
+<path d="M70,205 Q120,150 150,170 Q200,190 235,60 Q270,30 315,180 Q345,150 360,85" fill="none" stroke="#fff" stroke-width="1.8" stroke-dasharray="4 5" opacity="0.55"/>
+<text x="70" y="220" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">走过的路线：踩到谁的地盘，谁就亮</text>
+</svg>
+<figcaption>位置细胞：各认领一小块地盘；一整群连起来就是一张"你在哪"的活地图</figcaption>
+</figure>
+
+<p>这解开了一个更老的谜。1948 年，心理学家托尔曼发现：老鼠跑迷宫，脑子里装的<strong>不是</strong>一串"先左转再右转"的动作口诀。你把常走的路堵死，它能立刻抄一条从没走过的近道直奔目标——这只有一个解释：它心里存的是一张<strong>俯瞰全局的地图</strong>，而不是死记的路线。托尔曼给这张图起了个名字——<strong>认知地图</strong>。二十多年后的位置细胞，正是这张图的"硬件"。</p>
+
+<p class="en-brief"><b>EN</b> In 1971 O'Keefe found <b>place cells</b> in the hippocampus: a neuron that fires only when the animal is in one specific spot. A whole population of them tiles space into a living map — which cells are lit says "you are here." This is the hardware behind Tolman's 1948 <b>cognitive map</b>: rats take never-walked shortcuts, so they store a survey-style map, not a memorized turn-by-turn route.</p>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>大脑给世界铺了一张六边形坐标网</h2>
+<p>位置细胞有个说不通的地方：它每认一块地盘，好像都得靠"这里有张桌子、那里有扇窗"这类地标才认得出。可要是一片空荡荡、没有任何地标的雪原呢？你照样能估出自己走了多远。大脑一定还有一套<strong>不靠地标、纯靠距离和方向</strong>的坐标系统。</p>
+<p>2005 年，莫泽夫妇在紧挨着海马的<strong>内嗅皮层</strong>里找到了它，结果震动整个领域。这里的细胞叫<strong>网格细胞</strong>，它的放电模式匪夷所思：<strong>同一个细胞会在许多个地点放电，而这些地点在空间里排成一张规整的、正六边形的网</strong>——就像有人拿蜂窝状的坐标纸，"啪"地铺满了整个房间。你走到任何一个网格顶点，它就响一次。</p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="glowG" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="30" y="20" width="420" height="210" rx="14" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.4"/>
+<text x="240" y="14" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">同一个网格细胞放电的所有地点（俯瞰一间屋）</text>
+<g stroke="#5b4f86" stroke-width="1" opacity="0.5" fill="none">
+<path d="M70,60 L120,90 L120,150 L70,180 L20,150 L20,90 Z" transform="translate(0,0)"/>
+</g>
+<!-- hexagonal lattice of firing dots: rows offset -->
+<g fill="#fbbf24" filter="url(#glowG)">
+<circle cx="95" cy="55" r="8"/><circle cx="175" cy="55" r="8"/><circle cx="255" cy="55" r="8"/><circle cx="335" cy="55" r="8"/><circle cx="415" cy="55" r="8"/>
+<circle cx="135" cy="105" r="8"/><circle cx="215" cy="105" r="8"/><circle cx="295" cy="105" r="8"/><circle cx="375" cy="105" r="8"/><circle cx="55" cy="105" r="8"/>
+<circle cx="95" cy="155" r="8"/><circle cx="175" cy="155" r="8"/><circle cx="255" cy="155" r="8"/><circle cx="335" cy="155" r="8"/><circle cx="415" cy="155" r="8"/>
+<circle cx="135" cy="205" r="8"/><circle cx="215" cy="205" r="8"/><circle cx="295" cy="205" r="8"/><circle cx="375" cy="205" r="8"/><circle cx="55" cy="205" r="8"/>
+</g>
+<!-- highlight one hexagon -->
+<path d="M175,55 L255,55 L295,105 L255,155 L175,155 L135,105 Z" fill="none" stroke="#34e5e0" stroke-width="1.8" stroke-dasharray="3 3"/>
+<text x="215" y="112" text-anchor="middle" fill="#7bf0e8" font-size="10" font-family="SF Mono,monospace">正六边形</text>
+</svg>
+<figcaption>网格细胞：一个细胞在许多地点放电，这些点排成完美的六边形网——大脑内建的坐标纸</figcaption>
+</figure>
+
+<p>这一下就补齐了位置细胞缺的那块：网格细胞不管有没有地标，只按<strong>"往哪个方向走了多远"</strong>持续给空间打上刻度，像一把量遍全屋的尺。有了这把尺，位置细胞才知道该在哪儿亮。发现位置细胞的<strong>奥基夫</strong>，和发现网格细胞的<strong>莫泽夫妇</strong>，一起拿下了 <strong>2014 年诺贝尔生理学或医学奖</strong>——表彰他们找到了大脑里这套"定位系统"。（这套海马 + 内嗅的回路怎么接、各区管什么，<a class="reflink" href="ref-hippocampus.html">海马与内嗅</a>）</p>
+
+<p class="en-brief"><b>EN</b> Place cells seem to need landmarks; but you can gauge distance on a featureless snowfield too. In 2005 the Mosers found the missing piece next door in the <b>entorhinal cortex</b>: <b>grid cells</b>, each firing at many locations that form a perfect hexagonal lattice — a built-in coordinate grid the brain lays over the world, scaled purely by how far and which way you've moved. O'Keefe and the Mosers shared the <b>2014 Nobel Prize</b> for this inner positioning system.</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>让 AI 自己学"怎么导航"，会冒出网格细胞——这不是编的。2018 年有团队训练一个网络去做路径估算（给它一串移动、要它随时报出自己在哪），没告诉它任何"六边形"的事；结果为了把活干好，网络内部<b>自发长出了酷似网格细胞的六边形编码</b>。这透露了一件深的事：六边形网格不是进化随手挑的花样，而是"在平面上高效表示位置"这个数学问题<b>逼出来的最优解</b>——碳基的脑和硅基的网络,被同一道题推到了同一个答案上。</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>没有信号，也能一直知道自己在哪</h2>
+<p>撒哈拉有种蚂蚁，能从窝里出发、七拐八绕跑出上百米去觅食，找到食物后<strong>不循原路</strong>，而是掉头走一条笔直的近道回窝。它没有面包屑、没有 GPS，靠的是一路上<strong>把每一步的方向和步数悄悄加起来</strong>，实时算出"我离窝有多远、在哪个方位"。这套本事叫<strong>路径整合</strong>——蒙上你的眼睛在屋里走几步再问你门在哪，你多半也指得八九不离十，用的是同一套。</p>
+<p>要做这道累加题，大脑还得先知道"我此刻朝哪个方向"。这活儿交给<strong>头朝向细胞</strong>：它们像一根内置的指南针，你脸朝北时某个细胞亮、转向东时换另一个亮，跟你脑袋的朝向死死绑定。再配上专门盯着墙壁和边界的<strong>边界细胞</strong>——它们在你靠近一堵墙时放电，等于给这张飘着的地图钉上几颗图钉、防止它越用越歪。</p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mHome" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"/></marker>
+</defs>
+<rect x="30" y="20" width="420" height="210" rx="14" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.4"/>
+<!-- nest -->
+<circle cx="90" cy="185" r="10" fill="#fbbf24"/><text x="90" y="212" text-anchor="middle" fill="#f6dfa0" font-size="10.5" font-family="SF Mono,monospace">窝</text>
+<!-- wandering outbound path -->
+<path d="M90,185 Q140,120 180,150 Q230,180 250,110 Q265,60 330,70 Q380,78 370,120" fill="none" stroke="#a78bfa" stroke-width="2.2"/>
+<circle cx="370" cy="120" r="7" fill="#e879f9"/><text x="392" y="124" fill="#f3c2f8" font-size="10" font-family="SF Mono,monospace">食物</text>
+<text x="150" y="105" fill="#b8a8e0" font-size="9.5" font-family="SF Mono,monospace">觅食：七拐八绕</text>
+<!-- straight beeline home -->
+<line x1="366" y1="128" x2="100" y2="182" stroke="#34e5e0" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#mHome)"/>
+<text x="250" y="172" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">回程：一条直线抄近道</text>
+<!-- compass -->
+<g transform="translate(408,190)">
+<circle r="20" fill="rgba(52,229,224,0.06)" stroke="#5eead4" stroke-width="1.2"/>
+<path d="M0,-15 L4,0 L0,4 L-4,0 Z" fill="#5eead4"/><path d="M0,15 L4,0 L0,-4 L-4,0 Z" fill="#5b4f86"/>
+<text x="0" y="-24" text-anchor="middle" fill="#8f89ad" font-size="8" font-family="SF Mono,monospace">头朝向</text>
+</g>
+</svg>
+<figcaption>路径整合：把一路的方向 × 距离累加，就算出回家的直线——头朝向细胞当指南针，边界细胞钉住参照</figcaption>
+</figure>
+
+<p class="en-brief"><b>EN</b> Desert ants forage a wandering hundred-metre loop, then beeline straight home with no trail or GPS — by summing each step's direction and distance. This is <b>path integration</b>, and you do it blindfolded too. It needs a heading: <b>head direction cells</b> act as an internal compass, and <b>border cells</b> fire near walls, pinning the drifting map to fixed references so accumulated error doesn't send it astray.</p>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>这张地图，可能也画你的念头</h2>
+<p>到这儿有个绷不住的想法：这套又是地图、又是坐标网的精巧机器，进化出来<strong>只是</strong>为了让你别在树林里迷路？太浪费了。近十年最激动人心的发现是：<strong>同一套机器，也在给完全不是空间的东西"画地图"</strong>。</p>
+<p>有实验让人去学一些抽象关系——比如各种鸟的脖子长短、腿长短，两两组合成一个"概念空间"。结果扫描发现，人脑在这个纯抽象的空间里"移动"念头时，内嗅皮层冒出了<strong>和走路时一样的六边形网格信号</strong>。仿佛大脑处理"这只鸟和那只鸟差多远"，用的就是它处理"这个路口离那个路口多远"的老办法。这也照应了 <a class="reflink" href="ref-hippocampus.html">海马</a> 既管地图、又管记忆这件怪事——<strong>记住一件事，某种程度上就是给它在某张"地图"上安个位置</strong>。空间，也许只是大脑组织一切关系时，最先学会、又最顺手拿来复用的那套脚手架。</p>
+
+<figure>
+<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<line x1="240" y1="24" x2="240" y2="212" stroke="#2a2748" stroke-width="1" stroke-dasharray="4 5"/>
+<text x="125" y="20" text-anchor="middle" fill="#34e5e0" font-size="11" font-family="SF Mono,monospace">真实空间</text>
+<text x="358" y="20" text-anchor="middle" fill="#e879f9" font-size="11" font-family="SF Mono,monospace">概念空间</text>
+<!-- left: room with dots -->
+<rect x="30" y="36" width="180" height="160" rx="10" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.2"/>
+<g fill="#34e5e0"><circle cx="70" cy="70" r="5"/><circle cx="120" cy="60" r="5"/><circle cx="170" cy="80" r="5"/><circle cx="95" cy="120" r="5"/><circle cx="150" cy="130" r="5"/><circle cx="65" cy="165" r="5"/><circle cx="130" cy="175" r="5"/><circle cx="185" cy="155" r="5"/></g>
+<text x="120" y="210" text-anchor="middle" fill="#8f89ad" font-size="9" font-family="SF Mono,monospace">路口·地点</text>
+<!-- right: concept axes -->
+<rect x="270" y="36" width="180" height="160" rx="10" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.2"/>
+<line x1="290" y1="180" x2="290" y2="52" stroke="#5b4f86" stroke-width="1.2"/><line x1="290" y1="180" x2="435" y2="180" stroke="#5b4f86" stroke-width="1.2"/>
+<text x="284" y="48" text-anchor="end" fill="#8f89ad" font-size="8" font-family="SF Mono,monospace">腿长</text>
+<text x="432" y="194" text-anchor="end" fill="#8f89ad" font-size="8" font-family="SF Mono,monospace">脖子长</text>
+<g fill="#e879f9"><circle cx="320" cy="150" r="5"/><circle cx="360" cy="120" r="5"/><circle cx="400" cy="90" r="5"/><circle cx="345" cy="80" r="5"/><circle cx="410" cy="150" r="5"/><circle cx="375" cy="160" r="5"/></g>
+<text x="360" y="210" text-anchor="middle" fill="#8f89ad" font-size="9" font-family="SF Mono,monospace">不同的鸟</text>
+<!-- shared hex glyph over the divider -->
+<path d="M228,110 L252,110 L264,128 L252,146 L228,146 L216,128 Z" fill="none" stroke="#fbbf24" stroke-width="1.6"/>
+<text x="240" y="164" text-anchor="middle" fill="#f6dfa0" font-size="8.5" font-family="SF Mono,monospace">同一套网格</text>
+</svg>
+<figcaption>同一套六边形坐标，既量真实的路口距离，也量抽象概念之间的"远近"</figcaption>
+</figure>
+
+<p class="en-brief"><b>EN</b> Why evolve this elaborate map-and-grid machine just to avoid getting lost in the woods? The last decade's thrill: the same machine maps non-spatial things too. When people navigate an abstract "concept space" (say, birds varying in neck and leg length), the entorhinal cortex shows the <b>same hexagonal grid signal</b> as during walking. It echoes why the hippocampus does both maps and memory: to remember something is, in a sense, to give it a place on a map. Space may be the scaffold the brain reuses to organize every kind of relation.</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>AI 里最贴的对读，是强化学习的<b>后继表征</b>（successor representation）。普通导航地图只记"每个地方长啥样"；后继表征更进一步，记的是"<b>从这儿出发，接下来大概率会到哪些地方</b>"——不是静态的地形，而是一张<b>预测式的地图</b>。而海马位置细胞的活动，惊人地就长这个样子：它编码的不单是"你在哪"，还偷偷预判了"你接着可能去哪"。更晚近的模型（Tolman-Eichenbaum Machine，名字正是致敬前面那两位）干脆用<b>一套网络同时长出网格细胞、位置细胞、还兼做关系记忆</b>——把导航和记忆缝成了同一件事，正是这一期反复撞见的那个主题。</p>
+</div>
+</div>
+
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"大脑天生带一套空间坐标框架、还拿它去装抽象念头"——这个发现，好几门老学问从不同门口撞见过：</p>
+<ul>
+<li><b>哲学 · 康德</b>：康德两百多年前断言，空间<b>不是</b>我们从经验里学来的东西，而是心灵<b>先天自带</b>的一副"框架"，一切经验都得先被塞进这副框架才谈得上被感知。网格细胞几乎是这句话的神经版注脚——大脑确实预装了一套坐标网，世界是被摊到这张网上才被认出的。</li>
+<li><b>古典记忆术 · 记忆宫殿</b>：古希腊罗马的演说家（西塞罗记述的"位所法"）背长篇演讲，靠的是把一个个要点<b>安放到一座想象建筑的各个房间里</b>，演讲时在心里走一遍就一一取回。他们并不知道海马同时管地图和记忆，却已在无意中<b>借空间地图给记忆当货架</b>——今天的记忆冠军还在用这招。</li>
+<li><b>认知语言学 · 莱考夫《我们赖以生存的隐喻》</b>：留意你怎么谈抽象事——关系"走得近"、地位"高"、心情"低落"、"前"途、陷入"低谷"。莱考夫指出，人几乎离不开<b>空间隐喻</b>来思考抽象概念。这和"概念空间复用了网格坐标"遥相呼应：也许我们用空间的词说思想，正因为大脑本就用空间的<b>回路</b>在处理思想。</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>天天靠导航软件带路，会把这套"内置地图"用废吗？</summary><div>有点线索值得警惕。研究发现伦敦老出租车司机——那些得把整座城市塞进脑子、考"知识大全"的人——<strong>海马后部明显比常人大</strong>，而且开得越久越大，像肌肉被练粗。反过来推，一路只盯着箭头"到下个路口右转"，你调用的是死记路线那套，几乎不动用画地图的本事。这不等于导航软件让人变傻，但它确实提示：<strong>方向感是练出来的</strong>，偶尔关掉软件、自己认认路，大概不亏。</div></details>
+<details><summary>为什么有人天生方向感极好，有人一出地铁站就懵？</summary><div>差异是真实存在的，且部分和这套系统的稳定性有关——比如头朝向和网格信号校准得准不准、有多依赖地标。它也不是铁板一块：方向感很吃练习和策略（爱主动建"全局地图"的人，比只记"路线口诀"的人更不容易迷）。有意思的是，<strong>空间导航能力的衰退，是阿尔茨海默病最早的信号之一</strong>——因为内嗅皮层恰恰是这病最先攻击的地方，这条线索 Topic 25、28 还会回来。</div></details>
+<details><summary>如果空间和抽象思维真共用一套地图，那"想不通一个问题"和"迷路"会是同一种卡住吗？</summary><div>这是个还在敞开的猜想，但越来越有分量。若推理某种意义上就是在概念空间里"找路"，那"卡壳"或许真类似"在没有好地图的区域迷了路"；而"想通了"就像忽然看清了全局、抄到一条近道。它甚至能解释我们为何爱用图、爱画思维导图——把抽象问题<strong>还原成空间</strong>，等于把它交还给大脑最擅长的那套导航回路去处理。这条思路，也悄悄连着后面讲创造力与洞察的篇章。</div></details>
+<details><summary>睡觉时，这张地图在干嘛？</summary><div>接上一期（长时记忆）的重放：深睡里，海马会把你白天走过的路线<strong>压缩着重放</strong>一遍遍，一串位置细胞按原顺序飞快点亮。更妙的是，它有时还会重放<strong>你根本没走过</strong>的路径，像在"预演"明天可能的走法——地图不只被用来记住来路，也被拿来<strong>模拟去路</strong>。空间、记忆、想象，在海马这里越看越像同一件事的不同侧面。</div></details>
+</div>
+
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Place_cell" target="_blank">位置细胞 Place cell</a> — 海马里"你在哪"的活地图（O'Keefe, 1971）</li>
+<li><a href="https://en.wikipedia.org/wiki/Grid_cell" target="_blank">网格细胞 Grid cell</a> — 内嗅皮层的六边形坐标网（Moser, 2005）</li>
+<li><a href="https://en.wikipedia.org/wiki/Cognitive_map" target="_blank">认知地图 Cognitive map</a> — 托尔曼的"俯瞰地图"与抄近道的老鼠</li>
+<li><a href="https://en.wikipedia.org/wiki/Path_integration" target="_blank">路径整合 Path integration</a> — 无 GPS 也能回家的累加导航</li>
+<li><a href="https://en.wikipedia.org/wiki/Head_direction_cells" target="_blank">头朝向细胞 Head direction cells</a> — 大脑内置的指南针</li>
+<li><a href="https://en.wikipedia.org/wiki/John_O%27Keefe_(neuroscientist)" target="_blank">O'Keefe 与莫泽夫妇 · 2014 诺奖</a> — 大脑"定位系统"的发现史</li>
+<li><a href="https://en.wikipedia.org/wiki/Entorhinal_cortex" target="_blank">内嗅皮层 Entorhinal cortex</a> — 网格细胞的家、也是阿尔茨海默最先攻击处</li>
+<li><a href="https://en.wikipedia.org/wiki/Peter_Dayan" target="_blank">Peter Dayan · 后继表征</a> — AI 里"预测式地图"（successor representation）的源头</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 5 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+</body></html>

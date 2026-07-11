@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 5 · Spatial Navigation & Cognitive Maps — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 5 · PHASE A COGNITION</span>
+<h1>Spatial Navigation & Cognitive Maps</h1>
+<h2>Your skull really holds a map — with a hexagonal coordinate grid laid over it</h2>
+<div class="date">2026-07-11 · BigCat</div>
+<p class="pitch">The machinery that keeps you from getting lost may be the same machinery you use to think a problem through.</p>
+</header>
+
+<div class="intro">
+<p>You get up in the dark and reach the bathroom without a light — your feet know where to turn, how many steps to the door. Ask someone which way their hometown is and they'll point almost before thinking. That quiet certainty of "where I am, where things are, which way to go" is something you never give a second thought. Yet behind it is one of the brain's most astonishing tricks: <strong>there is an actual map inside your skull</strong> — not a metaphor, but a living map drawn by a crowd of cells that "light up" when you stand in a particular place. Stranger still, the brain lays a <strong>hexagonal coordinate grid</strong> over that map. This issue we go see how this "inner GPS" is built — why the people who found it won a Nobel Prize, and why it may not be for getting around at all.</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>There's a living "you are here" map inside your head</h2>
+<p>In 1971, scientists slid a hair-thin electrode into a rat's <a class="reflink" href="ref-hippocampus.en.html">hippocampus</a> and listened to single neurons fire. They found something odd: <strong>one cell fired furiously only when the rat was in one particular corner of the cage</strong> and went quiet everywhere else. A neighboring cell owned a different corner. These came to be called <strong>place cells</strong> — each one stakes a claim to a small patch of space, and the moment you step onto its patch it shouts "we're here."</p>
+<p>If one cell covers one patch, then a whole crowd of place cells strung together makes <strong>a living map that tiles the entire space</strong>: which cells are lit right now amounts to "you are standing here." Walk a loop around a room and a chain of place cells lights up like a relay, faithfully tracking your feet.</p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="glowP" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="40" y="20" width="400" height="210" rx="14" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.4"/>
+<text x="240" y="14" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">a room (top view) · each patch = one place cell's turf</text>
+<g filter="url(#glowP)">
+<circle cx="110" cy="70" r="30" fill="rgba(52,229,224,0.18)" stroke="#34e5e0" stroke-width="1.4"/>
+<circle cx="235" cy="60" r="30" fill="rgba(167,139,250,0.18)" stroke="#a78bfa" stroke-width="1.4"/>
+<circle cx="360" cy="85" r="30" fill="rgba(232,121,249,0.18)" stroke="#e879f9" stroke-width="1.4"/>
+<circle cx="150" cy="170" r="30" fill="rgba(251,191,36,0.16)" stroke="#fbbf24" stroke-width="1.4"/>
+<circle cx="315" cy="180" r="30" fill="rgba(94,234,212,0.16)" stroke="#5eead4" stroke-width="1.4"/>
+</g>
+<text x="110" y="74" text-anchor="middle" fill="#cffaf7" font-size="11" font-family="SF Mono,monospace">cell A</text>
+<text x="235" y="64" text-anchor="middle" fill="#e2d8ff" font-size="11" font-family="SF Mono,monospace">cell B</text>
+<text x="360" y="89" text-anchor="middle" fill="#f8d8fb" font-size="11" font-family="SF Mono,monospace">cell C</text>
+<text x="150" y="174" text-anchor="middle" fill="#faeec8" font-size="11" font-family="SF Mono,monospace">cell D</text>
+<text x="315" y="184" text-anchor="middle" fill="#c7f7ef" font-size="11" font-family="SF Mono,monospace">cell E</text>
+<path d="M70,205 Q120,150 150,170 Q200,190 235,60 Q270,30 315,180 Q345,150 360,85" fill="none" stroke="#fff" stroke-width="1.8" stroke-dasharray="4 5" opacity="0.55"/>
+<text x="70" y="220" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">the path walked: step on a turf, that cell lights</text>
+</svg>
+<figcaption>Place cells each claim a patch; a whole crowd strung together is a living "you are here" map</figcaption>
+</figure>
+
+<p>This cracked an older puzzle. In 1948 the psychologist Tolman noticed that a rat running a maze does <strong>not</strong> carry a string of "turn left, then right" instructions. Block the usual route and it will instantly cut a brand-new shortcut straight to the goal — which has only one explanation: it holds a <strong>survey-style, bird's-eye map</strong>, not a memorized set of turns. Tolman named that map the <strong>cognitive map</strong>. The place cells found two decades later are its hardware.</p>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>The brain lays a hexagonal coordinate grid over the world</h2>
+<p>Place cells have a gap. Each one seems to recognize its patch by leaning on landmarks — "there's a table here, a window there." But what about a blank, featureless snowfield with no landmarks at all? You can still gauge roughly how far you've walked. The brain must have a second system that works <strong>purely from distance and direction</strong>, no landmarks needed.</p>
+<p>In 2005 the Mosers found it right next door, in the <strong>entorhinal cortex</strong>, and it shook the whole field. The cells here are called <strong>grid cells</strong>, and their firing pattern is uncanny: <strong>a single cell fires at many locations, and those locations arrange themselves into a neat, regular pattern of equilateral triangles — a hexagonal lattice</strong>, as if someone took honeycomb graph paper and snapped it down over the whole room. Step onto any vertex of the grid and the cell pings once.</p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="glowG" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="30" y="20" width="420" height="210" rx="14" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.4"/>
+<text x="240" y="14" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">every spot one grid cell fires (top view of a room)</text>
+<g fill="#fbbf24" filter="url(#glowG)">
+<circle cx="95" cy="55" r="8"/><circle cx="175" cy="55" r="8"/><circle cx="255" cy="55" r="8"/><circle cx="335" cy="55" r="8"/><circle cx="415" cy="55" r="8"/>
+<circle cx="135" cy="105" r="8"/><circle cx="215" cy="105" r="8"/><circle cx="295" cy="105" r="8"/><circle cx="375" cy="105" r="8"/><circle cx="55" cy="105" r="8"/>
+<circle cx="95" cy="155" r="8"/><circle cx="175" cy="155" r="8"/><circle cx="255" cy="155" r="8"/><circle cx="335" cy="155" r="8"/><circle cx="415" cy="155" r="8"/>
+<circle cx="135" cy="205" r="8"/><circle cx="215" cy="205" r="8"/><circle cx="295" cy="205" r="8"/><circle cx="375" cy="205" r="8"/><circle cx="55" cy="205" r="8"/>
+</g>
+<path d="M175,55 L255,55 L295,105 L255,155 L175,155 L135,105 Z" fill="none" stroke="#34e5e0" stroke-width="1.8" stroke-dasharray="3 3"/>
+<text x="215" y="112" text-anchor="middle" fill="#7bf0e8" font-size="10" font-family="SF Mono,monospace">hexagon</text>
+</svg>
+<figcaption>Grid cells: one cell fires at many spots, and those spots form a perfect hexagonal lattice — the brain's built-in graph paper</figcaption>
+</figure>
+
+<p>This fills in exactly what place cells were missing: grid cells keep ticking off space by <strong>"which way and how far you've moved"</strong>, landmarks or not — a ruler laid across the whole room. With that ruler, place cells know where to light up. <strong>O'Keefe</strong>, who found place cells, and the <strong>Mosers</strong>, who found grid cells, together won the <strong>2014 Nobel Prize in Physiology or Medicine</strong> for uncovering this positioning system in the brain. (For how the hippocampus–entorhinal circuit is wired and what each part does, see <a class="reflink" href="ref-hippocampus.en.html">hippocampus & entorhinal</a>.)</p>
+
+<div class="ai">
+<h4>The AI reading</h4>
+<p>Let an AI learn navigation on its own and grid cells pop out — this isn't made up. In 2018 a team trained a network to do path estimation (feed it a stream of movements, ask it to report where it is at all times), telling it nothing about "hexagons"; to do the job well, the network <b>spontaneously grew hexagonal, grid-cell-like codes</b> inside itself. That hints at something deep: the hexagonal grid isn't a whim of evolution but the <b>optimal solution forced out by the math</b> of "efficiently representing position on a plane" — carbon brains and silicon networks pushed by the same problem to the same answer.</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Knowing where you are even with no signal</h2>
+<p>There's a Saharan ant that leaves its nest, winds a hundred metres out on a foraging trek, finds food, and then — <strong>not by retracing its steps</strong> — turns and walks a dead-straight shortcut home. No breadcrumbs, no GPS. It manages this by quietly <strong>summing every step's direction and count</strong> along the way, computing in real time "how far I am from the nest and in which direction." This skill is called <strong>path integration</strong> — blindfold you, walk you a few steps around a room, ask where the door is, and you'll usually point pretty close, using the same trick.</p>
+<p>To do that running sum, the brain first has to know "which way am I facing right now." That job goes to <strong>head direction cells</strong>: like a built-in compass, one cell fires when you face north, another takes over when you turn east, locked to the heading of your head. Add <strong>border cells</strong>, which watch walls and boundaries — they fire as you near a wall, driving a few pins into this floating map so it doesn't drift ever more crooked with use.</p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mHome" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"/></marker>
+</defs>
+<rect x="30" y="20" width="420" height="210" rx="14" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.4"/>
+<circle cx="90" cy="185" r="10" fill="#fbbf24"/><text x="90" y="212" text-anchor="middle" fill="#f6dfa0" font-size="10.5" font-family="SF Mono,monospace">nest</text>
+<path d="M90,185 Q140,120 180,150 Q230,180 250,110 Q265,60 330,70 Q380,78 370,120" fill="none" stroke="#a78bfa" stroke-width="2.2"/>
+<circle cx="370" cy="120" r="7" fill="#e879f9"/><text x="392" y="124" fill="#f3c2f8" font-size="10" font-family="SF Mono,monospace">food</text>
+<text x="150" y="105" fill="#b8a8e0" font-size="9.5" font-family="SF Mono,monospace">foraging: winding out</text>
+<line x1="366" y1="128" x2="100" y2="182" stroke="#34e5e0" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#mHome)"/>
+<text x="250" y="172" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">return: a straight-line shortcut</text>
+<g transform="translate(408,190)">
+<circle r="20" fill="rgba(52,229,224,0.06)" stroke="#5eead4" stroke-width="1.2"/>
+<path d="M0,-15 L4,0 L0,4 L-4,0 Z" fill="#5eead4"/><path d="M0,15 L4,0 L0,-4 L-4,0 Z" fill="#5b4f86"/>
+<text x="0" y="-24" text-anchor="middle" fill="#8f89ad" font-size="8" font-family="SF Mono,monospace">heading</text>
+</g>
+</svg>
+<figcaption>Path integration: sum a trek's direction × distance and out falls the straight line home — head direction cells as compass, border cells pinning the reference</figcaption>
+</figure>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>This map may draw your thoughts too</h2>
+<p>Here a thought becomes hard to resist: did this elaborate machine — part map, part coordinate grid — evolve <strong>only</strong> to keep you from getting lost in the woods? That would be a waste. The most thrilling finding of the last decade is that <strong>the same machine also draws "maps" of things that aren't spatial at all</strong>.</p>
+<p>In one experiment people learned a set of abstract relations — say birds varying in neck length and leg length, combined into a "concept space." Scans then showed that as the brain "moved" thoughts through this purely abstract space, the entorhinal cortex threw off <strong>the same hexagonal grid signal it uses when you walk</strong>. As if the brain handles "how far is this bird from that one" with the very method it uses for "how far is this intersection from that one." This echoes the strange fact that the <a class="reflink" href="ref-hippocampus.en.html">hippocampus</a> does both maps and memory — <strong>to remember something is, in a sense, to give it a place on some map</strong>. Space may just be the scaffolding the brain learned first, and then reached for again and again, to organize every kind of relation.</p>
+
+<figure>
+<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<line x1="240" y1="24" x2="240" y2="212" stroke="#2a2748" stroke-width="1" stroke-dasharray="4 5"/>
+<text x="125" y="20" text-anchor="middle" fill="#34e5e0" font-size="11" font-family="SF Mono,monospace">real space</text>
+<text x="358" y="20" text-anchor="middle" fill="#e879f9" font-size="11" font-family="SF Mono,monospace">concept space</text>
+<rect x="30" y="36" width="180" height="160" rx="10" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.2"/>
+<g fill="#34e5e0"><circle cx="70" cy="70" r="5"/><circle cx="120" cy="60" r="5"/><circle cx="170" cy="80" r="5"/><circle cx="95" cy="120" r="5"/><circle cx="150" cy="130" r="5"/><circle cx="65" cy="165" r="5"/><circle cx="130" cy="175" r="5"/><circle cx="185" cy="155" r="5"/></g>
+<text x="120" y="210" text-anchor="middle" fill="#8f89ad" font-size="9" font-family="SF Mono,monospace">intersections · places</text>
+<rect x="270" y="36" width="180" height="160" rx="10" fill="rgba(255,255,255,0.02)" stroke="#3a3560" stroke-width="1.2"/>
+<line x1="290" y1="180" x2="290" y2="52" stroke="#5b4f86" stroke-width="1.2"/><line x1="290" y1="180" x2="435" y2="180" stroke="#5b4f86" stroke-width="1.2"/>
+<text x="284" y="48" text-anchor="end" fill="#8f89ad" font-size="8" font-family="SF Mono,monospace">leg</text>
+<text x="432" y="194" text-anchor="end" fill="#8f89ad" font-size="8" font-family="SF Mono,monospace">neck</text>
+<g fill="#e879f9"><circle cx="320" cy="150" r="5"/><circle cx="360" cy="120" r="5"/><circle cx="400" cy="90" r="5"/><circle cx="345" cy="80" r="5"/><circle cx="410" cy="150" r="5"/><circle cx="375" cy="160" r="5"/></g>
+<text x="360" y="210" text-anchor="middle" fill="#8f89ad" font-size="9" font-family="SF Mono,monospace">different birds</text>
+<path d="M228,110 L252,110 L264,128 L252,146 L228,146 L216,128 Z" fill="none" stroke="#fbbf24" stroke-width="1.6"/>
+<text x="240" y="164" text-anchor="middle" fill="#f6dfa0" font-size="8.5" font-family="SF Mono,monospace">same grid</text>
+</svg>
+<figcaption>One hexagonal coordinate system measures both distances between real intersections and "distances" between abstract concepts</figcaption>
+</figure>
+
+<div class="ai">
+<h4>The AI reading</h4>
+<p>The tightest AI parallel is the <b>successor representation</b> in reinforcement learning. An ordinary navigation map records "what each place looks like"; the successor representation goes further and records "<b>starting from here, which places am I likely to reach next</b>" — not static terrain, but a <b>predictive map</b>. And the activity of hippocampal place cells looks strikingly like exactly this: it encodes not just "where you are" but a quiet forecast of "where you're likely to head." A more recent model — the <b>Tolman-Eichenbaum Machine</b> (the name a tribute to the two figures above) — has a <b>single network grow grid cells, place cells, and relational memory all at once</b>, stitching navigation and memory into one thing — the very theme this issue keeps running into.</p>
+</div>
+</div>
+
+<div class="crossx">
+<h3>🌀 Border-crossings · cross-disciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"The brain is born with a spatial coordinate frame, and reuses it to hold abstract thoughts" — several old disciplines bumped into this from different doors:</p>
+<ul>
+<li><b>Philosophy · Kant</b>: Two centuries ago Kant argued that space is <b>not</b> something we learn from experience but a "framework" the mind <b>brings innately</b> — all experience must first be slotted into it to be perceived at all. Grid cells read almost like a neural footnote to that line: the brain really does come pre-loaded with a coordinate grid, and the world is recognized only once it's spread across that grid.</li>
+<li><b>Classical mnemonics · the memory palace</b>: Greek and Roman orators (the "method of loci" that Cicero describes) memorized long speeches by <b>placing each point in the rooms of an imagined building</b>, then mentally walking through to retrieve them one by one. They had no idea the hippocampus does maps and memory together, yet they had already <b>used the spatial map as a shelf for memory</b> — a trick today's memory champions still lean on.</li>
+<li><b>Cognitive linguistics · Lakoff, <i>Metaphors We Live By</i></b>: Notice how you talk about abstractions — a relationship "grows close," status is "high," mood is "low," a "path" ahead, sinking into a "trough." Lakoff argued we can barely think about abstract concepts without <b>spatial metaphor</b>. That rhymes with "concept space reuses the grid coordinates": maybe we speak of thought in spatial words because the brain processes thought with spatial <b>circuitry</b>.</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>Does leaning on turn-by-turn apps let this inner map waste away?</summary><div>There's a clue worth heeding. Studies found that veteran London cab drivers — the ones who have to cram the whole city into their heads and pass "the Knowledge" exam — have a <strong>markedly larger posterior hippocampus</strong>, and the longer they drive the larger it grows, like a muscle bulked up by use. Run that backwards: when you only stare at an arrow saying "right at the next junction," you're using the memorized-route machinery and barely engaging the map-drawing kind. That doesn't mean navigation apps make you dumb, but it does suggest your <strong>sense of direction is trained</strong> — switching the app off now and then and finding your own way is probably not a loss.</div></details>
+<details><summary>Why are some people born with a great sense of direction and others lost the moment they leave the metro?</summary><div>The difference is real, and partly tied to how stable this system runs — how accurately head direction and grid signals stay calibrated, how much they lean on landmarks. It's not fixed, though: direction sense responds strongly to practice and strategy (people who actively build a "global map" get lost less than those who memorize "route recipes"). Tellingly, <strong>decline in spatial navigation is one of the earliest signs of Alzheimer's</strong> — because the entorhinal cortex is exactly where that disease strikes first, a thread Topics 25 and 28 will pick back up.</div></details>
+<details><summary>If space and abstract thought really share one map, is "can't figure out a problem" the same kind of stuck as "lost"?</summary><div>This is still an open conjecture, but a weightier one all the time. If reasoning is, in some sense, "finding a path" through concept space, then "getting stuck" may genuinely resemble "lost in a region with no good map" — and "figuring it out" is like suddenly seeing the whole layout and cutting a shortcut. It could even explain why we love diagrams and mind maps: turning an abstract problem <strong>back into space</strong> hands it to the navigation circuitry the brain is best at. This thread quietly connects to later issues on creativity and insight.</div></details>
+<details><summary>What is this map doing while you sleep?</summary><div>Picking up last issue's replay: in deep sleep the hippocampus <strong>replays the routes you walked</strong>, time-compressed, over and over, a chain of place cells flashing in their original order. Better still, it sometimes replays paths <strong>you never actually took</strong> — as if rehearsing tomorrow's possible moves. The map isn't only used to remember the way you came; it's used to <strong>simulate the way ahead</strong>. Space, memory, imagination — at the hippocampus they look more and more like facets of one thing.</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Place_cell" target="_blank">Place cell</a> — the "you are here" map in the hippocampus (O'Keefe, 1971)</li>
+<li><a href="https://en.wikipedia.org/wiki/Grid_cell" target="_blank">Grid cell</a> — the hexagonal coordinate grid in entorhinal cortex (Moser, 2005)</li>
+<li><a href="https://en.wikipedia.org/wiki/Cognitive_map" target="_blank">Cognitive map</a> — Tolman's bird's-eye map and the shortcut-taking rat</li>
+<li><a href="https://en.wikipedia.org/wiki/Path_integration" target="_blank">Path integration</a> — finding your way home with no GPS by summing steps</li>
+<li><a href="https://en.wikipedia.org/wiki/Head_direction_cells" target="_blank">Head direction cells</a> — the brain's built-in compass</li>
+<li><a href="https://en.wikipedia.org/wiki/John_O%27Keefe_(neuroscientist)" target="_blank">O'Keefe & the Mosers · 2014 Nobel</a> — the discovery of the brain's positioning system</li>
+<li><a href="https://en.wikipedia.org/wiki/Entorhinal_cortex" target="_blank">Entorhinal cortex</a> — home of grid cells, and where Alzheimer's strikes first</li>
+<li><a href="https://en.wikipedia.org/wiki/Peter_Dayan" target="_blank">Peter Dayan · successor representation</a> — the origin of the "predictive map" in AI</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 5 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+</body></html>
