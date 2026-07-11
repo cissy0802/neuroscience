@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>参考 · 前额叶 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.html">← 参考库</a>
+<header>
+<span class="ref-badge">参考库 · REFERENCE</span>
+<h1>前额叶<span class="en">Prefrontal Cortex</span></h1>
+<p>额头正后方的那片皮层——大脑的<strong>指挥官</strong>。它不太存具体内容，而是负责举着目标、排优先级、顶住冲动。人类之所以能计划、能忍、能同时转好几件事，多半靠它；它也<strong>最晚长齐、最先变老、最怕压力</strong>。</p>
+</header>
+
+<h2>它在哪、大致分几块</h2>
+<p>前额叶是额叶最前面的一大片，就贴在你额头后面。它不是铁板一块，功能上大致分成几区，各管一摊：</p>
+
+<figure>
+<svg viewBox="0 0 500 290" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="brainClip"><ellipse cx="255" cy="150" rx="185" ry="112"/></clipPath>
+<radialGradient id="brainFill" cx="0.6" cy="0.35" r="0.85"><stop offset="0" stop-color="#241c46"/><stop offset="1" stop-color="#140d2a"/></radialGradient>
+<filter id="glowP" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- brainstem + cerebellum -->
+<path d="M300,255 q6,26 24,30" fill="none" stroke="#5b4f86" stroke-width="12" stroke-linecap="round"/>
+<circle cx="392" cy="232" r="30" fill="#1c1638" stroke="#5b4f86" stroke-width="1.4"/>
+<!-- cerebrum -->
+<ellipse cx="255" cy="150" rx="185" ry="112" fill="url(#brainFill)" stroke="#7c6bb8" stroke-width="1.6"/>
+<!-- PFC highlight wedge (clipped to brain) -->
+<g clip-path="url(#brainClip)">
+<rect x="70" y="38" width="98" height="224" fill="rgba(52,229,224,0.16)"/>
+<line x1="168" y1="38" x2="168" y2="262" stroke="#34e5e0" stroke-width="1.6" stroke-dasharray="4 5"/>
+</g>
+<!-- gyri squiggles (decorative) -->
+<path d="M120,96 q22,-14 44,2 q22,16 44,0 q22,-16 44,2 q22,16 44,0" fill="none" stroke="#4a3f78" stroke-width="1.5" opacity="0.7"/>
+<path d="M110,132 q24,-12 48,2 q24,14 48,0 q24,-14 48,2" fill="none" stroke="#4a3f78" stroke-width="1.5" opacity="0.55"/>
+<!-- front arrow / forehead -->
+<text x="40" y="150" text-anchor="middle" fill="#7bf0e8" font-size="12" font-family="SF Mono,monospace">额头</text>
+<path d="M52,164 L52,182 M52,182 L46,175 M52,182 L58,175" stroke="#34e5e0" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+<text x="118" y="256" text-anchor="middle" fill="#7bf0e8" font-size="12.5" font-family="SF Mono,monospace" font-weight="700">前额叶 PFC</text>
+<!-- dlPFC dot -->
+<circle cx="128" cy="104" r="6" fill="#34e5e0" filter="url(#glowP)"/>
+<line x1="134" y1="104" x2="196" y2="70" stroke="#34e5e0" stroke-width="1"/>
+<text x="200" y="60" fill="#c6e9e7" font-size="11.5" font-family="SF Mono,monospace">背外侧 dlPFC</text>
+<text x="200" y="76" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">工作记忆 · 执行</text>
+<!-- vmPFC/OFC dot -->
+<circle cx="120" cy="196" r="6" fill="#fbbf24" filter="url(#glowP)"/>
+<line x1="126" y1="196" x2="196" y2="222" stroke="#fbbf24" stroke-width="1"/>
+<text x="200" y="220" fill="#faf0dc" font-size="11.5" font-family="SF Mono,monospace">腹内侧 / 眶额</text>
+<text x="200" y="236" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">价值 · 情绪</text>
+</svg>
+<figcaption>前额叶＝额头正后方的一整片；功能上分背外侧(执行)、腹内侧/眶额(价值)等区，前扣带藏在内侧深处</figcaption>
+</figure>
+
+<dl class="kv">
+<dt>背外侧 · dlPFC</dt><dd>最"理性"的一块：<strong>工作记忆</strong>的持续放电、计划、抽象推理、按规则行事都靠它。延迟期"东西不在了还端着"的活动，主要在这里记录到。</dd>
+<dt>腹内侧 / 眶额 · vmPFC / OFC</dt><dd>管<strong>价值与情绪</strong>：给选项打"值不值"的分、调节情绪、把身体信号纳入决策。它出问题，人会变得<strong>算得清、却选不好</strong>。</dd>
+<dt>前扣带 · ACC</dt><dd>藏在内侧深处的"<strong>冲突监测器</strong>"：一旦两个反应打架、或你快要出错，它就报警，招来更多控制。（严格说 ACC 常被单列，但和前额叶紧密协作。）</dd>
+</dl>
+
+<h2>它管什么：执行功能</h2>
+<p>把前额叶干的事打包成一个词，就是<strong>执行功能</strong>——你脑内那个"项目经理"。它不产出具体感觉或动作，而是<strong>协调</strong>别的脑区，让行为服从当下的目标而不是被眼前的刺激牵着走。核心大概三样：</p>
+<p><strong>① 维持</strong>——把目标和信息"举着"不散（工作记忆的持续放电，Fuster、Goldman-Rakic 的经典发现）。<strong>② 抑制</strong>——顶住冲动、忽略无关干扰（想伸手拿第二块蛋糕时按住手的，就是它）。<strong>③ 切换</strong>——在任务/规则之间灵活转档，不卡在旧规则上。计划、排序、纠错，都是这三样搭出来的。</p>
+
+<h2>晚熟、早衰、最怕压力</h2>
+<p>三个很有现实感的特点：</p>
+<p><strong>晚熟</strong>——前额叶是全脑<strong>最后长齐</strong>的地方，髓鞘化一直持续到二十五岁左右。这就是青少年为什么冲动、难压制即时诱惑：不是"不懂事"，是那个刹车还没装完。</p>
+<p><strong>早衰</strong>——它又是<strong>最先随年龄退化</strong>的区域之一，于是"话到嘴边忘了""同时办几件事容易乱"往往从这里先露头。</p>
+<p><strong>怕压力</strong>——急性压力下，应激激素（去甲肾上腺素、皮质醇）会<strong>直接削弱前额叶</strong>、把控制权交回给更原始的杏仁核。这就是为什么一慌就"脑子空白"、越紧要越发挥失常——那份支撑工作记忆的脆弱放电，被压力当场打散了。</p>
+
+<div class="links">
+<h3>// 被这些主线引用</h3>
+<p class="who">Topic 3 工作记忆 · 未来的决策 / 执行功能 / 情绪调节相关期</p>
+<h3 style="margin-top:18px">// 延伸</h3>
+<p><a href="https://en.wikipedia.org/wiki/Prefrontal_cortex" target="_blank">前额叶 Prefrontal cortex</a> · <a href="https://en.wikipedia.org/wiki/Executive_functions" target="_blank">执行功能 Executive functions</a> · <a href="https://en.wikipedia.org/wiki/Dorsolateral_prefrontal_cortex" target="_blank">背外侧前额叶 dlPFC</a> · <a href="https://en.wikipedia.org/wiki/Phineas_Gage" target="_blank">Phineas Gage · 一根铁棍改写的人格</a></p>
+</div>
+
+<footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+</body></html>
