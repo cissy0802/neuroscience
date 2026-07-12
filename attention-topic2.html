@@ -127,18 +127,18 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <defs>
 <radialGradient id="hub" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#2b2150"/><stop offset="1" stop-color="#150e2c"/></radialGradient>
 <filter id="glowB" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="fUp" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"/></marker>
+<marker id="fDn" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"/></marker>
 </defs>
 <circle cx="240" cy="104" r="46" fill="url(#hub)" stroke="#a78bfa" stroke-width="1.5" filter="url(#glowB)"/>
 <text x="240" y="99" text-anchor="middle" fill="#efe9ff" font-size="15" font-weight="700">注意</text>
 <text x="240" y="118" text-anchor="middle" fill="#b6acdd" font-size="10.5" font-family="SF Mono,monospace">选择谁赢</text>
-<path d="M56,166 L188,120" stroke="#e879f9" stroke-width="3" stroke-linecap="round" opacity="0.92"/>
-<path d="M181,113 L192,124 L178,127 Z" fill="#e879f9"/>
+<path d="M56,166 L186,120" stroke="#e879f9" stroke-width="3" stroke-linecap="round" opacity="0.92" marker-end="url(#fUp)"/>
 <path d="M22,150 l14,-4 l-4,14 Z" fill="#e879f9" opacity="0.9"/>
 <circle cx="40" cy="150" r="15" fill="none" stroke="#e879f9" stroke-width="2" opacity="0.85"/>
 <text x="44" y="188" text-anchor="middle" fill="#f5b8fb" font-size="12" font-family="SF Mono,monospace">自下而上</text>
 <text x="44" y="204" text-anchor="middle" fill="#9a7bb5" font-size="10" font-family="SF Mono,monospace">显著性硬闯</text>
-<path d="M424,166 L292,120" stroke="#34e5e0" stroke-width="3" stroke-linecap="round" opacity="0.92"/>
-<path d="M299,113 L288,124 L302,127 Z" fill="#34e5e0"/>
+<path d="M424,166 L294,120" stroke="#34e5e0" stroke-width="3" stroke-linecap="round" opacity="0.92" marker-end="url(#fDn)"/>
 <rect x="404" y="138" width="40" height="26" rx="6" fill="none" stroke="#34e5e0" stroke-width="1.6" opacity="0.85"/>
 <text x="424" y="156" text-anchor="middle" fill="#7bf0e8" font-size="11" font-family="SF Mono,monospace">目标</text>
 <text x="436" y="188" text-anchor="middle" fill="#7bf0e8" font-size="12" font-family="SF Mono,monospace">自上而下</text>
