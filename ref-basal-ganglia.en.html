@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reference · Basal Ganglia — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.en.html">← Reference library</a>
+<header>
+<span class="ref-badge">REFERENCE LIBRARY</span>
+<h1>Basal Ganglia<span class="en">Basal Ganglia</span></h1>
+<p>A set of deep-brain nuclei doing something fierce: <strong>by default they hold down every action you could take, until one option wins — and only then do they open a gate for that one</strong>. They are the gatekeeper of action selection, and the place dopamine pours its learning signal into.</p>
+</header>
+
+<h2>In one line: a gate that's "off by default"</h2>
+<p>Intuitively, moving means "send a signal telling the muscles to go." The basal ganglia do it backwards: their output nuclei are <strong>constantly sending "brakes" downstream</strong>, pinning every candidate action in place. To let one action happen, you don't hit the gas — you <strong>specifically release the brake on that one</strong>, while the rest stay held. So "choosing" is physically "release exactly one, veto the rest."</p>
+
+<figure>
+<svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="bx" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#2b2150"/><stop offset="1" stop-color="#150e2c"/></radialGradient>
+<filter id="glowb" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="go" markerWidth="12" markerHeight="12" refX="8" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"/></marker>
+<marker id="ng" markerWidth="12" markerHeight="12" refX="8" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#e879f9"/></marker>
+<marker id="pl" markerWidth="11" markerHeight="11" refX="8" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9 Z" fill="#a78bfa"/></marker>
+<marker id="dp" markerWidth="12" markerHeight="12" refX="8" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"/></marker>
+</defs>
+<rect x="170" y="14" width="160" height="42" rx="21" fill="url(#bx)" stroke="#a78bfa" stroke-width="1.3" filter="url(#glowb)"/><text x="250" y="40" text-anchor="middle" fill="#efe9ff" font-size="14" font-weight="600">Cortex · candidate actions</text>
+<rect x="170" y="96" width="160" height="42" rx="21" fill="url(#bx)" stroke="#8f7cd0" stroke-width="1.3" filter="url(#glowb)"/><text x="250" y="115" text-anchor="middle" fill="#efe9ff" font-size="13.5" font-weight="600">Striatum · input</text><text x="250" y="131" text-anchor="middle" fill="#9a8fc0" font-size="9.5" font-family="SF Mono,monospace">caudate + putamen</text>
+<rect x="170" y="192" width="160" height="42" rx="21" fill="url(#bx)" stroke="#e879f9" stroke-width="1.3" filter="url(#glowb)"/><text x="250" y="211" text-anchor="middle" fill="#fff" font-size="13.5" font-weight="700">Output GPi/SNr</text><text x="250" y="227" text-anchor="middle" fill="#e0a8ea" font-size="9.5" font-family="SF Mono,monospace">brakes by default</text>
+<rect x="170" y="266" width="160" height="42" rx="21" fill="url(#bx)" stroke="#34e5e0" stroke-width="1.3" filter="url(#glowb)"/><text x="250" y="285" text-anchor="middle" fill="#e6faf8" font-size="13.5" font-weight="600">Thalamus → release action</text><text x="250" y="301" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">thalamus</text>
+<line x1="250" y1="56" x2="250" y2="92" stroke="#a78bfa" stroke-width="2.4" marker-end="url(#pl)"/>
+<path d="M210,138 C176,155 176,178 208,192" fill="none" stroke="#34e5e0" stroke-width="2.6" marker-end="url(#go)"/>
+<text x="150" y="169" text-anchor="middle" fill="#7bf0e8" font-size="11" font-family="SF Mono,monospace">direct · Go</text>
+<text x="150" y="184" text-anchor="middle" fill="#7bf0e8" font-size="9" font-family="SF Mono,monospace">release brake</text>
+<path d="M290,138 C330,155 330,178 292,192" fill="none" stroke="#e879f9" stroke-width="2.6" stroke-dasharray="5 4" marker-end="url(#ng)"/>
+<text x="356" y="169" text-anchor="middle" fill="#f0a8f6" font-size="11" font-family="SF Mono,monospace">indirect · No-Go</text>
+<text x="356" y="184" text-anchor="middle" fill="#f0a8f6" font-size="9" font-family="SF Mono,monospace">more brake</text>
+<line x1="250" y1="234" x2="250" y2="262" stroke="#e879f9" stroke-width="2.4"/>
+<line x1="238" y1="262" x2="262" y2="262" stroke="#e879f9" stroke-width="3.2"/>
+<path d="M330,287 C430,287 430,35 330,35" fill="none" stroke="#34e5e0" stroke-width="2.2" marker-end="url(#pl)" opacity="0.9"/>
+<text x="446" y="164" text-anchor="middle" fill="#7bf0e8" font-size="10.5" font-family="SF Mono,monospace" transform="rotate(90 446 164)">back to cortex · loop</text>
+<rect x="16" y="96" width="118" height="42" rx="12" fill="rgba(251,191,36,0.08)" stroke="#fbbf24" stroke-width="1.2"/><text x="75" y="114" text-anchor="middle" fill="#faf0dc" font-size="11.5" font-weight="600">SNc</text><text x="75" y="130" text-anchor="middle" fill="#f0cf88" font-size="9.5" font-family="SF Mono,monospace">dopamine · teaching signal</text>
+<line x1="134" y1="117" x2="166" y2="117" stroke="#fbbf24" stroke-width="2.4" marker-end="url(#dp)"/>
+</svg>
+<figcaption>Cortex→striatum→(Go/No-Go)→output→thalamus→back to cortex; dopamine modulates learning from the side</figcaption>
+</figure>
+
+<h2>Two opposed pathways: Go and No-Go</h2>
+<p>Once the striatum receives candidate actions from the cortex, it splits two ways — one urging, one blocking:</p>
+<dl class="kv">
+<dt>Direct pathway (Go)</dt><dd>Activating it <strong>releases the brake on an action</strong> — the thalamus lets it through and the action happens. Its neurons carry <strong>D1-type</strong> dopamine receptors and get more excited when dopamine arrives.</dd>
+<dt>Indirect pathway (No-Go)</dt><dd>Activating it <strong>presses the brake harder</strong> — suppressing actions that shouldn't happen. It carries <strong>D2-type</strong> receptors and is instead damped when dopamine arrives.</dd>
+<dt>The balance</dt><dd>What you do or don't do depends on whether Go or No-Go is louder. Dopamine simultaneously "fuels Go and loosens No-Go," so <strong>more dopamine biases toward "move, do it"</strong>; less biases toward "hold still."</dd>
+</dl>
+
+<h2>Dopamine: not just a go signal, but a "teaching signal"</h2>
+<p>The deepest layer of the basal ganglia is that it doubles as the brain's <strong>trial-and-error learning machine</strong>. The dopamine coming from the substantia nigra / ventral tegmental area carries exactly the <strong>reward prediction error</strong> — "how much better/worse this was than expected." That error pours into the striatum and rewrites the memory of "in this situation, how valuable is doing this action": surprisingly good → <strong>strengthen</strong> the Go pathway just used, so next time you want it more; worse than expected → <strong>weaken</strong> it. Over time, good habits (and bad ones) get etched bit by bit into this circuit.</p>
+
+<h2>When it breaks: Parkinson's and beyond</h2>
+<p>When the dopamine-making cells in the substantia nigra die off in large numbers, that's <strong>Parkinson's disease</strong>: with no dopamine to fuel Go and loosen No-Go, the scale is jammed hard toward "don't move" — hence difficulty initiating movement, slowness, rigidity, and a resting tremor. Conversely, dysregulation of this circuit reaches widely: <strong>OCD, tics (as in Tourette's), addiction, and some impulse-control problems</strong> can all be traced to this "gate" being shut too poorly or too tightly. It never governs movement alone, but also the thoughts and habits that get selected as if they were "actions."</p>
+
+<div class="links">
+<h3>// Cited by these main-track issues</h3>
+<p class="who">Topic 6 Decision-making (value coding · action selection · dopamine prediction error) · future issues on addiction (Topic 27) / neurodegeneration (Topic 28) / the motor system</p>
+<h3 style="margin-top:18px">// Further</h3>
+<p><a href="https://en.wikipedia.org/wiki/Basal_ganglia" target="_blank">Basal ganglia</a> · <a href="https://en.wikipedia.org/wiki/Striatum" target="_blank">Striatum</a> · <a href="https://en.wikipedia.org/wiki/Direct_pathway" target="_blank">Direct / indirect (Go / No-Go) pathways</a> · <a href="https://en.wikipedia.org/wiki/Reward_system#Reward_prediction_error" target="_blank">Reward prediction error</a> · <a href="https://en.wikipedia.org/wiki/Parkinson%27s_disease" target="_blank">Parkinson's disease</a></p>
+</div>
+
+<footer>BigCat · Neuroscience · Reference library · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+</body></html>
