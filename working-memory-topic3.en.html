@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 3 · Working Memory — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 3 · PHASE A COGNITION</span>
+<h1>Working Memory</h1>
+<h2>The whiteboard in your head that keeps getting wiped</h2>
+<div class="date">2026-07-11 · BigCat</div>
+<p class="pitch">The number of things you can hold "in mind" at once is about four — cram in one more, and something else falls off.</p>
+</header>
+
+<div class="intro">
+<p>Someone reads out a phone number; you're muttering it under your breath while fumbling for a pen — for those few seconds the number is "in your head," and one moment of distraction wipes it. Reading this sentence is the same: you have to <strong>hold onto</strong> its beginning to join up the meaning by the time you reach the end. That tiny, leaky "temporary tabletop" that clears in seconds is <strong>working memory</strong>. It isn't a shrunk-down version of long-term memory — quite the opposite: <strong>it barely "stores" anything at all; it just keeps a few things briefly "lit up," and that light goes out fast.</strong> This issue we look at that whiteboard: how much it holds, what keeps it up, and who runs it.</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Not a "small hard drive" — the desk you're working on</h2>
+<p>First, untangle two things people constantly conflate. <strong>Long-term memory</strong> is like a vast warehouse: your childhood, the times tables, a film you saw last year — all packed inside, near-infinite capacity, but it takes some effort to fetch a thing. <strong>Working memory</strong> isn't a smaller shelf in that warehouse — it's more like a <strong>little desk</strong> at its door: it holds only the few things you're <strong>actively handling right now</strong>, and once the desk clears, they're gone.</p>
+<p>The key isn't even "temporary" — it's whether you can <strong>hold something and work on it at the same time</strong>. Memorizing a number is just holding it; but to say it <strong>backward</strong>, you have to flip it over and over on the desk — that "hold + manipulate" is working memory's real job. The classic way to measure it is the <strong>delayed response</strong>: you're shown a thing, it vanishes, you wait a few empty seconds, then point to it from memory. That gap — "the thing is gone, yet you must keep carrying it" — is working memory at work.</p>
+
+<figure>
+<svg viewBox="0 0 480 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="deskG" cx="0.5" cy="0.3" r="0.9"><stop offset="0" stop-color="#123037"/><stop offset="1" stop-color="#0a1c22"/></radialGradient>
+<radialGradient id="whG" cx="0.5" cy="0.3" r="0.9"><stop offset="0" stop-color="#221a42"/><stop offset="1" stop-color="#130d29"/></radialGradient>
+<filter id="glow3" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="a3" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<rect x="20" y="40" width="184" height="130" rx="16" fill="url(#deskG)" stroke="#34e5e0" stroke-width="1.5" filter="url(#glow3)"/>
+<text x="112" y="30" text-anchor="middle" fill="#7bf0e8" font-size="12.5" font-family="SF Mono,monospace">Working memory · the desk</text>
+<rect x="44" y="70" width="34" height="34" rx="7" fill="#34e5e0" opacity="0.85"/>
+<rect x="90" y="70" width="34" height="34" rx="7" fill="#a78bfa" opacity="0.85"/>
+<rect x="136" y="70" width="34" height="34" rx="7" fill="#e879f9" opacity="0.85"/>
+<rect x="67" y="118" width="34" height="34" rx="7" fill="#fbbf24" opacity="0.85"/>
+<rect x="113" y="118" width="34" height="34" rx="7" fill="none" stroke="#5b5678" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text x="112" y="188" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">small · lit · clears in seconds</text>
+<line x1="212" y1="105" x2="266" y2="105" stroke="#8f89ad" stroke-width="1.6" stroke-dasharray="3 4" marker-end="url(#a3)"/>
+<text x="239" y="96" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">store/fetch</text>
+<rect x="276" y="40" width="184" height="130" rx="16" fill="url(#whG)" stroke="#a78bfa" stroke-width="1.5" filter="url(#glow3)"/>
+<text x="368" y="30" text-anchor="middle" fill="#c9a8f5" font-size="12.5" font-family="SF Mono,monospace">Long-term memory · warehouse</text>
+<g fill="#6a5fa0" opacity="0.7">
+<rect x="296" y="64" width="26" height="18" rx="3"/><rect x="328" y="64" width="26" height="18" rx="3"/><rect x="360" y="64" width="26" height="18" rx="3"/><rect x="392" y="64" width="26" height="18" rx="3"/><rect x="424" y="64" width="18" height="18" rx="3"/>
+<rect x="296" y="90" width="26" height="18" rx="3"/><rect x="328" y="90" width="26" height="18" rx="3"/><rect x="360" y="90" width="26" height="18" rx="3"/><rect x="392" y="90" width="26" height="18" rx="3"/><rect x="424" y="90" width="18" height="18" rx="3"/>
+<rect x="296" y="116" width="26" height="18" rx="3"/><rect x="328" y="116" width="26" height="18" rx="3"/><rect x="360" y="116" width="26" height="18" rx="3"/><rect x="392" y="116" width="26" height="18" rx="3"/><rect x="424" y="116" width="18" height="18" rx="3"/>
+</g>
+<text x="368" y="188" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">big · stable · near-infinite</text>
+</svg>
+<figcaption>Working memory is the small desk you're handling, not a smaller shelf in the warehouse</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This is almost exactly a large language model's (the ChatGPT kind) <b>context window</b>: on each turn, all the model can "see right now" is the stretch of text inside that window — chat long enough and the earliest lines slide out of the window and it simply "forgets" them, unless you fish the old info back in and feed it again. Inside the window = the brain's desk (directly available now); outside it = the warehouse (reachable only by going to retrieve it). Both are stuck on the same thing: <b>what you can hold "in hand" at once is always a small handful.</b></p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Capacity is about "four," not the legendary "seven"</h2>
+<p>You've probably heard it: a person can hold about "<strong>7 plus or minus 2</strong>" things at once. That comes from a famous 1956 paper titled <em>The Magical Number Seven</em>. But later research revised the number downward — when you're genuinely <strong>not allowed to secretly rehearse</strong>, pure working-memory capacity is closer to <strong>four</strong>. Why did they count seven back then? Because the subjects were quietly "packing things into bundles."</p>
+<p>The trick is <strong>chunking</strong>. Working memory doesn't count "individual parts" but "<strong>bundles</strong>." A phone number like <strong>138 0013 8000</strong> — you're not lugging 11 digits, you're gripping 3 chunks; a chess master reconstructs a position at a glance not because of superhuman memory, but because they read the whole board as a few <strong>familiar formations</strong>. So the capacity line is fixed (just a few slots), but <strong>how full each slot gets depends on your experience</strong> — experts seem to have great memories mostly because they pack far denser chunks.</p>
+
+<figure>
+<svg viewBox="0 0 480 196" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="glowC" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="ac" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker></defs>
+<text x="240" y="24" text-anchor="middle" fill="#8f89ad" font-size="11.5" font-family="SF Mono,monospace">8 loose digits → overflows</text>
+<g font-family="SF Mono,monospace" font-size="17" fill="#b8b2d4" text-anchor="middle">
+<text x="55" y="58">1</text><text x="95" y="58">9</text><text x="135" y="58">4</text><text x="175" y="58">9</text><text x="215" y="58">1</text><text x="255" y="58">9</text><text x="295" y="58">8</text><text x="335" y="58">9</text>
+</g>
+<text x="410" y="58" fill="#f472b6" font-size="13" font-family="SF Mono,monospace">✕ 8&gt;4</text>
+<line x1="240" y1="72" x2="240" y2="102" stroke="#34e5e0" stroke-width="2.4" stroke-linecap="round" marker-end="url(#ac)"/>
+<text x="304" y="92" text-anchor="middle" fill="#7bf0e8" font-size="11" font-family="SF Mono,monospace">chunk it</text>
+<text x="240" y="126" text-anchor="middle" fill="#8f89ad" font-size="11.5" font-family="SF Mono,monospace">2 "year" chunks → fits easily</text>
+<rect x="118" y="140" width="112" height="40" rx="10" fill="rgba(52,229,224,0.12)" stroke="#34e5e0" stroke-width="1.5" filter="url(#glowC)"/>
+<text x="174" y="166" text-anchor="middle" fill="#e6faf8" font-size="17" font-family="SF Mono,monospace" font-weight="700">1949</text>
+<rect x="250" y="140" width="112" height="40" rx="10" fill="rgba(232,121,249,0.12)" stroke="#e879f9" stroke-width="1.5" filter="url(#glowC)"/>
+<text x="306" y="166" text-anchor="middle" fill="#f6d9fb" font-size="17" font-family="SF Mono,monospace" font-weight="700">1989</text>
+</svg>
+<figcaption>Capacity is counted in chunks: 8 loose digits overflow, read as 2 years it's got room to spare</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>"Packing" happens in AI all the time too. Before a model reads text, it first slices the string into <b>tokens</b> — common words and word-roots get squeezed into <b>one</b> unit, just as the brain reads "1949" as a single chunk rather than four digits. How much a window holds is also counted not in letters but in these bundles. <b>The better you compress, the more information the same window fits</b> — the very same move behind "good packers seem to have good memories."</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Once the thing is gone, what keeps it up?</h2>
+<p>Here's the eeriest part: in a delayed response, the thing <strong>has already vanished from view</strong>, yet you're still carrying it — so what exactly does the brain use to hold it up?</p>
+<p>The classic answer is <strong>persistent firing</strong>. From the 1970s on, researchers found that in the <a class="reflink" href="ref-prefrontal.en.html">prefrontal cortex</a>, after the thing is removed, a small group of neurons <strong>keep firing "tick-tick-tick" through the entire gap</strong> — as if, to not forget a note, you just kept your finger pressed on the piano key. <strong>That ongoing firing itself is the memory.</strong> Stop it, and the memory scatters.</p>
+<p>But this account has problems: firing nonstop is <strong>metabolically expensive</strong> and fragile — one hiccup (a distraction) can wash it out; and finer recordings found that firing in the gap sometimes <strong>goes fully silent, then comes back a moment later</strong>. Hence a second account — <strong>activity-silent</strong> memory: the trace need not ride on firing at all; it can be <strong>briefly written into short-term synaptic weights</strong> (tiny changes in the connection strength between neurons), invisible as spikes for the moment, like writing in invisible ink — until a beam of light (an input) sweeps across and the letters reappear.</p>
+
+<figure>
+<svg viewBox="0 0 480 214" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="delayBand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(167,139,250,0.14)"/><stop offset="1" stop-color="rgba(167,139,250,0.03)"/></linearGradient></defs>
+<rect x="150" y="14" width="180" height="186" fill="url(#delayBand)"/>
+<text x="80" y="30" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">see it</text>
+<text x="240" y="30" text-anchor="middle" fill="#c9a8f5" font-size="11" font-family="SF Mono,monospace">delay · hold it</text>
+<text x="405" y="30" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">respond</text>
+<!-- row A persistent -->
+<text x="14" y="82" fill="#34e5e0" font-size="10" font-family="SF Mono,monospace">persist.</text>
+<line x1="40" y1="96" x2="466" y2="96" stroke="#2a2748" stroke-width="1"/>
+<g stroke="#34e5e0" stroke-width="2.4" stroke-linecap="round">
+<line x1="70" y1="80" x2="70" y2="96"/><line x1="110" y1="80" x2="110" y2="96"/>
+<line x1="165" y1="80" x2="165" y2="96"/><line x1="188" y1="80" x2="188" y2="96"/><line x1="211" y1="80" x2="211" y2="96"/><line x1="234" y1="80" x2="234" y2="96"/><line x1="257" y1="80" x2="257" y2="96"/><line x1="280" y1="80" x2="280" y2="96"/><line x1="303" y1="80" x2="303" y2="96"/>
+<line x1="360" y1="80" x2="360" y2="96"/><line x1="400" y1="80" x2="400" y2="96"/>
+</g>
+<text x="240" y="118" text-anchor="middle" fill="#7bf0e8" font-size="10" font-family="SF Mono,monospace">firing all through the gap = memory</text>
+<!-- row B silent -->
+<text x="14" y="164" fill="#e879f9" font-size="10" font-family="SF Mono,monospace">silent</text>
+<line x1="40" y1="178" x2="466" y2="178" stroke="#2a2748" stroke-width="1"/>
+<g stroke="#e879f9" stroke-width="2.4" stroke-linecap="round">
+<line x1="70" y1="162" x2="70" y2="178"/><line x1="110" y1="162" x2="110" y2="178"/>
+<line x1="360" y1="162" x2="360" y2="178"/><line x1="400" y1="162" x2="400" y2="178"/>
+</g>
+<line x1="150" y1="178" x2="330" y2="178" stroke="#e879f9" stroke-width="2.6" stroke-dasharray="2 6" stroke-linecap="round" opacity="0.7"/>
+<text x="240" y="200" text-anchor="middle" fill="#f0b6f7" font-size="10" font-family="SF Mono,monospace">silent in the gap = hidden in synapses, revived when needed</text>
+</svg>
+<figcaption>Two ways to "keep it up": keep firing, or hide it in synapses and re-light it when needed</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Large language models have an almost matching thing called the <b>KV cache</b>. Each word the model reads, it computes a "file for later lookups" and stashes it, so processing the next word doesn't mean recomputing the whole preceding text from scratch — <b>keeping the already-computed state around, ready to query, has exactly the flavor of "persistent firing."</b> And the cost is identical too: a bigger cache eats more memory, just as more persistent firing burns more energy. The brain is clearly thriftier — it can "switch off and hide" the part it isn't using and re-light it on demand, rather than blazing away the whole time.</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Running that whiteboard: the patch of brain behind your forehead</h2>
+<p>So where does working memory "live"? The answer is a bit counterintuitive: <strong>it has no dedicated storehouse</strong>. Remember a face, and the content mostly stays in the visual areas that handle faces; remember a tune, and it stays in the auditory areas. What's really special is <strong>who runs it</strong> — the sheet of cortex <strong>right behind your forehead</strong>, the <a class="reflink" href="ref-prefrontal.en.html">prefrontal cortex</a>, especially its outer (lateral) part. It doesn't so much store the content as act as <strong>conductor</strong>: keeping the current goal "held up," deciding what gets onto the desk, and holding the line against distraction so nothing else muscles in.</p>
+<p>This explains two very everyday things. First, the prefrontal cortex <strong>matures extremely late</strong> (not fully wired until around age 25) and <strong>ages earliest</strong> — so children can't hold multi-step instructions and older people get "the word on the tip of the tongue," largely a problem of this conductor. Second, <strong>stress bulldozes it directly</strong>: the moment you're anxious, stress hormones flood the prefrontal cortex, and that fragile persistent firing is scattered on the spot — which is why your mind goes blank in an exam, or "can't find the words" mid-argument, only for it all to come back afterward. You're not dim; the whiteboard just got temporarily cleared.</p>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"The present holds only a small handful, and it turns over in an instant" — several fields have bumped into this limit from very different directions:</p>
+<ul>
+<li><b>Information theory · Shannon &amp; Miller</b>: Miller's <em>Magical Number Seven</em> drew its inspiration straight from Shannon's picture of communication as a "<b>limited-bandwidth channel</b>." The mind, too, is a narrow-band pipe; and "chunking" is an old trick from channel coding — <b>re-encode, compress, to get around the hard bandwidth limit</b>. This is where human cognition was first treated as a quantifiable information system.</li>
+<li><b>Phenomenology · Husserl / William James</b>: James said the "now" we experience isn't a mathematical point but a thick "<b>specious present</b>"; Husserl split it into the just-past (<b>retention</b>) and the about-to-come (protention). You can follow a sentence or a melody precisely because the brain keeps "holding up" the last few seconds — working memory may well be the neural substrate of this "living present."</li>
+<li><b>Buddhism · Abhidharma · momentary continuity</b>: it treats the mind as a string of <b>momentary flashes</b> arising and passing away — one moment ceases, the next arises, strung into a seemingly continuous "mind-stream." This fits, uncannily, working memory's volatile nature of "constantly refreshed, the old bumped off the moment something new arrives" — the "present" was never a stable existent, only a stretch of repeatedly rewritten activity.</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>Is working memory really just "long-term memory that's been lit up"?</summary><div>More and more people see it that way (Cowan's "embedded-process" model). On this view there's no separate "working-memory storehouse" at all — what we call working memory is just <strong>the small handful within long-term memory that attention has lit up right now</strong>, and that "four slots" limit is really <strong>how much attention can illuminate at once</strong>. If so, "good memory" and "strong attention" are two faces of one thing — which also connects to last issue's "attention decides what enters consciousness."</div></details>
+<details><summary>If the desk has only four slots, why does it feel like a whole rich world is in front of me?</summary><div>Because the brain <strong>never intends to haul the whole world into your head</strong> — it treats the world itself as an "external drive," and whatever detail it needs, it grabs on the spot with a glance (a saccade). Your sense that "the whole scene is in my head" is a carefully maintained illusion: test it, and you'll find you often fail to notice when the picture changes (change blindness). Spending the four slots sparingly and leaving the world in place as external storage is the most economical strategy (this connects to Topics 1 and 2).</div></details>
+<details><summary>How much does working-memory capacity have to do with "being smart" — and does lengthening an AI's context window make it smarter?</summary><div>Working-memory capacity is indeed strongly correlated with <strong>fluid intelligence</strong> (on-the-spot reasoning, solving novel problems) — the more you can hold at once, the more complex relations you can lay side by side and compare. But "longer window = smarter" is a trap: capacity is only <strong>desk size</strong>; what's truly scarce is <strong>the conductor</strong> — the ability to decide what to put on the desk and to fend off irrelevant information. However big the window, if it can't pick out what matters and gets stuffed with junk, it fails all the same. The bottleneck for people and models looks increasingly like the same one: not an inability to hold, but <strong>an inability to choose</strong>.</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Working_memory" target="_blank">Working memory</a> — overview of the concept, models, and capacity</li>
+<li><a href="https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two" target="_blank">Miller · The Magical Number Seven</a> — the founding 1956 paper</li>
+<li><a href="https://en.wikipedia.org/wiki/Baddeley%27s_model_of_working_memory" target="_blank">Baddeley &amp; Hitch · the working-memory model</a> — the classic "central executive + buffers" framework</li>
+<li><a href="https://en.wikipedia.org/wiki/Patricia_Goldman-Rakic" target="_blank">Goldman-Rakic · prefrontal persistent activity</a> — who discovered delay-period firing</li>
+<li><a href="https://en.wikipedia.org/wiki/Nelson_Cowan" target="_blank">Nelson Cowan · the magical number four</a> — capacity ≈ 4, the embedded-process model</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 3 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://cissy0802.github.io/comments.js" defer></script>
+<script src="https://cissy0802.github.io/search.js" defer></script>
+<script src="https://cissy0802.github.io/index-button.js" defer></script>
+<script src="https://cissy0802.github.io/i18n-tts.js" defer></script>
+</body></html>

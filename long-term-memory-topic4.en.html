@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 4 · Long-Term Memory — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 4 · PHASE A COGNITION</span>
+<h1>Long-Term Memory</h1>
+<h2>You think you're "replaying" the past — you're rebuilding it every time</h2>
+<div class="date">2026-07-11 · BigCat</div>
+<p class="pitch">The single most important step in memory happens after you fall asleep.</p>
+</header>
+
+<div class="intro">
+<p>You still remember what you ate on last year's birthday, or that first spill off a bike — the "stored long ago, still retrievable" stuff is <strong>long-term memory</strong>. But here's something a little unsettling: you feel like recall is opening a video and playing it back, yet the brain <strong>holds no such video</strong>. Every act of "remembering" is <strong>rebuilding the scene on the spot</strong> from a few fragments — and if the build looks right, you take it as true. That's exactly why memory can be edited, fooled, and why it takes "a good night's sleep to really stick." This issue we take it apart: how an experience goes from fleeting to carved deep — and why both "can't hold it" and "can let it go" are things the brain was <strong>carefully designed</strong> to do.</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Memory isn't a recording — it's a jigsaw rebuilt each time</h2>
+<p>First, break a deeply rooted illusion. You imagine a drawer in your head where an experience sits sealed and untouched, and recall just pulls it out and plays it. <strong>It's not like that.</strong> When something happens, it's <strong>taken apart</strong> — its pieces parked across different regions: color goes to the color area, sound to the sound area, "where" to the spatial area. No single place holds "the whole scene."</p>
+<p>So who strings the fragments back together? The <a class="reflink" href="ref-hippocampus.en.html">hippocampus</a> — it acts like a <strong>staple</strong> or an <strong>index</strong>: at the moment of the event, it rapidly notes "these pieces belong together" and clips the same bookmark onto them. When you later remember, the hippocampus follows the bookmark to <strong>re-gather and reassemble</strong> the scattered pieces on the spot — and so you "see" the scene. The key: <strong>every reassembly starts from scratch</strong>, and where a piece is missing, it fills in with something similar, with what you now know and expect.</p>
+<p>So memory is inherently malleable and prone to cross-contamination — not a bug, but how it works. It also explains why two people remember the same event completely differently, and why you can be "reminded" into a past that never happened: <strong>memory isn't read out, it's generated.</strong></p>
+
+<figure>
+<svg viewBox="0 0 480 244" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="glowH" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<line x1="240" y1="122" x2="92" y2="58" stroke="#4a4570" stroke-width="1.3"/>
+<line x1="240" y1="122" x2="388" y2="58" stroke="#4a4570" stroke-width="1.3"/>
+<line x1="240" y1="122" x2="62" y2="164" stroke="#4a4570" stroke-width="1.3"/>
+<line x1="240" y1="122" x2="418" y2="164" stroke="#4a4570" stroke-width="1.3"/>
+<line x1="240" y1="122" x2="240" y2="214" stroke="#4a4570" stroke-width="1.3"/>
+<g font-family="SF Mono,monospace" font-size="11" text-anchor="middle">
+<rect x="50" y="40" width="84" height="34" rx="9" fill="rgba(52,229,224,0.13)" stroke="#34e5e0" stroke-width="1.3"/><text x="92" y="62" fill="#a9f0ec">color · visual</text>
+<rect x="346" y="40" width="84" height="34" rx="9" fill="rgba(167,139,250,0.13)" stroke="#a78bfa" stroke-width="1.3"/><text x="388" y="62" fill="#d3c4f7">sound · auditory</text>
+<rect x="18" y="146" width="88" height="34" rx="9" fill="rgba(251,191,36,0.12)" stroke="#fbbf24" stroke-width="1.3"/><text x="62" y="168" fill="#f6dfa0">place · spatial</text>
+<rect x="374" y="146" width="88" height="34" rx="9" fill="rgba(232,121,249,0.12)" stroke="#e879f9" stroke-width="1.3"/><text x="418" y="168" fill="#f3c2f8">smell · olfactory</text>
+<rect x="192" y="196" width="96" height="34" rx="9" fill="rgba(244,114,182,0.12)" stroke="#f472b6" stroke-width="1.3"/><text x="240" y="218" fill="#f8c4de">emotion · amygdala</text>
+</g>
+<circle cx="240" cy="122" r="42" fill="rgba(52,229,224,0.14)" stroke="#34e5e0" stroke-width="1.8" filter="url(#glowH)"/>
+<text x="240" y="118" text-anchor="middle" fill="#e6faf8" font-size="12.5" font-family="SF Mono,monospace" font-weight="700">hippocampus</text>
+<text x="240" y="134" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">index · bookmark</text>
+</svg>
+<figcaption>No "whole scene" sits anywhere; the hippocampus only clips a bookmark, then reassembles the pieces at recall</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>A large language model doesn't store what it read word-for-word on a disk and then recite it. It has kneaded knowledge into hundreds of billions of <b>connection weights</b>, and when it answers it <b>"generates" on the spot</b> the most answer-like stretch of text for your question. That's why it sometimes solemnly invents a citation or a number that doesn't exist — the so-called <b>hallucination</b>. Look closely and it's the same ailment as human <b>false memory</b>: neither does verbatim playback, both rebuild — and rebuilding always fills in, and filling in can always be wrong. <b>Remembering well and making things up are two sides of one coin.</b></p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Only after a night's sleep does memory truly "move house"</h2>
+<p>Something just learned starts as a "temp worker" — hung on the fast hippocampus. Fast, yes, but easily overwritten and short-lived. To become "permanent staff," still there years or decades later, it has to be slowly <strong>moved into the cortex</strong>, that big, stable warehouse. This move is called <strong>consolidation</strong>, and it happens mostly <strong>while you sleep</strong>.</p>
+<p>The most remarkable scene in sleep is the hippocampus quietly <strong>"replaying" the day</strong>. You walked a route by day, and a string of <strong>place cells</strong> lit up in order; in deep sleep the hippocampus <strong>runs that sequence again, fast</strong> — and <strong>time-compressed</strong>, sprinting in a few hundred milliseconds through a route that took you minutes. As it replays, it "tells" the experience to the cortex, over and over, until the cortex gradually learns it and stores it itself. Once the cortex has it, the hippocampus can wipe its temporary copy and free up room for new things. So on the days you sleep badly, it's not that you had no experiences — it's that they never got properly <strong>filed</strong>.</p>
+
+<figure>
+<svg viewBox="0 0 480 214" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="glowR" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<text x="20" y="34" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">Awake · walking a route at real speed</text>
+<line x1="34" y1="66" x2="360" y2="66" stroke="#2a2748" stroke-width="1"/>
+<g filter="url(#glowR)">
+<circle cx="60" cy="66" r="7" fill="#34e5e0"/><circle cx="135" cy="66" r="7" fill="#5eead4"/><circle cx="210" cy="66" r="7" fill="#a78bfa"/><circle cx="285" cy="66" r="7" fill="#e879f9"/><circle cx="352" cy="66" r="7" fill="#fbbf24"/>
+</g>
+<text x="200" y="92" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">place cells fire in order (minutes)</text>
+<text x="20" y="140" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">Deep sleep · compressed replay (~ms ×many)</text>
+<line x1="34" y1="170" x2="200" y2="170" stroke="#2a2748" stroke-width="1"/>
+<g filter="url(#glowR)">
+<circle cx="52" cy="170" r="6" fill="#34e5e0"/><circle cx="72" cy="170" r="6" fill="#5eead4"/><circle cx="92" cy="170" r="6" fill="#a78bfa"/><circle cx="112" cy="170" r="6" fill="#e879f9"/><circle cx="132" cy="170" r="6" fill="#fbbf24"/>
+</g>
+<path d="M208,170 L300,170" stroke="#7bf0e8" stroke-width="1.6" stroke-dasharray="4 4"/>
+<path d="M300,170 l-9,-5 l0,10 Z" fill="#7bf0e8"/>
+<rect x="306" y="150" width="150" height="40" rx="10" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="1.4"/>
+<text x="381" y="167" text-anchor="middle" fill="#d3c4f7" font-size="11" font-family="SF Mono,monospace">cortex · slow store</text>
+<text x="381" y="182" text-anchor="middle" fill="#8f89ad" font-size="9" font-family="SF Mono,monospace">hears it often → keeps it</text>
+</svg>
+<figcaption>A route that took minutes by day is squeezed to milliseconds and replayed over and over in deep sleep, teaching the cortex bit by bit</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This is almost exactly <b>experience replay</b> in reinforcement learning. Train a game-playing AI by letting it learn strictly in the order things happened, and it "<b>learns the later, washes out the earlier</b>" (catastrophic forgetting), and neighboring steps are too alike so it learns skewed. The engineers' fix is blunt: dump every experience into a "<b>replay buffer</b>" and, during training, pull samples out at random, repeatedly, to relearn — shuffled order, old and new mixed. That's the <b>same idea</b> as the hippocampus replaying in sleep to feed memories slowly to the cortex — down to the very problem it solves. The people who proposed the "<b>complementary learning systems</b>" theory back in 1995 already spelled out the correspondence; later AI just turned it into engineering.</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Keep them apart, yet still recognize them</h2>
+<p>The memory system is pulled by two demands at odds with each other. One is <strong>don't mix them up</strong>: today you parked in level 3, zone B; yesterday level 3, zone A — these two near-identical experiences must be stored as <strong>two</strong> records, not smeared into one, or you'll never find your car. The other is <strong>recognize it</strong>: given only half a cue — the first three notes of a tune, a face in profile — you must be able to <strong>pull out</strong> the whole memory.</p>
+<p>The brain uses two different spots inside the <a class="reflink" href="ref-hippocampus.en.html">hippocampus</a> for these two jobs. One specializes in <strong>prying apart</strong> similar experiences: even if two events differ only slightly, it codes them into two records that lie far apart — <strong>pattern separation</strong>. The other does the opposite: given a broken corner, it fills the whole thing back in — <strong>pattern completion</strong>. The first keeps you from mistaking today for yesterday; the second lets one whiff of a smell bring your whole childhood flooding back.</p>
+
+<figure>
+<svg viewBox="0 0 480 224" xmlns="http://www.w3.org/2000/svg">
+<line x1="240" y1="18" x2="240" y2="206" stroke="#2a2748" stroke-width="1" stroke-dasharray="4 5"/>
+<text x="120" y="30" text-anchor="middle" fill="#34e5e0" font-size="12" font-family="SF Mono,monospace">pattern separation</text>
+<text x="360" y="30" text-anchor="middle" fill="#e879f9" font-size="12" font-family="SF Mono,monospace">pattern completion</text>
+<circle cx="105" cy="66" r="17" fill="rgba(52,229,224,0.2)" stroke="#34e5e0" stroke-width="1.4"/>
+<circle cx="135" cy="66" r="17" fill="rgba(52,229,224,0.2)" stroke="#34e5e0" stroke-width="1.4"/>
+<text x="120" y="98" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">two near-identical inputs</text>
+<path d="M120,110 L120,138" stroke="#34e5e0" stroke-width="1.8"/><path d="M120,138 l-5,-9 l10,0 Z" fill="#34e5e0"/>
+<circle cx="72" cy="168" r="15" fill="rgba(52,229,224,0.22)" stroke="#34e5e0" stroke-width="1.5"/>
+<circle cx="168" cy="168" r="15" fill="rgba(167,139,250,0.22)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="120" y="204" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">stored as two far-apart records</text>
+<path d="M292,58 Q360,60 428,58 Q392,150 360,150 Q328,150 292,58" fill="none" stroke="#5b4f86" stroke-width="1.4"/>
+<path d="M300,66 Q360,150 420,66" fill="none" stroke="#e879f9" stroke-width="2" stroke-dasharray="3 4" opacity="0.55"/>
+<circle cx="312" cy="82" r="9" fill="none" stroke="#e879f9" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="312" y="60" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">partial cue</text>
+<path d="M322,92 Q345,130 356,140" stroke="#e879f9" stroke-width="1.6" fill="none"/><path d="M356,140 l-9,-3 l3,-9 Z" fill="#e879f9"/>
+<circle cx="360" cy="150" r="13" fill="rgba(232,121,249,0.28)" stroke="#e879f9" stroke-width="1.6" filter="url(#glowH)"/>
+<text x="360" y="182" text-anchor="middle" fill="#f3c2f8" font-size="9.5" font-family="SF Mono,monospace">filled to a whole memory</text>
+<text x="360" y="196" text-anchor="middle" fill="#8f89ad" font-size="9" font-family="SF Mono,monospace">(rolls to the nearest basin)</text>
+</svg>
+<figcaption>Separation pries look-alikes into two far-apart records; completion lets a partial cue roll toward the nearest stored whole</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Pattern completion has an ancestor in AI: the <b>Hopfield network</b> (it won the 2024 Nobel Prize in Physics). It was designed precisely to "take a broken cue and spit out the whole memory": you "engrave" a set of patterns into the network, then feed in a blurry, chipped version, and it automatically <b>settles onto the nearest complete pattern</b> — like a ball rolling into the nearest basin. That "basin" is the mathematical portrait of exactly what CA3's completion mechanism does. And the <b>vector databases and retrieval-augmented generation (RAG)</b> you use today are the practical version of the same move: turn the cue into a string of numbers, go find the <b>few most similar records</b> in a big pile of memory and pull them back — all of it "take a part, evoke the whole."</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Forgetting is a skill; every recall rewrites</h2>
+<p>We treat forgetting as the enemy, yet a brain that can forget nothing is a broken one. <strong>Losing the specific details is how you distil the rule</strong> — precisely because you can't recall exactly what every dog you've seen looked like, you formed the concept "dog." Forget the old parking spot and you make room for today's. Forgetting isn't memory's failure but its active, necessary other half: let what should fade, fade, and keep the important by using it again and again, by sleep reinforcing it pass after pass. The classic <strong>forgetting curve</strong> (Ebbinghaus) shows the newly learned drops fastest in the first day or two — but each review flattens the drop a notch, which is why <strong>spaced repetition</strong> beats cramming.</p>
+<p>And something more subversive: each time you pull a memory out, it is <strong>not</strong> glanced at and put back unchanged — it gets briefly "unsealed," soft and editable, then re-sealed. This is <strong>reconsolidation</strong>. It means <strong>every act of remembering quietly rewrites the memory</strong>: mixing in your current mood, someone's offhand "reminder," your present understanding. The memories you revisit most are probably the ones you've altered most. This makes "remember the past faithfully" a fantasy — and opens a therapeutic door: weaken a memory during that soft window, and you might pull out part of the barb in a traumatic one.</p>
+
+<figure>
+<svg viewBox="0 0 480 224" xmlns="http://www.w3.org/2000/svg">
+<line x1="50" y1="30" x2="50" y2="184" stroke="#4a4570" stroke-width="1.3"/>
+<line x1="50" y1="184" x2="452" y2="184" stroke="#4a4570" stroke-width="1.3"/>
+<text x="46" y="24" text-anchor="end" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">recall</text>
+<text x="452" y="200" text-anchor="end" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">time→</text>
+<path d="M60,48 C110,150 200,172 440,180" fill="none" stroke="#8f89ad" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="352" y="168" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">no review</text>
+<path d="M60,48 C95,120 120,132 150,134 L150,60 C185,104 215,112 245,114 L245,66 C285,96 320,100 350,101 L350,74 C390,92 415,94 440,95" fill="none" stroke="#34e5e0" stroke-width="2.4"/>
+<line x1="150" y1="134" x2="150" y2="60" stroke="#e879f9" stroke-width="1.6"/><path d="M150,60 l-4,9 l8,0 Z" fill="#e879f9"/>
+<line x1="245" y1="114" x2="245" y2="66" stroke="#e879f9" stroke-width="1.6"/><path d="M245,66 l-4,9 l8,0 Z" fill="#e879f9"/>
+<line x1="350" y1="101" x2="350" y2="74" stroke="#e879f9" stroke-width="1.6"/><path d="M350,74 l-4,9 l8,0 Z" fill="#e879f9"/>
+<text x="252" y="52" fill="#7bf0e8" font-size="10" font-family="SF Mono,monospace">spaced review ↑ each drop slower</text>
+<text x="150" y="210" text-anchor="middle" fill="#8f89ad" font-size="9" font-family="SF Mono,monospace">review</text>
+<text x="245" y="210" text-anchor="middle" fill="#8f89ad" font-size="9" font-family="SF Mono,monospace">review</text>
+<text x="350" y="210" text-anchor="middle" fill="#8f89ad" font-size="9" font-family="SF Mono,monospace">review</text>
+</svg>
+<figcaption>The forgetting curve: no review drops fast and hard; each spaced review lifts it back and makes the next drop slower</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This side mirrors a chronic headache in AI too. The <b>catastrophic forgetting</b> mentioned earlier is a network-wide affliction: learn a new task straight and the old skill is scattered by the new data — it doesn't know, as the brain does, "what to keep and what to let fade." So people learn from the brain in reverse: keep a replay buffer and periodically review old knowledge; "<b>lock</b>" the important connections so a new task can't scramble them (a trick literally named <b>elastic weight consolidation</b>). Amusingly the direction is flipped — <b>the brain's problem is how to actively forget; the artificial network's is how not to forget passively</b> — yet both are arguing over the same balance: new versus old, plasticity versus stability, and how to set it.</p>
+</div>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Memory is rebuilt each time, and edited as it's retrieved" — several fields have bumped into this counterintuitive fact from very different directions:</p>
+<ul>
+<li><b>Philosophy · Plato's recollection</b>: Plato said learning is really "<b>recollection</b>" — the soul already knows all truths, and to learn is just to remember what was forgotten. Two millennia on, neuroscience gives a nearly opposite answer: memory isn't fetched intact from a pristine store, but <b>built and patched on the spot</b> each time. Yet, intriguingly, both bite on the same intuition — recall is a kind of "re-acquiring," not a plain read-out.</li>
+<li><b>Heraclitus &amp; Buddhism · impermanence</b>: "No one steps in the same river twice." <b>Reconsolidation</b> says exactly this — you cannot recall "the same" memory twice, because the act of retrieval has already changed it. Buddhism speaks of all things being impermanent, thought-moments in flux; memory too is not an entity lying there but <b>a process that arises and passes anew each time it's evoked</b>.</li>
+<li><b>Borges &amp; Nietzsche · the necessity of forgetting</b>: Borges wrote of a man who could forget nothing — Funes, who remembered every leaf at every instant, and was for that reason unable to think, because "<b>to think is to forget differences, to generalize</b>." Nietzsche too said that without the capacity to forget, a person is crushed by the past and cannot act. <b>Forgetting is the precondition of abstraction and of traveling light.</b></li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>Can a memory be "planted" from nothing?</summary><div>Yes, and more easily than you'd think. The psychologist Loftus got subjects to "remember" being lost in a mall as a child — an event that never happened — and many not only accepted it but embellished it with details. Since memory is <strong>reconstructed</strong>, give it enough plausible fragments and the brain will assemble "the scene" for you. More hardcore: scientists can now use light to <strong>directly activate</strong> a small group of memory cells in a mouse, fabricating a false memory that makes it fear a place that was never a threat. That memory can be implanted is the most direct proof that it's generated, not recorded.</div></details>
+<details><summary>If every recall rewrites, is "remembering the past faithfully" impossible in principle?</summary><div>In a sense, yes. The more often you revisit an event, the more it gets recolored by your present mood and after-the-fact information — the "unforgettable" memories are often the most-edited versions. This isn't all bad: it's precisely this malleability that lets you fold old trauma into new understanding and make peace with it. <strong>Memory's purpose was never to be a faithful archivist, but to serve the present you in predicting and acting.</strong> For that, it will gladly sacrifice a little fidelity.</div></details>
+<details><summary>Flashbulb memories — "where were you on 9/11" — why so vivid yet so often wrong?</summary><div>A major event triggers strong emotion, making you <strong>certain</strong> you remember it crisply, so you retell and revisit it again and again. But each retelling is a <strong>reconsolidation</strong>, a rewrite: the date, the place, who was next to you get quietly swapped by versions you heard later. Studies tracked people's memories of a disaster day and found the details drifted badly over years — while <strong>confidence didn't budge</strong>. Which flags something crucial: <strong>how vivid and how certain a memory feels has almost nothing to do with how accurate it is.</strong></div></details>
+<details><summary>Does bolting a RAG "memory" onto an AI give it human-like long-term memory?</summary><div>Similar in form, not in spirit. RAG does supply "retrieve by cue" — like pattern completion. But the human memory <strong>consolidates, reorganizes, and forgets</strong>: a night's sleep weaves new experience into old knowledge, fades irrelevant detail, distils the rule. Today's bolt-on memory is mostly "write it in, read it out" — it neither actively reorganizes nor knows what to forget. The truly hard part was never storing and fetching, but that knack of <strong>slowly digesting experience in sleep and cooking it down into wisdom.</strong></div></details>
+</div>
+
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Memory_consolidation" target="_blank">Memory consolidation</a> — overview of encoding / systems consolidation / the move to cortex</li>
+<li><a href="https://en.wikipedia.org/wiki/Eric_Kandel" target="_blank">Eric Kandel · the molecular basis of memory</a> — from sea slug to human, Nobel 2000</li>
+<li><a href="https://en.wikipedia.org/wiki/Elizabeth_Loftus" target="_blank">Elizabeth Loftus · false memory</a> — memory can be "reminded" into being, and implanted</li>
+<li><a href="https://en.wikipedia.org/wiki/Hopfield_network" target="_blank">Hopfield network</a> — the mathematical prototype of associative memory (2024 Nobel Prize in Physics)</li>
+<li><a href="https://en.wikipedia.org/wiki/Forgetting_curve" target="_blank">The forgetting curve · Ebbinghaus</a> — the rhythm of forgetting and spaced repetition</li>
+<li><a href="https://en.wikipedia.org/wiki/Memory_consolidation#Reconsolidation" target="_blank">Reconsolidation</a> — every recall becomes editable and rewritable again</li>
+<li><a href="https://en.wikipedia.org/wiki/Hippocampus" target="_blank">Hippocampus</a> — home of the index, pattern separation/completion, and replay</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 4 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://cissy0802.github.io/comments.js" defer></script>
+<script src="https://cissy0802.github.io/search.js" defer></script>
+<script src="https://cissy0802.github.io/index-button.js" defer></script>
+<script src="https://cissy0802.github.io/i18n-tts.js" defer></script>
+</body></html>

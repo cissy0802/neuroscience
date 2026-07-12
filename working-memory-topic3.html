@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 3 · 工作记忆 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 3 · PHASE A 认知</span>
+<h1>工作记忆</h1>
+<h2>你脑子里那块随时会被擦掉的白板</h2>
+<div class="date">2026-07-11 · BigCat</div>
+<p class="pitch">你能同时"托在心里"转的东西，大概只有四样——多塞一样，就得挤掉一样。</p>
+</header>
+
+<div class="intro">
+<p>别人报一串电话号码，你嘴里默念着、手忙着找笔——那几秒里号码"就在脑子里"，可你一分神，它就没了。你此刻读这句话也一样：得把句子开头<strong>托住</strong>，才能读到句尾时把意思接上。这个又小又漏、几秒钟就清空的"临时台面"，就是<strong>工作记忆</strong>。它不是长时记忆的缩小版——恰恰相反，<strong>它几乎不"存"任何东西，只是把几样东西暂时"点亮"，而那点亮的光，灭得飞快。</strong>这一期我们就看这块白板：它能装多少、靠什么撑住、又是谁在管它。</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>它不是"小硬盘"，是你正在用的那张桌面</h2>
+<p>先分清两样常被混为一谈的东西。<strong>长时记忆</strong>像一个巨大的仓库：你的童年、乘法口诀、去年看的电影，都压在里面，容量近乎无限，但取一次要花点力气。<strong>工作记忆</strong>不是这个仓库里更小的一格——它更像仓库门口一张<strong>小办公桌</strong>：只放你<strong>此刻正在动手处理</strong>的那几样东西，桌面一清，就没了。</p>
+<p>关键还不在"临时"，而在<strong>能不能一边托着、一边动它</strong>。你记住一个号码只是托着；可你要把它<strong>倒着念</strong>出来，就得在桌面上把它翻来覆去——这个"托着 + 加工"才是工作记忆的本行。神经科学量它的经典办法叫<strong>延迟反应</strong>：给你看个东西，它消失，让你空等几秒，再让你凭记忆去指它。中间那段"东西不在了、你却还得端着它"的空档，就是工作记忆在干活。</p>
+
+<figure>
+<svg viewBox="0 0 480 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="deskG" cx="0.5" cy="0.3" r="0.9"><stop offset="0" stop-color="#123037"/><stop offset="1" stop-color="#0a1c22"/></radialGradient>
+<radialGradient id="whG" cx="0.5" cy="0.3" r="0.9"><stop offset="0" stop-color="#221a42"/><stop offset="1" stop-color="#130d29"/></radialGradient>
+<filter id="glow3" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="a3" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<rect x="20" y="40" width="184" height="130" rx="16" fill="url(#deskG)" stroke="#34e5e0" stroke-width="1.5" filter="url(#glow3)"/>
+<text x="112" y="30" text-anchor="middle" fill="#7bf0e8" font-size="12.5" font-family="SF Mono,monospace">工作记忆 · 桌面</text>
+<rect x="44" y="70" width="34" height="34" rx="7" fill="#34e5e0" opacity="0.85"/>
+<rect x="90" y="70" width="34" height="34" rx="7" fill="#a78bfa" opacity="0.85"/>
+<rect x="136" y="70" width="34" height="34" rx="7" fill="#e879f9" opacity="0.85"/>
+<rect x="67" y="118" width="34" height="34" rx="7" fill="#fbbf24" opacity="0.85"/>
+<rect x="113" y="118" width="34" height="34" rx="7" fill="none" stroke="#5b5678" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text x="112" y="188" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">小·亮·几秒就清空</text>
+<line x1="212" y1="105" x2="266" y2="105" stroke="#8f89ad" stroke-width="1.6" stroke-dasharray="3 4" marker-end="url(#a3)"/>
+<text x="239" y="96" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">存/取</text>
+<rect x="276" y="40" width="184" height="130" rx="16" fill="url(#whG)" stroke="#a78bfa" stroke-width="1.5" filter="url(#glow3)"/>
+<text x="368" y="30" text-anchor="middle" fill="#c9a8f5" font-size="12.5" font-family="SF Mono,monospace">长时记忆 · 仓库</text>
+<g fill="#6a5fa0" opacity="0.7">
+<rect x="296" y="64" width="26" height="18" rx="3"/><rect x="328" y="64" width="26" height="18" rx="3"/><rect x="360" y="64" width="26" height="18" rx="3"/><rect x="392" y="64" width="26" height="18" rx="3"/><rect x="424" y="64" width="18" height="18" rx="3"/>
+<rect x="296" y="90" width="26" height="18" rx="3"/><rect x="328" y="90" width="26" height="18" rx="3"/><rect x="360" y="90" width="26" height="18" rx="3"/><rect x="392" y="90" width="26" height="18" rx="3"/><rect x="424" y="90" width="18" height="18" rx="3"/>
+<rect x="296" y="116" width="26" height="18" rx="3"/><rect x="328" y="116" width="26" height="18" rx="3"/><rect x="360" y="116" width="26" height="18" rx="3"/><rect x="392" y="116" width="26" height="18" rx="3"/><rect x="424" y="116" width="18" height="18" rx="3"/>
+</g>
+<text x="368" y="188" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">大·稳·近乎无限</text>
+</svg>
+<figcaption>工作记忆是你正在动手的那张小桌，不是仓库里更小的一格</figcaption>
+</figure>
+
+<p class="en-brief"><b>EN</b> Working memory isn't a smaller hard drive — it's the desk you're actively working on, versus long-term memory's near-infinite warehouse. Its job isn't storage but <i>holding + manipulating</i>: the classic test is the delay period, when the thing is gone yet you must keep it in hand.</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这几乎就是大语言模型（ChatGPT 那类）的<b>上下文窗口</b>：模型每次回话，能"当场看见"的只有窗口里那段文字——聊得太长，最早的话就滑出窗口、它当场就"忘"了，除非你把旧信息重新捞回来喂给它。窗口里的 = 大脑的桌面（当下可直接调用），窗口外的 = 仓库（要专门去检索才够得着）。两边都卡在同一件事上：<b>能同时"端在手里"的，永远是一小撮。</b></p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>容量大约是"四"，而不是传说中的"七"</h2>
+<p>你大概听过一个说法：人一次能记住"<strong>7 加减 2</strong>"样东西。这来自 1956 年一篇很有名的论文，标题就叫《神奇的数字七》。但后来的研究把这个数字往下修了——真正<strong>不许你偷偷默念复述</strong>时，纯工作记忆的容量更接近<strong>四</strong>。为什么当年数出七？因为受试者偷偷把东西"打了包"。</p>
+<p>诀窍就在<strong>打包</strong>（chunk，组块）。工作记忆数的不是"几个零件"，而是"<strong>几个包裹</strong>"。手机号 <strong>138 0013 8000</strong>，你不是硬扛 11 个数字，而是攥着 3 个块；棋手扫一眼残局能复盘，不是记忆力超人，是他把满盘棋子读成了几个<strong>熟悉的阵型</strong>。所以容量这条线是死的（就那么几格），但<strong>每格能装多满，取决于你的经验</strong>——高手之所以显得记性好，多半是打包打得更狠。</p>
+
+<figure>
+<svg viewBox="0 0 480 196" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="glowC" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="ac" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker></defs>
+<text x="240" y="24" text-anchor="middle" fill="#8f89ad" font-size="11.5" font-family="SF Mono,monospace">8 个散数字 → 撑爆</text>
+<g font-family="SF Mono,monospace" font-size="17" fill="#b8b2d4" text-anchor="middle">
+<text x="55" y="58">1</text><text x="95" y="58">9</text><text x="135" y="58">4</text><text x="175" y="58">9</text><text x="215" y="58">1</text><text x="255" y="58">9</text><text x="295" y="58">8</text><text x="335" y="58">9</text>
+</g>
+<text x="405" y="58" fill="#f472b6" font-size="13" font-family="SF Mono,monospace">✕ 8&gt;4</text>
+<line x1="240" y1="72" x2="240" y2="102" stroke="#34e5e0" stroke-width="2.4" stroke-linecap="round" marker-end="url(#ac)"/>
+<text x="300" y="92" text-anchor="middle" fill="#7bf0e8" font-size="11" font-family="SF Mono,monospace">打包·组块</text>
+<text x="240" y="126" text-anchor="middle" fill="#8f89ad" font-size="11.5" font-family="SF Mono,monospace">2 个"年份"块 → 轻松装下</text>
+<rect x="118" y="140" width="112" height="40" rx="10" fill="rgba(52,229,224,0.12)" stroke="#34e5e0" stroke-width="1.5" filter="url(#glowC)"/>
+<text x="174" y="166" text-anchor="middle" fill="#e6faf8" font-size="17" font-family="SF Mono,monospace" font-weight="700">1949</text>
+<rect x="250" y="140" width="112" height="40" rx="10" fill="rgba(232,121,249,0.12)" stroke="#e879f9" stroke-width="1.5" filter="url(#glowC)"/>
+<text x="306" y="166" text-anchor="middle" fill="#f6d9fb" font-size="17" font-family="SF Mono,monospace" font-weight="700">1989</text>
+</svg>
+<figcaption>容量是按"块"数的：8 个散数字撑爆，读成 2 个年份就富余</figcaption>
+</figure>
+
+<p class="en-brief"><b>EN</b> The famous "7±2" (Miller, 1956) was later revised down: pure capacity, with no rehearsal, is closer to <b>four</b>. What matters is the <i>chunk</i>, not the item — experts don't have bigger memories, they pack denser chunks (a phone number as 3 blocks, a chessboard as a few familiar patterns).</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>"打包"在 AI 里也天天发生。模型读文字前，先把一串字符切成一个个<b>token</b>（词元）——常见的词、词根被压成<b>一个</b>单位，就像大脑把"1949"读成一个块而不是四个数字。窗口能装多少，数的也不是字母个数，而是这些包裹的个数。<b>压得越好，同样的窗口就装得下越多信息</b>——这跟"会打包的人显得记性好"是同一招。</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>东西已经不在了，它靠什么"撑住"？</h2>
+<p>这才是最玄的地方：延迟反应里，那个东西<strong>已经从眼前消失了</strong>，可你还端着它——大脑到底拿什么把它撑住？</p>
+<p>经典答案是<strong>持续放电</strong>。上世纪七十年代起，人们在<a class="reflink" href="ref-prefrontal.html">前额叶</a>发现：东西撤走后，一小群神经元<strong>会在整个空档里一直"哒哒哒"地放电</strong>，仿佛你为了不忘一个音，就一直按着琴键不松手。<strong>这个持续的放电本身，就是那份记忆。</strong>它一停，记忆也就散了。</p>
+<p>但这套说法有麻烦：一直放电<strong>很费能量</strong>，也很脆——一个岔子（分心）就可能把它冲掉；而且更精细的记录发现，空档里的放电有时会<strong>整个静下来、过一会儿又回来</strong>。于是有了第二种说法——<strong>活动静默</strong>：记忆并不非得挂在放电上，可以<strong>短暂地写进突触的临时权重里</strong>（神经元之间连接强度的一点点变化），这时它作为放电是"隐形"的，像用隐形墨水写下，等一束光（一次输入）扫过，字才重新显形。</p>
+
+<figure>
+<svg viewBox="0 0 480 214" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="delayBand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(167,139,250,0.14)"/><stop offset="1" stop-color="rgba(167,139,250,0.03)"/></linearGradient></defs>
+<rect x="150" y="14" width="180" height="186" fill="url(#delayBand)"/>
+<text x="80" y="30" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">看到</text>
+<text x="240" y="30" text-anchor="middle" fill="#c9a8f5" font-size="11" font-family="SF Mono,monospace">空档 · 要记住</text>
+<text x="405" y="30" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">回答</text>
+<!-- row A persistent -->
+<text x="14" y="82" fill="#34e5e0" font-size="11" font-family="SF Mono,monospace">持续</text>
+<line x1="40" y1="96" x2="466" y2="96" stroke="#2a2748" stroke-width="1"/>
+<g stroke="#34e5e0" stroke-width="2.4" stroke-linecap="round">
+<line x1="70" y1="80" x2="70" y2="96"/><line x1="110" y1="80" x2="110" y2="96"/>
+<line x1="165" y1="80" x2="165" y2="96"/><line x1="188" y1="80" x2="188" y2="96"/><line x1="211" y1="80" x2="211" y2="96"/><line x1="234" y1="80" x2="234" y2="96"/><line x1="257" y1="80" x2="257" y2="96"/><line x1="280" y1="80" x2="280" y2="96"/><line x1="303" y1="80" x2="303" y2="96"/>
+<line x1="360" y1="80" x2="360" y2="96"/><line x1="400" y1="80" x2="400" y2="96"/>
+</g>
+<text x="240" y="118" text-anchor="middle" fill="#7bf0e8" font-size="10" font-family="SF Mono,monospace">空档里一直放电 = 记忆</text>
+<!-- row B silent -->
+<text x="14" y="164" fill="#e879f9" font-size="11" font-family="SF Mono,monospace">静默</text>
+<line x1="40" y1="178" x2="466" y2="178" stroke="#2a2748" stroke-width="1"/>
+<g stroke="#e879f9" stroke-width="2.4" stroke-linecap="round">
+<line x1="70" y1="162" x2="70" y2="178"/><line x1="110" y1="162" x2="110" y2="178"/>
+<line x1="360" y1="162" x2="360" y2="178"/><line x1="400" y1="162" x2="400" y2="178"/>
+</g>
+<line x1="150" y1="178" x2="330" y2="178" stroke="#e879f9" stroke-width="2.6" stroke-dasharray="2 6" stroke-linecap="round" opacity="0.7"/>
+<text x="240" y="200" text-anchor="middle" fill="#f0b6f7" font-size="10" font-family="SF Mono,monospace">空档里静默 = 藏进突触, 用时再唤醒</text>
+</svg>
+<figcaption>两种"撑住"的机制：一直放电，或先藏进突触、用时再点亮</figcaption>
+</figure>
+
+<p class="en-brief"><b>EN</b> How is something held once it's gone? The classic answer is <b>persistent firing</b> — prefrontal neurons keep spiking through the delay, and that firing <i>is</i> the memory. But it's costly and fragile, so a rival <b>activity-silent</b> view says the trace hides in short-term synaptic weights, invisible as spikes until a "ping" revives it. Likely both, depending on load.</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>大语言模型里有个几乎对应的东西叫 <b>KV 缓存</b>。模型每读一个词，会算出一份"给后面查的档案"存起来，这样处理下一个词时就不用把前文从头再算一遍——<b>把已算好的状态一直留着、随时可查，正是"持续放电"的味道</b>。而它的代价也一模一样：缓存越大越吃内存，就像持续放电越多越费能量。大脑显然更省——它可以把不用的那份"关灯藏起来"，需要时再点亮，而不是全程亮着烧电。</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>管这块白板的，是你额头后面那块脑</h2>
+<p>那工作记忆"住"在哪？答案有点反直觉：<strong>它没有一个专属仓库</strong>。你记一张脸，内容多半还压在管看脸的视觉区；你记一段旋律，就压在听觉区。真正特别的是<strong>谁在管它</strong>——就在你<strong>额头正后方</strong>的那片皮层，<a class="reflink" href="ref-prefrontal.html">前额叶</a>，尤其是它外侧那块。它不太存具体内容，而是当<strong>指挥</strong>：把当前目标一直"举着"、决定放什么进桌面、并顶住分心不让别的东西挤进来。</p>
+<p>这就说通了两件很生活的事。其一，前额叶<strong>成熟得极晚</strong>（约到二十五岁才长齐），又<strong>老得最早</strong>——所以小孩记不住多步指令、上了年纪容易"话到嘴边忘了要说啥"，很大程度是这块指挥官的问题。其二，<strong>压力会直接冲垮它</strong>：一紧张，应激激素灌进前额叶，那点脆弱的持续放电当场被打散——这就是为什么你考试一慌脑子一片空白、吵架时"话都想不起来"，事后却全想起来了。不是你笨，是白板被临时清了场。</p>
+
+<p class="en-brief"><b>EN</b> Working memory has no private storehouse — content stays in the sensory areas that first processed it; what's special is the <b>controller</b>. The <b>prefrontal cortex</b> (behind your forehead) holds the goal, gates what enters, and guards against distraction. It matures late (~25) and declines early, and stress hormones can wipe its fragile activity — why your mind goes blank under pressure.</p>
+</div>
+
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"当下只能端住一小撮、且转瞬即换"——这个限制，好几门学问从很不一样的方向都撞见过：</p>
+<ul>
+<li><b>信息论 · 香农 &amp; 米勒</b>：Miller 那篇《神奇的数字七》，灵感直接来自香农把通信看成"<b>有限带宽的信道</b>"。心智也是一条窄带的管子；而"组块"正是信道编码里的老把戏——<b>重新编码、压缩，绕过带宽的硬限</b>。人类认知第一次被当成一个可量化的信息系统，就是从这里开始。</li>
+<li><b>现象学 · 胡塞尔 / 威廉·詹姆斯</b>：詹姆斯说我们体验的"现在"不是一个数学点，而是一段有厚度的"<b>似是而非的当下</b>"；胡塞尔把它拆成刚过去的<b>滞留</b>和马上来的前摄。你能听懂一句话、一段旋律，正因为大脑把刚过去的几秒一直"端着"——工作记忆，很可能就是这个"活的当下"的神经基质。</li>
+<li><b>佛学 · 阿毗达摩 · 念念相续</b>：把心识看成一串<b>刹那生灭</b>的心念，前一念灭、后一念起，连成看似连续的"心流"。这与工作记忆"不断刷新、旧的一挤就掉"的易失本性出奇地合拍——所谓"当下"，从来不是一块稳定的存在，而是一段被反复重写的活动。</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>工作记忆，是不是其实就是"被点亮的长时记忆"？</summary><div>越来越多人这么看（Cowan 的"嵌入过程"模型）。按这个视角，根本没有一个独立的"工作记忆仓库"——所谓工作记忆，只是长时记忆里<strong>被注意力当下点亮的那一小撮</strong>，而那个"四格"的限制，本质是<strong>注意力一次能照亮多少</strong>。如果对，那"记性好"和"注意力强"就是同一件事的两面——这也和上一期"注意决定什么进意识"接上了。</div></details>
+<details><summary>既然桌面只有四格，为什么我眼前明明是一整个丰富的世界？</summary><div>因为大脑<strong>根本不打算把世界都搬进脑子</strong>——它把世界本身当成"外置硬盘"，需要哪块细节，扫一眼（一次眼跳）现取就行。你觉得"整个场景都在脑里"，是个精心维持的错觉：真去测就会发现，画面稍一变你常常察觉不到（变化视盲）。省着用四格，把世界留在原地当外存，是最划算的策略（这条接 Topic 1、2）。</div></details>
+<details><summary>工作记忆容量，和"聪明"到底多大关系？那把 AI 的上下文窗口拉长，是不是就更聪明？</summary><div>工作记忆容量确实和<strong>流体智力</strong>（现场推理、解新题的能力）相关度很高——能同时端住的东西越多，越能把复杂关系摆在一起比对。但"拉长窗口 = 更聪明"是个陷阱：容量只是<strong>台面大小</strong>，真正稀缺的是<strong>那个指挥官</strong>——决定该把什么摆上台、顶住无关信息的能力。窗口再大，不会挑重点、被废料塞满，一样办不成事。人和模型的瓶颈，越来越像是同一个：不是记不下，是<strong>不会取舍</strong>。</div></details>
+</div>
+
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Working_memory" target="_blank">工作记忆 Working memory</a> — 概念、模型与容量的总览</li>
+<li><a href="https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two" target="_blank">Miller · 神奇的数字七</a> — 1956 年那篇奠基论文</li>
+<li><a href="https://en.wikipedia.org/wiki/Baddeley%27s_model_of_working_memory" target="_blank">Baddeley &amp; Hitch · 工作记忆模型</a> — "中央执行 + 缓存"的经典框架</li>
+<li><a href="https://en.wikipedia.org/wiki/Patricia_Goldman-Rakic" target="_blank">Goldman-Rakic · 前额叶持续放电</a> — 延迟期活动的发现者</li>
+<li><a href="https://en.wikipedia.org/wiki/Nelson_Cowan" target="_blank">Nelson Cowan · 神奇的数字四</a> — 容量约为 4、嵌入过程模型</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 3 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://cissy0802.github.io/comments.js" defer></script>
+<script src="https://cissy0802.github.io/search.js" defer></script>
+<script src="https://cissy0802.github.io/index-button.js" defer></script>
+<script src="https://cissy0802.github.io/i18n-tts.js" defer></script>
+</body></html>
