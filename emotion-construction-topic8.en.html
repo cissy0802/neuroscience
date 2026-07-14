@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 8 · The Construction of Emotion — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 8 · PHASE A COGNITION</span>
+<h1>The Construction of Emotion</h1>
+<h2>Fear isn't "triggered" — your brain <em>makes</em> it, on the spot</h2>
+<div class="date">2026-07-14 · BigCat</div>
+<p class="pitch">You think emotion wells up automatically from within — really the brain builds it on the fly, out of a pile of body signals.</p>
+</header>
+
+<div class="intro">
+<p>Your heart speeds up, your palms sweat, your stomach tightens — and the word leaps out: I'm "afraid." It feels so automatic, so real, as if fear lived in some hidden corner of you and simply sprang out at danger. <strong>But twenty years of emotion science have been dismantling a more subversive claim: an emotion is not a hard-wired program triggered by the outside world; it's a "best explanation" your brain assembles <em>in the moment</em>, out of body signals + your concepts + the current situation.</strong> The same racing heart is fear at a cliff's edge, thrill on a roller-coaster, a flutter in front of a crush — the body barely changed; what changed is the label the brain slapped on it. This issue: how the brain "makes" a specific emotion out of a vague blur of bodily sensation.</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>The old script: every emotion has a "fingerprint"</h2>
+<p>Start with the classical view that's under fire. Its intuition is smooth: humans have a few <strong>basic emotions</strong> (fear, anger, disgust, happiness, sadness, surprise), each an evolution-installed little program — with its own dedicated <strong>facial expression</strong> (fear = wide eyes, open mouth), its own <strong>bodily response</strong> (fear = spiking heart rate), even its own <strong>brain region</strong> (say "fear" and people reach for the <a class="reflink" href="ref-amygdala.en.html">amygdala</a>). On this view an emotion is a preinstalled button in the body: the world presses it, it lights up, and it lights up the same in everyone.</p>
+<p>This view has been hugely influential, and it did catch something real (expressions are broadly recognizable across cultures). But the moment you test the "fingerprints" at scale, it starts to crack: pool hundreds of studies together and <strong>a given emotion has no stable, specific, reproducible bodily or neural signature</strong>. In fear the heart can race — or nearly stop; the amygdala lights up in fear, but also in surprise, curiosity, even at a merely ambiguous face. <strong>No brain region is the dedicated "home" of any one emotion.</strong></p>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>The new script: emotion is <em>constructed</em></h2>
+<p>Psychologist Lisa Feldman Barrett's <strong>theory of constructed emotion</strong> reframes the question: if emotions have no fingerprints, then what are they? The answer — an emotion isn't <strong>triggered</strong>, it's <strong>constructed</strong>. In each present moment the brain assembles an emotion instance out of three ingredients:</p>
+
+<figure>
+<svg viewBox="0 0 480 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="bIn1" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></radialGradient>
+<radialGradient id="bIn2" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#241c46"/><stop offset="1" stop-color="#140d2a"/></radialGradient>
+<radialGradient id="bIn3" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#3a2a12"/><stop offset="1" stop-color="#241905"/></radialGradient>
+<radialGradient id="bHub" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#3a1a44"/><stop offset="1" stop-color="#22102e"/></radialGradient>
+<radialGradient id="bOut" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#14343a"/><stop offset="1" stop-color="#0a2025"/></radialGradient>
+<filter id="gB" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mB" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#c98adf"/></marker>
+<marker id="mB2" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"/></marker>
+</defs>
+<line x1="162" y1="35" x2="222" y2="108" stroke="#7bd0d8" stroke-width="2.4" stroke-linecap="round" marker-end="url(#mB)"/>
+<line x1="162" y1="122" x2="222" y2="122" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" marker-end="url(#mB)"/>
+<line x1="162" y1="209" x2="222" y2="136" stroke="#d0a860" stroke-width="2.4" stroke-linecap="round" marker-end="url(#mB)"/>
+<line x1="330" y1="122" x2="366" y2="122" stroke="#34e5e0" stroke-width="3" stroke-linecap="round" marker-end="url(#mB2)"/>
+<rect x="10" y="14" width="152" height="42" rx="21" fill="url(#bIn1)" stroke="#34e5e0" stroke-width="1.2" filter="url(#gB)"/><text x="86" y="40" text-anchor="middle" fill="#d8f5f2" font-size="12" font-weight="600">Body signals · interoception</text>
+<rect x="10" y="101" width="152" height="42" rx="21" fill="url(#bIn2)" stroke="#a78bfa" stroke-width="1.2" filter="url(#gB)"/><text x="86" y="127" text-anchor="middle" fill="#ece7ff" font-size="12" font-weight="600">Concepts · past experience</text>
+<rect x="10" y="188" width="152" height="42" rx="21" fill="url(#bIn3)" stroke="#fbbf24" stroke-width="1.2" filter="url(#gB)"/><text x="86" y="214" text-anchor="middle" fill="#f7ead0" font-size="12" font-weight="600">Situation · the here-and-now</text>
+<rect x="224" y="92" width="106" height="60" rx="18" fill="url(#bHub)" stroke="#e879f9" stroke-width="1.5" filter="url(#gB)"/><text x="277" y="116" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">Brain</text><text x="277" y="136" text-anchor="middle" fill="#f0b8f5" font-size="10" font-family="SF Mono,monospace">predict·categorize</text>
+<rect x="368" y="96" width="104" height="52" rx="18" fill="url(#bOut)" stroke="#34e5e0" stroke-width="1.4" filter="url(#gB)"/><text x="420" y="118" text-anchor="middle" fill="#eafcfa" font-size="12.5" font-weight="700">This emotion</text><text x="420" y="136" text-anchor="middle" fill="#8fded8" font-size="9.5" font-family="SF Mono,monospace">one instance</text>
+</svg>
+<figcaption>An emotion isn't a button lit up — it's a reading the brain "mixes" on the spot from three ingredients</figcaption>
+</figure>
+
+<p>One is <strong>body signals</strong> (heartbeat, breathing, gut, hormones — collectively <strong>interoception</strong>, see next section); two is <strong>concepts</strong> — everything you've ever learned about what "fear," "jealousy," "embarrassment" are like, stored as sets of expectations; three is <strong>context</strong> — where you are and what's happening. The brain takes all three and asks one question: "what emotion concept most cheaply explains this bundle of bodily sensation right now?" The winner becomes the emotion you <strong>feel</strong>. So an emotion is more like a <strong>verb</strong> (the brain is "doing" emotion) than a noun lying there waiting to be pressed.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This is strikingly like the skeleton of a machine-learning <b>classifier</b>: feed in raw features (here, body signals + context), apply learned <b>category labels</b> (emotion concepts), output "which class is most likely." The twist is that emotion concepts aren't labels someone hand-fed you — you <b>self-taught</b> them growing up inside your own culture and language, which is why different cultures can "carve up" emotion differently, like two models trained on different label sets. Even closer is <b>predictive coding</b> (the Topic 1 machinery): the brain doesn't passively wait for body signals to arrive and then classify — it <b>predicts</b> "in a situation like this, what will the body feel like, and what emotion should I call it," then uses the actual body signals to correct the error.</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The body is raw material: interoception and "core affect"</h2>
+<p>The most basic ingredient of all is <strong>interoception</strong> — the brain's sense of the body's <strong>internal</strong> state: heartbeat, breathing, blood sugar, the swell and squeeze of the gut, temperature. Most of the time you're not aware of it, but the brain reads it ceaselessly. And it reads it the same way it reads the outside world (Topic 1): mostly by <strong>prediction</strong>. The brain is doing something very practical — <strong>body-budgeting</strong>: like a steward, forecasting how much "energy" the body will spend next (sugar, water, salt, oxygen) and pre-adjusting heart rate and blood pressure. The seed of emotion is buried in this ledger.</p>
+<p>The brain compresses that ledger into two coarse readings, together called <strong>core affect</strong>: one is <strong>valence</strong> (does this feel good or bad), the other is <strong>arousal</strong> (are you keyed up or calm). Note — <strong>core affect is not yet an emotion</strong>; it's a still-unnamed blob of bodily sensation, a two-dimensional base map:</p>
+
+<figure>
+<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="axA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto-start-reverse"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"/></marker>
+<radialGradient id="dTR" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#7bf0e8"/><stop offset="1" stop-color="#2a9d97"/></radialGradient>
+<radialGradient id="dTL" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#f9a8d4"/><stop offset="1" stop-color="#b04d7e"/></radialGradient>
+<radialGradient id="dBL" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#6244b0"/></radialGradient>
+<radialGradient id="dBR" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#b07f10"/></radialGradient>
+</defs>
+<line x1="40" y1="150" x2="404" y2="150" stroke="#6b6688" stroke-width="1.6" marker-start="url(#axA)" marker-end="url(#axA)"/>
+<line x1="220" y1="272" x2="220" y2="30" stroke="#6b6688" stroke-width="1.6" marker-start="url(#axA)" marker-end="url(#axA)"/>
+<text x="398" y="169" text-anchor="end" fill="#9a94bc" font-size="11.5" font-family="SF Mono,monospace">valence + (pleasant)</text>
+<text x="44" y="140" text-anchor="start" fill="#9a94bc" font-size="11.5" font-family="SF Mono,monospace">− (unpleasant)</text>
+<text x="228" y="40" text-anchor="start" fill="#9a94bc" font-size="11.5" font-family="SF Mono,monospace">high arousal</text>
+<text x="228" y="266" text-anchor="start" fill="#9a94bc" font-size="11.5" font-family="SF Mono,monospace">low arousal</text>
+<circle cx="318" cy="82" r="8" fill="url(#dTR)"/><text x="330" y="86" fill="#bff5f0" font-size="12.5">excited · elated</text>
+<circle cx="120" cy="82" r="8" fill="url(#dTL)"/><text x="108" y="86" text-anchor="end" fill="#f6c8de" font-size="12.5">anxious · angry</text>
+<circle cx="120" cy="220" r="8" fill="url(#dBL)"/><text x="108" y="224" text-anchor="end" fill="#d4c6f7" font-size="12.5">down · tired</text>
+<circle cx="318" cy="220" r="8" fill="url(#dBR)"/><text x="330" y="224" fill="#f7e0a8" font-size="12.5">calm · content</text>
+<circle cx="220" cy="150" r="4.5" fill="#e879f9"/><text x="220" y="177" text-anchor="middle" fill="#e0a8ea" font-size="10.5" font-family="SF Mono,monospace">core affect = valence × arousal</text>
+</svg>
+<figcaption>The body squeezed into two readings: pleasant-or-not × keyed-up-or-not — every emotion "grows" from this base map</figcaption>
+</figure>
+
+<p>This resolves the opening riddle: <strong>the same "high-arousal, slightly-unpleasant" bodily state can be constructed into completely different emotions.</strong> At a cliff's edge the brain explains it with the concept "danger" → fear; on a roller-coaster, with "fun" → thrill; in front of a crush, with "attraction" → a flutter. The heart pounds equally; swap the label and your whole <strong>experience</strong> shifts. This is also why the little trick of "reappraising nerves as excitement" genuinely works — you're not lying to yourself, you're just fitting the same core affect with a more useful concept.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>That "valence" axis is nearly the same thing as the <b>reward signal</b> in reinforcement learning: both squeeze a complex situation into a single "good or bad" scalar that drives learning and choice. The biological version is fiercer by one step — valence isn't a score handed down by an external judge; the body computes it from its own <b>budget surplus or deficit</b> (this meal covered a shortfall → pleasant; overdrawn → unpleasant). This connects to something the AI field is exploring, <b>homeostatic reinforcement learning</b>: give the agent internal states (battery, temperature, resources) and derive reward directly from "how far the internal state is from a healthy range" — essentially installing a most-primitive "interoception + core affect" in a machine.</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Emotional granularity: the finer your emotion words, the better you cope</h2>
+<p>If emotions are "mixed" from concepts, then how many — and how fine — the emotion concepts you hold are directly determines how finely detailed an emotional experience you can construct. This ability has a name: <strong>emotional granularity</strong>.</p>
+
+<figure>
+<svg viewBox="0 0 460 186" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="blob" cx="0.5" cy="0.4" r="0.8"><stop offset="0" stop-color="#4a2140"/><stop offset="1" stop-color="#2a1226"/></radialGradient>
+<marker id="mG" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#9a94bc"/></marker>
+</defs>
+<ellipse cx="86" cy="93" rx="66" ry="52" fill="url(#blob)" stroke="#e879f9" stroke-width="1.3"/>
+<text x="86" y="90" text-anchor="middle" fill="#f3d0f0" font-size="12" font-weight="600">the same blob</text>
+<text x="86" y="108" text-anchor="middle" fill="#f3d0f0" font-size="12" font-weight="600">of "feeling bad"</text>
+<line x1="158" y1="60" x2="196" y2="46" stroke="#6b6688" stroke-width="2" stroke-linecap="round" marker-end="url(#mG)"/>
+<line x1="158" y1="128" x2="196" y2="140" stroke="#6b6688" stroke-width="2" stroke-linecap="round" marker-end="url(#mG)"/>
+<rect x="200" y="30" width="248" height="46" rx="12" fill="rgba(167,139,250,0.06)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+<text x="212" y="49" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">low granularity</text>
+<text x="212" y="67" fill="#d4cfe8" font-size="13" font-weight="600">"I just feel... bad"</text>
+<rect x="200" y="110" width="248" height="46" rx="12" fill="rgba(52,229,224,0.06)" stroke="rgba(52,229,224,0.3)" stroke-width="1"/>
+<text x="212" y="129" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">high granularity</text>
+<text x="212" y="147" fill="#d8f5f2" font-size="12" font-weight="600">anxiety · disappointment · envy · shame</text>
+</svg>
+<figcaption>One blob of discomfort: some can only call it "bad," others split it into four or five — different granularity, different moves available</figcaption>
+</figure>
+
+<p>People high in granularity can parse a vague negative feeling into "this is <strong>disappointment</strong>, not <strong>anger</strong>," "this is <strong>anxiety</strong> laced with a little <strong>shame</strong>." This isn't just vocabulary showing off: research finds that people high in emotional granularity <strong>regulate emotion better, drink less to cope, and stay steadier in body and mind under stress</strong>. The logic is plain — you have to <strong>recognize</strong> which emotion it is before you can treat it; if all you've got is "I'm so upset," the brain has no handle to grab. So "naming a feeling" (even silently, in your head) is itself a form of regulation: gathering diffuse core affect into a specific concept often takes the edge off on the spot. Conversely, learning a few more precise emotion words and noticing subtle differences is like handing the brain a few extra tools for explanation — and it's trainable.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This is the same principle as <b>the granularity of a representation</b>: a model with only "good/bad" as its two labels, versus one that can tell apart dozens of subtle categories, makes wildly different downstream decisions — coarse labels crush out a lot of useful information right at the entrance. People too: encoding your inner state as just "good/bad" is voluntarily throwing away dimensions, discarding detail that could have guided action. The AI field has lately found that letting a model learn <b>finer, more disentangled</b> internal representations improves both generalization and controllability — in a sense, emotional granularity is the human-brain version of "don't compress your representations too coarsely."</p>
+</div>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Sensation is the raw material, emotion is the interpretation" — several old traditions moved into this gap long ago:</p>
+<ul>
+<li><b>Buddhism · feeling and perception</b>: Buddhism splits the mental process into stages — first <b>vedanā</b> (feeling-tone: pleasant / unpleasant / neutral, almost exactly the "valence" axis of core affect), then <b>saññā</b> (labeling, categorizing). A core point of practice is to see that "feeling" is just feeling — don't be swept by the labeling into a whole story. This is nearly a two-thousand-year-old version of "core affect ≠ emotion," and an ancient footnote to "naming a feeling loosens it a notch."</li>
+<li><b>Stoicism · Epictetus</b>: "It is not things that disturb us, but our judgments about things." This is the heart of constructionism — the same event, fitted with a different concept/appraisal, yields a different emotion. Cognitive reappraisal in modern therapy is the clinical form of this line: don't change the event, change the layer of interpretation you drape over the body's signals.</li>
+<li><b>Language · Sapir–Whorf</b>: some languages have emotion words others lack (German Schadenfreude, Portuguese saudade — that long, aching wistfulness). If emotion is built from concepts, then <b>which emotion concepts your mother tongue handed you</b> quietly maps out which emotions you can easily feel and easily tell apart — language doesn't just describe emotion, it may help "make" it.</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If emotion is "constructed," doesn't that make it "fake"? Is my suffering just something I made up?</summary><div>Constructed ≠ fake. Money is constructed (a slip of paper's value rests entirely on social agreement), but the stress when you can't make rent is not the least bit fake; color is constructed by the brain (the world only has light of different wavelengths), but red is utterly real to you. Emotion is the same: it's a real <strong>experience</strong> — only its source isn't a "preinstalled program in your heart" but the brain's real-time interpretation of body signals. Calling it constructed isn't to deny it; it hands you a handle — <strong>what can be constructed can, in principle, be re-constructed</strong> (change the concept, the context, the reading of the body signals). This is exactly where cognitive therapy, mindfulness, and granularity training get their leverage.</div></details>
+<details><summary>So is the classical view all wrong? Aren't expressions universal?</summary><div>It's not so black-and-white. It's true expressions are broadly recognizable across cultures — but that "recognition" mostly leans on <strong>context</strong> as a crutch: paste the same "terrified face" onto different backgrounds and people read different emotions. More rigorous recent cross-cultural work also finds the expression-to-emotion mapping far less iron-clad and universal than the classical view claimed. The safer current picture: emotion <strong>does</strong> have some biological commonalities (the two axes of core affect, the basic body-budgeting machinery are likely universal), but the strong version — "six basic emotions each with a fingerprint" — is under-supported. The debate is ongoing, which is what healthy science looks like.</div></details>
+<details><summary>Can AI have emotions? It has a reward signal (valence) — is it just missing the concepts?</summary><div>By the constructionist recipe, an "emotion" needs three things: body signals (interoception) + concepts + context. Today's large models have vast <strong>concepts</strong> (they've read everything humans say about emotion) and can read <strong>context</strong>, but they have no <strong>body</strong> to tend — no real interoception, no surplus-and-deficit of a body budget, so valence is just an abstract number to them, not a "knot in the stomach." So they can <strong>talk about</strong> and <strong>recognize</strong> emotion with uncanny fidelity, yet most likely aren't <strong>feeling</strong> it. Which hints in reverse: if we ever want a machine that truly "feels," the key may not be a bigger language model but giving it a body that has costs, needs upkeep, and runs a budget. (The hard bones of consciousness and qualia we'll leave for Phase B.)</div></details>
+<details><summary>Why is "just saying it out loud" so effective?</summary><div>To <strong>name</strong> a diffuse blob of core affect with a specific concept is to move it from "a vague bodily alarm" into "an object you can think about and handle." On brain imaging, labeling an emotion (affect labeling) often comes with the prefrontal cortex ramping up and amygdala activity ramping down — as if the rational system took over that raw signal. This is one line with emotional granularity: the more precise the word, the more effective that "takeover." So when a friend says "tell me what's actually going on," it isn't just comfort — it's helping your brain complete the most crucial step of construction: categorization.</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Theory_of_constructed_emotion" target="_blank">Theory of constructed emotion</a> — the master framework of Barrett's account</li>
+<li><a href="https://en.wikipedia.org/wiki/Lisa_Feldman_Barrett" target="_blank">Lisa Feldman Barrett · How Emotions Are Made</a> — the flagship book of constructionism</li>
+<li><a href="https://en.wikipedia.org/wiki/Interoception" target="_blank">Interoception</a> — the brain's sense of the body's internal state</li>
+<li><a href="https://en.wikipedia.org/wiki/Emotional_granularity" target="_blank">Emotional granularity</a> — the fineness of distinguishing emotions, and mental health</li>
+<li><a href="https://en.wikipedia.org/wiki/Paul_Ekman" target="_blank">Paul Ekman · basic emotion theory</a> — the classical view under revision (cross-cultural expressions)</li>
+<li><a href="https://en.wikipedia.org/wiki/James%E2%80%93Lange_theory" target="_blank">James–Lange theory</a> — the historical forerunner of "body first, then emotion"</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 8 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+</body></html>
