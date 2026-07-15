@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 7 · The Language Brain — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 7 · PHASE A COGNITION</span>
+<h1>The Language Brain</h1>
+<h2>Speaking and thinking are two different machines</h2>
+<div class="date">2026-07-13 · BigCat</div>
+<p class="pitch">Someone who can't produce a single word or follow a sentence can still do arithmetic, play chess, get a joke — language breaks, and thought carries on unharmed.</p>
+</header>
+
+<div class="intro">
+<p>It's tempting to feel that language just <em>is</em> thought — that the running commentary in your head is your thinking. But the brain doesn't divide the labor that way. Some stroke patients lose language completely: sentences fall apart, they can't say what day it is — <strong>yet hand them a math problem and they solve it; set up a chessboard and they play</strong>. The language machine is wrecked, but the thinking machine keeps turning. This issue opens up "the language brain," and we'll hit two things that cut against intuition: the two famous language areas from the textbooks tell a story that's mostly wrong, and language and thought turn out to live in different rooms. That second fact is exactly the key to making sense of today's AI language models.</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Not two dots and a wire</h2>
+<p>Open any old textbook and language is drawn as two dots: <strong>Broca's area</strong> near the forehead handles "speaking," <strong>Wernicke's area</strong> above and behind the ear handles "understanding," and a bundle of nerve fibers wires them together. That picture is a hundred and fifty years old — back when doctors could only wait for a patient to die, dissect the brain, see which part had broken, and reason backward from what ability had been lost.</p>
+
+<figure>
+<svg viewBox="0 0 480 232" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="dot" cx="0.5" cy="0.32" r="0.95"><stop offset="0" stop-color="#2b2150"/><stop offset="1" stop-color="#150e2c"/></radialGradient>
+<radialGradient id="net" cx="0.5" cy="0.32" r="0.95"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></radialGradient>
+<filter id="g1" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<text x="120" y="24" text-anchor="middle" fill="#8f89ad" font-size="12.5" font-family="SF Mono,monospace">OLD · two dots</text>
+<text x="360" y="24" text-anchor="middle" fill="#7bf0e8" font-size="12.5" font-family="SF Mono,monospace">NEW · one network</text>
+<line x1="240" y1="44" x2="240" y2="212" stroke="#3a3357" stroke-width="1" stroke-dasharray="4 5"/>
+<!-- old: two dots + wire -->
+<line x1="70" y1="150" x2="170" y2="90" stroke="#8f7cd0" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="70" cy="150" r="27" fill="url(#dot)" stroke="#a78bfa" stroke-width="1.4" filter="url(#g1)"/>
+<text x="70" y="147" text-anchor="middle" fill="#efe9ff" font-size="10.5" font-weight="600">Broca</text>
+<text x="70" y="162" text-anchor="middle" fill="#9a8fc0" font-size="9" font-family="SF Mono,monospace">speak</text>
+<circle cx="170" cy="90" r="27" fill="url(#dot)" stroke="#a78bfa" stroke-width="1.4" filter="url(#g1)"/>
+<text x="170" y="87" text-anchor="middle" fill="#efe9ff" font-size="9.5" font-weight="600">Wernicke</text>
+<text x="170" y="102" text-anchor="middle" fill="#9a8fc0" font-size="9" font-family="SF Mono,monospace">grasp</text>
+<!-- new: network -->
+<line x1="300" y1="80" x2="360" y2="128" stroke="#2a9d97" stroke-width="1.5"/>
+<line x1="360" y1="128" x2="430" y2="92" stroke="#2a9d97" stroke-width="1.5"/>
+<line x1="300" y1="80" x2="360" y2="60" stroke="#2a9d97" stroke-width="1.5"/>
+<line x1="360" y1="60" x2="430" y2="92" stroke="#2a9d97" stroke-width="1.5"/>
+<line x1="300" y1="170" x2="360" y2="128" stroke="#2a9d97" stroke-width="1.5"/>
+<line x1="300" y1="170" x2="360" y2="185" stroke="#2a9d97" stroke-width="1.5"/>
+<line x1="360" y1="185" x2="430" y2="150" stroke="#2a9d97" stroke-width="1.5"/>
+<line x1="360" y1="128" x2="360" y2="185" stroke="#2a9d97" stroke-width="1.5"/>
+<line x1="300" y1="80" x2="300" y2="170" stroke="#2a9d97" stroke-width="1.5"/>
+<g fill="url(#net)" stroke="#34e5e0" stroke-width="1.3">
+<circle cx="300" cy="80" r="13" filter="url(#g1)"/><circle cx="360" cy="60" r="13"/><circle cx="430" cy="92" r="13" filter="url(#g1)"/>
+<circle cx="360" cy="128" r="13"/><circle cx="300" cy="170" r="13" filter="url(#g1)"/><circle cx="360" cy="185" r="13"/><circle cx="430" cy="150" r="13"/>
+</g>
+</svg>
+<figcaption>Language isn't two bricks — it's a whole tightly-linked network across the left brain</figcaption>
+</figure>
+
+<p>The trouble is, modern brain imaging dissolves that clean picture on contact. The truth: <strong>language runs on a whole tightly-interconnected sheet stretching from the left frontal lobe to the temporal lobe</strong> — far more than two dots. And even those two "classic" areas don't split the job so neatly — knock out Broca's area alone and you often <em>won't</em> get lasting speech loss; to really destroy language you have to take out a much broader chunk of the network. The old map isn't all wrong; it just flattened a network into two words. (For which regions and connections make up that net, <a class="reflink" href="ref-language-network.en.html">language network</a>)</p>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>The language room — thought doesn't live there</h2>
+<p>This network has a striking personality: <strong>it lights up for language and ignores nearly everything else</strong>. Neuroscientist Evelina Fedorenko did something very clean — first she pinpointed each person's own language network using sentences, then she poked it with all sorts of non-language tasks: arithmetic, listening to music, reading computer code, figuring out what someone else is thinking. The network <strong>barely stirred</strong>. It only lights up when you comprehend or build meaningful language.</p>
+
+<figure>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="lit" cx="0.5" cy="0.4" r="0.8"><stop offset="0" stop-color="#34e5e0"/><stop offset="1" stop-color="#0d5c58"/></radialGradient>
+<filter id="g2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="a2" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#6f6a8c"/></marker>
+</defs>
+<g font-size="12" font-family="-apple-system,sans-serif">
+<rect x="14" y="26" width="128" height="34" rx="17" fill="rgba(52,229,224,0.12)" stroke="#34e5e0" stroke-width="1.2"/><text x="78" y="48" text-anchor="middle" fill="#cdeeed">"She read the letter"</text>
+<rect x="14" y="86" width="128" height="34" rx="17" fill="rgba(255,255,255,0.03)" stroke="#4d4869" stroke-width="1.1"/><text x="78" y="108" text-anchor="middle" fill="#8f89ad">7 × 8 = ?</text>
+<rect x="14" y="146" width="128" height="34" rx="17" fill="rgba(255,255,255,0.03)" stroke="#4d4869" stroke-width="1.1"/><text x="78" y="168" text-anchor="middle" fill="#8f89ad">♪ a melody</text>
+</g>
+<line x1="144" y1="43" x2="200" y2="98" stroke="#34e5e0" stroke-width="2" marker-end="url(#a2)"/>
+<line x1="144" y1="103" x2="200" y2="106" stroke="#5b5678" stroke-width="1.4" stroke-dasharray="3 4" marker-end="url(#a2)"/>
+<line x1="144" y1="163" x2="200" y2="114" stroke="#5b5678" stroke-width="1.4" stroke-dasharray="3 4" marker-end="url(#a2)"/>
+<path d="M300,40 C360,32 430,58 434,108 C438,158 380,190 320,182 C262,175 232,150 236,108 C240,66 260,46 300,40 Z" fill="rgba(167,139,250,0.06)" stroke="#4d4869" stroke-width="1.2"/>
+<text x="335" y="204" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">left brain · language net lights for language</text>
+<ellipse cx="322" cy="108" rx="46" ry="30" fill="url(#lit)" filter="url(#g2)" opacity="0.92"/>
+<text x="322" y="112" text-anchor="middle" fill="#04201f" font-size="12" font-weight="700">ON</text>
+</svg>
+<figcaption>Only meaningful language switches it on; arithmetic and music flow right past</figcaption>
+</figure>
+
+<p>Put that finding together with the patient from the opening and the conclusion hardens: <strong>language is a dedicated communication tool, not thought itself.</strong> People with severe aphasia can still do arithmetic, reason, grasp cause and effect — thinking runs on other circuits. And the reverse holds: infants who can't yet speak, and some congenitally deaf people who grew up without exposure to language, still have rich thought. That chattering "inner monologue" in your head is more like thought's <strong>announcer</strong> than thought itself — it translates the already-formed idea into words, but the thinking got done before you opened your mouth.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Hold on to this "language ≠ thought" split — it's the key to reading AI language models in the final section. The brain files "wording things well" and "reasoning" in two separate systems. Today's AI, by contrast, is trained by cramming mountains of text into <b>one and the same</b> network — so the two get welded together. That difference is worth chewing on more than the resemblance is.</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Understanding a sentence means guessing all the way through</h2>
+<p>You think listening to someone is "reception" — sound comes in, meaning comes out. In fact your brain is <strong>jumping the gun</strong> the whole time: before the sentence is done, it's already guessing the next word. This isn't mysticism — EEG shows it directly. Read you "he was thirsty, so he poured a glass of —" and your brain has "water / tea / coffee" primed; if what actually shows up is <strong>"socks,"</strong> your EEG throws out an unusually large wave that scientists call the <strong>N400</strong> — and its size is essentially a ruler for "how unexpected that word was."</p>
+
+<figure>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="g3" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<line x1="40" y1="96" x2="452" y2="96" stroke="#5b5678" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="44" y="30" fill="#7bf0e8" font-size="11.5" font-family="SF Mono,monospace">"…a glass of water"</text>
+<text x="44" y="188" fill="#f0a8f6" font-size="11.5" font-family="SF Mono,monospace">"…a glass of socks"</text>
+<path d="M40,96 Q120,96 150,88 Q180,80 210,96 Q250,116 300,100 Q360,90 452,96" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="210" cy="96" r="4" fill="#34e5e0" filter="url(#g3)"/>
+<text x="234" y="70" fill="#7bf0e8" font-size="10.5" font-family="SF Mono,monospace">expected · tiny wave</text>
+<path d="M40,96 Q120,96 150,100 Q185,104 210,120 Q235,168 262,168 Q292,168 316,120 Q345,100 452,96" fill="none" stroke="#e879f9" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="262" cy="168" r="5" fill="#e879f9" filter="url(#g3)"/>
+<text x="262" y="190" text-anchor="middle" fill="#f0a8f6" font-size="10.5" font-family="SF Mono,monospace">surprise · a big N400 wave</text>
+</svg>
+<figcaption>The more unexpected the word, the bigger the brainwave — comprehension is itself a prediction</figcaption>
+</figure>
+
+<p>See the pattern? This is the same thing as <strong>perception as inference</strong> from the <a class="reflink" href="ref-visual-pathway.en.html">visual pathway</a> issue, just wearing a different organ: the brain doesn't receive passively — it <strong>guesses first, then corrects with real input</strong>. Language is just the fanciest application of that prediction machine. It's why you can fill in the half-sentence you didn't catch in a noisy restaurant, and why you can instantly get a friend's meaning before they finish — all thanks to that word-guessing engine racing ahead.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Here comes the most literal brain↔AI face-match on the whole site. A <b>large language model</b> (the ChatGPT kind) does <b>exactly this, literally</b>: give it the first half of a sentence and it predicts the most likely next word, one after another — its entire training objective is "guess the next word right." Even wilder: scientists took the internal activity of these word-guessing models and lined it up against the language-network activity of a <b>human</b> hearing the same sentences, and it <b>matched astonishingly well</b>; the better a model is at guessing words, the more it looks like a human brain. Two independently-grown paths — carbon evolution and silicon training — hit on the same trick for understanding language: predict the next word.</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Speaking well isn't thinking well</h2>
+<p>Precisely because the word-guessing trick lines up so tightly, a sharper question surfaces: <strong>does an AI that speaks flawlessly therefore "think"?</strong> Stitch the two ends of this issue together and the answer is clear — <strong>no.</strong></p>
+<p>Fedorenko's group offers a clean cut: language ability comes in two layers. One is <strong>formal competence</strong> — is the grammar right, do the words fit, does the sentence flow — purely "does it sound like language." The other is <strong>functional competence</strong> — using language to reason, do math, tie into the real world, track who knows what. <strong>The brain assigns these two layers to different systems</strong>: the language network handles form, while reasoning, arithmetic, and social cognition have their own territories. That's exactly why aphasia patients keep "the words gone, the mind intact."</p>
+<p>Today's language models happen to have <strong>drilled form to near-perfection while function is another matter</strong> — they'll write airtight sentences yet stumble on a simple multi-step inference or a spot that needs real-world common sense. They're so fluent, so fluent that we can't help projecting "it really understands" onto them. The one line to take from this issue: <strong>fluency is form, thinking is function; sounding good has never guaranteed thinking clearly.</strong> True of AI — and just as true of people.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This draws a cleaner line under the "does AI really understand" debate: stop taking "how smoothly it talks" as evidence of "how smart it is" — that only measures <b>formal competence</b>. To really test it, you have to probe <b>functional competence</b> separately: multi-step reasoning, using real-world knowledge, matching words to reality. Tellingly, the fix also mirrors the brain: rather than expecting one network to do everything, do what the brain does and <b>divide the labor</b> — let the model call external tools (a calculator for math, retrieval for facts), splitting "can speak" from "can compute / can look up" into a relay. That's one of the main directions in AI engineering right now.</p>
+</div>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing Over · Interdisciplinary Echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Can language reach the real thought and being underneath?" — a few ancient traditions argued this out long ago:</p>
+<ul>
+<li><b>Zen · beyond words</b>: "The finger points at the moon, but the finger is not the moon." Language is the finger that turns your gaze toward the moon; it is not the moon. Zen goes further and insists on <b>transmission outside words</b>: the deepest insight won't fit into sentences. Neuroscience confirms half of that from the other end — thought really can exist apart from language; you needn't "say" in order to "think."</li>
+<li><b>Philosophy · Wittgenstein</b>: early on he wrote "the limits of my language are the limits of my world," and whereof one cannot speak, one must stay silent; later he overturned himself, treating language as a "game" flowing with life. A man who argued himself to a draw landed right on this issue's fault line: is language the cage of thought, or a tool thought grabs when handy? The brain leans toward the latter.</li>
+<li><b>Linguistics · Sapir-Whorf</b>: does your native tongue shape how you think (some languages have no "left/right," only compass directions — and their speakers have uncanny orientation)? The strong version, "language determines thought," is dead — you can think fine without language. But the weak version holds: language is a <b>habitual viewfinder</b>, quietly tuning what you tend to notice and what you overlook. It can't switch thought on or off, but it can nudge thought's default lens.</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going Deeper</h3>
+<details><summary>If thought doesn't need language, what is that voice in my head that never shuts up?</summary><div>That's <strong>inner speech</strong> — most likely the brain borrowing the language system to add "subtitles" to thought that's already taken shape, so you can grip it, order it, chew it over. The evidence: some people report having <strong>almost no inner monologue</strong> and still think, decide, and live perfectly well. So the inner voice is more of a commonly-used <strong>add-on</strong> than the engine. It genuinely helps — putting a thought into words can pin something vague into a clear string, which is why "writing it down made it click."</div></details>
+<details><summary>Language models predict brain activity so well — doesn't that mean they work "on the same principle" as the brain?</summary><div>Careful with that jump. "Can predict" shows the two <strong>share structure at some computational level</strong> — both approximate the optimal solution to "predict the next word from context," so their internal representations end up looking alike. But that's not the same as <strong>implementing it the same way</strong>: the brain runs on tens of watts, learns as it goes, and is bolted to a body and world; the model runs on megawatts, freezes once trained, and lives only in text. What lines up is the task logic of "predict the next word"; what doesn't is the flesh and the energy underneath. Similar in function, divergent in implementation — a line the computational-neuroscience finale will keep returning to.</div></details>
+<details><summary>If "can speak" ≠ "can think," how badly do we err by judging intelligence from fluency?</summary><div>Worse than you'd guess. Humans carry a deep bias: <strong>speaks smoothly = thinks clearly</strong>. So the eloquent get overrated and the inarticulate-but-deep get buried; that same bias is now poured wholesale onto AI — it's fluent enough that we instinctively fill in understanding for it. The fix is to <strong>test the two separately</strong>: never mind how pretty the talk is, only whether the conclusion survives questioning and matches the facts. That's the right way to grade AI — and a fairly hard rule for reading people, too.</div></details>
+<details><summary>Why is language almost always on the left side of the brain? What does the right side do in language?</summary><div>In about nine in ten right-handers, and most left-handers, the core language network sits mainly in the <strong>left hemisphere</strong> — why it's so stubbornly there is still unsettled (one idea: the left brain is better at processing fast signals that unfold in time, and language is exactly that kind of signal). The right side isn't idle: it handles more of the <strong>tone, prosody, subtext, humor, and irony</strong> layer. People with right-hemisphere language damage can follow the literal meaning but often <strong>miss what's between the lines</strong> — every word registers, they just can't hear that you're joking. Which shows "understanding a sentence" was never only understanding the literal words.</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further Reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Broca%27s_area" target="_blank">Broca's area</a> · <a href="https://en.wikipedia.org/wiki/Wernicke%27s_area" target="_blank">Wernicke's area</a> — the classic two-dot model and its revision</li>
+<li><a href="https://en.wikipedia.org/wiki/Aphasia" target="_blank">Aphasia</a> — how language damage lets us pull the functions apart</li>
+<li><a href="https://en.wikipedia.org/wiki/Evelina_Fedorenko" target="_blank">Evelina Fedorenko</a> — the language network's selectivity and the formal/functional split</li>
+<li><a href="https://en.wikipedia.org/wiki/N400_(neuroscience)" target="_blank">N400</a> — the brainwave that fires when a language prediction fails</li>
+<li><a href="https://en.wikipedia.org/wiki/Language_processing_in_the_brain" target="_blank">Language processing in the brain / dual-stream model</a> — the dorsal (articulation) and ventral (meaning) streams</li>
+<li><a href="https://arxiv.org/abs/2301.06627" target="_blank">Mahowald &amp; Fedorenko (2024) · Dissociating language and thought in LLMs</a> — formal vs functional competence (source for Section 4)</li>
+<li><a href="https://en.wikipedia.org/wiki/Linguistic_relativity" target="_blank">Linguistic relativity (Sapir-Whorf)</a> — does language shape thought? The limits of the weak version</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 7 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://cissy0802.github.io/comments.js" defer></script>
+<script src="https://cissy0802.github.io/search.js" defer></script>
+<script src="https://cissy0802.github.io/index-button.js" defer></script>
+<script src="https://cissy0802.github.io/i18n-tts.js" defer></script>
+</body></html>
