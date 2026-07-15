@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 9 · The Social Brain & Theory of Mind — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 9 · PHASE A COGNITION</span>
+<h1>The Social Brain & Theory of Mind</h1>
+<h2>There's a model of "other people" living inside your head</h2>
+<div class="date">2026-07-15 · BigCat</div>
+<p class="pitch">You think you're "seeing" other people — really you're rebuilding a whole brain for them, live, inside your own.</p>
+</header>
+
+<div class="intro">
+<p>You're probably alone right now, yet a big chunk of your brain is dedicated to <em>other</em> people. Walk into a room and you read it almost instantly: who's angry, who wants to speak but didn't dare, whose "I'm fine" clearly isn't. You do it so smoothly you take it for granted. <strong>But this is one of the brain's most demanding, latest-maturing feats — building a model of someone else's mind inside your own, in real time, and constantly updating it.</strong> Better still, the model lets other people be <em>wrong</em>: you can hold the truth in one hand while tracking, in the other, the version in their head that differs from it. This issue is about that "social brain" — how it reads minds, how it empathizes, and one legend hyped to the sky and then dragged back to earth by science: mirror neurons.</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>You're reading minds every waking moment</h2>
+<p>Let's name the feat: <strong>theory of mind</strong> (also "mentalizing"). It's your ability to attribute <strong>invisible mental states</strong> — thoughts, wants, intentions, beliefs — to others, and use them to predict what they'll do next. When you say "he didn't pick up, he's probably busy," a whole act of mind-reading is hidden inside: you never saw his mind, yet you installed a "busy" state into it.</p>
+<p>The fiercest part of the skill is that it can handle <strong>false beliefs</strong>. Psychology has a classic test, the <strong>false-belief task</strong>: a girl, Sally, puts a ball in a basket and leaves; while she's gone, Anne secretly moves it to a box. Now, the question: <strong>where</strong> will Sally look for the ball when she comes back?</p>
+
+<figure>
+<svg viewBox="0 0 454 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="panReal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></linearGradient>
+<linearGradient id="panMind" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241c46"/><stop offset="1" stop-color="#140d2a"/></linearGradient>
+</defs>
+<rect x="10" y="14" width="196" height="182" rx="16" fill="url(#panReal)" stroke="rgba(52,229,224,0.4)" stroke-width="1.2"/>
+<text x="108" y="40" text-anchor="middle" fill="#7bf0e8" font-size="12.5" font-family="SF Mono,monospace">the real world</text>
+<rect x="30" y="64" width="70" height="66" rx="10" fill="rgba(255,255,255,0.03)" stroke="#8f89ad" stroke-width="1"/><text x="65" y="84" text-anchor="middle" fill="#c6c0e0" font-size="12">basket</text>
+<rect x="116" y="64" width="70" height="66" rx="10" fill="rgba(255,255,255,0.03)" stroke="#8f89ad" stroke-width="1"/><text x="151" y="84" text-anchor="middle" fill="#c6c0e0" font-size="12">box</text>
+<circle cx="151" cy="108" r="13" fill="#fbbf24"/><text x="151" y="112" text-anchor="middle" fill="#241905" font-size="10" font-weight="700">ball</text>
+<text x="108" y="172" text-anchor="middle" fill="#8fded8" font-size="11" font-family="SF Mono,monospace">Anne moved it to the box</text>
+<text x="227" y="114" text-anchor="middle" fill="#e879f9" font-size="30" font-weight="700">≠</text>
+<rect x="248" y="14" width="196" height="182" rx="16" fill="url(#panMind)" stroke="rgba(232,121,249,0.45)" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="346" y="40" text-anchor="middle" fill="#f0b8f5" font-size="12.5" font-family="SF Mono,monospace">Sally's mind</text>
+<rect x="268" y="64" width="70" height="66" rx="10" fill="rgba(255,255,255,0.03)" stroke="#8f89ad" stroke-width="1"/><text x="303" y="84" text-anchor="middle" fill="#c6c0e0" font-size="12">basket</text>
+<rect x="354" y="64" width="70" height="66" rx="10" fill="rgba(255,255,255,0.03)" stroke="#8f89ad" stroke-width="1"/><text x="389" y="84" text-anchor="middle" fill="#c6c0e0" font-size="12">box</text>
+<circle cx="303" cy="108" r="13" fill="#fbbf24"/><text x="303" y="112" text-anchor="middle" fill="#241905" font-size="10" font-weight="700">ball</text>
+<text x="346" y="172" text-anchor="middle" fill="#f3c8f0" font-size="11" font-family="SF Mono,monospace">she still thinks: in the basket</text>
+</svg>
+<figcaption>You hold two versions of the world at once: the real one, and Sally's outdated one</figcaption>
+</figure>
+
+<p>You know the answer is <strong>the basket</strong> — because what you're tracking isn't where the ball actually is, but <strong>where Sally believes it is</strong>. That step looks trivial but is a huge cognitive leap: most children pass it reliably only around <strong>age 4</strong>, blurting "the box" before that (unable to keep "what I know" apart from "what she knows"). And it <strong>nests</strong>: I know <em>you think</em> I don't know — the everyday machinery of politeness, jokes, lies, and chess all runs on this layer-upon-layer recursive mind-reading.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>AI has long wanted this, under the name <b>machine theory of mind</b>. DeepMind built a ToMnet: a network dedicated to <b>observing other agents and guessing their beliefs and next move</b>, able even to pass a machine version of the false-belief test. In multi-agent settings it's a necessity — to cooperate or compete you first need an "opponent model" (what does it probably want). And the last couple of years brought a lively fight: <b>can large language models (ChatGPT and the like) read minds?</b> Some found they answer many false-belief questions correctly; others tweak the wording slightly and watch performance crater. So whether the model is really mentalizing, or has simply seen oceans of human chat and learned "how mind-reading is talked about," nobody can yet call.</p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Which part of the brain does the reading</h2>
+<p>When you chew on "what is she thinking," a fixed cast of regions lights up together, collectively the <strong>mentalizing network</strong>. The leads: the <strong>medial prefrontal cortex</strong> (front-and-center-inward, handling "thinking about people and self"), the <strong>temporoparietal junction</strong> (TPJ, above and behind the ear, argued to specifically track others' beliefs), the <strong>precuneus/posterior cingulate</strong> at the back midline, and the <strong>temporal poles</strong>.</p>
+
+<figure>
+<svg viewBox="0 0 470 226" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="mn" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#241c46"/><stop offset="1" stop-color="#140d2a"/></radialGradient>
+<radialGradient id="mnT" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></radialGradient>
+<filter id="gM" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<line x1="176" y1="49" x2="290" y2="53" stroke="#6b6688" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="365" y1="76" x2="365" y2="148" stroke="#6b6688" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="290" y1="173" x2="176" y2="173" stroke="#6b6688" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="101" y1="148" x2="101" y2="76" stroke="#6b6688" stroke-width="1.8" stroke-linecap="round"/>
+<rect x="26" y="26" width="150" height="46" rx="14" fill="url(#mn)" stroke="#a78bfa" stroke-width="1.3" filter="url(#gM)"/><text x="101" y="46" text-anchor="middle" fill="#ece7ff" font-size="11.5" font-weight="600">medial PFC</text><text x="101" y="62" text-anchor="middle" fill="#9a8fc0" font-size="9.5" font-family="SF Mono,monospace">mPFC</text>
+<rect x="290" y="30" width="150" height="46" rx="14" fill="url(#mnT)" stroke="#34e5e0" stroke-width="1.3" filter="url(#gM)"/><text x="365" y="50" text-anchor="middle" fill="#d8f5f2" font-size="11.5" font-weight="600">temporoparietal jn</text><text x="365" y="66" text-anchor="middle" fill="#7bd0d8" font-size="9.5" font-family="SF Mono,monospace">TPJ · tracks belief</text>
+<rect x="290" y="150" width="150" height="46" rx="14" fill="url(#mn)" stroke="#a78bfa" stroke-width="1.3" filter="url(#gM)"/><text x="365" y="170" text-anchor="middle" fill="#ece7ff" font-size="11" font-weight="600">precuneus/PCC</text><text x="365" y="186" text-anchor="middle" fill="#9a8fc0" font-size="9.5" font-family="SF Mono,monospace">back midline</text>
+<rect x="26" y="150" width="150" height="46" rx="14" fill="url(#mn)" stroke="#a78bfa" stroke-width="1.3" filter="url(#gM)"/><text x="101" y="176" text-anchor="middle" fill="#ece7ff" font-size="11.5" font-weight="600">temporal poles</text>
+<text x="233" y="108" text-anchor="middle" fill="#e0a8ea" font-size="11.5" font-family="SF Mono,monospace">mentalizing network</text>
+<text x="233" y="126" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">≈ default mode network</text>
+</svg>
+<figcaption>These regions work together — and they're nearly the same net that idles when your mind wanders</figcaption>
+</figure>
+
+<p>Here's the telling coincidence: this "mind-reading net" overlaps heavily with the network most active when you're <strong>doing nothing, just zoning out</strong> — the <strong>default mode network</strong>. In other words, the moment the brain goes idle, it <strong>defaults to thinking about people</strong>: replaying that conversation, decoding what someone meant, rehearsing what to say later. Social reasoning isn't a module you switch on occasionally; it's more like the brain's <strong>background hum</strong>, running whenever there's a free moment. Which is a sidewise proof that "humans are social animals" isn't a slogan — it's baked into the brain's default setting.</p>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Mirror neurons: hyped sky-high, then halved</h2>
+<p>Say "understanding others" and many people reach for <strong>mirror neurons</strong>. This was an accidental find by Italian scientists in Parma in the 1990s, in monkey brains: certain motor neurons fired when the monkey <strong>reached for a peanut itself</strong> — and fired <strong>again</strong> when it merely <strong>watched someone else</strong> reach for one, sitting perfectly still. As if watching another's action, your brain quietly "ran through it" too. Humans turn out to have an analogous <a class="reflink" href="ref-mirror-system.en.html">mirror system</a>.</p>
+
+<figure>
+<svg viewBox="0 0 470 208" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="src1" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#3a2a12"/><stop offset="1" stop-color="#241905"/></radialGradient>
+<radialGradient id="src2" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></radialGradient>
+<radialGradient id="hubM" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#3a1a44"/><stop offset="1" stop-color="#22102e"/></radialGradient>
+<filter id="gMir" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mMir" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#c98adf"/></marker>
+</defs>
+<line x1="168" y1="52" x2="286" y2="92" stroke="#d0a860" stroke-width="2.6" stroke-linecap="round" marker-end="url(#mMir)"/>
+<line x1="168" y1="156" x2="286" y2="116" stroke="#34e5e0" stroke-width="2.6" stroke-linecap="round" marker-end="url(#mMir)"/>
+<rect x="16" y="30" width="152" height="44" rx="21" fill="url(#src1)" stroke="#fbbf24" stroke-width="1.2" filter="url(#gMir)"/><text x="92" y="57" text-anchor="middle" fill="#f7ead0" font-size="12" font-weight="600">you grab a peanut</text>
+<rect x="16" y="134" width="152" height="44" rx="21" fill="url(#src2)" stroke="#34e5e0" stroke-width="1.2" filter="url(#gMir)"/><text x="92" y="161" text-anchor="middle" fill="#d8f5f2" font-size="12" font-weight="600">you watch it grabbed</text>
+<rect x="288" y="80" width="166" height="48" rx="18" fill="url(#hubM)" stroke="#e879f9" stroke-width="1.5" filter="url(#gMir)"/><text x="371" y="100" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">the same motor neurons</text><text x="371" y="117" text-anchor="middle" fill="#f0b8f5" font-size="10" font-family="SF Mono,monospace">both fire</text>
+</svg>
+<figcaption>Doing and watching trigger the same neurons — real motor resonance, but what it can prove is another matter</figcaption>
+</figure>
+
+<p>Then the story ran away with itself. A famous voice crowned them <strong>"the cells that built civilization"</strong>: empathy runs on them, language began with them, autism is a "broken mirror." Stirring — but the evidence didn't keep up. Cooler-headed neuroscience dragged it back down: <strong>the mirror firing is real, but it does not equal mind-reading, nor empathy</strong> — what actually tracks others' beliefs is the mentalizing network from the last section, a different set of regions entirely. And the mirror property is likely, in large part, <strong>learned by association</strong>: whenever you perform an action you almost always see it too (you watch your own hand), so the brain ties "seeing" to "doing" — not necessarily an innate mind-reading organ. It probably handles "motor resonance, part of understanding actions, imitation" — a useful part, <strong>not the master key to social life</strong>.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>"Watch once and run through it internally" resembles AI's <b>imitation learning</b> (learning from demonstration): an agent observes an expert's action sequence and maps it into its own motor system, getting most of the way without trial-and-error. The intriguing bit is that <b>the same caution applies on both sides</b> — a robot that only "mirrors" a human's motion trajectory often fails to grasp the <b>intent and goal</b> behind it, aping the surface and breaking in a new context. Which mirrors the mirror-neuron lesson exactly: <b>copying an action ≠ understanding it</b>. To truly get what someone (or an expert) is doing and why, you still need the mentalizing that builds a "goal/belief model." Mirroring alone isn't enough.</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Empathy isn't one thing: understanding, feeling, or wanting to help</h2>
+<p>"Empathy" gets used too loosely; it actually bundles several different things with different circuits. At minimum, split it in two: <strong>cognitive empathy</strong> — you <em>understand</em> that he's hurting (via the mentalizing network, reasoning out his state); and <strong>affective empathy</strong> — you <em>hurt along with him</em> (watching another's pain lights up your own <strong>anterior insula</strong> and <strong>anterior cingulate</strong> — the very regions that process <em>your</em> pain). The two dissociate: some people grasp another's pain perfectly yet feel nothing; others tear up on sight but can't say what's actually wrong.</p>
+
+<figure>
+<svg viewBox="0 0 490 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="eSrc" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#3a1a44"/><stop offset="1" stop-color="#22102e"/></radialGradient>
+<radialGradient id="eCog" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#241c46"/><stop offset="1" stop-color="#140d2a"/></radialGradient>
+<radialGradient id="eAff" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></radialGradient>
+<filter id="gE" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mE" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#9a94bc"/></marker>
+</defs>
+<line x1="122" y1="112" x2="194" y2="54" stroke="#8f89ad" stroke-width="2.2" stroke-linecap="round" marker-end="url(#mE)"/>
+<line x1="122" y1="138" x2="194" y2="172" stroke="#8f89ad" stroke-width="2.2" stroke-linecap="round" marker-end="url(#mE)"/>
+<line x1="354" y1="164" x2="370" y2="146" stroke="#8f89ad" stroke-width="2.2" stroke-linecap="round" marker-end="url(#mE)"/>
+<line x1="354" y1="188" x2="370" y2="206" stroke="#8f89ad" stroke-width="2.2" stroke-linecap="round" marker-end="url(#mE)"/>
+<rect x="10" y="98" width="112" height="52" rx="16" fill="url(#eSrc)" stroke="#e879f9" stroke-width="1.4" filter="url(#gE)"/><text x="66" y="120" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">seeing someone</text><text x="66" y="138" text-anchor="middle" fill="#f0b8f5" font-size="12" font-weight="700">suffer</text>
+<rect x="196" y="22" width="158" height="50" rx="16" fill="url(#eCog)" stroke="#a78bfa" stroke-width="1.3" filter="url(#gE)"/><text x="275" y="43" text-anchor="middle" fill="#ece7ff" font-size="12" font-weight="600">cognitive · understand</text><text x="275" y="60" text-anchor="middle" fill="#9a8fc0" font-size="9.5" font-family="SF Mono,monospace">mentalizing network</text>
+<rect x="196" y="150" width="158" height="50" rx="16" fill="url(#eAff)" stroke="#34e5e0" stroke-width="1.3" filter="url(#gE)"/><text x="275" y="171" text-anchor="middle" fill="#d8f5f2" font-size="12" font-weight="600">affective · feel-with</text><text x="275" y="188" text-anchor="middle" fill="#7bd0d8" font-size="9.5" font-family="SF Mono,monospace">insula / cingulate</text>
+<rect x="372" y="116" width="112" height="46" rx="14" fill="rgba(244,114,182,0.08)" stroke="rgba(244,114,182,0.5)" stroke-width="1.2"/><text x="428" y="135" text-anchor="middle" fill="#f9c6e0" font-size="11" font-weight="600">empathic distress</text><text x="428" y="151" text-anchor="middle" fill="#c98ab0" font-size="9" font-family="SF Mono,monospace">→ withdraw·burnout</text>
+<rect x="372" y="186" width="112" height="46" rx="14" fill="rgba(52,229,224,0.08)" stroke="rgba(52,229,224,0.5)" stroke-width="1.2"/><text x="428" y="205" text-anchor="middle" fill="#bff5f0" font-size="11" font-weight="600">compassion</text><text x="428" y="221" text-anchor="middle" fill="#7bd0d8" font-size="9" font-family="SF Mono,monospace">→ approach·help</text>
+</svg>
+<figcaption>Empathy has at least two routes; the affective one forks again into "crushed by the pain" and "warmth that wants to help"</figcaption>
+</figure>
+
+<p>There's an even more practical cut. A line of work by Tania Singer found: <strong>affective empathy</strong> (hurting along) overused leads to <strong>burnout</strong> — that's <strong>empathic distress</strong>, why nurses and caregivers can collapse. But right beside it runs a different path: <strong>compassion</strong> — not "I hurt too" but "I care about you, I want to help," carrying warmth and the pull to act, riding a different (reward/affiliation-leaning) circuit. Crucially: <strong>compassion is trainable</strong>. Even brief loving-kindness meditation can shift people from "swamped by the pain" toward "warmly wanting to help" — a thread we'll pick back up in Phase C on meditation.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>When you get a swarm of AI agents to <b>cooperate</b>, the useful part is usually not "feeling-with" but the <b>cognitive empathy</b> branch: give each agent a model of "what others want and how they'll move" and they can coordinate, yield, form alliances. It's practically the foundation of multi-agent cooperation. And the "affective empathy burns out, compassion is more sustainable" distinction quietly echoes an intuition in AI <b>alignment</b>: we don't actually want a system swamped and thrown off by every human pain in front of it; we want one that stably <b>cares about and helps</b> people — understanding them, caring, but not swept away by emotional contagion. Biology's answer (compassion ≠ empathic distress) happens to be exactly what the engineering wants.</p>
+</div>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"How do I ever get inside another person's mind" — the question is ancient, and several old traditions long ago moved in here:</p>
+<ul>
+<li><b>Buddhism · compassion and self–other exchange</b>: the Tibetan practice of <b>tonglen</b> (giving and taking) trains exactly a loosening of the "self"/"other" boundary — breathing in another's suffering, breathing out your own ease. Buddhism has always sharply separated <b>compassion</b> (wishing to relieve suffering and give joy) from merely "suffering along," which lands squarely on Singer's distinction: <b>compassion isn't being swamped by pain, it's steadily wanting to help</b>. And the end-point, <b>non-self</b>, dismantles the very wall between self and other — the boundary the social brain works so hard to maintain is the one it sets out to see through.</li>
+<li><b>Confucianism · shu and the heart of compassion</b>: Confucius taught <b>shu</b> — "do not impose on others what you do not want yourself" — projecting your own heart onto another's, which is mentalizing. Mencius spoke of the <b>heart of compassion</b>: see a child about to fall into a well and anyone, <b>without a moment's thought</b>, startles and moves to save it — a two-thousand-year-old portrait of "affective empathy firing automatically," which Mencius took as proof that human nature is good.</li>
+<li><b>Phenomenology · the problem of other minds and intersubjectivity</b>: philosophy has a hard problem — <b>what entitles me to be sure others have minds that hurt and think</b>, rather than being elaborate machines? (The problem of other minds.) Husserl and Merleau-Ponty gave an intriguing answer: perhaps we don't first "infer" that others have minds — the body <b>directly perceives</b> the living presence of the other — which maps neatly onto the brain's two routes: mirror-style direct resonance, and mentalizing-style inference.</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>Is autism a "broken mind-reading" faculty?</summary><div>The classic claim was indeed a "theory-of-mind deficit," but it's been heavily revised in recent years — and criticized for stigmatizing. A more balanced picture has two parts: one, mind-reading is a continuum, and many autistic people aren't worse at <strong>explicit reasoning</strong> about minds; what's hard is reading social cues <strong>fast, in real time</strong>. Two, the recent <strong>"double empathy problem"</strong> (Milton) points out that communication breakdown is often <strong>mutual</strong> — it's not just that autistic people can't read neurotypicals; neurotypicals equally can't read autistic people; the two run different "social operating systems." So rather than "one side is broken," it's better framed as a <strong>mismatch</strong>. This is also why single-cause stories like the "broken mirror" hold up less and less.</div></details>
+<details><summary>If a large model passes false-belief tests, doesn't that show it can read minds?</summary><div>Be careful. It has read nearly everything humans have written about "what others think"; what it learned may be <strong>the linguistic pattern of "how such questions are answered,"</strong> not an actual "other's belief" built in its head. The evidence: change surface details of a classic item (reword it without touching the logic, add a distractor) and some models' accuracy drops noticeably — genuine mentalizing shouldn't be thrown by such surface changes. The fairer statement: it has some <strong>functional, good-enough</strong> mind-reading behavior, but whether it's our kind of "putting yourself in another's shoes" is undecided. This continues the same "formal vs functional competence" debate from Topic 7.</div></details>
+<details><summary>Is more empathy always better?</summary><div>Not necessarily. One camp (e.g. Paul Bloom's <em>Against Empathy</em>) argues that affective empathy is a <strong>spotlight</strong> — it makes you ache for the one person in front of you while <strong>leaving in the dark</strong> the vast crowd you can't see, and it's easily manipulated (whoever tells the best story, or is most like you, wins your empathy), so it routinely warps fair judgment. His suggestion isn't coldness but leaning more on <strong>rational compassion + cognitive empathy</strong>: understand others' situations, and still make choices that are better for more people. This dovetails with the brain-science thread — <strong>compassion (steady care) tends to be more sustainable, and fairer, than emotional contagion</strong>.</div></details>
+<details><summary>Why, alone, does the brain still churn endlessly about "people"?</summary><div>Because the mentalizing network overlaps heavily with the default mode network — the moment the brain idles, what it defaults to running is social content: rehashing conversations, sizing up relationships, rehearsing meetings. Evolutionarily this pays off: for a <strong>social</strong> animal, figuring out "who's connected to whom, how they feel about me" is a life-or-death matter, worth computing in the background nonstop. The cost is that this unstoppable social rumination is also fertile ground for much anxiety and depression (Phases C and D return here). So "I just can't stop overthinking" is, in a sense, the brain's factory setting.</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Theory_of_mind" target="_blank">Theory of mind</a> — attributing mental states to others</li>
+<li><a href="https://en.wikipedia.org/wiki/Sally%E2%80%93Anne_test" target="_blank">Sally–Anne test</a> — the classic false-belief paradigm</li>
+<li><a href="https://en.wikipedia.org/wiki/Mirror_neuron" target="_blank">Mirror neuron</a> — the discovery, the controversy, the overblown legend</li>
+<li><a href="https://en.wikipedia.org/wiki/Empathy" target="_blank">Empathy</a> — cognitive vs affective empathy</li>
+<li><a href="https://en.wikipedia.org/wiki/Tania_Singer" target="_blank">Tania Singer · empathy vs compassion</a> — empathic distress and trainable compassion</li>
+<li><a href="https://en.wikipedia.org/wiki/Social_brain_hypothesis" target="_blank">Social brain hypothesis · Dunbar</a> — brain size and social group size</li>
+<li><a href="https://en.wikipedia.org/wiki/Against_Empathy" target="_blank">Paul Bloom · Against Empathy</a> — empathy's "spotlight" bias</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 9 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+</body></html>
