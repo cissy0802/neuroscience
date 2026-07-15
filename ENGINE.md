@@ -49,7 +49,7 @@
 
 ## 发布
 - **不要手动加** ← Hub / comments.js / search.js / index-button.js / i18n-tts.js（Action 自动注入）。
-- 更新 `index.html` + `index.en.html`：主线栏把该 Topic 的 `.entry` 从灰变成可点（加 href + `上线`/`live` 徽章）；若生成了新 ref 页，参考库栏对应卡片也变可点。
+- 更新 `index.html` + `index.en.html`：主线栏把该 Topic 的 `.entry` 从灰变成可点（**只加 href，别加 `上线`/`live` 徽章**——已上线与否用"可点/灰"区分即可）；若生成了新 ref 页，参考库栏对应卡片也变可点（`.rt` 保持 `ref`，别加"· 上线"）。
 - `./publish.sh` → PushNotification：`🧠 今日神经科学：[主题]。<URL>`
 
 ## 自检
