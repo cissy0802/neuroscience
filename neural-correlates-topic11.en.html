@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 11 · Neural Correlates of Consciousness (NCC) — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(167,139,250,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(167,139,250,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 11 · PHASE B CONSCIOUSNESS</span>
+<h1>The Neural Correlates of Consciousness</h1>
+<h2>Your brain runs countless things at once — which small handful is the one you're actually experiencing?</h2>
+<div class="date">2026-07-17 · BigCat</div>
+<p class="pitch">The hard problem may never be solved — but "what exactly changes in your head the moment you see something" can be pried open, experiment by experiment.</p>
+</header>
+
+<div class="intro">
+<p>Last issue laid out the cliff nobody can cross: push mechanism all the way down and you still can't say <strong>why any of it feels like anything</strong>. So what now — sit around waiting for philosophers to finish arguing? No. Scientists switched to a cleverer question: <strong>don't ask "why" — ask "where."</strong> Every time you <strong>consciously</strong> experience something (you really saw that red dot, you really heard that sound), some set of neural activity must light up and die down along with it; and when the same stimulus <strong>doesn't reach awareness</strong> (it's right there, but you never noticed), that activity isn't present. Find the set that's <strong>locked to the experience</strong> — that's the <strong>neural correlates of consciousness</strong> (NCC). It doesn't solve the hard problem, but it's the one part we can actually <strong>get our hands on</strong>. This issue: the trick scientists use to pull "consciousness" out of "the stimulus," why the most natural move — asking you to report — turns out to poison the answer, and how two rival theories were, for the first time, put on stage to <strong>crash into each other head-on</strong>.</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Don't ask "why is there feeling" — ask "the instant feeling appears, what changed in the brain"</h2>
+<p>In 1990, Francis Crick — co-discoverer of the DNA double helix — teamed up with the young neuroscientist Christof Koch and did something fairly heretical for the time: <strong>they argued consciousness should stop being the philosophers' private property and move into the lab</strong>. Their move was to sidestep the hard problem and chase a measurable target instead — the <strong>neural correlates of consciousness</strong>: the <strong>minimal set</strong> of neural activity jointly sufficient for one <strong>specific</strong> conscious experience ("right now I see this red dot"). Note both words, "minimal" and "specific": not the whole brain, just the handful of activity that's <strong>just enough</strong> to light this experience up.</p>
+
+<p>Why does that phrasing make experiments possible? Because the vast majority of brain activity <strong>has nothing to do with consciousness</strong>. The brainstem activity regulating your heartbeat, digestion, and blood pressure never stops, and you feel none of it; even plenty of visual and auditory processing runs to completion in the dark (think of driving on autopilot — you still steer, still stop at lights, yet you weren't "watching"). So the real question becomes a piece of <strong>subtraction</strong>: <strong>take one stimulus, a trial where you were aware of it and a trial where you weren't; the difference in brain activity between them is the prime suspect for the consciousness part.</strong></p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="nAware" cx="0.5" cy="0.32" r="0.95"><stop offset="0" stop-color="#2c1440"/><stop offset="1" stop-color="#180a26"/></radialGradient>
+<radialGradient id="nDark" cx="0.5" cy="0.32" r="0.95"><stop offset="0" stop-color="#151228"/><stop offset="1" stop-color="#0b0918"/></radialGradient>
+<filter id="glowN" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mIn" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"/></marker>
+</defs>
+<rect x="30" y="20" width="70" height="46" rx="10" fill="#1a1530" stroke="#8f89ad" stroke-width="1.2"/>
+<text x="65" y="40" text-anchor="middle" fill="#cfc9e6" font-size="11">same</text>
+<text x="65" y="57" text-anchor="middle" fill="#cfc9e6" font-size="11">red dot</text>
+<line x1="104" y1="43" x2="150" y2="43" stroke="#34e5e0" stroke-width="2.2" stroke-linecap="round" marker-end="url(#mIn)"/>
+<rect x="158" y="16" width="292" height="54" rx="16" fill="url(#nAware)" stroke="#e879f9" stroke-width="1.4" filter="url(#glowN)"/>
+<text x="304" y="39" text-anchor="middle" fill="#f5b8fb" font-size="13.5" font-weight="700">this time you "see" it</text>
+<text x="304" y="59" text-anchor="middle" fill="#ecdcf2" font-size="10.5" font-family="SF Mono,monospace">sensory processing + that extra activity ★</text>
+<line x1="104" y1="200" x2="150" y2="200" stroke="#34e5e0" stroke-width="2.2" stroke-linecap="round" marker-end="url(#mIn)"/>
+<rect x="30" y="177" width="70" height="46" rx="10" fill="#1a1530" stroke="#8f89ad" stroke-width="1.2"/>
+<text x="65" y="197" text-anchor="middle" fill="#cfc9e6" font-size="11">same</text>
+<text x="65" y="214" text-anchor="middle" fill="#cfc9e6" font-size="11">red dot</text>
+<rect x="158" y="173" width="292" height="54" rx="16" fill="url(#nDark)" stroke="#5b5678" stroke-width="1.3"/>
+<text x="304" y="196" text-anchor="middle" fill="#9a94bc" font-size="13.5" font-weight="700">this time you "miss" it</text>
+<text x="304" y="216" text-anchor="middle" fill="#7a7498" font-size="10.5" font-family="SF Mono,monospace">sensory processing still runs, but ★ stays dark</text>
+<text x="240" y="126" text-anchor="middle" fill="#34e5e0" font-size="13" font-weight="700">difference = ★ = suspect for the NCC</text>
+<line x1="150" y1="108" x2="330" y2="108" stroke="#34e5e0" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+</svg>
+<figcaption>Finding the NCC = subtraction: hold the stimulus fixed, compare an aware trial against an unaware one; the leftover activity is the consciousness part</figcaption>
+</figure>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Take one image and let it flip back and forth in your eyes on its own</h2>
+<p>Subtraction sounds neat, but how do you guarantee "stimulus completely fixed, only consciousness changes"? In real life the moment the stimulus shifts, everything shifts with it, and you can't tell which slice of the difference is consciousness and which is the stimulus. Neuroscientists found a near-cheat loophole — <strong>binocular rivalry</strong>: show your <strong>left eye</strong> one image (say, a face) and your <strong>right eye</strong> a completely different one at the same time (say, a house). You'd expect a ghostly overlap of face and house, but the brain <strong>can't stand the contradiction</strong>, so it does something strange: <strong>it only lets you be aware of one at a time</strong> — first the face, then a few seconds later it snaps to the house, then back to the face, flipping endlessly, and you can't hold it still.</p>
+
+<figure>
+<svg viewBox="0 0 480 246" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="eyeg" cx="0.5" cy="0.4" r="0.85"><stop offset="0" stop-color="#1c2640"/><stop offset="1" stop-color="#0e1526"/></radialGradient>
+<filter id="glowR2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mE" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"/></marker>
+<marker id="mToggle" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"/></marker>
+</defs>
+<ellipse cx="66" cy="60" rx="30" ry="20" fill="url(#eyeg)" stroke="#34e5e0" stroke-width="1.3"/>
+<circle cx="66" cy="60" r="8" fill="#34e5e0"/>
+<text x="66" y="98" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">L eye → face</text>
+<rect x="46" y="112" width="40" height="40" rx="6" fill="#241830" stroke="#e879f9" stroke-width="1.2"/>
+<circle cx="60" cy="128" r="3" fill="#e879f9"/><circle cx="72" cy="128" r="3" fill="#e879f9"/>
+<path d="M58,140 q8,7 16,0" stroke="#e879f9" stroke-width="1.6" fill="none"/>
+<ellipse cx="66" cy="186" rx="30" ry="20" fill="url(#eyeg)" stroke="#34e5e0" stroke-width="1.3"/>
+<circle cx="66" cy="186" r="8" fill="#34e5e0"/>
+<text x="66" y="224" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">R eye → house</text>
+<line x1="100" y1="66" x2="176" y2="108" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" marker-end="url(#mE)"/>
+<line x1="100" y1="180" x2="176" y2="138" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" marker-end="url(#mE)"/>
+<rect x="186" y="86" width="150" height="74" rx="16" fill="#1a1236" stroke="#a78bfa" stroke-width="1.5" filter="url(#glowR2)"/>
+<text x="261" y="118" text-anchor="middle" fill="#efe9ff" font-size="12" font-weight="700">brain: can't fuse</text>
+<text x="261" y="140" text-anchor="middle" fill="#c9a8f5" font-size="11" font-family="SF Mono,monospace">one through at a time</text>
+<line x1="340" y1="112" x2="384" y2="112" stroke="#fbbf24" stroke-width="2.4" stroke-linecap="round" marker-end="url(#mToggle)"/>
+<line x1="384" y1="134" x2="340" y2="134" stroke="#fbbf24" stroke-width="2.4" stroke-dasharray="2 4" stroke-linecap="round" marker-end="url(#mToggle)"/>
+<text x="410" y="100" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-family="SF Mono,monospace">flips</text>
+<rect x="392" y="112" width="44" height="24" rx="6" fill="#241830" stroke="#e879f9" stroke-width="1.1"/>
+<text x="414" y="128" text-anchor="middle" fill="#f5b8fb" font-size="10">aware</text>
+<text x="414" y="156" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">percept</text>
+</svg>
+<figcaption>Binocular rivalry: the input to each eye is nailed down, yet your awareness jumps between the two images on its own — stimulus fixed, consciousness changing, isolating "the consciousness part"</figcaption>
+</figure>
+
+<p>This becomes the <strong>clean lab bench</strong> neuroscientists dream of: what the eyes receive <strong>doesn't change for a second</strong>, yet what you <strong>consciously perceive</strong> keeps jumping between the two images. So the set of neural activity that <strong>flips along with your awareness</strong> gets cleanly divorced from the <strong>steady, unchanging stimulus</strong>. In the 1990s, Nikos Logothetis ran this on monkeys while recording single neurons: he found that <strong>the higher up the visual hierarchy you go, the more neurons flip with "what's seen"</strong> — in the earliest visual area, most cells still faithfully track the <strong>physical stimulus</strong> (which never changes, so they don't either); higher up, more and more cells switch to tracking <strong>the image the monkey is currently seeing</strong>. The trail of consciousness grows stronger the further up you climb.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>The NCC recipe — "subtraction + isolate the variable" — is almost the same thing as a hot area in AI: <b>mechanistic interpretability</b>, which tries to figure out, inside a neural network, exactly which artificial neurons and which layer's activations <b>encode</b> a given concept (say, "this is a golden retriever"). Researchers use a <b>linear probe</b> to ask "can this concept be read out of this layer's activations" — the exact analog of the neuroscience move "can we decode what you saw from this brain region." Binocular rivalry is to the brain what <b>feeding the network a pair of deliberately conflicting inputs</b> and watching which internal units flip with the "final verdict" is to a model — both are pulling an internal state out of the input.</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The catch: the instant you "report" seeing it, you've poisoned the answer</h2>
+<p>For decades, experiments ran like this: we show you something, and when you see it you <strong>press a button</strong> (or say so) to report it. Perfectly natural, right? But around 2010, a group of people (Tsuchiya, Koch, and others) threw cold water on it: <strong>the act of "pressing to report" itself muddies the answer.</strong> Think about it — the path from "seeing" to "pressing" runs through a whole string of other jobs: <strong>gripping the experience in working memory</strong>, <strong>making a decision</strong>, <strong>sending a command to your finger</strong>. And all of those jobs lean heavily on the <strong>prefrontal cortex</strong> (<a class="reflink" href="ref-prefrontal.en.html">prefrontal cortex</a>).</p>
+
+<p>Here's the problem: early experiments kept seeing "prefrontal lights up when you're conscious," so everyone reasonably concluded <strong>the prefrontal cortex is key to consciousness.</strong> But what if… the prefrontal glow isn't because you <strong>experienced</strong> something, but only because you were busy <strong>reporting</strong> it — a by-product of the "press" that got wrongly charged to consciousness's account? To test that suspicion, you'd need a way to <strong>drop the report yet still know which image you're seeing right now</strong>. That's the <strong>no-report paradigm</strong>.</p>
+
+<figure>
+<svg viewBox="0 0 480 258" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="pfcOn" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#4a2a10"/><stop offset="1" stop-color="#2a1608"/></radialGradient>
+<radialGradient id="pfcOff" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#1a1730"/><stop offset="1" stop-color="#0e0c1e"/></radialGradient>
+<filter id="glowP" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mA" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker>
+</defs>
+<text x="120" y="26" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700">① with report</text>
+<rect x="60" y="40" width="120" height="34" rx="9" fill="#1a1530" stroke="#8f89ad" stroke-width="1.1"/>
+<text x="120" y="62" text-anchor="middle" fill="#cfc9e6" font-size="11">see (experience)</text>
+<line x1="120" y1="76" x2="120" y2="98" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mA)"/>
+<rect x="52" y="100" width="136" height="42" rx="10" fill="url(#pfcOn)" stroke="#fbbf24" stroke-width="1.5" filter="url(#glowP)"/>
+<text x="120" y="119" text-anchor="middle" fill="#ffd97a" font-size="11.5" font-weight="700">prefrontal ON</text>
+<text x="120" y="135" text-anchor="middle" fill="#e0b878" font-size="9" font-family="SF Mono,monospace">hold · decide · command</text>
+<line x1="120" y1="144" x2="120" y2="166" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mA)"/>
+<rect x="60" y="168" width="120" height="34" rx="9" fill="#1a1530" stroke="#8f89ad" stroke-width="1.1"/>
+<text x="120" y="190" text-anchor="middle" fill="#cfc9e6" font-size="11">press to report 🖲</text>
+<text x="120" y="228" text-anchor="middle" fill="#e0a860" font-size="9.5" font-family="SF Mono,monospace">prefrontal = consciousness?</text>
+<text x="120" y="244" text-anchor="middle" fill="#e0a860" font-size="9.5" font-family="SF Mono,monospace">or just busy reporting?</text>
+<line x1="240" y1="34" x2="240" y2="210" stroke="#4a4560" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="360" y="26" text-anchor="middle" fill="#34e5e0" font-size="12" font-weight="700">② no report</text>
+<rect x="300" y="40" width="120" height="34" rx="9" fill="#1a1530" stroke="#8f89ad" stroke-width="1.1"/>
+<text x="360" y="62" text-anchor="middle" fill="#cfc9e6" font-size="11">see (experience)</text>
+<line x1="360" y1="76" x2="360" y2="98" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mA)"/>
+<rect x="292" y="100" width="136" height="42" rx="10" fill="url(#pfcOff)" stroke="#5b5678" stroke-width="1.3"/>
+<text x="360" y="119" text-anchor="middle" fill="#9a94bc" font-size="11.5" font-weight="700">prefrontal dim ↓</text>
+<text x="360" y="135" text-anchor="middle" fill="#7a7498" font-size="9" font-family="SF Mono,monospace">no report needed, it quiets</text>
+<line x1="360" y1="144" x2="360" y2="166" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mA)"/>
+<rect x="300" y="168" width="120" height="34" rx="9" fill="#122430" stroke="#34e5e0" stroke-width="1.2"/>
+<text x="360" y="185" text-anchor="middle" fill="#7bf0e8" font-size="10.5">pupil / eye jitter</text>
+<text x="360" y="197" text-anchor="middle" fill="#7bf0e8" font-size="9" font-family="SF Mono,monospace">read from physiology</text>
+<text x="360" y="228" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">still know what you see,</text>
+<text x="360" y="244" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">but never asked you to report</text>
+</svg>
+<figcaption>No-report paradigm: drop the button, read your current percept from pupil/eye movements instead — prefrontal activity falls off sharply, showing much of the earlier "consciousness signal" was a by-product of reporting</figcaption>
+</figure>
+
+<p>How do you "know without asking"? Through the body's <strong>honest little tells</strong>. Show each eye stripes drifting in <strong>opposite directions</strong>, and whichever direction you're currently aware of, your eyeball involuntarily follows it in a fine twitch called <strong>optokinetic nystagmus</strong> — without you saying a word, the experimenter watches which way your eye jerks and knows which image you're "seeing." Pupil size and certain automatic reflexes can serve as the same kind of "sneak reader." The key result: <strong>with report removed, that patch of prefrontal "consciousness signal" shrinks substantially</strong> — a good chunk of it was the "report" being wrongly charged to consciousness's account.</p>
+
+<p>This lit the <strong>"front vs back" debate</strong> that still hasn't died down: is the true home of consciousness up <strong>front</strong> in the prefrontal cortex (broadcasting, reporting, scheduling), or in the <strong>back</strong>, in the occipital-parietal-temporal sensory cortex that Koch and colleagues call the <strong>"posterior hot zone"</strong> (where the content of experience takes shape in the first place)? The no-report evidence nudged the scale toward "back," but it's nowhere near settled — a tension left perfectly poised for the heavyweight act coming next.</p>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Make two sworn-enemy theories bet their own predictions in advance</h2>
+<p>Consciousness research has an old disease: theories galore, none able to convince the others — each can "explain" the existing data eloquently, because the explanations are patched in <strong>after the fact</strong>. Philosophy of science said long ago that real skill isn't explaining prettily, it's <strong>daring to commit in advance to the condition under which you'd lose</strong>. So starting in 2019, something hardcore happened: proponents of two major consciousness theories sat down at one table and signed an <strong>adversarial collaboration</strong> — the <strong>Cogitate</strong> consortium.</p>
+
+<p>The two colliding sides: <strong>Global Neuronal Workspace Theory</strong> (GNWT, the Dehaene camp — next issue's star), which says a piece of information only reaches your awareness once it's <strong>"ignited" and broadcast across the brain (especially the prefrontal cortex)</strong>; and <strong>Integrated Information Theory</strong> (IIT, the Tononi camp), which says consciousness is information being highly <strong>integrated</strong> and <strong>sustained</strong> in the <strong>posterior cortex</strong>, with little to do with whether the prefrontal cortex broadcasts. Crucially, both sides wrote down their predictions <strong>in advance</strong>, in black and white, along with an agreed "this result counts as my loss," and handed it to <strong>neutral labs</strong> to run the same subjects and the same stimuli — nobody gets to change their story afterward.</p>
+
+<figure>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="frontH" cx="0.4" cy="0.4" r="0.8"><stop offset="0" stop-color="#4a2a10"/><stop offset="1" stop-color="#2a1608" stop-opacity="0.35"/></radialGradient>
+<radialGradient id="backH" cx="0.6" cy="0.4" r="0.8"><stop offset="0" stop-color="#0e3a38"/><stop offset="1" stop-color="#092422" stop-opacity="0.35"/></radialGradient>
+<marker id="mF" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"/></marker>
+<marker id="mB" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker>
+</defs>
+<path d="M120,150 C96,150 78,128 80,104 C82,80 106,58 148,54 C210,48 300,52 348,72 C388,88 402,112 396,134 C392,150 372,158 352,158 C356,172 348,188 330,190 C300,193 286,180 284,168 L150,168 C138,168 126,162 120,150 Z"
+  fill="#140f28" stroke="#5b4f7a" stroke-width="1.6"/>
+<ellipse cx="132" cy="112" rx="34" ry="36" fill="url(#frontH)" stroke="#fbbf24" stroke-width="1.4"/>
+<text x="132" y="110" text-anchor="middle" fill="#ffd97a" font-size="10.5" font-weight="700">prefrontal</text>
+<text x="132" y="126" text-anchor="middle" fill="#e0b878" font-size="8.5" font-family="SF Mono,monospace">broadcast/ignition</text>
+<ellipse cx="336" cy="112" rx="42" ry="38" fill="url(#backH)" stroke="#34e5e0" stroke-width="1.4"/>
+<text x="336" y="108" text-anchor="middle" fill="#7bf0e8" font-size="10.5" font-weight="700">posterior hot zone</text>
+<text x="336" y="124" text-anchor="middle" fill="#8fd8d2" font-size="8.5" font-family="SF Mono,monospace">integrate/sustain</text>
+<text x="132" y="40" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">GNWT bets: ignition up front</text>
+<line x1="132" y1="48" x2="132" y2="72" stroke="#fbbf24" stroke-width="1.6" stroke-linecap="round" marker-end="url(#mF)"/>
+<text x="336" y="40" text-anchor="middle" fill="#34e5e0" font-size="11" font-weight="700">IIT bets: sustained rear integration</text>
+<line x1="336" y1="48" x2="336" y2="70" stroke="#34e5e0" stroke-width="1.6" stroke-linecap="round" marker-end="url(#mB)"/>
+<rect x="46" y="212" width="388" height="36" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+<text x="240" y="228" text-anchor="middle" fill="#c9a8f5" font-size="9.5" font-weight="600">Result: the back really holds "what was seen" — yet each side's key bet half-failed</text>
+<text x="240" y="242" text-anchor="middle" fill="#8f89ad" font-size="8.5" font-family="SF Mono,monospace">IIT's sustained posterior sync & GNWT's offset ignition — both no-shows</text>
+</svg>
+<figcaption>The Cogitate collision: GNWT bets on prefrontal ignition/broadcast, IIT on sustained posterior integration — predictions locked in advance, judged by neutral labs</figcaption>
+</figure>
+
+<p>The result — announced in 2023, formally published in <em>Nature</em> in 2025 — was a "thrilling match with no winner." On one hand, activity in the <strong>posterior cortex</strong> really did let researchers <strong>decode quite well what you were seeing</strong> — a plus for IIT's emphasis on "the back"; yet IIT's signature hard prediction, that <strong>posterior regions would stay synchronized and hold the experience up continuously</strong>, was <strong>not supported</strong> by the data. On the other hand, some information did <strong>reach the prefrontal cortex</strong>, a consolation for GNWT; but GNWT's heaviest bet — that <strong>at the instant the stimulus vanishes, the prefrontal cortex would ignite again</strong> to broadcast — <strong>came up empty too</strong>. <strong>Both sides tripped over their own predictions, and neither could land the knockout.</strong></p>
+
+<p>That result sounds like "all for nothing," but it's exactly the opposite. For the first time it let a consciousness theory <strong>genuinely lose</strong> — not by verbally backing down, but by having a piece of its own signed-and-sealed prediction falsified on the spot. This is what it looks like to drag consciousness out of speculation and into science: <strong>not whoever shouts loudest wins, but whoever dares to bet and, on losing, admits it.</strong> Next issue we pull one side of this collision out on its own — the global workspace — and see what gives it the nerve to say "consciousness = ignition + brain-wide broadcast."</p>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing Over · Interdisciplinary Echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Separating awareness itself from the report of it" and "making a theory dare to bet and lose" — both have echoes in other traditions:</p>
+<ul>
+<li><b>Buddhism · contemplative practice</b>: meditation trains something extremely hard — telling apart <b>bare awareness</b> from <b>the thoughts, judgments, and reports it triggers</b>. Practitioners often say that the moment you "voice" or "grab" the present awareness, what got voiced is no longer awareness itself. The no-report paradigm closes in on the same seam in the lab: to read <b>experience itself</b>, you must route around the layer where "experience gets reported" — both run into the difficulty that awareness gets contaminated the instant it's expressed.</li>
+<li><b>Philosophy of science · Popper and adversarial collaboration</b>: Popper said what makes a theory scientific is whether it dares to issue a <b>falsifiable</b> prediction. Consciousness research was long mocked as "explains anything after the fact," precisely because its predictions were retrofitted. Cogitate dragging two camps into <b>pre-registration</b> with agreed win/loss conditions is the first real landing of Popper's old line onto consciousness — and a remedy for the "everyone talks past everyone" disease across modern science (psychology and economics are adopting the same move).</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going Deeper</h3>
+<details><summary>Even if we nail down the NCC, isn't it still just a "correlate" — what says it's consciousness rather than a by-product or consequence of it?</summary><div>This is the deepest soft spot of the NCC approach, and also its honest part — the name says "correlate," not "cause." Finding "every time X lights up there's an experience of red" leaves three logical options: X <strong>produces</strong> the experience, X is the experience's <strong>consequence</strong>, or X and the experience are both <strong>joint results</strong> of some third thing. Just seeing them "light up together" can't tell these apart. To press toward "cause," you need to be able to <strong>intervene</strong> — directly switch X on or off and see whether the experience follows (which is exactly why no-report, plus the direct electrical stimulation and TMS we'll cover later, matter so much: they try to push "correlation" toward "causation"). And above all this sits last issue's hard problem: even with causation nailed down, "<strong>why</strong> this causal chain <strong>feels</strong> like anything" stays untouched. The NCC is the doable part, not the whole.</div></details>
+<details><summary>The no-report paradigm dropped the "button," but the eye movements and pupil it "sneak-reads" — couldn't those be by-products of something else, another wrongly charged account?</summary><div>Sharply put — this is the field's game of whack-a-mole: you plug one confound (report) and may introduce a new one (eye movements themselves tug on attention circuits). No single paradigm is a clean endpoint; the fix is <strong>squeezing from many sides</strong>: no-report, report, post-hoc probing, direct stimulation… so that different methods' "dirt" doesn't overlap, and if they all point to the <strong>same patch</strong> of neural activity, that patch is more trustworthy. This is also why Cogitate ran across multiple labs and multiple recording methods (MEG, intracranial electrodes, fMRI) at once — a single measurement can fool you; three together is much harder. On a hard bone like consciousness, science relies not on a one-shot kill but on <strong>different biases cancelling each other out</strong>.</div></details>
+<details><summary>If even human consciousness is still stuck arguing "front or back," what hope do we have of judging whether an AI is conscious?</summary><div>The brutal reality: <strong>we haven't even settled what standard to judge by</strong>. The whole NCC approach rests on "<strong>treat the human brain as a known-conscious sample</strong> and hunt for markers inside it" — but a marker may not survive being moved to silicon (IIT even predicts a system with identical function but a feedforward physical structure could have <strong>zero</strong> consciousness; GNWT weights functional architecture more and is relatively silicon-friendly — the two hand AI opposite verdicts). So "is an AI conscious" isn't a question that better technology alone can answer; it's <strong>stuck on a theory we can't even settle for ourselves</strong>. Which is why these seemingly esoteric arguments matter: sooner or later they become the real-world criterion for "should we care whether some system lives or dies" — and we don't yet have that ruler in hand.</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further Reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Neural_correlates_of_consciousness" target="_blank">Neural correlates of consciousness (NCC)</a> — Crick & Koch's opening move, the master frame for the whole line of work</li>
+<li><a href="https://en.wikipedia.org/wiki/Binocular_rivalry" target="_blank">Binocular rivalry</a> — the classic paradigm where the stimulus holds fixed and consciousness flips</li>
+<li><a href="https://en.wikipedia.org/wiki/Christof_Koch" target="_blank">Christof Koch</a> — the main driver of NCC, champion of the posterior hot zone</li>
+<li><a href="https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(15)00159-0" target="_blank">No-report paradigms (Tsuchiya et al., 2015)</a> — why "reporting" contaminates the NCC</li>
+<li><a href="https://en.wikipedia.org/wiki/Global_workspace_theory" target="_blank">Global Neuronal Workspace Theory (GNWT)</a> — consciousness = ignition + brain-wide broadcast (next issue's star)</li>
+<li><a href="https://en.wikipedia.org/wiki/Integrated_information_theory" target="_blank">Integrated Information Theory (IIT)</a> — consciousness = high integration in the posterior cortex</li>
+<li><a href="https://www.nature.com/articles/s41586-025-08888-1" target="_blank">Cogitate adversarial experiment (Nature, 2025)</a> — the formal result of the pre-registered IIT vs GNWT collision</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 11 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://cissy0802.github.io/comments.js" defer></script>
+<script src="https://cissy0802.github.io/search.js" defer></script>
+<script src="https://cissy0802.github.io/index-button.js" defer></script>
+<script src="https://cissy0802.github.io/i18n-tts.js" defer></script>
+</body></html>
