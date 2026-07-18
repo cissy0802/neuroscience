@@ -121,6 +121,19 @@ if [ -n "$DUP" ]; then
   exit 1
 fi
 
+# ---------- SVG arrow guard (opt-in: runs only if the checker is present) ----------
+# 抓"轴对齐直线叠 filter/退化渐变"这类渲染时会整条消失、只剩浮空三角的箭头。
+# 只在本仓放了 tools/check-svg-arrows.js 时启用，其它仓无此文件则自动跳过。
+if [ -f tools/check-svg-arrows.js ] && command -v node >/dev/null 2>&1; then
+  CHANGED_HTML=$(git status --porcelain | grep -oE '[^ ]+\.html$' | sort -u)
+  if [ -n "$CHANGED_HTML" ]; then
+    node tools/check-svg-arrows.js $CHANGED_HTML || {
+      echo "       直线连杆别套 filter/退化渐变改纯色，箭头用 marker-end + orient=auto，修好再发布。"
+      exit 1
+    }
+  fi
+fi
+
 # ---------- Commit + push ----------
 git config user.email "chengchen0802@gmail.com"
 git config user.name "BigCat"
