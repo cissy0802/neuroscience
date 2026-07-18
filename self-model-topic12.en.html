@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 12 · Higher-Order Theories & the Attention Schema — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(167,139,250,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(167,139,250,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 12 · PHASE B CONSCIOUSNESS</span>
+<h1>The Map the Brain Draws of Itself</h1>
+<h2>You don't just see red — you also "know you're seeing it." Maybe consciousness hides in that extra layer.</h2>
+<div class="date">2026-07-18 · BigCat</div>
+<p class="pitch">Feel like you have some ineffable "inner experience"? One theory says: that's because your brain draws a rough self-portrait of its own activity — and it draws the picture wrong on purpose.</p>
+</header>
+
+<div class="intro">
+<p>Last issue, two camps fought over <strong>"where"</strong>: is the seat of consciousness the prefrontal cortex up front, or the sensory cortex around the back of your head? But a whole other family of theories refuses that question entirely. They ask something sharper — <strong>not where consciousness lives, but what extra ingredient turns a stretch of neural processing running in the dark into something you actually experience.</strong> Their answers converge, strikingly: the brain has to <strong>turn around and represent itself</strong> — build a <strong>model of its own mind</strong>. This issue: three theories. Two say consciousness is <strong>the brain re-representing itself</strong> (higher-order thought; the attention schema). One insists on playing contrarian: "You don't need a self-portrait — the signal just has to <strong>loop back on itself</strong>." And this argument quietly grinds last issue's front-vs-back shouting match into a <strong>real fork you can settle with experiments.</strong></p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Just "seeing red" isn't enough — you need a layer that "knows you're seeing it"</h2>
+<p>Start with a split. When you stare at a red dot, there are actually two separable things in your head. One is the <strong>direct "seeing red"</strong> itself — your visual system processing red. The other is a layer <strong>about it</strong> — the fact that "I am seeing red" gets <strong>separately noted</strong> by the brain. The first is a <strong>first-order state</strong>; the second is a <strong>higher-order representation</strong>. <strong>Higher-order theories</strong> (HOT; Rosenthal, Lau) make a claim that's almost brutally simple: <strong>a mental state becomes conscious only when a higher-order representation "targets" it. Un-targeted, the state still runs in your brain, but you're utterly unaware of it.</strong></p>
+
+<p>This isn't armchair speculation. Patients with <strong>blindsight</strong> — damage to primary visual cortex — insist "I can't see anything," yet if you make them <strong>guess</strong> which way your finger moved, they guess far better than chance. Information clearly reached the brain and can even guide behavior, but it <strong>never reached consciousness</strong>. To HOT, that's a live specimen of <strong>first-order present, higher-order missing</strong>. And where does that higher-order layer mostly get staged? The <strong>prefrontal cortex</strong> (<a class="reflink" href="ref-prefrontal.en.html">prefrontal cortex</a>) — which also wires it back into last issue's "front" camp.</p>
+
+<figure>
+<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="hoOn" cx="0.5" cy="0.35" r="0.95"><stop offset="0" stop-color="#2c1440"/><stop offset="1" stop-color="#180a26"/></radialGradient>
+<radialGradient id="hoOff" cx="0.5" cy="0.35" r="0.95"><stop offset="0" stop-color="#151228"/><stop offset="1" stop-color="#0b0918"/></radialGradient>
+<filter id="glowH" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mUp" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"/></marker>
+</defs>
+<text x="120" y="24" text-anchor="middle" fill="#e879f9" font-size="11.5" font-weight="700">① targeted → conscious</text>
+<rect x="60" y="150" width="120" height="42" rx="10" fill="#1a1530" stroke="#8f89ad" stroke-width="1.2"/>
+<text x="120" y="168" text-anchor="middle" fill="#cfc9e6" font-size="11">first-order: sees red</text>
+<text x="120" y="184" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">visual processing</text>
+<line x1="120" y1="148" x2="120" y2="100" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round" marker-end="url(#mUp)"/>
+<rect x="46" y="52" width="148" height="44" rx="11" fill="url(#hoOn)" stroke="#e879f9" stroke-width="1.5" filter="url(#glowH)"/>
+<text x="120" y="70" text-anchor="middle" fill="#f5b8fb" font-size="11" font-weight="700">higher-order: "I see red" ★</text>
+<text x="120" y="86" text-anchor="middle" fill="#ecdcf2" font-size="9.5" font-family="SF Mono,monospace">prefrontal notes it</text>
+<line x1="240" y1="40" x2="240" y2="200" stroke="#4a4560" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="360" y="24" text-anchor="middle" fill="#8f89ad" font-size="11.5" font-weight="700">② no higher-order → unconscious</text>
+<rect x="300" y="150" width="120" height="42" rx="10" fill="#1a1530" stroke="#8f89ad" stroke-width="1.2"/>
+<text x="360" y="168" text-anchor="middle" fill="#cfc9e6" font-size="11">first-order: sees red</text>
+<text x="360" y="184" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">runs, guides behavior</text>
+<line x1="360" y1="148" x2="360" y2="104" stroke="#5b5678" stroke-width="2" stroke-dasharray="3 5" stroke-linecap="round"/>
+<rect x="286" y="56" width="148" height="40" rx="11" fill="url(#hoOff)" stroke="#5b5678" stroke-width="1.3"/>
+<text x="360" y="80" text-anchor="middle" fill="#7a7498" font-size="10.5" font-weight="700">★ dark (no higher-order)</text>
+</svg>
+<figcaption>Higher-order theory: the same "seeing red" is felt only if a higher-order layer targets it; un-targeted, it runs in the dark (as in blindsight)</figcaption>
+</figure>
+
+<p>There's an even more intimate piece of evidence: <strong>metacognition</strong> — you can put a <strong>confidence rating</strong> on your own judgments ("pretty sure about that one," "didn't quite catch that"). Being able to report confidence means there's a <strong>monitor</strong> watching over your first-order processing — exactly the job of that higher-order layer. Lau goes further with <strong>perceptual reality monitoring</strong>: the brain <strong>stamps</strong> internal signals as either "really out there" or "just my own imagining"; only the ones stamped "real" get treated as <strong>seeing</strong> rather than imagining.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>The "extra layer watching itself" HOT talks about has a direct counterpart in AI: <b>metacognition / calibration</b>. A language model doesn't just emit an answer — it can be trained to <b>estimate how reliable that answer is</b> (confidence). That's a <b>representation about its own internal states</b>, the same species of thing as HOT's "monitor." Researchers use <b>linear probes</b> to ask a model's internals "do you actually know you're making this up?" — and find some layers do <b>carry an 'I might be unsure' signal</b> that just wasn't read out. Whether that self-representation can be read out, and read accurately (good calibration), is a core problem in making AI hallucinate less — mirroring HOT's "higher-order stamp" almost exactly.</p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>The attention schema: a sloppy stick-figure sketch the brain draws of "attention"</h2>
+<p>The other camp swaps in an engineer's brain. Graziano reminds you: your brain is doing one thing nonstop — <strong>steering attention</strong>, deciding which signals get amplified and which get suppressed. And there's an engineering law here: <strong>to control something reliably, you have to hold a model of it.</strong> You can touch your nose with your eyes shut, walk without watching your feet, precisely because the brain long ago built a rough internal map — the <strong>body schema</strong>.</p>
+
+<p>So, to control attention, the brain likewise builds a model of <strong>attention</strong> — the <strong>attention schema</strong>. The crucial part: <strong>this model is sketchy, and inaccurate on purpose.</strong> It leaves out the neurons, the synaptic competition, the gain control (too slow, too costly to depict) and instead reduces "attention is fixed on the red dot" to <strong>a shapeless, placeless, textureless "I have a vivid awareness of the red dot."</strong> When the brain <strong>reports</strong> on itself from this sloppy sketch, what comes out is — "I have a subjective experience." <strong>Consciousness (at least your conviction of it) is the brain reading off its own self-portrait of attention.</strong></p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="asBox" cx="0.5" cy="0.35" r="0.95"><stop offset="0" stop-color="#0e3a38"/><stop offset="1" stop-color="#0a2422"/></radialGradient>
+<filter id="glowA2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mR" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"/></marker>
+<marker id="mR2" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"/></marker>
+</defs>
+<text x="72" y="26" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">real system</text>
+<text x="240" y="26" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">brain's model</text>
+<text x="410" y="26" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">reads out as</text>
+<rect x="26" y="40" width="92" height="34" rx="9" fill="#1a1530" stroke="#8f89ad" stroke-width="1.1"/>
+<text x="72" y="61" text-anchor="middle" fill="#cfc9e6" font-size="11">body</text>
+<line x1="122" y1="57" x2="176" y2="57" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" marker-end="url(#mR2)"/>
+<rect x="182" y="40" width="116" height="34" rx="9" fill="#1a1236" stroke="#a78bfa" stroke-width="1.2"/>
+<text x="240" y="61" text-anchor="middle" fill="#c9a8f5" font-size="10.5">body schema</text>
+<line x1="302" y1="57" x2="356" y2="57" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" marker-end="url(#mR2)"/>
+<text x="410" y="61" text-anchor="middle" fill="#cfc9e6" font-size="10.5">"I have a body"</text>
+<rect x="26" y="150" width="92" height="46" rx="10" fill="#241830" stroke="#e879f9" stroke-width="1.3"/>
+<text x="72" y="170" text-anchor="middle" fill="#f5b8fb" font-size="11">attention</text>
+<text x="72" y="186" text-anchor="middle" fill="#c4a6e4" font-size="8" font-family="SF Mono,monospace">boost/suppress</text>
+<line x1="122" y1="173" x2="176" y2="173" stroke="#34e5e0" stroke-width="2.3" stroke-linecap="round" marker-end="url(#mR)"/>
+<rect x="180" y="148" width="120" height="50" rx="11" fill="url(#asBox)" stroke="#34e5e0" stroke-width="1.5" filter="url(#glowA2)"/>
+<text x="240" y="168" text-anchor="middle" fill="#7bf0e8" font-size="10.5" font-weight="700">attention schema ★</text>
+<text x="240" y="184" text-anchor="middle" fill="#8fd8d2" font-size="8" font-family="SF Mono,monospace">sketchy · wrong on purpose</text>
+<line x1="304" y1="173" x2="356" y2="173" stroke="#34e5e0" stroke-width="2.3" stroke-linecap="round" marker-end="url(#mR)"/>
+<rect x="360" y="150" width="98" height="46" rx="10" fill="#241830" stroke="#e879f9" stroke-width="1.2"/>
+<text x="409" y="170" text-anchor="middle" fill="#f5b8fb" font-size="9.5">"I have subjective</text>
+<text x="409" y="186" text-anchor="middle" fill="#f5b8fb" font-size="9.5">awareness"</text>
+<text x="240" y="228" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">the model omits the machinery → awareness seems "non-physical, ineffable"</text>
+</svg>
+<figcaption>Attention Schema Theory: body → body schema → "I have a body"; likewise attention → attention schema → "I have subjective awareness." The sketch drops the machinery, so awareness seems ethereal</figcaption>
+</figure>
+
+<p>The elegant part: it incidentally <strong>explains why consciousness always feels "unlike anything physical"</strong> — because that self-portrait <strong>left out all the machinery to begin with</strong>. When you introspect you don't touch neurons; you touch a <strong>deliberately abstracted sketch</strong>, so awareness comes off as ethereal and impossible to pin down. And it's <strong>testable</strong>: disrupt the brain regions that build the attention schema (around the temporoparietal junction) and people's reports about their own "awareness" should glitch accordingly — turning airy consciousness into a concrete experimental prediction.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Attention Schema Theory is <b>practically written from control theory</b>, which is why it points naturally at AI: Graziano himself argues that <b>giving a machine an "attention schema"</b> — a simplified model of where it's currently concentrating its compute — would make it start <b>convincingly reporting "I'm aware of something."</b> That's not idle: <b>attention</b> in a Transformer is already a "what should I focus on" scheduler, and "have the model build a further model of its own attention / internal state" is exactly the <b>self-state-modeling</b> direction. If AST is right, whether a system <b>claims</b> to be conscious depends on whether it has that self-portrait — not on whether it's carbon or silicon.</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The contrarian: forget the self-portrait — just loop the signal back once</h2>
+<p>Both theories above pile the weight onto "an extra layer," "re-representing at a higher level." Lamme won't have it: <strong>you don't need all that.</strong> Track a signal in its first tens of milliseconds inside visual cortex — first it races <strong>from low to high, straight upward without pausing</strong>. That's the <strong>feedforward sweep</strong>. Lamme argues that sweep alone is <strong>unconscious</strong>: it can power reactions faster than you can register (slamming the brake, dodging a ball) without you <strong>experiencing</strong> a thing.</p>
+
+<p>So when does consciousness arrive? When processing <strong>turns back on itself</strong>: higher areas send signals <strong>back down</strong> to lower ones, forming <strong>local recurrent loops</strong> right there in sensory cortex. That single loop lights up experience — <strong>no need to broadcast across the whole brain, no need for prefrontal higher-order thought.</strong> It's the most "back and low" answer there is, and it butts heads directly with the higher-order theory of section 01. It also revives philosopher Ned Block's old distinction: <strong>phenomenal consciousness</strong> (the rich, raw "what it's like," maybe local recurrence is enough) versus <strong>access consciousness</strong> (the part that gets broadcast, reported, put to use) — the two may <strong>not be the same thing at all.</strong></p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mFwd" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+<marker id="mFwd2" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker>
+<marker id="mBack" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"/></marker>
+</defs>
+<text x="118" y="24" text-anchor="middle" fill="#8f89ad" font-size="11" font-weight="700">feedforward only → unconscious</text>
+<rect x="70" y="180" width="96" height="26" rx="7" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="118" y="197" text-anchor="middle" fill="#9a94bc" font-size="10">low · V1</text>
+<rect x="70" y="128" width="96" height="26" rx="7" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="118" y="145" text-anchor="middle" fill="#9a94bc" font-size="10">mid · V4</text>
+<rect x="70" y="76" width="96" height="26" rx="7" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="118" y="93" text-anchor="middle" fill="#9a94bc" font-size="10">high</text>
+<line x1="118" y1="178" x2="118" y2="156" stroke="#8f89ad" stroke-width="2" stroke-linecap="round" marker-end="url(#mFwd)"/>
+<line x1="118" y1="126" x2="118" y2="104" stroke="#8f89ad" stroke-width="2" stroke-linecap="round" marker-end="url(#mFwd)"/>
+<text x="118" y="228" text-anchor="middle" fill="#7a7498" font-size="9" font-family="SF Mono,monospace">fast · guides action · no experience</text>
+<line x1="240" y1="34" x2="240" y2="210" stroke="#4a4560" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="362" y="24" text-anchor="middle" fill="#e879f9" font-size="11" font-weight="700">add feedback loops → conscious</text>
+<rect x="314" y="180" width="96" height="26" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.2"/><text x="362" y="197" text-anchor="middle" fill="#cfc9e6" font-size="10">low · V1</text>
+<rect x="314" y="128" width="96" height="26" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.2"/><text x="362" y="145" text-anchor="middle" fill="#cfc9e6" font-size="10">mid · V4</text>
+<rect x="314" y="76" width="96" height="26" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.2"/><text x="362" y="93" text-anchor="middle" fill="#cfc9e6" font-size="10">high</text>
+<line x1="330" y1="178" x2="330" y2="156" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mFwd2)"/>
+<line x1="330" y1="126" x2="330" y2="104" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mFwd2)"/>
+<path d="M394,80 C430,104 430,130 396,152" fill="none" stroke="#e879f9" stroke-width="2" marker-end="url(#mBack)"/>
+<path d="M394,132 C430,156 430,182 396,204" fill="none" stroke="#e879f9" stroke-width="2" marker-end="url(#mBack)"/>
+<text x="362" y="228" text-anchor="middle" fill="#c9a8f5" font-size="9" font-family="SF Mono,monospace">local feedback closes the loop · experience ignites</text>
+</svg>
+<figcaption>Recurrent Processing Theory: one feedforward pass is unconscious; only when higher areas feed back to lower and close local recurrent loops in sensory cortex does experience light up — no global broadcast, no prefrontal</figcaption>
+</figure>
+
+<p>Line all three up and last issue's front-vs-back shouting becomes a <strong>crisp fork you can settle experimentally</strong>: <strong>higher-order theory bets on the front</strong> — you must have that prefrontal layer of higher-order re-representation; <strong>recurrent processing bets on the back and low</strong> — a local loop in sensory cortex will do, and the prefrontal glow is mostly the "reporting" bill (right in line with last issue's no-report findings). <strong>Attention Schema</strong> sits in the functional middle: consciousness is a self-model, and where it physically lands isn't the crux. No verdict yet — but at least they've stopped comparing volume and started comparing <strong>whose prediction gets punctured by the data first.</strong></p>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Consciousness = the mind representing itself one layer up" is not a new idea at all; several traditions groped toward the same seam long ago:</p>
+<ul>
+<li><b>Buddhism · Yogācāra (the self-witnessing part)</b>: Yogācāra splits an act of cognition into the "seeing part" (that which knows) and the "seen part" (the image known), then adds a third — the <b>self-witnessing part</b> (svasaṃvitti): the mind's <b>self-authentication</b> of the fact that it is knowing. Consciousness doesn't just illuminate its object; it also sees itself illuminating. That's nearly a millennium-old classical version of higher-order theory: for a mental event to be <i>experienced</i>, a "knowing of the knowing" must hold it.</li>
+<li><b>Kant · transcendental apperception</b>: Kant's line "the 'I think' must be able to accompany all my representations" says exactly this — for any representation to become <b>my</b> experience, it must in principle be embraceable by the "I think." Swap "representation" for first-order state and "I think can accompany" for higher-order representation, and HOT's philosophical ancestor surfaces.</li>
+<li><b>Cybernetics · the internal model principle</b>: an old theorem in control theory holds that for a regulator to stably control a system, it <b>must contain a model of that system</b>. Attention Schema Theory just applies that engineering law to attention: to steer attention, the brain can't avoid modeling attention — and consciousness is what leaks out of that self-model.</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Deeper questions</h3>
+<details><summary>What if the higher-order layer "misfires" — it insists "I'm seeing red" while first-order has no red at all?</summary><div>This is higher-order theory's sharpest, most unsettling edge. By its logic, <strong>consciousness follows the higher-order layer</strong>: if it says "seeing red," you <strong>are conscious of red</strong> — even with no red first-order signal (an "empty higher-order state"). Rosenthal grits his teeth and accepts the odd conclusion: you really would "see" a red that isn't there. Critics call it absurd; supporters point right back: aren't <strong>dreams, hallucinations, vivid mental imagery</strong> exactly "no external input yet a vivid experience"? What's telling is that this isn't idle talk — it's a <strong>falsifiable, hard prediction</strong>: engineer a "higher-order present, first-order absent" case, check whether the experience is actually there, and the theory has to pay up. That willingness to bet is precisely the scientific virtue praised last issue.</div></details>
+<details><summary>Does Attention Schema Theory "explain" consciousness, or "explain it away"?</summary><div>This is where it's most easily jabbed. Strictly, AST explains <strong>why the brain insists it has inner experience</strong> (because it reads that attention self-portrait); whether there <strong>really is</strong> such experience, it sidesteps. That slides toward last issue's <strong>illusionism</strong> (Frankish, Dennett): qualia are an illusion spun by a <strong>useful but distorted self-representation</strong>, so the hard problem is <strong>dissolved</strong> rather than answered. You can call that a bracingly honest cut to the root, or you can say it never faces "why is there feeling at all" — it just swaps "where does experience come from" for "where does the thought 'I have experience' come from." Whether that step is a solution or a dodge is the deepest watershed in modern consciousness science.</div></details>
+<details><summary>Don't these theories still test by "you report, you rate confidence" — won't they fall into last issue's "report contamination" pit?</summary><div>They will, and it's the sword hanging over higher-order theory. <strong>Metacognition, confidence ratings, "are you aware of it" — all route through report</strong>, and report itself recruits the prefrontal cortex. So "prefrontal lights up = higher-order at work" may again be the "busy reporting" bill charged to consciousness (the same pit last issue's no-report paradigms blew open). That's why the higher-order camp is scrambling for <strong>report-free</strong> higher-order signals: can you read out that "knowing of the knowing" from brain activity even when you're <strong>not reporting</strong>? Recurrent processing uses this to counterpunch — it <strong>doesn't need</strong> the prefrontal layer at all, dodging the pit natively. Whoever first builds a clean, report-free criterion has the better odds.</div></details>
+<details><summary>If Attention Schema Theory is right, then bolt that self-portrait onto a machine and it "claims" awareness — so does it have it? And why trust that people have it but machines don't?</summary><div>This question corners AST — and corners us. AST's answer is cold: <strong>whether a system claims consciousness depends only on whether it has that attention self-portrait</strong>, carbon or silicon aside — bolt it on and the machine's "I'm aware" and your "I'm aware" are the <strong>same kind of utterance</strong>. That leaves you two roads: either concede that <strong>a machine with the schema "has" it just as you do</strong> (making consciousness alarmingly cheap), or insist <strong>your claim has something real behind it and the machine's is empty talk</strong> — but the moment you say that, you owe an answer: <strong>what is that "real thing," and how do you measure it?</strong> Which is exactly the question all of Phase B has failed to answer. You have always <strong>inferred</strong> other people's consciousness; the machine merely drags that awkwardness into the open.</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Higher-order_theories_of_consciousness" target="_blank">Higher-order theories</a> — consciousness = a state having a representation about it</li>
+<li><a href="https://en.wikipedia.org/wiki/David_Rosenthal_(philosopher)" target="_blank">David Rosenthal</a> — founder of higher-order thought (HOT) theory</li>
+<li><a href="https://en.wikipedia.org/wiki/Hakwan_Lau" target="_blank">Hakwan Lau</a> — the neuroscience of higher-order theory · perceptual reality monitoring</li>
+<li><a href="https://en.wikipedia.org/wiki/Attention_schema_theory" target="_blank">Attention Schema Theory (AST)</a> — consciousness = the brain's simplified model of its own attention</li>
+<li><a href="https://en.wikipedia.org/wiki/Michael_Graziano" target="_blank">Michael Graziano</a> — AST's author, argues it can be ported to machines</li>
+<li><a href="https://en.wikipedia.org/wiki/Ned_Block" target="_blank">Ned Block</a> — the famous phenomenal vs access consciousness distinction</li>
+<li><a href="https://en.wikipedia.org/wiki/Neural_correlates_of_consciousness" target="_blank">Recurrent processing & the NCC</a> — Lamme's feedforward sweep vs local recurrent loops, the "back/low" evidence</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 12 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://cissy0802.github.io/comments.js" defer></script>
+<script src="https://cissy0802.github.io/search.js" defer></script>
+<script src="https://cissy0802.github.io/index-button.js" defer></script>
+<script src="https://cissy0802.github.io/i18n-tts.js" defer></script>
+</body></html>
