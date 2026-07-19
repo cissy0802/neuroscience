@@ -230,6 +230,10 @@ def collect_groups(soup) -> list[tuple]:
     candidate_ids = set(id(c) for c in candidates)
     seen = set()
     h2s = []
+    # Wrappers whose inner headings should NOT create their own segment —
+    # the content belongs to the preceding section (e.g. neuroscience `.ai`
+    # cross-references sit inside the h2 topic they annotate).
+    INLINE_WRAPPER_CLASSES = {"ai"}
     for el in body.find_all(True):
         if id(el) in candidate_ids and id(el) not in seen:
             # De-duplicate nested boundaries: if ANY ancestor is a
@@ -238,6 +242,11 @@ def collect_groups(soup) -> list[tuple]:
             # philosophy card > h2) from over-splitting the audio.
             outer = el.find_parent(lambda p: id(p) in candidate_ids)
             if outer is not None:
+                continue
+            # Skip headings that live inside an inline-wrapper container.
+            # BS4 calls the class_ callable with one class name (string) at
+            # a time, so match exact-equal against the wrapper set.
+            if el.find_parent(class_=lambda c: c in INLINE_WRAPPER_CLASSES):
                 continue
             seen.add(id(el))
             h2s.append(el)

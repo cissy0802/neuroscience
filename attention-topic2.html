@@ -74,7 +74,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 1 -->
 <div class="section">
 <span class="num">// 01</span>
-<h2 data-tts="9fa1d3665a115687">注意不是探照灯，是一场竞赛</h2>
+<h2 data-tts="42ac896a1489a963">注意不是探照灯，是一场竞赛</h2>
 <p>先拆掉最常见的比喻：注意像一束手电，你把它照到哪，哪就变亮。听着挺对，但机制上是反的。真实情况是：<strong>大脑里代表不同东西的神经元，一直在互相抢</strong>——抢有限的下游处理、抢让你反应的资格。它们本来就在竞争；<strong>注意做的，不是"照亮"某一个，而是给某一个"暗中加码"，让它更容易赢下这场竞争。</strong>这在神经科学里叫<strong>偏向竞争</strong>。</p>
 <figure>
 <svg viewbox="0 0 480 232" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p>这个"竞赛+加码"的画面，一下就解释了著名的<strong>鸡尾酒会效应</strong>：满屋子人声鼎沸，你却能锁定一个人的声音听下去——那是你的目标给那条声音"加了码"，压过了别的。可就在你专心听时，房间另一头有人喊了你的名字，你会"唰"地转头——<strong>你并没在听那边，但"你的名字"这个刺激自带高权重，硬是抢赢了竞争。</strong>可见这场比赛，一部分由你定，一部分完全不由你。</p>
 <p class="en-brief"><b>EN</b> Attention isn't a spotlight you aim; it's biased competition. Neurons coding different things constantly compete for limited downstream processing, and attention simply tips the scales toward one — which is why you can lock onto one voice at a party (top-down bias), yet your own name from across the room still hijacks you (a stimulus with built-in weight).</p>
 <div class="ai">
-<h4 data-tts="f0427ee503a2aa7d">AI 对读 · 同名，未必同机制</h4>
+<h4>AI 对读 · 同名，未必同机制</h4>
 <p>你多半听过让 ChatGPT 那类模型运转的核心叫「<b>注意力（attention）</b>」。名字撞上了，容易让人以为是一回事——其实<b>只在最抽象的一层是同一件事：都在"按相关性给信息分配权重、只把要紧的挑出来往下送"</b>。但底层机制差得远：Transformer 的注意力是拿每个词生成一组<b>查询/键/值</b>向量，两两做点积算相关度、再一次性并行加权求和（就是"看谁跟谁最相关"的一张全连接权重表）；大脑的注意<b>没有</b>这张表，它靠的是神经元互相竞争、加上下面要讲的丘脑闸门和增益调制，一点点争出来的。<b>抓住这条：功能上像亲戚，机制上是两回事</b>——后面几期一碰到"生物 X ↔ AI 同名 X"，都得这么先分清。</p>
 </div>
 </div>
@@ -144,7 +144,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 3 -->
 <div class="section">
 <span class="num">// 03</span>
-<h2 data-tts="9173d1ec41c140e7">瓶颈：为什么你根本没法一心二用</h2>
+<h2 data-tts="7926231e814de05a">瓶颈：为什么你根本没法一心二用</h2>
 <p>为什么大脑非要这么费劲地"选"？因为下游处理是个<strong>瓶颈</strong>——同一时刻能真正被深加工、被送进意识的信息，少得可怜。世界糊了一大堆进来，闸口只有那么窄，<strong>绝大部分东西在你根本没察觉的情况下就被扔掉了。</strong></p>
 <p>最有名的证明是那个「<strong>看不见的大猩猩</strong>」实验：让你数视频里球员传了几次球，你数得聚精会神——结果一个人穿着大猩猩服，大摇大摆走过画面中央、还捶了捶胸，<strong>约一半的人完全没看见。</strong>不是眼睛没拍到，光清清楚楚落在视网膜上；是它没赢下注意的竞争，于是压根没进你的意识。这叫<strong>非注意盲视</strong>。</p>
 <figure>
@@ -172,14 +172,14 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p>同一个瓶颈也戳破了"多任务"的神话：你以为在同时干两件动脑的事，其实大脑是在飞快地<strong>来回切换</strong>，每切一次都要交一笔"重新装载"的税——所以边开车边发消息不是分了心，是每隔一会儿就有几秒<strong>谁都没在管方向盘</strong>。真正的并行只发生在其中一件已经练到不用脑（比如走路）时。</p>
 <p class="en-brief"><b>EN</b> Selection exists because downstream processing is a narrow bottleneck. The "invisible gorilla" experiment shows it starkly: absorbed in counting passes, about half of viewers miss a person in a gorilla suit walking through center frame — inattentional blindness. The same bottleneck debunks multitasking: it's really fast switching, each switch paying a reload tax.</p>
 <div class="ai">
-<h4 data-tts="e366c1e0872ddda7">AI 对读</h4>
+<h4>AI 对读</h4>
 <p>"注意是稀缺、要付代价的"这点，AI 这边有个尖锐的回声。Transformer 让每个词都去"关注"其它所有词，计算量随长度<b>平方级</b>暴涨——想让模型读一本书那么长的上下文，光注意力这一项的开销就贵到发疯。于是这几年一堆研究都在做同一件事：<b>别让它关注全部，只挑相关的一小撮</b>（稀疏注意力、各种"只看局部/只看要点"的近似）。绕了一圈，人工系统被算力逼着，重新发现了生物大脑一开始就被能量逼出来的结论——<b>关注一切太贵，必须选。</b></p>
 </div>
 </div>
 <!-- 4 -->
 <div class="section">
 <span class="num">// 04</span>
-<h2 data-tts="3c6088262ff25e3f">闸门在哪：丘脑，大脑的总闸</h2>
+<h2 data-tts="4cf6c248c67e2273">闸门在哪：丘脑，大脑的总闸</h2>
 <p>说了半天"选""过滤",这道闸具体装在哪？很关键的一处，在大脑正中央一个叫<strong>丘脑</strong>的核团。它是通往皮层（负责高级加工那层"外壳"）的<strong>总中继站</strong>：除了嗅觉，你几乎所有的感觉——看、听、触——在抵达皮层之前，都得先在丘脑换一趟车。<a class="reflink" href="ref-thalamus.html">丘脑</a></p>
 <p>妙就妙在丘脑外面裹着一层薄薄的、专门管"踩刹车"的神经元，叫<strong>丘脑网状核</strong>。它自己不往皮层送任何信息，只干一件事：<strong>抑制丘脑里的中继细胞</strong>——也就是决定"哪路信号放行、哪路掐掉"。诺奖得主克里克当年就把它比作大脑的<strong>探照灯闸门</strong>：注意要压住的那些通道，可能就是在这儿被悄悄关小的。</p>
 <figure>
@@ -210,7 +210,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p>还有个更狠的推论：这道闸不只调"注意哪儿"，还调"你到底醒不醒着"。深睡和麻醉时，丘脑到皮层这条路会被大面积<strong>关断</strong>，感官信号送不上去了——这正是你"失去意识"的一部分机制。换句话说，<strong>同一套门控系统，往细了拧是注意，往大了关是睡去。</strong>意识怎么被开关，是后面 Phase B 的大戏，这道闸就是最早的伏笔。</p>
 <p class="en-brief"><b>EN</b> A key gate sits in the thalamus, the brain's central relay to the cortex — nearly all senses (except smell) change trains there first. Wrapped around it is the thalamic reticular nucleus, an inhibitory shell that sends nothing to cortex and only decides which relay channels pass — Crick's "searchlight" gate. The same system dialed wide shut is what happens in deep sleep and anesthesia: attention and consciousness share a gate.</p>
 <div class="ai">
-<h4 data-tts="baa0fe8abb1a9932">AI 对读</h4>
+<h4>AI 对读</h4>
 <p>"一个专门的小模块，不干活、只负责决定哪路信号放行"——这在 AI 里有个挺贴的表亲叫<b>门控 / 路由</b>。比如当红的<b>混合专家</b>架构：模型里养着一堆"专家"子网络，前面站一个<b>门控网络</b>，它自己不处理内容，只判断"这个输入该交给哪几个专家、别的闸掉"。丘脑网状核之于皮层，几分像这个门控网络之于专家——都是<b>用一个专职的闸，把宝贵的算力只放给该放的那条路。</b></p>
 </div>
 </div>

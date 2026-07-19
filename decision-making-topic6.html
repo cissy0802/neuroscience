@@ -74,7 +74,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 1 -->
 <div class="section">
 <span class="num">// 01</span>
-<h2 data-tts="7a0e9844db4fcf1d">决策 = 把证据攒到够</h2>
+<h2 data-tts="8b382394a817f684">决策 = 把证据攒到够</h2>
 <p>先说个经典实验。屏幕上一堆小点在乱飞，其中一小撮偷偷地整体往左（或往右）飘，你要判断是"往左"还是"往右"。点飘得越乱，你越难说得准，也越慢。科学家一边让你做，一边听你顶叶里一群神经元的放电——发现它们的活动<strong>像水位一样，从一个起点开始慢慢往上爬</strong>，爬到某条线，你就报出了答案。</p>
 <figure>
 <svg viewbox="0 0 480 244" xmlns="http://www.w3.org/2000/svg">
@@ -99,14 +99,14 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p>这一个机制，顺手解释了一堆事。<strong>为什么难的选择更慢？</strong>因为证据弱、漂移小，水位爬得磨蹭。<strong>为什么快就容易错？</strong>因为你要是把门槛调低（撞线更早），噪声还没被平均掉就下了结论——这就是"图快"和"求稳"天生互相拽着，学名<strong>速度-准确率权衡</strong>。你赶时间时拍脑袋、深思熟虑时更靠谱，不是性格，是你在悄悄挪那两条门槛的高低。</p>
 <p class="en-brief"><b>EN</b> A decision is evidence piling up to a threshold. In the drift-diffusion model, a noisy signal drifts toward one of two bounds; whichever bound it hits first wins. This single mechanism explains why hard choices are slower (weak drift), and why speed trades off against accuracy (lower bounds decide before noise averages out).</p>
 <div class="ai">
-<h4 data-tts="ac59cc595d4c0e1a">AI 对读</h4>
+<h4>AI 对读</h4>
 <p>这条"想得越久、越准"的曲线，最近在 AI 里以一种很直接的方式回来了。早期的聊天模型基本是"一口气答完"，快但容易错；而新一代<b>会推理的模型</b>（像 o1 那类）被允许在答之前<b>先在草稿纸上多想几步</b>——你给它越多"思考时间"（算力），它在难题上就越准。这跟大脑抬高门槛、多攒一会儿证据换取正确率，是同一笔买卖：<b>准确率可以用时间去买</b>。区别只在，大脑那两条门槛是随情境实时自动挪的。</p>
 </div>
 </div>
 <!-- 2 -->
 <div class="section">
 <span class="num">// 02</span>
-<h2 data-tts="d77d95652015a142">大脑给一切标价，用的是同一种"货币"</h2>
+<h2 data-tts="c5983b8601587ecf">大脑给一切标价，用的是同一种"货币"</h2>
 <p>可"往左往右"太简单了。真实选择是苹果 vs 打个盹 vs 兜里那十块钱——它们根本不是一个种类的东西，怎么比？大脑的办法特别聪明：<strong>先把每个选项都换算成同一把尺上的一个数——它值多少</strong>。就像超市把牛肉、香蕉、洗发水都折成价格，你才好在一个维度上比来比去。</p>
 <figure>
 <svg viewbox="0 0 480 232" xmlns="http://www.w3.org/2000/svg">
@@ -136,14 +136,14 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p>这把尺不是空话，它有实实在在的地址。你额头正后方一片叫<strong>眶额皮层</strong>的脑区，被反复拍到在给选项"标价"：给猴子不同口味的果汁，那里的神经元放电强度，就跟着猴子有多想喝那款走——它编的不是"甜不甜"，而是"你多想要"。而真正拍板、把选中的动作放行出去，靠的是脑子深处一组核团<strong>基底节</strong>：它像个闸门，平时把各种动作都摁住，直到某个选项赢了，才专门给它开一道闸。（这套"选动作"的回路怎么接、闸门怎么控，<a class="reflink" href="ref-basal-ganglia.html">基底节</a>）</p>
 <p class="en-brief"><b>EN</b> To compare unlike options (an apple vs a nap vs cash), the brain converts each into a single scalar — subjective value — on a common currency. The orbitofrontal cortex encodes this "how much you want it" signal, while the basal ganglia act as a gate that holds actions back until one option wins and gets released.</p>
 <div class="ai">
-<h4 data-tts="74ba31ae96403c43">AI 对读</h4>
+<h4>AI 对读</h4>
 <p>把万物折成一个数——这正是训练 AI 智能体的地基。<b>强化学习</b>里，智能体做每件事都盯着一个叫<b>价值函数</b>的东西：它估的是"从现在这局面出发，往后能捞到多少总回报"，也是把千差万别的处境压成一个可比的数，然后挑价值最高的动作。大脑的"通用货币"和 RL 的"价值函数"，解决的是同一个逼人的问题：<b>要能选，就得先能比；要能比，就得先有一把统一的尺。</b></p>
 </div>
 </div>
 <!-- 3 -->
 <div class="section">
 <span class="num">// 03</span>
-<h2 data-tts="cba31f8692366177">多巴胺报的不是"爽"，是"比预想的更爽"</h2>
+<h2 data-tts="3cf2198f872bfe93">多巴胺报的不是"爽"，是"比预想的更爽"</h2>
 <p>那把"价值尺"怎么校准？靠一次次试错。这里有个几乎人人都听过、又几乎人人都听错的角色：<strong>多巴胺</strong>。它常被叫"快乐分子"，好像它一冒出来你就爽。真相要拧一下——<strong>多巴胺报的不是"爽不爽"，是"这次比我预想的好多少"</strong>，一个纯粹的<strong>差价</strong>。</p>
 <figure>
 <svg viewbox="0 0 480 258" xmlns="http://www.w3.org/2000/svg">
@@ -176,14 +176,14 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p>看出门道了吗：多巴胺一路在播报<strong>"现实 − 预期"</strong>这个差。正是这个差，反过来去拧那把价值尺——被惊喜的选项调高身价，让你下次更想选它；让你失望的调低。你不是被"爽"牵着走，你是被<strong>一次次的意外</strong>慢慢教会该看重什么。（这套多巴胺信号从哪儿发出、怎么灌进选动作的闸门，还是那页 <a class="reflink" href="ref-basal-ganglia.html">基底节</a>）</p>
 <p class="en-brief"><b>EN</b> Dopamine doesn't signal pleasure — it signals reward prediction error, the gap between what happened and what you expected. Schultz's classic recordings: dopamine bursts to an unexpected reward, shifts to the predictive cue once learned, and dips below baseline when an expected reward fails to arrive. That error is what recalibrates value.</p>
 <div class="ai">
-<h4 data-tts="5b91260a42a93fa2">AI 对读</h4>
+<h4>AI 对读</h4>
 <p>这一段是全站最漂亮的一次"神经科学 ↔ AI"对撞。AI 里有个教智能体学价值的核心算法叫<b>时序差分学习</b>，它的更新量就叫<b>"预测误差"</b>——现实回报比自己先前估的高多少，就朝那个方向修一点。这套数学是上世纪 80 年代先在计算机里推出来的；结果 90 年代科学家一看多巴胺神经元的放电，<b>竟和这个"预测误差"信号严丝合缝地对上了</b>。等于人类在电脑里推导出的学习法则，大脑早已用一种化学信号跑了几百万年。这也是当年 AlphaGo 那类系统背后的同一根思想主线。</p>
 </div>
 </div>
 <!-- 4 -->
 <div class="section">
 <span class="num">// 04</span>
-<h2 data-tts="4bb82c16343afa69">去那家熟的，还是试试新开的？</h2>
+<h2 data-tts="1b414c1f8c2f6bae">去那家熟的，还是试试新开的？</h2>
 <p>就算价值尺校得再准，还有个绕不过去的两难。中午吃饭：楼下那家你吃过八回、稳定好吃；街角新开一家，可能惊艳，也可能踩雷。<strong>选熟的（稳拿已知的好），还是赌新的（可能更好，也可能更糟）？</strong>这就是探索与利用的拉锯，任何一个要在不确定世界里反复做选择的系统，都躲不掉。</p>
 <figure>
 <svg viewbox="0 0 480 210" xmlns="http://www.w3.org/2000/svg">
@@ -207,7 +207,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p>大脑没有完美答案（数学上也证明了没有），但有套挺聪明的偏方。一个关键洞见是：<strong>"不确定"本身，就该给选项加分</strong>。你对新店一无所知，这份未知里恰恰藏着"说不定是宝藏"的可能——所以偶尔去赌一把新的，长远看不亏。人还会<strong>随心情和处境调这个旋钮</strong>：日子安稳、时间还长，你更爱到处试（探索）；一旦压力大、时间紧、或赌注太高，你就缩回熟悉的舒适区（利用）。这也解释了为什么小孩、年轻人天生爱折腾新鲜，而人越往后越倾向守着靠谱的老选择——不是变无趣，是大脑在按"还剩多少时间去回本"重新算账。</p>
 <p class="en-brief"><b>EN</b> Even with well-calibrated values, every agent choosing repeatedly in an uncertain world faces the explore-exploit dilemma: stick with the known-good, or gamble on the unknown that might be better? There's no perfect solution, but a key trick is to treat uncertainty itself as a bonus — and to turn the exploration knob with context, exploring more when stakes are low and time is long.</p>
 <div class="ai">
-<h4 data-tts="dc67bd78bafff604">AI 对读</h4>
+<h4>AI 对读</h4>
 <p>这个两难在 AI 里有个专门的玩具模型：<b>多臂老虎机</b>——面前一排拉杆机，每台中奖率不同却都藏着，你只有有限次数，怎么拉才捞得最多？为了破它，工程师发明了一串招数，和大脑的偏方惊人地像：偶尔随机试一台（ε-贪心），或者干脆<b>给"试得少、没底"的那台人为加一笔分</b>（叫 UCB，思路正是"不确定值得奖励"），逼智能体别过早认死一个。你午饭要不要试新店，和推荐系统要不要给你推个没试过的视频，背后是同一道数学题。</p>
 </div>
 </div>
