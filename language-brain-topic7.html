@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Topic 7 · 语言的大脑 — 神经科学</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -60,161 +61,141 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
 </style></head><body>
 <div class="container">
-
 <header>
 <span class="week-tag">TOPIC 7 · PHASE A 认知</span>
-<h1>语言的大脑</h1>
-<h2>会说话，和会思考，是两台机器</h2>
+<h1 data-tts="eab33208466827a7">语言的大脑</h1>
+<h2 data-tts="425deb70a9d1bbe5">会说话，和会思考，是两台机器</h2>
 <div class="date">2026-07-13 · BigCat</div>
 <p class="pitch">一个字都说不出、句子也听不懂的人，照样能算账、下棋、看懂笑话——语言坏掉了，思维还好端端在那儿。</p>
 </header>
-
 <div class="intro">
 <p>我们太容易觉得"语言就是思维本身"——你脑子里那个碎碎念的声音，好像就是你在想事。可大脑不这么分工。中风病人里有一种，句子彻底散架、连"今天星期几"都说不出，<strong>但把一道数学题递过去，他能算对；一盘棋摆上来，他会走</strong>。语言这台机器坏了，思考那台却照转。这一期我们拆开"语言的大脑"，会撞见两个反直觉：课本上那两个著名的语言脑区，故事讲错了大半；而语言和思维，其实住在不同的房间。这件事，恰恰是看懂今天的 AI 语言模型的钥匙。</p>
 </div>
-
 <!-- 1 -->
 <div class="section">
 <span class="num">// 01</span>
-<h2>不是两个点加一根线</h2>
+<h2 data-tts="6ae70aba7f1949f6">不是两个点加一根线</h2>
 <p>翻开任何一本老教科书，语言都被画成两个点：额头附近的<strong>布洛卡区</strong>管"说"，耳朵后上方的<strong>韦尼克区</strong>管"懂"，中间一根神经纤维束把它们接起来。这个图来自一百五十年前——当年医生只能等病人过世后解剖，看他生前哪块坏了、丢了什么本事，倒推功能。</p>
-
 <figure>
-<svg viewBox="0 0 480 232" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 480 232" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<radialGradient id="dot" cx="0.5" cy="0.32" r="0.95"><stop offset="0" stop-color="#2b2150"/><stop offset="1" stop-color="#150e2c"/></radialGradient>
-<radialGradient id="net" cx="0.5" cy="0.32" r="0.95"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></radialGradient>
-<filter id="g1" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<radialgradient cx="0.5" cy="0.32" id="dot" r="0.95"><stop offset="0" stop-color="#2b2150"></stop><stop offset="1" stop-color="#150e2c"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.32" id="net" r="0.95"><stop offset="0" stop-color="#0e2c33"></stop><stop offset="1" stop-color="#091a20"></stop></radialgradient>
+<filter height="220%" id="g1" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="2.6"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
 </defs>
-<text x="120" y="24" text-anchor="middle" fill="#8f89ad" font-size="12.5" font-family="SF Mono,monospace">旧图 · 两个点</text>
-<text x="360" y="24" text-anchor="middle" fill="#7bf0e8" font-size="12.5" font-family="SF Mono,monospace">新图 · 一张网</text>
-<line x1="240" y1="44" x2="240" y2="212" stroke="#3a3357" stroke-width="1" stroke-dasharray="4 5"/>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="120" y="24">旧图 · 两个点</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="360" y="24">新图 · 一张网</text>
+<line stroke="#3a3357" stroke-dasharray="4 5" stroke-width="1" x1="240" x2="240" y1="44" y2="212"></line>
 <!-- old: two dots + wire -->
-<line x1="70" y1="150" x2="170" y2="90" stroke="#8f7cd0" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="70" cy="150" r="26" fill="url(#dot)" stroke="#a78bfa" stroke-width="1.4" filter="url(#g1)"/>
-<text x="70" y="147" text-anchor="middle" fill="#efe9ff" font-size="11.5" font-weight="600">布洛卡</text>
-<text x="70" y="162" text-anchor="middle" fill="#9a8fc0" font-size="9.5" font-family="SF Mono,monospace">说</text>
-<circle cx="170" cy="90" r="26" fill="url(#dot)" stroke="#a78bfa" stroke-width="1.4" filter="url(#g1)"/>
-<text x="170" y="87" text-anchor="middle" fill="#efe9ff" font-size="11.5" font-weight="600">韦尼克</text>
-<text x="170" y="102" text-anchor="middle" fill="#9a8fc0" font-size="9.5" font-family="SF Mono,monospace">懂</text>
+<line stroke="#8f7cd0" stroke-linecap="round" stroke-width="2.4" x1="70" x2="170" y1="150" y2="90"></line>
+<circle cx="70" cy="150" fill="url(#dot)" filter="url(#g1)" r="26" stroke="#a78bfa" stroke-width="1.4"></circle>
+<text fill="#efe9ff" font-size="11.5" font-weight="600" text-anchor="middle" x="70" y="147">布洛卡</text>
+<text fill="#9a8fc0" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="70" y="162">说</text>
+<circle cx="170" cy="90" fill="url(#dot)" filter="url(#g1)" r="26" stroke="#a78bfa" stroke-width="1.4"></circle>
+<text fill="#efe9ff" font-size="11.5" font-weight="600" text-anchor="middle" x="170" y="87">韦尼克</text>
+<text fill="#9a8fc0" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="170" y="102">懂</text>
 <!-- new: network -->
-<line x1="300" y1="80" x2="360" y2="128" stroke="#2a9d97" stroke-width="1.5"/>
-<line x1="360" y1="128" x2="430" y2="92" stroke="#2a9d97" stroke-width="1.5"/>
-<line x1="300" y1="80" x2="360" y2="60" stroke="#2a9d97" stroke-width="1.5"/>
-<line x1="360" y1="60" x2="430" y2="92" stroke="#2a9d97" stroke-width="1.5"/>
-<line x1="300" y1="170" x2="360" y2="128" stroke="#2a9d97" stroke-width="1.5"/>
-<line x1="300" y1="170" x2="360" y2="185" stroke="#2a9d97" stroke-width="1.5"/>
-<line x1="360" y1="185" x2="430" y2="150" stroke="#2a9d97" stroke-width="1.5"/>
-<line x1="360" y1="128" x2="360" y2="185" stroke="#2a9d97" stroke-width="1.5"/>
-<line x1="300" y1="80" x2="300" y2="170" stroke="#2a9d97" stroke-width="1.5"/>
+<line stroke="#2a9d97" stroke-width="1.5" x1="300" x2="360" y1="80" y2="128"></line>
+<line stroke="#2a9d97" stroke-width="1.5" x1="360" x2="430" y1="128" y2="92"></line>
+<line stroke="#2a9d97" stroke-width="1.5" x1="300" x2="360" y1="80" y2="60"></line>
+<line stroke="#2a9d97" stroke-width="1.5" x1="360" x2="430" y1="60" y2="92"></line>
+<line stroke="#2a9d97" stroke-width="1.5" x1="300" x2="360" y1="170" y2="128"></line>
+<line stroke="#2a9d97" stroke-width="1.5" x1="300" x2="360" y1="170" y2="185"></line>
+<line stroke="#2a9d97" stroke-width="1.5" x1="360" x2="430" y1="185" y2="150"></line>
+<line stroke="#2a9d97" stroke-width="1.5" x1="360" x2="360" y1="128" y2="185"></line>
+<line stroke="#2a9d97" stroke-width="1.5" x1="300" x2="300" y1="80" y2="170"></line>
 <g fill="url(#net)" stroke="#34e5e0" stroke-width="1.3">
-<circle cx="300" cy="80" r="13" filter="url(#g1)"/><circle cx="360" cy="60" r="13"/><circle cx="430" cy="92" r="13" filter="url(#g1)"/>
-<circle cx="360" cy="128" r="13"/><circle cx="300" cy="170" r="13" filter="url(#g1)"/><circle cx="360" cy="185" r="13"/><circle cx="430" cy="150" r="13"/>
+<circle cx="300" cy="80" filter="url(#g1)" r="13"></circle><circle cx="360" cy="60" r="13"></circle><circle cx="430" cy="92" filter="url(#g1)" r="13"></circle>
+<circle cx="360" cy="128" r="13"></circle><circle cx="300" cy="170" filter="url(#g1)" r="13"></circle><circle cx="360" cy="185" r="13"></circle><circle cx="430" cy="150" r="13"></circle>
 </g>
 </svg>
 <figcaption>语言不是两块砖，是左脑一整片彼此紧连的网络</figcaption>
 </figure>
-
 <p>问题是，这张干净的图，现代脑成像一照就散了。真相是：<strong>负责语言的，是左脑额叶到颞叶一整片彼此紧密相连的网络</strong>，远不止两个点。而且那两个"经典"脑区的分工也没那么泾渭分明——只把布洛卡区弄坏，往往不会造成持久的说话障碍；要真正毁掉语言，得伤到网络里更大的一片。老图不是全错，是把一张网压扁成了两个字。（这张网到底由哪些区、哪些连线组成，<a class="reflink" href="ref-language-network.html">语言网络</a>）</p>
-
 <p class="en-brief"><b>EN</b> The textbook picture — Broca's area for speaking, Wernicke's for understanding, one wire between — is a 19th-century oversimplification. Modern imaging shows language runs on a tightly interconnected, left-lateralized frontotemporal <em>network</em>. Damaging Broca's area alone rarely causes lasting aphasia; real language loss takes out a broad swath of the network.</p>
 </div>
-
 <!-- 2 -->
 <div class="section">
 <span class="num">// 02</span>
-<h2>语言的房间，思考不住在里面</h2>
+<h2 data-tts="62d95e3d06b2d5b2">语言的房间，思考不住在里面</h2>
 <p>这张网还有个惊人的性格：<strong>它只对语言亮，别的一概不理</strong>。神经科学家 Evelina Fedorenko 做了件很干净的事——先用句子把每个人自己的语言网络精确标出来，再拿各种非语言任务去逗它：做算术、听音乐、读程序代码、推测别人心里在想什么。结果这片网络<strong>几乎纹丝不动</strong>；它只在你理解或组织有意义的语言时才点亮。</p>
-
 <figure>
-<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<radialGradient id="lit" cx="0.5" cy="0.4" r="0.8"><stop offset="0" stop-color="#34e5e0"/><stop offset="1" stop-color="#0d5c58"/></radialGradient>
-<filter id="g2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<marker id="a2" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#6f6a8c"/></marker>
+<radialgradient cx="0.5" cy="0.4" id="lit" r="0.8"><stop offset="0" stop-color="#34e5e0"></stop><stop offset="1" stop-color="#0d5c58"></stop></radialgradient>
+<filter height="220%" id="g2" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="3.4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="a2" markerheight="12" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#6f6a8c"></path></marker>
 </defs>
 <!-- inputs -->
-<g font-size="12" font-family="-apple-system,sans-serif">
-<rect x="14" y="26" width="118" height="34" rx="17" fill="rgba(52,229,224,0.12)" stroke="#34e5e0" stroke-width="1.2"/><text x="73" y="48" text-anchor="middle" fill="#cdeeed">"她读完了信"</text>
-<rect x="14" y="86" width="118" height="34" rx="17" fill="rgba(255,255,255,0.03)" stroke="#4d4869" stroke-width="1.1"/><text x="73" y="108" text-anchor="middle" fill="#8f89ad">7 × 8 = ?</text>
-<rect x="14" y="146" width="118" height="34" rx="17" fill="rgba(255,255,255,0.03)" stroke="#4d4869" stroke-width="1.1"/><text x="73" y="168" text-anchor="middle" fill="#8f89ad">♪ 一段旋律</text>
+<g font-family="-apple-system,sans-serif" font-size="12">
+<rect fill="rgba(52,229,224,0.12)" height="34" rx="17" stroke="#34e5e0" stroke-width="1.2" width="118" x="14" y="26"></rect><text fill="#cdeeed" text-anchor="middle" x="73" y="48">"她读完了信"</text>
+<rect fill="rgba(255,255,255,0.03)" height="34" rx="17" stroke="#4d4869" stroke-width="1.1" width="118" x="14" y="86"></rect><text fill="#8f89ad" text-anchor="middle" x="73" y="108">7 × 8 = ?</text>
+<rect fill="rgba(255,255,255,0.03)" height="34" rx="17" stroke="#4d4869" stroke-width="1.1" width="118" x="14" y="146"></rect><text fill="#8f89ad" text-anchor="middle" x="73" y="168">♪ 一段旋律</text>
 </g>
-<line x1="134" y1="43" x2="196" y2="98" stroke="#34e5e0" stroke-width="2" marker-end="url(#a2)"/>
-<line x1="134" y1="103" x2="196" y2="106" stroke="#5b5678" stroke-width="1.4" stroke-dasharray="3 4" marker-end="url(#a2)"/>
-<line x1="134" y1="163" x2="196" y2="114" stroke="#5b5678" stroke-width="1.4" stroke-dasharray="3 4" marker-end="url(#a2)"/>
+<line marker-end="url(#a2)" stroke="#34e5e0" stroke-width="2" x1="134" x2="196" y1="43" y2="98"></line>
+<line marker-end="url(#a2)" stroke="#5b5678" stroke-dasharray="3 4" stroke-width="1.4" x1="134" x2="196" y1="103" y2="106"></line>
+<line marker-end="url(#a2)" stroke="#5b5678" stroke-dasharray="3 4" stroke-width="1.4" x1="134" x2="196" y1="163" y2="114"></line>
 <!-- brain blob -->
-<path d="M300,40 C360,32 430,58 434,108 C438,158 380,190 320,182 C262,175 232,150 236,108 C240,66 260,46 300,40 Z" fill="rgba(167,139,250,0.06)" stroke="#4d4869" stroke-width="1.2"/>
-<text x="335" y="204" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">左脑 · 语言网络只为语言亮</text>
-<ellipse cx="322" cy="108" rx="46" ry="30" fill="url(#lit)" filter="url(#g2)" opacity="0.92"/>
-<text x="322" y="112" text-anchor="middle" fill="#04201f" font-size="12" font-weight="700">点亮</text>
+<path d="M300,40 C360,32 430,58 434,108 C438,158 380,190 320,182 C262,175 232,150 236,108 C240,66 260,46 300,40 Z" fill="rgba(167,139,250,0.06)" stroke="#4d4869" stroke-width="1.2"></path>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="335" y="204">左脑 · 语言网络只为语言亮</text>
+<ellipse cx="322" cy="108" fill="url(#lit)" filter="url(#g2)" opacity="0.92" rx="46" ry="30"></ellipse>
+<text fill="#04201f" font-size="12" font-weight="700" text-anchor="middle" x="322" y="112">点亮</text>
 </svg>
 <figcaption>只有有意义的语言能点亮它；算术、音乐从旁边流过，它不动</figcaption>
 </figure>
-
 <p>把这个发现和开头那个病人合起来，结论就硬了：<strong>语言是一套专门的沟通工具，不是思维本身。</strong>严重失语的人还能算术、能推理、能懂因果，说明思考用的是别的回路；反过来，还不会说话的婴儿、以及某些天生没接触过语言的聋人，一样有丰富的思维。你脑子里那个念念叨叨的"内心独白"，更像思维的<strong>播报员</strong>，而不是思维本身——它把已经想好的东西翻译成话，可想这件事，早在开口前就干完了。</p>
-
 <p class="en-brief"><b>EN</b> The language network is strikingly <em>selective</em>: Fedorenko's work shows it lights up for meaningful language but stays quiet during arithmetic, music, code, or reasoning about others' minds. Combined with aphasia (language gone, thought intact) and pre-linguistic thought in infants, the lesson is blunt: language is a communication tool, not the substrate of thought. Inner speech is the announcer, not the thinking.</p>
-
 <div class="ai">
 <h4>AI 对读</h4>
 <p>记住这个"语言 ≠ 思维"的分家——它正是最后一节看懂 AI 语言模型的钥匙。大脑把"会遣词造句"和"会推理"拆在两套系统里；而今天的 AI，恰恰是把海量文字硬塞进<b>同一个</b>网络里练出来的，两件事被焊在了一起。这个差别，比它们的相似更值得琢磨。</p>
 </div>
 </div>
-
 <!-- 3 -->
 <div class="section">
 <span class="num">// 03</span>
-<h2>听懂一句话，靠的是一路在猜</h2>
+<h2 data-tts="b377c43aa04917e2">听懂一句话，靠的是一路在猜</h2>
 <p>你以为听别人说话是"收音"——声音进来，意思出来。其实你的大脑一刻不停在<strong>抢跑</strong>：还没听完，它已经在猜下一个词是什么。这不是玄学，脑电能直接看到。给你念"他渴了，倒了一杯——"，你大脑早备好了"水/茶/咖啡"；这时若冒出来的是<strong>"袜子"</strong>，你的脑电会"咯噔"一下弹出一记特别大的波，科学家管它叫 <strong>N400</strong>——它的大小，几乎就是"这个词有多出乎意料"的刻度。</p>
-
 <figure>
-<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<filter id="g3" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter height="220%" id="g3" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="2.2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
 </defs>
-<line x1="40" y1="96" x2="452" y2="96" stroke="#5b5678" stroke-width="1" stroke-dasharray="3 4"/>
-<text x="44" y="30" fill="#7bf0e8" font-size="12" font-family="SF Mono,monospace">"倒了一杯 …水"</text>
-<text x="44" y="188" fill="#f0a8f6" font-size="12" font-family="SF Mono,monospace">"倒了一杯 …袜子"</text>
+<line stroke="#5b5678" stroke-dasharray="3 4" stroke-width="1" x1="40" x2="452" y1="96" y2="96"></line>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12" x="44" y="30">"倒了一杯 …水"</text>
+<text fill="#f0a8f6" font-family="SF Mono,monospace" font-size="12" x="44" y="188">"倒了一杯 …袜子"</text>
 <!-- expected: small ripple -->
-<path d="M40,96 Q120,96 150,88 Q180,80 210,96 Q250,116 300,100 Q360,90 452,96" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linecap="round"/>
-<circle cx="210" cy="96" r="4" fill="#34e5e0" filter="url(#g3)"/>
-<text x="234" y="70" fill="#7bf0e8" font-size="10.5" font-family="SF Mono,monospace">猜中 · 波很小</text>
+<path d="M40,96 Q120,96 150,88 Q180,80 210,96 Q250,116 300,100 Q360,90 452,96" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.4"></path>
+<circle cx="210" cy="96" fill="#34e5e0" filter="url(#g3)" r="4"></circle>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" x="234" y="70">猜中 · 波很小</text>
 <!-- unexpected: big N400 dip -->
-<path d="M40,96 Q120,96 150,100 Q185,104 210,120 Q235,168 262,168 Q292,168 316,120 Q345,100 452,96" fill="none" stroke="#e879f9" stroke-width="2.6" stroke-linecap="round"/>
-<circle cx="262" cy="168" r="5" fill="#e879f9" filter="url(#g3)"/>
-<text x="262" y="190" text-anchor="middle" fill="#f0a8f6" font-size="10.5" font-family="SF Mono,monospace">意外 · N400 一记大波</text>
+<path d="M40,96 Q120,96 150,100 Q185,104 210,120 Q235,168 262,168 Q292,168 316,120 Q345,100 452,96" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="2.6"></path>
+<circle cx="262" cy="168" fill="#e879f9" filter="url(#g3)" r="5"></circle>
+<text fill="#f0a8f6" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="262" y="190">意外 · N400 一记大波</text>
 </svg>
 <figcaption>越出乎意料的词，激起的脑波越大——理解本身就是一场预测</figcaption>
 </figure>
-
 <p>看出门道了吗？这跟 <a class="reflink" href="ref-visual-pathway.html">视觉通路</a> 那一期讲的<strong>感知即推断</strong>，是同一件事换了个器官：大脑不被动接收，它<strong>先猜，再拿真实输入去纠错</strong>。语言只是这套"预测机器"最花哨的一个应用——你之所以能在嘈杂餐厅里补全没听清的半句话、能秒懂朋友话没说完的意思，全靠这台一路抢跑的猜词引擎。</p>
-
 <p class="en-brief"><b>EN</b> Comprehension is prediction. As you listen, your brain races ahead guessing the next word; when the actual word violates that guess ("he poured a glass of … socks"), the EEG shows a large N400 wave scaled to how surprising it was. This is Topic 1's "perception as inference" wearing a different organ — predict first, correct with input.</p>
-
 <div class="ai">
 <h4>AI 对读</h4>
 <p>这里出现了全站最直白的一次生物↔AI 撞脸。<b>大语言模型</b>（ChatGPT 那类）干的<b>字面上就是这件事</b>：给它前半句，它预测下一个最可能的词，一个接一个吐出来——训练目标就一条，"把下一个词猜准"。更炸的是：科学家拿这类"猜词模型"内部的活动，去对<b>人</b>听同样句子时语言网络的脑活动，<b>竟对得出奇地齐</b>；越会猜词的模型，越像人脑。等于两条独立长出来的路——碳基进化和硅基训练——为了"听懂语言"，摸到了同一招：预测下一个词。</p>
 </div>
 </div>
-
 <!-- 4 -->
 <div class="section">
 <span class="num">// 04</span>
-<h2>会说，不等于会想</h2>
+<h2 data-tts="762dbd4a1dd5cee6">会说，不等于会想</h2>
 <p>正因为猜词这一招对得这么齐，一个更尖的问题冒出来了：<strong>一个把话说得滴水不漏的 AI，就等于在"思考"吗？</strong>把本期两头拼起来，答案很清楚——<strong>不。</strong></p>
 <p>Fedorenko 团队给了一个漂亮的切分：语言能力分两层。一层是<strong>形式能力</strong>——语法对不对、词搭不搭、句子顺不顺，纯粹是"话像不像话"。另一层是<strong>功能能力</strong>——用语言去推理、算账、联系真实世界、追踪谁知道什么。<strong>大脑把这两层交给不同系统</strong>：语言网络只管形式，推理、算术、社会认知各有各的地盘。这正是为什么失语症病人"话没了、脑子还在"。</p>
 <p>今天的语言模型，恰恰<strong>把形式练到了以假乱真，功能却是另一回事</strong>——它能写出无懈可击的句子，却可能在一道简单的多步推理、或一个需要真实世界常识的地方翻车。它太流利，流利到我们忍不住替它脑补出"它真懂"。这一期最该带走的一句：<strong>流利是形式，思考是功能；说得好听，从来不保证想得清楚。</strong>——这话对 AI 成立，对人，也一样。</p>
-
 <p class="en-brief"><b>EN</b> Does a fluent AI therefore <em>think</em>? No. Mahowald &amp; Fedorenko split language ability into <b>formal competence</b> (grammar, well-formedness) and <b>functional competence</b> (reasoning, world knowledge, tracking who knows what) — and the brain assigns them to different systems, which is why aphasics keep their thinking. Today's LLMs nail formal competence but are spotty on functional; their fluency tempts us to over-credit understanding. Fluency is form; thinking is function — and sounding good never guarantees thinking clearly. True of AI, true of people.</p>
-
 <div class="ai">
 <h4>AI 对读</h4>
 <p>这给"AI 到底懂不懂"的争论划了条更利索的线：别再拿"它说得多顺"当"它多聪明"的证据——那只测了<b>形式能力</b>。真要考它，得单独考<b>功能能力</b>：多步推理、用真实世界常识、把话和现实对上号。有意思的是解法也照着大脑来：与其指望一个网络样样全能，不如像大脑那样<b>分工</b>——让模型学会调外部工具（算账用计算器、查事实用检索），把"会说"和"会算/会查"拆开接力。这正是眼下 AI 工程的主流方向之一。</p>
 </div>
 </div>
-
 <div class="crossx">
-<h3>🌀 越界 · 跨学科的联想</h3>
+<h3 data-tts="360136e6042ffb83">🌀 越界 · 跨学科的联想</h3>
 <p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"语言够不够得着真实的思与在"——这道题，几门古老学问早就吵过一轮：</p>
 <ul>
 <li><b>禅宗 · 不立文字</b>：「以指指月，指非月也」——语言是指月的那根手指，帮你望向月亮，可它自己不是月亮。禅宗干脆主张<b>离言</b>：最要紧的体悟落不进字句。神经科学从另一头印证了半句——思维确实能脱离语言独自存在，"想"不必先"说"。</li>
@@ -222,17 +203,15 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>语言学 · 萨丕尔-沃尔夫假说</b>：母语会不会反过来塑造你怎么想（比如有些语言没有"左右"、只用东南西北，其使用者方向感惊人）？强版本"语言决定思维"已被推翻——没有语言照样能想；但弱版本站得住：语言像一副<b>习惯性的取景框</b>，悄悄调你更容易注意到什么、忽略什么。它拧不动思维的有无，拧得动思维的默认镜头。</li>
 </ul>
 </div>
-
 <div class="thinking">
-<h3>// 深入思考</h3>
+<h3 data-tts="8c93e83954bf2750">// 深入思考</h3>
 <details><summary>如果思维不需要语言，那我脑子里那个说个不停的"声音"到底是什么？</summary><div>那叫<strong>内心言语</strong>——很可能是大脑借用了语言系统，给已经成形的思维配上一条"字幕"，方便你把它抓稳、排序、反刍。证据是：有些人报告自己<strong>几乎没有内心独白</strong>，照样思考、决策、生活如常。所以内心的声音更像思维的一个<strong>常用外挂</strong>，不是它的引擎。它确实有用——把念头说成话，能帮你把模糊的东西钉成清晰的一串，这也是"写下来就想通了"的由来。</div></details>
 <details><summary>语言模型对脑活动预测得那么准，是不是说明它和大脑"原理一样"？</summary><div>要小心这步跳跃。"能预测"证明两者在<strong>某个计算层面共享了结构</strong>——都逼近了"根据上文预测下一个词"这门功课的最优解，所以内部表示会长得像。但这不等于<strong>实现方式一样</strong>：大脑几十瓦、边用边学、和身体与世界死死绑定；模型几兆瓦、练完就冻住、只活在文字里。对得齐的是"预测下一个词"这层任务逻辑，对不齐的是底下的血肉与能耗。相似在功能，分野在实现——这条界线，压轴的计算神经科学几期会反复回来。</div></details>
 <details><summary>既然"会说"不等于"会想"，我们凭流利去判断一个人（或 AI）聪明，错得有多离谱？</summary><div>比想象的离谱。人类有个根深蒂固的偏见：<strong>说得顺 = 想得清</strong>。于是口才好的人容易被高估，嘴笨但深刻的人容易被埋没；同一套偏见现在整个泼到了 AI 身上——它流利到我们本能地替它脑补出理解。破解办法是把两件事<strong>分开考</strong>：不看它话说得多漂亮，只看它的结论经不经得起追问、和事实对不对得上。这既是评价 AI 的正道，也是一条挺硬的识人原则。</div></details>
 <details><summary>为什么语言几乎总偏在左脑？右脑在语言里干嘛？</summary><div>约九成右利手的人、多数左利手的人，核心语言网络都主要在<strong>左半球</strong>——为什么如此顽固，至今没有定论（一说与左脑更擅长处理快速、按时序展开的信号有关，语言正是这种信号）。右脑也没闲着：它更多管<strong>语调、韵律、言外之意、幽默与反讽</strong>那一层。右脑语言区受损的人，能听懂字面意思，却常常<strong>get 不到弦外之音</strong>——话都对，就是听不出你在开玩笑。可见"懂一句话"从来不止懂字面。</div></details>
 </div>
-
 <div class="refs">
-<h3>// 延伸阅读</h3>
+<h3 data-tts="861970a738158ebb">// 延伸阅读</h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Broca%27s_area" target="_blank">布洛卡区 Broca's area</a> · <a href="https://en.wikipedia.org/wiki/Wernicke%27s_area" target="_blank">韦尼克区 Wernicke's area</a> — 经典两点论及其修正</li>
 <li><a href="https://en.wikipedia.org/wiki/Aphasia" target="_blank">失语症 Aphasia</a> — 语言损伤如何把功能拆开来看</li>
@@ -243,11 +222,17 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><a href="https://en.wikipedia.org/wiki/Linguistic_relativity" target="_blank">语言相对论 Sapir-Whorf</a> — 语言塑造思维？弱版本的边界</li>
 </ul>
 </div>
-
 <footer>BigCat · Neuroscience · Topic 7 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
+<<<<<<< Updated upstream
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
 <script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+=======
+<script defer="" src="https://cissy0802.github.io/comments.js"></script>
+<script defer="" src="https://cissy0802.github.io/search.js"></script>
+<script defer="" src="https://cissy0802.github.io/index-button.js"></script>
+<script defer="" src="https://cissy0802.github.io/i18n-tts.js"></script>
+>>>>>>> Stashed changes
 </body></html>

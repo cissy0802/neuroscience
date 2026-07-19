@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Topic 1 · 感知即推断 — 神经科学</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -60,150 +61,129 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
 </style></head><body>
 <div class="container">
-
 <header>
 <span class="week-tag">TOPIC 1 · PHASE A 认知</span>
-<h1>感知即推断</h1>
-<h2>你不是在"看见"，你是在"猜"</h2>
+<h1 data-tts="6f7f67572122e07b">感知即推断</h1>
+<h2 data-tts="98b40c6e37ce049d">你不是在"看见"，你是在"猜"</h2>
 <div class="date">2026-07-10 · BigCat</div>
 <p class="pitch">你以为你在看世界——其实你在猜，世界只负责纠错。</p>
 </header>
-
 <div class="intro">
 <p>此刻你正盯着屏幕。感觉很直接对吧——光进了眼睛，大脑就"看到"了。但这几十年的神经科学把这个直觉整个翻了过来：<strong>你的大脑不是一台老实拍下世界的相机，而是一台不停在"猜"世界长什么样、再拿眼睛送回来的信息去纠错的机器。</strong>你看到的每一帧，都是大脑的一个"最佳猜测"。这一期我们就掰扯这一件事——但一旦你信了它，后面的注意、记忆、甚至意识，都会跟着松动。</p>
 </div>
-
 <!-- 1 -->
 <div class="section">
 <span class="num">// 01</span>
-<h2>大脑是"猜测机器"，不是相机</h2>
+<h2 data-tts="12fdf0e746407672">大脑是"猜测机器"，不是相机</h2>
 <p>先说那个被推翻的老直觉：光子打到眼睛 → 信号一层层往上传 → 大脑最后"看到"。听起来天经地义。可解剖学早就打脸了：在大脑的视觉通路上，<strong>从"高层"往"低层"倒着走的连接，数量远远多过从眼睛往上走的</strong>。换句话说，大脑绝大部分精力不是在<strong>收</strong>数据，而是在<strong>往下发猜测</strong>。</p>
-
 <figure>
-<svg viewBox="0 0 480 214" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 480 214" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<linearGradient id="predBeam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5ef0ea"/><stop offset="1" stop-color="#22a8d8" stop-opacity="0.5"/></linearGradient>
-<radialGradient id="nV" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#2b2150"/><stop offset="1" stop-color="#150e2c"/></radialGradient>
-<radialGradient id="nC" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></radialGradient>
-<filter id="glowA" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<marker id="mPred" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="15" refX="11.5" refY="7.5" orient="auto"><path d="M1,1 L14,7.5 L1,14 Z" fill="#5ef0ea"/></marker>
-<marker id="mErr" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"/></marker>
+<lineargradient id="predBeam" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5ef0ea"></stop><stop offset="1" stop-color="#22a8d8" stop-opacity="0.5"></stop></lineargradient>
+<radialgradient cx="0.5" cy="0.35" id="nV" r="0.9"><stop offset="0" stop-color="#2b2150"></stop><stop offset="1" stop-color="#150e2c"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.35" id="nC" r="0.9"><stop offset="0" stop-color="#0e2c33"></stop><stop offset="1" stop-color="#091a20"></stop></radialgradient>
+<filter height="220%" id="glowA" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="4.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="mPred" markerheight="15" markerunits="userSpaceOnUse" markerwidth="16" orient="auto" refx="11.5" refy="7.5"><path d="M1,1 L14,7.5 L1,14 Z" fill="#5ef0ea"></path></marker>
+<marker id="mErr" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
 </defs>
-<line x1="198" y1="72" x2="198" y2="139" stroke="#5ef0ea" stroke-width="3.6" stroke-linecap="round" marker-end="url(#mPred)"/>
-<line x1="300" y1="142" x2="300" y2="73" stroke="#e879f9" stroke-width="2.4" stroke-dasharray="2 5.5" stroke-linecap="round" marker-end="url(#mErr)"/>
-<rect x="112" y="14" width="256" height="52" rx="26" fill="url(#nV)" stroke="#a78bfa" stroke-width="1.4" filter="url(#glowA)"/>
-<text x="240" y="46" text-anchor="middle" fill="#efe9ff" font-size="15.5" font-weight="600">高层大脑 · 先有一个"猜测"</text>
-<rect x="112" y="148" width="256" height="52" rx="26" fill="url(#nC)" stroke="#34e5e0" stroke-width="1.4" filter="url(#glowA)"/>
-<text x="240" y="180" text-anchor="middle" fill="#e6faf8" font-size="15.5" font-weight="600">眼睛 · 只回送"没猜中"的差错</text>
-<text x="150" y="107" text-anchor="middle" fill="#7bf0e8" font-size="12.5" font-family="SF Mono,monospace" transform="rotate(-90 150 107)">预测 · 大量</text>
-<text x="336" y="107" text-anchor="middle" fill="#e879f9" font-size="12.5" font-family="SF Mono,monospace" transform="rotate(90 336 107)" opacity="0.85">误差 · 少量</text>
+<line marker-end="url(#mPred)" stroke="#5ef0ea" stroke-linecap="round" stroke-width="3.6" x1="198" x2="198" y1="72" y2="139"></line>
+<line marker-end="url(#mErr)" stroke="#e879f9" stroke-dasharray="2 5.5" stroke-linecap="round" stroke-width="2.4" x1="300" x2="300" y1="142" y2="73"></line>
+<rect fill="url(#nV)" filter="url(#glowA)" height="52" rx="26" stroke="#a78bfa" stroke-width="1.4" width="256" x="112" y="14"></rect>
+<text fill="#efe9ff" font-size="15.5" font-weight="600" text-anchor="middle" x="240" y="46">高层大脑 · 先有一个"猜测"</text>
+<rect fill="url(#nC)" filter="url(#glowA)" height="52" rx="26" stroke="#34e5e0" stroke-width="1.4" width="256" x="112" y="148"></rect>
+<text fill="#e6faf8" font-size="15.5" font-weight="600" text-anchor="middle" x="240" y="180">眼睛 · 只回送"没猜中"的差错</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" transform="rotate(-90 150 107)" x="150" y="107">预测 · 大量</text>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="12.5" opacity="0.85" text-anchor="middle" transform="rotate(90 336 107)" x="336" y="107">误差 · 少量</text>
 </svg>
 <figcaption>感知的主方向是"脑 → 眼睛"的预测，不是"眼睛 → 脑"的数据</figcaption>
 </figure>
-
 <p>不信？看下面这两个灰块。左边那块在浅色里，右边那块在深色里——你几乎肯定觉得<strong>右边那块更亮</strong>。但它俩的颜色<strong>一模一样</strong>：</p>
-
 <figure>
-<svg viewBox="0 0 470 202" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 470 202" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<filter id="dropL" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/></filter>
-<linearGradient id="panL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6e2f2"/><stop offset="1" stop-color="#cdc8e0"/></linearGradient>
-<linearGradient id="panD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#130f24"/><stop offset="1" stop-color="#080513"/></linearGradient>
+<filter height="160%" id="dropL" width="160%" x="-30%" y="-30%"><fedropshadow dx="0" dy="3" flood-color="#000" flood-opacity="0.45" stddeviation="6"></fedropshadow></filter>
+<lineargradient id="panL" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e6e2f2"></stop><stop offset="1" stop-color="#cdc8e0"></stop></lineargradient>
+<lineargradient id="panD" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#130f24"></stop><stop offset="1" stop-color="#080513"></stop></lineargradient>
 </defs>
-<rect x="16" y="16" width="192" height="134" rx="18" fill="url(#panL)" filter="url(#dropL)"/>
-<rect x="76" y="53" width="72" height="60" rx="9" fill="#8a8a8a"/>
-<text x="112" y="140" text-anchor="middle" fill="#544f66" font-size="12.5">浅色背景</text>
-<text x="235" y="90" text-anchor="middle" fill="#8f89ad" font-size="24" font-family="SF Mono,monospace">＝</text>
-<rect x="262" y="16" width="192" height="134" rx="18" fill="url(#panD)" stroke="rgba(167,139,250,0.28)" stroke-width="1" filter="url(#dropL)"/>
-<rect x="322" y="53" width="72" height="60" rx="9" fill="#8a8a8a"/>
-<text x="358" y="140" text-anchor="middle" fill="#9a94bc" font-size="12.5">深色背景</text>
-<text x="235" y="188" text-anchor="middle" fill="#8f89ad" font-size="12.5" font-family="SF Mono,monospace">两块灰的填充完全相同 · #8a8a8a</text>
+<rect fill="url(#panL)" filter="url(#dropL)" height="134" rx="18" width="192" x="16" y="16"></rect>
+<rect fill="#8a8a8a" height="60" rx="9" width="72" x="76" y="53"></rect>
+<text fill="#544f66" font-size="12.5" text-anchor="middle" x="112" y="140">浅色背景</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="24" text-anchor="middle" x="235" y="90">＝</text>
+<rect fill="url(#panD)" filter="url(#dropL)" height="134" rx="18" stroke="rgba(167,139,250,0.28)" stroke-width="1" width="192" x="262" y="16"></rect>
+<rect fill="#8a8a8a" height="60" rx="9" width="72" x="322" y="53"></rect>
+<text fill="#9a94bc" font-size="12.5" text-anchor="middle" x="358" y="140">深色背景</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="235" y="188">两块灰的填充完全相同 · #8a8a8a</text>
 </svg>
 <figcaption>你"看到"的深浅，是大脑结合背景猜出来的，不是眼睛量出来的</figcaption>
 </figure>
-
 <p>这不是眼睛坏了，而是大脑在用它对"背景会影响物体"的经验，主动帮你"脑补"。所以<strong>你看到的从来不是原始像素，而是被大脑的预期塑造过的结果</strong>。（这条从眼睛到大脑的路每一站怎么走，<a class="reflink" href="ref-visual-pathway.html">视觉通路</a>）</p>
-
 <p class="en-brief"><b>EN</b> Perception is mostly top-down prediction, not bottom-up reception — in the visual pathway, feedback connections outnumber feedforward ones. What you "see" is the brain's best guess, shaped by priors: which is exactly why two physically identical grays look different against different backgrounds.</p>
-
 <div class="ai">
 <h4>AI 对读</h4>
 <p>AI 里有一类东西叫<b>生成模型</b>（会画图的 Stable Diffusion、AI 换脸那类工具都是），思路和大脑一模一样：与其硬存一堆像素，不如学一个能"生成"世界的内部模型，再拿它去解释眼前的输入——先给个假设、生成一版、和真实比对、按差错修正。大脑"先猜 → 往下发 → 拿感官纠错"，走的正是同一个骨架。</p>
 </div>
 </div>
-
 <!-- 2 -->
 <div class="section">
 <span class="num">// 02</span>
-<h2>只有"没猜中的"才值得上报</h2>
+<h2 data-tts="7517247179340882">只有"没猜中的"才值得上报</h2>
 <p>大脑怎么高效地猜？靠一个很省的机制：<strong>每一层只把"没猜中的部分"往上报</strong>。你可以把大脑想成一叠楼层，每层都在预测<strong>下面一层</strong>会发生什么，把预测往下发；下层拿预测和实际一比，<strong>只有对不上的地方（差错）才往上传</strong>。猜中的部分，根本不往上走——因为它没带来任何新消息。</p>
-
 <figure>
-<svg viewBox="0 0 460 250" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 460 250" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<linearGradient id="pb2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5ef0ea"/><stop offset="1" stop-color="#2aa8cf" stop-opacity="0.45"/></linearGradient>
-<radialGradient id="lay" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#241c46"/><stop offset="1" stop-color="#130d29"/></radialGradient>
-<filter id="glowB" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<marker id="mp2" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#5ef0ea"/></marker>
-<marker id="me2" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#e879f9"/></marker>
+<lineargradient id="pb2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5ef0ea"></stop><stop offset="1" stop-color="#2aa8cf" stop-opacity="0.45"></stop></lineargradient>
+<radialgradient cx="0.5" cy="0.3" id="lay" r="0.95"><stop offset="0" stop-color="#241c46"></stop><stop offset="1" stop-color="#130d29"></stop></radialgradient>
+<filter height="220%" id="glowB" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="3.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="mp2" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#5ef0ea"></path></marker>
+<marker id="me2" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#e879f9"></path></marker>
 </defs>
-<line x1="203" y1="57" x2="203" y2="84" stroke="#5ef0ea" stroke-width="3" stroke-linecap="round" marker-end="url(#mp2)"/>
-<line x1="203" y1="133" x2="203" y2="160" stroke="#5ef0ea" stroke-width="3" stroke-linecap="round" marker-end="url(#mp2)"/>
-<line x1="277" y1="84" x2="277" y2="57" stroke="#e879f9" stroke-width="2" stroke-dasharray="1.5 4.5" stroke-linecap="round" marker-end="url(#me2)"/>
-<line x1="277" y1="160" x2="277" y2="133" stroke="#e879f9" stroke-width="2" stroke-dasharray="1.5 4.5" stroke-linecap="round" marker-end="url(#me2)"/>
-<rect x="150" y="12" width="160" height="42" rx="21" fill="url(#lay)" stroke="#a78bfa" stroke-width="1.3" filter="url(#glowB)"/><text x="230" y="38" text-anchor="middle" fill="#efe9ff" font-size="14" font-weight="600">高层</text>
-<rect x="150" y="88" width="160" height="42" rx="21" fill="url(#lay)" stroke="#8f7cd0" stroke-width="1.3" filter="url(#glowB)"/><text x="230" y="114" text-anchor="middle" fill="#efe9ff" font-size="14" font-weight="600">中层</text>
-<rect x="150" y="164" width="160" height="42" rx="21" fill="url(#lay)" stroke="#34e5e0" stroke-width="1.3" filter="url(#glowB)"/><text x="230" y="190" text-anchor="middle" fill="#e6faf8" font-size="14" font-weight="600">眼睛 / 低层</text>
-<text x="120" y="76" text-anchor="middle" fill="#7bf0e8" font-size="11.5" font-family="SF Mono,monospace">预测↓</text>
-<text x="342" y="76" text-anchor="middle" fill="#e879f9" font-size="11.5" font-family="SF Mono,monospace">误差↑</text>
-<text x="230" y="236" text-anchor="middle" fill="#8f89ad" font-size="12" font-family="SF Mono,monospace">猜中 = 静默　·　猜错 = 上报</text>
+<line marker-end="url(#mp2)" stroke="#5ef0ea" stroke-linecap="round" stroke-width="3" x1="203" x2="203" y1="57" y2="84"></line>
+<line marker-end="url(#mp2)" stroke="#5ef0ea" stroke-linecap="round" stroke-width="3" x1="203" x2="203" y1="133" y2="160"></line>
+<line marker-end="url(#me2)" stroke="#e879f9" stroke-dasharray="1.5 4.5" stroke-linecap="round" stroke-width="2" x1="277" x2="277" y1="84" y2="57"></line>
+<line marker-end="url(#me2)" stroke="#e879f9" stroke-dasharray="1.5 4.5" stroke-linecap="round" stroke-width="2" x1="277" x2="277" y1="160" y2="133"></line>
+<rect fill="url(#lay)" filter="url(#glowB)" height="42" rx="21" stroke="#a78bfa" stroke-width="1.3" width="160" x="150" y="12"></rect><text fill="#efe9ff" font-size="14" font-weight="600" text-anchor="middle" x="230" y="38">高层</text>
+<rect fill="url(#lay)" filter="url(#glowB)" height="42" rx="21" stroke="#8f7cd0" stroke-width="1.3" width="160" x="150" y="88"></rect><text fill="#efe9ff" font-size="14" font-weight="600" text-anchor="middle" x="230" y="114">中层</text>
+<rect fill="url(#lay)" filter="url(#glowB)" height="42" rx="21" stroke="#34e5e0" stroke-width="1.3" width="160" x="150" y="164"></rect><text fill="#e6faf8" font-size="14" font-weight="600" text-anchor="middle" x="230" y="190">眼睛 / 低层</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="120" y="76">预测↓</text>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="342" y="76">误差↑</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="230" y="236">猜中 = 静默　·　猜错 = 上报</text>
 </svg>
 <figcaption>分层预测：预测往下发，只有"意外"往上走</figcaption>
 </figure>
-
 <p>这一下就说通了好多日常小事。<strong>你听不见自己家冰箱的嗡嗡声</strong>——因为它太可预测了，差错为零，压根不上报；可它一停，你反而立刻警觉，因为"预测落空"了。越熟悉的东西越像<strong>隐形</strong>，不是你的耳朵变钝，是它们早被大脑猜到、提前扣掉了。说到底，大脑的注意力，是留给<strong>意外</strong>的。</p>
-
 <p class="en-brief"><b>EN</b> The cortex predicts itself layer by layer and sends only the "prediction error" upward — correctly predicted signals stay silent. That's why the familiar goes invisible (you stop hearing your own fridge), and why attention is reserved for the surprising.</p>
-
 <div class="ai">
 <h4>AI 对读</h4>
 <p>AI 里也反复在用"只记没猜中的部分"这个省法——不重复已知、只存增量。最贴的例子是<b>大语言模型（ChatGPT 那类）的训练</b>：模型每一步都在猜"下一个词是什么"，猜得多离谱（那个数叫 loss）就是它的"预测差错"，然后它只沿着"没猜准的方向"去微调自己。大脑用差错实时纠正当下的判断，模型用差错慢慢纠正自己——本质都是"被意外推着学"。</p>
 </div>
 </div>
-
 <!-- 3 -->
 <div class="section">
 <span class="num">// 03</span>
-<h2>光线越暗，你越"看见你以为的"</h2>
+<h2 data-tts="350c5ffaa0308513">光线越暗，你越"看见你以为的"</h2>
 <p>把前面两点合起来，就得到一条特别实用的规律：<strong>你最终看到的 = 大脑的预期 + 眼前的证据，各占多少，看谁更靠谱。</strong></p>
 <p>关键在"谁更靠谱"。<strong>光线昏暗时，眼睛送回的证据很不可靠</strong>，大脑就更信自己的预期——于是你把衣架看成蹲着的人，把风声听成有人叫你名字。反过来，大白天证据充足，预期就得让位、老老实实按看到的来。这也顺带给了"注意"一个很准的定义：<strong>注意，就是大脑临时调高某个地方证据的可信度</strong>，让它更有资格改写你眼里的世界（注意本身是 Topic 2）。</p>
-
 <p class="en-brief"><b>EN</b> What you perceive ≈ prior × evidence, weighted by reliability (precision). When sensory evidence is weak — say, in dim light — priors take over, the same mechanism behind both illusions and hallucinations. Attention is simply the brain turning up the precision of the evidence somewhere.</p>
-
 <div class="ai">
 <h4>AI 对读</h4>
 <p>这在 AI 里叫<b>按可信度加权</b>：证据不足时，就更信自己的经验（先验）。AI 模型里也有个旋钮管"多信先验"（画图时的 guidance、聊天模型里的 temperature 都是这类），只不过大脑是用一个叫<b>精度</b>的量、逐个感官、实时自动地在拧这个旋钮。更妙的是——<b>AI 的"幻觉"和人的错觉是同一个故事</b>：先验被过度采信、证据被压过，大脑或模型就"看见"了根本不在那儿的东西。</p>
 </div>
 </div>
-
 <!-- 4 -->
 <div class="section">
 <span class="num">// 04</span>
-<h2>还有一招：不改猜测，改世界</h2>
+<h2 data-tts="034e698469aedfbc">还有一招：不改猜测，改世界</h2>
 <p>预测和现实对不上，怎么办？前面讲的都是<strong>改大脑</strong>——更新猜测去贴合世界。但还有一条对称的路：<strong>改世界去贴合猜测</strong>。这就是<strong>主动推理</strong>，也是它最妙的地方。</p>
 <p>举个最简单的：你预测"眼睛应该正对着桌子中央"，可现在没有——于是<strong>你动了下眼睛，让它真的对准中央</strong>。差错被抹平了，不是靠改信念，是靠动作。把这个推到底，会得到一个惊人的重述：<strong>你的每个动作，其实都是一个"被身体实现出来的预测"</strong>。你伸手去拿杯子，是大脑先预测"手已经握住杯子了"，这个还没实现的预测产生的差错，驱动肌肉去把它变成真。</p>
 <p>所以感知和行动根本是<strong>同一台机器的两个出口</strong>：感知问"世界是啥样"，行动问"我怎么让世界变成我猜的样"。这也是为什么后面讲运动、讲决策、甚至讲冥想（主动去调自己的预测），都能挂回这根主线。</p>
-
 <p class="en-brief"><b>EN</b> Prediction error can be minimized two ways: change the model (perception) or change the world (action). So every action is a prediction the body makes come true — perception and action are two outlets of one error-minimizing engine (active inference).</p>
-
 <div class="ai">
 <h4>AI 对读</h4>
 <p>这跟 AI 训练智能体的主流办法<b>强化学习</b>很像，但有个耐人寻味的差别：强化学习让智能体去"最大化奖励"，主动推理让它去"最小化预测差错"——很多时候两者等价，但后者把"探索世界"和"达成目标"揉成了同一件事。它天生就是那种<b>"先在脑子里建个世界模型、用它想象、再行动去让想象成真"</b>的智能体——如今 AI 圈在重新发现的这套思路，大脑已经用了上亿年。</p>
 </div>
 </div>
-
 <div class="crossx">
-<h3>🌀 越界 · 跨学科的联想</h3>
+<h3 data-tts="71f14e9579b5e2d2">🌀 越界 · 跨学科的联想</h3>
 <p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"你从没直接碰过世界，只碰到大脑造的模型"——这个结论，好几门古老学问几千年前就抵达过，只是当年没有 fMRI：</p>
 <ul>
 <li><b>佛学 · 唯识学</b>：「万法唯识，境由识现」——你以为在外面的世界，其实是心识变现的显相，并非离心独存。预测加工只是用神经机制把它又讲了一遍；而"受控的幻觉"或许正是"<b>如实知见</b>"的现代注脚——看清"所见皆是建构"，本身就松动一分执取。</li>
@@ -211,16 +191,14 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>道家 · 庄周梦蝶 ／ 古希腊 · 柏拉图洞穴</b>：庄子分不清"我梦蝴蝶还是蝴蝶梦我"，柏拉图的囚徒只看得见墙上的影子——两个古老寓言说的是同一件事：我们活在自己脑内的模型里，从没直接见过洞外的光。</li>
 </ul>
 </div>
-
 <div class="thinking">
-<h3>// 深入思考</h3>
+<h3 data-tts="f309d3b6ec5968e0">// 深入思考</h3>
 <details><summary>如果我"看到"的永远是大脑的猜测，那我凭什么信我看到的世界是真的？</summary><div>严格说，你从没"直接"碰过世界——你碰的一直是大脑的模型。但这不导致怀疑一切：这个模型被<strong>持续的差错</strong>拴在现实上，猜错就要付代价（撞墙、抓空）。所以感知不是幻觉，是一个<strong>被现实不停校准的"受控幻觉"</strong>——真到足够让你活下来，但永远不是像素级的真相。这也解释了为什么两个人能"看到"不同的东西：预期不同，结果就不同。</div></details>
 <details><summary>既然"熟悉 = 零差错 = 无感"，那为什么我们还爱重复——重听一首歌、重看一部电影？</summary><div>因为"差错"不止一层。低层（音符、画面）被猜到了，但<strong>高层</strong>（情绪的走向、意义、和记忆的共振）还在冒新差错；而且"完全可预测"本身能变成一种<strong>安全感</strong>（仪式、白噪音、ASMR 就靠这个）。审美的甜区，往往落在"猜得到的骨架 + 恰到好处的意外"之间——太意外是噪声，太好猜是无聊。这条 Topic 19 敬畏、以及音乐认知里还会回来。</div></details>
 <details><summary>大脑和生成模型是同一个骨架，那 LLM 的"幻觉"和人的"错觉/妄想"是一回事吗？</summary><div>机制上高度同源：<strong>先验被过度采信、证据被压过</strong>，两边都会"生成"不存在的细节。但有个关键差别——健康大脑多一条腿：<strong>主动推理</strong>。它能<strong>去动、去采样新证据</strong>来验自己的猜（多看一眼、伸手摸一下）。而现在的 LLM 大多没有这条"主动去查"的闭环，只能在已有先验里往下编——这也指了缓解幻觉的方向：给它<strong>取证据、并让证据有权压过先验</strong>的能力。工具调用、检索，本质就是给模型接上"感官"。</div></details>
 </div>
-
 <div class="refs">
-<h3>// 延伸阅读</h3>
+<h3 data-tts="54b95ebd534fa7ff">// 延伸阅读</h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Predictive_coding" target="_blank">预测加工 Predictive coding</a> — 大脑作为预测机器的核心框架</li>
 <li><a href="https://en.wikipedia.org/wiki/Bayesian_approaches_to_brain_function" target="_blank">贝叶斯大脑 Bayesian brain</a> — 感知作为"先验 × 证据"的推断</li>
@@ -228,11 +206,17 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><a href="https://en.wikipedia.org/wiki/Anil_Seth" target="_blank">Anil Seth · Being You</a> — "受控幻觉"与意识的预测视角（Topic 9–15 会深挖）</li>
 </ul>
 </div>
-
 <footer>BigCat · Neuroscience · Topic 1 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
+<<<<<<< Updated upstream
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
 <script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+=======
+<script defer="" src="https://cissy0802.github.io/comments.js"></script>
+<script defer="" src="https://cissy0802.github.io/search.js"></script>
+<script defer="" src="https://cissy0802.github.io/index-button.js"></script>
+<script defer="" src="https://cissy0802.github.io/i18n-tts.js"></script>
+>>>>>>> Stashed changes
 </body></html>

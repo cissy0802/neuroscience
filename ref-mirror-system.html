@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>参考 · 镜像系统 — 神经科学</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -41,65 +42,63 @@ footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font
 <a class="backlink" href="index.html">← 参考库</a>
 <header>
 <span class="ref-badge">参考库 · REFERENCE</span>
-<h1>镜像系统<span class="en">Mirror System</span></h1>
+<h1 data-tts="11113beeaa64cfb9">镜像系统<span class="en">Mirror System</span></h1>
 <p>做一个动作、和看别人做同一个动作，会触发同一批神经元——这是真实存在的"动作共振"。但它被吹成"塑造文明的细胞"，又被科学拽了回来。这一页把<strong>它到底是什么</strong>和<strong>它到底不是什么</strong>分清楚。</p>
 </header>
-
-<h2>发现：猴子脑里的意外</h2>
+<h2 data-tts="039418289037870d">发现：猴子脑里的意外</h2>
 <p>上世纪 90 年代，意大利帕尔马 Rizzolatti 团队在研究猕猴的<strong>运动前区</strong>（一块叫 F5 的皮层，管"抓握"这类动作的计划）。他们记录到一些神经元，在猴子<strong>自己伸手抓食物</strong>时放电——这不奇怪，它本就是运动神经元。奇怪的是：当猴子<strong>一动不动、只是看着实验员去抓</strong>同样的东西，<strong>同一批神经元又放电了</strong>。它们像在"照镜子"，故得名<strong>镜像神经元</strong>。</p>
-
 <figure>
-<svg viewBox="0 0 470 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 470 200" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<radialGradient id="rDo" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#3a2a12"/><stop offset="1" stop-color="#241905"/></radialGradient>
-<radialGradient id="rSee" cx="0.5" cy="0.35" r="0.9"><stop offset="0" stop-color="#0e2c33"/><stop offset="1" stop-color="#091a20"/></radialGradient>
-<radialGradient id="rHub" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#3a1a44"/><stop offset="1" stop-color="#22102e"/></radialGradient>
-<filter id="gR" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<marker id="mR" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#c98adf"/></marker>
+<radialgradient cx="0.5" cy="0.35" id="rDo" r="0.9"><stop offset="0" stop-color="#3a2a12"></stop><stop offset="1" stop-color="#241905"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.35" id="rSee" r="0.9"><stop offset="0" stop-color="#0e2c33"></stop><stop offset="1" stop-color="#091a20"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.3" id="rHub" r="0.95"><stop offset="0" stop-color="#3a1a44"></stop><stop offset="1" stop-color="#22102e"></stop></radialgradient>
+<filter height="220%" id="gR" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="3.4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="mR" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#c98adf"></path></marker>
 </defs>
-<line x1="170" y1="48" x2="288" y2="88" stroke="#d0a860" stroke-width="2.6" stroke-linecap="round" marker-end="url(#mR)"/>
-<line x1="170" y1="152" x2="288" y2="112" stroke="#34e5e0" stroke-width="2.6" stroke-linecap="round" marker-end="url(#mR)"/>
-<rect x="16" y="28" width="154" height="42" rx="21" fill="url(#rDo)" stroke="#fbbf24" stroke-width="1.2" filter="url(#gR)"/><text x="93" y="54" text-anchor="middle" fill="#f7ead0" font-size="12.5" font-weight="600">自己抓 · 执行</text>
-<rect x="16" y="130" width="154" height="42" rx="21" fill="url(#rSee)" stroke="#34e5e0" stroke-width="1.2" filter="url(#gR)"/><text x="93" y="156" text-anchor="middle" fill="#d8f5f2" font-size="12.5" font-weight="600">看别人抓 · 观察</text>
-<rect x="290" y="76" width="164" height="48" rx="18" fill="url(#rHub)" stroke="#e879f9" stroke-width="1.5" filter="url(#gR)"/><text x="372" y="96" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">F5 镜像神经元</text><text x="372" y="113" text-anchor="middle" fill="#f0b8f5" font-size="10" font-family="SF Mono,monospace">两种情况都放电</text>
+<line marker-end="url(#mR)" stroke="#d0a860" stroke-linecap="round" stroke-width="2.6" x1="170" x2="288" y1="48" y2="88"></line>
+<line marker-end="url(#mR)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6" x1="170" x2="288" y1="152" y2="112"></line>
+<rect fill="url(#rDo)" filter="url(#gR)" height="42" rx="21" stroke="#fbbf24" stroke-width="1.2" width="154" x="16" y="28"></rect><text fill="#f7ead0" font-size="12.5" font-weight="600" text-anchor="middle" x="93" y="54">自己抓 · 执行</text>
+<rect fill="url(#rSee)" filter="url(#gR)" height="42" rx="21" stroke="#34e5e0" stroke-width="1.2" width="154" x="16" y="130"></rect><text fill="#d8f5f2" font-size="12.5" font-weight="600" text-anchor="middle" x="93" y="156">看别人抓 · 观察</text>
+<rect fill="url(#rHub)" filter="url(#gR)" height="48" rx="18" stroke="#e879f9" stroke-width="1.5" width="164" x="290" y="76"></rect><text fill="#fff" font-size="12.5" font-weight="700" text-anchor="middle" x="372" y="96">F5 镜像神经元</text><text fill="#f0b8f5" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="372" y="113">两种情况都放电</text>
 </svg>
 <figcaption>执行与观察，映射到同一批运动神经元——"看"被翻译成了脑内的"做"</figcaption>
 </figure>
-
-<h2>人类的镜像系统：不是"一个区"，是一套回路</h2>
+<h2 data-tts="f7bd34eead6a9697">人类的镜像系统：不是"一个区"，是一套回路</h2>
 <p>人脑里没法像猴子那样逐个记录神经元（除极少数临床机会），但用脑成像找到了具有类似"做/看都激活"性质的一套区域，合称<strong>镜像系统</strong>（或动作观察网络）。主力有两块，正好首尾呼应一个动作从"计划"到"感知"的两端：</p>
-
 <dl class="kv">
 <dt>额下回（IFG · 靠近布洛卡区）</dt><dd>运动前区一侧，参与<strong>动作的目标编码</strong>——"这是在做一个抓握"。和语言区相邻，是"镜像和语言起源有关"猜想的由来（但那只是猜想）。</dd>
 <dt>顶下小叶（IPL）</dt><dd>顶叶一侧，编码动作的<strong>运动细节与身体关系</strong>——手怎么动、力道方向。</dd>
 <dt>颞上沟（STS · 输入端）</dt><dd>严格说不算"镜像"（它不编码你自己的动作），但它是<strong>视觉入口</strong>：把"看到的生物运动"送进上面两块。没有它，镜像系统看不见东西。</dd>
 </dl>
-
-<h2>它大概在做什么</h2>
+<h2 data-tts="5929064b48506360">它大概在做什么</h2>
 <p>比较稳的功能有三样，都还落在"动作"层面，而不是玄乎的"读心"：</p>
 <p><strong>动作共振</strong>——看别人动作时，你的运动系统低强度地"跟着预演"，可能帮你更快<strong>预测</strong>对方下一步（球类运动员看对手起手就能抢先启动，被认为和这有关）。<strong>模仿与学习</strong>——把"看到的"直接对齐到"自己怎么做"，是模仿的天然接口。<strong>理解动作的一部分</strong>——认出"他在抓"而不是"他在推"。注意都是<strong>动作</strong>层面的理解，不是"他为什么抓、他心里怎么想"。</p>
-
 <div class="myth">
-<h3>// 被夸大的传奇 · 拉回地面</h3>
+<h3 data-tts="8851ae69c6acfcdc">// 被夸大的传奇 · 拉回地面</h3>
 <p>90 年代末到 2000 年代，镜像神经元被捧成万能钥匙：有人称它是<b>"塑造文明的细胞"</b>，说<b>共情、语言、文化传承、心智理论</b>统统靠它，还提出自闭症是<b>"镜子碎了"</b>（破镜假说）。故事很动人，证据没跟上。</p>
 <p>冷静的修正：① <b>镜像 ≠ 心智理论</b>——真正追踪别人<b>信念</b>的是另一套<b>心智化网络</b>（内侧前额叶 + 颞顶联合区），脑区都不一样。② <b>镜像 ≠ 共情</b>——共情另有前脑岛/前扣带那条情绪线。③ 镜像特性很可能是<b>后天联结学来的</b>（做动作时几乎总同时看到它，"看"和"做"被绑到一起），未必是天生的读心器官（Heyes 的联结学习说）。④ <b>破镜假说</b>证据薄弱、已大幅退潮。Hickok《镜像神经元的神话》系统梳理了这些过度解读。</p>
 <p>结论：镜像放电是<b>真实</b>的、也<b>有用</b>——但它是社交拼图里的一块零件，不是那把万能钥匙。</p>
 </div>
-
-<h2>和"心智化网络"分清楚</h2>
+<h2 data-tts="7ed2dfb0a6926c83">和"心智化网络"分清楚</h2>
 <p>一句话记住这一页：大脑读别人，至少有<strong>两条不同的路</strong>。<strong>镜像系统</strong>（IFG + 顶下小叶）走"<strong>直接共振</strong>"——把看到的动作映射进自己的运动系统，快、自动、偏身体。<strong>心智化网络</strong>（内侧前额叶 + 颞顶联合区）走"<strong>推断</strong>"——慢一点、更抽象，处理看不见的信念和意图。别再把镜像神经元当成"共情/读心的所在地"了：它管的是<strong>动作</strong>，读心是隔壁那套网的活。</p>
-
 <div class="links">
-<h3>// 被这些主线引用</h3>
+<h3 data-tts="6df71c429bd8f7ab">// 被这些主线引用</h3>
 <p class="who">Topic 9 社会脑与心智理论 · 未来的运动系统 / 模仿学习相关期</p>
-<h3 style="margin-top:18px">// 延伸</h3>
+<h3 data-tts="0b6bb14c5fd4dd23" style="margin-top:18px">// 延伸</h3>
 <p><a href="https://en.wikipedia.org/wiki/Mirror_neuron" target="_blank">镜像神经元 Mirror neuron</a> · <a href="https://en.wikipedia.org/wiki/Giacomo_Rizzolatti" target="_blank">Rizzolatti · 帕尔马发现</a> · <a href="https://en.wikipedia.org/wiki/The_Myth_of_Mirror_Neurons" target="_blank">Hickok · 镜像神经元的神话</a> · <a href="https://en.wikipedia.org/wiki/Cecilia_Heyes" target="_blank">Heyes · 联结学习说</a></p>
 </div>
-
 <footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
+<<<<<<< Updated upstream
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
 <script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+=======
+<script defer="" src="https://cissy0802.github.io/comments.js"></script>
+<script defer="" src="https://cissy0802.github.io/search.js"></script>
+<script defer="" src="https://cissy0802.github.io/index-button.js"></script>
+<script defer="" src="https://cissy0802.github.io/i18n-tts.js"></script>
+>>>>>>> Stashed changes
 </body></html>

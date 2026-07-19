@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>参考 · 语言网络 — 神经科学</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -36,70 +37,69 @@ footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font
 <a class="backlink" href="index.html">← 参考库</a>
 <header>
 <span class="ref-badge">参考库 · REFERENCE</span>
-<h1>语言网络<span class="en">Language Network</span></h1>
+<h1 data-tts="aad1402efeb339c8">语言网络<span class="en">Language Network</span></h1>
 <p>左脑一整片专管语言的系统——它由额叶到颞叶的多个区、加上一束"弓形"的纤维连成；它<strong>只为语言点亮</strong>，算术、音乐都不理它。课本上"布洛卡管说、韦尼克管懂"的两点图，是它被压扁后的简化版。</p>
 </header>
-
-<h2>一张网：额叶 · 颞叶 · 弓状束</h2>
+<h2 data-tts="52232456ff12b4c7">一张网：额叶 · 颞叶 · 弓状束</h2>
 <p>语言不是"一个区说、一个区懂"这么两块。核心语言网络是左半球里<strong>前（额叶）后（颞叶）两大片，被一束纤维紧紧接成一体</strong>——它们对语言的输入方式（读还是听）并不挑，处理的是更抽象的"意义与结构"：</p>
-
 <figure>
-<svg viewBox="0 0 500 226" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 500 226" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<radialGradient id="rf" cx="0.5" cy="0.34" r="0.95"><stop offset="0" stop-color="#3a1a44"/><stop offset="1" stop-color="#22102e"/></radialGradient>
-<radialGradient id="rt" cx="0.5" cy="0.34" r="0.95"><stop offset="0" stop-color="#2a1c44"/><stop offset="1" stop-color="#160e2c"/></radialGradient>
-<filter id="gR" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<marker id="md" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker>
-<marker id="mv" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"/></marker>
+<radialgradient cx="0.5" cy="0.34" id="rf" r="0.95"><stop offset="0" stop-color="#3a1a44"></stop><stop offset="1" stop-color="#22102e"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.34" id="rt" r="0.95"><stop offset="0" stop-color="#2a1c44"></stop><stop offset="1" stop-color="#160e2c"></stop></radialgradient>
+<filter height="220%" id="gR" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="3"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="md" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="mv" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"></path></marker>
 </defs>
 <!-- brain outline, facing left -->
-<path d="M60,120 C60,66 118,40 200,40 C300,40 372,52 420,86 C452,108 452,150 418,168 C372,192 300,196 240,190 C150,182 96,180 74,158 C62,146 60,134 60,120 Z" fill="rgba(167,139,250,0.05)" stroke="#4d4869" stroke-width="1.3"/>
-<text x="72" y="60" fill="#6f6a8c" font-size="10.5" font-family="SF Mono,monospace">前 · 额叶</text>
-<text x="392" y="60" fill="#6f6a8c" font-size="10.5" font-family="SF Mono,monospace" text-anchor="end">后 · 颞/顶</text>
+<path d="M60,120 C60,66 118,40 200,40 C300,40 372,52 420,86 C452,108 452,150 418,168 C372,192 300,196 240,190 C150,182 96,180 74,158 C62,146 60,134 60,120 Z" fill="rgba(167,139,250,0.05)" stroke="#4d4869" stroke-width="1.3"></path>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="10.5" x="72" y="60">前 · 额叶</text>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="392" y="60">后 · 颞/顶</text>
 <!-- dorsal stream (arcuate) : back -> front over the top -->
-<path d="M338,96 C320,58 190,54 150,96" fill="none" stroke="#34e5e0" stroke-width="3" stroke-linecap="round" marker-end="url(#md)"/>
-<text x="244" y="58" text-anchor="middle" fill="#7bf0e8" font-size="10.5" font-family="SF Mono,monospace">背侧流 · 声音→发音</text>
+<path d="M338,96 C320,58 190,54 150,96" fill="none" marker-end="url(#md)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="244" y="58">背侧流 · 声音→发音</text>
 <!-- ventral stream: back -> front lower -->
-<path d="M330,150 C270,168 210,166 168,150" fill="none" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" marker-end="url(#mv)"/>
-<text x="250" y="184" text-anchor="middle" fill="#f0cf88" font-size="10.5" font-family="SF Mono,monospace">腹侧流 · 声音→意义</text>
+<path d="M330,150 C270,168 210,166 168,150" fill="none" marker-end="url(#mv)" stroke="#fbbf24" stroke-linecap="round" stroke-width="3"></path>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="250" y="184">腹侧流 · 声音→意义</text>
 <!-- nodes -->
-<circle cx="150" cy="122" r="30" fill="url(#rf)" stroke="#e879f9" stroke-width="1.5" filter="url(#gR)"/>
-<text x="150" y="119" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">布洛卡</text>
-<text x="150" y="134" text-anchor="middle" fill="#e0a8ea" font-size="9" font-family="SF Mono,monospace">左额下回</text>
-<circle cx="344" cy="122" r="30" fill="url(#rt)" stroke="#a78bfa" stroke-width="1.5" filter="url(#gR)"/>
-<text x="344" y="119" text-anchor="middle" fill="#efe9ff" font-size="12" font-weight="700">韦尼克</text>
-<text x="344" y="134" text-anchor="middle" fill="#9a8fc0" font-size="9" font-family="SF Mono,monospace">左后颞</text>
+<circle cx="150" cy="122" fill="url(#rf)" filter="url(#gR)" r="30" stroke="#e879f9" stroke-width="1.5"></circle>
+<text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="150" y="119">布洛卡</text>
+<text fill="#e0a8ea" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="150" y="134">左额下回</text>
+<circle cx="344" cy="122" fill="url(#rt)" filter="url(#gR)" r="30" stroke="#a78bfa" stroke-width="1.5"></circle>
+<text fill="#efe9ff" font-size="12" font-weight="700" text-anchor="middle" x="344" y="119">韦尼克</text>
+<text fill="#9a8fc0" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="344" y="134">左后颞</text>
 </svg>
 <figcaption>前后两片经"弓状束"连成一体；背侧流通往发音，腹侧流通往意义</figcaption>
 </figure>
-
 <dl class="kv">
 <dt>布洛卡区（Broca，左额下回）</dt><dd>偏"组织与产出"一端——把意义拼成合语法的序列。但它<strong>不是单独的"说话中枢"</strong>：只伤这里，往往造不成持久的语言障碍。</dd>
 <dt>韦尼克区（Wernicke，左后颞上）</dt><dd>偏"接收与理解"一端。同样，经典定位过于干净——真实的理解摊在一大片颞叶网络上。</dd>
 <dt>弓状束（Arcuate fasciculus）</dt><dd>像弓一样绕行的白质纤维束，把前后两片<strong>接成一体</strong>。它受损会导致一种奇特情形：听得懂、也能自发说，却<strong>没法准确复述</strong>刚听到的话。</dd>
 <dt>双流（Two streams）</dt><dd><strong>背侧流</strong>把声音映到发音动作，<strong>腹侧流</strong>把声音映到意义——和视觉"在哪里/是什么"两条流是同一种设计思路（Hickok &amp; Poeppel）。</dd>
 </dl>
-
-<h2>专用性：只为语言亮</h2>
+<h2 data-tts="e94cef474668ea7d">专用性：只为语言亮</h2>
 <p>这张网最反直觉的性格是<strong>高度专一</strong>。Evelina Fedorenko 用"语言定位器"在每个人脑里精确圈出它，再拿非语言任务去试探：算术、音乐、程序代码、推测他人心思——它几乎<strong>都不响应</strong>，只在理解或组织有意义的语言时才点亮。这直接支撑了主线的关键结论：<strong>语言是独立的一套系统，和一般的思考、推理并不共用回路</strong>。所以严重失语的人，思考往往完好。</p>
-
-<h2>为什么偏左？右脑在干嘛</h2>
+<h2 data-tts="c11475e97eec485c">为什么偏左？右脑在干嘛</h2>
 <p>约九成右利手者，核心语言网络主要在<strong>左半球</strong>——为何如此顽固至今无定论。右脑并不闲：它更管<strong>语调、韵律、言外之意、幽默与反讽</strong>。右脑相应区受损的人，字面能懂，却常<strong>听不出弦外之音</strong>——可见"懂一句话"从来不止懂字面。</p>
-
-<h2>现代修正：别再信"两个点"</h2>
+<h2 data-tts="36a7218f3daec6b5">现代修正：别再信"两个点"</h2>
 <p>最该更新的一条：语言<strong>不是</strong>两个孤立中枢加一根线，而是一张<strong>分布式、左偏、前后紧连</strong>的网络。经典的布洛卡-韦尼克模型来自十九世纪的损伤解剖，方向对、分辨率太粗；现代脑成像与颅内电极把它refine成了"网络 + 双流 + 专用性"的图景。记住网络，忘掉那两个点。</p>
-
 <div class="links">
-<h3>// 被这些主线引用</h3>
+<h3 data-tts="dea694265af13918">// 被这些主线引用</h3>
 <p class="who">Topic 7 语言的大脑 · 未来的社会脑 / 心智理论、意识相关期</p>
-<h3 style="margin-top:18px">// 延伸</h3>
+<h3 data-tts="ef55e388ff41b302" style="margin-top:18px">// 延伸</h3>
 <p><a href="https://en.wikipedia.org/wiki/Broca%27s_area" target="_blank">布洛卡区</a> · <a href="https://en.wikipedia.org/wiki/Wernicke%27s_area" target="_blank">韦尼克区</a> · <a href="https://en.wikipedia.org/wiki/Arcuate_fasciculus" target="_blank">弓状束</a> · <a href="https://en.wikipedia.org/wiki/Language_processing_in_the_brain" target="_blank">语言的脑加工 · 双流模型</a> · <a href="https://en.wikipedia.org/wiki/Evelina_Fedorenko" target="_blank">Fedorenko · 语言网络的专用性</a></p>
 </div>
-
 <footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
+<<<<<<< Updated upstream
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
 <script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+=======
+<script defer="" src="https://cissy0802.github.io/comments.js"></script>
+<script defer="" src="https://cissy0802.github.io/search.js"></script>
+<script defer="" src="https://cissy0802.github.io/index-button.js"></script>
+<script defer="" src="https://cissy0802.github.io/i18n-tts.js"></script>
+>>>>>>> Stashed changes
 </body></html>

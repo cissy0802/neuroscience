@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>参考 · 海马与内嗅 — 神经科学</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -36,74 +37,74 @@ footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font
 <a class="backlink" href="index.html">← 参考库</a>
 <header>
 <span class="ref-badge">参考库 · REFERENCE</span>
-<h1>海马与内嗅<span class="en">Hippocampus &amp; Entorhinal Cortex</span></h1>
+<h1 data-tts="2cab65438705dde9">海马与内嗅<span class="en">Hippocampus &amp; Entorhinal Cortex</span></h1>
 <p>藏在两侧颞叶深处、形状像海马的一小条结构——大脑的<strong>索引器</strong>兼<strong>造图师</strong>。它不长期保存记忆，却负责在事情发生的当下把散落各处的碎片<strong>别到一起</strong>、日后再把它们召回；它也画出你脑内的地图，让你知道"自己在哪、去过哪"。它一旦坏掉，人会永远停在过去的那一刻——学不进任何新的往事。</p>
 </header>
-
-<h2>它在哪、由哪几块串成</h2>
+<h2 data-tts="a6bceec8968909b8">它在哪、由哪几块串成</h2>
 <p>海马左右各一条，蜷在颞叶内侧深处。真正的主角其实是一条<strong>回路</strong>：外界信息先经<strong>内嗅皮层</strong>这道"门户"进来，再依次穿过海马的几个小区，最后又从内嗅皮层出去。这条<strong>三突触环路</strong>是理解它一切本事的骨架：</p>
-
 <figure>
-<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<filter id="glowHc" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<marker id="ah" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#a78bfa"/></marker>
-<marker id="ah2" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"/></marker>
-<marker id="ah3" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"/></marker>
+<filter height="180%" id="glowHc" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="2.6"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="ah" markerheight="11" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#a78bfa"></path></marker>
+<marker id="ah2" markerheight="11" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"></path></marker>
+<marker id="ah3" markerheight="11" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"></path></marker>
 </defs>
 <!-- return arc Sub -> EC -->
-<path d="M406,64 Q250,14 108,58" fill="none" stroke="#5b4f86" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ah)"/>
-<text x="250" y="26" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">输出·送回皮层长期保存</text>
+<path d="M406,64 Q250,14 108,58" fill="none" marker-end="url(#ah)" stroke="#5b4f86" stroke-dasharray="5 4" stroke-width="1.6"></path>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="250" y="26">输出·送回皮层长期保存</text>
 <!-- flow arrows -->
-<line x1="86" y1="86" x2="86" y2="150" stroke="#34e5e0" stroke-width="1.8" marker-end="url(#ah2)"/>
-<text x="120" y="122" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">穿通通路</text>
-<line x1="110" y1="188" x2="182" y2="220" stroke="#34e5e0" stroke-width="1.8" marker-end="url(#ah2)"/>
-<text x="120" y="222" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">苔藓纤维</text>
-<line x1="266" y1="232" x2="330" y2="200" stroke="#34e5e0" stroke-width="1.8" marker-end="url(#ah2)"/>
-<text x="288" y="248" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">谢弗侧支</text>
-<line x1="378" y1="158" x2="398" y2="100" stroke="#34e5e0" stroke-width="1.8" marker-end="url(#ah2)"/>
+<line marker-end="url(#ah2)" stroke="#34e5e0" stroke-width="1.8" x1="86" x2="86" y1="86" y2="150"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" x="120" y="122">穿通通路</text>
+<line marker-end="url(#ah2)" stroke="#34e5e0" stroke-width="1.8" x1="110" x2="182" y1="188" y2="220"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" x="120" y="222">苔藓纤维</text>
+<line marker-end="url(#ah2)" stroke="#34e5e0" stroke-width="1.8" x1="266" x2="330" y1="232" y2="200"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" x="288" y="248">谢弗侧支</text>
+<line marker-end="url(#ah2)" stroke="#34e5e0" stroke-width="1.8" x1="378" x2="398" y1="158" y2="100"></line>
 <!-- CA3 recurrent self loop -->
-<path d="M212,214 a26,20 0 1 1 26,4" fill="none" stroke="#fbbf24" stroke-width="1.6" marker-end="url(#ah3)" opacity="0.9"/>
-<text x="196" y="196" text-anchor="end" fill="#f6dfa0" font-size="9.5" font-family="SF Mono,monospace">循环连接</text>
+<path d="M212,214 a26,20 0 1 1 26,4" fill="none" marker-end="url(#ah3)" opacity="0.9" stroke="#fbbf24" stroke-width="1.6"></path>
+<text fill="#f6dfa0" font-family="SF Mono,monospace" font-size="9.5" text-anchor="end" x="196" y="196">循环连接</text>
 <!-- nodes -->
 <g font-family="SF Mono,monospace" text-anchor="middle">
-<rect x="46" y="52" width="80" height="34" rx="9" fill="rgba(167,139,250,0.16)" stroke="#a78bfa" stroke-width="1.5" filter="url(#glowHc)"/><text x="86" y="68" fill="#e8ddff" font-size="11">内嗅 EC</text><text x="86" y="80" fill="#b8a8e0" font-size="8.5">门户·网格细胞</text>
-<circle cx="86" cy="172" r="26" fill="rgba(52,229,224,0.16)" stroke="#34e5e0" stroke-width="1.5" filter="url(#glowHc)"/><text x="86" y="170" fill="#cffaf7" font-size="11">DG</text><text x="86" y="183" fill="#7bf0e8" font-size="8">齿状回</text>
-<circle cx="224" cy="234" r="30" fill="rgba(251,191,36,0.15)" stroke="#fbbf24" stroke-width="1.5" filter="url(#glowHc)"/><text x="224" y="232" fill="#faeec8" font-size="12">CA3</text><text x="224" y="246" fill="#f6dfa0" font-size="8">补全</text>
-<circle cx="360" cy="176" r="28" fill="rgba(232,121,249,0.15)" stroke="#e879f9" stroke-width="1.5" filter="url(#glowHc)"/><text x="360" y="174" fill="#f8d8fb" font-size="12">CA1</text><text x="360" y="188" fill="#f3c2f8" font-size="8">比对·输出</text>
-<rect x="374" y="52" width="82" height="34" rx="9" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="1.4"/><text x="415" y="68" fill="#e8ddff" font-size="10.5">下托 Sub</text><text x="415" y="80" fill="#b8a8e0" font-size="8.5">出口</text>
+<rect fill="rgba(167,139,250,0.16)" filter="url(#glowHc)" height="34" rx="9" stroke="#a78bfa" stroke-width="1.5" width="80" x="46" y="52"></rect><text fill="#e8ddff" font-size="11" x="86" y="68">内嗅 EC</text><text fill="#b8a8e0" font-size="8.5" x="86" y="80">门户·网格细胞</text>
+<circle cx="86" cy="172" fill="rgba(52,229,224,0.16)" filter="url(#glowHc)" r="26" stroke="#34e5e0" stroke-width="1.5"></circle><text fill="#cffaf7" font-size="11" x="86" y="170">DG</text><text fill="#7bf0e8" font-size="8" x="86" y="183">齿状回</text>
+<circle cx="224" cy="234" fill="rgba(251,191,36,0.15)" filter="url(#glowHc)" r="30" stroke="#fbbf24" stroke-width="1.5"></circle><text fill="#faeec8" font-size="12" x="224" y="232">CA3</text><text fill="#f6dfa0" font-size="8" x="224" y="246">补全</text>
+<circle cx="360" cy="176" fill="rgba(232,121,249,0.15)" filter="url(#glowHc)" r="28" stroke="#e879f9" stroke-width="1.5"></circle><text fill="#f8d8fb" font-size="12" x="360" y="174">CA1</text><text fill="#f3c2f8" font-size="8" x="360" y="188">比对·输出</text>
+<rect fill="rgba(167,139,250,0.12)" height="34" rx="9" stroke="#a78bfa" stroke-width="1.4" width="82" x="374" y="52"></rect><text fill="#e8ddff" font-size="10.5" x="415" y="68">下托 Sub</text><text fill="#b8a8e0" font-size="8.5" x="415" y="80">出口</text>
 </g>
 </svg>
 <figcaption>三突触环路：内嗅 EC → 齿状回 DG → CA3 → CA1 → 下托，再经内嗅送回皮层；CA3 的循环连接是"模式补全"的硬件</figcaption>
 </figure>
-
 <dl class="kv">
 <dt>内嗅皮层 · Entorhinal Cortex</dt><dd>海马的<strong>门户</strong>——几乎所有进出海马的信息都过这里中转。它自己也藏着一套导航细胞（<strong>网格细胞</strong>，2014 诺奖），像给空间铺了一张六边形坐标网。</dd>
 <dt>齿状回 · DG</dt><dd><strong>模式分离</strong>的车间：把两段很像的经历使劲掰开、编码成差很远的两份。它还是成年大脑<strong>极少数会新生神经元</strong>的地方之一——新细胞可能正是帮你把新记忆和旧的区分开。</dd>
 <dt>CA3</dt><dd><strong>模式补全</strong>的核心。它内部神经元彼此大量<strong>循环连接</strong>，形成一张能"自我勾连"的网：喂进残缺线索，它就自动补成完整记忆——Hopfield 联想记忆的生物原型。</dd>
 <dt>CA1 / 下托 · Subiculum</dt><dd>回路的<strong>出口段</strong>：CA1 把 CA3 补出来的东西和内嗅送来的原始信息<strong>比对</strong>一下，再经下托把结果送回大脑皮层长期保存。</dd>
 </dl>
-
-<h2>它管什么：记忆的索引、地图与重放</h2>
+<h2 data-tts="942fdea1fba91c5d">它管什么：记忆的索引、地图与重放</h2>
 <p>把海马的活儿归成几样：</p>
 <p><strong>① 绑定与索引</strong>——事情发生的当下，它飞快记下"这些碎片是一伙的"，别上同一个书签；日后凭书签把散落各脑区的碎片召回、拼成一幕。这就是它对<strong>情景记忆</strong>（有时间、有地点的"那一次"）不可替代的原因。</p>
 <p><strong>② 巩固与重放</strong>——深睡里，海马会把白天的经历序列<strong>压缩着重放</strong>很多遍（表现为一种叫<strong>尖波涟漪</strong>的高频放电），一点点把记忆"讲给"皮层，直到皮层自己记牢、不再依赖海马。</p>
 <p><strong>③ 认知地图</strong>——海马里的<strong>位置细胞</strong>会在你走到某个特定地点时放电，一群位置细胞连起来就是一张"你在哪"的活地图。空间和记忆在这里是一回事：记住一件事，某种程度上就是记住"它发生在哪"。</p>
-
-<h2>H.M.：一个把记忆开关切掉的人</h2>
+<h2 data-tts="799939c13459dc54">H.M.：一个把记忆开关切掉的人</h2>
 <p>关于海马，最有名的证据来自一位代号 <strong>H.M.</strong> 的病人。为治严重癫痫，他两侧海马被手术切除。癫痫是好了，可代价惊人：他<strong>再也无法形成新的长时记忆</strong>。手术前的往事还在，可术后每一天、每一次见面、每一顿饭，转头就忘，永远活在几十秒的当下。他还能学会新的<strong>技能</strong>（比如照镜子描图，越练越熟），却完全不记得自己练过——这一刀，把"记住一件事"和"学会一个动作"干净地分成了两套系统，也几乎凭一己之力开创了现代记忆研究。</p>
-
 <div class="links">
-<h3>// 被这些主线引用</h3>
+<h3 data-tts="282e75a88be94dd8">// 被这些主线引用</h3>
 <p class="who">Topic 4 长时记忆与巩固 · Topic 5 空间导航与认知地图（位置/网格细胞）· 未来意识/临床相关期</p>
-<h3 style="margin-top:18px">// 延伸</h3>
+<h3 data-tts="13e9b2eb01d0a0ab" style="margin-top:18px">// 延伸</h3>
 <p><a href="https://en.wikipedia.org/wiki/Hippocampus" target="_blank">海马体 Hippocampus</a> · <a href="https://en.wikipedia.org/wiki/Entorhinal_cortex" target="_blank">内嗅皮层 Entorhinal cortex</a> · <a href="https://en.wikipedia.org/wiki/Henry_Molaison" target="_blank">H.M. · Henry Molaison</a> · <a href="https://en.wikipedia.org/wiki/Place_cell" target="_blank">位置细胞 Place cell</a> · <a href="https://en.wikipedia.org/wiki/Dentate_gyrus" target="_blank">齿状回 Dentate gyrus</a></p>
 </div>
-
 <footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
+<<<<<<< Updated upstream
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
 <script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+=======
+<script defer="" src="https://cissy0802.github.io/comments.js"></script>
+<script defer="" src="https://cissy0802.github.io/search.js"></script>
+<script defer="" src="https://cissy0802.github.io/index-button.js"></script>
+<script defer="" src="https://cissy0802.github.io/i18n-tts.js"></script>
+>>>>>>> Stashed changes
 </body></html>

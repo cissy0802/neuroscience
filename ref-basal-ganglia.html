@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>参考 · 基底节 — 神经科学</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -36,79 +37,79 @@ footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font
 <a class="backlink" href="index.html">← 参考库</a>
 <header>
 <span class="ref-badge">参考库 · REFERENCE</span>
-<h1>基底节<span class="en">Basal Ganglia</span></h1>
+<h1 data-tts="433a91f2e02b3241">基底节<span class="en">Basal Ganglia</span></h1>
 <p>脑子深处一组核团，干的是一件狠事：<strong>平时把你所有能做的动作全摁住，直到某个选项胜出，才专门给它开一道闸</strong>。它是"选动作"的守门人，也是多巴胺灌注学习信号的地方。</p>
 </header>
-
-<h2>一句话：它是个"默认全关"的闸门</h2>
+<h2 data-tts="8ba3697152d595f3">一句话：它是个"默认全关"的闸门</h2>
 <p>直觉里，大脑要动一下，是"发个信号让肌肉动"。基底节把这事反过来做：它的输出核<strong>时时刻刻在给下游发"刹车"</strong>，把所有候选动作都死死按住。要让某个动作发生，靠的不是踩油门，而是<strong>专门松开那一个的刹车</strong>——其余的继续被摁着。于是"选择"物理上就是"只放行一个、否掉其余"。</p>
-
 <figure>
-<svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<radialGradient id="bx" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#2b2150"/><stop offset="1" stop-color="#150e2c"/></radialGradient>
-<filter id="glowb" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<marker id="go" markerWidth="12" markerHeight="12" refX="8" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"/></marker>
-<marker id="ng" markerWidth="12" markerHeight="12" refX="8" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#e879f9"/></marker>
-<marker id="pl" markerWidth="11" markerHeight="11" refX="8" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9 Z" fill="#a78bfa"/></marker>
-<marker id="dp" markerWidth="12" markerHeight="12" refX="8" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"/></marker>
+<radialgradient cx="0.5" cy="0.3" id="bx" r="0.95"><stop offset="0" stop-color="#2b2150"></stop><stop offset="1" stop-color="#150e2c"></stop></radialgradient>
+<filter height="220%" id="glowb" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="3"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="go" markerheight="12" markerwidth="12" orient="auto" refx="8" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"></path></marker>
+<marker id="ng" markerheight="12" markerwidth="12" orient="auto" refx="8" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#e879f9"></path></marker>
+<marker id="pl" markerheight="11" markerwidth="11" orient="auto" refx="8" refy="5"><path d="M1,1 L9,5 L1,9 Z" fill="#a78bfa"></path></marker>
+<marker id="dp" markerheight="12" markerwidth="12" orient="auto" refx="8" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"></path></marker>
 </defs>
 <!-- cortex -->
-<rect x="170" y="14" width="160" height="42" rx="21" fill="url(#bx)" stroke="#a78bfa" stroke-width="1.3" filter="url(#glowb)"/><text x="250" y="40" text-anchor="middle" fill="#efe9ff" font-size="14" font-weight="600">皮层 · 候选动作</text>
+<rect fill="url(#bx)" filter="url(#glowb)" height="42" rx="21" stroke="#a78bfa" stroke-width="1.3" width="160" x="170" y="14"></rect><text fill="#efe9ff" font-size="14" font-weight="600" text-anchor="middle" x="250" y="40">皮层 · 候选动作</text>
 <!-- striatum -->
-<rect x="170" y="96" width="160" height="42" rx="21" fill="url(#bx)" stroke="#8f7cd0" stroke-width="1.3" filter="url(#glowb)"/><text x="250" y="115" text-anchor="middle" fill="#efe9ff" font-size="13.5" font-weight="600">纹状体 · 入口</text><text x="250" y="131" text-anchor="middle" fill="#9a8fc0" font-size="9.5" font-family="SF Mono,monospace">striatum</text>
+<rect fill="url(#bx)" filter="url(#glowb)" height="42" rx="21" stroke="#8f7cd0" stroke-width="1.3" width="160" x="170" y="96"></rect><text fill="#efe9ff" font-size="13.5" font-weight="600" text-anchor="middle" x="250" y="115">纹状体 · 入口</text><text fill="#9a8fc0" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="250" y="131">striatum</text>
 <!-- output -->
-<rect x="170" y="192" width="160" height="42" rx="21" fill="url(#bx)" stroke="#e879f9" stroke-width="1.3" filter="url(#glowb)"/><text x="250" y="211" text-anchor="middle" fill="#fff" font-size="13.5" font-weight="700">输出核 GPi/SNr</text><text x="250" y="227" text-anchor="middle" fill="#e0a8ea" font-size="9.5" font-family="SF Mono,monospace">默认发"刹车"</text>
+<rect fill="url(#bx)" filter="url(#glowb)" height="42" rx="21" stroke="#e879f9" stroke-width="1.3" width="160" x="170" y="192"></rect><text fill="#fff" font-size="13.5" font-weight="700" text-anchor="middle" x="250" y="211">输出核 GPi/SNr</text><text fill="#e0a8ea" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="250" y="227">默认发"刹车"</text>
 <!-- thalamus -->
-<rect x="170" y="266" width="160" height="42" rx="21" fill="url(#bx)" stroke="#34e5e0" stroke-width="1.3" filter="url(#glowb)"/><text x="250" y="285" text-anchor="middle" fill="#e6faf8" font-size="13.5" font-weight="600">丘脑 → 放行动作</text><text x="250" y="301" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">thalamus</text>
+<rect fill="url(#bx)" filter="url(#glowb)" height="42" rx="21" stroke="#34e5e0" stroke-width="1.3" width="160" x="170" y="266"></rect><text fill="#e6faf8" font-size="13.5" font-weight="600" text-anchor="middle" x="250" y="285">丘脑 → 放行动作</text><text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="250" y="301">thalamus</text>
 <!-- cortex to striatum -->
-<line x1="250" y1="56" x2="250" y2="92" stroke="#a78bfa" stroke-width="2.4" marker-end="url(#pl)"/>
+<line marker-end="url(#pl)" stroke="#a78bfa" stroke-width="2.4" x1="250" x2="250" y1="56" y2="92"></line>
 <!-- direct (Go) -->
-<path d="M210,138 C176,155 176,178 208,192" fill="none" stroke="#34e5e0" stroke-width="2.6" marker-end="url(#go)"/>
-<text x="150" y="169" text-anchor="middle" fill="#7bf0e8" font-size="11" font-family="SF Mono,monospace">直接·Go</text>
-<text x="150" y="184" text-anchor="middle" fill="#7bf0e8" font-size="9" font-family="SF Mono,monospace">松刹车</text>
+<path d="M210,138 C176,155 176,178 208,192" fill="none" marker-end="url(#go)" stroke="#34e5e0" stroke-width="2.6"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="150" y="169">直接·Go</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="150" y="184">松刹车</text>
 <!-- indirect (No-Go) -->
-<path d="M290,138 C330,155 330,178 292,192" fill="none" stroke="#e879f9" stroke-width="2.6" stroke-dasharray="5 4" marker-end="url(#ng)"/>
-<text x="356" y="169" text-anchor="middle" fill="#f0a8f6" font-size="11" font-family="SF Mono,monospace">间接·No-Go</text>
-<text x="356" y="184" text-anchor="middle" fill="#f0a8f6" font-size="9" font-family="SF Mono,monospace">加重刹车</text>
+<path d="M290,138 C330,155 330,178 292,192" fill="none" marker-end="url(#ng)" stroke="#e879f9" stroke-dasharray="5 4" stroke-width="2.6"></path>
+<text fill="#f0a8f6" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="356" y="169">间接·No-Go</text>
+<text fill="#f0a8f6" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="356" y="184">加重刹车</text>
 <!-- output to thalamus (inhibitory: flat bar) -->
-<line x1="250" y1="234" x2="250" y2="262" stroke="#e879f9" stroke-width="2.4"/>
-<line x1="238" y1="262" x2="262" y2="262" stroke="#e879f9" stroke-width="3.2"/>
+<line stroke="#e879f9" stroke-width="2.4" x1="250" x2="250" y1="234" y2="262"></line>
+<line stroke="#e879f9" stroke-width="3.2" x1="238" x2="262" y1="262" y2="262"></line>
 <!-- thalamus back to cortex (loop up right) -->
-<path d="M330,287 C430,287 430,35 330,35" fill="none" stroke="#34e5e0" stroke-width="2.2" marker-end="url(#pl)" opacity="0.9"/>
-<text x="446" y="164" text-anchor="middle" fill="#7bf0e8" font-size="10.5" font-family="SF Mono,monospace" transform="rotate(90 446 164)">回到皮层·闭环</text>
+<path d="M330,287 C430,287 430,35 330,35" fill="none" marker-end="url(#pl)" opacity="0.9" stroke="#34e5e0" stroke-width="2.2"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" transform="rotate(90 446 164)" x="446" y="164">回到皮层·闭环</text>
 <!-- dopamine SNc -->
-<rect x="16" y="96" width="118" height="42" rx="12" fill="rgba(251,191,36,0.08)" stroke="#fbbf24" stroke-width="1.2"/><text x="75" y="114" text-anchor="middle" fill="#faf0dc" font-size="12" font-weight="600">黑质致密部</text><text x="75" y="130" text-anchor="middle" fill="#f0cf88" font-size="9.5" font-family="SF Mono,monospace">多巴胺·教学信号</text>
-<line x1="134" y1="117" x2="166" y2="117" stroke="#fbbf24" stroke-width="2.4" marker-end="url(#dp)"/>
+<rect fill="rgba(251,191,36,0.08)" height="42" rx="12" stroke="#fbbf24" stroke-width="1.2" width="118" x="16" y="96"></rect><text fill="#faf0dc" font-size="12" font-weight="600" text-anchor="middle" x="75" y="114">黑质致密部</text><text fill="#f0cf88" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="75" y="130">多巴胺·教学信号</text>
+<line marker-end="url(#dp)" stroke="#fbbf24" stroke-width="2.4" x1="134" x2="166" y1="117" y2="117"></line>
 </svg>
 <figcaption>皮层→纹状体→(Go/No-Go)→输出核→丘脑→回皮层；多巴胺从旁调制学习</figcaption>
 </figure>
-
-<h2>两条对着干的通路：Go 与 No-Go</h2>
+<h2 data-tts="4288dc47a5f58d67">两条对着干的通路：Go 与 No-Go</h2>
 <p>纹状体收到皮层的候选动作后，兵分两路，一条催、一条拦：</p>
 <dl class="kv">
 <dt>直接通路（Go）</dt><dd>激活它，等于<strong>松开某个动作的刹车</strong>——让丘脑放行，动作得以发生。它上面的神经元带 <strong>D1 型</strong>多巴胺受体，多巴胺一来就更兴奋。</dd>
 <dt>间接通路（No-Go）</dt><dd>激活它，等于<strong>把刹车踩得更死</strong>——压制不该做的动作。它带 <strong>D2 型</strong>受体，多巴胺来了反而被抑制。</dd>
 <dt>两路的平衡</dt><dd>做什么、不做什么，取决于 Go 和 No-Go 谁的声音大。多巴胺同时"给 Go 加油、替 No-Go 松绑"，所以<strong>多巴胺越多，越倾向于"动、去做"</strong>；越少越倾向"按住别动"。</dd>
 </dl>
-
-<h2>多巴胺：不只是催动，更是"教学信号"</h2>
+<h2 data-tts="45552755ccf64700">多巴胺：不只是催动，更是"教学信号"</h2>
 <p>基底节最深的一层，是它同时是大脑的<strong>试错学习机</strong>。从黑质／腹侧被盖区来的多巴胺，携带的正是<strong>奖励预测误差</strong>——"这次比预想的好／差多少"。这个误差信号灌进纹状体，去改写"在这个局面下、做这个动作有多值"的记忆：出乎意料地好，就<strong>加强</strong>刚才那条 Go 通路的连接，下次更想这么做；比预想差，就<strong>削弱</strong>它。日积月累，好习惯（和坏习惯）就这样被一点点刻进这套回路。</p>
-
-<h2>坏了会怎样：帕金森与更多</h2>
+<h2 data-tts="08df164eae07a2c4">坏了会怎样：帕金森与更多</h2>
 <p>当黑质里造多巴胺的细胞大量死亡，就是<strong>帕金森病</strong>：没有多巴胺给 Go 通路加油、给 No-Go 松绑，天平死死压向"别动"——于是动作发起困难、迟缓、僵硬、静止性震颤。反过来，这套回路的失调也牵连很广：<strong>强迫、抽动（如妥瑞氏）、成瘾、乃至某些冲动控制问题</strong>，都能追到基底节这道"闸门"没关好或关太严。它管的从来不只是运动，还有被当成"动作"来选择的念头与习惯。</p>
-
 <div class="links">
-<h3>// 被这些主线引用</h3>
+<h3 data-tts="12be55b817dd0372">// 被这些主线引用</h3>
 <p class="who">Topic 6 决策（价值编码·动作选择·多巴胺预测误差）· 未来的成瘾（Topic 27）/ 神经退行（Topic 28）/ 运动系统相关期</p>
-<h3 style="margin-top:18px">// 延伸</h3>
+<h3 data-tts="a3ca06e0aee47235" style="margin-top:18px">// 延伸</h3>
 <p><a href="https://en.wikipedia.org/wiki/Basal_ganglia" target="_blank">基底节 Basal ganglia</a> · <a href="https://en.wikipedia.org/wiki/Striatum" target="_blank">纹状体 Striatum</a> · <a href="https://en.wikipedia.org/wiki/Direct_pathway" target="_blank">直接/间接通路 Go / No-Go</a> · <a href="https://en.wikipedia.org/wiki/Reward_system#Reward_prediction_error" target="_blank">奖励预测误差</a> · <a href="https://en.wikipedia.org/wiki/Parkinson%27s_disease" target="_blank">帕金森病</a></p>
 </div>
-
 <footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
+<<<<<<< Updated upstream
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
 <script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+=======
+<script defer="" src="https://cissy0802.github.io/comments.js"></script>
+<script defer="" src="https://cissy0802.github.io/search.js"></script>
+<script defer="" src="https://cissy0802.github.io/index-button.js"></script>
+<script defer="" src="https://cissy0802.github.io/i18n-tts.js"></script>
+>>>>>>> Stashed changes
 </body></html>

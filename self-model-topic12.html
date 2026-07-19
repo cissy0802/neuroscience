@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Topic 12 · 高阶理论与注意图式 — 神经科学</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -60,169 +61,150 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
 </style></head><body>
 <div class="container">
-
 <header>
 <span class="week-tag">TOPIC 12 · PHASE B 意识</span>
-<h1>大脑给自己画的那张图</h1>
-<h2>你不只是看见了红——你还"知道自己正在看见"。也许意识，就藏在这多出来的一层里。</h2>
+<h1 data-tts="e91c96ec67b503fe">大脑给自己画的那张图</h1>
+<h2 data-tts="d7d841c7d544fbfb">你不只是看见了红——你还"知道自己正在看见"。也许意识，就藏在这多出来的一层里。</h2>
 <div class="date">2026-07-18 · BigCat</div>
 <p class="pitch">你觉得自己有一份说不清、道不明的"内在体验"？有理论说：那是因为大脑在给自己的活动画一张潦草的自画像——而它故意把图画得不像。</p>
 </header>
-
 <div class="intro">
 <p>上一期两派人马在吵<strong>"哪儿"</strong>：意识的老巢在前额叶，还是在后脑勺那片感觉皮层。可还有一整家子理论，压根不接这个话茬，它们问的是一个更钻的问题——<strong>不是意识在哪，而是"到底还得多出点什么"，才能把一段暗中跑着的神经加工，变成你真真切切体验到的东西。</strong>它们给的答案惊人地一致：大脑得<strong>回过头来表征它自己</strong>——给自己的心理活动<strong>建一个模型</strong>。这一期上三个理论：两个说"意识 = 大脑把自己再表征了一遍"（高阶思想、注意图式），一个偏要唱反调："哪用得着自画像，信号自己<strong>绕回来</strong>转一圈就够了。"而这场争论，悄悄把上一期"前 vs 后"的对喊，磨成了一道<strong>真能拿实验去分</strong>的岔口。</p>
 </div>
-
 <!-- 1 -->
 <div class="section">
 <span class="num">// 01</span>
-<h2>光"看见红"还不够，你得有一层"知道自己在看红"</h2>
+<h2 data-tts="594c78cc06487639">光"看见红"还不够，你得有一层"知道自己在看红"</h2>
 <p>先做个拆分。你盯着一个红点时，脑子里其实有两样东西可以分开：一样是<strong>直接的"看见红"</strong>本身——视觉系统对红的加工；另一样是一层<strong>关于它的表征</strong>——"我正在看见红"这件事被脑子<strong>另外记了一笔</strong>。前者叫<strong>一阶状态</strong>，后者叫<strong>高阶表征</strong>。<strong>高阶理论</strong>（HOT，Rosenthal、Lau 一派）的主张简单到有点狠：<strong>一个心理状态，只有当它被一层高阶表征"盯上"时，你才会意识到它；没被盯上，它照样在脑子里跑，但你毫无察觉。</strong></p>
-
 <p>这不是空想。有种叫<strong>盲视</strong>的病人，初级视觉皮层受了损，嘴上说"我什么都看不见"，可你让他<strong>猜</strong>你手指往哪动，他猜得远超瞎蒙——信息明明进了脑、还能指导行为，却<strong>没进意识</strong>。在 HOT 看来，这正是<strong>一阶有、高阶缺</strong>的活标本。而那层高阶表征主要在哪搭台？<strong>前额叶</strong>（<a class="reflink" href="ref-prefrontal.html">前额叶</a>）——这也把它和上一期"前部派"接上了。</p>
-
 <figure>
-<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<radialGradient id="hoOn" cx="0.5" cy="0.35" r="0.95"><stop offset="0" stop-color="#2c1440"/><stop offset="1" stop-color="#180a26"/></radialGradient>
-<radialGradient id="hoOff" cx="0.5" cy="0.35" r="0.95"><stop offset="0" stop-color="#151228"/><stop offset="1" stop-color="#0b0918"/></radialGradient>
-<filter id="glowH" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<marker id="mUp" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"/></marker>
+<radialgradient cx="0.5" cy="0.35" id="hoOn" r="0.95"><stop offset="0" stop-color="#2c1440"></stop><stop offset="1" stop-color="#180a26"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.35" id="hoOff" r="0.95"><stop offset="0" stop-color="#151228"></stop><stop offset="1" stop-color="#0b0918"></stop></radialgradient>
+<filter height="180%" id="glowH" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="mUp" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
 </defs>
 <!-- left: conscious -->
-<text x="120" y="24" text-anchor="middle" fill="#e879f9" font-size="12" font-weight="700">① 被高阶盯上 → 有意识</text>
-<rect x="60" y="150" width="120" height="42" rx="10" fill="#1a1530" stroke="#8f89ad" stroke-width="1.2"/>
-<text x="120" y="168" text-anchor="middle" fill="#cfc9e6" font-size="11.5">一阶：看见红</text>
-<text x="120" y="184" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">视觉加工</text>
-<line x1="120" y1="148" x2="120" y2="100" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round" marker-end="url(#mUp)"/>
-<rect x="46" y="52" width="148" height="44" rx="11" fill="url(#hoOn)" stroke="#e879f9" stroke-width="1.5" filter="url(#glowH)"/>
-<text x="120" y="70" text-anchor="middle" fill="#f5b8fb" font-size="11.5" font-weight="700">高阶：我在看红 ★</text>
-<text x="120" y="86" text-anchor="middle" fill="#ecdcf2" font-size="9.5" font-family="SF Mono,monospace">前额叶记上一笔</text>
+<text fill="#e879f9" font-size="12" font-weight="700" text-anchor="middle" x="120" y="24">① 被高阶盯上 → 有意识</text>
+<rect fill="#1a1530" height="42" rx="10" stroke="#8f89ad" stroke-width="1.2" width="120" x="60" y="150"></rect>
+<text fill="#cfc9e6" font-size="11.5" text-anchor="middle" x="120" y="168">一阶：看见红</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="120" y="184">视觉加工</text>
+<line marker-end="url(#mUp)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="120" x2="120" y1="148" y2="100"></line>
+<rect fill="url(#hoOn)" filter="url(#glowH)" height="44" rx="11" stroke="#e879f9" stroke-width="1.5" width="148" x="46" y="52"></rect>
+<text fill="#f5b8fb" font-size="11.5" font-weight="700" text-anchor="middle" x="120" y="70">高阶：我在看红 ★</text>
+<text fill="#ecdcf2" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="120" y="86">前额叶记上一笔</text>
 <!-- divider -->
-<line x1="240" y1="40" x2="240" y2="200" stroke="#4a4560" stroke-width="1" stroke-dasharray="3 4"/>
+<line stroke="#4a4560" stroke-dasharray="3 4" stroke-width="1" x1="240" x2="240" y1="40" y2="200"></line>
 <!-- right: unconscious -->
-<text x="360" y="24" text-anchor="middle" fill="#8f89ad" font-size="12" font-weight="700">② 高阶缺席 → 无意识</text>
-<rect x="300" y="150" width="120" height="42" rx="10" fill="#1a1530" stroke="#8f89ad" stroke-width="1.2"/>
-<text x="360" y="168" text-anchor="middle" fill="#cfc9e6" font-size="11.5">一阶：看见红</text>
-<text x="360" y="184" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">照跑，还能导行为</text>
-<line x1="360" y1="148" x2="360" y2="104" stroke="#5b5678" stroke-width="2" stroke-dasharray="3 5" stroke-linecap="round"/>
-<rect x="286" y="56" width="148" height="40" rx="11" fill="url(#hoOff)" stroke="#5b5678" stroke-width="1.3"/>
-<text x="360" y="80" text-anchor="middle" fill="#7a7498" font-size="11" font-weight="700">★ 不亮（无高阶）</text>
+<text fill="#8f89ad" font-size="12" font-weight="700" text-anchor="middle" x="360" y="24">② 高阶缺席 → 无意识</text>
+<rect fill="#1a1530" height="42" rx="10" stroke="#8f89ad" stroke-width="1.2" width="120" x="300" y="150"></rect>
+<text fill="#cfc9e6" font-size="11.5" text-anchor="middle" x="360" y="168">一阶：看见红</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="360" y="184">照跑，还能导行为</text>
+<line stroke="#5b5678" stroke-dasharray="3 5" stroke-linecap="round" stroke-width="2" x1="360" x2="360" y1="148" y2="104"></line>
+<rect fill="url(#hoOff)" height="40" rx="11" stroke="#5b5678" stroke-width="1.3" width="148" x="286" y="56"></rect>
+<text fill="#7a7498" font-size="11" font-weight="700" text-anchor="middle" x="360" y="80">★ 不亮（无高阶）</text>
 </svg>
 <figcaption>高阶理论：同一份"看见红"，被高阶那层盯上你才觉察；盯不上，它就在暗处跑（如盲视）</figcaption>
 </figure>
-
 <p>还有个更贴身的证据：<strong>元认知</strong>——你能给自己的判断<strong>打信心分</strong>（"这题我挺有把握""刚才那眼没看清"）。能报出信心，说明脑子里有个<strong>监工</strong>在盯着一阶加工的成色——这正是高阶那层在干活。Lau 进一步提出<strong>知觉现实监控</strong>：大脑会给内部信号<strong>盖章</strong>，判它"是外面真有的"还是"我脑补的"；盖了"真"这个章，你才当它是<strong>看见</strong>，而非想象。</p>
-
 <p class="en-brief"><b>EN</b> Higher-order theories (HOT; Rosenthal, Lau) split a mental state in two: a <b>first-order</b> state (seeing red) and a <b>higher-order representation</b> about it ("I am seeing red"). A state is conscious only when a higher-order layer targets it — otherwise it runs unconsciously (as in blindsight: information guides behavior with no awareness). That layer leans on prefrontal cortex, and shows up as <b>metacognition</b> (rating your own confidence) and Lau's <b>perceptual reality monitoring</b> — the brain tagging some signals "real / out there" vs imagined.</p>
-
 <div class="ai">
 <h4>AI 对读</h4>
 <p>高阶理论说的"多一层盯着自己的表征"，在 AI 里有个正对上的东西：<b>元认知 / 校准</b>。一个语言模型不只吐答案，还能被训练去<b>估自己这答案有多靠谱</b>（置信度）——这就是一层<b>关于自身内部状态的表征</b>，和 HOT 里那个"监工"是同一类活。研究者拿<b>线性探针</b>去问模型内部"你其实知不知道自己在瞎编"，发现有些层确实<b>藏着一个'我可能不确定'的信号</b>，只是没被读出来。能不能读出这层自我表征、读得准不准（校准好不好），是当下让 AI 少一本正经胡说的核心课题——恰好和 HOT 的"高阶盖章"结构对称。</p>
 </div>
 </div>
-
 <!-- 2 -->
 <div class="section">
 <span class="num">// 02</span>
-<h2>注意图式：大脑给"注意"画的一张糊涂简笔画</h2>
+<h2 data-tts="34a82688e4fe0f3f">注意图式：大脑给"注意"画的一张糊涂简笔画</h2>
 <p>另一派换了个工程师的脑子想问题。Graziano 提醒你：大脑一刻不停在干一件事——<strong>调度注意</strong>，决定哪路信号被放大、哪路被压下去。而工程上有条铁律：<strong>要想稳稳操控一样东西，你手里就得攥着它的一个模型。</strong>你能闭着眼摸到鼻子、不用盯着也能迈步，就是因为大脑早给身体建了个粗糙的内部地图——<strong>身体图式</strong>。</p>
-
 <p>那么，为了操控注意，大脑同样得给<strong>注意</strong>建个模型——<strong>注意图式</strong>。关键在<strong>这个模型是潦草、且故意不准的</strong>：它不会把神经元、突触竞争、增益调节这些机械细节画进去（那太慢太占地方），而是把"注意正扑在红点上"这件事，<strong>简化成一团没有形状、没有位置、说不清材质的"我对红点有一种鲜活的觉知"</strong>。当大脑照着这张糊涂简笔画<strong>汇报</strong>自己时，出口的就是——"我有一份主观体验"。<strong>意识（至少是你对它的那份笃信），就是大脑读它自己那张注意自画像读出来的话。</strong></p>
-
 <figure>
-<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<radialGradient id="asBox" cx="0.5" cy="0.35" r="0.95"><stop offset="0" stop-color="#0e3a38"/><stop offset="1" stop-color="#0a2422"/></radialGradient>
-<filter id="glowA2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<marker id="mR" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"/></marker>
-<marker id="mR2" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"/></marker>
+<radialgradient cx="0.5" cy="0.35" id="asBox" r="0.95"><stop offset="0" stop-color="#0e3a38"></stop><stop offset="1" stop-color="#0a2422"></stop></radialgradient>
+<filter height="180%" id="glowA2" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="mR" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+<marker id="mR2" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"></path></marker>
 </defs>
 <!-- analogy row -->
-<text x="72" y="26" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">真实系统</text>
-<text x="240" y="26" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">大脑建的模型</text>
-<text x="410" y="26" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">读出来是</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="72" y="26">真实系统</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="240" y="26">大脑建的模型</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="410" y="26">读出来是</text>
 <!-- body row -->
-<rect x="26" y="40" width="92" height="34" rx="9" fill="#1a1530" stroke="#8f89ad" stroke-width="1.1"/>
-<text x="72" y="61" text-anchor="middle" fill="#cfc9e6" font-size="11">身体</text>
-<line x1="122" y1="57" x2="176" y2="57" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" marker-end="url(#mR2)"/>
-<rect x="182" y="40" width="116" height="34" rx="9" fill="#1a1236" stroke="#a78bfa" stroke-width="1.2"/>
-<text x="240" y="61" text-anchor="middle" fill="#c9a8f5" font-size="11">身体图式</text>
-<line x1="302" y1="57" x2="356" y2="57" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" marker-end="url(#mR2)"/>
-<text x="410" y="61" text-anchor="middle" fill="#cfc9e6" font-size="10.5">"我有身体"</text>
+<rect fill="#1a1530" height="34" rx="9" stroke="#8f89ad" stroke-width="1.1" width="92" x="26" y="40"></rect>
+<text fill="#cfc9e6" font-size="11" text-anchor="middle" x="72" y="61">身体</text>
+<line marker-end="url(#mR2)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2" x1="122" x2="176" y1="57" y2="57"></line>
+<rect fill="#1a1236" height="34" rx="9" stroke="#a78bfa" stroke-width="1.2" width="116" x="182" y="40"></rect>
+<text fill="#c9a8f5" font-size="11" text-anchor="middle" x="240" y="61">身体图式</text>
+<line marker-end="url(#mR2)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2" x1="302" x2="356" y1="57" y2="57"></line>
+<text fill="#cfc9e6" font-size="10.5" text-anchor="middle" x="410" y="61">"我有身体"</text>
 <!-- attention row (highlighted) -->
-<rect x="26" y="150" width="92" height="46" rx="10" fill="#241830" stroke="#e879f9" stroke-width="1.3"/>
-<text x="72" y="170" text-anchor="middle" fill="#f5b8fb" font-size="11">注意</text>
-<text x="72" y="186" text-anchor="middle" fill="#c4a6e4" font-size="8.5" font-family="SF Mono,monospace">放大/压制信号</text>
-<line x1="122" y1="173" x2="176" y2="173" stroke="#34e5e0" stroke-width="2.3" stroke-linecap="round" marker-end="url(#mR)"/>
-<rect x="180" y="148" width="120" height="50" rx="11" fill="url(#asBox)" stroke="#34e5e0" stroke-width="1.5" filter="url(#glowA2)"/>
-<text x="240" y="168" text-anchor="middle" fill="#7bf0e8" font-size="11" font-weight="700">注意图式 ★</text>
-<text x="240" y="184" text-anchor="middle" fill="#8fd8d2" font-size="8.5" font-family="SF Mono,monospace">潦草·故意不准</text>
-<line x1="304" y1="173" x2="356" y2="173" stroke="#34e5e0" stroke-width="2.3" stroke-linecap="round" marker-end="url(#mR)"/>
-<rect x="360" y="150" width="98" height="46" rx="10" fill="#241830" stroke="#e879f9" stroke-width="1.2"/>
-<text x="409" y="170" text-anchor="middle" fill="#f5b8fb" font-size="10">"我有一份</text>
-<text x="409" y="186" text-anchor="middle" fill="#f5b8fb" font-size="10">主观觉知"</text>
-<text x="240" y="228" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">模型把机械细节全省了 → 觉知才显得"非物理、说不清"</text>
+<rect fill="#241830" height="46" rx="10" stroke="#e879f9" stroke-width="1.3" width="92" x="26" y="150"></rect>
+<text fill="#f5b8fb" font-size="11" text-anchor="middle" x="72" y="170">注意</text>
+<text fill="#c4a6e4" font-family="SF Mono,monospace" font-size="8.5" text-anchor="middle" x="72" y="186">放大/压制信号</text>
+<line marker-end="url(#mR)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.3" x1="122" x2="176" y1="173" y2="173"></line>
+<rect fill="url(#asBox)" filter="url(#glowA2)" height="50" rx="11" stroke="#34e5e0" stroke-width="1.5" width="120" x="180" y="148"></rect>
+<text fill="#7bf0e8" font-size="11" font-weight="700" text-anchor="middle" x="240" y="168">注意图式 ★</text>
+<text fill="#8fd8d2" font-family="SF Mono,monospace" font-size="8.5" text-anchor="middle" x="240" y="184">潦草·故意不准</text>
+<line marker-end="url(#mR)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.3" x1="304" x2="356" y1="173" y2="173"></line>
+<rect fill="#241830" height="46" rx="10" stroke="#e879f9" stroke-width="1.2" width="98" x="360" y="150"></rect>
+<text fill="#f5b8fb" font-size="10" text-anchor="middle" x="409" y="170">"我有一份</text>
+<text fill="#f5b8fb" font-size="10" text-anchor="middle" x="409" y="186">主观觉知"</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="240" y="228">模型把机械细节全省了 → 觉知才显得"非物理、说不清"</text>
 </svg>
 <figcaption>注意图式理论：身体→身体图式→"我有身体"；同理注意→注意图式→"我有主观觉知"。图省了机械细节，觉知才显得虚无缥缈</figcaption>
 </figure>
-
 <p>这一步很妙的地方在于：它顺手<strong>解释了意识为什么老让人觉得"不像物理的东西"</strong>——因为那张自画像<strong>本就把物理机械全省了</strong>。你内省时摸到的不是神经元，是一张<strong>刻意抽象过的草图</strong>，于是觉知才显得虚无缥缈、无从下手。而且它能<strong>验</strong>：如果你去干扰构建注意图式的脑区（如颞顶交界一带），人对自己"觉知"的报告就该跟着出岔——这就把玄乎的意识，落成了可下手的实验预言。</p>
-
 <div class="ai">
 <h4>AI 对读</h4>
 <p>注意图式理论几乎是<b>照着控制论写的</b>，也因此天然通向 AI：Graziano 本人就主张——<b>给机器装一个"注意图式"</b>，让它对自己内部"正把算力集中在哪"建一个简化模型，它就会开始<b>像模像样地报告"我在觉知某物"</b>。这不是空谈：Transformer 里的 <b>attention</b> 本就是一套"该重点看哪"的调度机制，而"让模型对自己的注意/内部状态再建一层模型"正是<b>自我状态建模</b>的方向。若 AST 对，那么一个系统会不会<b>声称</b>有意识，取决于它有没有这张自画像——而不取决于它是碳还是硅。</p>
 </div>
 </div>
-
 <!-- 3 -->
 <div class="section">
 <span class="num">// 03</span>
-<h2>唱反调的一派：哪用自画像，信号绕回来转一圈就够了</h2>
+<h2 data-tts="d76da7dda3ed636f">唱反调的一派：哪用自画像，信号绕回来转一圈就够了</h2>
 <p>上面两家都把重头压在"多出一层""高层再表征"上。Lamme 偏不服：<strong>用不着那么多。</strong>盯住一个信号刚进视觉皮层的头几十毫秒——它先是一路<strong>由低到高、一往无前地往上冲</strong>，这叫<strong>前馈扫掠</strong>。Lamme 说，光这一冲，是<strong>无意识</strong>的：它能撑起快到你没反应过来的动作（急刹、躲球），可你并没"体验"到什么。</p>
-
 <p>那意识什么时候来？当加工<strong>拐回头</strong>：高层反过来给低层<strong>回传</strong>信号，在感觉皮层<strong>本地</strong>结成一圈圈<strong>递归环路</strong>。就这么一绕，体验就点亮了——<strong>不需要广播到全脑，也不需要前额叶那层高阶思想</strong>。这是个最"靠后、靠低"的答案，和第 01 节的高阶理论正好顶牛。它还翻出哲学家 Ned Block 的老区分：<strong>现象意识</strong>（那份丰富的、原始的"感觉像什么"，也许本地递归就够）与<strong>取用意识</strong>（能被广播、被报告、被拿去用的那部分）——两者可能<strong>不是一回事</strong>。</p>
-
 <figure>
-<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<marker id="mFwd" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
-<marker id="mFwd2" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker>
-<marker id="mBack" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"/></marker>
+<marker id="mFwd" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+<marker id="mFwd2" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="mBack" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
 </defs>
 <!-- left: feedforward only -->
-<text x="118" y="24" text-anchor="middle" fill="#8f89ad" font-size="12" font-weight="700">只前馈扫掠 → 无意识</text>
-<rect x="70" y="180" width="96" height="26" rx="7" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="118" y="197" text-anchor="middle" fill="#9a94bc" font-size="10">低层 V1</text>
-<rect x="70" y="128" width="96" height="26" rx="7" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="118" y="145" text-anchor="middle" fill="#9a94bc" font-size="10">中层 V4</text>
-<rect x="70" y="76" width="96" height="26" rx="7" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="118" y="93" text-anchor="middle" fill="#9a94bc" font-size="10">高层</text>
-<line x1="118" y1="178" x2="118" y2="156" stroke="#8f89ad" stroke-width="2" stroke-linecap="round" marker-end="url(#mFwd)"/>
-<line x1="118" y1="126" x2="118" y2="104" stroke="#8f89ad" stroke-width="2" stroke-linecap="round" marker-end="url(#mFwd)"/>
-<text x="118" y="228" text-anchor="middle" fill="#7a7498" font-size="9.5" font-family="SF Mono,monospace">够快·能导行为·没体验</text>
+<text fill="#8f89ad" font-size="12" font-weight="700" text-anchor="middle" x="118" y="24">只前馈扫掠 → 无意识</text>
+<rect fill="#141028" height="26" rx="7" stroke="#5b5678" stroke-width="1.1" width="96" x="70" y="180"></rect><text fill="#9a94bc" font-size="10" text-anchor="middle" x="118" y="197">低层 V1</text>
+<rect fill="#141028" height="26" rx="7" stroke="#5b5678" stroke-width="1.1" width="96" x="70" y="128"></rect><text fill="#9a94bc" font-size="10" text-anchor="middle" x="118" y="145">中层 V4</text>
+<rect fill="#141028" height="26" rx="7" stroke="#5b5678" stroke-width="1.1" width="96" x="70" y="76"></rect><text fill="#9a94bc" font-size="10" text-anchor="middle" x="118" y="93">高层</text>
+<line marker-end="url(#mFwd)" stroke="#8f89ad" stroke-linecap="round" stroke-width="2" x1="118" x2="118" y1="178" y2="156"></line>
+<line marker-end="url(#mFwd)" stroke="#8f89ad" stroke-linecap="round" stroke-width="2" x1="118" x2="118" y1="126" y2="104"></line>
+<text fill="#7a7498" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="118" y="228">够快·能导行为·没体验</text>
 <!-- divider -->
-<line x1="240" y1="34" x2="240" y2="210" stroke="#4a4560" stroke-width="1" stroke-dasharray="3 4"/>
+<line stroke="#4a4560" stroke-dasharray="3 4" stroke-width="1" x1="240" x2="240" y1="34" y2="210"></line>
 <!-- right: recurrent -->
-<text x="362" y="24" text-anchor="middle" fill="#e879f9" font-size="12" font-weight="700">加回传环路 → 有意识</text>
-<rect x="314" y="180" width="96" height="26" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.2"/><text x="362" y="197" text-anchor="middle" fill="#cfc9e6" font-size="10">低层 V1</text>
-<rect x="314" y="128" width="96" height="26" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.2"/><text x="362" y="145" text-anchor="middle" fill="#cfc9e6" font-size="10">中层 V4</text>
-<rect x="314" y="76" width="96" height="26" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.2"/><text x="362" y="93" text-anchor="middle" fill="#cfc9e6" font-size="10">高层</text>
+<text fill="#e879f9" font-size="12" font-weight="700" text-anchor="middle" x="362" y="24">加回传环路 → 有意识</text>
+<rect fill="#1c1236" height="26" rx="7" stroke="#34e5e0" stroke-width="1.2" width="96" x="314" y="180"></rect><text fill="#cfc9e6" font-size="10" text-anchor="middle" x="362" y="197">低层 V1</text>
+<rect fill="#1c1236" height="26" rx="7" stroke="#34e5e0" stroke-width="1.2" width="96" x="314" y="128"></rect><text fill="#cfc9e6" font-size="10" text-anchor="middle" x="362" y="145">中层 V4</text>
+<rect fill="#1c1236" height="26" rx="7" stroke="#34e5e0" stroke-width="1.2" width="96" x="314" y="76"></rect><text fill="#cfc9e6" font-size="10" text-anchor="middle" x="362" y="93">高层</text>
 <!-- forward arrows (left edge) -->
-<line x1="330" y1="178" x2="330" y2="156" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mFwd2)"/>
-<line x1="330" y1="126" x2="330" y2="104" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mFwd2)"/>
+<line marker-end="url(#mFwd2)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2" x1="330" x2="330" y1="178" y2="156"></line>
+<line marker-end="url(#mFwd2)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2" x1="330" x2="330" y1="126" y2="104"></line>
 <!-- feedback curved arrows (right edge) -->
-<path d="M394,80 C430,104 430,130 396,152" fill="none" stroke="#e879f9" stroke-width="2" marker-end="url(#mBack)"/>
-<path d="M394,132 C430,156 430,182 396,204" fill="none" stroke="#e879f9" stroke-width="2" marker-end="url(#mBack)"/>
-<text x="362" y="228" text-anchor="middle" fill="#c9a8f5" font-size="9.5" font-family="SF Mono,monospace">本地回传成环·体验点亮</text>
+<path d="M394,80 C430,104 430,130 396,152" fill="none" marker-end="url(#mBack)" stroke="#e879f9" stroke-width="2"></path>
+<path d="M394,132 C430,156 430,182 396,204" fill="none" marker-end="url(#mBack)" stroke="#e879f9" stroke-width="2"></path>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="362" y="228">本地回传成环·体验点亮</text>
 </svg>
 <figcaption>递归加工理论：只有前馈冲一遍是无意识的；等高层往低层回传、在感觉皮层本地结成递归环路，体验才点亮——不必广播全脑、不必前额叶</figcaption>
 </figure>
-
 <p>把三家摆一块儿，上一期那场"前 vs 后"的对喊，就变成一道<strong>清清楚楚、能拿实验去分</strong>的岔口：<strong>高阶理论押"前"</strong>——非得有前额叶那层高阶再表征；<strong>递归加工押"后、押低"</strong>——感觉皮层本地绕个环就成，前额叶那份亮多半只是"报告"的账（正好接上一期无报告范式的发现）。<strong>注意图式</strong>则卡在中间偏功能：意识是个自模型，物理上落在哪不是死穴。谁对谁错还没判，但至少，它们终于不是在比嗓门，而是在比<strong>谁的预言先被数据戳穿</strong>。</p>
-
 <p class="en-brief"><b>EN</b> Recurrent Processing Theory (Lamme) pushes back on the higher-order camp: the fast <b>feedforward sweep</b> up the visual hierarchy is unconscious (it can drive quick behavior with no experience); consciousness ignites only when higher areas <b>feed back</b> to lower ones, forming <b>local recurrent loops</b> in sensory cortex — no global broadcast, no prefrontal higher-order thought needed. It revives Ned Block's split between <b>phenomenal</b> and <b>access</b> consciousness, and turns Topic 11's front-vs-back shouting match into a testable axis: HOT bets on the front, recurrent processing on the low/back, attention schema stays functionally in between.</p>
 </div>
-
 <div class="crossx">
-<h3>🌀 越界 · 跨学科的联想</h3>
+<h3 data-tts="b03c5a3a03dd5b00">🌀 越界 · 跨学科的联想</h3>
 <p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"意识 = 心智给自己再表征一层"——这个想法一点都不新，古今好几路人早已摸到同一道缝：</p>
 <ul>
 <li><b>佛学 · 唯识（自证分）</b>：唯识把一次认识拆成"见分"（能认识的一面）和"相分"（被认识的相），再补上第三样——<b>自证分</b>：识对自己"正在认识"这件事的<b>自我印证</b>。识不只照对象，还照见自己在照。这几乎就是高阶理论的一千多年前古典版：一段心识要成"被觉知的"，得有一层"对认识的认识"兜着它。</li>
@@ -230,17 +212,15 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>控制论 · 内部模型原理</b>：控制论有条老定理——一个调节器要想稳稳压住某系统，它内部就<b>必须含有那个系统的模型</b>。注意图式理论正是把这条工程铁律套到注意上：大脑要调度注意，就绕不开给注意建模，而意识是这个自模型顺带漏出来的话。</li>
 </ul>
 </div>
-
 <div class="thinking">
-<h3>// 深入思考</h3>
+<h3 data-tts="0f4f01c7b7f0064f">// 深入思考</h3>
 <details><summary>要是那层高阶表征"看走了眼"——它坚称"我在看红"，可一阶那边压根没红，会怎样？</summary><div>这是高阶理论最锋利、也最让人不安的一处。按它的逻辑，<strong>意识跟的是高阶那层</strong>：只要高阶说"在看红"，你就<strong>意识到红</strong>——哪怕一阶根本没红信号（叫"空的高阶状态"）。Rosenthal 咬牙认下这个古怪结论：你真会"凭空看见"一抹并不存在的红。批评者说这荒唐；可支持者反手一指：<strong>梦、幻觉、内在意象</strong>不正是"没外部输入却有鲜活体验"吗？值得玩味的是，这不是空谈——它是个<strong>敢被证伪的硬预言</strong>：真能造出"高阶在、一阶不在"的情形，看你到底有没有那份体验，理论就得认账。这份"敢赌"，正是上一期夸过的科学品相。</div></details>
 <details><summary>注意图式理论到底是"解释了"意识，还是把意识"解释没了"？</summary><div>这是它最容易被戳的地方。AST 严格说来解释的是——<strong>大脑为什么会一口咬定自己有内在体验</strong>（因为它读的是那张注意自画像）；至于"<strong>是否真有</strong>那份体验"，它绕开了。这其实滑向了上一期讲的<strong>幻觉论</strong>（Frankish、Dennett 一路）：所谓感受质，是个<strong>好用但失真的自我表征</strong>造出的错觉，难问题因此被<strong>取消</strong>而非解答。你可以说这是釜底抽薪的诚实，也可以说它没正面回答"为什么会有感觉"——只是把问题从"体验哪来的"换成了"'我有体验'这个念头哪来的"。这一步到底是解决还是回避，正是当代意识科学最深的分水岭。</div></details>
 <details><summary>这几家不还是靠"你报告、你打信心分"来验吗——会不会又栽进上一期那个"报告污染"的坑？</summary><div>会，而且这正是高阶理论头上悬的剑。<strong>元认知、信心评分、"你觉知到没有"——全都要经过报告</strong>，而报告本身就牵动前额叶。于是"发现前额叶亮 = 高阶在活动"这个证据，可能又是"忙着报告"的账被记到了意识头上（跟上一期无报告范式踢爆的是同一个坑）。所以高阶阵营现在拼命找<strong>不靠报告</strong>的高阶信号：能不能在你<strong>不汇报</strong>时，也从脑活动里读出那层"对认识的认识"？递归加工理论则借这一点反将一军——它<strong>本就不需要</strong>前额叶那层，天然躲开这坑。谁能先造出干净、不靠报告的判据，谁的胜算就大。</div></details>
 <details><summary>如果注意图式理论对，那给机器装上这张自画像，它就"声称"有觉知——那它到底有没有？我们又凭什么信人有、机器没有？</summary><div>这问题把 AST 逼到墙角，也逼到我们自己面前。AST 给的答案冷得很：<strong>会不会声称有意识，只取决于系统里有没有那张注意自画像</strong>，跟碳基硅基无关——真装上了，机器的"我有觉知"和你的"我有觉知"就是<strong>同一种来路</strong>的话。于是你只剩两条路：要么承认<strong>装了图式的机器和你一样"有"</strong>（那意识便宜得吓人），要么坚持<strong>你的声称背后另有真东西、机器的只是空话</strong>——可一旦这么说，你就得回答：<strong>那个"真东西"是什么、怎么测？</strong>而这，恰恰是整个 Phase B 一直没答上来的那道题。别人的意识你从来都是<strong>推断</strong>的，机器只是把这份推断的尴尬摆到了台面上。</div></details>
 </div>
-
 <div class="refs">
-<h3>// 延伸阅读</h3>
+<h3 data-tts="5b88ab152da7dbb1">// 延伸阅读</h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Higher-order_theories_of_consciousness" target="_blank">高阶理论 Higher-order theories</a> — 意识 = 有一层"对状态的表征"盯着它</li>
 <li><a href="https://en.wikipedia.org/wiki/David_Rosenthal_(philosopher)" target="_blank">David Rosenthal</a> — 高阶思想理论（HOT）的奠基者</li>
@@ -251,11 +231,17 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><a href="https://en.wikipedia.org/wiki/Neural_correlates_of_consciousness" target="_blank">递归加工与 NCC</a> — Lamme 的前馈扫掠 vs 本地递归环路，属"后/低"派证据</li>
 </ul>
 </div>
-
 <footer>BigCat · Neuroscience · Topic 12 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
+<<<<<<< Updated upstream
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
 <script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+=======
+<script defer="" src="https://cissy0802.github.io/comments.js"></script>
+<script defer="" src="https://cissy0802.github.io/search.js"></script>
+<script defer="" src="https://cissy0802.github.io/index-button.js"></script>
+<script defer="" src="https://cissy0802.github.io/i18n-tts.js"></script>
+>>>>>>> Stashed changes
 </body></html>
