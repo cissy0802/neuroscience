@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 13 · The Global Workspace — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(167,139,250,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(167,139,250,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 13 · PHASE B CONSCIOUSNESS</span>
+<h1>The Live Broadcast Inside Your Head</h1>
+<h2>Dozens of "specialists" work away in the dark in your brain at once. Consciousness may be just one of them suddenly grabbing the mic and shouting to the whole room.</h2>
+<div class="date">2026-07-19 · BigCat</div>
+<p class="pitch">Consciousness isn't some brain region lighting up — it's a message finally getting <em>broadcast</em>, so that from that moment on, everyone can hear it and put it to use.</p>
+</header>
+
+<div class="intro">
+<p>The last two issues showed you two ways to dissect consciousness: Topic 11 hunted, in a brain full of activity, for <strong>the beam you're actually experiencing</strong>; Topic 12's theories said consciousness needs <strong>an extra layer that represents the mind to itself</strong>. This issue takes a completely different angle — not "what extra ingredient," but <strong>"how far does it travel."</strong> Picture your brain as a big company: dozens of departments each doing their own thing, none knowing what the others are up to — one recognizes faces, one keeps records, one handles speech, one moves the limbs. Most of the time a piece of information gets handled <strong>inside one department</strong> and vanishes, and you never know it happened. <strong>But the moment some piece of information gets pushed onto a shared "bulletin board" and broadcast to all departments at once — that's when it becomes something you're conscious of.</strong> This is the <strong>global workspace</strong>: consciousness is not activity at some location, it's an act of <strong>brain-wide information sharing</strong>. The counterintuitive part is that it redefines "being conscious" into something remarkably plain: <strong>being usable</strong>.</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>The spotlight in the theater</h2>
+<p>The earliest version of this idea, from psychologist Bernard Baars, is a metaphor — the <strong>theater of consciousness</strong>. Picture a pitch-black auditorium with a <strong>spotlight</strong> on stage: whatever the light falls on is what you're conscious of right now. In the seats is a <strong>huge audience</strong> — the hundreds of <strong>unconscious specialists</strong> in your brain, each minding one job (recognizing colors, judging distance, retrieving memories, assembling words). Everything outside the spotlight keeps running in the dark; you just don't know it.</p>
+
+<p>The crucial step: <strong>being lit means being "broadcast" to the whole audience.</strong> That bit of content on stage becomes <strong>simultaneously visible</strong> to every department at once — so memory can store it, language can say it out loud, decision can build a plan around it. <strong>Consciousness just is that "readable-by-everyone" bulletin board.</strong> Information that never made it onstage isn't useless; it's simply <strong>locked inside one department</strong>, unable to get out or recruit anyone else.</p>
+
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="wsCore" cx="0.5" cy="0.4" r="0.75"><stop offset="0" stop-color="#3a2f66"/><stop offset="1" stop-color="#1c1338"/></radialGradient>
+<filter id="glowW" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mCast" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9.5" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker>
+<marker id="mWin" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"/></marker>
+</defs>
+<line x1="240" y1="120" x2="86" y2="58" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<line x1="240" y1="120" x2="394" y2="58" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<line x1="248" y1="128" x2="404" y2="150" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<line x1="232" y1="128" x2="76" y2="150" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<line x1="228" y1="132" x2="150" y2="218" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<line x1="330" y1="228" x2="262" y2="140" stroke="#e879f9" stroke-width="2.6" stroke-linecap="round" marker-end="url(#mWin)"/>
+<circle cx="240" cy="120" r="46" fill="url(#wsCore)" stroke="#a78bfa" stroke-width="1.8" filter="url(#glowW)"/>
+<text x="240" y="114" text-anchor="middle" fill="#efe9ff" font-size="12" font-weight="700">global</text>
+<text x="240" y="131" text-anchor="middle" fill="#efe9ff" font-size="11" font-weight="700">workspace</text>
+<rect x="30" y="42" width="72" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="66" y="61" text-anchor="middle" fill="#9a94bc" font-size="10.5">language</text>
+<rect x="378" y="42" width="72" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="414" y="61" text-anchor="middle" fill="#9a94bc" font-size="10.5">memory</text>
+<rect x="382" y="136" width="76" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="420" y="155" text-anchor="middle" fill="#9a94bc" font-size="10.5">decision</text>
+<rect x="24" y="136" width="76" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="62" y="155" text-anchor="middle" fill="#9a94bc" font-size="10.5">motor</text>
+<rect x="108" y="222" width="84" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="150" y="241" text-anchor="middle" fill="#9a94bc" font-size="10.5">attention</text>
+<rect x="292" y="228" width="86" height="34" rx="9" fill="#241830" stroke="#e879f9" stroke-width="1.4"/><text x="335" y="243" text-anchor="middle" fill="#f5b8fb" font-size="10" font-weight="700">vision · wins</text><text x="335" y="256" text-anchor="middle" fill="#c4a6e4" font-size="8.5" font-family="SF Mono,monospace">winner</text>
+<text x="240" y="288" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">a specialist wins the stage → broadcasts to all → everyone can use it</text>
+</svg>
+<figcaption>The global workspace: countless unconscious specialists work in the dark; a piece of information wins the "bulletin board" and gets broadcast brain-wide — that's when it becomes conscious</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI reading</h4>
+<p>The "bulletin board" metaphor was actually borrowed from old-school AI — the <b>blackboard architecture</b>: a bunch of specialized little programs each solve one sub-problem, none talk to each other directly, but write their results onto a <b>shared blackboard</b> that others then read. Baars dropped the brain straight into this engineering diagram. Today it's alive again: several AI modules <b>sharing one memory/scratchpad</b> to cooperate is the same skeleton. Better still, <b>attention</b> in a Transformer is inherently a contest for the stage — at every step it decides <b>which information deserves to be read by all positions</b>, handing the bandwidth to the winner. "Compete for the stage, winner broadcasts" has been running on silicon for years.</p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Ignition: consciousness is an all-or-none switch</h2>
+<p>Baars gave the metaphor; Stanislas Dehaene's camp wired it to neural hardware, calling it the <strong>Global Neuronal Workspace</strong>. Its core finding is a little startling: <strong>whether information enters consciousness is not a slow brightening — it happens in a "snap."</strong></p>
+
+<p>The setup is simple: flash a word at you very briefly, then immediately "cover" it with a burst of scrambled letters (this is called <strong>masking</strong>). The longer the word flashes, the more likely you are to see it. But your curve for reporting "saw it or not" is <strong>not a gently rising ramp — it's a cliff</strong>. Before the flash duration crosses a critical point, you see almost nothing; the instant it crosses, you <strong>abruptly</strong> "see it clear as day." The "half-seen" middle zone is astonishingly small. What happens in the brain is even more dramatic: at the moment of crossing, activity stops being confined to visual areas and <strong>suddenly bursts across the prefrontal and parietal cortex on a large scale, and keeps burning</strong> — Dehaene calls this <strong>ignition</strong>, like a pile of dry kindling where a spark below threshold catches nothing, but above threshold the whole heap goes up at once. (One of the hubs where that "fire" burns hottest is the <a class="reflink" href="ref-prefrontal.en.html">prefrontal cortex</a>.)</p>
+
+<figure>
+<svg viewBox="0 0 480 268" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mAx" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"/></marker>
+</defs>
+<line x1="64" y1="216" x2="440" y2="216" stroke="#8f89ad" stroke-width="1.6" marker-end="url(#mAx)"/>
+<line x1="64" y1="216" x2="64" y2="30" stroke="#8f89ad" stroke-width="1.6" marker-end="url(#mAx)"/>
+<text x="252" y="252" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">stimulus strength / flash duration →</text>
+<text x="30" y="128" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace" transform="rotate(-90 30 128)">brain-wide activation · report clarity</text>
+<line x1="250" y1="216" x2="250" y2="52" stroke="#a78bfa" stroke-width="1.3" stroke-dasharray="4 5"/>
+<text x="250" y="44" text-anchor="middle" fill="#c9a8f5" font-size="10.5" font-family="SF Mono,monospace">threshold</text>
+<line x1="64" y1="210" x2="428" y2="70" stroke="#5b5678" stroke-width="1.6" stroke-dasharray="2 5"/>
+<text x="392" y="96" fill="#7a7498" font-size="9.5" font-family="SF Mono,monospace">input·linear</text>
+<path d="M70,206 C150,203 214,200 244,196 C258,194 260,150 270,102 C278,74 300,66 360,64 C392,63 414,63 434,63" fill="none" stroke="#34e5e0" stroke-width="3.4" stroke-linecap="round"/>
+<text x="150" y="196" text-anchor="middle" fill="#7a7498" font-size="10.5">local · unconscious</text>
+<text x="356" y="90" text-anchor="middle" fill="#7bf0e8" font-size="10" font-weight="700">ignition · brain-wide · conscious</text>
+<circle cx="257" cy="150" r="4" fill="#e879f9"/>
+<text x="300" y="150" text-anchor="middle" fill="#f5b8fb" font-size="9.5" font-family="SF Mono,monospace">"snap"</text>
+</svg>
+<figcaption>Ignition is nonlinear: the input rises linearly (grey dashed), but consciousness / brain-wide activation (cyan) leaps up only past the threshold — with almost no "half-seen" middle state</figcaption>
+</figure>
+
+<p>This cliff also leaves a measurable fingerprint: about <strong>0.3 seconds</strong> after crossing, a late, large brainwave appears on the scalp (the <strong>P3b</strong>); information that never enters consciousness runs its early processing as usual but simply <strong>doesn't</strong> throw this late wave. So "ignition" turns from a figure of speech into a line you can watch on the EEG.</p>
+
+<div class="ai">
+<h4>AI reading</h4>
+<p>That kind of <b>nonlinear jump</b> — "only past a critical point does the whole field light up" — is no stranger to AI either. One case is engineering <b>gating/thresholding</b>: hold a weak signal back, and only when it's strong enough to cross a threshold let it into the main trunk to affect everything — sparing the whole network from being disturbed by every little breeze. The other is more thought-provoking: <b>emergent abilities</b> in large-model training — a capability that's near-zero in small models <b>appears abruptly</b> once scale crosses some line. Both say the same thing: <b>in complex systems, "quantity into quality" is often a cliff, not a slide</b>. The ignition of consciousness may simply be a phase transition of the brain as a system.</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Broadcast = usable: consciousness's plainest definition</h2>
+<p>The most elegant thing about this theory is that it explains, in passing, exactly <strong>what extra abilities "being conscious" buys you</strong>. Unconscious specialists are actually very capable — they let you slam the brakes before you've read the sign, auto-complete half a familiar sentence for you. But they have a fatal flaw: <strong>their output is locked inside their own department; it can't get out.</strong> That information can't be <strong>spoken aloud</strong>, can't be <strong>filed into long-term memory</strong>, can't feed a plan that requires <strong>improvising several steps together</strong>.</p>
+
+<p>But once information gets broadcast onto the bulletin board, all these abilities <strong>unlock at once</strong> — because language, memory, and decision all receive it <strong>simultaneously</strong>. So workspace theory gives consciousness a thoroughly functionalist definition: <strong>to be conscious of something is neither more nor less than "this information is now available to the whole brain."</strong> You can report it, you can hold it in mind for a few seconds, you can improvise an unrehearsed sequence of actions with it — all off the back of this one act of "making it public." Conversely, no matter how clever, unconscious processing is forever a one-trick single-point specialist.</p>
+
+<figure>
+<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="hub3" cx="0.5" cy="0.4" r="0.8"><stop offset="0" stop-color="#123a38"/><stop offset="1" stop-color="#0a2422"/></radialGradient>
+<filter id="glow3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mB3" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"/></marker>
+<marker id="mStuck" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#5b5678"/></marker>
+</defs>
+<text x="118" y="24" text-anchor="middle" fill="#8f89ad" font-size="12" font-weight="700">unconscious · locked local</text>
+<rect x="72" y="44" width="92" height="34" rx="9" fill="#1a1530" stroke="#8f89ad" stroke-width="1.2"/><text x="118" y="65" text-anchor="middle" fill="#cfc9e6" font-size="10.5">vision expert</text>
+<line x1="118" y1="82" x2="118" y2="120" stroke="#5b5678" stroke-width="2" stroke-linecap="round" marker-end="url(#mStuck)"/>
+<rect x="76" y="124" width="84" height="30" rx="8" fill="#12101f" stroke="#4a4560" stroke-width="1.1"/><text x="118" y="143" text-anchor="middle" fill="#7a7498" font-size="9.5">drives 1 reflex only</text>
+<text x="118" y="186" text-anchor="middle" fill="#7a7498" font-size="9.5" font-family="SF Mono,monospace">can't say · can't store</text>
+<text x="118" y="202" text-anchor="middle" fill="#7a7498" font-size="9.5" font-family="SF Mono,monospace">can't build new plan</text>
+<line x1="240" y1="34" x2="240" y2="206" stroke="#4a4560" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="362" y="24" text-anchor="middle" fill="#34e5e0" font-size="12" font-weight="700">conscious · broadcast</text>
+<circle cx="362" cy="70" r="26" fill="url(#hub3)" stroke="#34e5e0" stroke-width="1.5" filter="url(#glow3)"/><text x="362" y="66" text-anchor="middle" fill="#7bf0e8" font-size="8.5" font-weight="700">bulletin</text><text x="362" y="78" text-anchor="middle" fill="#7bf0e8" font-size="8.5" font-weight="700">board</text>
+<line x1="344" y1="88" x2="312" y2="128" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mB3)"/>
+<line x1="362" y1="96" x2="362" y2="128" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mB3)"/>
+<line x1="380" y1="88" x2="412" y2="128" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mB3)"/>
+<rect x="286" y="132" width="52" height="28" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.1"/><text x="312" y="150" text-anchor="middle" fill="#cfc9e6" font-size="9">language</text>
+<rect x="336" y="132" width="52" height="28" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.1"/><text x="362" y="150" text-anchor="middle" fill="#cfc9e6" font-size="9">memory</text>
+<rect x="388" y="132" width="52" height="28" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.1"/><text x="414" y="150" text-anchor="middle" fill="#cfc9e6" font-size="9">decision</text>
+<text x="362" y="186" text-anchor="middle" fill="#8fd8d2" font-size="9.5" font-family="SF Mono,monospace">can speak · store · improvise</text>
+<text x="362" y="202" text-anchor="middle" fill="#8fd8d2" font-size="9.5" font-family="SF Mono,monospace">an unrehearsed sequence</text>
+</svg>
+<figcaption>Left: however capable, an unconscious specialist's output stays locked at one point, driving a single reflex; right: once broadcast, language/memory/decision all receive it — the abilities unlock at once</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI reading</h4>
+<p>Yoshua Bengio moved this straight into AI as the <b>consciousness prior</b>: an agent, out of its vast internal state, is forced to squeeze through an <b>extremely narrow bottleneck</b>, letting only a small handful of the most important variables through at each moment — then broadcasting them to all modules. That bottleneck forces the system to compress a headful of detail into <b>a few high-level concepts that can be stated in language and used for reasoning and planning</b> — exactly matching "broadcast = usable." He and colleagues have actually built a network on GWT lines: multiple neural modules <b>compete for write-access to a shared workspace</b>, and only the winner's content gets broadcast to everyone, forcing them to learn to cooperate and generalize. Consciousness's "bulletin board" is being tried as an <b>architecture that makes agents better at generalizing</b>.</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Placing it back on the "front vs back" fork</h2>
+<p>Now the three theories can share a stage. Workspace theory is a resounding <strong>"front" camp</strong>: it bets consciousness's hub on the long-range broadcast network of <strong>prefrontal–parietal cortex</strong>, with the signature of <strong>late, large ignition and the P3b</strong>. That makes it a half-ally of Topic 12's higher-order theories (both weight the front), but a head-on rival of Recurrent Processing Theory — which says a <strong>local loop</strong> in sensory cortex is enough and there's no need to bother the prefrontal cortex at all.</p>
+
+<p>And the mine Topic 11 buried goes off right here. The <strong>no-report paradigm</strong> found that much of the prefrontal late activity once counted as a "signature of consciousness" may just be the tab for you <strong>being busy reporting</strong> — stop you from reporting, and that activity <strong>shrinks</strong>. This blade cuts straight at workspace theory: what if the P3b records not "ignition," but the downstream stir of "taking it to report <strong>after</strong> broadcast"? In the Cogitate GNW-vs-IIT wager, neither side won outright — some of the prefrontal signals workspace theory bet on failed to show up as promised. So don't treat it as settled: it's currently the theory with the <strong>hardest predictions, roasted the most fiercely over the fire</strong>. The more specifically it bets, the better it survives (or fails) being tested blade by blade — and that, precisely, is what a good theory should look like.</p>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"No little person watching the show, just a broadcast to the many" — this counterintuitive image was reached long ago through other doors:</p>
+<ul>
+<li><b>Buddhism · non-self (anattā)</b>: the trap the theater metaphor most easily falls into is imagining a "person watching the show" seated in the audience. But workspace theory insists — <b>there is no such person</b>; the "audience" just is the other brain processes, and once broadcast is received by them, "that's enough," with no extra observer. This fits the Buddhist notion of <b>non-self</b> strikingly: there is no independent "I" doing the experiencing, only a manifold of conditioned processes flowing and lighting each other up; clinging to find that central observer is itself a delusion.</li>
+<li><b>Synergetics · phase transitions and the order parameter</b>: physicist Hermann Haken's synergetics holds that when many units self-organize, an <b>order parameter</b> emerges that in turn "commands" all the units to synchronize (this is how a laser lights up). Ignition is almost a textbook example: the local competition of countless neurons <b>abruptly transitions</b>, past a critical point, into a global, self-sustaining coherent state. Consciousness's "snap" is a <b>phase transition</b> of a complex system, not the flipping of some switch.</li>
+<li><b>Philosophy · Dennett's "fame in the brain"</b>: Dennett rejects any "screen reserved for consciousness" in the theater, and reframes consciousness as <b>the winner of a competition</b> — whichever content wins the most downstream influence (gets remembered, gets spoken, steers behavior) is the one that becomes "famous," and that is consciousness. This is the same story as "win the bulletin board, winner takes broadcast rights," told another way — and a reminder not to smuggle the workspace back into being a little theater with an audience.</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>Even if you prove "conscious content is always broadcast brain-wide," isn't that still correlation — why say broadcast <em>is</em> consciousness rather than merely accompanying it?</summary><div>This is the chronic disease of all "correlation-type" theories of consciousness, and workspace theory can't dodge it either. It can beautifully spell out the <strong>functional features</strong> of conscious content (reportable, storable, recruitable), but doesn't squarely answer Topic 10's hard problem: <strong>why should "information being broadcast," a purely functional fact, be accompanied by a "what it's like"?</strong> Sending a message to the whole brain seems as if it could logically happen <strong>in total darkness</strong> (no experience at all). The supporters' rebuttal pulls the rug out: the supposed "extra feeling" is itself an illusion; once broadcast is complete, consciousness is complete, with nothing left over to explain. Whether you buy that step depends on whether you think the hard problem is a real problem or a pseudo-problem — and the great watershed of all of Phase B loops right back to here.</div></details>
+<details><summary>If consciousness = global availability, then does an AI whose internal modules share information with each other already "have" a bit of consciousness?</summary><div>By this theory's <strong>functionalist</strong> logic, the answer leans uncomfortably toward "yes": consciousness doesn't care about substrate, only architecture — as long as a system has that "winner-take-all, broadcast-to-all" bottleneck, it satisfies consciousness in the workspace sense. So Bengio's kind of <strong>shared-workspace network</strong> becomes an awkward borderline specimen. Most people will instinctively cry "that's different," but this theory forces you to say clearly: different <strong>where</strong>? If you say "the machine lacks the real feeling," you're pushed right back into the previous problem; if you say "its broadcast is too crude, its modules too few and dumb," then what you're conceding is a difference of <strong>degree</strong>, not of <strong>kind</strong> — and that road leads straight to "consciousness is a continuum" (Topic 16 will meet it head-on).</div></details>
+<details><summary>Broadcast to "the whole audience" — but who exactly is the audience? Doesn't it sneak a little show-watcher back in?</summary><div>This is the theater metaphor's most dangerous trapdoor, and where it's most often criticized. Workspace theory must bite down on one thing: <strong>the audience is not some central observer, but the rest of the unconscious specialists themselves</strong>. The broadcast has no single recipient; it's "sent to all the departments still working in the dark." "Being conscious of" doesn't equal "being seen by some I," it equals "being caught and put to use by enough downstream systems." The moment you accidentally imagine the audience as one unified "I," you take the very thing to be explained (the subject of experience) and treat it as the starting point of the explanation — which is exactly the "Cartesian theater" Dennett rails against. In the real version, the seats are all filled with machines; there's no one there.</div></details>
+<details><summary>If unconscious specialists are so capable, why does the brain bother with a slow, all-or-none broadcast at all? Wouldn't it be better to let the specialists each do their own thing?</summary><div>Because the single-point specialist's fatal weakness is the <strong>unrehearsed new situation</strong>. Reflexes that each mind their own patch are fast and cheap, but can only handle problems that are <strong>pre-wired</strong>; the instant you face something no one has handled alone (splicing several never-before-combined steps on the fly), you need a place where departments that normally never meet can <strong>sit at one table</strong> and exchange information. The slowness and all-or-none nature of broadcast aren't flaws — they're the <strong>price</strong>: it trades speed for <strong>flexible, cross-department recombinable</strong> processing. This also hints at consciousness's evolutionary rationale — it may be exactly the bandwidth fee the brain pays to "handle new problems on the spot."</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Global_workspace_theory" target="_blank">Global workspace theory</a> — Baars' theater metaphor and the "broadcast" framework</li>
+<li><a href="https://en.wikipedia.org/wiki/Bernard_Baars" target="_blank">Bernard Baars</a> — originator of the theater of consciousness and global workspace</li>
+<li><a href="https://en.wikipedia.org/wiki/Stanislas_Dehaene" target="_blank">Stanislas Dehaene · Consciousness and the Brain</a> — global neuronal workspace, ignition, and masking experiments</li>
+<li><a href="https://en.wikipedia.org/wiki/P3b" target="_blank">P3b</a> — the EEG fingerprint of ignition (a late, large positive wave)</li>
+<li><a href="https://en.wikipedia.org/wiki/Neural_correlates_of_consciousness" target="_blank">Cogitate · GNW vs IIT adversarial experiment</a> — following Topic 11, the trial that put workspace theory over the fire</li>
+<li><a href="https://arxiv.org/abs/2011.15091" target="_blank">Goyal &amp; Bengio · shared global workspace</a> — a neural network built on GWT: modules compete for a shared bottleneck</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 13 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

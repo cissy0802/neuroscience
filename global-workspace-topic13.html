@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 13 · 全局工作空间 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(167,139,250,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(167,139,250,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 13 · PHASE B 意识</span>
+<h1>脑内那场全场直播</h1>
+<h2>你脑子里同时跑着几十路暗中忙活的"专家"；意识，也许就是其中一路突然抢到话筒、向全场喊了一嗓子。</h2>
+<div class="date">2026-07-19 · BigCat</div>
+<p class="pitch">意识不是某块脑区亮了，而是一条消息终于"广播"了出去——从此谁都能听见、谁都能拿它去干活。</p>
+</header>
+
+<div class="intro">
+<p>上两期你见了两种拆意识的路子：Topic 11 在满脑子活动里<strong>找那束"你正体验到"的光</strong>，Topic 12 那几家说意识得<strong>多一层"对自己的表征"</strong>。这一期换个完全不同的角度——不问"多出什么"，问<strong>"传到哪"</strong>。设想你脑子是一间大公司，几十个部门各干各的、彼此都不知道对方在忙啥：认脸的、记事的、管说话的、调手脚的……绝大多数时候，一条信息只在<strong>某个部门内部</strong>处理完就没了，你压根不知道发生过。<strong>可一旦某条信息被推上一个共享的"公告台"、向所有部门同时播报出去——那一刻，它就成了"你意识到的东西"。</strong>这就是<strong>全局工作空间</strong>：意识不是某处的活动，而是一次<strong>全脑范围的信息共享</strong>。反直觉的地方在于——它顺手把"有意识"重新定义成了一件特别朴素的事：<strong>能被拿去用</strong>。</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>剧场里的那束聚光灯</h2>
+<p>这套想法最早的样子，是心理学家 Baars 打的一个比方——<strong>意识剧场</strong>。想象一个黑漆漆的大剧场：舞台上有一束<strong>聚光灯</strong>，灯照到谁，谁就是此刻你意识到的内容。台下坐着<strong>黑压压一整场观众</strong>——那是你脑子里成百上千个各管一摊的<strong>无意识专家</strong>（认颜色的、算距离的、翻记忆的、组词的）。聚光灯之外的一切，全在暗处照跑，只是你不知道。</p>
+
+<p>关键的一步在于：<strong>被灯照亮，等于被"广播"给了全场观众。</strong>台上那点内容，一下子对台下所有部门<strong>同时可见</strong>了——于是记忆部门能把它存下来、语言部门能把它说出口、决策部门能拿它做打算。<strong>意识，就是这块"谁都能读到"的公告台本身。</strong>没上台的信息不是没用，它只是<strong>被锁在某一个部门里</strong>，出不来、也没法调动别人。</p>
+
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="wsCore" cx="0.5" cy="0.4" r="0.75"><stop offset="0" stop-color="#3a2f66"/><stop offset="1" stop-color="#1c1338"/></radialGradient>
+<filter id="glowW" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mCast" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9.5" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker>
+<marker id="mWin" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"/></marker>
+</defs>
+<!-- broadcast arrows from center to modules (diagonal, solid) -->
+<line x1="240" y1="120" x2="86" y2="58" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<line x1="240" y1="120" x2="394" y2="58" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<line x1="248" y1="128" x2="404" y2="150" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<line x1="232" y1="128" x2="76" y2="150" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<line x1="228" y1="132" x2="150" y2="218" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mCast)"/>
+<!-- winning specialist feeds in (magenta) -->
+<line x1="330" y1="228" x2="262" y2="140" stroke="#e879f9" stroke-width="2.6" stroke-linecap="round" marker-end="url(#mWin)"/>
+<!-- center workspace -->
+<circle cx="240" cy="120" r="46" fill="url(#wsCore)" stroke="#a78bfa" stroke-width="1.8" filter="url(#glowW)"/>
+<text x="240" y="114" text-anchor="middle" fill="#efe9ff" font-size="12" font-weight="700">全局</text>
+<text x="240" y="131" text-anchor="middle" fill="#efe9ff" font-size="12" font-weight="700">工作空间</text>
+<!-- modules -->
+<rect x="30" y="42" width="72" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="66" y="61" text-anchor="middle" fill="#9a94bc" font-size="10.5">语言</text>
+<rect x="378" y="42" width="72" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="414" y="61" text-anchor="middle" fill="#9a94bc" font-size="10.5">记忆</text>
+<rect x="382" y="136" width="76" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="420" y="155" text-anchor="middle" fill="#9a94bc" font-size="10.5">决策</text>
+<rect x="24" y="136" width="76" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="62" y="155" text-anchor="middle" fill="#9a94bc" font-size="10.5">运动</text>
+<rect x="108" y="222" width="84" height="30" rx="8" fill="#141028" stroke="#5b5678" stroke-width="1.1"/><text x="150" y="241" text-anchor="middle" fill="#9a94bc" font-size="10.5">注意</text>
+<!-- winning module highlighted -->
+<rect x="292" y="228" width="86" height="34" rx="9" fill="#241830" stroke="#e879f9" stroke-width="1.4"/><text x="335" y="243" text-anchor="middle" fill="#f5b8fb" font-size="10.5" font-weight="700">视觉·抢到台</text><text x="335" y="256" text-anchor="middle" fill="#c4a6e4" font-size="8.5" font-family="SF Mono,monospace">winner</text>
+<text x="240" y="288" text-anchor="middle" fill="#8f89ad" font-size="10.5" font-family="SF Mono,monospace">一路专家抢上台 → 向全场广播 → 谁都能拿去用</text>
+</svg>
+<figcaption>全局工作空间：无数无意识专家在暗处各干各的；某路信息抢到"公告台"、被广播给全脑，才成为你意识到的内容</figcaption>
+</figure>
+
+<p class="en-brief"><b>EN</b> Baars' <b>global workspace</b> pictures consciousness as a theater: a spotlight on stage, surrounded by a huge audience of unconscious specialist processors (vision, memory, language, motor…). Most information is processed <b>locally inside one module</b> and never reaches you. Being spotlit means being <b>broadcast</b> to the whole audience at once — instantly available to memory, speech, and decision. Consciousness just <b>is</b> that shared, globally-readable blackboard.</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这个"公告台"的比方，其实是从老式 AI 里搬来的——早年的<b>黑板架构</b>：一堆专门的小程序各解决一小块问题，谁也不直接跟谁说话，而是把结果写到一块<b>公共黑板</b>上，别的程序再来读。Baars 直接把大脑套进了这个工程图。今天它又活了过来：多个 AI 模块<b>共享一块记忆/暂存区</b>来协作，正是同一个骨架。更妙的是，Transformer 里的 <b>attention</b> 天生就是一场"抢台"——每一步都在决定<b>哪些信息值得被所有位置读到</b>，把带宽让给赢家。"竞争上台、赢家广播"，硅基上早就在跑了。</p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>点燃：意识是个"全有或全无"的开关</h2>
+<p>Baars 给的是比方，Dehaene 这一派给它接上了神经硬件，叫<strong>全局神经元工作空间</strong>。它的核心发现有点惊人：<strong>一条信息进不进意识，不是慢慢变亮的，而是"啪"一下的。</strong></p>
+
+<p>做法很简单：给你飞快闪一个词，紧跟着拿一堆乱码把它"盖"掉（这叫<strong>掩蔽</strong>）。词闪得越久，越容易被你看见。但你报告"看见了没有"的曲线，<strong>不是一条缓缓上升的斜坡，而是一道陡崖</strong>——闪的时长过了某个临界点之前，你几乎啥都没看到；一旦过线，你<strong>猛地</strong>就"看得清清楚楚"。中间那种"半看见"的模糊地带小得出奇。大脑里同时发生的事更戏剧：过线的那一刻，活动不再局限于视觉区，而是<strong>突然向前额叶、顶叶大面积炸开、并持续燃烧</strong>——Dehaene 管这叫<strong>点燃</strong>，像一堆干柴，火星子够不着临界就是不着，够着了整堆轰地起来。（这团"火"烧得最旺的枢纽之一，正是 <a class="reflink" href="ref-prefrontal.html">前额叶</a>。）</p>
+
+<figure>
+<svg viewBox="0 0 480 268" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mAx" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"/></marker>
+</defs>
+<!-- axes (plain, no filter/gradient) -->
+<line x1="64" y1="216" x2="440" y2="216" stroke="#8f89ad" stroke-width="1.6" marker-end="url(#mAx)"/>
+<line x1="64" y1="216" x2="64" y2="30" stroke="#8f89ad" stroke-width="1.6" marker-end="url(#mAx)"/>
+<text x="252" y="252" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">刺激强度 / 闪现时长 →</text>
+<text x="30" y="128" text-anchor="middle" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace" transform="rotate(-90 30 128)">全脑激活 · 报告清晰度</text>
+<!-- threshold line -->
+<line x1="250" y1="216" x2="250" y2="52" stroke="#a78bfa" stroke-width="1.3" stroke-dasharray="4 5"/>
+<text x="250" y="44" text-anchor="middle" fill="#c9a8f5" font-size="10.5" font-family="SF Mono,monospace">临界点</text>
+<!-- linear stimulus (faint) -->
+<line x1="64" y1="210" x2="428" y2="70" stroke="#5b5678" stroke-width="1.6" stroke-dasharray="2 5"/>
+<text x="392" y="96" fill="#7a7498" font-size="9.5" font-family="SF Mono,monospace">输入·线性</text>
+<!-- ignition step curve (path, curved -> not axis-aligned) -->
+<path d="M70,206 C150,203 214,200 244,196 C258,194 260,150 270,102 C278,74 300,66 360,64 C392,63 414,63 434,63" fill="none" stroke="#34e5e0" stroke-width="3.4" stroke-linecap="round"/>
+<!-- region labels -->
+<text x="150" y="196" text-anchor="middle" fill="#7a7498" font-size="10.5">局部 · 无意识</text>
+<text x="356" y="90" text-anchor="middle" fill="#7bf0e8" font-size="10.5" font-weight="700">点燃 · 全脑 · 有意识</text>
+<circle cx="257" cy="150" r="4" fill="#e879f9"/>
+<text x="300" y="150" text-anchor="middle" fill="#f5b8fb" font-size="9.5" font-family="SF Mono,monospace">"啪"一下</text>
+</svg>
+<figcaption>点燃是非线性的：输入线性增强（灰虚线），但意识/全脑激活（青线）过了临界点才猛地跳起——几乎没有"半看见"的中间态</figcaption>
+</figure>
+
+<p>这道"陡崖"还留下了一枚可测的指纹：过线约<strong>0.3 秒</strong>后，头皮上会冒出一个又晚又大的脑电波（<strong>P3b</strong>）；没进意识的信息，早期该走的加工照走，就是<strong>不冒</strong>这个晚波。于是"点燃"从一个比喻，变成了脑电图上一条能盯着看的线。</p>
+
+<p class="en-brief"><b>EN</b> Dehaene's <b>Global Neuronal Workspace</b> gives the theater a neural implementation, and finds something striking: entry into consciousness is <b>all-or-none</b>, not gradual. In masking experiments, reports jump from "saw nothing" to "saw it clearly" at a threshold — the "half-seen" zone is tiny. At threshold, activity <b>ignites</b>: it bursts nonlinearly into prefrontal-parietal cortex and sustains. The signature is a late (~300 ms) EEG wave, the <b>P3b</b>, absent for stimuli that stay unconscious.</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>"过了临界点才猛地全域点亮"这种<b>非线性突变</b>，AI 里也不陌生。一个是工程上的<b>门控/阈值</b>：信号弱就压着不放，强到过阈才让它进主干、影响全局——省得每点风吹草动都惊动整个网络。另一个更耐琢磨：大模型训练里的<b>涌现能力</b>——某个本事在小模型上几乎为零，规模一过某道坎<b>陡然出现</b>。两者都在说同一件事：<b>复杂系统里，"量变到质变"往往是断崖式的，不是滑梯式的</b>。意识的点燃，可能就是大脑这台系统的一次相变。</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>广播出去 = 能拿去用：意识最朴素的定义</h2>
+<p>这套理论最漂亮的地方，是它顺手解释了"有意识"到底<strong>多出了什么本事</strong>。无意识的专家其实很能干——它能让你在没看清路牌时下意识刹车、能替你自动补全半句熟悉的话。但它有个死穴：<strong>它的成果被锁死在自己部门里，出不去。</strong>那份信息没法被你<strong>说出口</strong>、没法被<strong>存进长期记忆</strong>、没法拿去做一个<strong>要临时组合好几步</strong>的打算。</p>
+
+<p>而一旦信息被广播上了公告台，这些本事<strong>一次全解锁</strong>——因为语言、记忆、决策各部门<strong>同时</strong>拿到了它。所以工作空间理论给意识下了个特别功能主义的定义：<strong>有意识，不多不少，就是"这条信息现在对全脑可用了"。</strong>你能报告它、能把它揣着想上几秒、能拿它临时拼一套没演练过的动作——靠的都是这一次"广而告之"。反过来，无意识加工再聪明，也永远是个只会一招的单点专家。</p>
+
+<figure>
+<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="hub3" cx="0.5" cy="0.4" r="0.8"><stop offset="0" stop-color="#123a38"/><stop offset="1" stop-color="#0a2422"/></radialGradient>
+<filter id="glow3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="mB3" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"/></marker>
+<marker id="mStuck" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#5b5678"/></marker>
+</defs>
+<!-- left: siloed / unconscious -->
+<text x="118" y="24" text-anchor="middle" fill="#8f89ad" font-size="12" font-weight="700">无意识 · 锁在单点</text>
+<rect x="72" y="44" width="92" height="34" rx="9" fill="#1a1530" stroke="#8f89ad" stroke-width="1.2"/><text x="118" y="65" text-anchor="middle" fill="#cfc9e6" font-size="11">视觉专家</text>
+<line x1="118" y1="82" x2="118" y2="120" stroke="#5b5678" stroke-width="2" stroke-linecap="round" marker-end="url(#mStuck)"/>
+<rect x="80" y="124" width="76" height="30" rx="8" fill="#12101f" stroke="#4a4560" stroke-width="1.1"/><text x="118" y="143" text-anchor="middle" fill="#7a7498" font-size="10">只驱动1个反射</text>
+<text x="118" y="186" text-anchor="middle" fill="#7a7498" font-size="9.5" font-family="SF Mono,monospace">说不出·记不住</text>
+<text x="118" y="202" text-anchor="middle" fill="#7a7498" font-size="9.5" font-family="SF Mono,monospace">拼不成新计划</text>
+<!-- divider -->
+<line x1="240" y1="34" x2="240" y2="206" stroke="#4a4560" stroke-width="1" stroke-dasharray="3 4"/>
+<!-- right: broadcast -->
+<text x="362" y="24" text-anchor="middle" fill="#34e5e0" font-size="12" font-weight="700">有意识 · 广播全脑</text>
+<circle cx="362" cy="70" r="26" fill="url(#hub3)" stroke="#34e5e0" stroke-width="1.5" filter="url(#glow3)"/><text x="362" y="74" text-anchor="middle" fill="#7bf0e8" font-size="10" font-weight="700">公告台</text>
+<line x1="344" y1="88" x2="312" y2="128" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mB3)"/>
+<line x1="362" y1="96" x2="362" y2="128" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mB3)"/>
+<line x1="380" y1="88" x2="412" y2="128" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#mB3)"/>
+<rect x="286" y="132" width="52" height="28" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.1"/><text x="312" y="150" text-anchor="middle" fill="#cfc9e6" font-size="9.5">语言</text>
+<rect x="336" y="132" width="52" height="28" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.1"/><text x="362" y="150" text-anchor="middle" fill="#cfc9e6" font-size="9.5">记忆</text>
+<rect x="388" y="132" width="52" height="28" rx="7" fill="#1c1236" stroke="#34e5e0" stroke-width="1.1"/><text x="414" y="150" text-anchor="middle" fill="#cfc9e6" font-size="9.5">决策</text>
+<text x="362" y="186" text-anchor="middle" fill="#8fd8d2" font-size="9.5" font-family="SF Mono,monospace">能说·能记·能临时</text>
+<text x="362" y="202" text-anchor="middle" fill="#8fd8d2" font-size="9.5" font-family="SF Mono,monospace">拼出没演练的动作</text>
+</svg>
+<figcaption>左：无意识专家再能干，成果也锁在单点、只驱动一个反射；右：一旦广播，语言/记忆/决策同时拿到——本事一次全解锁</figcaption>
+</figure>
+
+<p class="en-brief"><b>EN</b> The theory's cleanest payoff: it says exactly what consciousness <b>adds</b>. Unconscious specialists are capable but <b>siloed</b> — their output can't be reported, stored in long-term memory, or fed into a flexible multi-step plan. Broadcasting unlocks all of that at once, because language, memory, and decision receive the information <b>simultaneously</b>. So GWT defines consciousness functionally: to be conscious of something is just for that information to be <b>globally available</b> across the brain.</p>
+
+<div class="ai">
+<h4>AI 对读</h4>
+<p>Bengio 直接把这条搬进了 AI，叫<b>意识先验</b>：智能体在庞大的内部状态里，强行挤出一个<b>极窄的瓶颈</b>，每一刻只让一小撮最要紧的变量通过、再广播给所有模块。这个瓶颈逼着系统把满脑子细节压成<b>几条能用语言说清、能拿去推理和规划的高层概念</b>——恰恰对应"广播 = 可用"。他和同事还真按 GWT 搭过网络：多个神经模块<b>争抢一块共享工作空间</b>的写入权，赢家的内容才广播给全体，逼它们学会协作与泛化。意识的"公告台"，正被当成一种<b>让智能体更会举一反三</b>的架构来试。</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>把它摆回那道"前 vs 后"的岔口</h2>
+<p>现在三家理论可以同台了。工作空间理论是一记响当当的<strong>"前部派"</strong>：它把意识的枢纽押在<strong>前额叶—顶叶</strong>那张长程广播网上，标志是<strong>晚而大的点燃与 P3b</strong>。这跟 Topic 12 的高阶理论算半个盟友（都看重前部），却跟递归加工理论正面顶牛——后者说感觉皮层<strong>本地绕个环</strong>就够、根本不必惊动前额叶。</p>
+
+<p>而 Topic 11 埋的雷，正好炸在这儿。<strong>无报告范式</strong>发现：好多原先算作"意识标志"的前额叶晚活动，可能只是你<strong>忙着汇报</strong>的账——不让你报告，那团活动就<strong>缩水</strong>了。这一刀专砍工作空间理论：万一 P3b 记的不是"点燃"，而是"广播出去<strong>之后</strong>拿去汇报"的下游动静呢？Cogitate 那场 GNW vs IIT 的对赌，两边都没全赢——工作空间理论押的前额叶信号，有些没如约出现。所以别把它当定论：它是目前<strong>预测最硬、被架在火上烤得最狠</strong>的一家。它赌得越具体，越经得起（或经不起）实验一刀刀验——而这，恰恰是好理论该有的样子。</p>
+</div>
+
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"没有小人在看戏，只有一场向众人的广播"——这个反直觉的意象，好几路人早从别的门里进来过：</p>
+<ul>
+<li><b>佛学 · 无我</b>：剧场比方最容易掉进的坑，是脑补出一个坐在台下"看戏的人"。可工作空间理论偏说——<b>没有那个人</b>，所谓观众就是别的脑加工本身，广播出去、被它们接住，"这就够了"，再没有一个额外的观者。这惊人地贴合佛家的<b>无我</b>：并没有一个独立的"我"在体验，只有诸多因缘和合的过程在流转、相互点亮；执着于找那个中心观者，本就是妄见。</li>
+<li><b>协同学 · 相变与序参量</b>：物理学家 Haken 的协同学讲——大量单元自组织时，会冒出一个<b>序参量</b>，反过来"号令"所有单元同步（激光就是这么点亮的）。点燃几乎是教科书式的例子：无数神经元的局部竞争，过了临界点<b>突变</b>成一个全局的、自我维持的相干态。意识的"啪一下"，是复杂系统的<b>相变</b>，不是某个开关被按下。</li>
+<li><b>哲学 · Dennett 的"脑内成名"</b>：Dennett 反对剧场里有块"意识专属的银幕"，改说意识是<b>一场竞争的胜出</b>——哪份内容争到了最大的后续影响力（被记住、被说出、左右行为），哪份就"红"了，就是意识。这跟"抢上公告台、赢家通吃广播权"是同一个故事的两种讲法，也提醒我们：别把工作空间又偷偷想象成一个有观众席的小剧场。</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>就算证明"意识内容总被广播全脑"，这不还是相关吗——凭什么说广播就<em>是</em>意识、而不只是伴随它？</summary><div>这是所有"关联型"意识理论头上的通病，工作空间理论也躲不掉。它能漂亮地说清意识内容的<strong>功能特征</strong>（可报告、可记忆、可调用），却没正面回答 Topic 10 那道难题：<strong>为什么"信息被广播"这件纯功能的事，会伴随一份"感觉起来像什么"？</strong>把消息发给全脑，逻辑上似乎完全可以在<strong>一片漆黑</strong>中发生（没有任何体验）。支持者的回击是釜底抽薪：所谓"额外的感觉"本就是错觉，广播齐了，意识就齐了，没有多出来的东西要解释。你信不信这步，取决于你觉得难问题是真问题、还是伪问题——整个 Phase B 的分水岭，又回到了这里。</div></details>
+<details><summary>如果意识 = 全局可用，那一个内部模块间彼此共享信息的 AI，是不是就该"有"一点意识了？</summary><div>按这套理论的<strong>功能主义</strong>逻辑，答案令人不安地偏"是"：意识不挑基质，只看架构——只要一个系统有那块"赢家通吃、广播全体"的瓶颈，它就满足了工作空间意义上的意识。于是 Bengio 那类<strong>共享工作空间网络</strong>就成了尴尬的边界样本。多数人会本能地喊"那不一样"，但这套理论逼你把话说清：不一样在<strong>哪</strong>？如果你说"机器缺那份真感觉"，你就又被推回上一题的难题；如果你说"它的广播太简陋、模块太少太笨"，那你承认的其实是<strong>程度</strong>差异，而非<strong>有无</strong>——这条路一直通向"意识是连续谱"（Topic 16 会正面碰）。</div></details>
+<details><summary>广播给"全场观众"——可观众到底是谁？会不会又偷偷塞了个看戏的小人进去？</summary><div>这是剧场比方最危险的暗门，也是它常挨批的地方。工作空间理论必须咬死一件事：<strong>观众不是某一个中心观者，而是其余那些无意识专家本身</strong>。广播没有唯一收件人，它是"发给所有还在暗处干活的部门"；"被意识到"不等于"被某个我看见"，而等于"被足够多的下游系统接住并动用"。一旦你不小心把观众想成一个统一的"我"，你就把要解释的东西（那个体验的主体）又当成了解释的起点——这正是 Dennett 骂的"笛卡尔剧场"。真正的版本里，台下坐的全是机器，没有人。</div></details>
+<details><summary>无意识专家既然那么能干，为什么大脑还要费劲搞一套又慢又"全有全无"的广播？直接让专家们各干各的不好吗？</summary><div>因为单点专家的死穴是<strong>没演练过的新情况</strong>。各管一摊的反射快而省，但只能应付<strong>预先接好线</strong>的老问题；一旦你遇到一件谁也没单独处理过的事（把从没配过的几步临时拼起来），就必须有个地方，让平时不搭界的部门<strong>坐到一张桌子上</strong>交换信息。广播的慢和"全有全无"不是缺陷，是<strong>代价</strong>：它拿速度换来了<strong>灵活的、可跨部门重组的</strong>加工。这也暗示了意识的进化理由——它或许就是大脑为"临场应付新问题"付的那笔带宽费。</div></details>
+</div>
+
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Global_workspace_theory" target="_blank">全局工作空间理论 Global workspace theory</a> — Baars 的剧场比方与"广播"框架</li>
+<li><a href="https://en.wikipedia.org/wiki/Bernard_Baars" target="_blank">Bernard Baars</a> — 意识剧场与全局工作空间的提出者</li>
+<li><a href="https://en.wikipedia.org/wiki/Stanislas_Dehaene" target="_blank">Stanislas Dehaene · 《脑与意识》</a> — 全局神经元工作空间、点燃与掩蔽实验</li>
+<li><a href="https://en.wikipedia.org/wiki/P3b" target="_blank">P3b</a> — 点燃的脑电指纹（晚而大的正波）</li>
+<li><a href="https://en.wikipedia.org/wiki/Neural_correlates_of_consciousness" target="_blank">Cogitate · GNW vs IIT 对抗实验</a> — 接 Topic 11，工作空间理论被架上火烤的一战</li>
+<li><a href="https://arxiv.org/abs/2011.15091" target="_blank">Goyal &amp; Bengio · 共享全局工作空间</a> — 按 GWT 搭的神经网络：模块争抢共享瓶颈</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 13 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
