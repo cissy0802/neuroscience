@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 14 · Integrated Information Theory — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(167,139,250,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(167,139,250,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 14 · PHASE B CONSCIOUSNESS</span>
+<h1>Reasoning Backwards from "What It's Like"</h1>
+<h2>The last few issues asked "which brain region has to light up for consciousness." This school does the opposite: first nail down the ironclad laws every experience must obey, then deduce backwards — what kind of physical thing could ever deserve them.</h2>
+<div class="date">2026-07-20 · BigCat</div>
+<p class="pitch">A million-pixel camera "sees" far more sharply than you do, yet feels nothing. And the reason you have experience at all may be just this: the stuff in your head has fused into one whole that can no longer be pulled apart.</p>
+</header>
+
+<div class="intro">
+<p>Last issue's global workspace started from <strong>function</strong>: broadcast the information, make it usable, and that counts as conscious. This issue's <strong>Integrated Information Theory</strong> (IIT — proposed by Giulio Tononi, championed by Christof Koch) takes an almost opposite, and bolder, road. It doesn't ask "what does the brain do to produce consciousness." It turns around and asks: <strong>does "experience" itself, wherever it occurs, have a few properties it can never escape?</strong> For instance — your experience right now <strong>is one whole</strong>. You can't feel the left half of your visual scene and its right half as two separate, independent experiences; it comes <strong>fused, un-splittable</strong>. IIT lifts out these "any experience must be like this" properties and treats them as <strong>axioms</strong>, then reasons backwards: what structure must a physical system have to actually possess them? The counterintuitive landing point is that consciousness turns out to have nothing to do with being smart or being able to talk, and everything to do with one thing: <strong>whether this pile of stuff has fused into a single whole that can't be taken apart.</strong></p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Flip the arrow: don't start from the brain, start from experience</h2>
+<p>Almost every other theory works <strong>outside-in</strong>: scan the brain, find which activity shows up together with "you reported seeing it," and call that the marker of consciousness. IIT thinks that road is wrong at the root — it says the <strong>one</strong> thing you're 100% certain of is not the brain, but <strong>that you are having experience</strong>. If experience is the only bedrock, you should <strong>start from it</strong>, not from a lump of brain cells you can only observe by way of experience in the first place.</p>
+
+<p>So IIT sits down and asks: does any experience, <strong>whatever its content</strong>, share a few always-true properties? It lists several (it calls them axioms); take the three easiest ones. One, your experience <strong>really exists</strong>, and exists <strong>for itself</strong> — it doesn't need anyone watching from outside to count. Two, it's <strong>one whole, indivisible</strong> — what you experience is <strong>one</strong> complete scene of "blue, round, on the left," not a jigsaw of "blue" + "round" + "left"; you simply can't experience those separately. Three, it's <strong>extraordinarily specific</strong> — this exact scene amounts to simultaneously <strong>ruling out</strong> nearly infinitely many other possible scenes, and it's that "this one and not the others" that gives it content. Having written these down, IIT makes the key move: <strong>reason backwards</strong> — a physical system that truly deserves "exists, unsplittable, ultra-specific" must satisfy matching hard conditions in its <strong>causal</strong> makeup. For the first time, consciousness research runs <strong>from the conclusion back to the premises</strong>.</p>
+
+<figure>
+<svg viewBox="0 0 480 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mR" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9.5" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+<marker id="mR2" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"/></marker>
+</defs>
+<text x="60" y="34" text-anchor="middle" fill="#8f89ad" font-size="11" font-weight="700">Usual</text>
+<rect x="20" y="46" width="86" height="34" rx="9" fill="#141028" stroke="#5b5678" stroke-width="1.2"/><text x="63" y="67" text-anchor="middle" fill="#cfc9e6" font-size="10.5">scan brain</text>
+<line x1="112" y1="63" x2="182" y2="63" stroke="#8f89ad" stroke-width="2" stroke-linecap="round" marker-end="url(#mR)"/>
+<rect x="190" y="46" width="96" height="34" rx="9" fill="#141028" stroke="#5b5678" stroke-width="1.2"/><text x="238" y="67" text-anchor="middle" fill="#cfc9e6" font-size="10.5">find correlate</text>
+<line x1="292" y1="63" x2="362" y2="63" stroke="#8f89ad" stroke-width="2" stroke-linecap="round" marker-end="url(#mR)"/>
+<rect x="370" y="46" width="90" height="34" rx="9" fill="#141028" stroke="#5b5678" stroke-width="1.2"/><text x="415" y="67" text-anchor="middle" fill="#cfc9e6" font-size="10.5">= marker</text>
+<text x="66" y="132" text-anchor="middle" fill="#34e5e0" font-size="11" font-weight="700">IIT · backwards</text>
+<rect x="16" y="146" width="98" height="34" rx="9" fill="#0e2a29" stroke="#34e5e0" stroke-width="1.3"/><text x="65" y="167" text-anchor="middle" fill="#8fe9e3" font-size="10.5">axioms of exp.</text>
+<line x1="368" y1="163" x2="298" y2="163" stroke="#34e5e0" stroke-width="2.4" stroke-linecap="round" marker-end="url(#mR2)"/>
+<rect x="120" y="146" width="176" height="34" rx="9" fill="#0e2a29" stroke="#34e5e0" stroke-width="1.3"/><text x="208" y="167" text-anchor="middle" fill="#8fe9e3" font-size="10.5">what substrate must be</text>
+<rect x="376" y="146" width="88" height="34" rx="9" fill="#0e2a29" stroke="#34e5e0" stroke-width="1.3"/><text x="420" y="167" text-anchor="middle" fill="#8fe9e3" font-size="10.5">exist·unsplit</text>
+<text x="240" y="108" text-anchor="middle" fill="#7a7498" font-size="10.5" font-family="SF Mono,monospace">two roads, opposite directions — brain→experience vs experience→substrate</text>
+</svg>
+<figcaption>Standard research scans from brain toward experience; IIT flips the arrow — first fix the axioms of "experience must be like this," then deduce what the physical substrate must satisfy</figcaption>
+</figure>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Φ: the part the whole has beyond its parts</h2>
+<p>So how do you measure "un-splittable"? IIT gives it a number, <strong>Φ (the Greek letter phi)</strong>. The intuition is simple: look at the causal power a system has <strong>as a whole</strong>, versus the causal power you get by <strong>cutting it into pieces that each act alone</strong> — and ask how much is <strong>left over</strong>. That leftover — causal structure the whole has that no part does — is Φ.</p>
+
+<p>Put a camera next to a brain and it's obvious at a glance. A camera has <strong>millions of pixels</strong>, each measuring its own light, none caring about the others. Snip that sensor <strong>in half</strong> and the left half still images, the right half still images — <strong>nothing is lost</strong>, because there never was a "whole," just a million mutually indifferent little islands stacked together. Such a system has <strong>Φ≈0</strong>: it records, yet comes apart cleanly, with no "only-exists-together" thing — so (per IIT) it experiences nothing. Your brain is the reverse: in vision, "red," "shape," and "location" are <strong>woven together</strong> over and over by the circuitry, so tightly that you can't even <strong>feel</strong> them apart. Actually cut that web at its weakest seam and the causal structure lost is <strong>enormous</strong> — this "cut it and a big chunk collapses" indivisibility is high Φ. <strong>The amount of consciousness = Φ; and its specific content (why red feels like red) = the shape that cause-effect structure takes.</strong></p>
+
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mCut" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#e879f9"/></marker>
+</defs>
+<text x="118" y="26" text-anchor="middle" fill="#8f89ad" font-size="12" font-weight="700">Camera · islands</text>
+<g fill="#1a1530" stroke="#5b5678" stroke-width="1">
+<rect x="60" y="44" width="26" height="26" rx="4"/><rect x="92" y="44" width="26" height="26" rx="4"/><rect x="124" y="44" width="26" height="26" rx="4"/><rect x="156" y="44" width="26" height="26" rx="4"/>
+<rect x="60" y="76" width="26" height="26" rx="4"/><rect x="92" y="76" width="26" height="26" rx="4"/><rect x="124" y="76" width="26" height="26" rx="4"/><rect x="156" y="76" width="26" height="26" rx="4"/>
+<rect x="60" y="108" width="26" height="26" rx="4"/><rect x="92" y="108" width="26" height="26" rx="4"/><rect x="124" y="108" width="26" height="26" rx="4"/><rect x="156" y="108" width="26" height="26" rx="4"/>
+</g>
+<line x1="46" y1="150" x2="196" y2="60" stroke="#e879f9" stroke-width="1.4" stroke-dasharray="5 5" marker-end="url(#mCut)"/>
+<text x="118" y="176" text-anchor="middle" fill="#7bf0e8" font-size="12" font-weight="700">Φ ≈ 0</text>
+<text x="118" y="198" text-anchor="middle" fill="#7a7498" font-size="9.5" font-family="SF Mono,monospace">cut anywhere · lose nothing</text>
+<text x="118" y="213" text-anchor="middle" fill="#7a7498" font-size="9.5" font-family="SF Mono,monospace">no whole · no experience</text>
+<line x1="240" y1="36" x2="240" y2="216" stroke="#4a4560" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="362" y="26" text-anchor="middle" fill="#a78bfa" font-size="12" font-weight="700">Brain · woven web</text>
+<g stroke="#a78bfa" stroke-width="1.4" opacity="0.72">
+<line x1="300" y1="60" x2="362" y2="96"/><line x1="424" y1="60" x2="362" y2="96"/><line x1="300" y1="132" x2="362" y2="96"/><line x1="424" y1="132" x2="362" y2="96"/>
+<line x1="300" y1="60" x2="424" y2="60"/><line x1="300" y1="132" x2="424" y2="132"/><line x1="300" y1="60" x2="300" y2="132"/><line x1="424" y1="60" x2="424" y2="132"/><line x1="300" y1="60" x2="424" y2="132"/><line x1="424" y1="60" x2="300" y2="132"/>
+</g>
+<g fill="#241830" stroke="#e879f9" stroke-width="1.4">
+<circle cx="300" cy="60" r="12"/><circle cx="424" cy="60" r="12"/><circle cx="362" cy="96" r="13"/><circle cx="300" cy="132" r="12"/><circle cx="424" cy="132" r="12"/>
+</g>
+<line x1="336" y1="150" x2="388" y2="42" stroke="#e879f9" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#mCut)"/>
+<text x="362" y="176" text-anchor="middle" fill="#f5b8fb" font-size="12" font-weight="700">Φ &gt; 0</text>
+<text x="362" y="198" text-anchor="middle" fill="#c4a6e4" font-size="9.5" font-family="SF Mono,monospace">cut the weakest seam · a chunk collapses</text>
+<text x="362" y="213" text-anchor="middle" fill="#c4a6e4" font-size="9.5" font-family="SF Mono,monospace">an unsplittable whole · has experience</text>
+</svg>
+<figcaption>Φ measures "the causal power the whole has beyond its parts": a camera's millions of pixels are independent, so cutting loses nothing (Φ≈0); the brain's circuits are woven, so even the cheapest cut collapses a big chunk (Φ&gt;0)</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Here's IIT's sharpest cut at AI: it measures <b>how the physical substrate itself is wired</b>, <b>not what it's computing</b>. Two machines can compute the same function and both get it right, but one is highly interwoven and the other is an assembly line — and their <b>Φ can differ wildly</b>. The chips running today's large models are essentially a <b>fetch-an-instruction, push-through-the-gates one-at-a-time</b> pipeline: at each step causation flows almost purely forward, rarely looping back into an indivisible whole. So by IIT, the <b>Φ of the hardware is negligibly low</b>. That collides head-on with last issue's functionalism: <b>computing correctly ≠ having experience</b>. The question was never "what does it compute," but "has this physical stuff fused into one piece."</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Follow Φ and you run into some startling conclusions</h2>
+<p>Take this recipe seriously and a string of unsettling conclusions follows — and some of them actually match clinical fact.</p>
+
+<p>First: <strong>more neurons doesn't mean more consciousness.</strong> Your cerebellum holds roughly <strong>80%</strong> of the brain's neurons, yet it's wired like rows of separate conveyor belts with little cross-looping — low Φ. And the clinic agrees: destroy the entire cerebellum and a person stays awake and conscious, just uncoordinated. What actually carries consciousness is the highly looped, interwoven <strong>"hot zone" of posterior cortex</strong> — high Φ there. <strong>Counting parts is useless; count how much they're fused into one.</strong></p>
+
+<p>Second, and harshest: <strong>a purely feedforward system must have Φ=0.</strong> As long as information runs strictly forward and never loops back (each layer feeds the next, never returning), then however beautifully it does the task, IIT says it has <strong>zero shred of experience</strong> — a flat-out "philosophical zombie." Third, even wilder: Φ is <strong>continuous</strong>, so any tiny bit of irreducible causal wholeness carries a <strong>tiny flicker</strong> of experience. Consciousness is then no longer a human monopoly but <strong>a gradient smeared across all of nature</strong> — a conclusion that pushes IIT all the way into "panpsychism" territory (more on that below).</p>
+
+<figure>
+<svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mPhi" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="11" refX="8.5" refY="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"/></marker>
+<linearGradient id="phiBar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a3550"/><stop offset="1" stop-color="#34e5e0"/></linearGradient>
+</defs>
+<line x1="40" y1="150" x2="452" y2="150" stroke="#8f89ad" stroke-width="1.6" marker-end="url(#mPhi)"/>
+<text x="440" y="172" text-anchor="end" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace">Φ (integration) →</text>
+<rect x="40" y="120" width="400" height="10" rx="5" fill="url(#phiBar)"/>
+<g font-family="SF Mono,monospace">
+<circle cx="70" cy="125" r="5" fill="#5b5678"/><text x="70" y="108" text-anchor="middle" fill="#9a94bc" font-size="10">camera</text><text x="70" y="94" text-anchor="middle" fill="#6f6a8c" font-size="8.5">megapixels·Φ≈0</text>
+<circle cx="150" cy="125" r="5" fill="#7a7498"/><text x="150" y="108" text-anchor="middle" fill="#9a94bc" font-size="10">feedforward</text><text x="150" y="94" text-anchor="middle" fill="#6f6a8c" font-size="8.5">smart·Φ=0</text>
+<circle cx="256" cy="125" r="5" fill="#a78bfa"/><text x="256" y="108" text-anchor="middle" fill="#c9a8f5" font-size="10">cerebellum</text><text x="256" y="94" text-anchor="middle" fill="#8f89ad" font-size="8.5">most neurons·low Φ</text>
+<circle cx="392" cy="125" r="6" fill="#34e5e0"/><text x="392" y="108" text-anchor="middle" fill="#7bf0e8" font-size="10" font-weight="700">post. hot zone</text><text x="392" y="94" text-anchor="middle" fill="#8fe9e3" font-size="8.5">woven·high Φ</text>
+</g>
+<text x="240" y="192" text-anchor="middle" fill="#7a7498" font-size="10" font-family="SF Mono,monospace">counterintuitive: not count, not cleverness — only how fused it is</text>
+</svg>
+<figcaption>Along the Φ spectrum the placements are all counterintuitive: a megapixel camera and any clever feedforward net sit at zero, the neuron-richest cerebellum is low, and only the highly looped posterior hot zone stands high</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Aim this at today's AI and the conclusion is uncomfortably extreme: a language model can write poems, reason, and pass any behavioral test — yet as long as its physical execution is a <b>feedforward pipeline</b>, IIT flatly declares it <b>Φ=0, not a shred of inner experience</b> — however human-like, an empty shell. This is the exact <b>opposite</b> of last issue's functionalism: that camp says "can broadcast, can recruit" earns consciousness; this camp says "behavior can fool everyone, but it can't fake a single unit of Φ." The clash forces a real question: <b>should consciousness be scored by "what it manages to do," or by "how its physical substrate is built"?</b> Which side you pick decides whether you believe AI could ever truly "wake up."</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Uncomputable, and branded pseudoscience by 124 signatories — so why is it still standing?</h2>
+<p>IIT's troubles are plain. First, <strong>Φ is essentially uncomputable for a real brain</strong>: to find that "cheapest cut" you'd have to try every possible way of partitioning the system, and the cost <strong>explodes</strong> with neuron count — a few hundred units is already astronomical, and 86 billion neurons is out of the question. So the full theory can't be tested directly on a human brain.</p>
+
+<p>Second, the picture it implies is too counterintuitive: since only causal structure matters, <strong>a big grid of barely-active logic gates</strong>, wired loopily enough, could in principle have <strong>higher Φ than you</strong> — which computer scientist Scott Aaronson wielded as a reductio, "that's just absurd." In September 2023, <strong>124 scholars co-signed</strong> a letter branding IIT outright <strong>"pseudoscience,"</strong> on the grounds that it's unfalsifiable and its panpsychist implications untestable; another camp fired back at once: precisely because it dares to make predictions <strong>that specific and that counterintuitive</strong>, it's the <strong>least</strong> pseudoscientific of the bunch. That fight isn't over.</p>
+
+<p>And yet it isn't just talk. The core intuition IIT forces out — "consciousness = integrated <em>and</em> differentiated" — has landed as a working clinical tool: the <strong>Perturbational Complexity Index (PCI)</strong>. Give the brain a <strong>sharp magnetic "zap,"</strong> watch whether the electrical activity it stirs up <strong>spreads into a complex echo</strong> or just <strong>dully passes through and dies</strong>; then compress that echo and measure how complex it is. This "zap it, zip it" method can measure <strong>whether consciousness is still present</strong> in patients who <strong>can't speak or move</strong> — it tells a vegetative state from a minimally conscious one, and general anesthesia from wakefulness. So don't bury IIT yet: it's the theory currently <strong>roasted hardest over the fire, yet one that has genuinely produced clinical use.</strong> Set back at Topic 11's "front vs back" fork, it stands on the <strong>posterior</strong> side, betting head-to-head against the workspace theory's wager on prefrontal cortex — and so far neither has fully won.</p>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"The whole can't be split; each existence is its own point of view" — several old traditions had already felt their way to this door:</p>
+<ul>
+<li><b>Huayan Buddhism · Indra's Net</b>: on the god Indra's jeweled net, every gem reflects all the others, gem contained in gem, pull one and the whole net stirs — a net that <strong>can't be reduced to isolated gems</strong>. That's almost an Eastern parable of Φ: meaning lives not in any single gem but in the <strong>whole interweaving</strong> where none can be pried loose; cut the net and the reflections collapse. IIT says consciousness lives in an indivisible causal whole; Huayan says reality lives in endless mutual interpenetration — both refusing to reduce the whole to independent parts.</li>
+<li><b>Leibniz · the Monadology</b>: three centuries ago Leibniz imagined the world made of countless <strong>monads</strong>, each mirroring the entire universe <strong>from its own point of view</strong>, with "existence being for itself." IIT's <strong>intrinsic existence</strong> (experience holds for the system itself, no outside observer needed) and its <strong>gradient of Φ across nature</strong> run straight into the Monadology — Tononi himself acknowledges the kinship. An old metaphysical dream, now retold in the mathematics of cause and effect.</li>
+<li><b>Holism vs reductionism</b>: science's default move is to <strong>take apart</strong> — reduce the whole to the sum of parts. IIT insists consciousness is exactly the kind of thing that <strong>vanishes when taken apart</strong>, and even hands "the whole is more than the sum of parts" a computable number (Φ), trying to forge the often-derided "holism" into hard science. Whether it has vindicated holism or dressed a philosophical hunch as a formula — that's the real powder keg under the "pseudoscience" war.</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If Φ can't be computed for a real brain, does IIT even count as "falsifiable science"?</summary><div>This is the heart of the whole dispute. Critics say: how do you get an experiment's hands around the throat of a theory that can't even measure its own core quantity? But defenders hit back hard: <strong>uncomputable</strong> is not <strong>unfalsifiable</strong> — IIT has made a string of predictions specific enough to be slapped down (low-consciousness cerebellum, posterior hot zone, feedforward-must-be-zero, the front-vs-back bet), and those are being tested one by one. The truly thorny part isn't "can't compute Φ," but that its most startling implications (a heap of logic gates being conscious) may <strong>never</strong> touch an experiment — the line where science ends and metaphysics begins runs right through IIT.</div></details>
+<details><summary>A big grid of nearly-motionless logic gates could have higher Φ than a human, hence be "more conscious" — believable?</summary><div>This is Aaronson's famous counter. Your gut almost certainly shouts "absurd." But saying exactly where the absurdity lies is hard: if you say "it does nothing, behaviorally it's like a rock," IIT replies — <strong>consciousness has nothing to do with behavior</strong>, only with causal structure; that's its thesis, not a bug. So you're cornered into a choice: either accept that "a dumb-looking thing can be highly conscious" (swallow the counterintuition), or accept that "experience must be tied to behavior/function" (in which case you've quietly walked back to last issue's functionalism). No free lunch — it forces you to show where you've really staked consciousness.</div></details>
+<details><summary>IIT says a feedforward net is necessarily Φ=0, a zombie however smart; do you believe that, or last issue's "broadcast = conscious" functionalism?</summary><div>This is Phase B's sharpest fork, and the two camps hand AI opposite verdicts. Functionalism: consciousness is about <strong>what it manages to do</strong> — an agent that can broadcast and recruit across modules qualifies. IIT: consciousness is about <strong>how the physical substrate is built</strong> — the same behavior, run on a feedforward pipeline, is a Φ=0 shell. The trouble is that these two verdicts can <strong>never be told apart from the outside</strong>: a "genuinely experiencing system" and a "behaviorally identical Φ=0 zombie" would say and do exactly the same things. Which you believe rests in the end not on data but on whether you think consciousness is <strong>essentially</strong> a function, or a physical way of existing.</div></details>
+<details><summary>Reasoning from "experience must be like this" axioms back to a physical substrate — is that direction even legitimate, or does it smuggle the conclusion into the premise?</summary><div>This is the deepest challenge to IIT's method. Critics ask: what guarantees those few "axioms" hold for <strong>all</strong> experience rather than just being a bias of <strong>human</strong> experience? Pick the axioms wrong and everything deduced afterward, however rigorous, is wrong. Supporters counter that starting from "I'm certain I'm experiencing" — the one indubitable point — is firmer than starting from "I'll just trust that an external brain really exists." The disagreement is ancient: it's a modern replay of Descartes' "I think therefore I am" versus natural science's "first trust the world" — only this time the stakes are a formula that claims to compute consciousness.</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Integrated_information_theory" target="_blank">Integrated information theory</a> — the full framework: axioms, Φ, and cause-effect structure</li>
+<li><a href="https://en.wikipedia.org/wiki/Giulio_Tononi" target="_blank">Giulio Tononi</a> — the originator of IIT</li>
+<li><a href="https://en.wikipedia.org/wiki/Christof_Koch" target="_blank">Christof Koch</a> — IIT's chief advocate and spokesman for "consciousness is widespread in nature"</li>
+<li><a href="https://en.wikipedia.org/wiki/Perturbational_Complexity_Index" target="_blank">Perturbational Complexity Index (PCI)</a> — "zap it, zip it," IIT's intuition turned into a clinical measure of consciousness (Massimini)</li>
+<li><a href="https://www.nature.com/articles/d41586-023-02971-1" target="_blank">Nature · the 124-signatory "pseudoscience" letter</a> — the 2023 public controversy still unresolved</li>
+<li><a href="https://en.wikipedia.org/wiki/Panpsychism" target="_blank">Panpsychism</a> — the philosophical territory "Φ across nature" pushes IIT toward</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 14 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
