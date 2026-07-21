@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 15 · Predictive Processing & Free Energy — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(167,139,250,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(167,139,250,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+
+<header>
+<span class="week-tag">TOPIC 15 · PHASE B CONSCIOUSNESS</span>
+<h1>The Brain Never Sees the World — It Only Checks Its Own Guesses</h1>
+<h2>The last few issues' theories of consciousness each spoke their own language. This one wants a single principle covering perception, action, and "being alive" itself: the brain (perhaps all life) is doing one thing — driving surprise to a minimum.</h2>
+<div class="date">2026-07-21 · BigCat</div>
+<p class="pitch">When you reach for a cup, the brain doesn't first decide to "move" and then send commands to the muscles. It first "pretends" your hand is already on the cup — then makes the pretense come true.</p>
+</header>
+
+<div class="intro">
+<p>Topic 1 made a counterintuitive claim: <strong>seeing isn't passive reception — the brain actively guesses, then checks the guess against the senses.</strong> This issue pushes that to the limit: not just seeing, but <strong>hearing, moving, deciding, and even keeping yourself alive</strong> may all be facets of the same thing. The author is London neuroscientist <strong>Karl Friston</strong>, and his ambition is staggering: one equation — the <strong>free energy principle</strong> — meant to hold the brain, the body, and even "what makes a thing count as alive." The counterintuitive landing: what you take for "you observing the world" is, at bottom, <strong>the brain wrestling with a model of its own, straining not to let reality surprise it</strong>. And consciousness may just be what that model looks like when it runs at its best.</p>
+</div>
+
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>The brain is a machine that guesses first and asks later</h2>
+<p>Common sense says perception works like this: light enters the eyes, sound enters the ears, signals travel inward, and the brain assembles them into a picture at the far end. <strong>Predictive processing</strong> says that order is basically backwards. What really happens is that the brain <strong>is constantly guessing downward</strong> — higher levels bet, from experience, on "roughly what I'm about to see/hear" and push that guess <strong>down to the lower levels</strong> as a prediction; the lower levels compare it against the real incoming signal and <strong>send back up only the part that doesn't match</strong>. That leftover has a name: <strong>prediction error</strong>.</p>
+
+<p>In other words, what flows upward is never "the whole world" but only <strong>"where things differ from what I expected."</strong> Guess right, and the lower levels stay nearly silent, the top a calm quiet; guess wrong, and error bubbles up, forcing the higher levels to <strong>revise the guess</strong>. You tune out the fridge's hum precisely because the brain has predicted it to death — error near zero; when it stops, the silence lands with a jolt — that's the error of a broken prediction. This press-down, report-only-the-difference architecture runs in the cortex from the regions closest to the senses all the way up to the most abstract levels; and it was first written as equations in the <a class="reflink" href="ref-visual-pathway.en.html">visual pathway</a>.</p>
+
+<figure>
+<svg viewBox="0 0 480 246" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mDn" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9.5" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"/></marker>
+<marker id="mUp" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9.5" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"/></marker>
+</defs>
+<rect x="150" y="18" width="180" height="40" rx="10" fill="#1a1330" stroke="#a78bfa" stroke-width="1.3"/><text x="240" y="43" text-anchor="middle" fill="#cbb8f5" font-size="12">high · abstract guess</text>
+<rect x="150" y="103" width="180" height="40" rx="10" fill="#171a2e" stroke="#7b8bd4" stroke-width="1.3"/><text x="240" y="128" text-anchor="middle" fill="#c2c9ee" font-size="12">mid · shapes / objects</text>
+<rect x="150" y="188" width="180" height="40" rx="10" fill="#141f24" stroke="#34e5e0" stroke-width="1.3"/><text x="240" y="213" text-anchor="middle" fill="#8fe9e3" font-size="12">low · close to senses</text>
+<line x1="200" y1="58" x2="200" y2="103" stroke="#a78bfa" stroke-width="2.2" marker-end="url(#mDn)"/>
+<line x1="200" y1="143" x2="200" y2="188" stroke="#a78bfa" stroke-width="2.2" marker-end="url(#mDn)"/>
+<line x1="280" y1="103" x2="280" y2="58" stroke="#e879f9" stroke-width="2.2" marker-end="url(#mUp)"/>
+<line x1="280" y1="188" x2="280" y2="143" stroke="#e879f9" stroke-width="2.2" marker-end="url(#mUp)"/>
+<text x="150" y="83" text-anchor="end" fill="#b7a3ef" font-size="10.5" font-family="SF Mono,monospace">prediction ↓</text>
+<text x="330" y="83" text-anchor="start" fill="#f0a8f5" font-size="10.5" font-family="SF Mono,monospace">↑ error</text>
+<text x="240" y="243" text-anchor="middle" fill="#7a7498" font-size="10" font-family="SF Mono,monospace">guesses pressed down; only the "mismatch" is reported up</text>
+</svg>
+<figcaption>Predictive processing's two-way flow: purple predictions press down level by level, magenta prediction errors send up only "what disagrees with the guess" — the world never comes in whole</figcaption>
+</figure>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This "guess + fix only the difference" collides head-on with something in machine learning. Training a <b>variational autoencoder (VAE)</b> and its kin means minimizing a quantity literally called <b>free energy</b> (equivalently, maximizing the <b>ELBO</b>, the evidence lower bound) — which works out to exactly <b>"reconstruction error + how far your guess strays from the prior."</b> The two are identical: push down prediction error on one side, don't let the internal model drift on the other. <b>Friston's "free energy" and deep learning's "free energy" aren't a naming coincidence — they're the same mathematical object.</b> So "perception is minimizing free energy" is at once a brain hypothesis and precisely what every gradient step of a modern generative model is doing.</p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>There are two ways to kill a surprise</h2>
+<p>So far this is just "perception." The truly bold step is this: <strong>prediction error can be erased not only by "changing the guess" but by "changing the world."</strong> When your guess and your sensations don't match, there are two ways to close the gap — either <strong>update the model in your head</strong> to accommodate reality (that's perception), or <strong>act to change reality</strong> so the sensations become what you guessed (that's action). One prediction error, two exits. This is <strong>active inference</strong>.</p>
+
+<p>Take "reaching for a cup," which will overturn your intuition about "movement" entirely. The old view: the brain computes a trajectory, then sends commands to the muscles. Active inference says: the brain first issues a <strong>bold prediction</strong> — "my hand is <strong>right now</strong> on the cup." But your hand is still on the table, so a large prediction error erupts. The body won't let you revise the guess (this time it's dead set on believing the hand is on the cup), so <strong>the only path that erases the error is to actually move the hand there</strong>. The muscles fire, drive the error to zero along the way, and the movement <strong>completes itself</strong>. Action isn't a "command"; it's <strong>a prophecy the body scrambles to fulfill</strong>. What we call will may be just the brain <strong>choosing to believe a future that isn't true yet</strong>, then letting the body chase reality up to meet it.</p>
+
+<figure>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mA" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="12" refX="9.5" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"/></marker>
+</defs>
+<rect x="150" y="16" width="180" height="46" rx="11" fill="#2a1030" stroke="#e879f9" stroke-width="1.4"/><text x="240" y="38" text-anchor="middle" fill="#f5b8fb" font-size="12">prediction ≠ sensation</text><text x="240" y="54" text-anchor="middle" fill="#c98fd0" font-size="10.5">→ a prediction error</text>
+<line x1="205" y1="62" x2="120" y2="128" stroke="#fbbf24" stroke-width="2.2" marker-end="url(#mA)"/>
+<line x1="275" y1="62" x2="360" y2="128" stroke="#fbbf24" stroke-width="2.2" marker-end="url(#mA)"/>
+<rect x="26" y="134" width="176" height="46" rx="11" fill="#141a2c" stroke="#7b8bd4" stroke-width="1.3"/><text x="114" y="156" text-anchor="middle" fill="#c2c9ee" font-size="12">change the guess</text><text x="114" y="172" text-anchor="middle" fill="#8f9ad0" font-size="10.5">= perception</text>
+<rect x="278" y="134" width="176" height="46" rx="11" fill="#141f24" stroke="#34e5e0" stroke-width="1.3"/><text x="366" y="156" text-anchor="middle" fill="#8fe9e3" font-size="12">change the world</text><text x="366" y="172" text-anchor="middle" fill="#6bbdb8" font-size="10.5">= action</text>
+<text x="240" y="206" text-anchor="middle" fill="#7a7498" font-size="10" font-family="SF Mono,monospace">one error, two exits — accommodate reality, or make reality accommodate you</text>
+</svg>
+<figcaption>Active inference: when prediction and sensation disagree, you can update the internal model to fit the world (perception), or act to change the world to fit the prediction (action)</figcaption>
+</figure>
+</div>
+
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>One principle that wants to govern "being alive" too</h2>
+<p>Friston goes further: he says all of the above are special cases of a bigger principle, the <strong>free energy principle</strong>. In one line — <strong>anything that maintains itself over time and doesn't fall apart must keep "surprise" at a minimum.</strong> "Surprise" here has a precise meaning: the degree to which you find yourself in <strong>a state a system like you shouldn't be in</strong>. A fish flung onto the shore, your body temperature spiking to 42°C — those are enormous surprises; free energy is a <strong>computable upper bound</strong> on that surprise. Lower free energy, lower surprise, <strong>stay in the states you're supposed to be in</strong> — that is, stay alive.</p>
+
+<p>A famous objection pops up at once — the <strong>dark room problem</strong>: if all you want is minimal surprise, why not crawl into a pitch-black, silent room where nothing ever happens and lie there forever? That's zero surprise. The answer is elegant: for a creature that <strong>gets miserable when hungry, restless when bored</strong>, "lying in a dark room forever" is itself <strong>an enormous surprise</strong> — your "expected self" already includes eating, exploring, seeing people. These expectations have a name, <strong>prior preferences</strong>, which amounts to writing "what I ought to be" into the system. So minimizing surprise isn't lying down; it drives you out to forage, to look around curiously, to make good on "the thriving self you expect to be."</p>
+
+<p>And where's the border between "you" and "the world"? Friston borrows a statistical concept — the <strong>Markov blanket</strong>. It's not a physical wall like skin but a <strong>curtain of information</strong>: the world can touch you only through your <strong>senses</strong>, and you can touch the world back only through your <strong>actions</strong>; senses + actions form the curtain that separates the "inner you" from the "outer world" while stitching them together. With this blanket, "whether a thing counts as a separate self" gets, for the first time, a <strong>mathematical definition</strong> — a self is that lump of stuff fenced off by an information curtain and still working to not fall apart.</p>
+
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Move active inference into an AI agent and it mirrors mainstream <b>reinforcement learning (RL)</b> point for point. RL's creed is <b>maximize reward</b> — reward is a number handed to it from outside. Active inference has <b>no separate reward</b>: the agent only <b>minimizes "expected free energy,"</b> and that single quantity naturally splits in two — <b>"go resolve what you're uncertain about" (exploration / information-seeking)</b> plus <b>"go to your preferred states" (exploitation / goal-reaching)</b>. In RL, "explore vs. exploit" has to be hand-tuned by an engineer; here it's <b>two legs the same equation grows on its own</b>. And "reward," in this language, is translated into <b>prior preferences</b>: you aren't dragged along by reward, you simply "expect" to end up there.</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Consciousness: the model at its best, or a clever way of saying nothing?</h2>
+<p>So where does consciousness sit in this picture? A view gaining believers: the world you experience is <strong>the brain's current best model</strong> — neuroscientist Anil Seth simply calls it a <strong>"controlled hallucination."</strong> "Seeing" is the version that <strong>settles down</strong> after the brain flings guesses outward and the senses keep pruning them; when everyone's hallucinations are pruned by the same real world and therefore agree, we call it "reality." Dreaming is the same generative model <strong>spinning free of the senses' pruning</strong> — which is why dreams feel vivid and preposterous at once. Even the "self" can be a layer of guessing: the brain infers over <strong>its own body and visceral states</strong>, and the stable result of that inference is the feeling of "I am here."</p>
+
+<p>But this framework has taken heavy blows too. The most damaging: <strong>is the free energy principle so all-powerful that it says nothing?</strong> Critics point out that with enough effort <strong>almost any</strong> self-maintaining system — a bacterium, a candle flame, even a rock — can be "explained" as minimizing free energy. A framework that fits everything, <strong>how could any single experiment ever falsify it?</strong> It looks more like a <strong>pair of glasses</strong> for viewing the world, a mathematical language, than a <strong>concrete hypothesis</strong> one experiment can kill. Defenders fire back: precisely because it strings perception, action, learning, and homeostasis onto <strong>one quantity</strong>, it gives, for the first time, a unified answer to "what is the brain even optimizing?"; and for consciousness it offers a tempting candidate — <strong>experience is the inside view of the least-surprising model a system builds for itself</strong>. A profound unification, or a beautiful tautology — this fight is far from over.</p>
+</div>
+
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"The mind never touches the world directly, only the model it builds of it" — several old lines of thought have long circled this idea:</p>
+<ul>
+<li><b>Kant · phenomena and the thing-in-itself</b>: over two centuries ago Kant said we can never see the "thing-in-itself" (the world as it is), only <strong>phenomena</strong> worked over by the mind's a priori frameworks. Predictive processing is almost the neural version of that line: the brain can't reach the world itself, only <strong>its own predictions</strong>. The bridge is the 19th-century <strong>Helmholtz</strong> — who already called perception a kind of "unconscious inference," and Friston's whole apparatus amounts to fitting that old remark with equations.</li>
+<li><b>Yogācāra · consciousness-only</b>: Buddhist Yogācāra teaches that the world you take to be "out there" is in fact <strong>manifested</strong> by consciousness. This maps startlingly onto "controlled hallucination": what you experience is never the external object itself but a <strong>model</strong> the mind constructs and then verifies. The real difference: Yogācāra asks whether one can set down even the constructor, while active inference treats this construction as a <strong>necessary mechanism</strong> of staying alive — one seeks release, the other seeks survival.</li>
+<li><b>Cybernetics · the good regulator theorem</b>: in 1970 Conant and Ashby proved a theorem — "every good regulator of a system must be a model of that system." To steadily control a thing, your head <strong>has to contain a model of it</strong>. The free energy principle is almost that theorem grown into a whole theory of the brain: to keep the body-machine running, the brain must become a model of body and world. Metaphysical speculation turns, here, into an engineering constraint.</li>
+</ul>
+</div>
+
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If action is just "a prophecy the body fulfills," is "I decided to move" a real cause, or subtitles added after the fact?</summary><div>Active inference recasts movement as "happening automatically to erase prediction error," which pulls the middle link out of the classic "will → command → muscle" chain. A sharp question follows: is your crisp sense of "it was me who chose to grab the cup" what <strong>launched</strong> the action, or a bit of narration the brain <strong>subtitles on</strong> after the action is already underway? This connects straight to Libet's classic experiments where the "decision" seems to precede awareness. Active inference doesn't deny you feel agency, but it redefines will as "choosing which future to believe" — and whether "choosing" is yet another layer of inference needing explanation just pushes the problem back a step.</div></details>
+<details><summary>Does "prior preferences" really solve the dark room, or smuggle the answer into the premises?</summary><div>"Your expected self includes eating and exploring, so the dark room is the big surprise" — it sounds complete, but critics press: where do these prior preferences <strong>come from</strong>? If the answer is "evolution wrote them in" or "they just define this creature," then the free energy principle hasn't <strong>on its own</strong> derived why creatures are curious or forage — it <strong>presupposed</strong> them as inputs. That isn't necessarily a flaw — every theory starts somewhere — but it marks the boundary: the principle is good at "given what you want to be, how you'll act," and less good at "why you want to be this in the first place."</div></details>
+<details><summary>"Controlled hallucination" vs. "seeing the world as it is" — can you even tell them apart from the inside?</summary><div>If perception is a construction of the brain from start to finish, merely pruned by the senses, then "seeing accurately" and "seeing wrongly" are only a difference of <strong>how much pruning</strong>, not "touching reality vs. not." Clinically this is very concrete: hallucinations, illusions, even schizophrenic delusions can be recast as an <strong>imbalance in the ratio of prediction to error</strong> (e.g. trusting your guesses too much, your senses too little). But it leaves a metaphysical unease — if all you can ever experience is the model, then "the world really is as I see it" is something you <strong>can never verify from the inside</strong>. All you ever hold is the hallucination itself.</div></details>
+<details><summary>A framework that explains everything from bacteria to flames to rocks to brains — is it profound, or just unfalsifiable?</summary><div>This is the biggest question mark over the free energy principle. Physics also chases universal laws; no one faults Newton for being "too universal." The difference: Newton's laws yield <strong>specific numbers that a single experiment can falsify</strong>, whereas the free energy principle is often criticized for being able to <strong>rationalize anything after the fact</strong> — a phenomenon shows up, and you can always back out a "it's minimizing free energy" story. A theory that's always right may be a universal truth, or merely a language of <strong>re-description</strong>. The dividing line may be whether it can squeeze out predictions <strong>other theories can't — and that can actually be falsified</strong>. That's the field's most important, and least settled, battleground right now.</div></details>
+</div>
+
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Free_energy_principle" target="_blank">Free energy principle</a> — Friston's core principle, meant to hold everything</li>
+<li><a href="https://en.wikipedia.org/wiki/Karl_J._Friston" target="_blank">Karl Friston</a> — its author, one of the most-cited neuroscientists alive</li>
+<li><a href="https://en.wikipedia.org/wiki/Predictive_coding" target="_blank">Predictive coding</a> — the cortical mechanism of "guess down, report error up"</li>
+<li><a href="https://en.wikipedia.org/wiki/Active_inference" target="_blank">Active inference</a> — perception and action from one source; expected free energy unifies exploration and exploitation</li>
+<li><a href="https://en.wikipedia.org/wiki/Hermann_von_Helmholtz" target="_blank">Hermann von Helmholtz</a> — the 19th-century origin of "perception as unconscious inference"</li>
+<li><a href="https://en.wikipedia.org/wiki/Being_You" target="_blank">Anil Seth · Being You</a> — "controlled hallucination" and the self as bodily inference</li>
+<li><a href="https://en.wikipedia.org/wiki/Good_regulator" target="_blank">Good regulator theorem</a> — "every good regulator of a system must be a model of that system"</li>
+</ul>
+</div>
+
+<footer>BigCat · Neuroscience · Topic 15 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
