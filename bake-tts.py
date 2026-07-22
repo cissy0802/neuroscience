@@ -83,10 +83,12 @@ def normalize_for_tts(text: str) -> str:
     # obviously numeric/short-word contexts; leave "A=B" style alone since
     # it's often used as inline labelling in Chinese copy.
     text = _re.sub(r"\s+=\s+", " 等于 ", text)
-    # NOTE: icon stripping is deliberately OFF for this site. Turning it on
-    # would change every hash (this repo hashes post-normalisation text) and
-    # silently re-bake ~147 existing segments on the next content push.
-    # Trade-off accepted: 🌀 in existing and new pages is still narrated.
+    # Strip decorative icons. Azure narrates them by name (🌀 → "龙卷风").
+    # Runs AFTER the ✓/✗/⚠ replacements above, which need those glyphs.
+    text = _re.sub(
+        r"[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B00-\u2BFF\uFE0F\u200D]",
+        "", text,
+    )
     return text
 
 
@@ -483,7 +485,11 @@ def process_page(
                 skipped_lang += 1
                 continue
 
-            digest = hash_text(normalize_for_tts(text))
+            # Hash the RAW text on purpose: normalisation rules keep evolving
+            # (icons, ✓/✗, math symbols) and hashing their output would silently
+            # invalidate — and re-bake — every existing segment on the next push.
+            # Old audio therefore stays as baked; new pages get current rules.
+            digest = hash_text(text)
             # SPLIT mode: each file is single-language, JS reads `data-tts`.
             # FULL mode: file holds both, JS reads `data-tts-{lang}`.
             attr_name = "data-tts" if mode == "split" else f"data-tts-{lang}"
