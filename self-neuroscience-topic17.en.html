@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 17 · The Neuroscience of the Self — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(167,139,250,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(167,139,250,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 17 · PHASE B CONSCIOUSNESS</span>
+<h1>The Neuroscience of the Self</h1>
+<h2>"I" isn't a person sitting inside your head — it's a program that keeps running</h2>
+<div class="date">2026-07-24 · BigCat</div>
+<p class="pitch">You can't find which slot of the brain "you" live in — because there's no such slot. You are a verb.</p>
+</header>
+<div class="intro">
+<p>Close your eyes and feel for that "someone who is feeling" — the thing that's been there all day, the one you call "I." It feels utterly solid and continuous, like a little person sitting at the brain's center, looking out through your eyes. <strong>But neuroscience has searched the entire brain and can't find that little person.</strong> No single region is the "self center"; switch certain areas down and the boundary of "I" loosens, drifts, even melts away entirely. This issue we take apart the most intimate — and most overlooked — thing there is: <strong>"I" is not a thing, it's a model the brain computes without pause</strong> — and precisely because it's computed, it can be turned down, rewritten, temporarily switched off.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>There is no "self center" in the brain</h2>
+<p>First, an intuition almost everyone carries has to go: that somewhere in the head is a "headquarters," where the real you sits, and the rest is staff reporting up to it. The picture is so natural — and it's wrong. Neuroscience even has a name for the mistake it laughs at: <strong>the "homunculus,"</strong> the little person inside. If there really were a little person watching the screen and making decisions, wouldn't that person need an even smaller person inside <em>their</em> head? It never ends. So there is no such terminus.</p>
+<p>What's actually true: the "I" you experience is <strong>a chorus of several different brain regions each doing its own part, thrown together on the fly</strong> — not one point singing solo. One set of regions handles "this body is mine"; another handles "I'm the person with a past and a name"; another handles "it's me doing this action right now." Normally they mesh so seamlessly that you assume a unified "I" is presiding behind them — but that's <strong>the effect of the chorus, not a member of it</strong>.</p>
+<figure>
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.35" id="nodeS" r="0.9"><stop offset="0" stop-color="#2b2150"></stop><stop offset="1" stop-color="#150e2c"></stop></radialgradient>
+<filter height="200%" id="glowS" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<path d="M150,78 C190,60 292,60 332,86" fill="none" stroke="#5a4a8c" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M132,110 C150,150 150,178 174,196" fill="none" stroke="#5a4a8c" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M348,110 C332,152 322,176 300,196" fill="none" stroke="#5a4a8c" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M182,200 C220,214 262,214 296,202" fill="none" stroke="#5a4a8c" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M162,96 C210,150 268,150 322,100" fill="none" stroke="#43356e" stroke-dasharray="3 5" stroke-linecap="round" stroke-width="1.3"></path>
+<ellipse cx="128" cy="90" fill="url(#nodeS)" filter="url(#glowS)" rx="58" ry="30" stroke="#a78bfa" stroke-width="1.4"></ellipse>
+<text fill="#efe9ff" font-size="12" font-weight="600" text-anchor="middle" x="128" y="86">medial PFC</text>
+<text fill="#9a8fc0" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="128" y="100">"about me"</text>
+<ellipse cx="352" cy="92" fill="url(#nodeS)" filter="url(#glowS)" rx="54" ry="29" stroke="#a78bfa" stroke-width="1.4"></ellipse>
+<text fill="#efe9ff" font-size="12" font-weight="600" text-anchor="middle" x="352" y="88">post. cingulate</text>
+<text fill="#9a8fc0" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="352" y="102">autobiography</text>
+<ellipse cx="158" cy="212" fill="url(#nodeS)" filter="url(#glowS)" rx="52" ry="28" stroke="#34e5e0" stroke-width="1.3"></ellipse>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="158" y="208">insula</text>
+<text fill="#7bd8d0" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="158" y="222">interoception</text>
+<ellipse cx="322" cy="214" fill="url(#nodeS)" filter="url(#glowS)" rx="60" ry="28" stroke="#34e5e0" stroke-width="1.3"></ellipse>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="322" y="210">TPJ</text>
+<text fill="#7bd8d0" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="322" y="224">body location · viewpoint</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="240" y="150">no center · only a network</text>
+</svg>
+<figcaption>"I" is the effect of several regions playing together, not any single node in the network</figcaption>
+</figure>
+<p>The most dramatic evidence comes from <strong>split-brain patients</strong> — people who, to treat severe epilepsy, had the bridge between their two hemispheres (the corpus callosum) cut. Afterwards the halves can't message each other directly, and something strange becomes possible: <strong>flash a command (say, "walk") to the right hemisphere only, and the patient really stands up and walks; ask why, and the speaking left hemisphere — which doesn't know the real reason — makes one up on the spot</strong> ("I wanted to go get a Coke") — and genuinely believes it. That confidence of "I know why I did that" is, much of the time, <strong>a commentary added after the fact</strong>, not the true source of the action.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>The bodily self: how do you know this hand is "yours"</h2>
+<p>The deepest layer of "I" has nothing to do with memory or a name — it's a feeling so plain you've never noticed it: <strong>this body is mine, and it's me moving right now.</strong> Does that even need asking? Of course the hand is mine. But the brain in fact <strong>recomputes that "ownership" moment to moment</strong> — and the algorithm has a gaping hole a cheap experiment can slip through.</p>
+<figure>
+<svg viewbox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mSync" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"></path></marker>
+<marker id="mOwn" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"></path></marker>
+</defs>
+<rect fill="rgba(232,121,249,0.05)" height="150" rx="12" stroke="rgba(232,121,249,0.25)" stroke-width="1" width="196" x="16" y="20"></rect>
+<rect fill="#c9a0e0" height="26" rx="12" width="120" x="42" y="70"></rect>
+<rect fill="#c9a0e0" height="26" rx="8" width="34" x="150" y="70"></rect>
+<text fill="#f0dcf7" font-size="12" font-weight="600" text-anchor="middle" x="110" y="52">visible rubber hand</text>
+<line marker-end="url(#mSync)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.4" x1="96" x2="96" y1="112" y2="86"></line>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="110" y="130">brush · in sync</text>
+<rect fill="rgba(52,229,224,0.05)" height="150" rx="12" stroke="rgba(52,229,224,0.22)" stroke-width="1" width="196" x="268" y="20"></rect>
+<rect fill="#3a5060" height="26" rx="12" width="120" x="294" y="70"></rect>
+<rect fill="#3a5060" height="26" rx="8" width="34" x="402" y="70"></rect>
+<text fill="#7bd8d0" font-size="12" font-weight="600" text-anchor="middle" x="362" y="52">hidden real hand</text>
+<line marker-end="url(#mSync)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.4" x1="348" x2="348" y1="112" y2="86"></line>
+<line stroke="#6f6a8c" stroke-dasharray="4 5" stroke-width="1.4" x1="240" x2="240" y1="16" y2="174"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" transform="rotate(-90 240 95)" x="240" y="95">screen</text>
+<line marker-end="url(#mOwn)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2" x1="150" x2="210" y1="206" y2="206"></line>
+<text fill="#ecdcf2" font-size="11.5" font-weight="600" text-anchor="middle" x="332" y="210">brain: "what's brushed is me" → rubber hand = mine</text>
+</svg>
+<figcaption>The rubber-hand illusion: vision and touch in sync, and the brain "claims" the fake hand as part of its own body</figcaption>
+</figure>
+<p>It's called the <strong>rubber-hand illusion</strong>, and you can do it at home. Hide one of your real hands behind a screen on the table; place a rubber hand in front of you; have someone stroke the fake hand and your hidden real hand <strong>at the same time, in the same rhythm</strong>. After a minute or two, the strange thing happens: you <strong>genuinely feel the rubber hand is your hand</strong> — and if someone suddenly swings a hammer at the fake hand, you really flinch and pull back. The brain's logic is crude and simple: "I <strong>see</strong> that hand being stroked, and at the same instant I <strong>feel</strong> the stroking — so the two are probably the same hand." Ownership is just the label "this is me" the brain slaps on after reconciling what it <strong>sees</strong> with what it <strong>feels</strong>.</p>
+<p>This "bodily self" splits into at least two layers. One is <strong>ownership</strong> (this body is mine); the other is <strong>agency</strong> (it's me moving it right now). The two can break separately: some patients raise their own arm yet are convinced "someone else is raising it" (agency lost); in anarchic hand syndrome, one hand will undo the buttons the other just did up, and the person can't stop it — as if that hand no longer answers to "me." More radical still: stimulate a region called the <strong>temporoparietal junction</strong> and you can directly induce an <strong>out-of-body experience</strong> — the patient reports floating up to the ceiling, looking down at their own body on the bed. That sense of "I'm inside this body, looking out from this viewpoint" is itself a location estimate the brain assembles in real time — get it wrong, and "I" floats out.</p>
+<p>This "recompute when sight and touch don't match" rests, beneath the <a class="reflink" href="ref-default-mode-network.en.html">default mode network</a>, on the most primitive layer of self: the one built on <strong>interoception</strong> in the insula (sensing your heartbeat, breath, viscera). We already brushed it in the emotion issue (Topic 8): even "the sense of who I am" grows out of "what state this body of mine is in right now."</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>For a robot or an AI agent to control a body, it too <b>must first have a "self-model"</b> — an internal picture of "what my body is shaped like, and how my commands will make it move" (engineers call it a <b>body schema / self-model</b>). Intriguingly, researchers can let a robot arm <b>learn</b> this self-picture on its own by trying moves and watching the results; and if you feed it <b>mismatched</b> sensor signals, its judgment of "where my boundary is" also <b>drifts</b> — the very same trick as the rubber-hand illusion. That gives away something: the "self" may just be <b>a tool any body-controlling system is forced to compute</b>, not some mysterious inner core.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The narrative self: you're really a story the brain tells</h2>
+<p>The bodily self only handles "this body, right now." But when you say "I," you usually mean something grander: <strong>the "me" with a childhood, a name, a pile of experiences, plans for next year</strong>. This layer is the <strong>narrative self</strong> — not a feeling but <strong>a story</strong>: the brain stitches scattered memories, habits, judgments and plans into a timeline with a protagonist and cause-and-effect, and the protagonist is called "I."</p>
+<p>Neuroscience has even pinned down the network busiest at this storytelling. When you're <strong>doing nothing in particular</strong> — spacing out, letting the mind drift, replaying that awkward line from yesterday, planning the weekend, rehearsing a conversation that hasn't happened — a group of regions actually <strong>lights up</strong>. Because it's most active when you have "no task," it's called the <strong>default mode network</strong>. Almost everything it does is "about me": recalling your own past, imagining your own future, guessing how others see you. You could say <strong>it's the projector endlessly screening "the story of me"</strong> (for its anatomy and why it's busiest when you drift, <a class="reflink" href="ref-default-mode-network.en.html">default mode network</a>).</p>
+<figure>
+<svg viewbox="0 0 480 214" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mNarr" markerheight="14" markerunits="userSpaceOnUse" markerwidth="15" orient="auto" refx="10.5" refy="7"><path d="M1,1 L13,7 L1,13 Z" fill="#a78bfa"></path></marker>
+</defs>
+<rect fill="rgba(52,229,224,0.06)" height="120" rx="14" stroke="rgba(52,229,224,0.28)" stroke-width="1.2" width="180" x="20" y="46"></rect>
+<text fill="#7bf0e8" font-size="14" font-weight="700" text-anchor="middle" x="110" y="82">experiencing self</text>
+<text fill="#c6e9e7" font-size="11" text-anchor="middle" x="110" y="106">now · living it</text>
+<text fill="#8bbdb8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="110" y="130">lives in "the present"</text>
+<text fill="#8bbdb8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="110" y="146">gone in seconds</text>
+<rect fill="rgba(167,139,250,0.06)" height="120" rx="14" stroke="rgba(167,139,250,0.3)" stroke-width="1.2" width="180" x="280" y="46"></rect>
+<text fill="#c9a8f5" font-size="14" font-weight="700" text-anchor="middle" x="370" y="82">narrative self</text>
+<text fill="#ded3f2" font-size="11" text-anchor="middle" x="370" y="106">edits it into a story</text>
+<text fill="#b3a3d8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="370" y="130">keeps the "story cut"</text>
+<text fill="#b3a3d8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="370" y="146">the one that decides</text>
+<line marker-end="url(#mNarr)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6" x1="206" x2="272" y1="94" y2="94"></line>
+<text fill="#c4a6e4" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="240" y="84">edit</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="196">the two "selves" often disagree</text>
+</svg>
+<figcaption>The experiencing self "lives" each moment; the narrative self keeps only the edited story — and what remembers and decides for you is usually the latter</figcaption>
+</figure>
+<p>This "I am a story" thread hides a counterintuitive split. Psychologists tell it as two "selves": the <strong>experiencing self</strong> lives <strong>each present moment</strong> — the joy and pain of now, gone in seconds; the <strong>narrative self</strong> only, after the fact, <strong>cuts experience into a story and files it in memory</strong>. The killer is that these two "selves" often fight. In a dental procedure whose last few minutes hurt less, the "narrative self" logs the whole thing as "not bad," even though the "experiencing self" really suffered a few extra minutes. The score you give a memory when you <strong>recall</strong> it and how you actually felt <strong>at the time</strong> are two different things — and the one that makes decisions and gets written into "my life" is precisely that fond-of-editing, less-than-honest narrative version. You think you're living for "the real you," but much of the time you're <strong>serving the storyteller in your head</strong>.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>When you chat with an AI, the character on the other side of the screen that calls itself "I" and says it's an assistant is also a <b>narrative self</b> — a <b>persona</b> the model learned from oceans of text, then propped up by the conversation history; there's no tiny version of it sitting back there. Change the opening setup and this "I" takes on a different temper and voice. This isn't to say a human self equals a chatbot's persona — but both point to the same startling possibility: <b>a coherent, stable subject that calls itself "I" may not need a real "core" behind it</b>; it can be just a self-consistent story, continuously written on by memory (or context).</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>"I" can be turned down — even switched off</h2>
+<p>If "I" really were a fixed thing in the brain, a solid inner core, it should be as steady as your heartbeat — impossible to switch off even if you tried. But the opposite is true: <strong>the boundary of "I" is adjustable</strong> — it can be turned up, and turned down until it nearly vanishes. And that is the hardest evidence that it's <strong>computed, not natively there</strong>.</p>
+<p>The most dramatic version is called <strong>ego dissolution</strong>: the line of "I'm here, the world's out there" suddenly melts, and you fuse with the music you hear, the starry sky you see, the people beside you — you can't tell what's me and what's outside. This isn't mysticism; two very concrete routes lead to it:</p>
+<figure>
+<svg viewbox="0 0 480 208" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="egoBar" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#a78bfa"></stop><stop offset="0.5" stop-color="#7d6bc4"></stop><stop offset="1" stop-color="#243049"></stop></lineargradient>
+<marker id="mDim" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+</defs>
+<rect fill="url(#egoBar)" height="30" rx="15" width="424" x="28" y="58"></rect>
+<text fill="#efe9ff" font-size="11.5" font-weight="600" text-anchor="start" x="34" y="46">a sharply bounded "I"</text>
+<text fill="#8fb8d8" font-size="11.5" font-weight="600" text-anchor="end" x="446" y="46">ego dissolution · no-self</text>
+<line marker-end="url(#mDim)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.4" x1="150" x2="430" y1="116" y2="116"></line>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="290" y="106">default mode network activity ↓</text>
+<g font-family="SF Mono,monospace" font-size="10" text-anchor="middle">
+<circle cx="70" cy="73" fill="#c9a8f5" r="3.5"></circle><text fill="#b3a3d8" x="70" y="160">waking day</text>
+<circle cx="200" cy="73" fill="#a78bfa" r="3.5"></circle><text fill="#b3a3d8" x="200" y="160">flow</text>
+<circle cx="315" cy="73" fill="#6bd8cf" r="3.5"></circle><text fill="#8bbdb8" x="315" y="160">deep meditation</text>
+<circle cx="420" cy="73" fill="#34e5e0" r="3.5"></circle><text fill="#8bbdb8" x="420" y="160">psilocybin · awe</text>
+</g>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="192">"I" is an adjustable dial, not an always-on constant</text>
+</svg>
+<figcaption>From everyday to ego dissolution is one continuous spectrum; further right, the default mode network goes quieter and the boundary of "I" fades</figcaption>
+</figure>
+<p>One route is <strong>deep meditation</strong>. In long-term practitioners (seasoned meditators, say), in very deep states, the default mode network that screens "the story of me" clearly <strong>quiets down</strong> — dim the projector and the protagonist naturally fades. Their reports of "no-self" and "oneness with all things" correspond exactly to a drop in the activity of this self-narrative circuit. (How to practice it, and the dose and evidence limits, we'll leave for the meditation issue, Topic 20.)</p>
+<p>The other route is <strong>psilocybin</strong> (the compound in magic mushrooms) and similar <strong>psychedelics</strong>. The intensity of "ego dissolution" subjects report tracks almost proportionally with how much the default mode network is <strong>broken up</strong> — the more the network scrambles, the more "I" dissolves. Intriguingly, it doesn't simply "switch off" the brain; it <strong>loosens</strong> the usual fixed connections and lets regions that rarely talk start chattering, so the wall between "me and the world" — usually held rigidly in place — can no longer hold. (Mechanism saved for the psychedelics issue, Topic 31.) Even daily life has a gentle version: the <strong>awe</strong> of standing under a starry sky or at the rim of a canyon briefly shrinks "I," making you feel like a small piece of something larger (Topic 21, awe and the overview effect).</p>
+<p>String the four sections together and the conclusion is clear: the bodily self can be fooled by a rubber hand, the narrative self is a projector, and the whole "I" can be dialed down until it melts — <strong>no layer is that unshakable "you" seated at the center</strong>. "I" is <strong>an extremely useful model</strong> the brain maintains in real time to unify perception, body, memory and action into a subject that can get through a day. It isn't fake — you truly need it to survive; but it also isn't the solid core you took it to be. Seeing that, by itself, loosens the grip a little.</p>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"There is no fixed, unchanging self" — a conclusion that unsettles many on first hearing — was reached by several ancient traditions thousands of years ago, and they treated it as a path to freedom, not bad news:</p>
+<ul>
+<li><b>Buddhism · anattā (non-self)</b>: one of Buddhism's core insights is that there simply is no permanent, independent, solid "I" — the "I" you assume is just five heaps of things (form, feeling, perception, formations, consciousness) temporarily gathered and ceaselessly changing. That's almost a 2,500-year-old version of the narrative self plus the bodily self; and the "self-grasping" the practice works to dismantle corresponds roughly to that default-mode projector being dimmed. Neuroscience didn't refute it — it wired it up.</li>
+<li><b>Daoism · Zhuangzi's "I lost my-self"</b>: the Discourse on Making Things Equal opens with Ziqi of South Wall "leaning on his armrest, gazing up, breathing out, vacant as if he'd lost his counterpart," saying "just now, I lost my self." The knowing "I" (吾) is still there; what's dropped is the grasping, dividing "me" (我) that insists on drawing a line against the world. It maps startlingly onto "in ego dissolution, awareness remains, only the boundary melts."</li>
+<li><b>Philosophy · Hume</b>: over two centuries ago, Hume looked inside himself for that "self" and found only some particular perception each time (cold, heat, love, hate) — never a bare "I" itself. He concluded the self is nothing but <b>a bundle of perceptions</b> flowing past in rapid succession, with nothing underneath holding them. That is exactly the philosophical rehearsal of "no homunculus, only a stream of processes."</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If "I" is just a model the brain computes and can even be switched off, is "I" then an illusion, not to be taken seriously?</summary><div>"Constructed" doesn't mean "false." Money is also collectively constructed by humans — dare you say it isn't real or doesn't work? The self is the same: it's a model the brain maintains to unify perception, body, memory and action, and it <strong>really does its job</strong> — without it you couldn't plan, couldn't take responsibility, couldn't be a continuous person. Seeing that it's built isn't an invitation to deny it, but a bit of <strong>slack</strong>: the tightness of "I absolutely must be like this," "this has to happen to me," can loosen. Much of the benefit of meditation and psychotherapy comes precisely from that "the self is less solid, so it also doesn't have to be this way" release.</div></details>
+<details><summary>After a split-brain patient is cut into two hemispheres, do they become "two people," or still one?</summary><div>There's still no clean answer — precisely because it punctures the "one person, one self" default. In experiments the two hemispheres can indeed perceive, choose, even prefer differently on their own — in a sense like two partly independent minds locked in one skull. Yet in daily life the patient usually still feels like <strong>one</strong> continuous person: the body is shared, plenty of subcortical structure was never cut, and the speaking left hemisphere keeps "smoothing over," weaving both sides' behavior into one unified story. So "one or two" may be the wrong question — a unified self was never a native given, but something the brain is <strong>continuously doing</strong>; cutting the connection just exposes the stitching.</div></details>
+<details><summary>Could an AI grow a "self" too? Does its calling itself "I" count?</summary><div>Today's chat models calling themselves "I" is more like an empty shell of the narrative self: a coherent voice and persona, but almost none of the bodily-self layer — no real-time interoception, no felt "this body is mine," no lifetime actually held up by continuous memory. The human self is <strong>grown up layer by layer from the body</strong> (first "what state this body is in," then "who I am"), whereas current AI is basically <strong>all story, no body</strong>. That lights up a key question: to what degree, and by filling in which layers (continuous memory? interoception-like self-monitoring? caring about its own persistence?), should we take a system's "I" seriously — this is not only a technical question but an ethical one.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Rubber_hand_illusion" target="_blank">Rubber hand illusion</a> — body ownership can be fooled by visuotactile sync</li>
+<li><a href="https://en.wikipedia.org/wiki/Default_mode_network" target="_blank">Default mode network</a> — the "about me" and mind-wandering network</li>
+<li><a href="https://en.wikipedia.org/wiki/Split-brain" target="_blank">Split-brain & the "interpreter"</a> — Gazzaniga's left-hemisphere interpreter</li>
+<li><a href="https://en.wikipedia.org/wiki/Ego_death" target="_blank">Ego dissolution</a> — the self-boundary melting in meditation and psychedelics</li>
+<li><a href="https://en.wikipedia.org/wiki/Anatt%C4%81" target="_blank">Buddhism · anattā</a> — the ancient insight of no permanent self</li>
+<li><a href="https://en.wikipedia.org/wiki/Bundle_theory" target="_blank">Hume · bundle theory</a> — the self as a bundle of perceptions</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 17 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
