@@ -556,8 +556,15 @@ def main():
     if args.files:
         files = [Path(f) if Path(f).is_absolute() else REPO_DIR / f for f in args.files]
     else:
+        # Discover by exclusion, not by a name pattern: this site names pages
+        # "-topicNN" / "ref-*", and any future naming would silently match zero
+        # files under a positive pattern — the workflow would still go green.
         files = sorted(
-            p for p in REPO_DIR.iterdir() if re.match(r".+-day\d+\.html$", p.name)
+            p for p in REPO_DIR.iterdir()
+            if p.suffix == ".html"
+            and not p.name.endswith(".en.html")
+            and not p.name.startswith("index.")
+            and not p.name.endswith("-index.html")
         )
 
     for path in files:
