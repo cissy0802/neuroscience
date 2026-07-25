@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>参考 · 突触可塑性 LTP/STDP — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.html">← 参考库</a>
+<header>
+<span class="ref-badge">参考库 · REFERENCE</span>
+<h1>突触可塑性<span class="en">Synaptic Plasticity · LTP / STDP</span></h1>
+<p>两个神经元之间的接头会<strong>根据用法改变自己的强度</strong>——用得对就变强、用得不对就变弱。学习和记忆能存进一坨肉里，靠的就是这件事；而这也是生物脑与人工网络之间<strong>最直接的一处对应</strong>。</p>
+</header>
+<h2>一句话版本：一起放电的，就连在一起</h2>
+<p>1949 年 Hebb 提出一个猜想，后来被概括成一句顺口的话：<strong>fire together, wire together</strong>——如果 A 神经元总是在 B 放电之前放电，也就是 A 看起来"参与促成"了 B 的放电，那么 A→B 这个接头就该变强。</p>
+<p>这个猜想的厉害之处在于它<strong>纯粹是局部的</strong>：突触只需要知道自己两端发生了什么，不需要有人从上面下达指令、也不需要知道整个网络在干嘛，就能把"经验"写进结构里。二十多年后，人们在海马上真的把它测了出来：给一束轴突一串高频刺激，之后同样的刺激引起的反应<strong>持续变大，能维持几小时到几个月</strong>——这就是<strong>长时程增强（LTP）</strong>。反过来，长时间的低频刺激会让它<strong>变弱</strong>，叫<strong>长时程抑制（LTD）</strong>。</p>
+<h2>分子上是怎么办到的</h2>
+<p>核心是一个叫 <strong>NMDA 受体</strong>的蛋白，它天生就是个<strong>"符合探测器"</strong>——只有两个条件同时满足才开门：</p>
+<dl class="kv">
+<dt>条件一：前面的神经元真的放了电</dt><dd>它释放谷氨酸（大脑最主要的兴奋性递质），谷氨酸结合到受体上。</dd>
+<dt>条件二：后面的神经元此刻也正兴奋着</dt><dd>NMDA 受体的孔道平时被一个镁离子堵着，只有后神经元自己去极化（正在兴奋）才能把这个塞子推开。</dd>
+<dt>两个都满足 → 钙离子涌进来</dt><dd>钙是那个决定性的信号。<strong>涌进来多且急 → 走增强这条路；缓慢少量地渗 → 走减弱那条路。</strong>同一个信号，靠量和速度决定方向。</dd>
+<dt>结果：改的是"收信能力"</dt><dd>增强主要靠往后膜上<strong>插更多 AMPA 受体</strong>（真正负责快速接收信号的那种），减弱就把它们撤走。突触的"音量旋钮"就是这么拧的。</dd>
+</dl>
+<h2>顺序决定方向：几十毫秒的差别</h2>
+<p>Hebb 那句话里藏着一个方向性——"A 促成了 B"，而不是"A 和 B 同时"。九十年代的实验把这一点量了出来：<strong>决定突触变强还是变弱的，是前后两个神经元放电的先后次序，容差只有几十毫秒</strong>。这就是<strong>时序依赖可塑性（STDP）</strong>。</p>
+<figure>
+<svg viewbox="0 0 470 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ax" markerheight="10" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="8" refy="5"><path d="M1,1 L9,5 L1,9 Z" fill="#6f6a8c"></path></marker>
+</defs>
+<line marker-end="url(#ax)" stroke="#6f6a8c" stroke-linecap="round" stroke-width="1.6" x1="26" x2="452" y1="122" y2="122"></line>
+<line marker-end="url(#ax)" stroke="#6f6a8c" stroke-linecap="round" stroke-width="1.6" x1="236" x2="236" y1="228" y2="20"></line>
+<path d="M240,36 C276,40 300,102 448,118" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="3"></path>
+<path d="M232,206 C198,202 176,142 48,127" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="3"></path>
+<text fill="#7bf0e8" font-size="12.5" font-weight="700" text-anchor="start" x="286" y="46">变强 · LTP</text>
+<text fill="#7bd8d0" font-family="SF Mono,monospace" font-size="10.5" text-anchor="start" x="286" y="64">前 → 后（像是它促成的）</text>
+<text fill="#f5b8fb" font-size="12.5" font-weight="700" text-anchor="end" x="190" y="192">变弱 · LTD</text>
+<text fill="#c98adf" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="190" y="210">后 → 前（迟到了，没帮上忙）</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="352" y="140">+40 毫秒</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="118" y="110">−40 毫秒</text>
+<text fill="#a78bfa" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="236" y="242">Δt ＝ 后神经元放电时刻 − 前神经元放电时刻</text>
+<text fill="#a78bfa" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" transform="rotate(-90 20 122)" x="20" y="122">突触强度的变化</text>
+</svg>
+<figcaption>STDP：前神经元早几十毫秒 → 变强；晚了 → 变弱。差之毫厘，方向相反</figcaption>
+</figure>
+<p>这条曲线其实是在做一件很聪明的事：<strong>它在检测因果，而不是相关。</strong>先发生的那个更可能是原因，突触就奖励它；迟到的那个帮不上忙，就削弱它。一个只看自己两端时间差的接头，居然实现了一点点"谁导致了谁"的判断。</p>
+<h2>为什么"长时"需要造新蛋白</h2>
+<p>增强分两段，性质完全不同：</p>
+<dl class="kv">
+<dt>早期 LTP（几十分钟）</dt><dd>只是把已有的受体挪一挪、改一改，不需要新材料。来得快，也会自己消退。</dd>
+<dt>晚期 LTP（数小时到更久）</dt><dd>需要<strong>基因表达和新蛋白合成</strong>——真的去长出新的结构。<strong>BDNF 这类神经营养因子正是在这一步起作用</strong>：它是把"临时变强"转成"长久变强"的关键推手之一。这也是运动、睡眠这些看似跟学习无关的事能影响记忆的原因——它们改的是这一步的条件。</dd>
+<dt>突触标签与捕获</dt><dd>一个精巧的解法：新蛋白是整个神经元一起造的、不认门牌号，那它怎么知道该去加固哪个突触？答案是刚被激活的突触会挂上一个<strong>临时"标签"</strong>，然后从细胞里飘过的新蛋白被这些标签<strong>捕获</strong>。于是"全局资源"和"局部记账"就对上了。</dd>
+</dl>
+<h2>不能只会变强：稳态那一半</h2>
+<p>纯 Hebb 规则有个致命毛病——<strong>它会失控</strong>：强的突触让后神经元更容易放电，放电更多又让它更强，正反馈滚下去，最后整个网络要么全饱和要么全静默。</p>
+<p>所以大脑还有一套<strong>稳态可塑性</strong>在慢时间尺度上兜底。最典型的是<strong>突触缩放</strong>：当一个神经元发现自己整体活动偏离了正常水平，它会把身上<strong>所有</strong>突触按同一个比例一起调大或调小。妙处在于"按比例"——<strong>突触之间的相对强弱（也就是存着的那份记忆）不变，变的只是整体音量。</strong>快的那套负责学，慢的这套负责别学崩。</p>
+<div class="links">
+<h3>// 被这些主线引用</h3>
+<p class="who">Topic 4 长时记忆与巩固 · Topic 5 空间导航 · Topic 18 运动如何重塑大脑（BDNF）· Topic 39 反向传播的生物合理性之争 · 未来的可塑性/康复相关期</p>
+<h3 style="margin-top:18px">// 延伸</h3>
+<p><a href="https://en.wikipedia.org/wiki/Hebbian_theory" target="_blank">Hebb 理论</a> · <a href="https://en.wikipedia.org/wiki/Long-term_potentiation" target="_blank">长时程增强 LTP</a> · <a href="https://en.wikipedia.org/wiki/Spike-timing-dependent_plasticity" target="_blank">时序依赖可塑性 STDP</a> · <a href="https://en.wikipedia.org/wiki/NMDA_receptor" target="_blank">NMDA 受体</a> · <a href="https://en.wikipedia.org/wiki/Synaptic_scaling" target="_blank">突触缩放（稳态可塑性）</a></p>
+</div>
+<footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

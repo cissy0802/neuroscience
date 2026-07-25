@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 18 · How Exercise Reshapes the Brain — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 18 · PHASE C SELF-MODULATION</span>
+<h1>How Exercise Reshapes the Brain</h1>
+<h2>The antidepressant organ might be your legs</h2>
+<div class="date">2026-07-25 · BigCat</div>
+<p class="pitch">You think exercise is something you do for your body — the body just hands the benefit over to your brain.</p>
+</header>
+<div class="intro">
+<p>Climb six flights of stairs and unlock the door out of breath, or walk briskly for forty minutes and get home, and for a little while your head is unusually clear — not a vague sense of being "energized," but the kind of clarity where you actually sit down and finish the thing you've been putting off for three days. That window isn't imaginary, and it isn't just "more blood up there" either. <strong>Every time a muscle contracts it releases a batch of molecules into the blood; several of them reach the brain and turn up the dial on the brain's ability to change itself.</strong> Exercise acting on the brain isn't a metaphor — there's a messenger, a recipient, and a downstream reaction.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Muscle is mailing letters to the brain</h2>
+<p>Muscle used to be treated as a pure engine. We now know it is also a <strong>secretory organ</strong>: every contraction releases small molecules into the bloodstream (collectively, <strong>myokines</strong>). Several of them cross into the brain, or hand their signal off at the brain's border.</p>
+<figure>
+<svg viewbox="0 0 500 232" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.32" id="mA" r="0.95"><stop offset="0" stop-color="#3a2b18"></stop><stop offset="1" stop-color="#221709"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.32" id="mB" r="0.95"><stop offset="0" stop-color="#122b30"></stop><stop offset="1" stop-color="#0a1a1e"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.32" id="mC" r="0.95"><stop offset="0" stop-color="#2b2150"></stop><stop offset="1" stop-color="#150e2c"></stop></radialgradient>
+<filter height="200%" id="gW" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="aM" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"></path></marker>
+<marker id="aC" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+</defs>
+<line marker-end="url(#aM)" stroke="#fbbf24" stroke-linecap="round" stroke-width="3" x1="118" x2="152" y1="112" y2="112"></line>
+<path d="M318,58 C342,58 336,98 352,104" fill="none" marker-end="url(#aC)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<line marker-end="url(#aC)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6" x1="318" x2="352" y1="112" y2="112"></line>
+<path d="M318,166 C342,166 336,126 352,120" fill="none" marker-end="url(#aC)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<rect fill="url(#mA)" filter="url(#gW)" height="58" rx="20" stroke="#fbbf24" stroke-width="1.4" width="110" x="8" y="83"></rect>
+<text fill="#faf0dc" font-size="14" font-weight="700" text-anchor="middle" x="63" y="108">Muscle</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="63" y="126">walk · run · lift</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="236" y="24">messengers in the blood</text>
+<rect fill="url(#mB)" filter="url(#gW)" height="40" rx="20" stroke="#34e5e0" stroke-width="1.2" width="156" x="158" y="38"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="600" text-anchor="middle" x="236" y="63">lactate (not waste)</text>
+<rect fill="url(#mB)" filter="url(#gW)" height="40" rx="20" stroke="#34e5e0" stroke-width="1.2" width="156" x="158" y="92"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="600" text-anchor="middle" x="236" y="117">irisin</text>
+<rect fill="url(#mB)" filter="url(#gW)" height="40" rx="20" stroke="#34e5e0" stroke-width="1.2" width="156" x="158" y="146"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="600" text-anchor="middle" x="236" y="171">IGF-1 · VEGF (vessels)</text>
+<rect fill="url(#mC)" filter="url(#gW)" height="66" rx="22" stroke="#a78bfa" stroke-width="1.5" width="140" x="354" y="79"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="700" text-anchor="middle" x="424" y="104">hippocampus · PFC</text>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="424" y="123">BDNF ↑</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="424" y="167">synapses become</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="424" y="183">easier to rewrite</text>
+</svg>
+<figcaption>A real pathway with a messenger and a recipient: muscle → blood → brain</figcaption>
+</figure>
+<p>The most important downstream reaction on the receiving end is called <strong>BDNF</strong> (brain-derived neurotrophic factor). In plain terms it's <strong>fertilizer for the brain</strong>: it keeps neurons alive longer, makes synapses (the junction between two neurons) sturdier, and — most importantly — makes the act of <em>strengthening a connection</em> easier in the first place (<a class="reflink" href="ref-synaptic-plasticity.en.html">synaptic plasticity</a>). The founding 1995 study found that giving rats a running wheel visibly raised BDNF in the <a class="reflink" href="ref-hippocampus.en.html">hippocampus</a>.</p>
+<p>In humans you can't open the skull, so you measure BDNF in blood: a single aerobic session does raise it. <strong>But how much "higher in blood" really means "higher in brain" is an inference, not a direct measurement</strong> — one link in this chain is not yet nailed down, and that's worth remembering.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>What makes BDNF interesting is that <b>it teaches no content at all; it only tunes how easy it is to be changed</b>. AI training has an almost exact counterpart: the <b>learning rate</b> — a dial that decides nothing about what is learned, only how big a step each update takes. Too small and nothing moves; too large and what you already knew gets shaken apart. Exercise turns that dial up for a while, opening a window in which the brain is easier to rewrite. What gets put through that window still depends on you actually learning and practising during it. <b>More plasticity ≠ smarter</b> — it only lowers the cost of learning.</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Does the hippocampus really grow new neurons?</h2>
+<p>"Adult brain cells only decline, never increase" — you've probably heard this. It roughly holds for most of the brain, with one famous exception: <strong>a small region of the hippocampus called the dentate gyrus</strong>. In rodents the case is closed: give a rat a running wheel and newborn cells in the dentate gyrus clearly increase, alongside better learning and a stronger capacity for synapses to strengthen.</p>
+<p>In humans it's messier. This is <strong>a fight still going on</strong>:</p>
+<figure>
+<svg viewbox="0 0 500 176" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="tl" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#6f6a8c"></path></marker>
+</defs>
+<line marker-end="url(#tl)" stroke="#6f6a8c" stroke-linecap="round" stroke-width="2" x1="22" x2="482" y1="66" y2="66"></line>
+<circle cx="86" cy="66" fill="#0d1f22" r="9" stroke="#34e5e0" stroke-width="2.4"></circle>
+<circle cx="248" cy="66" fill="#26102c" r="9" stroke="#e879f9" stroke-width="2.4"></circle>
+<circle cx="408" cy="66" fill="#2b2109" r="9" stroke="#fbbf24" stroke-width="2.4"></circle>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" font-weight="700" text-anchor="middle" x="86" y="42">1999 · rodent</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="11.5" font-weight="700" text-anchor="middle" x="248" y="42">2018 · human</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11.5" font-weight="700" text-anchor="middle" x="408" y="42">2025 · human</text>
+<text fill="#cfc9e6" font-size="11.5" text-anchor="middle" x="86" y="96">wheel running →</text>
+<text fill="#cfc9e6" font-size="11.5" text-anchor="middle" x="86" y="114">new dentate cells</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="86" y="134">settled</text>
+<text fill="#cfc9e6" font-size="11.5" text-anchor="middle" x="248" y="96">two top papers collide:</text>
+<text fill="#cfc9e6" font-size="11.5" text-anchor="middle" x="248" y="114">"undetectable in adults"</text>
+<text fill="#cfc9e6" font-size="11.5" text-anchor="middle" x="248" y="132">"still there at 79"</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="248" y="152">a fight over method</text>
+<text fill="#cfc9e6" font-size="11.5" text-anchor="middle" x="408" y="96">sequencing finds</text>
+<text fill="#cfc9e6" font-size="11.5" text-anchor="middle" x="408" y="114">dividing progenitors</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="408" y="134">yes — but varies hugely</text>
+</svg>
+<figcaption>Settled in rodents; in humans, a fight that isn't over</figcaption>
+</figure>
+<p>In 2018 two top-journal papers landed in the same year with opposite conclusions: one found <strong>almost no</strong> newborn neurons after adulthood, the other found them <strong>still present at seventy-nine</strong>. Much of the difference came down to method — how long the tissue sat between death and fixation determines how unreliable the markers used to spot new cells become. A 2025 study took a different route, combining single-cell gene sequencing with spatial mapping, and <strong>found actively dividing neural progenitor cells in the adult human hippocampus</strong>. It also found something important: <strong>some people have many, others almost none</strong>, and nobody yet knows why.</p>
+<p>So the honest statement is: newborn neurons probably do exist in humans, but nowhere near as abundantly as in rodents, and they vary from person to person. Their main proposed job is <strong>pattern separation</strong> — storing two very similar experiences (yesterday's parking spot and today's) separately so they don't blur into each other.</p>
+<p>Volume needs the same honesty. One much-cited trial had older adults do a year of aerobic exercise and found the anterior hippocampus about 2% larger — roughly rolling back one or two years of shrinkage. But pooling all the controlled trials gives a far more modest picture: <strong>no significant overall increase, more like "held the line against shrinking" than "grew it back."</strong> For an organ that shrinks year on year, holding the line is already a real achievement — it just isn't the same claim as "exercise makes your brain bigger."</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>The problem newborn neurons are thought to solve has a name in AI: <b>catastrophic forgetting</b>. A network trained on a new task tends to paint straight over what it learned on the old one — it only has so many parameters, and new knowledge competes with old for the same space. One family of fixes is to <b>add fresh units to the network</b>, so new material moves into new space instead of overwriting the old. Pattern separation via newborn cells is the biological version of exactly that idea: <b>rather than rewriting an old trace, hand the new experience a batch of brand-new, unclaimed cells</b>. Both are answering one question — how does a system with finite capacity keep learning without erasing itself?</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The most robust gain isn't memory — it's self-control</h2>
+<p>If you only trust one conclusion here, make it this one: the evidence that exercise improves <strong>executive function</strong> is considerably stronger than the evidence for memory.</p>
+<p>Executive function is the "management layer" run by the <a class="reflink" href="ref-prefrontal.en.html">prefrontal cortex</a> — <strong>braking</strong> (wanting to check your phone and not doing it), <strong>switching</strong> (moving from one task to another without stalling), and <strong>holding things in mind</strong> (keeping the three points you're about to make). None of it is as showy as memorising vocabulary, but you use it in most of the moments that matter in a day.</p>
+<p>It works on two timescales. <strong>Acutely</strong>: in the half-hour to hour after a single moderate session, tasks that require braking and focus improve slightly — that's the measurable version of the "clear head." <strong>Chronically</strong>: months of training bring more durable gains, and the effect is <strong>largest in children and older adults</strong>. Healthy young adults are already near the ceiling, so there's much less room to move. That isn't exercise failing; that's the test failing to detect it.</p>
+<p>Aerobic or resistance? <strong>Don't pick sides.</strong> Aerobic has the thickest evidence — it improves cardiorespiratory fitness, cerebral blood flow and vasculature at once, and the BDNF line was mostly worked out on aerobic exercise. But resistance training has independently been shown in randomised trials to improve executive function in older adults, probably via a different (IGF-1-related) route. What actually separates outcomes is never the modality; <strong>it's whether you keep doing it</strong>. An exercise you'll sustain beats a theoretically optimal one you quit in three weeks.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Antidepressant effects: which wire is it pulling?</h2>
+<p>"Exercise is good for your mood" is a true platitude. The interesting part is one layer down: <strong>what exactly is it moving?</strong></p>
+<p>First, the evidence, stated fairly. A 2024 synthesis pooling a large number of randomised trials found that walking or jogging, yoga and strength training all reduce depressive symptoms, with more intense exercise doing more. But there's an unavoidable ceiling: <strong>exercise trials can't be double-blinded</strong> — you can't keep someone from knowing they're running. Participants' expectations and researchers' expectations are baked in, so the true effect is <strong>probably smaller than the published numbers</strong>. That doesn't make it useless; it means don't treat it as a settled dose that replaces treatment.</p>
+<p>On mechanism there are several candidates, and the most counterintuitive runs like this. Chronic stress pushes an amino acid down a metabolic route toward <strong>kynurenine</strong>; kynurenine crosses the <strong>blood-brain barrier</strong> (the checkpoint around the brain that lets only certain molecules through), and its accumulation there is associated with depression. <strong>Trained muscle expresses extra enzymes that convert kynurenine, out in the bloodstream, into a different form — one that cannot cross the barrier.</strong></p>
+<figure>
+<svg viewbox="0 0 500 226" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.32" id="kA" r="0.95"><stop offset="0" stop-color="#2e1230"></stop><stop offset="1" stop-color="#1c0a1e"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.32" id="kB" r="0.95"><stop offset="0" stop-color="#0e2c33"></stop><stop offset="1" stop-color="#091a20"></stop></radialgradient>
+<filter height="200%" id="gK" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="kM" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+<marker id="kC" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+</defs>
+<line stroke="#8f89ad" stroke-dasharray="4 5" stroke-width="1.6" x1="366" x2="366" y1="14" y2="196"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="366" y="212">blood-brain barrier</text>
+<line marker-end="url(#kM)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.6" x1="130" x2="158" y1="54" y2="54"></line>
+<line marker-end="url(#kM)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.6" x1="304" x2="392" y1="54" y2="54"></line>
+<line marker-end="url(#kC)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6" x1="130" x2="158" y1="160" y2="160"></line>
+<line marker-end="url(#kC)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6" x1="336" x2="350" y1="160" y2="160"></line>
+<rect fill="url(#kA)" filter="url(#gK)" height="44" rx="20" stroke="#e879f9" stroke-width="1.3" width="122" x="8" y="32"></rect>
+<text fill="#f6dcfa" font-size="11.5" font-weight="600" text-anchor="middle" x="69" y="59">sedentary + stress</text>
+<rect fill="url(#kA)" filter="url(#gK)" height="44" rx="20" stroke="#e879f9" stroke-width="1.3" width="146" x="158" y="32"></rect>
+<text fill="#f6dcfa" font-size="12.5" font-weight="600" text-anchor="middle" x="231" y="53">kynurenine</text>
+<text fill="#c98adf" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="231" y="68">crosses the barrier</text>
+<rect fill="url(#kA)" filter="url(#gK)" height="52" rx="20" stroke="#e879f9" stroke-width="1.5" width="96" x="394" y="28"></rect>
+<text fill="#fff" font-size="13" font-weight="700" text-anchor="middle" x="442" y="50">brain</text>
+<text fill="#c98adf" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="442" y="66">mood circuits</text>
+<rect fill="url(#kB)" filter="url(#gK)" height="44" rx="20" stroke="#34e5e0" stroke-width="1.3" width="122" x="8" y="138"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="600" text-anchor="middle" x="69" y="165">trained muscle</text>
+<rect fill="url(#kB)" filter="url(#gK)" height="44" rx="20" stroke="#34e5e0" stroke-width="1.3" width="178" x="158" y="138"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="600" text-anchor="middle" x="247" y="159">kynurenic acid</text>
+<text fill="#7bd8d0" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="247" y="174">cannot cross</text>
+<text fill="#e879f9" font-size="20" font-weight="700" text-anchor="middle" x="366" y="167">✕</text>
+<text fill="#7bd8d0" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="440" y="164">held outside</text>
+</svg>
+<figcaption>Muscle as a metabolic scrubber in the periphery: turn a molecule that gets through into one that doesn't</figcaption>
+</figure>
+<p>In other words, <strong>muscle intercepts a stress metabolite out in the body on the brain's behalf</strong> — the benefit isn't "exercise made the brain secrete something happy," it's "the legs are taking out the brain's rubbish." This full causal chain was demonstrated in mice; in humans there's only correlational evidence so far. But it gives "the antidepressant organ might be your legs" a story specified down to the molecule.</p>
+<p>While we're here, one very widespread claim needs correcting. "The joy of running is endorphins" — <strong>probably wrong</strong>. Endorphin molecules are too large to cross the blood-brain barrier, so what you measure in blood says little about what's happening in the brain. In experiments, blocking mice's endocannabinoid receptors (the receptors cannabis acts on — the body makes similar molecules of its own) abolished the anxiety-reducing effect of running, while blocking opioid receptors (the endorphin route) did not. <strong>More likely it's cannabinoids you made yourself, not endorphins.</strong></p>
+<p>Two more mechanisms are in play: exercise makes the stress-hormone system less easily maxed out, and it lowers chronic low-grade inflammation throughout the body — and the link between inflammation and depression is one of the more solid findings of the past fifteen years. Finally, regular exercise weakens the kind of rumination that won't stop (going over "why am I so terrible" again and again), which corresponds to the <a class="reflink" href="ref-default-mode-network.en.html">default mode network</a> idling in overdrive.</p>
+</div>
+<div class="crossx">
+<h3>🌀 CROSSING OVER · interdisciplinary leaps</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Moving the body is the shortest route to changing the mind" — several traditions brushed up against this, and one of them was looked down on by its own school:</p>
+<ul>
+<li><b>Daoism · daoyin vs the fasting of the mind</b>: the <i>Zhuangzi</i> records an ancient health practice — "bear-hangings and bird-stretchings," animal postures turned into an exercise routine, which later grew into Hua Tuo's Five Animal Frolics. Tellingly, Zhuangzi didn't rate it: those are merely "people who nourish the body," while he preferred the bodiless "fasting of the mind." Two thousand years later the evidence sides with the practice he dismissed: <b>moving the body turns out to be one of the most direct routes to changing the mind</b>.</li>
+<li><b>Philosophy · Merleau-Ponty's embodied cognition</b>: cognition is not a computation sealed inside the skull; the body is a condition of it. That line was long treated as an elegant slogan — until the signal that makes the hippocampus grow turned out to be released by the muscles in your legs. <b>Here "the body takes part in thought" isn't a metaphor; it has molecular names.</b></li>
+<li><b>Complex systems · hormesis</b>: exercise is essentially <b>controlled damage</b> — hypoxia, oxidative stress, micro-tears in muscle fibre. The system is pushed off equilibrium, overcompensates, and comes back stronger. This is a property shared by a whole class of systems: <b>moderate perturbation strengthens; total protection makes fragile</b>. Immunity, bone and psychological resilience all follow it — which is also why "doing nothing" is never a neutral option.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// GOING DEEPER</h3>
+<details><summary>If the benefits are carried by a few molecules, could you just make an "exercise pill"?</summary><div>People are trying (targeting irisin, targeting that muscle metabolic pathway). Two obstacles. First, exercise never releases one molecule but dozens, in a particular sequence at particular concentrations — supplementing a single one often fails to reproduce the whole effect in animals. Second, exercise simultaneously changes sleep, blood glucose, blood flow, light exposure and social contact, all of which load onto the same outcome. The genuinely promising use probably isn't <strong>replacement</strong> but bridging a gap for <strong>people who can't move because of illness or injury</strong>.</div></details>
+<details><summary>If the 2018 "undetectable in adults" paper turns out to be right, how much of the above changes?</summary><div>Less than you'd think. Neurogenesis is only one form of plasticity, and it was never the sole explanation for exercise's benefits — synaptic-level change, cerebral blood flow and vasculature, white-matter integrity, inflammation and stress hormones each independently support "exercise improves cognition and mood." <strong>What would change is the narrative that newborn neurons are the protagonist, not the conclusion that exercise works.</strong> Worth noting: the claim that travels furthest in popular science is often the one standing on the shakiest evidence.</div></details>
+<details><summary>How much of exercise's antidepressant effect is placebo?</summary><div>Nobody knows the exact fraction, because <strong>the experiment can't be run</strong> — you can't keep people from knowing they're running. What you can do is use a comparison activity with the same company, structure and three-times-a-week schedule; in those studies exercise's advantage shrinks but usually survives. The deeper question is this: if part of an effect comes from the expectation of "I'm doing something for myself," <strong>does that count as a real effect?</strong> For interventions whose endpoint is subjective experience — analgesia, antidepressants — the line between placebo and real was always blurrier than elsewhere.</div></details>
+<details><summary>Why are brain-training apps so weak while moving the body works?</summary><div>Brain training trains <strong>specific skills</strong>, and skills barely transfer: practise a card-matching task and you get better at card-matching while your memory in exams and life doesn't budge. Exercise works at a different level — it doesn't teach content, it <strong>changes the conditions</strong>: blood flow, metabolism, plasticity, sleep quality, mood baseline. One edits a function inside the software; the other changes the operating environment of the whole machine. <strong>The second can't have a narrow effect, because it isn't task-specific to begin with.</strong></div></details>
+</div>
+<div class="refs">
+<h3>// FURTHER READING</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Neurobiological_effects_of_physical_exercise" target="_blank">Neurobiological effects of physical exercise</a> — overview, from molecules to behaviour</li>
+<li><a href="https://en.wikipedia.org/wiki/Brain-derived_neurotrophic_factor" target="_blank">BDNF</a> — what the brain's "fertilizer" is and how it acts</li>
+<li><a href="https://www.science.org/doi/10.1126/science.adu9575" target="_blank">Dumitru et al. 2025 · Science</a> — dividing neural progenitors found in the adult human hippocampus</li>
+<li><a href="https://www.pnas.org/doi/10.1073/pnas.1015950108" target="_blank">Erickson et al. 2011 · PNAS</a> — a year of aerobic training and anterior hippocampal volume (the much-cited trial)</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/29113943/" target="_blank">Firth et al. 2018 · NeuroImage</a> — meta-analysis: closer to "held the line" than "grew back"</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11131084/" target="_blank">Noetel et al. 2024 · BMJ</a> — network meta-analysis of exercise for depression (including the blinding limitation)</li>
+<li><a href="https://www.cell.com/fulltext/S0092-8674(14)01049-6" target="_blank">Agudelo et al. 2014 · Cell</a> — muscle reroutes kynurenine metabolism and keeps it outside the barrier</li>
+<li><a href="https://www.pnas.org/doi/10.1073/pnas.1514996112" target="_blank">Fuss et al. 2015 · PNAS</a> — the runner's high depends on cannabinoid receptors, not endorphins</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 18 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

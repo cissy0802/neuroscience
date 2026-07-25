@@ -4,7 +4,7 @@
 # Usage: ./publish.sh   (no args)
 #
 # Handles two file-layout modes:
-#   - LEGACY embedded: single  *-{day,week,book,issue}{N}.html  per topic
+#   - LEGACY embedded: single  *-{day,week,book,issue,topic}{N}.html  per topic
 #   - SPLIT bilingual: pair    *-{day,week,...}{N}.html  +  *-{...}{N}.en.html
 #
 # Guards (filesystem is source of truth, not TOPICS.md):
@@ -22,8 +22,8 @@ set -e
 
 # Collect all new (untracked + modified) HTML files matching the topic pattern.
 # Excludes index.html — that's expected to be modified, not "the new content".
-NEW_FILES=$(git status --porcelain | grep -oE '\S+-(day|week|book|issue)[0-9]+(\.en)?\.html$' | sort -u)
-[ -z "$NEW_FILES" ] && { echo "ERROR: no new *-{day,week,book,issue}{N}[.en].html in working tree"; exit 1; }
+NEW_FILES=$(git status --porcelain | grep -oE '\S+-(day|week|book|issue|topic)[0-9]+(\.en)?\.html$' | sort -u)
+[ -z "$NEW_FILES" ] && { echo "ERROR: no new *-{day,week,book,issue,topic}{N}[.en].html in working tree"; exit 1; }
 
 # Primary (Chinese) file = the non-.en one if any, else the .en one
 PRIMARY=$(echo "$NEW_FILES" | grep -v '\.en\.html$' | head -1)
@@ -31,7 +31,7 @@ PRIMARY=$(echo "$NEW_FILES" | grep -v '\.en\.html$' | head -1)
 
 PADDED_N=$(echo "$PRIMARY" | grep -oE '[0-9]+' | tail -1)
 N=$((10#$PADDED_N))
-KIND=$(echo "$PRIMARY" | grep -oE '(day|week|book|issue)')
+KIND=$(echo "$PRIMARY" | grep -oE '(day|week|book|issue|topic)')
 
 TITLE=$(grep -oE '<title>[^<]+' "$PRIMARY" | head -1 | sed 's|<title>||')
 [ -z "$TITLE" ] && TITLE="$PRIMARY"
@@ -77,9 +77,15 @@ for F in $NEW_FILES; do
     grep -q "$F" index.html || { echo "ERROR: index.html does not reference $F"; exit 1; }
   fi
 
-  # Forbidden hardcoded scripts (auto-injected by GitHub Action)
+  # Shared scripts: CLAUDE.md asks new pages to carry the 4 hub tags so the
+  # inject-comments Action has nothing to add (no extra bot commit). That
+  # Action greps before injecting, so it is idempotent and presence is safe —
+  # only a DUPLICATE tag is an actual defect.
   for s in comments.js search.js index-button.js i18n-tts.js; do
-    grep -q "$s" "$F" && { echo "ERROR: $F hardcodes $s (auto-injected, will duplicate)"; exit 1; }
+    HITS=$(grep -c "$s" "$F" || true)
+    if [ "$HITS" -gt 1 ]; then
+      echo "ERROR: $F includes $s $HITS times (duplicate shared-script tag)"; exit 1
+    fi
   done
   grep -q "← Hub" "$F" && echo "WARN: $F hardcodes ← Hub button (will be deduped, consider removing)"
 
