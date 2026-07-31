@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 24 · 预防①·抑郁与躁郁 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.redline{margin:40px 0;background:linear-gradient(135deg,rgba(251,191,36,0.09),rgba(232,121,249,0.06));border:1px solid rgba(251,191,36,0.38);border-radius:14px;padding:22px 26px}
+.redline h3{color:#fbbf24;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.redline ul{list-style:none;margin:0 0 12px}
+.redline li{color:#f2e6cf;font-size:0.93rem;line-height:1.75;margin-bottom:9px;padding-left:20px;position:relative}
+.redline li::before{content:"▲";position:absolute;left:0;top:0.3em;color:#fbbf24;font-size:0.66rem}
+.redline p{color:#e8dcc8;font-size:0.9rem;margin:0}
+.redline b{color:#fff}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 24 · PHASE C 自我调制</span>
+<h1>抑郁与躁郁</h1>
+<h2>能自己拨的那部分，和必须交出去的那部分</h2>
+<div class="date">2026-07-31 · BigCat</div>
+<p class="pitch">药几个小时就把血清素堆满了，人却要等上两三周才好转——中间这段空白，藏着抑郁真正的机制。</p>
+</header>
+<div class="intro">
+<p>"心情不好"和"抑郁"是两件事，就像"跑完步喘"和"哮喘"是两件事。前者是天气，后者是气候：它把你调节情绪的那套线路本身改了参数——于是好消息进不来，坏消息出不去，连"想开点"这个动作本身都失灵了。<strong>这一期只谈机制：脑里到底哪几条线路被改了、从外面还能拨动哪几个旋钮，以及一个更要紧的问题——什么情况下必须立刻把手从旋钮上拿开、去找人。</strong></p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>"化学失衡"塌了，可药还是有效的</h2>
+<p>六十年前有人注意到：某几种药能让情绪好转，而它们恰好动了脑内一种叫<strong>血清素</strong>的信号分子（神经元之间传话用的化学信使之一）。于是倒推出一个流传至今的结论——抑郁大概是血清素太少。这个推理本身就有毛病：阿司匹林能退烧，不代表发烧是因为你体内缺阿司匹林。</p>
+<p>2022 年一篇把几十年证据汇总起来的综述给了明确回答：<strong>没有一致证据表明抑郁由血清素浓度低或活动不足造成</strong>。测代谢产物、测受体、把血清素的原料从健康人饮食里抽走看会不会抑郁——各条路都没给出稳定支持。"化学失衡"作为<strong>病因</strong>，站不住。</p>
+<p>可几乎同时，另一篇覆盖五百多项试验的大汇总说：<strong>二十一种抗抑郁药，每一种都优于安慰剂</strong>——效应量算不上惊人，但确实存在。两件事同时为真，听着别扭，直到你去看那个时间差：</p>
+<p>这类药<strong>几小时</strong>内就把神经元之间的血清素堆高了。可病人普遍要等<strong>两到四周</strong>才见好。如果病因真是"缺货"，补上就该立刻好——像贫血补铁那样。所以真正治病的那一步，发生在这两三周里：血清素长时间偏高，推动了下游一整套慢工程——<strong>BDNF</strong>（一种像肥料一样养神经元的蛋白）上调、突触重新长出来、被慢性压力削秃的树突分支慢慢长回。药踩的是<strong>可塑性的油门</strong>，不是往空油箱里加油。（连接怎么变强变弱，<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>）</p>
+<p>氯胺酮从反面印证了这点：它绕开血清素，直接从谷氨酸那条线推突触新生，<strong>几小时</strong>就能把重度抑郁拉起来一截。快，正因为它插在离"重新长连接"更近的地方。</p>
+<p class="en-brief"><b>EN</b> The serotonin story was reverse-engineered from drugs that work, and a 2022 umbrella review found no consistent evidence that low serotonin causes depression. Yet a 500-trial meta-analysis finds all 21 antidepressants beat placebo. The resolution is the delay: serotonin rises in hours, relief takes weeks — what heals is the downstream plasticity (BDNF, synaptogenesis), not the refill. Ketamine's hours-fast action via glutamate makes the same point from the other side.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>回路上到底哪儿卡住了</h2>
+<p>既然不是某种化学品的液位问题，那是什么？现在的主流答案在<strong>回路层</strong>：几个本来互相制衡的部件，力量对比偏了。</p>
+<p><strong>报警器太灵</strong>——杏仁核对负面刺激反应更强、而且回落得慢（<a class="reflink" href="ref-amygdala.html">杏仁核</a>）。<strong>刹车松了</strong>——前额叶自上而下的调节变弱，"知道不该这么想"却按不住（<a class="reflink" href="ref-prefrontal.html">前额叶</a>）。<strong>一个开关卡在"开"</strong>——大脑中线一小块叫膝下前扣带回（25 区）的地方代谢持续偏高，有效治疗后回落；它是深部电刺激的经典靶点，不过要说清边界：早期小样本试验很亮眼，正式的大型对照试验没达到主要终点，别当成已解决的事。<strong>反刍停不下来</strong>——默认模式网络（你发呆时最活跃的那张网，<a class="reflink" href="ref-default-mode-network.html">默认模式网络</a>）更难退出，内容还偏自我参照：想的不是"这事怎么办"，是"我怎么这么糟"。</p>
+<figure>
+<svg viewbox="0 0 500 282" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t24aWeak" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="t24aHot" markerheight="14" markerunits="userSpaceOnUse" markerwidth="15" orient="auto" refx="10.5" refy="7"><path d="M1,1 L13,7 L1,13 Z" fill="#e879f9"></path></marker>
+<marker id="t24aAmb" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#fbbf24"></path></marker>
+<marker id="t24aPur" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
+</defs>
+<rect fill="rgba(52,229,224,0.09)" height="52" rx="14" stroke="#34e5e0" stroke-width="1.4" width="190" x="18" y="16"></rect>
+<text fill="#e6faf8" font-size="13.5" font-weight="700" text-anchor="middle" x="113" y="38">前额叶 · 刹车</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="113" y="56">自上而下的调节 ↓</text>
+<rect fill="rgba(167,139,250,0.10)" height="52" rx="14" stroke="#a78bfa" stroke-width="1.4" width="190" x="272" y="16"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="700" text-anchor="middle" x="367" y="38">默认模式网络</text>
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="367" y="56">自我参照的反刍 ↑</text>
+<rect fill="rgba(251,191,36,0.09)" height="52" rx="14" stroke="#fbbf24" stroke-width="1.4" width="190" x="150" y="112"></rect>
+<text fill="#fdefc8" font-size="13.5" font-weight="700" text-anchor="middle" x="245" y="134">膝下前扣带回 · 25 区</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="245" y="152">代谢卡在"开" ↑</text>
+<rect fill="rgba(232,121,249,0.09)" height="52" rx="14" stroke="#e879f9" stroke-width="1.4" width="190" x="18" y="208"></rect>
+<text fill="#fbe4fe" font-size="13.5" font-weight="700" text-anchor="middle" x="113" y="230">杏仁核 · 报警器</text>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="113" y="248">反应强 · 回落慢 ↑</text>
+<line marker-end="url(#t24aWeak)" stroke="#34e5e0" stroke-dasharray="2 6" stroke-linecap="round" stroke-width="2" x1="78" x2="78" y1="72" y2="204"></line>
+<path d="M212,226 C238,222 246,196 250,170" fill="none" marker-end="url(#t24aAmb)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M336,118 C356,104 358,92 362,74" fill="none" marker-end="url(#t24aPur)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M464,26 C496,34 496,64 466,70" fill="none" marker-end="url(#t24aHot)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" transform="rotate(-90 60 138)" x="60" y="138">控制变弱</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10.5" x="218" y="190">过度上报</text>
+<text fill="#a78bfa" font-family="SF Mono,monospace" font-size="10.5" x="286" y="98">拽进反刍</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="245" y="274">报警多 · 刹车弱 · 反刍停不下来 = 自己养自己的闭环</text>
+</svg>
+<figcaption>抑郁不在某个"点"上，在几个部件的力量对比里</figcaption>
+</figure>
+<p>用第一期的说法重讲一遍会更清楚：抑郁像<strong>先验硬化</strong>。"我做什么都没用"这个模型的权重被调得太高，高到现实证据改不动它；而它一旦成立，你就不再去试——不试就采不到反例，模型于是永远不被推翻。这个闭环，比任何一种递质都更能解释"为什么劝没有用"。</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这个闭环在 AI 里有个精确的对应。训练智能体的一套主流办法叫<b>强化学习</b>：反复去试，按结果好坏更新"这么做值不值"的估计。它有个著名的失败模式——某个动作偶然连着几次结果很差，估值被压得很低，智能体就<b>再也不选它了</b>；不选，就永远收不到"其实这次会成"的反例，那个错误的低估值从此被冻住。心理学那边的老实验"习得性无助"，近年被原作者之一亲手改写：被动其实是<b>默认反应</b>，动物真正学到的是"我能控制"——而这条信号来自前额叶：它一旦监测到自己有控制权，就反过来压住脑干里那个默认的被动开关。两边指向同一条出路：<b>解冻靠的不是说服，是制造一次真的、小的、有控制感的成功</b>。行为激活疗法为什么先让人去做最小的一件事，机制就在这儿。</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>从外面还能拨的三个旋钮</h2>
+<p>回路不好直接碰，但有三条上游是能碰的，而且各自有清楚的通路。</p>
+<p><strong>一、压力轴。</strong>遇事时下丘脑发令、垂体接力、肾上腺放出皮质醇——这套三级串联叫 HPA 轴，短期非常有用。关键在它本该<strong>自己关掉自己</strong>：皮质醇升上去以后要回头把上游的开关压下来。慢性应激下这脚刹车会变钝，皮质醇长期偏高，而海马正是执行这脚刹车的关键一站，它又对皮质醇格外脆弱——于是"刹车钝→皮质醇更高→刹车更钝"。（<a class="reflink" href="ref-hpa-axis.html">应激轴 HPA</a>）</p>
+<p><strong>二、炎症。</strong>大约四分之一的抑郁者外周炎症指标偏高。而炎症本身会让人出现一整套"生病行为"：退缩、没兴趣、嗜睡、对痛更敏感——和抑郁的症状清单重合得惊人。更有意思的是抗炎药的试验结果：在<strong>炎症本来就高的那一小群人</strong>里能看出效果，放到所有抑郁者身上就被稀释没了。这条信息很值钱——它说明<strong>抑郁不是一个病，而是若干条不同上游汇进同一个终点</strong>。</p>
+<figure>
+<svg viewbox="0 0 480 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t24bIn" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+<marker id="t24bOut" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"></path></marker>
+</defs>
+<rect fill="rgba(251,191,36,0.09)" height="48" rx="13" stroke="#fbbf24" stroke-width="1.3" width="150" x="12" y="14"></rect>
+<text fill="#fdefc8" font-size="12.5" font-weight="600" text-anchor="middle" x="87" y="34">慢性应激</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="87" y="50">皮质醇刹车变钝</text>
+<rect fill="rgba(232,121,249,0.09)" height="48" rx="13" stroke="#e879f9" stroke-width="1.3" width="150" x="12" y="96"></rect>
+<text fill="#fbe4fe" font-size="12.5" font-weight="600" text-anchor="middle" x="87" y="116">慢性炎症</text>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="87" y="132">约 1/4 的人指标偏高</text>
+<rect fill="rgba(52,229,224,0.09)" height="48" rx="13" stroke="#34e5e0" stroke-width="1.3" width="150" x="12" y="178"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="600" text-anchor="middle" x="87" y="198">节律紊乱</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="87" y="214">失眠 · 时相漂移</text>
+<path d="M164,36 C214,42 236,72 268,98" fill="none" marker-end="url(#t24bIn)" stroke="#8f89ad" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M164,122 C210,126 236,124 268,120" fill="none" marker-end="url(#t24bIn)" stroke="#8f89ad" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M164,198 C214,192 236,166 268,140" fill="none" marker-end="url(#t24bIn)" stroke="#8f89ad" stroke-linecap="round" stroke-width="2.2"></path>
+<rect fill="rgba(167,139,250,0.10)" height="86" rx="16" stroke="#a78bfa" stroke-width="1.5" width="182" x="282" y="76"></rect>
+<text fill="#efe9ff" font-size="13" font-weight="700" text-anchor="middle" x="373" y="102">同一组情绪回路</text>
+<text fill="#c4b8ea" font-size="11" text-anchor="middle" x="373" y="124">杏仁核 ↑ · 前额叶 ↓</text>
+<text fill="#c4b8ea" font-size="11" text-anchor="middle" x="373" y="144">25 区 ↑ · 反刍 ↑</text>
+<path d="M373,166 C373,182 373,192 373,204" fill="none" marker-end="url(#t24bOut)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="373" y="230">看起来一样的症状</text>
+</svg>
+<figcaption>不同的上游，同一个终点——所以"对所有人都有效"的方案本就不该存在</figcaption>
+</figure>
+<p><strong>三、节律。</strong>失眠长期被当成抑郁的<strong>症状</strong>，现在的证据说它同时是<strong>原因</strong>：失眠在先、抑郁在后是能测出来的，而针对失眠的认知行为治疗（不是安眠药）能把后续抑郁的发生率压下去。这也是三个旋钮里最容易上手的一个。</p>
+<p>剂量、时长、协议怎么排，health-longevity 那边讲；这里只交代各自动的是哪条线：运动动的是 BDNF 与海马那条（Topic 18），规律作息和晨光动的是节律与压力轴的相位（Topic 22、23），而谈话治疗动的是前额叶对反刍的那脚刹车。</p>
+<p class="en-brief"><b>EN</b> Three upstream levers with clean mechanistic paths: the HPA stress axis (chronic load blunts cortisol's own negative feedback, and the hippocampus that enforces it is itself cortisol-vulnerable); inflammation (elevated in roughly a quarter of patients — anti-inflammatories work in that subgroup and wash out across everyone else, which says depression is several upstreams converging on one endpoint); and circadian/sleep disruption (insomnia is a cause, not just a symptom — treating it with CBT-I lowers later depression incidence).</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>躁郁：与其说是情绪病，不如说是节律病</h2>
+<p>最常见的误解是把"一天里忽晴忽雨"当成双相。真正的双相是<strong>发作</strong>，单位是周，不是小时——一段时间整个人的基线被抬高或压低，然后换相。</p>
+<p>而辨识度最高的早期信号，不是"高兴"，是<strong>睡眠需求下降</strong>：只睡三四个小时，第二天不但不困，还觉得脑子特别快、点子特别多、话变密。普通失眠的人第二天是难受的；这里的关键反差是<strong>不难受</strong>。往往同时出现的还有计划膨胀、花钱和冒险变多。</p>
+<p>睡眠在这里是<strong>双向</strong>的：少睡不只是结果，它本身能<strong>把人推进</strong>躁狂。于是普通失眠那个会自己收敛的负反馈，在这里翻了个号，变成越滚越大的正反馈。</p>
+<figure>
+<svg viewbox="0 0 490 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t24cCal" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="t24cRun" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#fbbf24"></path></marker>
+</defs>
+<text fill="#34e5e0" font-family="SF Mono,monospace" font-size="11" x="14" y="16">普通失眠 · 负反馈 · 自己收敛</text>
+<rect fill="rgba(52,229,224,0.07)" height="42" rx="12" stroke="rgba(52,229,224,0.55)" stroke-width="1.2" width="128" x="14" y="28"></rect>
+<text fill="#e6faf8" font-size="12" text-anchor="middle" x="78" y="54">少睡一晚</text>
+<rect fill="rgba(52,229,224,0.07)" height="42" rx="12" stroke="rgba(52,229,224,0.55)" stroke-width="1.2" width="128" x="180" y="28"></rect>
+<text fill="#e6faf8" font-size="12" text-anchor="middle" x="244" y="54">白天很难受</text>
+<rect fill="rgba(52,229,224,0.07)" height="42" rx="12" stroke="rgba(52,229,224,0.55)" stroke-width="1.2" width="128" x="346" y="28"></rect>
+<text fill="#e6faf8" font-size="12" text-anchor="middle" x="410" y="54">今晚更想睡</text>
+<line marker-end="url(#t24cCal)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.2" x1="144" x2="174" y1="49" y2="49"></line>
+<line marker-end="url(#t24cCal)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.2" x1="310" x2="340" y1="49" y2="49"></line>
+<path d="M410,72 C404,104 96,104 80,76" fill="none" marker-end="url(#t24cCal)" stroke="#34e5e0" stroke-dasharray="3 5" stroke-linecap="round" stroke-width="1.8"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="245" y="112">睡眠压力把它拉回来</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11" x="14" y="152">转躁 · 正反馈 · 越滚越大</text>
+<rect fill="rgba(251,191,36,0.08)" height="42" rx="12" stroke="rgba(251,191,36,0.6)" stroke-width="1.2" width="128" x="14" y="164"></rect>
+<text fill="#fdefc8" font-size="12" text-anchor="middle" x="78" y="190">少睡一晚</text>
+<rect fill="rgba(251,191,36,0.08)" height="42" rx="12" stroke="rgba(251,191,36,0.6)" stroke-width="1.2" width="128" x="180" y="164"></rect>
+<text fill="#fdefc8" font-size="12" text-anchor="middle" x="244" y="190">更亢奋 · 点子多</text>
+<rect fill="rgba(251,191,36,0.08)" height="42" rx="12" stroke="rgba(251,191,36,0.6)" stroke-width="1.2" width="128" x="346" y="164"></rect>
+<text fill="#fdefc8" font-size="12" text-anchor="middle" x="410" y="190">睡眠需求更低</text>
+<line marker-end="url(#t24cRun)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.4" x1="144" x2="174" y1="185" y2="185"></line>
+<line marker-end="url(#t24cRun)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.4" x1="310" x2="340" y1="185" y2="185"></line>
+<path d="M410,208 C404,242 96,242 80,212" fill="none" marker-end="url(#t24cRun)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="245" y="250">这一圈回来，起点更高</text>
+</svg>
+<figcaption>同样是"少睡一晚"，一个会自己刹住，另一个会加速</figcaption>
+</figure>
+<p>所以双相的非药物干预重点不是"多运动多晒太阳"，而是<strong>把作息钉死</strong>：起床、进食、出门、社交的时间尽量固定，这套做法叫社会节律疗法。还有两条硬信息：双相的遗传度相当高（双生子研究常落在六到八成，明显高于抑郁）；以及<strong>抗抑郁药单用对双相是危险的</strong>，可能诱发转躁或让循环变快，指南要求在心境稳定剂的覆盖下使用。同样是"情绪低落"，走错方向的代价完全不同——这也是"我先自己买点药试试"在这里格外要命的原因。</p>
+<p class="en-brief"><b>EN</b> Bipolar disorder is episodic on the scale of weeks, not mood swinging within a day, and its most diagnostic early sign is reduced <i>need</i> for sleep — three hours and feeling sharper, not worse. Sleep loss doesn't just follow mania, it can trigger it, flipping insomnia's self-correcting negative feedback into runaway positive feedback. Hence anchoring daily rhythms (social rhythm therapy) as first-line non-drug care, high heritability, and the real danger of unopposed antidepressants inducing a switch.</p>
+</div>
+<div class="redline">
+<h3>▲ 红线 · 这些情况请把手从旋钮上拿开</h3>
+<ul>
+<li>有自杀的念头，尤其是已经出现具体的计划、时间或手段</li>
+<li>出现幻觉，或脱离现实的坚信（被害、身负特殊使命之类）</li>
+<li>连续两周以上无法工作、上学或照料自己</li>
+<li>出现"睡得少反而更亢奋"的状态并持续几天，或家人说你"变了个人"</li>
+<li>产后阶段，或正在戒酒/停药期间出现情绪骤变</li>
+</ul>
+<p>这些都超出了"再调调作息"能覆盖的范围。<b>中国大陆可拨全国统一心理援助热线 12356；有即刻危险请打 120 或直接去最近医院急诊。</b>谈话治疗具体怎么做、怎么挑，psychology 那边讲——本站只负责说清楚机制。</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<ul>
+<li><b>佛学 · 第二支箭</b>：中箭是第一支，之后那句"我怎么这么倒霉"是自己射出的第二支。抑郁的反刍差不多就是第二支箭停不下来；而正念训练里"察觉到自己正在反刍"这个动作，在影像上对应的正是默认模式网络那股自我参照被打断的一瞬。</li>
+<li><b>道家 · 无为</b>：越用力对抗失眠越睡不着——努力入睡这件事本身就是唤醒。"为者败之，执者失之"说的是同一个结构。双相的钉作息则给了它一个很现代的注脚：力气从"控制情绪"挪到"控制时间"，反而管用。</li>
+<li><b>控制论 · 负反馈失灵</b>：压力轴是标准的负反馈回路，慢性应激把传感器调钝，环路就从"稳"滑向"失控偏移"；工程上叫增益漂移，医学上叫 allostatic load——同一套数学，两个名字。而躁狂那一节的图，是同一个环号翻了个号。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>如果抑郁不是一个病，那"抗抑郁药有效"这句话到底在说什么？</summary><div>它说的是：在被同一套症状清单圈进来的一群人里，平均而言药比安慰剂好一点。平均值里藏着两种人——一部分明显获益，一部分几乎没反应。所以"有效"和"对你有效"是两个陈述，中间隔着一次<strong>试</strong>。这也解释了为什么精神科换药这么频繁：这不是医生不专业，是这个领域目前还没有"验血就知道该用哪种"的分型工具。炎症亚组是少数几个已经露头的线索。</div></details>
+<details><summary>反刍和思考，怎么区分？</summary><div>看两件事：会不会<strong>收敛</strong>，会不会<strong>产生动作</strong>。思考走向一个结论或一个下一步；反刍绕回原点，而且每绕一圈情绪更差一点。神经上也对得上：反刍时更活跃的是默认模式网络里那套自我参照的回路，而不是解决问题时该上场的那套。有个很实用的判断——问自己"我在解题，还是在自审？"如果十分钟后没有任何新的可执行的东西冒出来，那就是第二支箭。</div></details>
+<details><summary>遗传度六到八成，是不是意味着没救？</summary><div>不是。遗传度是<strong>群体里差异的分解比例</strong>，不是个人命运的比例，而且它随环境变。近视遗传度也很高，眼镜照样管用；苯丙酮尿症是纯单基因病，换个饮食就能避开大部分后果。对双相来说，高遗传度说的是"这个开关比较容易被扳动"，而<strong>扳动它的往往是可改的东西</strong>——熬夜、跨时区、酒精、擅自停药。遗传度高，反而让"守住节律"这件事的收益更大。</div></details>
+<details><summary>"改变生活方式能预防抑郁"——这个因果方向怎么保证不是反的？</summary><div>确实很容易反：抑郁本身就让人不动、睡不好、吃得差，横断面的相关几乎没有说服力。所以证据要往两个方向找。一是<strong>时间上的前后</strong>：先测失眠、几年后测抑郁发生率，并且做干预试验——治失眠能降低后续抑郁，这就比相关强得多。二是<strong>孟德尔随机化</strong>：拿人天生带的、与生活方式相关的基因变异当"天然的随机分组"，因为基因在受精那一刻就定了，不可能被后来的抑郁反过来改变。两条路指向同一结论时，因果才算站住。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://www.nature.com/articles/s41380-022-01661-0" target="_blank">Moncrieff 等 · 血清素理论的证据总览（2022）</a> — "化学失衡"作为病因为什么站不住</li>
+<li><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)32802-7/fulltext" target="_blank">Cipriani 等 · 21 种抗抑郁药的网状 meta 分析（Lancet 2018）</a> — 有效，但效应量要看清楚</li>
+<li><a href="https://en.wikipedia.org/wiki/Biology_of_depression" target="_blank">抑郁的生物学 Biology of depression</a> — 回路视角的综述入口</li>
+<li><a href="https://en.wikipedia.org/wiki/Learned_helplessness" target="_blank">习得性无助及其被改写</a> — 被动是默认，学到的其实是"我能控制"</li>
+<li><a href="https://www.bmj.com/content/384/bmj-2023-075847" target="_blank">运动治疗抑郁的网状 meta 分析（BMJ 2024）</a> — 效应真实，偏倚风险也真实</li>
+<li><a href="https://en.wikipedia.org/wiki/Interpersonal_and_social_rhythm_therapy" target="_blank">社会节律疗法 IPSRT</a> — 双相里"钉住时间"的那套做法</li>
+<li><a href="https://en.wikipedia.org/wiki/Behavioral_activation" target="_blank">行为激活 Behavioral activation</a> — 从最小的一次"我能控制"开始</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 24 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

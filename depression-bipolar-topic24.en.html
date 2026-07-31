@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 24 · Prevention ① · Depression &amp; Bipolar — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.redline{margin:40px 0;background:linear-gradient(135deg,rgba(251,191,36,0.09),rgba(232,121,249,0.06));border:1px solid rgba(251,191,36,0.38);border-radius:14px;padding:22px 26px}
+.redline h3{color:#fbbf24;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.redline ul{list-style:none;margin:0 0 12px}
+.redline li{color:#f2e6cf;font-size:0.93rem;line-height:1.75;margin-bottom:9px;padding-left:20px;position:relative}
+.redline li::before{content:"▲";position:absolute;left:0;top:0.3em;color:#fbbf24;font-size:0.66rem}
+.redline p{color:#e8dcc8;font-size:0.9rem;margin:0}
+.redline b{color:#fff}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 24 · PHASE C SELF-MODULATION</span>
+<h1>Depression &amp; Bipolar</h1>
+<h2>The part you can turn yourself, and the part you have to hand over</h2>
+<div class="date">2026-07-31 · BigCat</div>
+<p class="pitch">The drug fills your synapses with serotonin in hours, but people don't feel better for two or three weeks — that gap is where the actual mechanism hides.</p>
+</header>
+<div class="intro">
+<p>"Feeling low" and "depression" are two different things, the way "out of breath after a run" and "asthma" are two different things. One is weather; the other is climate. It changes the parameters of the circuitry that regulates mood itself — so good news can't get in, bad news can't get out, and even the act of "looking on the bright side" stops working. <strong>This issue stays at the mechanism level: which circuits actually shift, which upstream levers you can still reach from outside, and one more urgent question — when you must take your hands off the levers entirely and get help.</strong></p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>"Chemical imbalance" collapsed — and the drugs still work</h2>
+<p>Sixty years ago people noticed that a few drugs lifted mood, and that those drugs happened to act on a signalling molecule in the brain called <strong>serotonin</strong> (one of the chemical messengers neurons use to talk to each other). From that came a conclusion still repeated today: depression must be too little serotonin. The reasoning was faulty from the start — aspirin brings down a fever, which does not mean fevers are caused by an aspirin deficiency.</p>
+<p>In 2022 a review pulling together decades of evidence answered plainly: <strong>there is no consistent evidence that depression is caused by low serotonin levels or activity</strong>. Metabolite measurements, receptor studies, experimentally stripping serotonin's dietary precursor out of healthy volunteers to see whether they crash — none of it gave stable support. As an <strong>account of the cause</strong>, "chemical imbalance" does not stand.</p>
+<p>Yet almost simultaneously, another synthesis covering more than 500 trials reported that <strong>all twenty-one antidepressants beat placebo</strong> — the effect sizes aren't dramatic, but they're real. Both statements being true feels contradictory, until you look at the timing:</p>
+<p>These drugs raise serotonin between neurons within <strong>hours</strong>. Patients typically need <strong>two to four weeks</strong> to improve. If the cause were really an empty tank, refilling it should help immediately — the way iron helps anaemia. So whatever heals is what happens during those weeks: sustained high serotonin drives a slow downstream program — <strong>BDNF</strong> (a protein that acts like fertiliser for neurons) goes up, synapses regrow, dendritic branches pruned back by chronic stress slowly come back. The drug presses the <strong>plasticity accelerator</strong>; it isn't topping up a tank. (How connections strengthen and weaken: <a class="reflink" href="ref-synaptic-plasticity.en.html">synaptic plasticity</a>)</p>
+<p>Ketamine makes the same point from the other direction: it bypasses serotonin, pushes synaptogenesis straight through the glutamate line, and can lift severe depression within <strong>hours</strong> — fast precisely because it plugs in closer to the "regrow connections" step.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Where the circuit actually jams</h2>
+<p>If it isn't a fluid level, what is it? The mainstream answer today sits at the <strong>circuit level</strong>: several parts that normally hold each other in check drift out of balance.</p>
+<p><strong>The alarm is too sensitive</strong> — the amygdala responds more strongly to negative input and settles more slowly (<a class="reflink" href="ref-amygdala.en.html">amygdala</a>). <strong>The brake is loose</strong> — top-down regulation from prefrontal cortex weakens, so "I know I shouldn't think this" fails to hold (<a class="reflink" href="ref-prefrontal.en.html">prefrontal cortex</a>). <strong>One switch is stuck on</strong> — a small midline region, the subgenual anterior cingulate (area 25), runs persistently hot and cools down when treatment works; it's the classic deep brain stimulation target, though the boundary matters: early small open-label trials looked striking, the formal large controlled trial missed its primary endpoint, so don't file this as settled. <strong>Rumination won't stop</strong> — the default mode network (the one most active when you're staring into space, <a class="reflink" href="ref-default-mode-network.en.html">default mode network</a>) is harder to exit and its content skews self-referential: not "what do I do about this" but "what is wrong with me."</p>
+<figure>
+<svg viewbox="0 0 500 282" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t24aWeak" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="t24aHot" markerheight="14" markerunits="userSpaceOnUse" markerwidth="15" orient="auto" refx="10.5" refy="7"><path d="M1,1 L13,7 L1,13 Z" fill="#e879f9"></path></marker>
+<marker id="t24aAmb" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#fbbf24"></path></marker>
+<marker id="t24aPur" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
+</defs>
+<rect fill="rgba(52,229,224,0.09)" height="52" rx="14" stroke="#34e5e0" stroke-width="1.4" width="190" x="18" y="16"></rect>
+<text fill="#e6faf8" font-size="13.5" font-weight="700" text-anchor="middle" x="113" y="38">prefrontal · the brake</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="113" y="56">top-down control ↓</text>
+<rect fill="rgba(167,139,250,0.10)" height="52" rx="14" stroke="#a78bfa" stroke-width="1.4" width="190" x="272" y="16"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="700" text-anchor="middle" x="367" y="38">default mode network</text>
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="367" y="56">self-referential rumination ↑</text>
+<rect fill="rgba(251,191,36,0.09)" height="52" rx="14" stroke="#fbbf24" stroke-width="1.4" width="190" x="150" y="112"></rect>
+<text fill="#fdefc8" font-size="13.5" font-weight="700" text-anchor="middle" x="245" y="134">subgenual ACC · area 25</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="245" y="152">metabolism stuck "on" ↑</text>
+<rect fill="rgba(232,121,249,0.09)" height="52" rx="14" stroke="#e879f9" stroke-width="1.4" width="190" x="18" y="208"></rect>
+<text fill="#fbe4fe" font-size="13.5" font-weight="700" text-anchor="middle" x="113" y="230">amygdala · the alarm</text>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="113" y="248">reacts hard · settles slow ↑</text>
+<line marker-end="url(#t24aWeak)" stroke="#34e5e0" stroke-dasharray="2 6" stroke-linecap="round" stroke-width="2" x1="78" x2="78" y1="72" y2="204"></line>
+<path d="M212,226 C238,222 246,196 250,170" fill="none" marker-end="url(#t24aAmb)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M336,118 C356,104 358,92 362,74" fill="none" marker-end="url(#t24aPur)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M464,26 C496,34 496,64 466,70" fill="none" marker-end="url(#t24aHot)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" transform="rotate(-90 60 138)" x="60" y="138">control weakens</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10.5" x="128" y="192">over-reports</text>
+<text fill="#a78bfa" font-family="SF Mono,monospace" font-size="10.5" x="240" y="96">pulls into loop</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="245" y="274">loud alarm · weak brake · endless loop = a circuit that feeds itself</text>
+</svg>
+<figcaption>Depression doesn't sit at a point — it sits in the balance of power between parts</figcaption>
+</figure>
+<p>Retold in the language of Topic 1, it gets clearer: depression looks like a <strong>hardened prior</strong>. The model "nothing I do matters" is weighted so heavily that evidence can't move it — and once it holds, you stop trying; stop trying and you never sample a counterexample, so the model is never overturned. That loop explains "why reassurance doesn't work" far better than any neurotransmitter does.</p>
+<div class="ai">
+<h4>The AI read</h4>
+<p>The loop has an exact counterpart in AI. One mainstream way to train agents is <b>reinforcement learning</b>: try things repeatedly, update your estimate of "is this worth doing" from how they turn out. It has a famous failure mode — an action happens to come out badly a few times in a row, its estimated value gets pushed low, and the agent <b>never picks it again</b>; never picking it means never receiving the counterexample, so the wrong low estimate is frozen in place. Meanwhile the old psychology experiment on "learned helplessness" was rewritten by one of its own authors: passivity turns out to be the <b>default</b>, and what animals actually learn is <i>that they have control</i> — a signal coming from prefrontal cortex, which, once it detects control, reaches down and suppresses the brainstem's default passivity switch. Both sides point at the same exit: <b>you don't thaw it by arguing, you thaw it by manufacturing one real, small experience of control</b>. That's the mechanism behind why behavioural activation starts with the tiniest possible action.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Three levers you can still reach from outside</h2>
+<p>The circuit is hard to touch directly, but three upstream lines are reachable, each with a clean pathway.</p>
+<p><strong>One: the stress axis.</strong> Under threat the hypothalamus signals, the pituitary relays, the adrenal glands release cortisol — a three-stage cascade called the HPA axis, extremely useful in the short term. The key feature is that it's supposed to <strong>shut itself off</strong>: risen cortisol reaches back and presses the upstream switches down. Chronic stress blunts that brake, cortisol stays elevated, and the hippocampus — a key station enforcing the brake — is itself unusually vulnerable to cortisol. So: blunter brake → higher cortisol → blunter brake. (<a class="reflink" href="ref-hpa-axis.en.html">the HPA axis</a>)</p>
+<p><strong>Two: inflammation.</strong> Roughly a quarter of depressed patients have elevated peripheral inflammatory markers. Inflammation on its own produces a whole package of "sickness behaviour": withdrawal, loss of interest, sleepiness, heightened pain sensitivity — overlapping the depression symptom list to a startling degree. More interesting is what anti-inflammatory trials show: an effect in <strong>the subgroup whose inflammation was high to begin with</strong>, which washes out when you average across all depressed people. That's a valuable piece of information — it means <strong>depression isn't one illness but several upstreams draining into one endpoint</strong>.</p>
+<figure>
+<svg viewbox="0 0 480 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t24bIn" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+<marker id="t24bOut" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"></path></marker>
+</defs>
+<rect fill="rgba(251,191,36,0.09)" height="48" rx="13" stroke="#fbbf24" stroke-width="1.3" width="150" x="12" y="14"></rect>
+<text fill="#fdefc8" font-size="12.5" font-weight="600" text-anchor="middle" x="87" y="34">chronic stress</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="87" y="50">cortisol brake blunted</text>
+<rect fill="rgba(232,121,249,0.09)" height="48" rx="13" stroke="#e879f9" stroke-width="1.3" width="150" x="12" y="96"></rect>
+<text fill="#fbe4fe" font-size="12.5" font-weight="600" text-anchor="middle" x="87" y="116">chronic inflammation</text>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="87" y="132">raised in about 1/4</text>
+<rect fill="rgba(52,229,224,0.09)" height="48" rx="13" stroke="#34e5e0" stroke-width="1.3" width="150" x="12" y="178"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="600" text-anchor="middle" x="87" y="198">rhythm disruption</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="87" y="214">insomnia · phase drift</text>
+<path d="M164,36 C214,42 236,72 268,98" fill="none" marker-end="url(#t24bIn)" stroke="#8f89ad" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M164,122 C210,126 236,124 268,120" fill="none" marker-end="url(#t24bIn)" stroke="#8f89ad" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M164,198 C214,192 236,166 268,140" fill="none" marker-end="url(#t24bIn)" stroke="#8f89ad" stroke-linecap="round" stroke-width="2.2"></path>
+<rect fill="rgba(167,139,250,0.10)" height="86" rx="16" stroke="#a78bfa" stroke-width="1.5" width="182" x="282" y="76"></rect>
+<text fill="#efe9ff" font-size="13" font-weight="700" text-anchor="middle" x="373" y="102">one mood circuit</text>
+<text fill="#c4b8ea" font-size="11" text-anchor="middle" x="373" y="124">amygdala ↑ · prefrontal ↓</text>
+<text fill="#c4b8ea" font-size="11" text-anchor="middle" x="373" y="144">area 25 ↑ · rumination ↑</text>
+<path d="M373,166 C373,182 373,192 373,204" fill="none" marker-end="url(#t24bOut)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="373" y="230">symptoms that look alike</text>
+</svg>
+<figcaption>Different upstreams, one endpoint — which is why a protocol that works for everyone was never going to exist</figcaption>
+</figure>
+<p><strong>Three: rhythm.</strong> Insomnia was long treated as a <strong>symptom</strong> of depression; the evidence now says it is also a <strong>cause</strong>. Insomnia first and depression later is measurable, and treating the insomnia specifically (with cognitive behavioural therapy, not sleeping pills) lowers the later incidence of depression. Of the three levers, it's also the easiest to get hold of.</p>
+<p>Doses, durations and how to sequence any of this belong to health-longevity; here we only pin down which line each knob pulls. Exercise pulls the BDNF-and-hippocampus line (Topic 18). Regular timing and morning light pull the phase of the clock and the stress axis (Topics 22, 23). Talking therapy pulls the prefrontal brake on rumination.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Bipolar: less a mood disorder than a rhythm disorder</h2>
+<p>The commonest misreading is to call a day of ups and downs "bipolar." Real bipolar disorder is <strong>episodic</strong>, measured in weeks rather than hours — a stretch of time in which the whole baseline is lifted or pressed down, then switches.</p>
+<p>And the early sign with the most diagnostic value isn't happiness, it's <strong>reduced need for sleep</strong>: three or four hours, and the next day you're not tired — your mind feels faster, ideas come thicker, speech speeds up. Someone with ordinary insomnia feels awful the next day; here the telling contrast is that <strong>it doesn't feel bad</strong>. Inflating plans, spending, and risk-taking often ride along with it.</p>
+<p>Sleep here runs <strong>both ways</strong>: losing it isn't only a consequence, it can <strong>push someone into</strong> mania. So the self-correcting negative feedback of ordinary insomnia flips sign and becomes runaway positive feedback.</p>
+<figure>
+<svg viewbox="0 0 490 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t24cCal" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="t24cRun" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#fbbf24"></path></marker>
+</defs>
+<text fill="#34e5e0" font-family="SF Mono,monospace" font-size="11" x="14" y="16">ordinary insomnia · negative feedback · self-correcting</text>
+<rect fill="rgba(52,229,224,0.07)" height="42" rx="12" stroke="rgba(52,229,224,0.55)" stroke-width="1.2" width="128" x="14" y="28"></rect>
+<text fill="#e6faf8" font-size="12" text-anchor="middle" x="78" y="54">one short night</text>
+<rect fill="rgba(52,229,224,0.07)" height="42" rx="12" stroke="rgba(52,229,224,0.55)" stroke-width="1.2" width="128" x="180" y="28"></rect>
+<text fill="#e6faf8" font-size="12" text-anchor="middle" x="244" y="54">a rough day</text>
+<rect fill="rgba(52,229,224,0.07)" height="42" rx="12" stroke="rgba(52,229,224,0.55)" stroke-width="1.2" width="128" x="346" y="28"></rect>
+<text fill="#e6faf8" font-size="12" text-anchor="middle" x="410" y="54">sleepier tonight</text>
+<line marker-end="url(#t24cCal)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.2" x1="144" x2="174" y1="49" y2="49"></line>
+<line marker-end="url(#t24cCal)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.2" x1="310" x2="340" y1="49" y2="49"></line>
+<path d="M410,72 C404,104 96,104 80,76" fill="none" marker-end="url(#t24cCal)" stroke="#34e5e0" stroke-dasharray="3 5" stroke-linecap="round" stroke-width="1.8"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="245" y="112">sleep pressure pulls it back</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11" x="14" y="152">switching into mania · positive feedback · runaway</text>
+<rect fill="rgba(251,191,36,0.08)" height="42" rx="12" stroke="rgba(251,191,36,0.6)" stroke-width="1.2" width="128" x="14" y="164"></rect>
+<text fill="#fdefc8" font-size="12" text-anchor="middle" x="78" y="190">one short night</text>
+<rect fill="rgba(251,191,36,0.08)" height="42" rx="12" stroke="rgba(251,191,36,0.6)" stroke-width="1.2" width="128" x="180" y="164"></rect>
+<text fill="#fdefc8" font-size="12" text-anchor="middle" x="244" y="190">wired · ideas race</text>
+<rect fill="rgba(251,191,36,0.08)" height="42" rx="12" stroke="rgba(251,191,36,0.6)" stroke-width="1.2" width="128" x="346" y="164"></rect>
+<text fill="#fdefc8" font-size="12" text-anchor="middle" x="410" y="190">needs even less sleep</text>
+<line marker-end="url(#t24cRun)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.4" x1="144" x2="174" y1="185" y2="185"></line>
+<line marker-end="url(#t24cRun)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.4" x1="310" x2="340" y1="185" y2="185"></line>
+<path d="M410,208 C404,242 96,242 80,212" fill="none" marker-end="url(#t24cRun)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="245" y="250">round the loop, the starting point is higher</text>
+</svg>
+<figcaption>The same short night: one loop brakes itself, the other accelerates</figcaption>
+</figure>
+<p>So the non-drug priority in bipolar isn't "more exercise, more sunlight" — it's <strong>nailing the daily schedule down</strong>: waking, eating, going out and seeing people at times that stay fixed, an approach known as social rhythm therapy. Two more hard facts: bipolar's heritability is high (twin studies commonly land in the 60–80% range, well above depression's); and <strong>antidepressants unopposed are dangerous in bipolar</strong>, capable of triggering a switch into mania or speeding up cycling, which is why guidelines require them to be covered by a mood stabiliser. The same low mood, but the cost of walking in the wrong direction is completely different — which is exactly what makes "I'll just try something myself first" so risky here.</p>
+</div>
+<div class="redline">
+<h3>▲ RED LINES · TAKE YOUR HANDS OFF THE LEVERS</h3>
+<ul>
+<li>Thoughts of suicide, especially once there's a specific plan, time or means</li>
+<li>Hallucinations, or convictions detached from reality (persecution, a special mission)</li>
+<li>Two weeks or more of being unable to work, study or care for yourself</li>
+<li>Days of "sleeping less and feeling more wired," or people close to you saying you've become a different person</li>
+<li>The postpartum period, or sudden mood shifts while withdrawing from alcohol or stopping medication</li>
+</ul>
+<p>None of that is covered by "tune the schedule a bit more." <b>Get professional help; if there is immediate danger, call your local emergency number or go to the nearest emergency department.</b> (In mainland China, the national mental health support line is 12356; emergency services are 120.) How talking therapy works and how to choose it belongs to psychology — this site only handles the mechanism.</p>
+</div>
+<div class="crossx">
+<h3>🌀 CROSSING OVER · INTERDISCIPLINARY</h3>
+<ul>
+<li><b>Buddhism · the second arrow</b>: being struck is the first arrow; the "why does this always happen to me" that follows is the second one, which you fire yourself. Depressive rumination is roughly the second arrow that won't stop — and in imaging, the moment of "noticing that I'm ruminating" cultivated in mindfulness training corresponds to exactly that self-referential stream in the default mode network being interrupted.</li>
+<li><b>Daoism · wu wei</b>: the harder you fight insomnia the less you sleep — trying to fall asleep is itself an arousal. "He who acts on it ruins it; he who grasps it loses it" describes the same structure. Anchoring daily rhythm in bipolar gives it a very modern footnote: move the effort off "controlling mood" and onto "controlling time," and it starts to work.</li>
+<li><b>Cybernetics · a negative feedback loop losing its grip</b>: the stress axis is a textbook negative feedback loop; chronic load desensitises the sensors and the loop slides from stable to drifting. Engineers call it gain drift, medicine calls it allostatic load — one piece of mathematics under two names. And the mania figure above is the same loop with its sign flipped.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// GOING DEEPER</h3>
+<details><summary>If depression isn't one illness, what does "antidepressants work" actually claim?</summary><div>It claims that among people gathered by one symptom checklist, on average the drug does slightly better than placebo. Inside that average are two kinds of people — some who benefit clearly, some who barely respond. So "it works" and "it works for you" are two statements with a <strong>trial</strong> in between them. That's also why psychiatry switches medications so often: not unprofessionalism, but a field that still has no blood test telling you which subtype you are. The inflammation subgroup is one of the few leads that has surfaced.</div></details>
+<details><summary>How do you tell rumination from thinking?</summary><div>Look at two things: does it <strong>converge</strong>, and does it <strong>produce an action</strong>. Thinking moves toward a conclusion or a next step; rumination circles back to the start, and each lap leaves you slightly worse. The neural picture matches: what's more active in rumination is the self-referential circuitry of the default mode network, not the machinery that should be on duty for problem-solving. A practical test — ask yourself "am I solving, or auditing?" If ten minutes have produced nothing executable, it's the second arrow.</div></details>
+<details><summary>Heritability of 60–80% — does that mean nothing can be done?</summary><div>No. Heritability is a <strong>decomposition of variation within a population</strong>, not a proportion of any individual's fate, and it shifts with the environment. Myopia is highly heritable and glasses still work; phenylketonuria is a single-gene disease that a change of diet largely defuses. For bipolar, high heritability says the switch is relatively easy to flip — and <strong>what flips it is usually something modifiable</strong>: all-nighters, time zones, alcohol, stopping medication on your own. High heritability makes protecting your rhythm worth more, not less.</div></details>
+<details><summary>"Lifestyle change prevents depression" — how do you know the causal arrow doesn't point the other way?</summary><div>It very easily could: depression itself makes people move less, sleep worse and eat badly, so cross-sectional correlation proves almost nothing. Evidence has to come from two directions. First, <strong>temporal order plus intervention</strong>: measure insomnia now, depression incidence years later — and then treat the insomnia and watch later depression fall, which is far stronger than correlation. Second, <strong>Mendelian randomisation</strong>: use inherited genetic variants associated with a lifestyle factor as a natural random assignment, since your genes were fixed at conception and cannot have been altered by a depression that came later. When both roads point the same way, causation starts to stand up.</div></details>
+</div>
+<div class="refs">
+<h3>// FURTHER READING</h3>
+<ul>
+<li><a href="https://www.nature.com/articles/s41380-022-01661-0" target="_blank">Moncrieff et al. · The serotonin theory of depression: an umbrella review (2022)</a> — why "chemical imbalance" fails as an account of cause</li>
+<li><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)32802-7/fulltext" target="_blank">Cipriani et al. · Network meta-analysis of 21 antidepressants (Lancet 2018)</a> — effective, but read the effect sizes</li>
+<li><a href="https://en.wikipedia.org/wiki/Biology_of_depression" target="_blank">Biology of depression</a> — entry point to the circuit-level picture</li>
+<li><a href="https://en.wikipedia.org/wiki/Learned_helplessness" target="_blank">Learned helplessness, and its rewrite</a> — passivity is the default; what's learned is control</li>
+<li><a href="https://www.bmj.com/content/384/bmj-2023-075847" target="_blank">Exercise for depression: network meta-analysis (BMJ 2024)</a> — the effect is real, so is the risk of bias</li>
+<li><a href="https://en.wikipedia.org/wiki/Interpersonal_and_social_rhythm_therapy" target="_blank">Interpersonal and social rhythm therapy</a> — the "nail down the clock" approach in bipolar</li>
+<li><a href="https://en.wikipedia.org/wiki/Behavioral_activation" target="_blank">Behavioural activation</a> — starting from one small experience of control</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 24 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
