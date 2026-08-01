@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 25 · 预防②·阿尔茨海默与神经退行 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 25 · PHASE C 自我调制</span>
+<h1>阿尔茨海默与神经退行</h1>
+<h2>病理归病理，症状归症状——中间那道缓冲才是你能动的</h2>
+<div class="date">2026-08-01 · BigCat</div>
+<p class="pitch">有位修女活到 101 岁，思路清楚、对答如流。解剖后发现，她的脑子里塞满了阿尔茨海默的病变。</p>
+</header>
+<div class="intro">
+<p>关于这个病，大多数人心里只有两句话："到时候再说"和"看命"。过去十来年最扎实的一批结果恰好把这两句都动摇了——<strong>脑子里堆了多少病变，和你表现出多重的症状，是两件可以脱钩的事；中间那道缓冲，有一部分捏在你自己手里。</strong>这一期只讲机制：病变何时开始悄悄堆、堆了为什么不一定发作、真能拨的旋钮有几个，以及那些"提前二十年测出来"的检测里哪些是真进展。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>满脑病变，却清醒到 101 岁</h2>
+<p>1986 年，一位流行病学家找了 678 位天主教修女，跟踪她们的余生：每年做认知测试，去世后捐出大脑。这是研究者梦寐以求的样本——同样的作息、伙食、社群，把一大堆干扰因素天然抹平了。</p>
+<p>其中一位活到 101 岁，去世前的认知测试成绩依然漂亮。可打开她的大脑，里面全是<strong>斑块</strong>和<strong>缠结</strong>——阿尔茨海默的两样标志病变：一种是细胞外面结成块的蛋白垃圾，另一种是细胞里面缠成团的乱线。按病理标准她是重症患者，按她本人的表现不是。</p>
+<p>这不是孤例。很多老人去世后被发现脑内病变已经够诊断标准，生前却从没痴呆过。于是有了一个专门的概念：<strong>认知储备</strong>。</p>
+<p>要分清两样东西。<strong>脑储备</strong>是硬件的量——脑子多大、神经元和突触有多少。<strong>认知储备</strong>是软件的灵活度——同一件事，网络还能不能换条路办成。打个比方：不是主干道更宽，而是这座城市的支路和小巷更多，某条主干瘫了，车流还能绕过去，外面看着照样通。</p>
+<figure>
+<svg viewBox="0 0 500 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t25aAx" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#5b5678"></path></marker>
+<marker id="t25aGap" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#a78bfa"></path></marker>
+</defs>
+<line stroke="#5b5678" stroke-width="1.6" x1="60" x2="60" y1="30" y2="210"></line>
+<line marker-end="url(#t25aAx)" stroke="#5b5678" stroke-width="1.6" x1="60" x2="474" y1="210" y2="210"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" transform="rotate(-90 26 120)" x="26" y="120">认知功能</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="268" y="252">脑内病理堆积 →</text>
+<line stroke="#e879f9" stroke-dasharray="4 5" stroke-opacity="0.7" stroke-width="1.5" x1="60" x2="470" y1="160" y2="160"></line>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="11" text-anchor="end" x="468" y="152">临床诊断阈值</text>
+<path d="M60,50 C140,55 185,95 225,160 C255,200 290,212 330,216" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="3"></path>
+<path d="M60,44 C210,50 300,74 350,130 C372,158 388,192 402,214" fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-width="3"></path>
+<line stroke="#34e5e0" stroke-dasharray="3 4" stroke-opacity="0.5" stroke-width="1.3" x1="225" x2="225" y1="160" y2="210"></line>
+<line stroke="#fbbf24" stroke-dasharray="3 4" stroke-opacity="0.5" stroke-width="1.3" x1="358" x2="358" y1="160" y2="210"></line>
+<circle cx="225" cy="160" fill="#34e5e0" r="4.5"></circle>
+<circle cx="358" cy="160" fill="#fbbf24" r="4.5"></circle>
+<line marker-end="url(#t25aGap)" stroke="#a78bfa" stroke-width="1.6" x1="292" x2="232" y1="192" y2="192"></line>
+<line marker-end="url(#t25aGap)" stroke="#a78bfa" stroke-width="1.6" x1="292" x2="352" y1="192" y2="192"></line>
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="292" y="184">储备买来的时间</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="225" y="228">低储备</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="358" y="228">高储备</text>
+</svg>
+<figcaption>同样的病理堆积，高储备的人更晚被顶穿阈值——但顶穿之后掉得更陡</figcaption>
+</figure>
+<p>受教育年限长、工作复杂、会两种语言、社交活跃、老了还在学新东西，都和更高的储备相关——但要说清边界：这多是观察出来的<strong>相关</strong>，不是随机分组做出来的<strong>因果</strong>。</p>
+<p>还有反直觉的一面：<strong>高储备的人一旦真出现症状，往往衰退得更快。</strong>他们靠绕路撑着，撑到病变堆得更高才被顶穿——那时可绕的路已所剩无几，塌起来就是断崖。储备买的是时间，不是免疫。（这条病最早侵袭的地方是内嗅皮层和海马，也就是负责"把新经历写进记忆"的那一片，<a class="reflink" href="ref-hippocampus.html">海马与内嗅</a>）</p>
+<p class="en-brief"><b>EN</b> The Nun Study found people whose brains were full of plaques and tangles yet who stayed cognitively sharp into their hundreds — pathology and symptoms can decouple. The buffer is called cognitive reserve: not a bigger brain, but a network with more alternative routes. The flip side: high-reserve people decline faster once symptoms finally appear, because by then the damage is already enormous. Reserve buys time, not immunity.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>人工神经网络里有个现成的同构：<b>剪枝容错</b>。把训练好的网络随机砍掉一部分连接，性能常常几乎不掉——因为它用的是<b>分布式表示</b>：一个概念不存在某个单元里，而是摊在成千上万个单元的共同活动里，砍掉一些，剩下的还能凑出来。但砍过某个比例，性能会<b>断崖式</b>塌下去。这条曲线的形状——长时间几乎无感、然后突然崩——和认知储备的临床观察一模一样。</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>淀粉样假说：塌了一半，又被两种药救回来一半</h2>
+<p>先认识那两样垃圾。<strong>Aβ（β-淀粉样蛋白）</strong>是一个正常膜蛋白被酶剪下来的碎片，剪法不对就特别爱互相黏，黏多了在细胞外结成斑块。<strong>tau 蛋白</strong>本是神经元内部"轨道"的枕木，被过度修饰后从轨道上掉下来缠成团，轨道随之垮掉。</p>
+<p>1992 年提出的<strong>淀粉样级联假说</strong>说：Aβ 是最上游的扳机，它扣下去，才依次带出 tau、突触死亡、然后是症状。这个故事统治了三十年。</p>
+<p>然后它开始漏。第一个漏点：<strong>斑块的多少和症状的轻重对不上</strong>——就像开头那位修女；反倒是 tau 缠结的分布和症状对得相当准。第二个漏点更狠：二十多年里几十个清除 Aβ 的药一个接一个失败。到 2020 年前后，"淀粉样假说已死"几乎成了口头禅。</p>
+<p>转折发生在最近三年。<strong>lecanemab</strong>（2023 年 FDA 完全批准）在 18 个月的三期试验里把认知与功能量表的恶化速度减慢了约 <strong>27%</strong>；<strong>donanemab</strong> 2024 年 7 月获批，方向一致。三十年来第一次，清除 Aβ 真的改变了病程。</p>
+<p>这个结果两头都别站。<strong>往回看，它证明 Aβ 确实在因果链上</strong>——若只是无辜的旁观者，清掉它不该有任何效果。<strong>往前看，效应量小得清醒</strong>：27% 换算成绝对差是 18 分量表上的 0.45 分，很多医生认为病人和家属未必感受得到。代价也不低：这类药会引起 <strong>ARIA</strong>（脑水肿和微出血），lecanemab 组约 12.6% 和 17.3%，donanemab 更高（约 24% 和 31.4%）；某个特定基因型的携带者风险更大。</p>
+<figure>
+<svg viewBox="0 0 500 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t25bAx" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+</defs>
+<line marker-end="url(#t25bAx)" stroke="#8f89ad" stroke-width="1.8" x1="24" x2="482" y1="140" y2="140"></line>
+<rect fill="rgba(251,191,36,0.10)" height="50" rx="14" stroke="#fbbf24" stroke-width="1.3" width="104" x="26" y="20"></rect>
+<text fill="#fdefc8" font-size="12.5" font-weight="700" text-anchor="middle" x="78" y="41">Aβ 开始沉积</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="78" y="58">细胞外结块</text>
+<rect fill="rgba(232,121,249,0.10)" height="50" rx="14" stroke="#e879f9" stroke-width="1.3" width="104" x="144" y="20"></rect>
+<text fill="#fbe4fe" font-size="12.5" font-weight="700" text-anchor="middle" x="196" y="41">tau 缠结扩散</text>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="196" y="58">细胞内缠团</text>
+<rect fill="rgba(167,139,250,0.10)" height="50" rx="14" stroke="#a78bfa" stroke-width="1.3" width="104" x="262" y="20"></rect>
+<text fill="#efe9ff" font-size="12.5" font-weight="700" text-anchor="middle" x="314" y="41">突触丢失</text>
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="314" y="58">脑区萎缩</text>
+<rect fill="rgba(52,229,224,0.10)" height="50" rx="14" stroke="#34e5e0" stroke-width="1.3" width="104" x="380" y="20"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="700" text-anchor="middle" x="432" y="41">记性明显变差</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="432" y="58">这才被诊断</text>
+<line stroke="#fbbf24" stroke-width="1.4" x1="78" x2="78" y1="70" y2="134"></line>
+<line stroke="#e879f9" stroke-width="1.4" x1="196" x2="196" y1="70" y2="134"></line>
+<line stroke="#a78bfa" stroke-width="1.4" x1="314" x2="314" y1="70" y2="134"></line>
+<line stroke="#34e5e0" stroke-width="1.4" x1="432" x2="432" y1="70" y2="134"></line>
+<circle cx="78" cy="140" fill="#fbbf24" r="5"></circle>
+<circle cx="196" cy="140" fill="#e879f9" r="5"></circle>
+<circle cx="314" cy="140" fill="#a78bfa" r="5"></circle>
+<circle cx="432" cy="140" fill="#34e5e0" r="5"></circle>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="78" y="162">症状前约 20 年</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="196" y="162">约 10 年</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="314" y="162">约 5 年</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="432" y="162">0</text>
+<rect fill="rgba(251,191,36,0.07)" height="34" rx="10" stroke="rgba(251,191,36,0.45)" stroke-dasharray="4 4" stroke-width="1.2" width="222" x="26" y="186"></rect>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="137" y="208">抗淀粉样药清的是这一段</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="374" y="208">可用药的时刻在这一头</text>
+</svg>
+<figcaption>扳机在最上游，被察觉时下游早已自己在跑——效应量小是可以预期的</figcaption>
+</figure>
+<p>真正的启示藏在时间轴上：<strong>Aβ 在症状出现前十几到二十年就开始堆了。</strong>等你察觉记性变差，扳机早就扣完，tau 和突触丢失已经在自己往前跑。药打在最上游，却在最下游的时刻才用——效果小是结构决定的。所以整个领域都在往"更早"推。</p>
+<p class="en-brief"><b>EN</b> The amyloid cascade hypothesis nearly died: plaque load correlates poorly with symptoms, and dozens of anti-amyloid drugs failed. Then lecanemab (2023) slowed decline by ~27% and donanemab followed in 2024 — proof that Aβ really is on the causal chain, but with a tiny absolute effect (0.45 points on an 18-point scale) and real ARIA risk. The lesson is timing: Aβ starts accumulating 20 years before symptoms, so hitting the upstream trigger at the downstream moment was always going to be weak.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>脑不是孤岛：血管、清除、和那些会纵火的清道夫</h2>
+<p>还有件事课本讲得太干净：<strong>纯粹的阿尔茨海默病理在老年人里其实是少数。</strong>尸检反复看到的是"混着来"——斑块缠结之外，还叠着脑内小血管病变和别的蛋白沉积。所以"我到底是哪个病"这个问法本身就偏了。</p>
+<p><strong>血管这条线最实用。</strong>脑只占体重 2%，却烧掉全身两成的能量，靠的是一套极密的毛细血管网。血管内皮、周细胞、加上星形胶质细胞包上去的"末足"，一起组成神经血管单元，既送葡萄糖和氧气，又是挡住血液里杂物的那道屏障。中年的高血压、高 LDL、糖尿病磨的就是这套管道——白质里那些跨区连线因长期供血不足慢慢受损。"对心脏好的对脑也好"不是鸡汤，是同一套水管。</p>
+<p><strong>清除是另一条线。</strong>Aβ 堆起来，可能是产得多，也可能是清得慢。清除有几路：酶把它降解掉；沿着血管周围的液体流被冲走；以及小胶质细胞直接把它吃掉。这里必须标清楚一个没落定的争论：2013 年起的一批工作提出<strong>睡眠时这条液体流清除会增强</strong>，人体研究也发现一晚睡眠剥夺后 Aβ 升高；但 2024 年一篇用新方法的研究结论相反（睡眠时清除反而下降），随后又被同刊评论质疑数据不支持。这块还在打，别当定论用（Topic 32 专门拆）。</p>
+<figure>
+<svg viewBox="0 0 500 264" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t25cIn" markerHeight="13" markerUnits="userSpaceOnUse" markerWidth="14" orient="auto" refX="10" refY="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
+<marker id="t25cOut" markerHeight="13" markerUnits="userSpaceOnUse" markerWidth="14" orient="auto" refX="10" refY="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+</defs>
+<rect fill="rgba(167,139,250,0.10)" height="50" rx="14" stroke="#a78bfa" stroke-width="1.4" width="126" x="10" y="103"></rect>
+<text fill="#efe9ff" font-size="12.5" font-weight="700" text-anchor="middle" x="73" y="124">神经元活动</text>
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="73" y="141">不断产出 Aβ</text>
+<rect fill="rgba(251,191,36,0.12)" height="60" rx="16" stroke="#fbbf24" stroke-width="1.6" width="120" x="170" y="98"></rect>
+<text fill="#fdefc8" font-size="14" font-weight="700" text-anchor="middle" x="230" y="122">Aβ 池</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="230" y="141">产 − 清 = 堆积</text>
+<line marker-end="url(#t25cIn)" stroke="#a78bfa" stroke-width="2.4" x1="140" x2="166" y1="128" y2="128"></line>
+<rect fill="rgba(52,229,224,0.08)" height="52" rx="14" stroke="#34e5e0" stroke-width="1.3" width="156" x="332" y="14"></rect>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="410" y="34">血管周围液体流</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="410" y="51">与睡眠的关系有争议</text>
+<rect fill="rgba(52,229,224,0.08)" height="52" rx="14" stroke="#34e5e0" stroke-width="1.3" width="156" x="332" y="102"></rect>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="410" y="122">小胶质细胞吞噬</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="410" y="139">脑里的清道夫</text>
+<rect fill="rgba(52,229,224,0.08)" height="52" rx="14" stroke="#34e5e0" stroke-width="1.3" width="156" x="332" y="190"></rect>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="410" y="210">酶降解</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="410" y="227">就地拆成碎片</text>
+<path d="M294,110 C322,100 318,64 328,48" fill="none" marker-end="url(#t25cOut)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.4"></path>
+<line marker-end="url(#t25cOut)" stroke="#34e5e0" stroke-width="2.4" x1="294" x2="328" y1="128" y2="128"></line>
+<path d="M294,146 C322,156 318,192 328,208" fill="none" marker-end="url(#t25cOut)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="14" y="196">中年的高血压 · 高 LDL · 糖尿病</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="14" y="216">磨坏血管 → 三条清除路一起变慢</text>
+</svg>
+<figcaption>堆积是一道减法题：产出减清除。三条清除路都挂在血管和胶质细胞的健康上</figcaption>
+</figure>
+<p>最后说说那类<strong>清道夫</strong>。小胶质细胞是脑自己的免疫细胞，在组织里巡逻、吃掉垃圾。但它有另一副面孔：发育期它靠一套"补体"标签系统<strong>修剪</strong>多余的突触——被打上标签的连接就被它吃掉，这是大脑成型的必要步骤。麻烦在于这套程序在退行的脑子里可能被错误重启，把本该留下的连接也一并吃掉；而已知的一个阿尔茨海默风险基因，正好编码小胶质细胞表面的一个受体。清道夫和纵火犯是同一批细胞。（这三类细胞各自在干嘛，<a class="reflink" href="ref-glia.html">胶质细胞</a>）</p>
+<p class="en-brief"><b>EN</b> Pure Alzheimer's pathology is the exception in older brains; mixed pathology — plaques plus small-vessel disease and other protein deposits — is the rule. Two mechanistic lines matter: the neurovascular unit (midlife hypertension, LDL and diabetes wear down the same plumbing that feeds and shields the brain), and clearance (enzymes, perivascular fluid flow whose link to sleep is genuinely contested, and microglial phagocytosis). Microglia are both the janitors and, when the developmental synaptic-pruning program restarts wrongly, the arsonists.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>小胶质细胞干的事，在 AI 里叫<b>剪枝</b>：把训练好的网络里"不重要"的连接删掉，省算力、几乎不掉性能。关键在<b>重要性打分</b>——算法拿某个指标判断哪条连接可以删，指标选错，剪掉的就是关键通路。小胶质细胞用的打分是补体标签："这个突触活动少、没被用起来，标记，清掉。"发育期这套很划算；老年被病理错误触发，同样的算法就把还在用的连接一起剪了。<b>问题从不在剪枝本身，而在打分对不对。</b></p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>那个 45%，和"提前二十年测出来"</h2>
+<p>2024 年 7 月，《柳叶刀》的痴呆委员会给出了目前最权威的一张清单：<strong>14 项可改变的风险因素，理论上关联约 45% 的痴呆病例。</strong>比 2020 年版新加两项——中年的高 LDL 胆固醇，和没矫正的视力损失。</p>
+<figure>
+<svg viewBox="0 0 500 306" xmlns="http://www.w3.org/2000/svg">
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="250" y="20">Lancet 2024 · 14 项可改变风险因素</text>
+<rect fill="rgba(52,229,224,0.06)" height="54" rx="14" stroke="#34e5e0" stroke-width="1.3" width="460" x="20" y="32"></rect>
+<text fill="#34e5e0" font-family="SF Mono,monospace" font-size="10.5" x="40" y="54">早年 · 45 岁前</text>
+<text fill="#e6faf8" font-size="13.5" x="40" y="75">低教育</text>
+<rect fill="rgba(251,191,36,0.06)" height="76" rx="14" stroke="#fbbf24" stroke-width="1.3" width="460" x="20" y="98"></rect>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10.5" x="40" y="120">中年 · 45–65 岁</text>
+<text fill="#fdefc8" font-size="13.5" x="40" y="142">听力损失 · <tspan fill="#7bf0e8">高 LDL 胆固醇 ★</tspan> · 高血压</text>
+<text fill="#fdefc8" font-size="13.5" x="40" y="164">肥胖 · 过量饮酒 · 颅脑外伤</text>
+<rect fill="rgba(232,121,249,0.06)" height="76" rx="14" stroke="#e879f9" stroke-width="1.3" width="460" x="20" y="186"></rect>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="10.5" x="40" y="208">晚年 · 65 岁后</text>
+<text fill="#fbe4fe" font-size="13.5" x="40" y="230">吸烟 · 抑郁 · 社交孤立 · 缺乏运动</text>
+<text fill="#fbe4fe" font-size="13.5" x="40" y="252">糖尿病 · 空气污染 · <tspan fill="#7bf0e8">视力损失 ★</tspan></text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" x="20" y="280">★ 2024 年新增的两项</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="480" y="280">合计关联约 45% 的痴呆病例</text>
+<text fill="#5b5678" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="250" y="299">45% 是人群归因分数，不是个人风险的削减幅度</text>
+</svg>
+<figcaption>14 项风险按生命阶段分布——中年那一栏，恰好是最容易被"以后再说"的十几年</figcaption>
+</figure>
+<p>先把 45% 读对。它是<strong>人群归因分数</strong>：假设这 14 项在全人群里被彻底消除、且关联全都是因果，理论上能少掉的病例比例。它不等于"你照做就能把自己的概率砍掉 45%"。</p>
+<p>而"关联全是因果"这个假设正是最脆的地方。<strong>抑郁、不爱出门、动得少，很可能是痴呆的前驱表现而非原因</strong>——病理早就在动了，人只是先变得懒得社交。这种反向因果，观察性研究很难摘干净。</p>
+<p>所以要看随机分组的试验。两个例子：</p>
+<p><strong>听力</strong>——2023 年一项大型试验给老人配助听器，三年后在整体人群里<strong>没看到差别</strong>；但在预先设定的高风险亚组里，认知下降慢了 <strong>48%</strong>。亚组结果要打折看，可它是事先说好要看的，值得当线索。<strong>生活方式</strong>——2025 年发表的一项两千多人的美国试验里，结构化的多域干预（规律运动 + 特定饮食 + 认知训练 + 社交 + 血压监测）比让人自己看着办的对照组认知更好，在更多样的人群里复制了此前芬兰试验的方向。效应不大，但是随机对照拿到的，比一堆观察研究值钱。</p>
+<p><strong>再说早筛。</strong>2025 年 5 月，FDA 清出了第一个阿尔茨海默血液检测——测血浆里 tau 蛋白的一种特定形式与 Aβ 的比值，与金标准脑扫描的一致性很高（阳性约 91.7%、阴性约 97.3%）。这是实打实的进步：过去要么腰穿，要么做昂贵的 PET。</p>
+<p>但适应症写得很克制：<strong>用于已经出现认知症状的人做鉴别诊断，不是给没症状的人算命。</strong>没症状的人去测血检或者查风险基因，目前指南并不推荐，理由很实在：查出阳性也没有一个确定该做什么的方案；假阳性的代价是好几年的焦虑；还有保险和职业上的现实后果。而市面上那些"脑健康套餐"、椰子油、号称改善记忆的补充剂，是另一回事——没有证据支撑。真出现了持续影响生活的记性问题，该去的是记忆门诊，不是搜索引擎。</p>
+<p>说句实话：目前证据最硬的几件事全都无聊透顶——控住血压、矫正听力和视力、动起来、别抽烟、别把自己关起来、骑车戴头盔。一点也不性感，但是唯一有随机试验撑腰的。</p>
+<p class="en-brief"><b>EN</b> The 2024 Lancet Commission lists 14 modifiable risk factors linked to ~45% of dementia cases — a population attributable fraction, not a personal risk reduction, and one that assumes causality where reverse causation (depression and inactivity as prodrome, not cause) is a live worry. Randomised evidence is thinner but real: hearing aids were null overall yet slowed decline 48% in a prespecified high-risk subgroup, and a 2025 multidomain lifestyle trial beat self-guided controls. The first FDA-cleared blood test (2025) is a genuine advance — but it is a diagnostic aid for symptomatic people, not a fortune-teller for the well.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">这个病把一道哲学题逼成了病房里的日常：记忆一层层剥掉之后，剩下的还是不是同一个人。</p>
+<ul>
+<li><b>佛学 · 五蕴与无我</b>：佛学早就说，「我」不是常住不变的实体，只是色受想行识五堆东西暂时聚拢、时刻在变。这个病提供了该论点最残酷的实验版：<b>叙事的我可以碎掉</b>——名字、履历、亲人的脸依次脱落；而某些更早、更身体的东西常常留到最后：对熟悉旋律的反应、手上的老习惯、被握住时的安定。哪一层先散，是可观察的。</li>
+<li><b>控制论 · 冯·诺依曼</b>：1956 年他写过一篇《用不可靠元件构造可靠系统》——如何用一堆随时会坏的零件，靠冗余和多路表决搭出可靠的整体。认知储备就是它的生物版：单个突触、单个神经元都极不可靠，整体却能一边烂一边工作几十年。反过来也成立：<b>一个系统能承受多少损坏而不露馅，取决于它当初留了多少条备用路径。</b></li>
+<li><b>哲学 · 洛克与忒修斯之船</b>：洛克把人格同一性押在记忆的连续性上——那记忆链断掉的人还是不是同一个人？这不是思辨游戏：预立医疗指示正是「过去那个我」替「现在这个我」做的决定，而两个我的意愿可能已经不一样了。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>既然 45% 可预防，剩下那 55% 是什么？</summary><div>三块：<strong>年龄</strong>本身（最大的风险因素，且不可改）、<strong>基因</strong>（少数家族性突变几乎注定发病，更常见的是把风险抬高几倍的基因型）、以及<strong>还没被识别出来的因素</strong>。还有个常被忽略的含义：45% 说的是"这 14 项<em>如果</em>在全人群彻底清零"，现实中没有哪个社会做得到。个人层面更务实的读法是——做了比不做好，但没有一件是保险单。</div></details>
+<details><summary>我该不该去测风险基因，或者做那个新血检？</summary><div>如果你<strong>没有症状</strong>，目前主流指南不推荐。理由很实际：阳性结果没有对应的确定行动——该做的那几件不管测不测都该做；假阳性的代价是好几年真实的焦虑；保险和职业上的后果不可逆。如果你<strong>已经有持续影响生活的认知问题</strong>，情况完全不同：去记忆门诊，血检在那里很有价值——它能帮着分清这是阿尔茨海默，还是抑郁、甲状腺问题、药物副作用这些<em>可逆</em>的原因。后面这类比大多数人以为的多。</div></details>
+<details><summary>高储备的人发病后掉得更快，那"抬储备"到底是延后了痛苦，还是只是把它压缩了？</summary><div>偏向后者，而这恰恰是好消息。同样的寿命，<strong>更长的清醒期 + 更短的失能期</strong>，在医学上叫"疾病压缩"，正是老年医学追求的目标——如果病理照堆不误，你能选的本来就只有"什么时候被顶穿"和"顶穿后拖多久"。但要诚实说一句：这里的证据仍是观察性的，且"高储备者衰退更快"也可能部分是统计假象（他们被诊断得更晚，剩余时间自然更短）。</div></details>
+<details><summary>只慢了 27%、绝对差不到半分，为什么还有人说抗淀粉样药是里程碑？</summary><div>因为它回答的不是"这药好不好用"，而是"这条因果链对不对"。三十年来，淀粉样假说最致命的软肋就是<strong>从没被前瞻性地验证过</strong>。现在知道了：清除 Aβ 会改变病程，但只有一点点。这个"一点点"同时给出正反两条信息——它在链上（否则该毫无效果），也远不是全部（否则该大得多）。里程碑的意义在于把问题从"假说对不对"推进到了"该多早打、还要同时打什么"。至于对具体病人值不值——包括 ARIA 风险和不菲的费用——那是必须一人一议的另一个问题。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://www.thelancet.com/commissions-do/dementia-prevention-intervention-and-care" target="_blank">Lancet 委员会 · 痴呆的预防、干预与照护（2024）</a> — 14 项风险因素的原始报告</li>
+<li><a href="https://en.wikipedia.org/wiki/Nun_Study" target="_blank">修女研究 Nun Study</a> — 病理与症状脱钩的经典证据</li>
+<li><a href="https://en.wikipedia.org/wiki/Cognitive_reserve" target="_blank">认知储备 Cognitive reserve</a> — Stern 提出的缓冲概念</li>
+<li><a href="https://en.wikipedia.org/wiki/Amyloid_hypothesis" target="_blank">淀粉样级联假说</a> — 三十年的兴起、动摇与部分平反</li>
+<li><a href="https://en.wikipedia.org/wiki/Lecanemab" target="_blank">Lecanemab</a> · <a href="https://en.wikipedia.org/wiki/Donanemab" target="_blank">Donanemab</a> — 两种抗淀粉样抗体的试验数据与 ARIA</li>
+<li><a href="https://www.alz.org/us-pointer/study-results" target="_blank">U.S. POINTER 试验结果（2025）</a> — 多域生活方式干预的随机对照证据</li>
+<li><a href="https://www.mayoclinic.org/diseases-conditions/alzheimers-disease/in-depth/new-blood-tests-alzheimers/art-20585060" target="_blank">Mayo Clinic · 阿尔茨海默血液检测</a> — 首个获 FDA 清出的血检能做什么、不能做什么</li>
+<li><a href="https://www.nature.com/articles/s41593-024-01638-y" target="_blank">Nature Neuroscience · 睡眠期脑清除之争（2024）</a> — 一篇结论相反的研究，以及随后的质疑</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 25 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

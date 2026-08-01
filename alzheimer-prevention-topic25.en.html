@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 25 · Prevention ② — Alzheimer's & Neurodegeneration</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 25 · PHASE C SELF-MODULATION</span>
+<h1>Alzheimer's &amp; Neurodegeneration</h1>
+<h2>Pathology is one thing, symptoms are another — the buffer in between is what you can move</h2>
+<div class="date">2026-08-01 · BigCat</div>
+<p class="pitch">One nun lived to 101, sharp and articulate to the end. At autopsy her brain was packed with Alzheimer's pathology.</p>
+</header>
+<div class="intro">
+<p>Most people carry exactly two thoughts about this disease: "I'll deal with it later" and "it's luck of the draw." The best evidence of the last decade unsettles both — <strong>how much pathology piles up in your brain and how severe your symptoms are can come apart, and part of the buffer in between is in your hands.</strong> This one is mechanism only: when the damage starts accumulating in silence, why accumulation doesn't guarantee symptoms, how many levers there genuinely are, and which of the tests promising to "catch it twenty years early" are real progress.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>A brain full of pathology, lucid to 101</h2>
+<p>In 1986 an epidemiologist recruited 678 Catholic nuns and followed them for the rest of their lives: annual cognitive tests, and their brains donated after death. It's the sample researchers dream of — same schedule, same food, same community, which flattens a mountain of confounders for free.</p>
+<p>One of them lived to 101 and was still scoring beautifully on cognitive tests shortly before she died. But open her brain and it was full of <strong>plaques</strong> and <strong>tangles</strong> — the two signature lesions of Alzheimer's: protein junk clumping outside the cells, and tangled filaments knotting up inside them. By pathology she was a severe case. By her own behaviour she wasn't.</p>
+<p>She isn't a fluke. Plenty of older people turn out at autopsy to have enough pathology to meet diagnostic criteria while never having been demented in life. Hence a dedicated concept: <strong>cognitive reserve</strong>.</p>
+<p>Two things need separating. <strong>Brain reserve</strong> is hardware quantity — how big the brain is, how many neurons and synapses there are. <strong>Cognitive reserve</strong> is software flexibility — whether the network can still get the same job done by another route. An analogy: it's not that the main road is wider, it's that the city has more side streets and alleys, so when a main artery goes down traffic reroutes and from the outside everything still flows.</p>
+<figure>
+<svg viewBox="0 0 500 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t25aAx" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#5b5678"></path></marker>
+<marker id="t25aGap" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#a78bfa"></path></marker>
+</defs>
+<line stroke="#5b5678" stroke-width="1.6" x1="60" x2="60" y1="30" y2="210"></line>
+<line marker-end="url(#t25aAx)" stroke="#5b5678" stroke-width="1.6" x1="60" x2="474" y1="210" y2="210"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" transform="rotate(-90 26 120)" x="26" y="120">cognitive function</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="268" y="252">accumulating pathology →</text>
+<line stroke="#e879f9" stroke-dasharray="4 5" stroke-opacity="0.7" stroke-width="1.5" x1="60" x2="470" y1="160" y2="160"></line>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="11" x="66" y="152">clinical threshold</text>
+<path d="M60,50 C140,55 185,95 225,160 C255,200 290,212 330,216" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="3"></path>
+<path d="M60,44 C210,50 300,74 350,130 C372,158 388,192 402,214" fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-width="3"></path>
+<line stroke="#34e5e0" stroke-dasharray="3 4" stroke-opacity="0.5" stroke-width="1.3" x1="225" x2="225" y1="160" y2="210"></line>
+<line stroke="#fbbf24" stroke-dasharray="3 4" stroke-opacity="0.5" stroke-width="1.3" x1="358" x2="358" y1="160" y2="210"></line>
+<circle cx="225" cy="160" fill="#34e5e0" r="4.5"></circle>
+<circle cx="358" cy="160" fill="#fbbf24" r="4.5"></circle>
+<line marker-end="url(#t25aGap)" stroke="#a78bfa" stroke-width="1.6" x1="292" x2="232" y1="192" y2="192"></line>
+<line marker-end="url(#t25aGap)" stroke="#a78bfa" stroke-width="1.6" x1="292" x2="352" y1="192" y2="192"></line>
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="292" y="184">time bought by reserve</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="225" y="228">low reserve</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="358" y="228">high reserve</text>
+</svg>
+<figcaption>Same accumulating pathology: high reserve crosses the threshold later — but falls more steeply once it does</figcaption>
+</figure>
+<p>More years of education, complex work, bilingualism, an active social life, still learning things in old age — all correlate with higher reserve. To be clear about the limits: this is mostly observed <strong>correlation</strong>, not <strong>causation</strong> from randomised groups.</p>
+<p>There's a counterintuitive flip side too: <strong>once high-reserve people do become symptomatic, they tend to decline faster.</strong> They were coping by rerouting, and held out until the damage was higher before being overwhelmed — by which point there are few routes left, so the collapse is a cliff. Reserve buys time, not immunity. (The disease hits the entorhinal cortex and hippocampus first — exactly the tissue that writes new experience into memory: <a class="reflink" href="ref-hippocampus.en.html">hippocampus &amp; entorhinal cortex</a>)</p>
+<div class="ai">
+<h4>Cross-read with AI</h4>
+<p>Artificial networks give you the isomorphism for free: <b>pruning tolerance</b>. Randomly delete a fraction of a trained network's connections and performance often barely moves — because it uses <b>distributed representations</b>: a concept doesn't live in one unit, it's smeared across the joint activity of thousands, so knock some out and the rest still reconstruct it. Past some fraction, though, performance falls off a <b>cliff</b>. That curve's shape — nothing noticeable for a long while, then sudden collapse — is exactly what the clinic sees with cognitive reserve.</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>The amyloid hypothesis: half collapsed, half rescued by two drugs</h2>
+<p>Meet the two kinds of junk. <strong>Aβ (beta-amyloid)</strong> is a fragment enzymes snip out of a normal membrane protein; snipped the wrong way it's unusually sticky, and enough of it clumps into plaques outside the cell. <strong>Tau</strong> is normally the sleeper on the neuron's internal "rails", keeping the transport tracks stable; over-modified, it falls off and knots into tangles, and the tracks go with it.</p>
+<p>The <strong>amyloid cascade hypothesis</strong>, proposed in 1992, says Aβ is the trigger at the very top: pull it, and tau, synaptic death and finally symptoms follow in order. That story ruled for thirty years.</p>
+<p>Then it started leaking. Leak one: <strong>plaque load tracks symptom severity poorly</strong> — see the nun above; tau tangle distribution, on the other hand, tracks it rather well. Leak two was worse: dozens of Aβ-clearing drugs failed, one after another, over two decades. Around 2020, "the amyloid hypothesis is dead" was close to a catchphrase.</p>
+<p>The turn came in the last three years. <strong>Lecanemab</strong> (full FDA approval in 2023) slowed decline on a cognitive-functional scale by roughly <strong>27%</strong> over an 18-month phase 3 trial; <strong>donanemab</strong> was approved in July 2024, pointing the same way. For the first time in thirty years, clearing Aβ actually changed the course of the disease.</p>
+<p>Don't take either extreme on this result. <strong>Looking back, it proves Aβ really is on the causal chain</strong> — an innocent bystander wouldn't produce any effect when removed. <strong>Looking forward, the effect size is sobering</strong>: that 27% is an absolute difference of 0.45 points on an 18-point scale, which many clinicians doubt patients and families can feel. The cost isn't trivial either: these antibodies cause <strong>ARIA</strong> (brain swelling and microbleeds) — roughly 12.6% and 17.3% in the lecanemab arm, higher for donanemab (about 24% and 31.4%) — and carriers of one particular genotype are at greater risk.</p>
+<figure>
+<svg viewBox="0 0 500 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t25bAx" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+</defs>
+<line marker-end="url(#t25bAx)" stroke="#8f89ad" stroke-width="1.8" x1="24" x2="482" y1="140" y2="140"></line>
+<rect fill="rgba(251,191,36,0.10)" height="50" rx="14" stroke="#fbbf24" stroke-width="1.3" width="104" x="26" y="20"></rect>
+<text fill="#fdefc8" font-size="12.5" font-weight="700" text-anchor="middle" x="78" y="41">Aβ deposits</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="78" y="58">clumps outside</text>
+<rect fill="rgba(232,121,249,0.10)" height="50" rx="14" stroke="#e879f9" stroke-width="1.3" width="104" x="144" y="20"></rect>
+<text fill="#fbe4fe" font-size="12.5" font-weight="700" text-anchor="middle" x="196" y="41">tau spreads</text>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="196" y="58">tangles inside</text>
+<rect fill="rgba(167,139,250,0.10)" height="50" rx="14" stroke="#a78bfa" stroke-width="1.3" width="104" x="262" y="20"></rect>
+<text fill="#efe9ff" font-size="12.5" font-weight="700" text-anchor="middle" x="314" y="41">synapse loss</text>
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="314" y="58">regions atrophy</text>
+<rect fill="rgba(52,229,224,0.10)" height="50" rx="14" stroke="#34e5e0" stroke-width="1.3" width="104" x="380" y="20"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="700" text-anchor="middle" x="432" y="41">memory fails</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="432" y="58">only now diagnosed</text>
+<line stroke="#fbbf24" stroke-width="1.4" x1="78" x2="78" y1="70" y2="134"></line>
+<line stroke="#e879f9" stroke-width="1.4" x1="196" x2="196" y1="70" y2="134"></line>
+<line stroke="#a78bfa" stroke-width="1.4" x1="314" x2="314" y1="70" y2="134"></line>
+<line stroke="#34e5e0" stroke-width="1.4" x1="432" x2="432" y1="70" y2="134"></line>
+<circle cx="78" cy="140" fill="#fbbf24" r="5"></circle>
+<circle cx="196" cy="140" fill="#e879f9" r="5"></circle>
+<circle cx="314" cy="140" fill="#a78bfa" r="5"></circle>
+<circle cx="432" cy="140" fill="#34e5e0" r="5"></circle>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="78" y="162">~20 yrs pre-symptom</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="196" y="162">~10 yrs</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="314" y="162">~5 yrs</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="432" y="162">0</text>
+<rect fill="rgba(251,191,36,0.07)" height="34" rx="10" stroke="rgba(251,191,36,0.45)" stroke-dasharray="4 4" stroke-width="1.2" width="222" x="26" y="186"></rect>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="137" y="208">anti-amyloid drugs clear this</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="374" y="208">but are given at this end</text>
+</svg>
+<figcaption>The trigger sits far upstream; by the time anyone notices, downstream is running on its own — a small effect was structurally predictable</figcaption>
+</figure>
+<p>The real lesson is on the timeline: <strong>Aβ starts accumulating ten to twenty years before symptoms.</strong> By the time you notice your memory slipping, the trigger has long been pulled and tau and synapse loss are running under their own steam. The drug hits the top of the cascade at the very bottom of the timeline — a small effect is structural. Which is why the whole field is now pushing earlier.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The brain is no island: vessels, clearance, and janitors who set fires</h2>
+<p>Something else textbooks tidy up too much: <strong>pure Alzheimer's pathology is the minority in older brains.</strong> What autopsies keep finding is mixtures — plaques and tangles layered on top of small-vessel disease and other protein deposits. So "which disease do I have" is already the wrong question.</p>
+<p><strong>The vascular line is the most actionable.</strong> The brain is 2% of body weight and burns a fifth of the body's energy, supplied by an extraordinarily dense capillary net. Endothelium, pericytes and the astrocytic "endfeet" wrapped around them form the neurovascular unit: it delivers glucose and oxygen and doubles as the barrier keeping junk in the blood out. Midlife hypertension, high LDL and diabetes grind down exactly that plumbing — the long-range wiring in white matter degrades under chronic under-perfusion. "What's good for the heart is good for the brain" isn't a slogan; it's the same pipes.</p>
+<p><strong>Clearance is the other line.</strong> Aβ can pile up because production is high or because removal is slow. Removal runs through several routes: enzymes degrading it, fluid flow along the outside of blood vessels washing it out, and microglia eating it. One unsettled controversy has to be flagged here: work since 2013 proposed that <strong>this fluid clearance is enhanced during sleep</strong>, and human studies found Aβ rises after a single night of deprivation — but a 2024 study using a new method reported the opposite (clearance falling during sleep), and was then challenged in the same journal on the grounds that its data don't support that conclusion. This is still live; don't treat it as settled (Topic 32 takes it apart).</p>
+<figure>
+<svg viewBox="0 0 500 264" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t25cIn" markerHeight="13" markerUnits="userSpaceOnUse" markerWidth="14" orient="auto" refX="10" refY="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
+<marker id="t25cOut" markerHeight="13" markerUnits="userSpaceOnUse" markerWidth="14" orient="auto" refX="10" refY="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+</defs>
+<rect fill="rgba(167,139,250,0.10)" height="50" rx="14" stroke="#a78bfa" stroke-width="1.4" width="126" x="10" y="103"></rect>
+<text fill="#efe9ff" font-size="12.5" font-weight="700" text-anchor="middle" x="73" y="124">neural activity</text>
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="73" y="141">produces Aβ</text>
+<rect fill="rgba(251,191,36,0.12)" height="60" rx="16" stroke="#fbbf24" stroke-width="1.6" width="120" x="170" y="98"></rect>
+<text fill="#fdefc8" font-size="14" font-weight="700" text-anchor="middle" x="230" y="122">Aβ pool</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="230" y="141">made − cleared</text>
+<line marker-end="url(#t25cIn)" stroke="#a78bfa" stroke-width="2.4" x1="140" x2="166" y1="128" y2="128"></line>
+<rect fill="rgba(52,229,224,0.08)" height="52" rx="14" stroke="#34e5e0" stroke-width="1.3" width="156" x="332" y="14"></rect>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="410" y="34">perivascular flow</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="410" y="51">sleep link contested</text>
+<rect fill="rgba(52,229,224,0.08)" height="52" rx="14" stroke="#34e5e0" stroke-width="1.3" width="156" x="332" y="102"></rect>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="410" y="122">microglial uptake</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="410" y="139">the brain's janitors</text>
+<rect fill="rgba(52,229,224,0.08)" height="52" rx="14" stroke="#34e5e0" stroke-width="1.3" width="156" x="332" y="190"></rect>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="410" y="210">enzymatic breakdown</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="410" y="227">cut up on the spot</text>
+<path d="M294,110 C322,100 318,64 328,48" fill="none" marker-end="url(#t25cOut)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.4"></path>
+<line marker-end="url(#t25cOut)" stroke="#34e5e0" stroke-width="2.4" x1="294" x2="328" y1="128" y2="128"></line>
+<path d="M294,146 C322,156 318,192 328,208" fill="none" marker-end="url(#t25cOut)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="14" y="196">midlife hypertension · LDL · diabetes</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="14" y="216">damage vessels → all three routes slow</text>
+</svg>
+<figcaption>Accumulation is a subtraction problem. All three clearance routes ride on vascular and glial health</figcaption>
+</figure>
+<p>Finally, those <strong>janitors</strong>. Microglia are the brain's own immune cells, patrolling the tissue and eating debris. But they have a second face: during development they use a "complement" tagging system to <strong>prune</strong> surplus synapses — tagged connections get eaten, and this is a necessary step in shaping the brain. The trouble is that the program can be wrongly restarted in a degenerating brain, taking connections that should have stayed; and one known Alzheimer's risk gene happens to encode a receptor on the microglial surface. The janitors and the arsonists are the same cells. (What each glial type actually does: <a class="reflink" href="ref-glia.en.html">glial cells</a>)</p>
+<div class="ai">
+<h4>Cross-read with AI</h4>
+<p>What microglia do has a name in AI: <b>pruning</b> — deleting the "unimportant" connections in a trained network to save compute at almost no cost in performance. Everything hinges on the <b>importance score</b>: the algorithm uses some metric to decide what's deletable, and if the metric is wrong, what gets cut is a critical pathway. Microglia score with complement tags — "this synapse is quiet, unused: tag it, clear it." In development that's a bargain; in old age, wrongly triggered by pathology, the same algorithm prunes connections still in use. <b>The problem is never pruning itself, it's whether the score is right.</b></p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>That 45%, and "catch it twenty years early"</h2>
+<p>In July 2024 the Lancet Commission on dementia published the most authoritative list currently available: <strong>14 modifiable risk factors, linked in theory to around 45% of dementia cases.</strong> Two are new relative to the 2020 edition — midlife high LDL cholesterol, and uncorrected vision loss.</p>
+<figure>
+<svg viewBox="0 0 500 306" xmlns="http://www.w3.org/2000/svg">
+<text fill="#c4b8ea" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="250" y="20">Lancet 2024 · 14 modifiable risk factors</text>
+<rect fill="rgba(52,229,224,0.06)" height="54" rx="14" stroke="#34e5e0" stroke-width="1.3" width="460" x="20" y="32"></rect>
+<text fill="#34e5e0" font-family="SF Mono,monospace" font-size="10.5" x="40" y="54">EARLY LIFE · before 45</text>
+<text fill="#e6faf8" font-size="13.5" x="40" y="75">less education</text>
+<rect fill="rgba(251,191,36,0.06)" height="76" rx="14" stroke="#fbbf24" stroke-width="1.3" width="460" x="20" y="98"></rect>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10.5" x="40" y="120">MIDLIFE · 45–65</text>
+<text fill="#fdefc8" font-size="13.5" x="40" y="142">hearing loss · <tspan fill="#7bf0e8">high LDL cholesterol ★</tspan> · hypertension</text>
+<text fill="#fdefc8" font-size="13.5" x="40" y="164">obesity · excessive alcohol · head injury</text>
+<rect fill="rgba(232,121,249,0.06)" height="76" rx="14" stroke="#e879f9" stroke-width="1.3" width="460" x="20" y="186"></rect>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="10.5" x="40" y="208">LATER LIFE · after 65</text>
+<text fill="#fbe4fe" font-size="13.5" x="40" y="230">smoking · depression · social isolation · inactivity</text>
+<text fill="#fbe4fe" font-size="13.5" x="40" y="252">diabetes · air pollution · <tspan fill="#7bf0e8">vision loss ★</tspan></text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" x="20" y="280">★ added in 2024</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="480" y="280">~45% of cases, combined</text>
+<text fill="#5b5678" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="250" y="299">45% is a population attributable fraction, not your personal risk reduction</text>
+</svg>
+<figcaption>The 14 factors across the lifespan — and the midlife row is exactly the decade or two easiest to postpone</figcaption>
+</figure>
+<p>Read the 45% correctly first. It's a <strong>population attributable fraction</strong>: the share of cases that would theoretically disappear if all 14 factors were eliminated across the whole population <em>and</em> every association were causal. It is not "do these things and cut your own odds by 45%."</p>
+<p>And "every association is causal" is exactly the brittle part. <strong>Depression, staying in, moving less — these may well be prodromal signs of dementia rather than its causes</strong>; the pathology was already moving, and the person merely lost the appetite for company first. Observational research struggles to scrub out that reverse causation.</p>
+<p>So look at randomised trials. Two examples: <strong>hearing</strong> — a large 2023 trial that fitted older adults with hearing aids found <strong>no difference</strong> in the population overall after three years; but in a prespecified high-risk subgroup, cognitive decline was <strong>48% slower</strong>. Discount subgroup results, yes — but this one was declared in advance, and it's worth treating as a lead. <strong>Lifestyle</strong> — in a 2025 US trial of over two thousand people, a structured multidomain intervention (regular exercise + a specific diet pattern + cognitive training + social engagement + blood-pressure monitoring) produced better global cognition than a self-guided control, replicating the direction of the earlier Finnish trial in a more diverse population. The effect is modest, but it came from randomisation, which makes it worth more than a pile of observational studies.</p>
+<p><strong>Now early detection.</strong> In May 2025 the FDA cleared the first Alzheimer's blood test — a plasma ratio of one specific form of tau to Aβ, with high agreement against the gold-standard brain scan (about 91.7% positive, 97.3% negative). That's genuine progress: the alternatives were a lumbar puncture or an expensive PET scan.</p>
+<p>But the indication is written with restraint: <strong>it's for differential diagnosis in people who already have cognitive symptoms, not a fortune-teller for the well.</strong> Testing asymptomatic people — blood test or risk gene — isn't currently recommended, for practical reasons: a positive result carries no definite action (the things worth doing are worth doing either way); a false positive costs years of real anxiety; and the insurance and career consequences are irreversible. If you <em>do</em> have persistent cognitive problems affecting daily life, it's the opposite: go to a memory clinic, where the blood test is valuable — it helps separate Alzheimer's from depression, thyroid problems and drug side effects, all <em>reversible</em> causes, and that last category is bigger than most people assume. Meanwhile the "brain health panels", coconut oil and memory supplements on the market are a different story — unsupported.</p>
+<p>Honestly: the things with the hardest evidence behind them are all boring — control blood pressure, correct hearing and vision, move, don't smoke, don't shut yourself in, wear a helmet. Not sexy. But the only ones with randomised trials behind them.</p>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">This disease turns a philosophical puzzle into a daily problem on the ward: when memory is peeled away layer by layer, is what remains the same person?</p>
+<ul>
+<li><b>Buddhism · the five aggregates and non-self</b>: Buddhism argued long ago that the "I" is no permanent entity, just five heaps — form, feeling, perception, formations, consciousness — temporarily gathered and constantly changing. This disease is that argument's cruellest experimental version: <b>the narrative self can shatter</b> — name, biography, the faces of family, falling away in sequence — while things that are earlier and more bodily often survive to the end: the response to a familiar melody, an old habit in the hands, the settling that comes from being held. Which layer goes first is observable.</li>
+<li><b>Cybernetics · von Neumann</b>: in 1956 he wrote on building reliable systems from unreliable components — how redundancy and majority voting can assemble something dependable out of parts that keep failing. Cognitive reserve is the biological edition: individual synapses and neurons are wildly unreliable, yet the whole degrades and keeps working for decades. The converse holds too: <b>how much damage a system absorbs without showing it depends on how many alternative routes were built in from the start.</b></li>
+<li><b>Philosophy · Locke and the ship of Theseus</b>: Locke staked personal identity on continuity of memory — so is someone whose memory chain has broken still the same person? This isn't a parlour game: an advance directive is precisely a decision made by "the past me" on behalf of "the present me", and those two may no longer want the same thing.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If 45% is preventable, what's the other 55%?</summary><div>Three blocks: <strong>age</strong> itself (the largest risk factor, and unmodifiable), <strong>genetics</strong> (a few familial mutations make the disease near-certain; more commonly, genotypes that multiply risk several-fold), and <strong>factors not yet identified</strong>. There's also an implication that often gets lost: 45% describes what happens <em>if</em> all 14 factors were driven to zero across an entire population, which no society has ever managed. The pragmatic personal reading is that doing these things beats not doing them, but none of them is an insurance policy.</div></details>
+<details><summary>Should I get genotyped, or take the new blood test?</summary><div>If you have <strong>no symptoms</strong>, current mainstream guidance says no. The reasons are practical: a positive result implies no definite action — the handful of things worth doing are worth doing whether or not you test; every test has false positives, and the price is years of real anxiety; and the insurance and career consequences are irreversible. If you <strong>do</strong> have persistent cognitive problems that affect your life, it's a completely different situation: go to a memory clinic, where the blood test is a valuable tool — it helps distinguish Alzheimer's from depression, thyroid problems and drug side effects, the <em>reversible</em> causes. That last group is larger than most people assume.</div></details>
+<details><summary>High-reserve people decline faster after onset — so does building reserve postpone suffering or just compress it?</summary><div>Toward the latter, and that's the good news. For the same lifespan, <strong>a longer lucid stretch and a shorter disabled one</strong> is what medicine calls "compression of morbidity", and it's what geriatrics is aiming at — if pathology accumulates regardless, all you ever get to choose is when you're overwhelmed and how long it drags on afterwards. One honest caveat: the evidence here is still observational, and "high reserve declines faster" may partly be a statistical artefact (they're diagnosed later, so less time remains by construction).</div></details>
+<details><summary>Only 27% slower, under half a point in absolute terms — why call anti-amyloid drugs a milestone?</summary><div>Because what they answer isn't "is this drug useful" but "is this causal chain right". For thirty years the amyloid hypothesis's fatal weakness was that it had <strong>never been tested prospectively</strong>. Now we know: clearing Aβ does change the course, but only a little. That "a little" carries information in both directions — it is on the chain (or there'd be no effect at all), and it is far from the whole story (or the effect would be far larger). The milestone is that it moved the field's question from "is the hypothesis right" to "how early must we hit it, and what else has to be hit at the same time". Whether it's worth it for a given patient — ARIA risk and considerable cost included — is a separate question, decided one person at a time.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://www.thelancet.com/commissions-do/dementia-prevention-intervention-and-care" target="_blank">Lancet Commission · Dementia prevention, intervention and care (2024)</a> — the original report behind the 14 risk factors</li>
+<li><a href="https://en.wikipedia.org/wiki/Nun_Study" target="_blank">The Nun Study</a> — the classic evidence that pathology and symptoms decouple</li>
+<li><a href="https://en.wikipedia.org/wiki/Cognitive_reserve" target="_blank">Cognitive reserve</a> — the buffer concept, as formulated by Stern</li>
+<li><a href="https://en.wikipedia.org/wiki/Amyloid_hypothesis" target="_blank">The amyloid cascade hypothesis</a> — thirty years of rise, doubt and partial vindication</li>
+<li><a href="https://en.wikipedia.org/wiki/Lecanemab" target="_blank">Lecanemab</a> · <a href="https://en.wikipedia.org/wiki/Donanemab" target="_blank">Donanemab</a> — trial data and ARIA for the two anti-amyloid antibodies</li>
+<li><a href="https://www.alz.org/us-pointer/study-results" target="_blank">U.S. POINTER results (2025)</a> — randomised evidence for multidomain lifestyle intervention</li>
+<li><a href="https://www.mayoclinic.org/diseases-conditions/alzheimers-disease/in-depth/new-blood-tests-alzheimers/art-20585060" target="_blank">Mayo Clinic · Alzheimer's blood tests</a> — what the first FDA-cleared blood test can and can't do</li>
+<li><a href="https://www.nature.com/articles/s41593-024-01638-y" target="_blank">Nature Neuroscience · the dispute over brain clearance in sleep (2024)</a> — the contrary study, and the challenge that followed</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 25 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
