@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 26 · 精神疾病作为回路失调 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 26 · PHASE D 临床/前沿</span>
+<h1>精神疾病作为回路失调</h1>
+<h2>找不到病灶，未必是没病，也可能是格子画错了</h2>
+<div class="date">2026-08-02 · BigCat</div>
+<p class="pitch">两个人可以一条症状都不重叠，却拿到同一个诊断。</p>
+</header>
+<div class="intro">
+<p>"精神疾病是脑的问题"——这句话现在几乎人人会说。可往下追一步就尴尬了：抑郁的脑扫描长什么样？没有。抽血能查出焦虑症吗？不能。几十年、几百亿投进去，精神科至今<strong>没有任何一项能用来下诊断的生物指标</strong>。常见的解释是技术还不够。但这些年更有说服力的是另一个解释：<strong>我们一直拿着一张格子画错了的地图在找病灶。</strong>不是脑里没有机制，是那些病名本身，可能压根不长在自然的接缝上。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>同一个病名，底下可能是两个人</h2>
+<p>诊断手册怎么定义抑郁症？列九条症状，两周内占满五条、其中至少一条是核心症状，就算。听着挺严谨，可你把组合数算一下：满足这套规则的症状组合有两百多种。于是完全可能出现这种事——一个人整夜睡不着、吃不下、坐立难安、自责、想死；另一个人嗜睡、暴食、迟钝、疲惫、注意力散掉。两人一条都不重合，拿到的是同一个诊断。</p>
+<figure>
+<svg viewBox="0 0 500 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t26aM" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#a78bfa"></path></marker>
+</defs>
+<rect x="140" y="8" width="220" height="34" rx="17" fill="rgba(167,139,250,0.10)" stroke="#a78bfa" stroke-width="1.2"></rect>
+<text x="250" y="30" font-size="13.5" font-weight="700" fill="#efe9ff" text-anchor="middle">同一个诊断：抑郁症</text>
+<path d="M200,44 C150,50 130,52 122,62" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#t26aM)"></path>
+<path d="M300,44 C350,50 370,52 378,62" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#t26aM)"></path>
+<rect x="16" y="70" width="214" height="176" rx="14" fill="rgba(52,229,224,0.045)" stroke="rgba(52,229,224,0.32)" stroke-width="1.1"></rect>
+<text x="123" y="94" font-size="12.5" font-weight="700" fill="#7bf0e8" text-anchor="middle">患者 A</text>
+<rect x="270" y="70" width="214" height="176" rx="14" fill="rgba(251,191,36,0.045)" stroke="rgba(251,191,36,0.32)" stroke-width="1.1"></rect>
+<text x="377" y="94" font-size="12.5" font-weight="700" fill="#fbbf24" text-anchor="middle">患者 B</text>
+<text x="34" y="120" font-size="11" fill="#b8b2d4">失眠 · 吃不下</text>
+<rect x="34" y="126" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="34" y="126" width="162" height="9" rx="4.5" fill="#34e5e0"></rect>
+<text x="34" y="152" font-size="11" fill="#b8b2d4">坐立难安</text>
+<rect x="34" y="158" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="34" y="158" width="150" height="9" rx="4.5" fill="#34e5e0"></rect>
+<text x="34" y="184" font-size="11" fill="#b8b2d4">嗜睡 · 暴食</text>
+<rect x="34" y="190" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="34" y="190" width="14" height="9" rx="4.5" fill="#34e5e0"></rect>
+<text x="34" y="216" font-size="11" fill="#b8b2d4">迟钝 · 注意力散</text>
+<rect x="34" y="222" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="34" y="222" width="16" height="9" rx="4.5" fill="#34e5e0"></rect>
+<text x="288" y="120" font-size="11" fill="#b8b2d4">失眠 · 吃不下</text>
+<rect x="288" y="126" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="288" y="126" width="15" height="9" rx="4.5" fill="#fbbf24"></rect>
+<text x="288" y="152" font-size="11" fill="#b8b2d4">坐立难安</text>
+<rect x="288" y="158" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="288" y="158" width="13" height="9" rx="4.5" fill="#fbbf24"></rect>
+<text x="288" y="184" font-size="11" fill="#b8b2d4">嗜睡 · 暴食</text>
+<rect x="288" y="190" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="288" y="190" width="168" height="9" rx="4.5" fill="#fbbf24"></rect>
+<text x="288" y="216" font-size="11" fill="#b8b2d4">迟钝 · 注意力散</text>
+<rect x="288" y="222" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="288" y="222" width="146" height="9" rx="4.5" fill="#fbbf24"></rect>
+</svg>
+<figcaption>同一个格子里，可以装着两套几乎不重叠的人</figcaption>
+</figure>
+<p>共病也是常态而不是例外：拿到一个精神科诊断的人里，将近一半同时够得上第二个、第三个的标准。要是这些真是各自独立的病，这个比例说不通；更像是同一套底层的东西，从不同侧面冒出来。有人干脆把上千人的所有症状做统计分解，结果最大的那个共同成分横跨了几乎全部诊断——他们叫它 <strong>p 因子</strong>，可以粗糙地理解成"整体失调的程度"。</p>
+<p>所以"找不到抑郁症的病灶"，未必是显微镜不够好。你把一堆机制不同的人塞进同一个格子，再去格子里找共同的脑特征——本来就该找不到，平均一下什么都被抹平了。</p>
+<p class="en-brief"><b>EN</b> A few hundred different symptom combinations all satisfy the DSM criteria for major depression, so two patients with zero overlapping symptoms can carry the same label. Comorbidity is the rule rather than the exception, and factor analyses keep extracting one general "p factor" cutting across diagnoses. If the categories don't carve nature at its joints, averaging within them is precisely how you make a biomarker vanish.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这在 AI 里有个眼熟的对应：<b>评测只看输出</b>。两个模型在同一份考卷上同分，一个是真会推理，一个是把答案背进了参数——只按行为分类，这两种永远分不开。这几年兴起的<b>可解释性</b>研究要做的正是打开箱子、按内部机制重新归类。精神病学现在卡的是同一道题，只不过它的箱子是脑，而且不许拆。</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>不按病名切，按功能维度切</h2>
+<p>2013 年，美国国立精神卫生研究所当时的所长干了件很反常的事：宣布本机构以后不再按诊断手册的类别来分配研究经费。理由就是上一节那条——按病名分组，捞到的是一群机制混杂的人。</p>
+<p>替代方案叫 <strong>RDoC</strong>，你可以把它想成换了一套坐标。它先不问"这人是什么病"，而是问：在几个功能维度上，这个人各自站在哪个位置——对威胁的反应、对奖赏的反应、认知控制、社会加工、唤醒与节律。每个维度再横跨好几个观察层次：基因、分子、细胞、回路、行为、以及本人的自述。于是研究对象从"抑郁组 vs 对照组"，变成了"威胁反应过强的这一群人，不管他们手册上写的是焦虑、创伤后应激还是抑郁"。</p>
+<figure>
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t26bM" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<text x="122" y="22" font-size="12.5" font-weight="700" fill="#8f89ad" text-anchor="middle">按病名切</text>
+<text x="392" y="22" font-size="12.5" font-weight="700" fill="#e879f9" text-anchor="middle">按维度切</text>
+<rect x="14" y="36" width="66" height="164" rx="11" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+<rect x="90" y="36" width="66" height="164" rx="11" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+<rect x="166" y="36" width="66" height="164" rx="11" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+<rect x="26" y="50" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="52" y="50" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="26" y="78" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="52" y="78" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<rect x="26" y="106" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="52" y="106" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<rect x="26" y="134" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="52" y="134" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<rect x="26" y="162" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="52" y="162" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="102" y="50" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="128" y="50" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="102" y="78" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="128" y="78" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="102" y="106" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="128" y="106" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<rect x="102" y="134" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="128" y="134" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<rect x="102" y="162" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="128" y="162" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="178" y="50" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="204" y="50" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<rect x="178" y="78" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="204" y="78" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<rect x="178" y="106" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="204" y="106" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<rect x="178" y="134" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="204" y="134" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="178" y="162" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="204" y="162" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<text x="47" y="216" font-size="11" fill="#8f89ad" text-anchor="middle">抑郁</text>
+<text x="123" y="216" font-size="11" fill="#8f89ad" text-anchor="middle">焦虑</text>
+<text x="199" y="216" font-size="11" fill="#8f89ad" text-anchor="middle">精分</text>
+<line x1="244" y1="118" x2="278" y2="118" stroke="#e879f9" stroke-width="2.4" stroke-linecap="round" marker-end="url(#t26bM)"></line>
+<text x="300" y="50" font-size="10.5" fill="#7bf0e8">威胁反应过强</text>
+<rect x="296" y="56" width="190" height="30" rx="9" fill="rgba(52,229,224,0.07)" stroke="rgba(52,229,224,0.3)" stroke-width="1"></rect>
+<rect x="306" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="330" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="354" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="378" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="402" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="426" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<text x="300" y="118" font-size="10.5" fill="#f0cf88">奖赏反应迟钝</text>
+<rect x="296" y="124" width="190" height="30" rx="9" fill="rgba(251,191,36,0.07)" stroke="rgba(251,191,36,0.3)" stroke-width="1"></rect>
+<rect x="306" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="330" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="354" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="378" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="402" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<text x="300" y="186" font-size="10.5" fill="#c9a8f5">认知控制弱</text>
+<rect x="296" y="192" width="190" height="30" rx="9" fill="rgba(167,139,250,0.07)" stroke="rgba(167,139,250,0.3)" stroke-width="1"></rect>
+<rect x="306" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="330" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="354" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="378" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="402" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="426" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+</svg>
+<figcaption>同一批人、同一批格子：换的不是名字，是切法</figcaption>
+</figure>
+<p>十年过去，得诚实报个账。那位所长后来自己说过：任内出了一大批漂亮论文，但自杀率、住院率、康复率并没有被真正改善。RDoC 至今没有变成临床能用的诊断工具，批评者说它把"回路"提前当成了答案。另有一条更保守的路线叫 <strong>HiTOP</strong>：不预设神经机制，先老老实实用统计把症状排成从具体到一般的层级。两条路吵得挺凶，但共识是同一句——<strong>格子该重画。</strong></p>
+<p class="en-brief"><b>EN</b> In 2013 the NIMH stopped funding research organised by DSM categories and proposed RDoC instead: a matrix of functional dimensions (threat, reward, cognitive control, social processes, arousal) crossed with levels of analysis from genes to self-report. Ten years on, the honest ledger is mixed — no clinically usable diagnostic tool yet, and its own founding director has said the field didn't move the needle on suicide or recovery rates. HiTOP takes the more conservative route of letting statistics, not assumed circuits, redraw the map.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>不是零件坏了，是增益拧错了</h2>
+<p>"回路失调"听着抽象，落到实处就三件事：<strong>增益、平衡、切换</strong>。</p>
+<p><strong>增益</strong>说的是一片神经元整体有多兴奋。脑里所有活动都靠一对搭档拉扯着维持：谷氨酸负责踩油门、GABA 负责踩刹车——它们是两种最主要的化学信使（<a class="reflink" href="ref-neurotransmitters.html">神经递质系统</a>）。刹车那一侧有一类专管抑制的小神经元格外关键：精神分裂症患者身上反复观察到这类细胞的标记减少，同时脑电里的高频节律变弱。刹车弱下来，整片区域的信噪比就塌了——不是信号变小，是背景噪声压不住。</p>
+<p><strong>平衡与切换</strong>说的是网络之间。有三张网你已经见过两张：默认模式网络（发呆、想自己时最活跃）、中央执行网络（做事时上场）。第三张叫<strong>凸显网络</strong>，干的是扳道工的活——它决定什么值得被当回事，以及现在该切到哪张网上去。</p>
+<figure>
+<svg viewBox="0 0 500 252" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="t26cS" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#3a1a44"></stop><stop offset="1" stop-color="#22102e"></stop></radialGradient>
+<marker id="t26cA" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+<marker id="t26cB" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"></path></marker>
+<marker id="t26cC" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+</defs>
+<rect x="10" y="98" width="106" height="44" rx="14" fill="rgba(255,255,255,0.035)" stroke="rgba(255,255,255,0.16)" stroke-width="1"></rect>
+<text x="63" y="118" font-size="11.5" fill="#d8d3ec" text-anchor="middle">身体与外界</text>
+<text x="63" y="133" font-size="10" fill="#8f89ad" text-anchor="middle" font-family="SF Mono,monospace">一堆信号涌进来</text>
+<line x1="120" y1="120" x2="158" y2="120" stroke="#8f89ad" stroke-width="2.2" stroke-linecap="round" marker-end="url(#t26cA)"></line>
+<rect x="164" y="92" width="126" height="56" rx="18" fill="url(#t26cS)" stroke="#e879f9" stroke-width="1.5"></rect>
+<text x="227" y="115" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">凸显网络</text>
+<text x="227" y="133" font-size="10" fill="#e0a8ea" text-anchor="middle" font-family="SF Mono,monospace">扳道工</text>
+<path d="M292,106 C322,106 320,54 340,54" fill="none" stroke="#a78bfa" stroke-width="2.6" stroke-linecap="round" marker-end="url(#t26cB)"></path>
+<path d="M292,134 C322,134 320,190 340,190" fill="none" stroke="#34e5e0" stroke-width="2.6" stroke-linecap="round" marker-end="url(#t26cC)"></path>
+<rect x="346" y="30" width="144" height="48" rx="15" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.2"></rect>
+<text x="418" y="50" font-size="12" font-weight="600" fill="#efe9ff" text-anchor="middle">默认模式网络</text>
+<text x="418" y="66" font-size="9.5" fill="#c9a8f5" text-anchor="middle" font-family="SF Mono,monospace">向内 · 想自己</text>
+<rect x="346" y="166" width="144" height="48" rx="15" fill="rgba(52,229,224,0.07)" stroke="#34e5e0" stroke-width="1.2"></rect>
+<text x="418" y="186" font-size="12" font-weight="600" fill="#e6faf8" text-anchor="middle">中央执行网络</text>
+<text x="418" y="202" font-size="9.5" fill="#7bf0e8" text-anchor="middle" font-family="SF Mono,monospace">向外 · 做事</text>
+<text x="418" y="98" font-size="10" fill="#c9a8f5" text-anchor="middle">卡在这边出不来 → 反刍</text>
+<text x="227" y="172" font-size="10" fill="#e0a8ea" text-anchor="middle">标错重要性 → 妄想</text>
+</svg>
+<figcaption>扳道工既管"什么值得当回事"，也管"现在该切到哪张网"</figcaption>
+</figure>
+<p>抑郁里那种停不下来的反刍，落在"切不出去"：该退出向内那张网的时候退不出来。而精神分裂症的核心异常，现在很多人归到扳道工本身<strong>标错了</strong>：多巴胺的问题不是浓度高低，是它在错误的时刻给无关的东西打上了"重要"的标签。于是路边一辆车、电视里的一句话，都显得意味深长——妄想常常是随后长出来的<strong>解释</strong>：一个人在拼命给这些被强行标红的体验找一个说得通的故事。</p>
+<p>再往下一层，还有个更贴 Topic 1 的讲法。健康的大脑在你自己产生一个念头的同时，会发一份"这是我自己发的"的副本，用来把内部产物和外部输入分开。这份标记要是失灵，再叠上自上而下的预期被过度采信、感官证据被压过，内心的独白就会被贴上"外来"的标签——这是幻听的一种主流机制解释。顺带一提：健康人服下阻断谷氨酸受体的药（氯胺酮那一类），能短暂复制出相当像的一整套体验——这也是"不只是多巴胺"的硬证据。</p>
+<p class="en-brief"><b>EN</b> Circuit dysregulation means three concrete things: gain (excitation/inhibition balance — inhibitory interneuron markers and fast oscillations are reduced in schizophrenia, collapsing signal-to-noise), balance and switching between networks (the salience network acts as the switch operator between the default-mode and central-executive networks). Rumination is a failure to switch out; psychosis is increasingly read as aberrant salience — dopamine tagging the irrelevant as important, with delusions as the explanation built afterwards. Hallucinated voices fit the predictive-processing account: a failed self-generated tag plus over-weighted priors.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>两条都挺紧。其一，模型"编"出一段内容，再把自己编的东西当成查到的事实喂回上下文——分不清"我生成的"和"外面来的"，正是上面那份丢失的自我标记。其二，模型输出崩坏的时候，多数不是权重坏了，而是那几个管"多信自己 / 多信证据"的旋钮拧过了头（画图时的 guidance、聊天模型的 temperature 都属此类）。<b>回路失调说的正是这件事：零件都在，参数偏了</b>——这也解释了为什么精神科的治疗更像调参而不是换件。</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>照着回路治，现在能到哪一步</h2>
+<p>把病看成参数偏了而不是零件坏了，治疗的思路会跟着变。</p>
+<p>第一步是<strong>靶点不再靠解剖学挑，而是算出来的</strong>。经颅磁刺激（隔着头骨用磁场去刺激一小片皮层）治抑郁，早期是固定打前额叶的某个位置。后来发现：这个点跟脑子深处一小块和抑郁关系密切的区域（膝下扣带回）功能连接越是<strong>反</strong>相关，疗效越好——于是靶点可以按每个人自己的连接图来定。沿这个思路再加上更密集的刺激排程，小样本试验里报出过很高的缓解率，也拿到了监管许可；但样本还小，别当成通用方案。</p>
+<p>第二步是<strong>闭环</strong>。深部电刺激过去是插上电极持续放电，强度靠人隔一阵调一次。2021 年的一个单例做了另一件事：先在这个人自己脑里找出情绪跌落时反复出现的一段电活动，把它当触发条件，<strong>只在检出的时候才放一下电</strong>。这一下就把治疗从"按周期给药"变成了带反馈的控制。</p>
+<figure>
+<svg viewBox="0 0 500 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t26dA" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+<marker id="t26dB" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"></path></marker>
+</defs>
+<text x="118" y="24" font-size="12" font-weight="700" fill="#8f89ad" text-anchor="middle">开环 · 常规给法</text>
+<rect x="38" y="44" width="160" height="40" rx="13" fill="rgba(255,255,255,0.035)" stroke="rgba(255,255,255,0.16)" stroke-width="1"></rect>
+<text x="118" y="69" font-size="11.5" fill="#d8d3ec" text-anchor="middle">固定剂量 · 固定频率</text>
+<line x1="118" y1="88" x2="118" y2="116" stroke="#8f89ad" stroke-width="2.2" stroke-linecap="round" marker-end="url(#t26dA)"></line>
+<rect x="38" y="122" width="160" height="40" rx="13" fill="rgba(255,255,255,0.035)" stroke="rgba(255,255,255,0.16)" stroke-width="1"></rect>
+<text x="118" y="147" font-size="11.5" fill="#d8d3ec" text-anchor="middle">回路</text>
+<text x="118" y="192" font-size="10.5" fill="#5b5678" text-anchor="middle" font-family="SF Mono,monospace">没有回读这条线</text>
+<line x1="250" y1="20" x2="250" y2="216" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="4 6"></line>
+<text x="376" y="24" font-size="12" font-weight="700" fill="#34e5e0" text-anchor="middle">闭环 · 检出才放电</text>
+<rect x="296" y="40" width="160" height="36" rx="12" fill="rgba(52,229,224,0.06)" stroke="rgba(52,229,224,0.35)" stroke-width="1"></rect>
+<text x="376" y="63" font-size="11.5" fill="#e6faf8" text-anchor="middle">持续记录脑活动</text>
+<line x1="376" y1="80" x2="376" y2="102" stroke="#34e5e0" stroke-width="2.2" stroke-linecap="round" marker-end="url(#t26dB)"></line>
+<rect x="296" y="108" width="160" height="36" rx="12" fill="rgba(52,229,224,0.06)" stroke="rgba(52,229,224,0.35)" stroke-width="1"></rect>
+<text x="376" y="131" font-size="11.5" fill="#e6faf8" text-anchor="middle">检出这个人的发作标志</text>
+<line x1="376" y1="148" x2="376" y2="170" stroke="#34e5e0" stroke-width="2.2" stroke-linecap="round" marker-end="url(#t26dB)"></line>
+<rect x="296" y="176" width="160" height="36" rx="12" fill="rgba(52,229,224,0.06)" stroke="rgba(52,229,224,0.35)" stroke-width="1"></rect>
+<text x="376" y="199" font-size="11.5" fill="#e6faf8" text-anchor="middle">此刻才放一下电</text>
+<path d="M460,194 C486,194 486,64 464,58" fill="none" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#t26dB)"></path>
+</svg>
+<figcaption>同一台机器，差别只在有没有那条回读的线</figcaption>
+</figure>
+<p>第三步在药上。2024 年获批的一种抗精神病药，是几十年来第一个<strong>不靠堵多巴胺受体</strong>起效的：它走乙酰胆碱那条线，间接把多巴胺信号拽回工作范围，副作用谱因此明显不同。它值得单拎出来说，是因为它本身就是回路视角的产物——不是去补某个"液位"，是从别的入口去改整条链路的工作点。</p>
+<p>边界也得说清楚。上面这些都还是少数人、贵、样本小。用脑影像给抑郁分亚型的那篇著名研究，后来没能被独立复制；这类研究现在的共识是，要让脑影像和行为的关联稳下来，样本量得上千。所以真实位置是：<strong>机制层面的地图正在重画，临床上还没有一把"验一下就知道你是哪型、该用哪种"的尺子。</strong>如果你或者身边的人正卡在里面，别等这把尺子——现有治疗的平均效应算不上惊人，但确实优于什么都不做，而找到专业的人是唯一能真正加速的一步（怎么找、怎么谈，psychology 那边讲）。</p>
+<p class="en-brief"><b>EN</b> Circuit thinking is already changing treatment: TMS targets are now computed from each person's functional connectivity (sites more anticorrelated with the subgenual cingulate work better), closed-loop deep brain stimulation fires only when a patient-specific biomarker of decline is detected, and the first antipsychotic in decades that doesn't work by blocking dopamine receptors was approved in 2024, acting through acetylcholine instead. The limits are real: imaging-derived depression subtypes failed to replicate, brain-behaviour associations need thousands of subjects to stabilise, and no psychiatric diagnosis yet has a usable biomarker.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"找不到那个实体"这件事，在别处早被反复琢磨过：</p>
+<ul>
+<li><b>佛学 · 中观</b>：「诸法无自性」——你去拆一辆车，找不到一个叫"车"的东西，只找得到零件与它们的关系；"车"是<b>依名安立</b>的假名。抑郁症也一样：拆到底没有那个实体，只有一组条件与失衡。RDoC 拆诊断实体、改按维度看，走的正是这个方向；而中观还多一句提醒——新画的格子同样是假名，别把地图又当成地。</li>
+<li><b>控制论 · 增益与稳定</b>：工程上判断一个系统病没病，从来不看零件清单，看它的增益、延迟和反馈。增益过高会震荡，反馈迟钝会漂移，零件却完好如初。"精神疾病是回路失调"翻译成工程语言就是这句话——也顺带解释了为什么同一个旋钮既能治病也能致病：中间那段才是健康区。</li>
+<li><b>现象学 · 雅斯贝尔斯</b>：1913 年他就分开了两种做法——<b>理解</b>（顺着这个人的处境和意义走进去）和<b>说明</b>（从外面找机制与因果）。他的判断是：两者谁也替不了谁。回路视角是"说明"这一侧的重大进展，但一个人为什么在此刻崩溃，仍要在"理解"那一侧才答得上——把痛苦全部翻译成参数，反而会漏掉治疗真正要抓的东西。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>说"精神疾病是脑病"，能减轻污名吗？</summary><div>这是少数有实证答案的问题，而答案是<strong>两头拉</strong>。把问题归到生物机制，确实能明显降低<strong>责备</strong>——不再是"你就是懒/想太多"。但汇总多项研究会看到另一半：同一批解释也会<strong>提高</strong>旁人对"这病改不了"的悲观预期，某些情况下还抬高了"这人不好预测"的印象。机制解释里"零件坏了"那层暗示，正是这半效果的来源。有意思的是，"回路失调"这个说法在这里反而占便宜：参数偏了本来就意味着<strong>可调</strong>，而可塑性是脑最不缺的东西。</div></details>
+<details><summary>既然诊断名不切在关节上，那诊断还有什么用？</summary><div>用处很实在，只是别搞错它是什么。诊断是<strong>工具</strong>，不是本体：它让两个医生说的是同一件事，让预后有个参照，让治疗有起点，也决定医保报不报。它的失败仅仅在于——不能拿来当"底下的机制是同一套"的保证。类比一下：把"咳嗽"归成一类在门诊很有用，但没人指望能找到"咳嗽的基因"。精神科的困境是它把症状层的分类，被当成了病因层的分类，用了太多年。</div></details>
+<details><summary>脑影像做了几十年，为什么至今没出一个能用的诊断标记？</summary><div>三件事叠在一起。一是<strong>格子混杂</strong>：组里的人机制本来就不一样，平均之后特征互相抵消。二是<strong>效应量小、样本太小</strong>：脑影像和行为之间的真实关联比大家想象的弱得多，几十人的研究抓到的多半是噪声——所以早年那些漂亮结果大批倒在复制上；现在的共识是这类研究要上千人才稳。三是<strong>标准不同</strong>：诊断标记不只要在组间有差异，还得在<strong>个体</strong>身上准，而且要能把"这个病"和别的病分开——这比发一篇有显著差异的论文难一个量级。</div></details>
+<details><summary>如果一切都是回路参数，那"我的痛苦有意义"这句话还成立吗？</summary><div>成立，而且不冲突。机制和意义是两套描述，各自完整：说清失恋时哪条回路怎么变了，不会让"我很在乎这个人"这件事失效；就像知道音乐是空气压力波，不会让它不再好听。真正的风险在实践里——一旦全用机制语言说话，很容易滑向"那就调参吧"，把处境本身跳过去。可现实是，一个人的贫困、孤立、创伤，正是把参数长期拧偏的那只手。所以雅斯贝尔斯那句"两者谁也替不了谁"，一百年后依然是对的。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Research_Domain_Criteria" target="_blank">RDoC · 研究领域标准</a> — 用维度 × 层次的矩阵替掉病名分类</li>
+<li><a href="https://en.wikipedia.org/wiki/Hierarchical_Taxonomy_of_Psychopathology" target="_blank">HiTOP · 精神病理层级分类</a> — 不预设机制，先让统计把格子重排</li>
+<li><a href="https://en.wikipedia.org/wiki/Salience_network" target="_blank">凸显网络 Salience network</a> — 三网络模型里的那个扳道工</li>
+<li><a href="https://en.wikipedia.org/wiki/Dopamine_hypothesis_of_schizophrenia" target="_blank">精神分裂的多巴胺假说</a> — 从"浓度过高"到"异常凸显"的修正</li>
+<li><a href="https://en.wikipedia.org/wiki/Glutamate_hypothesis_of_schizophrenia" target="_blank">谷氨酸假说</a> — 氯胺酮为何能在健康人身上复制出类似体验</li>
+<li><a href="https://en.wikipedia.org/wiki/Transcranial_magnetic_stimulation" target="_blank">经颅磁刺激 TMS</a> — 靶点如何从解剖位置变成算出来的连接图</li>
+<li><a href="https://en.wikipedia.org/wiki/Deep_brain_stimulation" target="_blank">深部脑刺激 DBS</a> — 从持续放电到闭环触发</li>
+<li><a href="https://en.wikipedia.org/wiki/Karl_Jaspers" target="_blank">雅斯贝尔斯 · 普通精神病理学</a> — "理解"与"说明"的百年之分</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 26 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

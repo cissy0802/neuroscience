@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>参考 · 神经递质系统 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.html">← 参考库</a>
+<header>
+<span class="ref-badge">参考库 · REFERENCE</span>
+<h1>神经递质系统<span class="en">Neurotransmitter Systems</span></h1>
+<p>神经元之间传话的化学信使。关键在于它们分成很不一样的两类：一类<strong>点对点传内容</strong>，一类<strong>整片地改变听的方式</strong>——分清这两类，"化学失衡"这个比喻错在哪儿就一目了然。</p>
+</header>
+<h2>两种传法：说什么 vs 怎么听</h2>
+<p>神经元之间的缝隙叫突触。上游细胞放出化学分子、下游细胞的受体接住，信号就过去了。但同样是"放分子"，脑里有两套完全不同的用法：</p>
+<figure>
+<svg viewBox="0 0 500 230" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="rnN" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#2a1c44"></stop><stop offset="1" stop-color="#160e2c"></stop></radialGradient>
+<marker id="rnA" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="rnB" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"></path></marker>
+</defs>
+<text x="118" y="24" font-size="12" font-weight="700" fill="#7bf0e8" text-anchor="middle">点对点 · 说什么</text>
+<rect x="46" y="42" width="146" height="40" rx="14" fill="url(#rnN)" stroke="#34e5e0" stroke-width="1.2"></rect>
+<text x="119" y="67" font-size="11.5" fill="#e6faf8" text-anchor="middle">上游神经元</text>
+<line x1="119" y1="86" x2="119" y2="128" stroke="#34e5e0" stroke-width="3" stroke-linecap="round" marker-end="url(#rnA)"></line>
+<text x="140" y="112" font-size="10" fill="#7bf0e8" font-family="SF Mono,monospace">谷氨酸 / GABA</text>
+<rect x="46" y="134" width="146" height="40" rx="14" fill="url(#rnN)" stroke="#34e5e0" stroke-width="1.2"></rect>
+<text x="119" y="159" font-size="11.5" fill="#e6faf8" text-anchor="middle">下游神经元</text>
+<text x="119" y="200" font-size="10" fill="#8f89ad" text-anchor="middle" font-family="SF Mono,monospace">毫秒级 · 一个突触之内</text>
+<line x1="250" y1="20" x2="250" y2="210" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="4 6"></line>
+<text x="378" y="24" font-size="12" font-weight="700" fill="#fbbf24" text-anchor="middle">弥散 · 怎么听</text>
+<circle cx="300" cy="112" r="20" fill="rgba(251,191,36,0.12)" stroke="#fbbf24" stroke-width="1.4"></circle>
+<text x="300" y="116" font-size="10" fill="#faf0dc" text-anchor="middle">核团</text>
+<text x="300" y="152" font-size="9.5" fill="#f0cf88" text-anchor="middle" font-family="SF Mono,monospace">几万个细胞</text>
+<path d="M322,98 C348,86 360,72 384,66" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" marker-end="url(#rnB)"></path>
+<path d="M323,108 C350,104 360,100 384,98" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" marker-end="url(#rnB)"></path>
+<path d="M323,118 C350,124 360,128 384,132" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" marker-end="url(#rnB)"></path>
+<path d="M322,128 C348,140 360,152 384,162" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" marker-end="url(#rnB)"></path>
+<rect x="390" y="40" width="98" height="150" rx="16" fill="rgba(251,191,36,0.06)" stroke="rgba(251,191,36,0.35)" stroke-width="1.1"></rect>
+<text x="439" y="108" font-size="11.5" fill="#faf0dc" text-anchor="middle">大片皮层</text>
+<text x="439" y="128" font-size="9.5" fill="#f0cf88" text-anchor="middle" font-family="SF Mono,monospace">上亿个细胞</text>
+</svg>
+<figcaption>左边传的是内容，右边改的是整片区域"怎么处理内容"</figcaption>
+</figure>
+<p><strong>点对点（快速传递）</strong>——谷氨酸和 GABA 干的活。前者让下游更容易放电（油门），后者让它更难放电（刹车）。作用范围就一个突触那么大，时间尺度是毫秒。脑里绝大多数突触用的是这两种，它们撑起了"信息本身"。</p>
+<p><strong>弥散（调制）</strong>——多巴胺、血清素、去甲肾上腺素、乙酰胆碱这几位。它们的老家是脑干和中脑里几个很小的核团，细胞数量只有几万，可轴突像洒水车一样铺满全脑。它们通常不直接命令下游放不放电，而是改变<strong>增益</strong>：让这片区域对输入更敏感或更迟钝、让某些连接更容易被改写。这种"放出去让它慢慢扩散、附近有受体的都能收到"的传法，有个专门的名字叫<strong>容积传递</strong>。</p>
+<h2>主要的几套调制系统</h2>
+<dl class="kv">
+<dt>谷氨酸（Glutamate）· 主兴奋</dt><dd>脑内最主要的兴奋性递质。它的 NMDA 受体还是学习的关键开关——同时满足"上游在放电"和"下游已经兴奋"才打开，天然是个符合律探测器。</dd>
+<dt>GABA · 主抑制</dt><dd>最主要的抑制性递质。抑制不是"关掉"，而是雕刻：决定谁被压下去、什么时候放行，脑电节律基本由它塑造。多种镇静催眠药走的都是这条线。</dd>
+<dt>多巴胺（Dopamine）· 中脑</dt><dd>常被叫成"快乐分子"，其实更准的说法是<strong>预测误差与凸显</strong>：它编码的是"比预期更好/更值得注意"，而不是快乐本身。既管学习，也管运动的启动。</dd>
+<dt>血清素（Serotonin, 5-HT）· 中缝核</dt><dd>受体家族大得吓人（十几种），所以谈"血清素高低"几乎没有意义——同一个分子在不同受体上效果可以相反。与耐心、等待、情绪的长期基调、以及睡眠相关。</dd>
+<dt>去甲肾上腺素（Noradrenaline）· 蓝斑</dt><dd>唤醒与警觉的总闸。它调的是全脑的<strong>信噪比</strong>：适度升高让人专注，过高则变成一惊一乍、什么都想抓。</dd>
+<dt>乙酰胆碱（Acetylcholine）· 基底前脑 / 脑桥</dt><dd>注意与可塑性的门。它一上来，皮层就更"愿意"根据当下的输入改写自己——所以它常被称为"允许学习"的信号；睡眠中它的水平变化也是区分睡眠阶段的关键之一。</dd>
+<dt>神经肽与内源性大麻素</dt><dd>作用更慢、更持久的一类信使。内源性大麻素还会<strong>逆着</strong>传：由下游细胞放出、反过来调节上游放多少——一个天然的负反馈刹车。</dd>
+</dl>
+<h2>为什么"某某太少"几乎总是错的</h2>
+<p>三个理由，一个比一个致命。</p>
+<p><strong>一、效果由受体决定，不由分子决定。</strong>同一个多巴胺，落在 D1 受体上和落在 D2 受体上，对下游的效果可以是相反的。所以"多巴胺高/低"这句话本身不完整——不说清哪条通路、哪种受体，它没有含义。</p>
+<figure>
+<svg viewBox="0 0 460 150" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="rnU" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="rnD" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<rect x="14" y="52" width="130" height="46" rx="16" fill="rgba(251,191,36,0.10)" stroke="#fbbf24" stroke-width="1.3"></rect>
+<text x="79" y="80" font-size="12.5" font-weight="600" fill="#faf0dc" text-anchor="middle">同一个多巴胺</text>
+<path d="M148,66 C186,60 196,44 224,38" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linecap="round" marker-end="url(#rnU)"></path>
+<path d="M148,84 C186,90 196,106 224,112" fill="none" stroke="#e879f9" stroke-width="2.4" stroke-linecap="round" marker-end="url(#rnD)"></path>
+<rect x="230" y="16" width="216" height="44" rx="15" fill="rgba(52,229,224,0.07)" stroke="#34e5e0" stroke-width="1.1"></rect>
+<text x="338" y="35" font-size="11.5" fill="#e6faf8" text-anchor="middle">落在 D1 类受体</text>
+<text x="338" y="51" font-size="10" fill="#7bf0e8" text-anchor="middle" font-family="SF Mono,monospace">下游更容易被推动</text>
+<rect x="230" y="90" width="216" height="44" rx="15" fill="rgba(232,121,249,0.07)" stroke="#e879f9" stroke-width="1.1"></rect>
+<text x="338" y="109" font-size="11.5" fill="#f7e2fb" text-anchor="middle">落在 D2 类受体</text>
+<text x="338" y="125" font-size="10" fill="#e0a8ea" text-anchor="middle" font-family="SF Mono,monospace">下游被压住</text>
+</svg>
+<figcaption>递质只是钥匙，锁在下游——同一把钥匙能开出相反的门</figcaption>
+</figure>
+<p><strong>二、这些系统本来就是"调音"的，不是"供货"的。</strong>调制系统的语言是时相：什么时候放、放在哪条通路、持续多久。把它翻译成一个液位高低，等于把一首曲子压缩成一个平均音量。</p>
+<p><strong>三、系统会自己变。</strong>长期改变一种递质的水平，受体的数量和敏感度会跟着调整（上调/下调）。这就是为什么很多精神科药物几周才起效、也是为什么突然停药会反弹——真正变了的是整套调节的工作点，不是某个瞬时浓度。</p>
+<p>顺带说清一个常见误会：药物有效不能反推病因。SSRI 类药物的作用位点是把血清素从突触间隙搬回去的那个转运体，它几小时内就能把间隙里的血清素堆高，但人要两三周才见好——这段延迟本身就说明，治病的那一步在下游的慢过程里，不在"补货"这个动作上。</p>
+<div class="links">
+<h3>// 被这些主线引用</h3>
+<p class="who">Topic 6 决策（多巴胺预测误差）· Topic 24 抑郁与躁郁 · Topic 26 精神疾病作为回路失调 · 未来的成瘾/精神药理相关期</p>
+<h3 style="margin-top:18px">// 延伸</h3>
+<p><a href="https://en.wikipedia.org/wiki/Neurotransmitter" target="_blank">神经递质 Neurotransmitter</a> · <a href="https://en.wikipedia.org/wiki/Neuromodulation" target="_blank">神经调质 Neuromodulation</a> · <a href="https://en.wikipedia.org/wiki/Volume_transmission" target="_blank">容积传递 Volume transmission</a> · <a href="https://en.wikipedia.org/wiki/Locus_coeruleus" target="_blank">蓝斑 Locus coeruleus</a> · <a href="https://www.nature.com/articles/s41380-022-01661-0" target="_blank">血清素理论的证据总览（2022）</a></p>
+</div>
+<footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

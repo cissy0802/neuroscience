@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 26 · Mental Illness as Circuit Dysregulation — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 26 · PHASE D CLINICAL</span>
+<h1>Mental Illness as Circuit Dysregulation</h1>
+<h2>No lesion found — maybe the grid is drawn in the wrong place</h2>
+<div class="date">2026-08-02 · BigCat</div>
+<p class="pitch">Two people can share a diagnosis without sharing a single symptom.</p>
+</header>
+<div class="intro">
+<p>"Mental illness is a brain problem" — almost everyone says this now. Push one step further and it gets awkward. What does a depressed brain look like on a scan? There is no such scan. Is there a blood test for anxiety? No. After decades and billions, psychiatry still has <strong>not one biological measure you can use to make a diagnosis</strong>. The usual explanation is that the technology isn't good enough yet. The more convincing explanation these days is different: <strong>we have been hunting for lesions with a map whose grid lines are in the wrong place.</strong> It isn't that there's no mechanism in the brain — it's that the disease names themselves may not sit on any natural seam.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>One label, possibly two different people</h2>
+<p>How does the diagnostic manual define major depression? List nine symptoms; if five of them are present for two weeks and at least one is a core symptom, that's a diagnosis. Sounds rigorous — until you count the combinations. A few hundred different symptom sets satisfy that rule. So this is entirely possible: one person can't sleep, can't eat, can't sit still, blames themselves, wants to die; another sleeps too much, eats too much, moves slowly, is exhausted, can't hold attention. Not one symptom in common, and the same diagnosis on both charts.</p>
+<figure>
+<svg viewBox="0 0 500 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t26aM" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#a78bfa"></path></marker>
+</defs>
+<rect x="128" y="8" width="244" height="34" rx="17" fill="rgba(167,139,250,0.10)" stroke="#a78bfa" stroke-width="1.2"></rect>
+<text x="250" y="30" font-size="13" font-weight="700" fill="#efe9ff" text-anchor="middle">Same diagnosis: major depression</text>
+<path d="M200,44 C150,50 130,52 122,62" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#t26aM)"></path>
+<path d="M300,44 C350,50 370,52 378,62" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#t26aM)"></path>
+<rect x="16" y="70" width="214" height="176" rx="14" fill="rgba(52,229,224,0.045)" stroke="rgba(52,229,224,0.32)" stroke-width="1.1"></rect>
+<text x="123" y="94" font-size="12.5" font-weight="700" fill="#7bf0e8" text-anchor="middle">Patient A</text>
+<rect x="270" y="70" width="214" height="176" rx="14" fill="rgba(251,191,36,0.045)" stroke="rgba(251,191,36,0.32)" stroke-width="1.1"></rect>
+<text x="377" y="94" font-size="12.5" font-weight="700" fill="#fbbf24" text-anchor="middle">Patient B</text>
+<text x="34" y="120" font-size="10.5" fill="#b8b2d4">insomnia · no appetite</text>
+<rect x="34" y="126" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="34" y="126" width="162" height="9" rx="4.5" fill="#34e5e0"></rect>
+<text x="34" y="152" font-size="10.5" fill="#b8b2d4">agitation</text>
+<rect x="34" y="158" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="34" y="158" width="150" height="9" rx="4.5" fill="#34e5e0"></rect>
+<text x="34" y="184" font-size="10.5" fill="#b8b2d4">hypersomnia · overeating</text>
+<rect x="34" y="190" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="34" y="190" width="14" height="9" rx="4.5" fill="#34e5e0"></rect>
+<text x="34" y="216" font-size="10.5" fill="#b8b2d4">slowed · unfocused</text>
+<rect x="34" y="222" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="34" y="222" width="16" height="9" rx="4.5" fill="#34e5e0"></rect>
+<text x="288" y="120" font-size="10.5" fill="#b8b2d4">insomnia · no appetite</text>
+<rect x="288" y="126" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="288" y="126" width="15" height="9" rx="4.5" fill="#fbbf24"></rect>
+<text x="288" y="152" font-size="10.5" fill="#b8b2d4">agitation</text>
+<rect x="288" y="158" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="288" y="158" width="13" height="9" rx="4.5" fill="#fbbf24"></rect>
+<text x="288" y="184" font-size="10.5" fill="#b8b2d4">hypersomnia · overeating</text>
+<rect x="288" y="190" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="288" y="190" width="168" height="9" rx="4.5" fill="#fbbf24"></rect>
+<text x="288" y="216" font-size="10.5" fill="#b8b2d4">slowed · unfocused</text>
+<rect x="288" y="222" width="178" height="9" rx="4.5" fill="rgba(255,255,255,0.07)"></rect><rect x="288" y="222" width="146" height="9" rx="4.5" fill="#fbbf24"></rect>
+</svg>
+<figcaption>One box can hold two people whose symptoms barely overlap</figcaption>
+</figure>
+<p>Comorbidity is the rule, not the exception: of people who meet criteria for one psychiatric diagnosis, close to half meet criteria for a second and a third. If these were genuinely separate diseases, that number makes no sense. It looks much more like one underlying thing surfacing from different sides. Some researchers took every symptom from thousands of people and factored them statistically; the largest shared component ran across nearly every diagnosis. They call it the <strong>p factor</strong> — roughly, "how dysregulated this person is overall".</p>
+<p>So "we can't find the lesion of depression" may not be a microscope problem. Pack a group of mechanistically different people into one box, then search that box for a common brain signature, and you should expect to find nothing — averaging is exactly what erases it.</p>
+<div class="ai">
+<h4>Cross-read with AI</h4>
+<p>There's a familiar counterpart in AI: <b>benchmarks only see outputs</b>. Two models score the same on one test — one actually reasons, the other memorised the answers during training. Classify by behaviour alone and you can never separate those two. The whole point of the recent <b>interpretability</b> work is to open the box and re-sort systems by internal mechanism. Psychiatry is stuck on the same problem, except its box is a living brain and you don't get to open it.</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Cut by dimension, not by disease name</h2>
+<p>In 2013 the then-director of the US National Institute of Mental Health did something startling: he announced the institute would stop organising its research funding around the manual's categories. The reason is the one above — group by disease name and you collect a mechanistically mixed crowd.</p>
+<p>The replacement is called <strong>RDoC</strong>, and you can think of it as a change of coordinates. It doesn't start with "what disease is this?" It asks where a person sits along a handful of functional dimensions: response to threat, response to reward, cognitive control, social processing, arousal and rhythm. Each dimension is then studied across several levels at once — genes, molecules, cells, circuits, behaviour, and what the person reports. So the study group stops being "depressed vs controls" and becomes "everyone whose threat response is over-reactive, whatever the manual says they have".</p>
+<figure>
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t26bM" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<text x="122" y="22" font-size="12" font-weight="700" fill="#8f89ad" text-anchor="middle">carved by diagnosis</text>
+<text x="392" y="22" font-size="12" font-weight="700" fill="#e879f9" text-anchor="middle">carved by dimension</text>
+<rect x="14" y="36" width="66" height="164" rx="11" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+<rect x="90" y="36" width="66" height="164" rx="11" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+<rect x="166" y="36" width="66" height="164" rx="11" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+<rect x="26" y="50" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="52" y="50" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="26" y="78" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="52" y="78" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<rect x="26" y="106" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="52" y="106" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<rect x="26" y="134" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="52" y="134" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<rect x="26" y="162" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="52" y="162" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="102" y="50" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="128" y="50" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="102" y="78" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="128" y="78" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="102" y="106" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="128" y="106" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<rect x="102" y="134" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="128" y="134" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<rect x="102" y="162" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="128" y="162" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="178" y="50" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="204" y="50" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<rect x="178" y="78" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="204" y="78" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<rect x="178" y="106" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="204" y="106" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<rect x="178" y="134" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="204" y="134" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<rect x="178" y="162" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="204" y="162" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+<text x="47" y="216" font-size="10.5" fill="#8f89ad" text-anchor="middle">depression</text>
+<text x="123" y="216" font-size="10.5" fill="#8f89ad" text-anchor="middle">anxiety</text>
+<text x="199" y="216" font-size="10.5" fill="#8f89ad" text-anchor="middle">psychosis</text>
+<line x1="244" y1="118" x2="278" y2="118" stroke="#e879f9" stroke-width="2.4" stroke-linecap="round" marker-end="url(#t26bM)"></line>
+<text x="300" y="50" font-size="10" fill="#7bf0e8">over-reactive threat response</text>
+<rect x="296" y="56" width="190" height="30" rx="9" fill="rgba(52,229,224,0.07)" stroke="rgba(52,229,224,0.3)" stroke-width="1"></rect>
+<rect x="306" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="330" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="354" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="378" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="402" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect><rect x="426" y="63" width="16" height="16" rx="4" fill="#34e5e0"></rect>
+<text x="300" y="118" font-size="10" fill="#f0cf88">blunted reward response</text>
+<rect x="296" y="124" width="190" height="30" rx="9" fill="rgba(251,191,36,0.07)" stroke="rgba(251,191,36,0.3)" stroke-width="1"></rect>
+<rect x="306" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="330" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="354" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="378" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect><rect x="402" y="131" width="16" height="16" rx="4" fill="#fbbf24"></rect>
+<text x="300" y="186" font-size="10" fill="#c9a8f5">weak cognitive control</text>
+<rect x="296" y="192" width="190" height="30" rx="9" fill="rgba(167,139,250,0.07)" stroke="rgba(167,139,250,0.3)" stroke-width="1"></rect>
+<rect x="306" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="330" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="354" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="378" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="402" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect><rect x="426" y="199" width="16" height="16" rx="4" fill="#a78bfa"></rect>
+</svg>
+<figcaption>Same people, same tiles — what changes is where you cut</figcaption>
+</figure>
+<p>A decade on, the ledger deserves an honest reading. That same director later said the institute published a great many excellent papers during his tenure, and did not move the needle on suicide, hospitalisation or recovery. RDoC has not become a diagnostic tool anyone uses in clinic, and critics say it promoted "circuits" to an answer before it had earned the promotion. A more conservative alternative, <strong>HiTOP</strong>, assumes no neural mechanism at all: it just lets statistics sort symptoms into a hierarchy running from specific to general. The two camps argue plenty, but they agree on the sentence that matters — <strong>the grid needs redrawing.</strong></p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Nothing is broken; the gain is set wrong</h2>
+<p>"Circuit dysregulation" sounds abstract. Concretely it means three things: <strong>gain, balance, switching</strong>.</p>
+<p><strong>Gain</strong> is how excitable a patch of neurons is overall. Everything the brain does is held in place by a pair pulling against each other: glutamate presses the accelerator, GABA presses the brake — the two main chemical messengers (<a class="reflink" href="ref-neurotransmitters.en.html">neurotransmitter systems</a>). On the brake side, one class of small inhibitory neurons matters especially: in people with schizophrenia, markers of these cells are repeatedly found reduced, and the fast rhythms in their EEG are weaker. Weaken the brake and the signal-to-noise ratio of the whole region collapses — not because the signal shrinks, but because the background noise is no longer held down.</p>
+<p><strong>Balance and switching</strong> are about whole networks. You've met two of the three: the default mode network (most active when you're daydreaming or thinking about yourself) and the central executive network (on duty when you're doing something). The third is the <strong>salience network</strong>, and its job is that of a switch operator — it decides what deserves to be taken seriously, and which network you should be on right now.</p>
+<figure>
+<svg viewBox="0 0 500 252" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="t26cS" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#3a1a44"></stop><stop offset="1" stop-color="#22102e"></stop></radialGradient>
+<marker id="t26cA" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+<marker id="t26cB" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"></path></marker>
+<marker id="t26cC" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+</defs>
+<rect x="10" y="98" width="106" height="44" rx="14" fill="rgba(255,255,255,0.035)" stroke="rgba(255,255,255,0.16)" stroke-width="1"></rect>
+<text x="63" y="118" font-size="11" fill="#d8d3ec" text-anchor="middle">body &amp; world</text>
+<text x="63" y="133" font-size="9" fill="#8f89ad" text-anchor="middle" font-family="SF Mono,monospace">signals flooding in</text>
+<line x1="120" y1="120" x2="158" y2="120" stroke="#8f89ad" stroke-width="2.2" stroke-linecap="round" marker-end="url(#t26cA)"></line>
+<rect x="164" y="92" width="126" height="56" rx="18" fill="url(#t26cS)" stroke="#e879f9" stroke-width="1.5"></rect>
+<text x="227" y="115" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">salience network</text>
+<text x="227" y="133" font-size="9.5" fill="#e0a8ea" text-anchor="middle" font-family="SF Mono,monospace">the switch operator</text>
+<path d="M292,106 C320,106 318,54 336,54" fill="none" stroke="#a78bfa" stroke-width="2.6" stroke-linecap="round" marker-end="url(#t26cB)"></path>
+<path d="M292,134 C320,134 318,190 336,190" fill="none" stroke="#34e5e0" stroke-width="2.6" stroke-linecap="round" marker-end="url(#t26cC)"></path>
+<rect x="342" y="30" width="150" height="48" rx="15" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.2"></rect>
+<text x="417" y="50" font-size="11" font-weight="600" fill="#efe9ff" text-anchor="middle">default mode network</text>
+<text x="417" y="66" font-size="9" fill="#c9a8f5" text-anchor="middle" font-family="SF Mono,monospace">inward · about yourself</text>
+<rect x="342" y="166" width="150" height="48" rx="15" fill="rgba(52,229,224,0.07)" stroke="#34e5e0" stroke-width="1.2"></rect>
+<text x="417" y="186" font-size="11" font-weight="600" fill="#e6faf8" text-anchor="middle">central executive network</text>
+<text x="417" y="202" font-size="9" fill="#7bf0e8" text-anchor="middle" font-family="SF Mono,monospace">outward · doing things</text>
+<text x="417" y="98" font-size="9.5" fill="#c9a8f5" text-anchor="middle">stuck on this one → rumination</text>
+<text x="227" y="172" font-size="9.5" fill="#e0a8ea" text-anchor="middle">importance mis-tagged → delusion</text>
+</svg>
+<figcaption>The switch operator sets what counts as important, and which network you're on</figcaption>
+</figure>
+<p>The rumination of depression is a failure to switch <em>out</em>: the moment to leave the inward network arrives and you can't leave. And the core abnormality of schizophrenia is increasingly pinned on the switch operator <strong>tagging the wrong things</strong>: dopamine's problem isn't that there's too much of it, it's that at the wrong moments it stamps "important" onto things that aren't. A parked car, a phrase on television — everything seems loaded with meaning. Delusions are often the <strong>explanation built afterwards</strong>: a person working hard to find a story that makes those forcibly highlighted experiences hang together.</p>
+<p>One layer down there's an account that sits even closer to Topic 1. A healthy brain, at the moment it generates a thought of its own, also issues a copy tagged "this one came from me" — that's how internal products stay separated from external input. Let that tag fail, add top-down expectations that are over-trusted and sensory evidence that is over-ruled, and your own inner monologue gets labelled as coming from outside. That's one mainstream mechanistic account of hearing voices. Worth noting alongside it: healthy volunteers given a drug that blocks glutamate receptors (the ketamine family) briefly reproduce a strikingly similar set of experiences — hard evidence that this was never only about dopamine.</p>
+<div class="ai">
+<h4>Cross-read with AI</h4>
+<p>Two tight ones. First: a model invents a passage, then feeds its own invention back into its context as though it were something retrieved — unable to distinguish "I generated this" from "this came from outside", which is precisely the missing self-tag above. Second: when a model's output falls apart, it's rarely the weights that broke; usually it's the knobs governing how much to trust its own priors versus the evidence in front of it (guidance in image models, temperature in chat models). <b>That is exactly what circuit dysregulation says: every part is present, the parameters are off</b> — and it's why psychiatric treatment looks more like tuning than like replacing a part.</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Treating the circuit: how far it actually goes</h2>
+<p>Once illness looks like mis-set parameters rather than a broken part, the treatment logic shifts with it.</p>
+<p>Step one: <strong>the target is computed, not picked off an anatomy chart</strong>. Transcranial magnetic stimulation (a magnetic field driving a small patch of cortex from outside the skull) was originally aimed at a fixed spot on the prefrontal cortex. Then came the finding that the more <strong>anti</strong>-correlated that spot is with a small deep region tied to depression (the subgenual cingulate), the better the response — so the target can be set from each person's own connectivity map. Combine that idea with a much denser stimulation schedule and small trials have reported very high remission rates, along with regulatory clearance. The samples are still small; don't file it under solved.</p>
+<p>Step two: <strong>closing the loop</strong>. Deep brain stimulation used to mean an implanted electrode delivering current continuously, with the dose adjusted by a human every so often. A single case in 2021 did something else: first find, in this particular brain, a pattern of electrical activity that recurs whenever mood drops; then use it as a trigger, and <strong>deliver current only when it is detected</strong>. That one change turns treatment from "dosing on a schedule" into control with feedback.</p>
+<figure>
+<svg viewBox="0 0 500 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="t26dA" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+<marker id="t26dB" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"></path></marker>
+</defs>
+<text x="118" y="24" font-size="11.5" font-weight="700" fill="#8f89ad" text-anchor="middle">open loop · standard dosing</text>
+<rect x="38" y="44" width="160" height="40" rx="13" fill="rgba(255,255,255,0.035)" stroke="rgba(255,255,255,0.16)" stroke-width="1"></rect>
+<text x="118" y="69" font-size="11" fill="#d8d3ec" text-anchor="middle">fixed dose · fixed interval</text>
+<line x1="118" y1="88" x2="118" y2="116" stroke="#8f89ad" stroke-width="2.2" stroke-linecap="round" marker-end="url(#t26dA)"></line>
+<rect x="38" y="122" width="160" height="40" rx="13" fill="rgba(255,255,255,0.035)" stroke="rgba(255,255,255,0.16)" stroke-width="1"></rect>
+<text x="118" y="147" font-size="11" fill="#d8d3ec" text-anchor="middle">circuit</text>
+<text x="118" y="192" font-size="10" fill="#5b5678" text-anchor="middle" font-family="SF Mono,monospace">no read-back line</text>
+<line x1="250" y1="20" x2="250" y2="216" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="4 6"></line>
+<text x="376" y="24" font-size="11.5" font-weight="700" fill="#34e5e0" text-anchor="middle">closed loop · fires on detection</text>
+<rect x="296" y="40" width="160" height="36" rx="12" fill="rgba(52,229,224,0.06)" stroke="rgba(52,229,224,0.35)" stroke-width="1"></rect>
+<text x="376" y="63" font-size="11" fill="#e6faf8" text-anchor="middle">record brain activity</text>
+<line x1="376" y1="80" x2="376" y2="102" stroke="#34e5e0" stroke-width="2.2" stroke-linecap="round" marker-end="url(#t26dB)"></line>
+<rect x="296" y="108" width="160" height="36" rx="12" fill="rgba(52,229,224,0.06)" stroke="rgba(52,229,224,0.35)" stroke-width="1"></rect>
+<text x="376" y="131" font-size="11" fill="#e6faf8" text-anchor="middle">detect this person's marker</text>
+<line x1="376" y1="148" x2="376" y2="170" stroke="#34e5e0" stroke-width="2.2" stroke-linecap="round" marker-end="url(#t26dB)"></line>
+<rect x="296" y="176" width="160" height="36" rx="12" fill="rgba(52,229,224,0.06)" stroke="rgba(52,229,224,0.35)" stroke-width="1"></rect>
+<text x="376" y="199" font-size="11" fill="#e6faf8" text-anchor="middle">stimulate only then</text>
+<path d="M460,194 C486,194 486,64 464,58" fill="none" stroke="#34e5e0" stroke-width="2" stroke-linecap="round" marker-end="url(#t26dB)"></path>
+</svg>
+<figcaption>Same machine — the difference is whether that read-back line exists</figcaption>
+</figure>
+<p>Step three is in the pharmacy. An antipsychotic approved in 2024 is the first in decades that <strong>doesn't work by blocking dopamine receptors</strong>: it acts through acetylcholine instead, pulling dopamine signalling back into range indirectly, with a noticeably different side-effect profile as a result. It's worth singling out because it is itself a product of circuit thinking — not topping up some "level", but entering from elsewhere to move the operating point of a whole chain.</p>
+<p>The limits belong in the same paragraph. All of the above is still expensive, small-scale, and available to few. The famous study that used brain imaging to split depression into subtypes failed independent replication; the consensus now is that brain-behaviour associations need samples in the thousands before they stabilise. So the honest position is this: <strong>the mechanistic map is being redrawn, and there is still no clinical ruler that tells you which subtype you are and which treatment to use.</strong> If you or someone near you is stuck in this, don't wait for that ruler — the average effect of existing treatment isn't dazzling, but it beats doing nothing, and getting a professional involved is the one step that genuinely speeds things up.</p>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"The entity isn't there when you look for it" is a problem other traditions have chewed on for a long time:</p>
+<ul>
+<li><b>Buddhism · Madhyamaka</b>: take a chariot apart and you never find a thing called "chariot", only parts and the relations between them; "chariot" is a name imputed on a basis. Depression is the same — take it apart and there is no entity, only a set of conditions out of balance. RDoC dissolving the diagnostic entity in favour of dimensions moves in exactly that direction. Madhyamaka adds one warning: the new grid is imputed too, so don't mistake the redrawn map for the ground.</li>
+<li><b>Cybernetics · gain and stability</b>: engineers never judge whether a system is sick by auditing its parts list — they look at gain, delay and feedback. Too much gain and it oscillates; sluggish feedback and it drifts, with every component still perfectly intact. "Mental illness is circuit dysregulation" is that sentence translated — and it explains why the same knob can both treat and cause: health lives in the middle of the range.</li>
+<li><b>Phenomenology · Jaspers</b>: in 1913 he separated two moves — <b>understanding</b> (entering a person's situation and its meaning) and <b>explaining</b> (finding mechanism and cause from outside) — and argued neither can substitute for the other. The circuit view is a real advance on the explaining side. Why this person collapsed at this moment is still answered on the understanding side, and translating all suffering into parameters is how you lose the thing treatment actually has to grip.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>Does saying "mental illness is a brain disease" reduce stigma?</summary><div>This is one of the few questions with real data, and the answer <strong>pulls both ways</strong>. Attributing the problem to biology does clearly reduce <strong>blame</strong> — it's no longer "you're lazy, you think too much". But pooling across studies shows the other half: the same explanations <strong>raise</strong> other people's pessimism about whether it can change, and in some cases raise the sense that the person is unpredictable. That second half comes from what "a broken part" quietly implies. Which is where "circuit dysregulation" has an advantage: parameters set wrong already means <strong>adjustable</strong>, and plasticity is the one thing brains have plenty of.</div></details>
+<details><summary>If the categories don't carve nature at its joints, what good is a diagnosis?</summary><div>Plenty of good, as long as you're clear what it is. A diagnosis is a <strong>tool</strong>, not an entity: it lets two clinicians talk about the same thing, gives prognosis a reference class, gives treatment a starting point, and decides what insurance pays for. Its only failure is that it can't double as a guarantee that the underlying mechanism is shared. Compare: grouping patients by "cough" is genuinely useful in a clinic, and nobody expects to find "the gene for cough". Psychiatry's bind is that it treated a symptom-level classification as a cause-level one for far too long.</div></details>
+<details><summary>Decades of brain imaging — why is there still no usable diagnostic marker?</summary><div>Three things stack up. First, <strong>mixed boxes</strong>: the people in a group differ mechanistically, so averaging cancels their signatures out. Second, <strong>small effects, small samples</strong>: brain-behaviour associations are much weaker than the field assumed, so a study of thirty people is mostly measuring noise — which is why so many early, beautiful results died in replication, and why the current consensus asks for thousands. Third, <strong>a harder bar</strong>: a diagnostic marker doesn't just need a group difference, it has to be accurate in an <strong>individual</strong> and separate this condition from the neighbouring ones. That's an order of magnitude beyond publishing a significant difference.</div></details>
+<details><summary>If it's all circuit parameters, does "my suffering means something" survive?</summary><div>It survives, and there's no conflict. Mechanism and meaning are two descriptions, each complete in itself: specifying which circuit changed during heartbreak doesn't cancel the fact that you cared about that person, just as knowing music is pressure waves in air doesn't stop it sounding good. The real risk is practical — once everything is said in mechanism language, it slides easily into "well then, adjust the parameters", and the situation gets skipped. In reality, a person's poverty, isolation and trauma are the hand that held those parameters out of place for years. Which is why Jaspers' line about neither side substituting for the other still holds a century later.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Research_Domain_Criteria" target="_blank">RDoC · Research Domain Criteria</a> — dimensions × levels of analysis, replacing disease categories</li>
+<li><a href="https://en.wikipedia.org/wiki/Hierarchical_Taxonomy_of_Psychopathology" target="_blank">HiTOP</a> — no assumed mechanism; let statistics redraw the grid first</li>
+<li><a href="https://en.wikipedia.org/wiki/Salience_network" target="_blank">Salience network</a> — the switch operator in the triple-network model</li>
+<li><a href="https://en.wikipedia.org/wiki/Dopamine_hypothesis_of_schizophrenia" target="_blank">Dopamine hypothesis of schizophrenia</a> — from "too much" to "aberrant salience"</li>
+<li><a href="https://en.wikipedia.org/wiki/Glutamate_hypothesis_of_schizophrenia" target="_blank">Glutamate hypothesis</a> — why ketamine reproduces so much of it in healthy volunteers</li>
+<li><a href="https://en.wikipedia.org/wiki/Transcranial_magnetic_stimulation" target="_blank">Transcranial magnetic stimulation</a> — targets moving from anatomy to computed connectivity</li>
+<li><a href="https://en.wikipedia.org/wiki/Deep_brain_stimulation" target="_blank">Deep brain stimulation</a> — from continuous current to closed-loop triggering</li>
+<li><a href="https://en.wikipedia.org/wiki/Karl_Jaspers" target="_blank">Jaspers · General Psychopathology</a> — the century-old split between understanding and explaining</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 26 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
