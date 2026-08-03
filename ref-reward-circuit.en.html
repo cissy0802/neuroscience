@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reference · Reward Circuit — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.en.html">← Reference library</a>
+<header>
+<span class="ref-badge">REFERENCE</span>
+<h1>Reward Circuit<span class="en">Mesolimbic system</span></h1>
+<p>A loop running from the midbrain into the ventral striatum and back out to the prefrontal cortex. It's often called the "pleasure centre," and that name is almost entirely wrong — <strong>what it computes is "is this worth approaching," not "how good does this feel."</strong></p>
+</header>
+<h2>The trunk line: VTA → nucleus accumbens → ventral pallidum → prefrontal cortex</h2>
+<p>The circuit starts with a small cluster of midbrain cells (the ventral tegmental area, VTA) that manufacture dopamine and spray it forward onto a few key stations. The main line lands in the <strong>nucleus accumbens</strong> (the core of the ventral striatum), then runs through the ventral pallidum and thalamus back up to the <strong>prefrontal cortex</strong> — which in turn sends a heavy set of descending connections back down onto the accumbens. It's a <strong>closed loop</strong>, not a one-way street.</p>
+<figure>
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient cx="0.5" cy="0.3" id="rw" r="0.95"><stop offset="0" stop-color="#2b2150"></stop><stop offset="1" stop-color="#150e2c"></stop></radialGradient>
+<filter height="220%" id="glowW" width="220%" x="-60%" y="-60%"><feGaussianBlur result="b" stdDeviation="3"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+<marker id="da" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"></path></marker>
+<marker id="cy" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"></path></marker>
+<marker id="pu" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="8.5" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#a78bfa"></path></marker>
+</defs>
+<line marker-end="url(#da)" stroke="#fbbf24" stroke-linecap="round" stroke-width="2.8" x1="132" x2="170" y1="158" y2="158"></line>
+<line marker-end="url(#cy)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6" x1="324" x2="346" y1="158" y2="158"></line>
+<path d="M419,130 C419,92 386,60 354,50" fill="none" marker-end="url(#cy)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M206,70 C196,94 198,110 210,126" fill="none" marker-end="url(#pu)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M46,130 C34,84 90,28 144,42" fill="none" marker-end="url(#da)" stroke="#fbbf24" stroke-dasharray="5 4" stroke-linecap="round" stroke-width="2.2"></path>
+<line marker-end="url(#pu)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4" x1="250" x2="250" y1="236" y2="190"></line>
+<rect fill="url(#rw)" filter="url(#glowW)" height="50" rx="22" stroke="#a78bfa" stroke-width="1.3" width="200" x="150" y="18"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="700" text-anchor="middle" x="250" y="38">prefrontal cortex</text>
+<text fill="#c4a6e4" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="250" y="56">valuation · inhibition · excuses</text>
+<rect fill="rgba(251,191,36,0.08)" filter="url(#glowW)" height="52" rx="20" stroke="#fbbf24" stroke-width="1.3" width="118" x="14" y="132"></rect>
+<text fill="#faf0dc" font-size="13" font-weight="700" text-anchor="middle" x="73" y="153">VTA</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="73" y="171">dopamine source</text>
+<rect fill="url(#rw)" filter="url(#glowW)" height="52" rx="20" stroke="#34e5e0" stroke-width="1.5" width="148" x="176" y="132"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="700" text-anchor="middle" x="250" y="153">nucleus accumbens</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="250" y="171">ventral striatum · core/shell</text>
+<rect fill="url(#rw)" filter="url(#glowW)" height="52" rx="20" stroke="#8f7cd0" stroke-width="1.3" width="146" x="346" y="132"></rect>
+<text fill="#efe9ff" font-size="11.5" font-weight="600" text-anchor="middle" x="419" y="153">ventral pallidum</text>
+<text fill="#c4a6e4" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="419" y="171">→ thalamus → cortex</text>
+<rect fill="rgba(232,121,249,0.06)" height="46" rx="18" stroke="#e879f9" stroke-width="1.1" width="270" x="115" y="238"></rect>
+<text fill="#f5b8fb" font-size="11.5" text-anchor="middle" x="250" y="266">amygdala · hippocampus (context) · interoception</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="136" y="144">dopamine</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="80" y="26">mesocortical</text>
+<text fill="#c4a6e4" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="146" y="98">descending</text>
+<text fill="#c4a6e4" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="146" y="112">glutamate</text>
+</svg>
+<figcaption>VTA supplies dopamine, the accumbens integrates, the loop returns to prefrontal cortex — which pushes back down</figcaption>
+</figure>
+<dl class="kv">
+<dt>VTA (ventral tegmental area)</dt><dd>One of the brain's dopamine factories. What its dopamine carries isn't content but <strong>reward prediction error</strong> — how much better or worse than expected. The branch to the accumbens is the <strong>mesolimbic pathway</strong>; the branch to the frontal cortex is the <strong>mesocortical pathway</strong>.</dd>
+<dt>Nucleus accumbens</dt><dd>The junction box. It stacks three streams — how much it's worth (dopamine), what situation this is (hippocampus), what it means emotionally (amygdala) — and outputs "approach or not." It divides into <strong>core</strong> (action and cue learning) and <strong>shell</strong>, which houses the small patches that handle actual pleasure.</dd>
+<dt>Ventral pallidum</dt><dd>The output gate. It's an obligatory waypoint for wanting, and it <strong>also contains hedonic hotspots</strong> — lesion it and sweet taste can turn into an aversive reaction.</dd>
+<dt>Prefrontal cortex (medial / orbitofrontal)</dt><dd>The upper storey: it wires reward valuation into planning and inhibition. Its descending glutamate connections press down on the accumbens — and when that line weakens, you have the circuit basis of impulsivity and loss of control.</dd>
+<dt>Amygdala · hippocampus · interoception</dt><dd>Three inputs: emotional significance, where you are (context), and what your body is currently doing. Which is why the same stimulus is worth wildly different amounts depending on mood, place, and whether you're hungry or full.</dd>
+</dl>
+<h2>Wanting ≠ liking: two systems in one building</h2>
+<p>Two mechanisms live inside this circuit and are constantly conflated:</p>
+<p><strong>Wanting</strong> (incentive salience) — dopamine-driven, broad, easy to amplify, and about going after things. <strong>Liking</strong> (hedonic reactions) — handled by a few very small <strong>hedonic hotspots</strong> in the accumbens shell and ventral pallidum, running on the brain's own opioid and cannabinoid molecules: small, fragile, and hard to turn up.</p>
+<p>That accounts for two everyday facts: <strong>pleasure has a ceiling and craving doesn't</strong>, and it is entirely possible to want something intensely while enjoying it not at all — which is exactly the shape of addiction, the two curves coming apart.</p>
+<h2>How it relates to the basal ganglia</h2>
+<p>Same architecture, different floor. The <a href="ref-basal-ganglia.en.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">basal ganglia</a> diagram — cortex → striatum → output nuclei → thalamus → back to cortex — has a ventral version here: <strong>the ventral loop computes "is it worth it, should I approach," the dorsal loop handles which action to run and which habits to keep</strong>. And they aren't parallel: the connections between dopamine cells and striatum form a <strong>spiral</strong>, letting influence climb step by step from ventral to dorsal. That spiral is the anatomical route for the progression from wanting, to habit, to compulsion.</p>
+<h2>Three common misreadings</h2>
+<dl class="kv">
+<dt>❌ Dopamine = pleasure</dt><dd>No. Dopamine-depleted animals still show normal "this tastes good" reactions; they just stop pursuing. It's a <strong>motivation and learning</strong> signal, not the pleasure itself.</dd>
+<dt>❌ This is the "pleasure centre"</dt><dd>The early experiments where rats self-stimulated relentlessly were read as finding a pleasure centre. Later analysis favours a different reading: what was being ignited was <strong>wanting</strong> — the animal chasing an anticipation that never arrives.</dd>
+<dt>❌ Only drugs use this pathway</dt><dd>Food, sex, social approval, money, information, and the swipe that promises a better next clip all run through the same circuit. What makes drugs special isn't that they use it — it's that they <strong>pry it open pharmacologically</strong>, bypassing the prediction and saturation every natural reward has to pass through.</dd>
+</dl>
+<div class="links">
+<h3>// CITED BY</h3>
+<p class="who">Topic 6 Decision-making (value coding) · Topic 24 Depression &amp; bipolar (anhedonia) · Topic 27 Addiction · future issues on psychedelics and behavioural addiction</p>
+<h3 style="margin-top:18px">// FURTHER</h3>
+<p><a href="https://en.wikipedia.org/wiki/Reward_system" target="_blank">Reward system</a> · <a href="https://en.wikipedia.org/wiki/Mesolimbic_pathway" target="_blank">Mesolimbic pathway</a> · <a href="https://en.wikipedia.org/wiki/Ventral_tegmental_area" target="_blank">Ventral tegmental area</a> · <a href="https://en.wikipedia.org/wiki/Nucleus_accumbens" target="_blank">Nucleus accumbens</a> · <a href="https://en.wikipedia.org/wiki/Ventral_pallidum" target="_blank">Ventral pallidum</a> · <a href="https://en.wikipedia.org/wiki/Incentive_salience" target="_blank">Incentive salience · wanting vs liking</a></p>
+</div>
+<footer>BigCat · Neuroscience · Reference · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
