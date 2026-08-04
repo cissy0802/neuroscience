@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>参考 · 蛋白稳态 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.html">← 参考库</a>
+<header>
+<span class="ref-badge">参考库 · REFERENCE</span>
+<h1>蛋白稳态<span class="en">Proteostasis</span></h1>
+<p>细胞里的蛋白必须折成正确的三维形状才能干活，而折错每天都在发生。蛋白稳态就是"折对 → 折错就修 → 修不好就清掉"这一整条流水线——<strong>神经元几乎不分裂、要用一辈子，所以它比任何组织都更依赖这条线不出错</strong>。</p>
+</header>
+<h2>一条流水线，三个出口</h2>
+<p>新生的氨基酸链从核糖体出来时是软塌塌的一条，得折起来才有功能。折叠不是自动就对：细胞里挤得像早高峰的地铁，链子很容易折歪、或者半路和别人粘上。于是细胞配了一整套后勤：</p>
+<figure>
+<svg viewbox="0 0 500 232" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="pf1" r="0.95"><stop offset="0" stop-color="#0f2a30"></stop><stop offset="1" stop-color="#08181e"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.3" id="pf2" r="0.95"><stop offset="0" stop-color="#2a1c48"></stop><stop offset="1" stop-color="#160e2c"></stop></radialgradient>
+<filter height="200%" id="gP" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="pA" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"></path></marker>
+<marker id="pC" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="pM" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<line marker-end="url(#pA)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4" x1="114" x2="142" y1="112" y2="112"></line>
+<path d="M264,98 C288,90 292,46 314,46" fill="none" marker-end="url(#pC)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.4"></path>
+<line marker-end="url(#pA)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4" x1="264" x2="312" y1="112" y2="112"></line>
+<path d="M264,126 C288,134 292,178 314,178" fill="none" marker-end="url(#pA)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<rect fill="url(#pf1)" filter="url(#gP)" height="54" rx="16" stroke="#34e5e0" stroke-width="1.2" width="104" x="8" y="85"></rect>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="60" y="108">新生蛋白链</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="60" y="124">刚出核糖体</text>
+<rect fill="url(#pf2)" filter="url(#gP)" height="64" rx="18" stroke="#a78bfa" stroke-width="1.4" width="116" x="146" y="80"></rect>
+<text fill="#efe9ff" font-size="12" font-weight="600" text-anchor="middle" x="204" y="104">折叠</text>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="204" y="122">伴侣蛋白在旁边看着</text>
+<rect fill="rgba(52,229,224,0.07)" filter="url(#gP)" height="44" rx="14" stroke="#34e5e0" stroke-width="1.1" width="174" x="316" y="24"></rect>
+<text fill="#e6faf8" font-size="11.5" font-weight="600" text-anchor="middle" x="403" y="43">折对 → 上岗干活</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="403" y="58">酶 / 通道 / 骨架</text>
+<rect fill="rgba(167,139,250,0.07)" filter="url(#gP)" height="44" rx="14" stroke="#a78bfa" stroke-width="1.1" width="174" x="316" y="90"></rect>
+<text fill="#efe9ff" font-size="11.5" font-weight="600" text-anchor="middle" x="403" y="109">折错 → 蛋白酶体绞碎</text>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="403" y="124">先挂泛素标签</text>
+<rect fill="rgba(167,139,250,0.07)" filter="url(#gP)" height="44" rx="14" stroke="#a78bfa" stroke-width="1.1" width="174" x="316" y="156"></rect>
+<text fill="#efe9ff" font-size="11.5" font-weight="600" text-anchor="middle" x="403" y="175">抱成团 → 自噬吞进溶酶体</text>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="403" y="190">连坏线粒体一起</text>
+<line marker-end="url(#pM)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2" x1="204" x2="204" y1="150" y2="176"></line>
+<text fill="#f5b8fb" font-size="11" text-anchor="middle" x="196" y="200">三条都变慢</text>
+<text fill="#f5b8fb" font-size="11" text-anchor="middle" x="196" y="216">→ 开始堆积</text>
+</svg>
+<figcaption>折叠 → 三条出路；出口全堵住时，堆积才开始</figcaption>
+</figure>
+<dl class="kv">
+<dt>伴侣蛋白（Chaperone / 热休克蛋白）</dt><dd>盯着新生链别折歪，也给已经折错的一次<strong>重折的机会</strong>。名字里的"热休克"是因为高温会让蛋白大批变性，细胞就大量生产它们来救场。</dd>
+<dt>泛素-蛋白酶体系统（UPS）</dt><dd>修不好的，细胞给它挂上一串叫<strong>泛素</strong>的小标签——相当于贴"待销毁"。蛋白酶体是个桶状的碎纸机，把挂了标签的蛋白拽进去绞成短肽。只处理<strong>单个、还能被拉直塞进桶</strong>的蛋白。</dd>
+<dt>自噬-溶酶体（Autophagy）</dt><dd>已经抱成团的聚集体、坏掉的线粒体，塞不进碎纸机——就用一层膜把它整个包起来，送进<strong>溶酶体</strong>（细胞里的酸性消化袋）化掉。神经退行里出问题的多半是这条线。</dd>
+<dt>细胞外的清除</dt><dd>漏到细胞外的（比如 Aβ），靠<strong>小胶质细胞</strong>吞掉，再加上睡眠时脑脊液的冲刷带走一部分。</dd>
+</dl>
+<h2>为什么神经元格外吃亏</h2>
+<p>同样一套系统，神经元用起来比别的细胞难得多，原因很实在：</p>
+<p><strong>它不分裂。</strong>会分裂的细胞有个隐形福利——每次分家，垃圾就被稀释一半分给后代。神经元没有这条后路，你八十岁时用的很多蛋白机器，就是当年那一批，攒下的所有损伤都留在原地。</p>
+<p><strong>它太长了。</strong>轴突末端和胞体可以隔着半个大脑，很多废料得靠马达蛋白沿着微管"长途货运"回胞体才能处理。路上任何一段运输出问题，垃圾就地堆下。</p>
+<p><strong>它太耗能。</strong>折叠、挂标签、绞碎、运输，每一步都烧 ATP；而神经元本来就把大部分能量花在维持电位上，留给保洁的余量很薄。再加上自噬和蛋白酶体的活性本身随年龄下降——<strong>产出没怎么变，清除力却在逐年打折</strong>。</p>
+<h2>它一失灵，就是一串病</h2>
+<p>把清除侧出问题的病列在一起，会看到一个很齐的名单：阿尔茨海默（Aβ、tau）、帕金森（α-突触核蛋白）、ALS 与额颞叶痴呆（TDP-43）、亨廷顿病（异常的亨廷顿蛋白）。蛋白各不相同，共同点是<strong>该清的没清掉</strong>，于是统称<strong>蛋白病</strong>。</p>
+<p>遗传学给了很硬的旁证：帕金森最常见的两个风险基因里，<strong>GBA</strong> 编码的是一个溶酶体酶，<strong>LRRK2</strong> 管的是囊泡运输和溶酶体功能——两个都在清运线上，而不在生产线上。</p>
+<p>还有一个容易被忽略的机制：<strong>未折叠蛋白反应（UPR）</strong>。内质网里折错的蛋白堆多了，细胞会拉闸——暂时压低整体蛋白合成，先把手头的收拾干净。短期是自救；<strong>长期一直开着，神经元就会因为造不出该造的东西而慢慢衰竭</strong>。这也是近年很受关注的一个干预点。</p>
+<div class="links">
+<h3>// 被这些主线引用</h3>
+<p class="who">Topic 28 神经退行 · Topic 25 预防②·阿尔茨海默 · 未来的睡眠清除与蛋白病相关期</p>
+<h3 style="margin-top:18px">// 延伸</h3>
+<p><a href="https://en.wikipedia.org/wiki/Proteostasis" target="_blank">蛋白稳态 Proteostasis</a> · <a href="https://en.wikipedia.org/wiki/Chaperone_(protein)" target="_blank">伴侣蛋白</a> · <a href="https://en.wikipedia.org/wiki/Proteasome" target="_blank">蛋白酶体</a> · <a href="https://en.wikipedia.org/wiki/Autophagy" target="_blank">自噬</a> · <a href="https://en.wikipedia.org/wiki/Lysosome" target="_blank">溶酶体</a> · <a href="https://en.wikipedia.org/wiki/Unfolded_protein_response" target="_blank">未折叠蛋白反应</a> · <a href="https://en.wikipedia.org/wiki/Proteopathy" target="_blank">蛋白病</a></p>
+</div>
+<footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

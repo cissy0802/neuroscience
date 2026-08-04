@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 28 · Neurodegeneration — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 28 · PHASE D CLINICAL/FRONTIER</span>
+<h1>Neurodegeneration</h1>
+<h2>One protein folds wrong — and bends its neighbours into the same wrong shape</h2>
+<div class="date">2026-08-04 · BigCat</div>
+<p class="pitch">What kills the neuron isn't a toxin. It's a shape — and the shape copies itself.</p>
+</header>
+<div class="intro">
+<p>Alzheimer's and Parkinson's sound like wear and tear: parts get old, parts break. But wear and tear can't explain two odd facts. The damage <strong>always starts in the same small patch</strong> and then moves on in an almost fixed order. And the neurons that die first are always the same few kinds — while the ones right next door can be untouched. This one goes down to the molecules, and what you find looks less like rust and more like <strong>contagion</strong>. By the time you notice your memory slipping, it has been running quietly for twenty years.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>The shape is contagious</h2>
+<p>A protein is basically a chain of amino acids, and everything it does depends on <strong>folding into one particular 3-D shape</strong> — like origami, where the same sheet becomes a crane or a paper plane depending only on the folds. Folding it wrong isn't rare at all. Cells misfold things constantly, and clean them up constantly.</p>
+<p>The dangerous part is that some wrong shapes have an extra trick: <strong>they work as a template</strong>. A misfolded copy grabs a normal neighbour and bends it into the same wrong shape. One becomes two, two become four. Amyloid-β and tau in Alzheimer's, α-synuclein in Parkinson's — three unrelated proteins, all running the same script: misfold → clump into small soluble oligomers → grow into ever-longer fibrils → pile up into plaques or inclusions (Lewy bodies, in Parkinson's).</p>
+<figure>
+<svg viewbox="0 0 480 226" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="pnA" r="0.95"><stop offset="0" stop-color="#122a30"></stop><stop offset="1" stop-color="#091920"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.3" id="pnB" r="0.95"><stop offset="0" stop-color="#2e1440"></stop><stop offset="1" stop-color="#1a0b26"></stop></radialgradient>
+<filter height="200%" id="gA" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="aStep" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#c98adf"></path></marker>
+<marker id="aTiny" markerheight="10" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="7.5" refy="5"><path d="M1,1 L9,5 L1,9 Z" fill="#e879f9"></path></marker>
+<marker id="aAx" markerheight="10" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="7.5" refy="5"><path d="M1,1 L9,5 L1,9 Z" fill="#6f6a8c"></path></marker>
+</defs>
+<line marker-end="url(#aStep)" stroke="#c98adf" stroke-linecap="round" stroke-width="2.6" x1="144" x2="166" y1="60" y2="60"></line>
+<line marker-end="url(#aStep)" stroke="#c98adf" stroke-linecap="round" stroke-width="2.6" x1="308" x2="330" y1="60" y2="60"></line>
+<rect fill="url(#pnA)" filter="url(#gA)" height="92" rx="16" stroke="#34e5e0" stroke-width="1.2" width="132" x="10" y="14"></rect>
+<path d="M58,40 C74,30 96,38 94,54 C92,70 74,78 62,70 C50,62 46,50 58,40 Z" fill="none" stroke="#34e5e0" stroke-width="2.6"></path>
+<text fill="#7bf0e8" font-size="10" text-anchor="middle" x="76" y="96">correctly folded</text>
+<rect fill="url(#pnB)" filter="url(#gA)" height="92" rx="16" stroke="#e879f9" stroke-width="1.3" width="132" x="174" y="14"></rect>
+<polyline fill="none" points="188,36 197,48 188,60 197,72" stroke="#e879f9" stroke-linecap="round" stroke-width="2.6"></polyline>
+<line marker-end="url(#aTiny)" stroke="#e879f9" stroke-linecap="round" stroke-width="2" x1="205" x2="224" y1="54" y2="54"></line>
+<polyline fill="none" points="234,28 243,40 234,52 243,64" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></polyline>
+<polyline fill="none" points="262,44 271,56 262,68 271,80" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></polyline>
+<text fill="#f5b8fb" font-size="10" text-anchor="middle" x="240" y="96">wrong shape as template</text>
+<rect fill="url(#pnB)" filter="url(#gA)" height="92" rx="16" stroke="#a78bfa" stroke-width="1.2" width="132" x="338" y="14"></rect>
+<polyline fill="none" points="356,30 365,42 356,54 365,66" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></polyline>
+<polyline fill="none" points="372,30 381,42 372,54 381,66" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></polyline>
+<polyline fill="none" points="388,30 397,42 388,54 397,66" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></polyline>
+<path d="M416,32 C444,26 462,46 454,60 C446,74 420,72 414,58 C410,48 408,36 416,32 Z" fill="rgba(232,121,249,0.18)" stroke="#a78bfa" stroke-width="1.6"></path>
+<text fill="#c9a8f5" font-size="10" text-anchor="middle" x="404" y="96">fibrils → plaque</text>
+<line marker-end="url(#aAx)" stroke="#6f6a8c" stroke-width="1.4" x1="44" x2="456" y1="200" y2="200"></line>
+<line marker-end="url(#aAx)" stroke="#6f6a8c" stroke-width="1.4" x1="44" x2="44" y1="200" y2="126"></line>
+<path d="M52,196 C170,195 206,190 246,172 C286,154 322,140 452,136" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="3"></path>
+<line stroke="#5b5678" stroke-dasharray="3 4" stroke-width="1.3" x1="300" x2="300" y1="200" y2="152"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" transform="rotate(-90 30 168)" x="30" y="168">aggregate load</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="150" y="180">lag phase · twenty silent years</text>
+<text fill="#f5b8fb" font-size="11" text-anchor="middle" x="384" y="166">after nucleation</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="300" y="216">first symptom</text>
+</svg>
+<figcaption>The first seed takes forever; once it nucleates, the template copies itself</figcaption>
+</figure>
+<p>That explains the strange shape of the timeline. <strong>It starts unbelievably slow</strong> — forming that first "seed" is hard, and this stretch is called the lag phase. <strong>Then nucleation happens and everything speeds up.</strong> Amyloid pathology in Alzheimer's has typically been accumulating for around twenty years before the first symptom. Which makes the word "onset" badly misleading: that moment isn't the beginning, it's the point where the pile finally tipped over.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>The same dynamics have a twin in AI that people are now studying seriously: <b>model collapse</b>. Once a model is trained on content generated by itself (or by models like it), small distortions get copied forward as a template, drift compounds, and diversity eventually caves in. Note this is a match <b>in dynamics, not in mechanism</b> — proteins template by physical contact, models template through data recycling. But the skeleton is shared: <b>when a system feeds its own output back in as input, error amplifies itself</b> — nothing visible for a long time, then an avalanche.</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>The pile isn't necessarily the killer</h2>
+<p>If misfolding happens daily, why are you fine when you're young? Because the cell runs an entire quality-control and recycling crew: chaperones give a bad fold a second chance, small hopeless ones go to the proteasome to be shredded, big clumps get swallowed by autophagy and digested in lysosomes, and outside the cell microglia clean up. <strong>So the disease is usually less about making too much and more about not clearing it.</strong> Age slows every one of those lines down. <a class="reflink" href="ref-proteostasis.en.html">proteostasis</a> <a class="reflink" href="ref-glia.en.html">glia</a></p>
+<p>Genetics points the same way. The two commonest risk genes in Parkinson's, <strong>GBA</strong> and <strong>LRRK2</strong>, both work on lysosomes and vesicle trafficking — jobs on the waste-disposal line, not on the α-synuclein production line.</p>
+<p>And now the single most misread fact in this whole field: <strong>more plaque ≠ worse disease</strong>. Some people are packed with plaque and stay sharp until their last day. The explanation that currently holds up best is that a mature plaque is closer to <strong>sealed landfill</strong>, possibly even protective, and that the genuinely toxic species is the <strong>soluble oligomer</strong> still in transit — small, mobile, able to lodge in a synapse and take it apart. Meanwhile the thing that actually tracks cognitive decline, in both time and place, is a different protein: <strong>tau</strong>. Where tau pathology is heavy is where the tissue thins and the function goes first.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>It travels along the wiring, not across the map</h2>
+<p>If this were wear and tear, you'd expect damage to bleed outward from a spot like rust on metal. It doesn't.</p>
+<p>Tau pathology almost always starts in one small patch of entorhinal cortex, jumps to the hippocampus, and then spreads out across the neocortex — a sequence regular enough to be used as a staging system (Braak staging): look at the tissue and you can say which stop the disease has reached. Parkinson's is stranger still. α-synuclein shows up first in the dorsal vagal nucleus at the very bottom of the brainstem and in the olfactory bulb, then climbs level by level. By the time it reaches the substantia nigra in the midbrain and your hand starts to shake, <strong>more than half of those dopamine neurons are already dead</strong>.</p>
+<figure>
+<svg viewbox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.32" id="nInf" r="0.95"><stop offset="0" stop-color="#3d1547"></stop><stop offset="1" stop-color="#210c2c"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.32" id="nOk" r="0.95"><stop offset="0" stop-color="#0f2a30"></stop><stop offset="1" stop-color="#08181e"></stop></radialgradient>
+<filter height="200%" id="gB" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="bSpread" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"></path></marker>
+<marker id="bSpread2" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
+</defs>
+<circle cx="118" cy="140" fill="none" r="92" stroke="#4a4566" stroke-dasharray="4 6" stroke-width="1.3"></circle>
+<text fill="#5b5678" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="118" y="40">spatial neighbourhood</text>
+<path d="M139,96 C190,66 240,56 268,62" fill="none" marker-end="url(#bSpread)" stroke="#e879f9" stroke-linecap="round" stroke-width="3"></path>
+<path d="M324,94 C352,116 372,130 390,138" fill="none" marker-end="url(#bSpread2)" stroke="#a78bfa" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="110" cy="112" fill="url(#nInf)" filter="url(#gB)" r="31" stroke="#e879f9" stroke-width="1.8"></circle>
+<text fill="#fff" font-size="10" font-weight="600" text-anchor="middle" x="110" y="110">entorhinal</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="110" y="125">start</text>
+<circle cx="142" cy="178" fill="url(#nOk)" filter="url(#gB)" r="27" stroke="#34e5e0" stroke-width="1.5"></circle>
+<text fill="#e6faf8" font-size="10" font-weight="600" text-anchor="middle" x="142" y="177">next door</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="8.5" text-anchor="middle" x="142" y="191">no wiring</text>
+<circle cx="298" cy="70" fill="url(#nInf)" filter="url(#gB)" r="31" stroke="#e879f9" stroke-width="1.8"></circle>
+<text fill="#fff" font-size="9" font-weight="600" text-anchor="middle" x="298" y="68">hippocampus</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="298" y="83">stop 2</text>
+<circle cx="418" cy="152" fill="url(#nInf)" filter="url(#gB)" r="31" stroke="#a78bfa" stroke-width="1.6"></circle>
+<text fill="#efe9ff" font-size="10" font-weight="600" text-anchor="middle" x="418" y="150">neocortex</text>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="418" y="165">stop 3</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="278" y="224">adjacent ≠ infected; connected = infected</text>
+</svg>
+<figcaption>Pathology moves along axonal connections — far but wired falls first</figcaption>
+</figure>
+<p>The rule for the jumps is the whole point: <strong>it doesn't spread to whoever is nearby, it spreads to whoever it is wired to</strong>. A region far away anatomically, but joined by a direct fibre bundle, goes down <strong>earlier</strong> than the neighbour sitting right against it with no connection. There's also a bolder and more contested thread: α-synuclein may start in the nerves of the gut and travel up the vagus into the brain — if that holds, Parkinson's first stop isn't in the brain at all. <a class="reflink" href="ref-vagus-nerve.en.html">vagus nerve</a></p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>"Spreads along the wiring" can be written down as maths. Researchers take the whole-brain wiring map (which region connects to which, and how thickly — the <b>connectome</b>) and run a <b>diffusion equation</b> on it — the same family of tools as PageRank and as message passing in graph neural networks — using today's pathology to predict where the tissue will thin years from now. This isn't a metaphor: the predicted atrophy patterns line up decently with real follow-up scans. <b>The topology of the brain network is itself the script the disease follows.</b></p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Why these neurons and not their neighbours</h2>
+<p>In the same patch of tissue, one population is wiped out and the one beside it is nearly untouched. Look at what the dead ones have in common and the answer turns out to be very physical: <strong>they are the ones with the biggest bills</strong>.</p>
+<figure>
+<svg viewbox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="cTip" markerheight="10" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="7.5" refy="5"><path d="M1,1 L9,5 L1,9 Z" fill="#34e5e0"></path></marker>
+</defs>
+<rect fill="rgba(52,229,224,0.05)" height="150" rx="14" stroke="rgba(52,229,224,0.28)" stroke-width="1" width="218" x="10" y="10"></rect>
+<text fill="#e6faf8" font-size="12" font-weight="600" text-anchor="middle" x="119" y="34">a typical cortical neuron</text>
+<circle cx="48" cy="86" fill="#0e2c33" r="15" stroke="#34e5e0" stroke-width="1.6"></circle>
+<path d="M63,86 C92,86 118,86 150,86" fill="none" marker-end="url(#cTip)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<rect fill="#34e5e0" height="11" opacity="0.45" rx="4" width="16" x="76" y="80.5"></rect>
+<rect fill="#34e5e0" height="11" opacity="0.45" rx="4" width="16" x="100" y="80.5"></rect>
+<rect fill="#34e5e0" height="11" opacity="0.45" rx="4" width="16" x="124" y="80.5"></rect>
+<path d="M160,86 C172,74 182,68 196,64" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M160,86 C174,94 184,102 198,108" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="1.8"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="100" y="70">myelin</text>
+<text fill="#7bf0e8" font-size="9.5" text-anchor="middle" x="119" y="140">short axon · myelinated · fires on command</text>
+<rect fill="rgba(232,121,249,0.05)" height="150" rx="14" stroke="rgba(232,121,249,0.3)" stroke-width="1" width="218" x="252" y="10"></rect>
+<text fill="#fff" font-size="12" font-weight="600" text-anchor="middle" x="361" y="34">a nigral dopamine neuron</text>
+<circle cx="286" cy="86" fill="#2e1440" r="15" stroke="#e879f9" stroke-width="1.8"></circle>
+<path d="M301,86 C330,58 360,50 400,46" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C332,68 366,64 404,62" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C334,80 368,78 408,78" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C334,92 368,96 408,98" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C332,104 364,112 402,116" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C328,114 356,124 392,130" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<circle cx="402" cy="46" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="406" cy="62" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="410" cy="78" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="410" cy="98" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="404" cy="116" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="394" cy="130" fill="#f5b8fb" r="2.6"></circle>
+<text fill="#f5b8fb" font-size="9.5" text-anchor="middle" x="361" y="140">metres of axon · unmyelinated · pacemaker</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="12" y="186">energy bill</text>
+<rect fill="#34e5e0" height="12" opacity="0.75" rx="6" width="52" x="86" y="176"></rect>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" x="146" y="186">typical</text>
+<rect fill="#e879f9" height="12" opacity="0.8" rx="6" width="272" x="86" y="198"></rect>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="10" x="366" y="208">mitochondria maxed</text>
+</svg>
+<figcaption>The first to fall aren't a random sample — they're the ones with the highest bills</figcaption>
+</figure>
+<p>The dopamine neurons of the substantia nigra are the extreme case. <strong>A single one of these cells</strong> carries an axonal tree that, unrolled, is measured in metres in a human brain, with on the order of a million terminals, and it is almost <strong>unmyelinated</strong> (myelin is the insulating sleeve around an axon that makes signalling far cheaper). Worse, it doesn't wait to be told: it fires rhythmically on its own, like a pump that never switches off, calcium washing in and out, mitochondria permanently at full load. <a class="reflink" href="ref-basal-ganglia.en.html">basal ganglia</a> The entorhinal cells that go first in Alzheimer's fit the same profile: long-range projections, high metabolic upkeep. <a class="reflink" href="ref-hippocampus.en.html">hippocampus &amp; entorhinal</a></p>
+<p>So neurodegeneration isn't a block of metal rusting evenly. It's more like a power grid where <strong>the most heavily loaded lines burn out first</strong>. That also clarifies what drugs can and can't do. Levodopa replaces the dopamine that's missing once the cells are gone; it can hold the symptoms back for years without rescuing a single neuron. <a class="reflink" href="ref-neurotransmitters.en.html">neurotransmitter systems</a></p>
+<p>The anti-amyloid antibodies are a different bet. They <strong>do</strong> clear plaque, and the two phase-3 trials reported in 2023 did slow cognitive decline by roughly a quarter to a third. Read that carefully: slower, not stopped — and the price includes a risk of brain swelling and microbleeds. Put it all together and you get an honest interim verdict: <strong>amyloid looks like the trigger, tau looks like the bullet</strong> — and the hard part is finding it during the twenty years before anything is pulled.</p>
+</div>
+<div class="crossx">
+<h3>🌀 CROSSING OVER · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"A shape that copies itself" shows up in several fields that have nothing to do with each other:</p>
+<ul>
+<li><b>Physical chemistry · crystallisation</b>: the maths of protein aggregation is the maths of rock candy growing in sugar water. The hard part is <b>nucleation</b>; after that the crystal grows fast along faces that already exist. So "decades of nothing, then sudden acceleration" isn't a biological quirk — it's the generic shape of any self-templating process.</li>
+<li><b>Complex systems · network spreading</b>: pathology moving over the connectome obeys the same equations as rumours over a social network or an epidemic over flight routes. And the brain, for the sake of efficiency, concentrates traffic in a handful of richly connected <b>hubs</b>. The price of that efficiency: hubs get infected earliest and take the most down with them when they fail.</li>
+<li><b>Buddhism · seeds and continuity</b>: Yogācāra describes a thought leaving a seed in the storehouse consciousness; the seed meets conditions, manifests, and perfumes a new seed — continuity without any unchanging thing being carried across. A misfolded protein handing its shape to the next molecule has exactly that structure: <b>nothing persists but a pattern</b>. And once such a continuity has formed, the hard part was never destroying it — it's not feeding it new seeds.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// GOING DEEPER</h3>
+<details><summary>If misfolding is "contagious", can Alzheimer's be caught from someone?</summary><div>Not through ordinary contact — there is no evidence that caring for a patient, sharing meals, or receiving blood transmits it. But the flat statement "it cannot be transmitted at all" has already been overturned once: a group of people who received cadaver-derived growth hormone injections in the 1980s were later found to have unusually early Alzheimer's pathology, and the most plausible explanation is that Aβ seeds were present in those preparations. That product was withdrawn decades ago. The significance isn't everyday risk; it's the confirmation that <strong>these proteins really can act as inoculable seeds, rather than being mere by-products of ageing</strong>.</div></details>
+<details><summary>If pathology follows the connectome, is "using your brain" protective or accelerating?</summary><div>Both forces are real, which is what makes this awkward. On one hand, the busy high-metabolism hubs are exactly where pathology appears first — heavy use, heavy bill. On the other, the cognitive-reserve evidence is solid: for the same amount of pathology, people with more education and cognitive activity show symptoms later. The reading that currently holds together is that activity probably doesn't reduce how much pathology is <strong>produced</strong>, but it leaves the network with <strong>other routes available</strong> under the same damage. It buys buffer, not immunity.</div></details>
+<details><summary>Clearance declines with age — so why not attack the clearance side directly?</summary><div>That's one of the hottest directions right now, and it sits further upstream than clearing plaque: push the proteasome and autophagy to work harder, get microglia to phagocytose what they should (without over-pruning healthy synapses), improve the cerebrospinal-fluid washout that happens during sleep. The difficulty is specificity — autophagy is a basic cell-wide function, and turning it up bluntly damages other things. The sleep thread gets its own issue in Topic 32.</div></details>
+<details><summary>Why do Alzheimer's, Parkinson's and ALS involve completely different proteins yet trace such similar curves?</summary><div>Because the shape of the curve may not be set by which protein it is, but by the shared skeleton: self-templating plus age-declining clearance. That's part of why more people argue for treating them as variants of one class of <strong>proteinopathy</strong> — differing in which protein misfolds first and which network it lands on. If that view is right, genuinely general therapies should aim at clearance and at spread, rather than chasing one protein at a time.</div></details>
+</div>
+<div class="refs">
+<h3>// FURTHER READING</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Proteopathy" target="_blank">Proteopathy</a> · <a href="https://en.wikipedia.org/wiki/Prion" target="_blank">Prion</a> — the prototype of "misfold as template"</li>
+<li><a href="https://en.wikipedia.org/wiki/Braak_staging" target="_blank">Braak staging</a> — staging a disease that follows a fixed route</li>
+<li><a href="https://en.wikipedia.org/wiki/Tau_protein" target="_blank">Tau protein</a> · <a href="https://en.wikipedia.org/wiki/Amyloid_beta" target="_blank">Amyloid beta</a> · <a href="https://en.wikipedia.org/wiki/Alpha-synuclein" target="_blank">α-synuclein</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Amyloid_hypothesis" target="_blank">The amyloid hypothesis</a> · <a href="https://en.wikipedia.org/wiki/Lecanemab" target="_blank">Lecanemab</a> · <a href="https://en.wikipedia.org/wiki/Donanemab" target="_blank">Donanemab</a> — the controversy and the two phase-3 trials</li>
+<li><a href="https://en.wikipedia.org/wiki/Substantia_nigra" target="_blank">Substantia nigra</a> · <a href="https://en.wikipedia.org/wiki/Autophagy" target="_blank">Autophagy</a> · <a href="https://en.wikipedia.org/wiki/GBA1" target="_blank">GBA1</a> · <a href="https://en.wikipedia.org/wiki/LRRK2" target="_blank">LRRK2</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Connectome" target="_blank">Connectome</a> — the substrate for network diffusion models</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 28 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

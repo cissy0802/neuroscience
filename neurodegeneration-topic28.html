@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 28 · 神经退行 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 28 · PHASE D 临床/前沿</span>
+<h1>神经退行</h1>
+<h2>一个折错的形状，会把邻居掰成同样的形状</h2>
+<div class="date">2026-08-04 · BigCat</div>
+<p class="pitch">杀死神经元的不是某种毒素，是一个形状——而这个形状会自我复制。</p>
+</header>
+<div class="intro">
+<p>阿尔茨海默和帕金森，听上去像"零件老了、磨损了"。可磨损解释不了两件怪事：病变<strong>总是从同一小块地方开始</strong>，再按几乎固定的顺序往下走；而且第一批死掉的神经元，永远是特定的那几类，隔壁的邻居可以毫发无伤。这一期下到分子层看是怎么回事——你会看到一件更像<strong>传染</strong>、而不像生锈的事。等你察觉"记性变差"时，它已经安静地进行了二十年。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>形状会传染</h2>
+<p>蛋白说白了是一条氨基酸串成的链，它的功能全靠<strong>折成特定的三维形状</strong>——像折纸，同一张纸折成鹤还是折成飞机，用途天差地别。折错本身一点不稀奇，细胞每天都在折错，也每天都在收拾。</p>
+<p>要命的是有些错形多了一项本事：<strong>它能当模板</strong>。它凑上一个还正常的同伴，把对方也掰成和自己一样的错形。一变二，二变四。阿尔茨海默里的 β-淀粉样蛋白和 tau、帕金森里的 α-突触核蛋白，是三个毫不相干的蛋白，却走同一套路数：错形 → 抱成小团（寡聚体）→ 越接越长的纤维 → 最后堆成显微镜下看得见的斑块或包涵体（帕金森里叫路易小体）。</p>
+<figure>
+<svg viewbox="0 0 480 226" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="pnA" r="0.95"><stop offset="0" stop-color="#122a30"></stop><stop offset="1" stop-color="#091920"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.3" id="pnB" r="0.95"><stop offset="0" stop-color="#2e1440"></stop><stop offset="1" stop-color="#1a0b26"></stop></radialgradient>
+<filter height="200%" id="gA" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="aStep" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#c98adf"></path></marker>
+<marker id="aTiny" markerheight="10" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="7.5" refy="5"><path d="M1,1 L9,5 L1,9 Z" fill="#e879f9"></path></marker>
+<marker id="aAx" markerheight="10" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="7.5" refy="5"><path d="M1,1 L9,5 L1,9 Z" fill="#6f6a8c"></path></marker>
+</defs>
+<line marker-end="url(#aStep)" stroke="#c98adf" stroke-linecap="round" stroke-width="2.6" x1="144" x2="166" y1="60" y2="60"></line>
+<line marker-end="url(#aStep)" stroke="#c98adf" stroke-linecap="round" stroke-width="2.6" x1="308" x2="330" y1="60" y2="60"></line>
+<rect fill="url(#pnA)" filter="url(#gA)" height="92" rx="16" stroke="#34e5e0" stroke-width="1.2" width="132" x="10" y="14"></rect>
+<path d="M58,40 C74,30 96,38 94,54 C92,70 74,78 62,70 C50,62 46,50 58,40 Z" fill="none" stroke="#34e5e0" stroke-width="2.6"></path>
+<text fill="#7bf0e8" font-size="11.5" text-anchor="middle" x="76" y="96">折对的正常构象</text>
+<rect fill="url(#pnB)" filter="url(#gA)" height="92" rx="16" stroke="#e879f9" stroke-width="1.3" width="132" x="174" y="14"></rect>
+<polyline fill="none" points="188,36 197,48 188,60 197,72" stroke="#e879f9" stroke-linecap="round" stroke-width="2.6"></polyline>
+<line marker-end="url(#aTiny)" stroke="#e879f9" stroke-linecap="round" stroke-width="2" x1="205" x2="224" y1="54" y2="54"></line>
+<polyline fill="none" points="234,28 243,40 234,52 243,64" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></polyline>
+<polyline fill="none" points="262,44 271,56 262,68 271,80" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></polyline>
+<text fill="#f5b8fb" font-size="11.5" text-anchor="middle" x="240" y="96">错形当模板，掰弯同伴</text>
+<rect fill="url(#pnB)" filter="url(#gA)" height="92" rx="16" stroke="#a78bfa" stroke-width="1.2" width="132" x="338" y="14"></rect>
+<polyline fill="none" points="356,30 365,42 356,54 365,66" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></polyline>
+<polyline fill="none" points="372,30 381,42 372,54 381,66" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></polyline>
+<polyline fill="none" points="388,30 397,42 388,54 397,66" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></polyline>
+<path d="M416,32 C444,26 462,46 454,60 C446,74 420,72 414,58 C410,48 408,36 416,32 Z" fill="rgba(232,121,249,0.18)" stroke="#a78bfa" stroke-width="1.6"></path>
+<text fill="#c9a8f5" font-size="11.5" text-anchor="middle" x="404" y="96">纤维 → 斑块 / 包涵体</text>
+<line marker-end="url(#aAx)" stroke="#6f6a8c" stroke-width="1.4" x1="44" x2="456" y1="200" y2="200"></line>
+<line marker-end="url(#aAx)" stroke="#6f6a8c" stroke-width="1.4" x1="44" x2="44" y1="200" y2="126"></line>
+<path d="M52,196 C170,195 206,190 246,172 C286,154 322,140 452,136" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="3"></path>
+<line stroke="#5b5678" stroke-dasharray="3 4" stroke-width="1.3" x1="300" x2="300" y1="200" y2="152"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" transform="rotate(-90 30 162)" x="30" y="162">聚集量</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="152" y="180">迟滞期 · 安静二十年</text>
+<text fill="#f5b8fb" font-size="11" text-anchor="middle" x="382" y="166">成核后加速</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="300" y="216">症状出现</text>
+</svg>
+<figcaption>凑齐第一颗"种子"很慢；一旦成核，就照着模板一变二、二变四</figcaption>
+</figure>
+<p>这就解释了那条奇怪的时间曲线：<strong>一开始极慢</strong>——凑够第一颗"种子"要很久，这段叫迟滞期；<strong>一旦成核就突然提速</strong>。阿尔茨海默的淀粉样病变，在第一个症状出现之前大约二十年就已经在堆了。所以"发病"这个词其实很误导：那不是开始，那是终于堆过了头。</p>
+<p class="en-brief"><b>EN</b> Proteins work by folding into a specific 3-D shape. In neurodegeneration, a misfolded conformation acts as a <i>template</i>: it recruits normal copies and bends them into the same wrong shape — one becomes two, two become four. Aβ, tau and α-synuclein are unrelated proteins that all follow this route: misfold → soluble oligomers → fibrils → plaques or inclusions. Hence the strange kinetics — a decades-long silent lag while the first seed forms, then acceleration. Amyloid pathology starts roughly twenty years before the first symptom.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这套动力学在 AI 里有个正在被认真研究的双胞胎：<b>模型坍缩</b>——当模型开始拿"自己（或同类）生成的内容"当训练数据，一点点的偏差会被当成模板复制进下一代，越滚越偏，最后多样性塌掉。注意这是<b>动力学上像，不是机制上像</b>：蛋白靠物理接触做模板，模型靠数据回流做模板。但两边共享同一个骨架——<b>系统把自己的输出当成输入，误差就会自我放大</b>：先是长时间看不出问题，然后突然雪崩。</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>堆起来的那坨，不一定是凶手</h2>
+<p>既然天天在折错，为什么年轻时没事？因为细胞养着一整个"质检 + 回收"班子：伴侣蛋白帮忙重折一次，折不回来的小东西送去蛋白酶体绞碎，抱成团的大家伙由自噬送进溶酶体化掉，细胞外还有小胶质细胞来收拾。<strong>所以病往往不是"造得太多"，而是"清不掉"。</strong>年龄会让这几条线一起变慢。<a class="reflink" href="ref-proteostasis.html">蛋白稳态</a> <a class="reflink" href="ref-glia.html">胶质细胞</a></p>
+<p>遗传学也指着同一个方向：帕金森最常见的两个风险基因 <strong>GBA</strong> 和 <strong>LRRK2</strong>，管的都是溶酶体和囊泡运输——都是垃圾处理线上的岗位，而不是"生产 α-突触核蛋白"的岗位。</p>
+<p>接下来是这一整块领域里最容易被误读的一件事：<strong>斑块多 ≠ 病重</strong>。有些人脑子里塞满了斑块，却清醒到最后一天。现在比较站得住的解释是：成型的斑块更像<strong>打包填埋</strong>，甚至可能是保护性的；真正毒的是半路上那些<strong>可溶的寡聚体</strong>——小、能到处跑、能插进突触把它拆了。而在时间和空间上都跟认知下降对得上的，其实是另一个蛋白：<strong>tau</strong>。哪儿的 tau 病变重，哪儿就萎缩、哪块功能就先丢。</p>
+<p class="en-brief"><b>EN</b> Misfolding happens constantly; what changes with age is clearance. Chaperones refold, the proteasome shreds small misfolds, autophagy-lysosome digests aggregates, microglia mop up outside the cell — and all of them slow down. Genetics agrees: the two commonest Parkinson's risk genes, GBA and LRRK2, both sit on the lysosomal/trafficking line, not the production line. And plaque load ≠ severity: mature plaques may be inert landfill, while soluble oligomers are the toxic species — and tau, not amyloid, tracks where and when cognition actually fails.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>它沿着线路走，不沿着地理蔓延</h2>
+<p>如果是"磨损"，你会预期病变像铁锈一样，从一片地方向四周慢慢洇开。实际完全不是这样。</p>
+<p>tau 病变几乎总是从内嗅皮层那一小块起步，先跳到海马，再一路铺开到新皮层——这个顺序稳定到可以直接拿来分期（Braak 分期），看一眼病理切片就能说出病程走到哪一站。帕金森更离奇：α-突触核蛋白最早出现在脑干最底下的迷走神经背核和嗅球，然后一层层往上爬；等它爬到中脑的黑质、你开始手抖，那儿的多巴胺神经元<strong>已经死掉一半以上了</strong>。</p>
+<figure>
+<svg viewbox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.32" id="nInf" r="0.95"><stop offset="0" stop-color="#3d1547"></stop><stop offset="1" stop-color="#210c2c"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.32" id="nOk" r="0.95"><stop offset="0" stop-color="#0f2a30"></stop><stop offset="1" stop-color="#08181e"></stop></radialgradient>
+<filter height="200%" id="gB" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="bSpread" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"></path></marker>
+<marker id="bSpread2" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
+</defs>
+<circle cx="118" cy="140" fill="none" r="92" stroke="#4a4566" stroke-dasharray="4 6" stroke-width="1.3"></circle>
+<text fill="#5b5678" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="118" y="40">地理上的邻域</text>
+<path d="M139,96 C190,66 240,56 268,62" fill="none" marker-end="url(#bSpread)" stroke="#e879f9" stroke-linecap="round" stroke-width="3"></path>
+<path d="M324,94 C352,116 372,130 390,138" fill="none" marker-end="url(#bSpread2)" stroke="#a78bfa" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="110" cy="112" fill="url(#nInf)" filter="url(#gB)" r="31" stroke="#e879f9" stroke-width="1.8"></circle>
+<text fill="#fff" font-size="11.5" font-weight="600" text-anchor="middle" x="110" y="110">内嗅皮层</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="110" y="125">起点</text>
+<circle cx="142" cy="178" fill="url(#nOk)" filter="url(#gB)" r="27" stroke="#34e5e0" stroke-width="1.5"></circle>
+<text fill="#e6faf8" font-size="11" font-weight="600" text-anchor="middle" x="142" y="177">紧邻区</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="142" y="191">无连线</text>
+<circle cx="298" cy="70" fill="url(#nInf)" filter="url(#gB)" r="31" stroke="#e879f9" stroke-width="1.8"></circle>
+<text fill="#fff" font-size="11.5" font-weight="600" text-anchor="middle" x="298" y="68">海马</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="298" y="83">第 2 站</text>
+<circle cx="418" cy="152" fill="url(#nInf)" filter="url(#gB)" r="31" stroke="#a78bfa" stroke-width="1.6"></circle>
+<text fill="#efe9ff" font-size="11.5" font-weight="600" text-anchor="middle" x="418" y="150">新皮层</text>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="418" y="165">第 3 站</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="264" y="224">紧挨着 ≠ 会中招；连着 = 会</text>
+</svg>
+<figcaption>病理沿神经连线传播——远但相连的先垮，近但不相连的反而安全</figcaption>
+</figure>
+<p>关键就在"跳"的规则：<strong>不是挨着谁就传给谁，而是和谁有神经连接就传给谁</strong>。解剖上隔了老远、但有一束纤维直接连着的区域，会比紧贴在旁边、却没有连线的邻居<strong>更早</strong>中招。还有一条更大胆也更有争议的线索：α-突触核蛋白可能从肠道的神经出发，沿迷走神经一路上行进脑——如果真是这样，帕金森的第一站根本不在脑子里。<a class="reflink" href="ref-vagus-nerve.html">迷走神经</a></p>
+<p class="en-brief"><b>EN</b> Pathology does not creep outward like rust; it travels along axonal connections. Tau starts in entorhinal cortex, jumps to hippocampus, then spreads across neocortex — regular enough to be staged (Braak). α-synuclein appears first in the dorsal vagal nucleus and olfactory bulb and climbs upward; by the time it reaches substantia nigra and tremor appears, over half those dopamine neurons are already gone. Regions far away but wired together fall before neighbours that are adjacent but unconnected.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>"沿着连线扩散"这句话，可以直接写成数学。研究者拿全脑连接图（哪块和哪块连着、连多粗，这张图叫<b>连接组</b>），在上面跑一个<b>扩散方程</b>——和网页排名算法 PageRank、图神经网络里"信息沿边一跳一跳传"是同一套工具——用今天的病变分布，去预测几年后哪里会萎缩。这不是打比方：预测出的萎缩图样和真实随访扫描相当吻合。<b>脑网络的拓扑，本身就是病的传播剧本。</b></p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>为什么偏偏是这些神经元先死</h2>
+<p>同一片组织里，有的神经元死光了，隔壁的几乎没事。看死掉那批的共同点，答案很物理：<strong>它们都是账单最高的那种。</strong></p>
+<figure>
+<svg viewbox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="cTip" markerheight="10" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="7.5" refy="5"><path d="M1,1 L9,5 L1,9 Z" fill="#34e5e0"></path></marker>
+</defs>
+<rect fill="rgba(52,229,224,0.05)" height="150" rx="14" stroke="rgba(52,229,224,0.28)" stroke-width="1" width="218" x="10" y="10"></rect>
+<text fill="#e6faf8" font-size="12.5" font-weight="600" text-anchor="middle" x="119" y="34">皮层里的一般神经元</text>
+<circle cx="48" cy="86" fill="#0e2c33" r="15" stroke="#34e5e0" stroke-width="1.6"></circle>
+<path d="M63,86 C92,86 118,86 150,86" fill="none" marker-end="url(#cTip)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<rect fill="#34e5e0" height="11" opacity="0.45" rx="4" width="16" x="76" y="80.5"></rect>
+<rect fill="#34e5e0" height="11" opacity="0.45" rx="4" width="16" x="100" y="80.5"></rect>
+<rect fill="#34e5e0" height="11" opacity="0.45" rx="4" width="16" x="124" y="80.5"></rect>
+<path d="M160,86 C172,74 182,68 196,64" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M160,86 C174,94 184,102 198,108" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="1.8"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="100" y="70">髓鞘</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="119" y="140">轴突短 · 有髓鞘 · 等命令才放电</text>
+<rect fill="rgba(232,121,249,0.05)" height="150" rx="14" stroke="rgba(232,121,249,0.3)" stroke-width="1" width="218" x="252" y="10"></rect>
+<text fill="#fff" font-size="12.5" font-weight="600" text-anchor="middle" x="361" y="34">黑质的多巴胺神经元</text>
+<circle cx="286" cy="86" fill="#2e1440" r="15" stroke="#e879f9" stroke-width="1.8"></circle>
+<path d="M301,86 C330,58 360,50 400,46" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C332,68 366,64 404,62" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C334,80 368,78 408,78" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C334,92 368,96 408,98" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C332,104 364,112 402,116" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M301,86 C328,114 356,124 392,130" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="1.6"></path>
+<circle cx="402" cy="46" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="406" cy="62" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="410" cy="78" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="410" cy="98" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="404" cy="116" fill="#f5b8fb" r="2.6"></circle>
+<circle cx="394" cy="130" fill="#f5b8fb" r="2.6"></circle>
+<text fill="#f5b8fb" font-size="10" text-anchor="middle" x="361" y="140">轴突以米计 · 几乎无髓鞘 · 自己按节律放电</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="12" y="186">能量账单</text>
+<rect fill="#34e5e0" height="12" opacity="0.75" rx="6" width="58" x="78" y="176"></rect>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" x="144" y="186">普通</text>
+<rect fill="#e879f9" height="12" opacity="0.8" rx="6" width="286" x="78" y="198"></rect>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="10" x="372" y="208">线粒体满负荷</text>
+</svg>
+<figcaption>先垮的不是随机一批，是能量账单最高的那批</figcaption>
+</figure>
+<p>黑质的多巴胺神经元就是极端例子：<strong>一个细胞</strong>的轴突在人脑里摊开，总长度要用米来量，末端多到上百万个，而且几乎<strong>没有髓鞘</strong>（髓鞘是包在轴突外面的绝缘层，能大幅省电）。更狠的是它不等命令，自己按节律持续放电——等于一台永不停机的泵，钙离子进进出出，线粒体常年满负荷。<a class="reflink" href="ref-basal-ganglia.html">基底节</a> 内嗅皮层最早中招的那层细胞也一样：长程投射、高代谢。<a class="reflink" href="ref-hippocampus.html">海马与内嗅</a></p>
+<p>所以神经退行不像"整块金属生锈"，更像电网里<strong>最吃电的那几条线路先烧断</strong>。这也顺手说清了药能干什么、干不了什么。左旋多巴补的是细胞死掉之后缺的那点多巴胺，症状能压住很多年，但一个神经元也没救回来。<a class="reflink" href="ref-neurotransmitters.html">神经递质系统</a></p>
+<p>冲着淀粉样去的抗体药是另一路：它们<strong>确实</strong>把斑块清掉了，2023 年公布的两个三期试验也确实让认知下降慢了大约四分之一到三分之一。但请把这句读准——那是"慢一点"，不是"停下来"，代价还包括脑水肿和微出血的风险。把这些拼起来，得到的是一个诚实的中间结论：<strong>淀粉样更像扳机，tau 更像子弹</strong>；而真正难的，是在扣扳机之前的那二十年里就找到它。</p>
+<p class="en-brief"><b>EN</b> Degeneration is selective, and the selection is metabolic. A single human substantia-nigra dopamine neuron carries an axonal arbor metres long with on the order of a million terminals, almost no myelin, and it fires autonomously as a pacemaker — a permanently loaded mitochondrial bill. The same profile (long-range, high-maintenance) marks the entorhinal cells that fall first in Alzheimer's. It also explains what drugs can and cannot do: levodopa replaces the missing transmitter without saving a cell, and the 2023 anti-amyloid antibodies clear plaque and slow decline by roughly a quarter to a third — slowing, not stopping, with brain-swelling risk. Amyloid looks like the trigger; tau looks like the bullet.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"一个形状把自己复制出去"这件事，在好几门完全不相干的学问里都出现过：</p>
+<ul>
+<li><b>物理化学 · 结晶</b>：蛋白聚集的数学，和糖水里长出冰糖是同一套——先要熬过难熬的<b>成核</b>，之后晶体沿着已有的面飞快长。所以"迟滞期几十年、然后突然加速"不是生物学的怪癖，是任何自我模板化过程的通用形状。</li>
+<li><b>复杂系统 · 网络传播</b>：病理在连接组上的走法，和谣言在社交网、疫情在航线网上的走法用的是同一组方程。而大脑为了高效，把最忙的中枢做成了少数几个高连接的<b>枢纽</b>——效率的代价是：这些枢纽既最先被传染，垮掉时也拖走最多东西。</li>
+<li><b>佛学 · 熏习与相续</b>：唯识讲一个念头会在"藏识"里留下种子，种子遇缘又现行、再熏成新的种子，如是相续。蛋白构象把自己的形状复制给下一个分子，用的正是这个结构——<b>没有一个不变的实体在延续，延续的只是一个模式</b>。而"相续"一旦成形，最难的从来不是消灭它，是不再给它添新的种子。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>既然错误折叠会"传染"，阿尔茨海默会人传人吗？</summary><div>日常接触不会——没有任何证据说照顾病人、共餐、输血会把它传过去。但严格说，"绝对不可能传"这句话已经被推翻了一次：一批在 1980 年代接受过尸源生长激素注射的人，几十年后被发现出现了异常早发的阿尔茨海默病理，最合理的解释是当年的药剂里混进了 Aβ 的"种子"。那批药早已停用几十年。它的意义不在于日常风险，而在于确认了一件事：<strong>这些蛋白确实是可以被"接种"的种子，而不只是老化的产物</strong>。</div></details>
+<details><summary>如果病理沿着连接组走，那"多用脑"到底是保护还是加速？</summary><div>两种力同时存在，这也是这个领域最拧巴的地方。一方面，活跃、高代谢的枢纽区正是最先出病变的地方——用得多，账单就高。另一方面，认知储备的证据非常硬：同样的病理量，教育和认知活动多的人症状出现得更晚。目前比较能自洽的读法是：活动不太可能减少病理的<strong>产生</strong>，但能让网络在同样的损伤下<strong>还有别的路可走</strong>。也就是说，它买的是缓冲，不是免疫。</div></details>
+<details><summary>清除能力随年龄下降——那能不能直接从"清除"这一侧下手？</summary><div>这正是现在最热的方向之一，而且比"清斑块"更上游：让蛋白酶体和自噬更勤快、让小胶质细胞该吞的时候吞（但别过度吞掉健康突触）、让睡眠期间的脑脊液冲刷更充分。难点是特异性——自噬是全细胞的基础功能，粗暴地"调高"很容易伤到别的东西。睡眠那条线我们会在 Topic 32 单独展开。</div></details>
+<details><summary>为什么阿尔茨海默、帕金森、ALS 的病理蛋白完全不同，病程曲线却长得那么像？</summary><div>因为决定曲线形状的，可能不是哪个蛋白，而是"自我模板化 + 清除能力随龄下降"这个共同骨架。这也是为什么越来越多人主张把它们看成同一类<strong>蛋白病</strong>的不同表现——差别在于哪个蛋白先出错、以及它落在哪张网络上。如果这个看法对，那真正通用的疗法应该瞄准清除侧和传播侧，而不是逐个蛋白去追。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Proteopathy" target="_blank">蛋白病 Proteopathy</a> · <a href="https://en.wikipedia.org/wiki/Prion" target="_blank">朊病毒 Prion</a> — "错形当模板"的原型</li>
+<li><a href="https://en.wikipedia.org/wiki/Braak_staging" target="_blank">Braak 分期</a> — 病理沿固定路线推进的分期系统</li>
+<li><a href="https://en.wikipedia.org/wiki/Tau_protein" target="_blank">tau 蛋白</a> · <a href="https://en.wikipedia.org/wiki/Amyloid_beta" target="_blank">β-淀粉样蛋白</a> · <a href="https://en.wikipedia.org/wiki/Alpha-synuclein" target="_blank">α-突触核蛋白</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Amyloid_hypothesis" target="_blank">淀粉样级联假说</a> · <a href="https://en.wikipedia.org/wiki/Lecanemab" target="_blank">Lecanemab</a> · <a href="https://en.wikipedia.org/wiki/Donanemab" target="_blank">Donanemab</a> — 争议与那两个三期试验</li>
+<li><a href="https://en.wikipedia.org/wiki/Substantia_nigra" target="_blank">黑质</a> · <a href="https://en.wikipedia.org/wiki/Autophagy" target="_blank">自噬 Autophagy</a> · <a href="https://en.wikipedia.org/wiki/GBA1" target="_blank">GBA1</a> · <a href="https://en.wikipedia.org/wiki/LRRK2" target="_blank">LRRK2</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Connectome" target="_blank">连接组 Connectome</a> — 网络扩散模型的地基</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 28 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
