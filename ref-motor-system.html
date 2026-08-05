@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>参考 · 运动系统与小脑 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.html">← 参考库</a>
+<header>
+<span class="ref-badge">参考库 · REFERENCE</span>
+<h1>运动系统与小脑<span class="en">Motor System</span></h1>
+<p>从"想动"到肌肉真的收缩，中间有一条主干、两个旁路和一条回传线——以及一个反直觉的事实：<strong>运动皮层上并没有一张干净的"身体地图"</strong>。</p>
+</header>
+<h2>主干：皮层 → 脊髓 → 肌肉</h2>
+<p>所有自主动作最后都得挤过同一个出口。中间那些结构不是"传令兵"，每一站都在改写命令：</p>
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 218">
+<defs>
+<marker id="msMain" markerWidth="13" markerHeight="12" markerUnits="userSpaceOnUse" refx="9" refy="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"/></marker>
+<marker id="msCb" markerWidth="12" markerHeight="11" markerUnits="userSpaceOnUse" refx="8" refy="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"/></marker>
+<marker id="msBg" markerWidth="12" markerHeight="11" markerUnits="userSpaceOnUse" refx="8" refy="5.5" orient="auto"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"/></marker>
+<marker id="msSens" markerWidth="11" markerHeight="10" markerUnits="userSpaceOnUse" refx="7.5" refy="5" orient="auto"><path d="M1,1 L9,5 L1,9 Z" fill="#5eead4"/></marker>
+</defs>
+<line x1="120" y1="112" x2="184" y2="112" stroke="#a78bfa" stroke-width="2.6" stroke-linecap="round" marker-end="url(#msMain)"/>
+<line x1="294" y1="112" x2="358" y2="112" stroke="#a78bfa" stroke-width="2.6" stroke-linecap="round" marker-end="url(#msMain)"/>
+<path d="M96,86 C110,52 150,32 182,34" fill="none" stroke="#34e5e0" stroke-width="2.2" stroke-linecap="round" marker-end="url(#msCb)"/>
+<path d="M188,52 C150,84 112,84 52,88" fill="none" stroke="#34e5e0" stroke-width="2.2" stroke-linecap="round" marker-end="url(#msCb)"/>
+<path d="M190,180 C140,180 90,164 68,140" fill="none" stroke="#fbbf24" stroke-width="2.2" stroke-linecap="round" marker-end="url(#msBg)"/>
+<path d="M404,140 C382,162 320,160 298,142" fill="none" stroke="#5eead4" stroke-width="1.8" stroke-dasharray="5 4" stroke-linecap="round" marker-end="url(#msSens)"/>
+<rect x="14" y="88" width="104" height="48" rx="14" fill="rgba(167,139,250,0.09)" stroke="#a78bfa" stroke-width="1.4"/>
+<text x="66" y="108" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">初级运动皮层</text>
+<text x="66" y="126" text-anchor="middle" font-family="SF Mono,monospace" font-size="9.5" fill="#c9a8f5">M1</text>
+<rect x="188" y="88" width="104" height="48" rx="14" fill="rgba(167,139,250,0.07)" stroke="#a78bfa" stroke-width="1.2"/>
+<text x="240" y="108" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">脊髓运动神经元</text>
+<text x="240" y="126" text-anchor="middle" font-family="SF Mono,monospace" font-size="9.5" fill="#c9a8f5">最后共同通路</text>
+<rect x="362" y="88" width="104" height="48" rx="14" fill="rgba(232,121,249,0.07)" stroke="#e879f9" stroke-width="1.2"/>
+<text x="414" y="108" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">肌肉</text>
+<text x="414" y="126" text-anchor="middle" font-family="SF Mono,monospace" font-size="9.5" fill="#f5b8fb">唯一的输出</text>
+<rect x="188" y="14" width="104" height="44" rx="14" fill="rgba(52,229,224,0.07)" stroke="#34e5e0" stroke-width="1.3"/>
+<text x="240" y="32" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">小脑</text>
+<text x="240" y="48" text-anchor="middle" font-family="SF Mono,monospace" font-size="9.5" fill="#7bf0e8">前馈模型 · 误差学习</text>
+<rect x="188" y="166" width="104" height="44" rx="14" fill="rgba(251,191,36,0.07)" stroke="#fbbf24" stroke-width="1.2"/>
+<text x="240" y="184" text-anchor="middle" font-size="11.5" font-weight="600" fill="#fff">基底节</text>
+<text x="240" y="200" text-anchor="middle" font-family="SF Mono,monospace" font-size="9.5" fill="#f0cf88">选择 · 门控</text>
+<text x="152" y="102" text-anchor="middle" font-size="9.5" fill="#c9a8f5">皮层脊髓束</text>
+<text x="326" y="102" text-anchor="middle" font-size="9.5" fill="#c9a8f5">运动终板</text>
+<text x="135" y="28" text-anchor="middle" font-size="9.5" fill="#7bf0e8">指令副本</text>
+<text x="86" y="72" text-anchor="middle" font-size="9.5" fill="#7bf0e8">修正回送</text>
+<text x="300" y="30" font-size="9.5" fill="#7bf0e8">预测该有什么感觉</text>
+<text x="300" y="46" font-size="9.5" fill="#7bf0e8">对不上就改下次</text>
+<text x="300" y="186" font-size="9.5" fill="#f0cf88">选哪个动作</text>
+<text x="300" y="202" font-size="9.5" fill="#f0cf88">什么时候放行</text>
+<text x="350" y="170" text-anchor="middle" font-size="9.5" fill="#5eead4">本体感觉回传</text>
+</svg>
+<figcaption>一条主干 + 小脑（校准）和基底节（放行）两个旁路 + 一条感觉回传</figcaption>
+</figure>
+<dl class="kv">
+<dt>初级运动皮层 M1</dt><dd>中央沟前面那一条。它的神经元不是"一个细胞管一块肌肉"，而是有<strong>偏好方向</strong>的宽调谐；方向、速度、力量都写在一群细胞的<strong>分布</strong>里。脑机接口能解码运动意图，靠的就是这层性质。</dd>
+<dt>皮层脊髓束</dt><dd>约百万条轴突从皮层一路下行，在延髓交叉到对侧——所以左脑控制右半身。灵长类里有一部分直接连到脊髓运动神经元，这条"直连"越发达，手指越能独立活动。</dd>
+<dt>脊髓运动神经元</dt><dd>Sherrington 叫它<strong>最后共同通路</strong>：皮层、脑干、反射、脊髓自己的节律发生器，所有意见最后都汇到这一个细胞上投票，它放电肌肉才收缩。</dd>
+<dt>脊髓自己也会算</dt><dd>缩手、踉跄后的自动补步、走路的基本节律，都可以在脊髓层面完成，根本不上皮层。皮层管的是"要不要做、怎么做得巧"，不是每一步的细节。</dd>
+</dl>
+<h2>小脑：一台专门预测"该有什么感觉"的机器</h2>
+<p>小脑体积只占全脑一小块，却装着全脑<strong>一半以上</strong>的神经元。它的工作可以这样理解：每次皮层发出动作命令，小脑都收到一份副本，据此<strong>提前算出"这个动作做完，身体该是什么感觉"</strong>——这叫前馈（内部）模型。</p>
+<p>真实的感觉回来后与预测一比：对得上，什么也不发生；对不上，差值就成了误差信号（由攀缘纤维送达），去改下一次的预测。小脑损伤的人不会瘫痪，但动作会<strong>抖、过冲、抓不准</strong>——因为他只能靠"看着改"，失去了提前量。同一个机制还解释了为什么<strong>你挠自己不痒</strong>：预测精确抵消了自身动作带来的感觉。</p>
+<h2>基底节：不产生动作，决定放不放行</h2>
+<p>基底节是一组深部核团，它的主业不是"怎么动"，而是<strong>动不动、动哪一个</strong>：默认对所有动作方案踩着刹车，被选中的那个才松开刹车放行。多巴胺在这里调节松紧——所以帕金森（多巴胺神经元死亡）表现为起步难、动作慢，而不是肌肉没力气。<a href="ref-basal-ganglia.html" style="color:#e879f9;text-decoration:none;border-bottom:1px dotted rgba(232,121,249,0.5)">→ 基底节</a></p>
+<h2>反直觉：那张"小人图"是错的</h2>
+<p>教科书上那张沿着运动皮层依次排开的身体地图（Penfield 小人），八十多年来被画成一条从脚到脸的连续带。近年的高精度成像发现它<strong>不是连续的</strong>：那条带被三块完全不管具体肌肉的区域切成了段，这些区域反而和管全身姿势、唤醒、内脏状态的网络连在一起。</p>
+<p>也就是说，运动皮层里交替排列着两种东西：<strong>管具体效应器的区块</strong>，和<strong>管"整个身体作为一件事"的区块</strong>。这解释了一件老早就该被解释的事——为什么"准备做一个动作"总是伴随着心率、呼吸、姿势的整体调整。动作从来不是某块肌肉的事。</p>
+<div class="links">
+<h3>// 被这些主线引用</h3>
+<p class="who">Topic 29 脑机接口 · 未来的可塑性与康复、脉冲/神经形态相关期</p>
+<h3 style="margin-top:18px">// 延伸</h3>
+<p><a href="https://en.wikipedia.org/wiki/Primary_motor_cortex" target="_blank">初级运动皮层</a> · <a href="https://en.wikipedia.org/wiki/Corticospinal_tract" target="_blank">皮层脊髓束</a> · <a href="https://en.wikipedia.org/wiki/Cortical_homunculus" target="_blank">Penfield 小人图</a> · <a href="https://en.wikipedia.org/wiki/Cerebellum" target="_blank">小脑</a> · <a href="https://en.wikipedia.org/wiki/Internal_model_(motor_control)" target="_blank">内部模型</a> · <a href="https://en.wikipedia.org/wiki/Charles_Scott_Sherrington" target="_blank">Sherrington · 最后共同通路</a> · <a href="https://en.wikipedia.org/wiki/Central_pattern_generator" target="_blank">中枢模式发生器</a></p>
+</div>
+<footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
