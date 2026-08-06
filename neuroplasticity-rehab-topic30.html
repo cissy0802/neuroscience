@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 30 · 神经可塑性与康复 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 30 · PHASE D 临床/前沿</span>
+<h1>神经可塑性与康复</h1>
+<h2>脑一辈子都能改——但它默认往哪边改？</h2>
+<div class="date">2026-08-06 · BigCat</div>
+<p class="pitch">同一条规则，既能把你练成钢琴家，也能把一只中风后的手彻底废掉。</p>
+</header>
+<div class="intro">
+<p>"神经可塑性"这些年被讲成了一句励志口号——大脑能改，所以什么都还来得及。真实的它冷淡得多：<strong>可塑性不是奖励，是一条中性的记账规则——用得多的连接被加固，用得少的被拆走。</strong>它不问你想不想。中风后那只不听话的手，正是被这条规则一步步判了死刑；而康复医学几十年做的事，说白了就是抢在规则把它写死之前，把它掰回来。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>脑子自己会恢复一阵子——然后停下</h2>
+<p>血管一堵，正中间那块脑组织几分钟就死透了，叫<strong>梗死核心</strong>。它外面围着一圈"半死不活"的组织：血不够用，但细胞还没死，叫<strong>半影区</strong>。急诊抢的就是这一圈。</p>
+<p>真正有意思的是接下来几周。损伤会让周围还活着的脑区进入一种很特别的状态：<strong>平时压着不让乱长的抑制被松开，一批本来只在胎儿期大量开启的生长基因重新打开，新突触冒得飞快</strong>。等于成年的脑，在伤口周围局部地、临时地退回了一小段"发育期"。动物实验里这个窗口很清楚，人身上大致对应发病后的<strong>头一到三个月</strong>——同样的训练量押在这段时间里，赚得最多。（连接怎么变强变弱：<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>）</p>
+<figure>
+<svg viewbox="0 0 480 246" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="tkA" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+</defs>
+<rect fill="rgba(52,229,224,0.11)" height="166" rx="6" width="128" x="62" y="26"></rect>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="126" y="18">敏感窗口</text>
+<line marker-end="url(#tkA)" stroke="#4b4568" stroke-width="1.6" x1="62" x2="466" y1="192" y2="192"></line>
+<line stroke="#4b4568" stroke-width="1.6" x1="62" x2="62" y1="24" y2="192"></line>
+<path d="M64,184 C72,184 78,44 98,42 C130,40 152,110 192,144 C252,182 350,188 456,190" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="3.4"></path>
+<path d="M64,186 C112,186 132,92 202,74 C282,54 366,48 456,46" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="3.4"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" x="204" y="120">可塑性</text>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="11.5" text-anchor="end" x="452" y="36">功能恢复</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="66" y="208">发病</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="126" y="208">1 月</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="190" y="208">3 月</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="300" y="208">6 月</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="440" y="208">12 月</text>
+<line stroke="#34e5e0" stroke-linecap="round" stroke-width="3.4" x1="70" x2="96" y1="230" y2="230"></line>
+<text fill="#9a94bc" font-size="11.5" x="104" y="234">脑处于"生长态"的程度</text>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="3.4" x1="290" x2="316" y1="230" y2="230"></line>
+<text fill="#9a94bc" font-size="11.5" x="324" y="234">拿回来的功能</text>
+</svg>
+<figcaption>可塑性最高的那几周，恰恰在功能刚开始爬坡的时候</figcaption>
+</figure>
+<p>还有一条常被当定律引用的东西叫<strong>比例恢复法则</strong>：不少病人最后拿回的，大约是"理论上还有可能拿回的那部分"的七成。听着神奇，但后来一批研究指出这个 0.7 很可能是统计假象——拿"最大可恢复量"当分母，本身就会把散点自动挤到一条直线上，再叠加天花板效应。<strong>它可以当群体层面的粗略现象看，不能拿来预测某一个具体的人。</strong></p>
+<p class="en-brief"><b>EN</b> After a stroke, tissue around the infarct briefly re-enters a growth-permissive state — inhibition lifts, developmental growth genes switch back on — opening a sensitive window of roughly one to three months when the same training buys the most. The much-quoted "proportional recovery rule" (~70% of potential) is probably a statistical artifact of mathematical coupling and ceiling effects, so treat it as a population pattern, not a prognosis.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>用进废退，会朝坏的方向跑</h2>
+<p>康复科最常见的一幕：病人那只手明明还能动一点，却全程只用好的那只。这不是懒。上世纪 Edward Taub 在猴子身上找到了机制——把一条手臂的感觉神经切断后，猴子会彻底不再用它，哪怕控制肌肉的通路完好无损。原因很朴素：伤后那阵子，每次尝试都失败、都笨拙、都被"换只手"更快地解决掉，于是大脑很快学会了一件事——<strong>别用它</strong>。这个学习一旦固化，就把"能不能用"和"会不会用"永久拆成了两件事。这叫<strong>习得性不用</strong>。</p>
+<figure>
+<svg viewbox="0 0 480 268" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="lnBox" r="0.95"><stop offset="0" stop-color="#241c46"></stop><stop offset="1" stop-color="#130d29"></stop></radialgradient>
+<marker id="lnA" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#8f7cd0"></path></marker>
+</defs>
+<path d="M168,66 C215,40 268,40 310,64" fill="none" marker-end="url(#lnA)" stroke="#8f7cd0" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M386,95 C392,146 356,187 320,200" fill="none" marker-end="url(#lnA)" stroke="#8f7cd0" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M164,200 C124,186 98,148 98,101" fill="none" marker-end="url(#lnA)" stroke="#8f7cd0" stroke-linecap="round" stroke-width="2.6"></path>
+<rect fill="url(#lnBox)" height="42" rx="21" stroke="#a78bfa" stroke-width="1.3" width="130" x="35" y="51"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="600" text-anchor="middle" x="100" y="77">这只手不好使</text>
+<rect fill="url(#lnBox)" height="42" rx="21" stroke="#a78bfa" stroke-width="1.3" width="130" x="315" y="51"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="600" text-anchor="middle" x="380" y="77">干脆只用好手</text>
+<rect fill="url(#lnBox)" height="42" rx="21" stroke="#a78bfa" stroke-width="1.3" width="140" x="170" y="189"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="600" text-anchor="middle" x="240" y="215">皮层地盘继续缩</text>
+<line stroke="#e879f9" stroke-linecap="round" stroke-width="3.6" x1="227" x2="253" y1="35" y2="61"></line>
+<text fill="#e879f9" font-size="12" font-weight="600" text-anchor="middle" x="240" y="22">强制诱导疗法：绑住好手</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="240" y="252">循环转一圈，就把"能用"又削掉一点</text>
+</svg>
+<figcaption>习得性不用是一个自我实现的循环——疗法要做的就是在某一环剪断它</figcaption>
+</figure>
+<p>顺着机制反推，疗法就出来了：<strong>强制诱导运动疗法</strong>——把好手用手套或吊带绑住，每天几小时逼患手做真实任务（倒水、翻书、开门），并把动作拆成够得着的小步、成功一点就立刻给反馈。2006 年的 EXCITE 试验在亚急性期病人身上证实，它确实能改善患侧手臂的功能。</p>
+<p>但"越早越猛越好"是错的，而且是被两次试验实打实撞出来的：2009 年的 VECTORS 发现，把剂量加倍的超早期强制诱导，结果反而<strong>不如</strong>常规剂量；2015 年的 AVERT 让病人在发病 24 小时内就开始高强度下床活动，三个月后预后<strong>更差</strong>。窗口是开着的，可那时候的脑组织也最脆。</p>
+<p>而在另一头，问题恰恰相反——<strong>剂量普遍太少</strong>。有研究去数康复治疗室里的真实动作次数：一次上肢治疗，病人平均只做了三十来次有效重复；而动物实验里要看到皮层地图真的挪动，是几百次起步。（这些指令怎么从皮层走到肌肉：<a class="reflink" href="ref-motor-system.html">运动系统与小脑</a>）</p>
+<p class="en-brief"><b>EN</b> "Learned non-use" is a trained habit, not weakness: early failures teach the brain to route around the affected limb, and the unused cortical territory then shrinks further. Constraint-induced movement therapy breaks the loop by restraining the good limb, but dose and timing matter in both directions — VECTORS and AVERT found very early, very intense protocols did worse, while routine rehab often delivers only ~30 arm repetitions a session against the hundreds animal work says are needed.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>地图会重画，也会画歪</h2>
+<p>皮层上有一张"身体地图"：管手指的、管脸的各占一块，挨着排开。老课本把它画成一张固定的小人像，好像出厂就刻死了。Michael Merzenich 在猴子身上做的一系列实验把这个印象推翻了：<strong>让某根手指多用，它在皮层上的地盘就扩大；把两根手指缝在一起、逼它们永远同步动，两块代表区会融合成一块</strong>。地图的比例，一直在被日常使用量重画。</p>
+<figure>
+<svg viewbox="0 0 480 216" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="mpArr" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="11.5" x="30" y="26">手每天都在用</text>
+<rect fill="rgba(251,191,36,0.16)" height="38" rx="7" stroke="#fbbf24" stroke-width="1.2" width="100" x="30" y="36"></rect>
+<text fill="#faf0dc" font-size="12.5" text-anchor="middle" x="80" y="60">脸</text>
+<rect fill="rgba(52,229,224,0.14)" height="38" rx="7" stroke="#34e5e0" stroke-width="1.2" width="63" x="132" y="36"></rect>
+<text fill="#e6faf8" font-size="12.5" text-anchor="middle" x="163" y="60">拇指</text>
+<rect fill="rgba(52,229,224,0.14)" height="38" rx="7" stroke="#34e5e0" stroke-width="1.2" width="58" x="197" y="36"></rect>
+<text fill="#e6faf8" font-size="12.5" text-anchor="middle" x="226" y="60">食指</text>
+<rect fill="rgba(52,229,224,0.14)" height="38" rx="7" stroke="#34e5e0" stroke-width="1.2" width="58" x="257" y="36"></rect>
+<text fill="#e6faf8" font-size="12.5" text-anchor="middle" x="286" y="60">中指</text>
+<rect fill="rgba(52,229,224,0.14)" height="38" rx="7" stroke="#34e5e0" stroke-width="1.2" width="58" x="317" y="36"></rect>
+<text fill="#e6faf8" font-size="12.5" text-anchor="middle" x="346" y="60">环指</text>
+<rect fill="rgba(52,229,224,0.14)" height="38" rx="7" stroke="#34e5e0" stroke-width="1.2" width="73" x="377" y="36"></rect>
+<text fill="#e6faf8" font-size="12.5" text-anchor="middle" x="413" y="60">小指</text>
+<line marker-end="url(#mpArr)" stroke="#e879f9" stroke-linecap="round" stroke-width="3" x1="240" x2="240" y1="86" y2="122"></line>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="11.5" x="252" y="110">这只手长期不用</text>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="11.5" x="30" y="150">几周到几个月之后</text>
+<rect fill="rgba(251,191,36,0.22)" height="38" rx="7" stroke="#fbbf24" stroke-width="1.4" width="200" x="30" y="160"></rect>
+<text fill="#faf0dc" font-size="12.5" text-anchor="middle" x="130" y="184">脸（地盘扩大）</text>
+<rect fill="rgba(52,229,224,0.08)" height="38" rx="7" stroke="rgba(52,229,224,0.45)" stroke-width="1" width="47" x="232" y="160"></rect>
+<text fill="#8fbfbd" font-size="11.5" text-anchor="middle" x="255" y="184">拇</text>
+<rect fill="rgba(52,229,224,0.08)" height="38" rx="7" stroke="rgba(52,229,224,0.45)" stroke-width="1" width="42" x="281" y="160"></rect>
+<text fill="#8fbfbd" font-size="11.5" text-anchor="middle" x="302" y="184">食</text>
+<rect fill="rgba(52,229,224,0.08)" height="38" rx="7" stroke="rgba(52,229,224,0.45)" stroke-width="1" width="42" x="325" y="160"></rect>
+<text fill="#8fbfbd" font-size="11.5" text-anchor="middle" x="346" y="184">中</text>
+<rect fill="rgba(52,229,224,0.08)" height="38" rx="7" stroke="rgba(52,229,224,0.45)" stroke-width="1" width="42" x="369" y="160"></rect>
+<text fill="#8fbfbd" font-size="11.5" text-anchor="middle" x="390" y="184">环</text>
+<rect fill="rgba(52,229,224,0.08)" height="38" rx="7" stroke="rgba(52,229,224,0.45)" stroke-width="1" width="37" x="413" y="160"></rect>
+<text fill="#8fbfbd" font-size="11.5" text-anchor="middle" x="431" y="184">小</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="210">同一条皮层，地盘按使用量重新分配</text>
+</svg>
+<figcaption>用得多的抢地盘，用得少的被邻居吃掉</figcaption>
+</figure>
+<p>中风康复的赌注就压在这上面。Randolph Nudo 的猴子实验显示：梗死之后如果不训练，梗死周围<strong>幸存</strong>的那部分手部代表区还会继续缩小；而给它针对性的手部训练，这块地盘不但保住了，甚至能往外扩。</p>
+<p><strong>镜像疗法</strong>是同一逻辑的一个花招：在两只手之间竖一面镜子，让人盯着健手的镜像做动作——大脑于是收到"患手正在正常运动"的视觉证据，那片沉寂的代表区有机会被重新点亮。这招最早是 Ramachandran 用来对付幻肢痛的，如今在中风偏瘫上有中等质量的证据支持它能改善运动功能。</p>
+<p>但地图能重画，就意味着它也会<strong>画歪</strong>。有些职业音乐家会得<strong>局灶性肌张力障碍</strong>：几十年高强度、多根手指严格同步的练习，把本该分开的手指代表区糊成了一片，于是想动一根，旁边几根跟着抽——练习本身把地图练坏了。幻肢痛、慢性痛里的中枢敏化，也都是可塑性通向坏结局的例子。<strong>可塑性从不保证结局是好的。</strong></p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>拿一个训练好的大模型去<b>微调</b>（在新任务的数据上再练一小会儿，让它专门擅长某件事），它内部的表示也会像皮层地图一样被重画——新任务占的"地盘"变大。代价是同一个：常见的副作用叫<b>灾难性遗忘</b>，学会了新的，旧本事跟着掉。生物脑的对策是把改动限制在局部、并且大部分改写要睡一觉才固定下来；工程上的对策是混着旧数据一起练、或只允许一小部分参数可动。<b>能被改</b>和<b>会被改坏</b>，两边都是同一件事的两面。</p>
+</div>
+<p class="en-brief"><b>EN</b> Cortical maps are redrawn by use — Merzenich showed digit territories expand with training and fuse when fingers are forced to move together, and Nudo showed targeted training preserves and expands the surviving hand area next to a lesion. Mirror therapy exploits the same visual route. But plasticity is neutral: the same rule produces musicians' focal dystonia, phantom limb pain, and central sensitisation in chronic pain.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>终身可塑，但装着刹车</h2>
+<p>小孩的脑确实比成人好改，这不是错觉。Hubel 和 Wiesel 的经典实验：幼猫在发育早期被遮住一只眼几周，那只眼在皮层上的地盘会被另一只眼永久抢走，视力再也回不来；同样的遮蔽放到成年猫身上，几乎没事。人身上对应的就是<strong>弱视</strong>——过了那段窗口再治，效果大打折扣。这类窗口叫<strong>关键期</strong>。</p>
+<p>反直觉的是：关键期关闭，不是"能力用光了"，而是大脑<strong>主动踩了刹车</strong>。发育到一定阶段，一层叫<strong>围神经元网</strong>的糖蛋白网会像塑封一样裹住某些神经元，把已经连好的线固定住；髓鞘上也挂着抑制生长的信号。证据很硬：在动物身上用酶把这层网消化掉，成年动物的关键期能被重新打开。（这些窗口怎么开、怎么关：<a class="reflink" href="ref-neurodevelopment.html">神经发育</a>）</p>
+<p>成人可塑性于是有了它真实的样子：<strong>存在，但昂贵</strong>。它要求足够多的重复、难度贴着你能力的边缘、注意力真的在场（走神地被动重复几乎不算数），还要靠睡眠把当天的改动固定下来。至于"成年人的海马还长不长新神经元"，2018 年两组人用不同方法得出了完全相反的结论，到今天也没定论——所以任何拿"成人神经发生"当卖点的产品，都跑在证据前面。</p>
+<p>说到底，<strong>"大脑可塑"不等于"你想改什么都能改"</strong>。它是一条有窗口、有条件、有代价的规则，不是一句咒语。</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>神经网络也会"失去可塑性"，而且这是个被反复量化过的现象：让一个网络在一连串任务上持续训练下去，它到后期学新东西的能力会明显掉下来——一部分单元饱和不动了，等于自己长出了刹车。工程上的解法带着刺眼的对照意味：<b>定期重置一小部分单元</b>、往权重里注点噪声、或者加正则把参数拽回可动的范围——和"用酶消化掉围神经元网、把关键期重新打开"是同一个念头。两边也撞在同一堵墙上：<b>把可塑性调回去，稳住的老本事也容易跟着松掉。</b></p>
+</div>
+<p class="en-brief"><b>EN</b> Critical periods close not because capacity runs out but because the brain applies brakes — perineuronal nets and myelin-associated inhibitors lock circuits in place, and digesting those nets can reopen the window in animals. Adult plasticity is real but expensive: it demands repetition, difficulty at the edge of ability, genuine attention, and sleep to consolidate. Whether adult human hippocampal neurogenesis exists at all remains unsettled since two 2018 papers reached opposite conclusions.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"你反复做的事，会把你改造成做那件事的人"——这条神经层面的记账规则，好几门老学问早就写下过，而且连附加条件都猜中了：</p>
+<ul>
+<li><b>佛学 · 唯识学</b>：「现行熏种子，种子生现行」——每一次实际的行为都在往深处存一份"种子"，种子又长出下一次的行为。这正是可塑性的循环。有意思的是附加条件也对得上：唯识讲熏习要<b>恒常、专注、相续不断</b>才成气候，而康复研究算出来的处方是重复要够多、注意力必须在场、隔天还得接着来。<b>习得性不用</b>则是它的反面——不熏，习气就散。</li>
+<li><b>儒 · 亚里士多德</b>：《尚书》说「习与性成」，亚里士多德说德性是习惯——"我们由做公正的事，才成为公正的人"。两边都把性格当成行为的长期积分，而不是天生的一个值。神经科学只是补上了积分器长什么样。</li>
+<li><b>控制论 · 复杂系统</b>：任何要长期活下去的自适应系统，都卡在<b>稳定性与可塑性的两难</b>里——太容易改，学到的东西会被新经验冲掉；太难改，就再学不动新的。关键期关闭因此不该读成退化，而是系统把学到的结构<b>锁进硬件</b>的一步。围神经元网是生物的锁；深度学习里各种"别偏离原来太多"的正则项，是工程的锁。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>既然"用进废退"，那"多用脑防痴呆"是不是就成立了？</summary><div>方向对，但比口号窄得多。教育、复杂工作、社交确实和更晚出现症状相关，机制上叫<strong>认知储备</strong>（Topic 25 讲过）——但那更像"病理照样堆积、只是撑得更久"，不是把病挡在门外。而且可塑性的迁移范围<strong>非常窄</strong>：练什么强什么。脑训练 app 大多只能把你练成那个 app 的高手，迁移到日常认知的证据一直很薄。真正有跨域效果的反而是体力活动和睡眠这类"全脑条件"。</div></details>
+<details><summary>如果关键期真能被药物或酶重新打开，成年人是不是就能像小孩一样学语言了？</summary><div>动物实验里确实做到了局部重开。但重开的不只是学习能力，还有<strong>不稳定</strong>——被锁住的东西之所以被锁，是因为它已经在用了。一个大范围重开关键期的成年人，可能一边学得飞快，一边把原有的技能和记忆冲得七零八落。临床上真正在试的方向因此是<strong>窄而准</strong>：只在需要重塑的那个回路、那段时间里松一点刹车，比如配合康复训练用药。</div></details>
+<details><summary>康复要求"注意力必须在场"，那机器人辅助、被动活动为什么效果打折？</summary><div>可塑性不是靠肌肉动了多少次触发的，而是靠<strong>神经系统真的在解一个问题</strong>。当机器帮你把动作走完，误差被外部抹平了，脑内那份"没做到"的差错信号也就没了——而正是这个差错在驱动改写（Topic 1 的老朋友）。所以有效的康复设计都会想办法把难度顶在"刚好差一点做不到"的位置：辅助只补最后那一点，剩下的必须自己挣。</div></details>
+<details><summary>可塑性是中性的，那慢性痛为什么会"越痛越痛"？</summary><div>因为疼痛通路也遵守同一条记账规则。持续的痛信号反复走同一条路，突触被加固、门槛被调低，最后轻微的刺激甚至没有刺激也能点着这条路——这叫<strong>中枢敏化</strong>。此时痛已经不再忠实地报告组织损伤，而是这套系统自己学出来的一个状态。这也解释了为什么单纯止痛常常不够：要动的是那份已经被写进去的学习。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Neuroplasticity" target="_blank">神经可塑性 Neuroplasticity</a> — 总览与常见误读</li>
+<li><a href="https://en.wikipedia.org/wiki/Stroke_recovery" target="_blank">卒中恢复 Stroke recovery</a> — 恢复的时间进程与康复手段</li>
+<li><a href="https://en.wikipedia.org/wiki/Constraint-induced_movement_therapy" target="_blank">强制诱导运动疗法</a> — Taub 与"习得性不用"</li>
+<li><a href="https://en.wikipedia.org/wiki/Mirror_therapy" target="_blank">镜像疗法 Mirror therapy</a> — 从幻肢痛到偏瘫康复</li>
+<li><a href="https://en.wikipedia.org/wiki/Michael_Merzenich" target="_blank">Michael Merzenich</a> — 皮层地图随使用重组的系列实验</li>
+<li><a href="https://en.wikipedia.org/wiki/Critical_period" target="_blank">关键期 Critical period</a> · <a href="https://en.wikipedia.org/wiki/Perineuronal_net" target="_blank">围神经元网</a> — 窗口与刹车</li>
+<li><a href="https://en.wikipedia.org/wiki/Focal_dystonia" target="_blank">局灶性肌张力障碍</a> — 练习把地图练坏的例子</li>
+<li><a href="https://en.wikipedia.org/wiki/Adult_neurogenesis" target="_blank">成人神经发生</a> — 人类到底有没有，至今存争议</li>
+<li><a href="https://en.wikipedia.org/wiki/Catastrophic_interference" target="_blank">灾难性遗忘 Catastrophic interference</a> — 人工网络这边的同一道难题</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 30 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
