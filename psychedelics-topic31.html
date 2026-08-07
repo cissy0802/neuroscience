@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 31 · 迷幻药与神经科学 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 31 · PHASE D 临床/前沿</span>
+<h1>迷幻药与神经科学</h1>
+<h2>一把钥匙拧开一把锁，然后整栋楼的规矩变了</h2>
+<div class="date">2026-08-07 · BigCat</div>
+<p class="pitch">让你"看见"的那部分，和让你好起来的那部分，很可能根本不是同一件事。</p>
+</header>
+<div class="intro">
+<p>关于迷幻药的争论几十年来一直卡在两个阵营之间：一边说那是通往某种真相的门，一边说那不过是化学品把大脑弄坏了几个小时。神经科学这十年给出了第三种、也冷淡得多的版本——<strong>一把叫 5-HT2A 的锁被拧开，皮层里"谁说了算"的等级暂时被拉平，接着是一段几周长的可塑性窗口。</strong>更有意思的是最后那个问题：眼前那些花花绿绿的东西，到底是疗效的原因，还是只是一路上的动静？</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>分子长得天差地别，钥匙孔只有一个</h2>
+<p>LSD、裸盖菇素（俗称"神奇蘑菇"里的那个成分）、DMT、麦司卡林（来自某些仙人掌）——这几样东西的分子结构差别很大，有效剂量能差上几百倍，可人吃下去报告的体验却高度相似。这在药理学上是个强提示：<strong>它们八成是在同一个地方起作用。</strong></p>
+<p>那个地方叫 <strong>5-HT2A 受体</strong>。受体你可以就想成细胞上的一个锁孔——某个形状对得上的分子插进去，细胞才起反应。这类锁平时是给<strong>血清素</strong>用的（脑里一种主要负责调节整体基调而不是直接传令的化学信使）。</p>
+<figure>
+<svg viewBox="0 0 480 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p1a" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"></path></marker>
+<marker id="p1b" markerHeight="13" markerUnits="userSpaceOnUse" markerWidth="14" orient="auto" refX="10" refY="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+</defs>
+<path d="M116,33 C152,33 168,112 200,118" fill="none" marker-end="url(#p1a)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<path d="M116,79 C152,79 172,114 200,120" fill="none" marker-end="url(#p1a)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<path d="M116,125 C152,125 174,124 200,124" fill="none" marker-end="url(#p1a)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<path d="M116,171 C152,171 172,130 200,126" fill="none" marker-end="url(#p1a)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<rect fill="rgba(167,139,250,0.10)" height="32" rx="16" stroke="#a78bfa" stroke-width="1.2" width="106" x="10" y="17"></rect>
+<text fill="#efe9ff" font-size="13" text-anchor="middle" x="63" y="38">LSD</text>
+<rect fill="rgba(167,139,250,0.10)" height="32" rx="16" stroke="#a78bfa" stroke-width="1.2" width="106" x="10" y="63"></rect>
+<text fill="#efe9ff" font-size="13" text-anchor="middle" x="63" y="84">裸盖菇素</text>
+<rect fill="rgba(167,139,250,0.10)" height="32" rx="16" stroke="#a78bfa" stroke-width="1.2" width="106" x="10" y="109"></rect>
+<text fill="#efe9ff" font-size="13" text-anchor="middle" x="63" y="130">DMT</text>
+<rect fill="rgba(167,139,250,0.10)" height="32" rx="16" stroke="#a78bfa" stroke-width="1.2" width="106" x="10" y="155"></rect>
+<text fill="#efe9ff" font-size="13" text-anchor="middle" x="63" y="176">麦司卡林</text>
+<rect fill="rgba(232,121,249,0.12)" height="52" rx="14" stroke="#e879f9" stroke-width="1.5" width="106" x="204" y="96"></rect>
+<text fill="#fff" font-size="14.5" font-weight="700" text-anchor="middle" x="257" y="118">5-HT2A</text>
+<text fill="#f0b6f8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="257" y="136">受体</text>
+<line marker-end="url(#p1b)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3" x1="312" x2="352" y1="122" y2="122"></line>
+<rect fill="rgba(52,229,224,0.10)" height="58" rx="14" stroke="#34e5e0" stroke-width="1.3" width="114" x="356" y="93"></rect>
+<text fill="#e6faf8" font-size="12.5" text-anchor="middle" x="413" y="116">皮层第 5 层</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="413" y="136">锥体神经元</text>
+<line stroke="#f472b6" stroke-dasharray="4 4" stroke-linecap="round" stroke-width="2.6" x1="176" x2="176" y1="22" y2="192"></line>
+<text fill="#f472b6" font-size="11.5" text-anchor="middle" x="176" y="212">先用 ketanserin 堵住这里</text>
+<text fill="#c07fa0" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="176" y="232">→ 主观效果几乎全没</text>
+</svg>
+<figcaption>结构各异的分子，共用同一个钥匙孔</figcaption>
+</figure>
+<p>怎么知道这把锁真的是开关，而不只是碰巧同时出现？有一个很干净的实验：先给人吃 <strong>ketanserin</strong>（一种专门堵住 5-HT2A、别的地方基本不碰的药），再给 LSD——结果是<strong>主观效果几乎全被抹掉</strong>。堵住锁孔，钥匙就白拿了。这是因果，不是相关。</p>
+<p>还有一个位置上的巧合值得留意：5-HT2A 在皮层里分布最密的，是<strong>第 5 层的锥体神经元</strong>——正是把各个脑区串起来、并且负责往感官方向"下发预测"的那一层（Topic 1 讲的那条主线）。药并没有随机地搅一锅粥，它精确地拧在了大脑最高层的那颗螺丝上。（这套化学信使系统本身：<a class="reflink" href="ref-serotonin-system.html">血清素系统</a>）</p>
+<p>那问题就来了：你脑子里天天都有血清素，它也开这把锁，为什么你没在飘？这个扣子留到第三节。</p>
+<p class="en-brief"><b>EN</b> LSD, psilocybin, DMT and mescaline differ wildly in structure and potency yet produce strikingly similar experiences, because they converge on one target: the 5-HT2A receptor. The causal evidence is clean — pre-treating with ketanserin, a selective 5-HT2A antagonist, abolishes almost all of LSD's subjective effects. And 5-HT2A is densest on layer-5 cortical pyramidal neurons, the same cells that broadcast top-down predictions.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>它不是"打开"了什么，它是把等级拉平了</h2>
+<p>流传最广的那句话——"迷幻药让你用上大脑平时没用的部分"——是反的。脑影像看到的恰恰相反：<strong>某些东西被关小了。</strong></p>
+<p>最先被注意到的是<strong>默认模式网络</strong>：你发呆、想自己、给自己编故事的时候最活跃的那一套脑区。给药之后，它内部的同步性掉下去了。2024 年一项做得很硬的研究把这件事看得更清楚：同一批人先后接受 25 毫克裸盖菇素和利他林（一种常见的兴奋类药，用作对照），裸盖菇素打乱功能连接的幅度是利他林的三倍多；而且机制不是"某块变强某块变弱"，是<strong>去同步</strong>——网络内部原本的同步、和网络之间原本的此起彼伏，被一起抹平了，网络之间的界限就这么溶掉了。默认模式网络受影响最大，它和海马前部之间被压低的连接，甚至在药效过去几周后还没完全回来。</p>
+<figure>
+<svg viewBox="0 0 480 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="n2m" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="7.5" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#8f89ad"></path></marker>
+</defs>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="118" y="24">平时</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="360" y="24">裸盖菇素峰值时</text>
+<line stroke="#2a2545" stroke-width="1.4" x1="240" x2="240" y1="14" y2="238"></line>
+<line stroke="#34e5e0" stroke-width="2" x1="48" x2="88" y1="72" y2="56"></line>
+<line stroke="#34e5e0" stroke-width="2" x1="88" x2="78" y1="56" y2="102"></line>
+<line stroke="#34e5e0" stroke-width="2" x1="78" x2="48" y1="102" y2="72"></line>
+<line stroke="#a78bfa" stroke-width="2" x1="172" x2="200" y1="68" y2="98"></line>
+<line stroke="#a78bfa" stroke-width="2" x1="200" x2="158" y1="98" y2="110"></line>
+<line stroke="#a78bfa" stroke-width="2" x1="158" x2="172" y1="110" y2="68"></line>
+<line stroke="#e879f9" stroke-width="2" x1="92" x2="132" y1="186" y2="204"></line>
+<line stroke="#e879f9" stroke-width="2" x1="132" x2="158" y1="204" y2="166"></line>
+<line stroke="#e879f9" stroke-width="2" x1="158" x2="92" y1="166" y2="186"></line>
+<line stroke="#4b4568" stroke-dasharray="3 5" stroke-width="1.2" x1="88" x2="158" y1="56" y2="110"></line>
+<circle cx="48" cy="72" fill="#34e5e0" r="7"></circle><circle cx="88" cy="56" fill="#34e5e0" r="7"></circle><circle cx="78" cy="102" fill="#34e5e0" r="7"></circle>
+<circle cx="172" cy="68" fill="#a78bfa" r="7"></circle><circle cx="200" cy="98" fill="#a78bfa" r="7"></circle><circle cx="158" cy="110" fill="#a78bfa" r="7"></circle>
+<circle cx="92" cy="186" fill="#e879f9" r="7"></circle><circle cx="132" cy="204" fill="#e879f9" r="7"></circle><circle cx="158" cy="166" fill="#e879f9" r="7"></circle>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="180" y="48">DMN</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="118" y="232">块内同步 · 块间泾渭分明</text>
+<line stroke="rgba(52,229,224,0.22)" stroke-width="1.4" x1="290" x2="330" y1="72" y2="56"></line>
+<line stroke="rgba(167,139,250,0.22)" stroke-width="1.4" x1="414" x2="442" y1="68" y2="98"></line>
+<line stroke="rgba(232,121,249,0.22)" stroke-width="1.4" x1="334" x2="374" y1="186" y2="204"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="330" x2="414" y1="56" y2="68"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="320" x2="400" y1="102" y2="110"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="290" x2="334" y1="72" y2="186"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="442" x2="374" y1="98" y2="204"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="320" x2="400" y1="102" y2="166"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="414" x2="334" y1="68" y2="186"></line>
+<circle cx="290" cy="72" fill="#34e5e0" r="7"></circle><circle cx="330" cy="56" fill="#34e5e0" r="7"></circle><circle cx="320" cy="102" fill="#34e5e0" r="7"></circle>
+<circle cx="414" cy="68" fill="#a78bfa" r="7"></circle><circle cx="442" cy="98" fill="#a78bfa" r="7"></circle><circle cx="400" cy="110" fill="#a78bfa" r="7"></circle>
+<circle cx="334" cy="186" fill="#e879f9" r="7"></circle><circle cx="374" cy="204" fill="#e879f9" r="7"></circle><circle cx="400" cy="166" fill="#e879f9" r="7"></circle>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="360" y="232">界限溶掉 · 跨网络的连线冒出来</text>
+<line marker-end="url(#n2m)" stroke="#8f89ad" stroke-linecap="round" stroke-width="1.8" x1="196" x2="284" y1="252" y2="252"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="188" y="256">同一批脑区</text>
+</svg>
+<figcaption>不是某处被点亮，是网络之间的墙塌了</figcaption>
+</figure>
+<p>为什么"墙塌了"会带来那种体验？把 Topic 1 那条主线接过来就顺了：你看到的世界 = 大脑的先验预期 × 眼前的证据，各占多少看谁更靠谱。迷幻药做的事，用 Carhart-Harris 的说法叫 <strong>REBUS</strong>——<strong>把高层先验的权重调松</strong>。先验一松，平时被它死死压住的东西就冒了上来：墙纸开始蠕动（低层的边缘信号不再被"墙是平的"这个先验修正掉）、随便一句话都像在说什么天大的事（意义泛滥）。而当最顶上那个先验——"我是一个连续的、有边界的人"——也跟着松动时，就是所谓的<strong>自我消解</strong>（Topic 17 讲过这件事的另一面）。（这套网络本身：<a class="reflink" href="ref-default-mode-network.html">默认模式网络</a>）</p>
+<p>这一步也顺带给出了它为什么可能对抑郁有用的猜想：抑郁很像一种<strong>先验被锁死</strong>的状态——关于自己的那套预测（我没用、我不会好）再也不接受证据修正了。松先验，就是往那把锁上滴油。</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这和 AI 生成模型里的一个旋钮是同一件事。画图模型有个参数叫 <b>guidance</b>，聊天模型有个叫 <b>temperature</b>——它们管的都是"多信自己学到的老套路 vs 多允许意外"。把它调低（少受先验约束），产出立刻变得新奇、离谱、天马行空；调过头，模型就开始一本正经地胡说。<b>新奇和胡说共用同一个旋钮，没有只要前者不要后者的调法。</b>迷幻体验里那种"洞见感"与"荒诞感"总是绑在一起出现，多半也是同一个原因——而这恰恰是为什么"药中体验到的东西"不能直接当真理收下。</p>
+</div>
+<p class="en-brief"><b>EN</b> Psychedelics don't switch hidden brain regions on — they flatten hierarchy. A 2024 study tracking the same people on 25 mg psilocybin versus methylphenidate found psilocybin disrupted functional connectivity more than threefold, by desynchronisation: correlations within networks and anticorrelations between them were erased together, dissolving network boundaries, with the default mode network hit hardest and its link to anterior hippocampus still suppressed weeks later. Carhart-Harris's REBUS account reads this as relaxing the weight on high-level priors — which is also why depression, plausibly a state of priors locked shut, is the obvious clinical target.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>真正可能治病的那部分，也许不需要你"看见"任何东西</h2>
+<p>药效几小时就过了，可临床上宣称的改善能持续好几周。中间这段空白靠什么填？目前最有力的候选是<strong>结构层面的改造</strong>。</p>
+<p>2021 年一项小鼠实验把这件事拍了下来：研究者在活体小鼠脑上开窗，用双光子显微镜反复拍同一批内侧额叶皮层第 5 层神经元的<strong>树突棘</strong>（树突上那些小突起，是接收别处信号的物理落点，多一个棘约等于多一个可用的接口）。<strong>单次裸盖菇素之后 24 小时内，树突棘的密度和尺寸都涨了约一成；一个月后还在。</strong>而事先用 ketanserin 堵住 5-HT2A，密度那部分的增长就被挡住了——又是同一把锁。（连接怎么变强变弱：<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>；这块皮层是干什么的：<a class="reflink" href="ref-prefrontal.html">前额叶</a>）</p>
+<p>现在回到第一节留的那个扣子。2023 年的一项研究给出了一个漂亮得有点过分的答案：<strong>5-HT2A 受体有很大一批根本不在细胞表面，而在细胞内部。</strong>血清素是亲水的，穿不过细胞膜那层油脂，所以它只开得了门口那批；而经典迷幻药都是亲脂的，能直接溶进膜里游进去，把<strong>里面</strong>那批也拧开——长树突棘的信号，正是从里面那批发出来的。</p>
+<figure>
+<svg viewBox="0 0 480 272" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m3c" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="m3p" markerHeight="13" markerUnits="userSpaceOnUse" markerWidth="14" orient="auto" refX="10" refY="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="26" y="26">细胞外</text>
+<rect fill="rgba(167,139,250,0.14)" height="22" rx="4" stroke="rgba(167,139,250,0.4)" stroke-width="1" width="428" x="24" y="118"></rect>
+<text fill="#b9aee0" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="272" y="133">细胞膜（脂）</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="end" x="452" y="170">细胞内</text>
+<text fill="#7bf0e8" font-size="12.5" text-anchor="middle" x="120" y="48">血清素 · 亲水</text>
+<circle cx="120" cy="74" fill="#34e5e0" r="13"></circle>
+<text fill="#06222a" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="120" y="78">5HT</text>
+<rect fill="#0e2c33" height="38" rx="9" stroke="#34e5e0" stroke-width="1.4" width="32" x="52" y="110"></rect>
+<text fill="#e6faf8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="68" y="134">2A</text>
+<path d="M108,82 C94,92 80,98 74,104" fill="none" marker-end="url(#m3c)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.2"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="68" y="176">门口这批开得了</text>
+<line stroke="#34e5e0" stroke-dasharray="4 4" stroke-linecap="round" stroke-width="2.2" x1="128" x2="146" y1="86" y2="114"></line>
+<line stroke="#f472b6" stroke-linecap="round" stroke-width="3.2" x1="142" x2="164" y1="118" y2="140"></line>
+<line stroke="#f472b6" stroke-linecap="round" stroke-width="3.2" x1="164" x2="142" y1="118" y2="140"></line>
+<text fill="#f0a0d0" font-size="11.5" x="176" y="134">穿不过去</text>
+<text fill="#f5b8fb" font-size="12.5" text-anchor="middle" x="340" y="48">迷幻药 · 亲脂</text>
+<circle cx="340" cy="74" fill="#e879f9" r="13"></circle>
+<text fill="#2a0a2e" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="340" y="78">LSD</text>
+<line marker-end="url(#m3p)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.8" x1="340" x2="340" y1="90" y2="178"></line>
+<rect fill="#2a0f2e" height="34" rx="10" stroke="#e879f9" stroke-width="1.4" width="72" x="304" y="182"></rect>
+<text fill="#fce4ff" font-size="11.5" text-anchor="middle" x="340" y="204">膜里这批</text>
+<line marker-end="url(#m3p)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.6" x1="378" x2="404" y1="199" y2="199"></line>
+<text fill="#f5b8fb" font-size="11.5" x="410" y="195">树突棘</text>
+<text fill="#f5b8fb" font-size="11.5" x="410" y="212">长出来</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="258">同一把锁分内外两批——能不能穿膜，决定了开哪一批</text>
+</svg>
+<figcaption>为什么你自己的血清素天天在，却既不致幻也不长棘</figcaption>
+</figure>
+<p>这一下就把整个领域最尖锐的问题顶到了台面上：<strong>能不能只要可塑性，不要幻觉？</strong>顺着"亲脂才进得去"这条线，已经有人做出了不致幻的类似物，在动物身上照样长棘、照样有抗抑郁样的行为效果。要是这条路在人身上也走得通，那"神秘体验是疗效的必要条件"这个说法就塌了——目前人类这边还没有能定论的数据。</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这段窗口最贴切的对读不是某个网络结构，而是<b>学习率</b>——训练模型时那个"这一步允许参数改多少"的旋钮。调高它，模型学得快、也更容易被单批数据带跑偏；工程上因此常用"临时拉高、再慢慢降回来"的做法，好让模型跳出一个不太好的老状态。关键是：<b>窗口本身不含内容</b>。学习率只决定能改多少，改成什么完全由那阵子喂进去的数据说了算。临床上那句听着很玄的 <b>set and setting</b>（心境与环境），落到机制上就是这么朴素的一句话——窗口开着的那几小时，谁在旁边、你在想什么、事后怎么消化，才是真正被写进去的东西。</p>
+</div>
+<p class="en-brief"><b>EN</b> The acute trip lasts hours but claimed benefits last weeks, and the leading bridge is structural. In vivo two-photon imaging in mice showed a single dose of psilocybin raised dendritic spine density and size by roughly 10% within 24 hours in medial frontal cortex, still present a month later, with the density effect blocked by ketanserin. A 2023 finding explains the puzzle of why endogenous serotonin does none of this: a large pool of 5-HT2A receptors sits inside the cell, and only lipophilic molecules that cross the membrane can reach them. That opens the field's sharpest question — non-hallucinogenic analogues already work in animals, so the trip may not be the mechanism at all.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>证据走到哪一步了，以及它卡在哪</h2>
+<p>裸盖菇素治疗<strong>难治性抑郁</strong>（试过好几种药都不见效的那种）是走得最远的一条。2022 年一项 233 人的二期试验显示，单次 25 毫克在三周时明显优于当作安慰剂的 1 毫克微量组。后来的三期试验也达到了主要终点：第 6 周时，25 毫克组的抑郁评分比对照多降了 <strong>3.6 分</strong>，统计上非常显著。</p>
+<p>但 3.6 分要放在那把 0–60 分的量表上读——<strong>统计显著，临床上不算大</strong>。这也是为什么数据公布那天，市场的反应相当冷淡。这不是唱衰，是这个领域最需要被说清楚的一句话：<strong>"确实有效"和"效果够大到值得这么麻烦"是两个问题。</strong></p>
+<p>另一条常被混为一谈的线是 <strong>MDMA</strong>（摇头丸的主成分）治 PTSD。它其实不是经典迷幻药——它主要是把血清素整批放出来，不以 5-HT2A 为主战场。2024 年 8 月，美国 FDA 拒绝批准它用于 PTSD，要求再做一项三期试验；理由里就点了盲法、安全性报告和疗效耐久性。</p>
+<p>而<strong>盲法</strong>正是整个领域的死结。安慰剂对照的前提是你不知道自己吃到了哪一组——可这类药，几乎没人猜不出来。期望在精神科的终点上本来就能撬动很多。有一项设计很聪明的研究把这一点做实了：191 名本来就在自己微剂量的人，被教会怎么自己给自己下盲（自制外观相同的药丸和安慰剂，靠二维码让研究者知道、自己不知道）。结果是<strong>微剂量组确实变好了，安慰剂组也变好了，两组之间没有差别</strong>；能测到的那点微弱差异，用"猜到了自己在哪组"就解释得完。</p>
+<p>风险也得摊开说。有精神病性障碍家族史的人属于禁忌，可能被诱发首次发作；少数人会留下持续的视觉后遗（HPPD）。还有一条最少被提起的：长期反复的小剂量会持续刺激 <strong>5-HT2B</strong> 受体，而这条路已经被芬氟拉明、培高利特这类撤市药证明会伤害心脏瓣膜——所以"每天微剂量吃上几年"恰恰是证据最薄、风险最不明的那种用法。法规这边则在松动：澳大利亚自 2023 年起允许经授权的精神科医生开具裸盖菇素和 MDMA，美国的俄勒冈、科罗拉多也建起了州内的监督使用体系。</p>
+<p class="en-brief"><b>EN</b> Psilocybin for treatment-resistant depression is furthest along: a 233-person phase 2 favoured 25 mg over 1 mg at three weeks, and phase 3 hit its primary endpoint with a 3.6-point MADRS advantage at week 6 — highly significant, but modest on a 0–60 scale. MDMA (not a classic psychedelic; it releases serotonin wholesale) was rejected by the FDA in August 2024 with blinding, safety reporting and durability all cited. Functional unblinding is the field's structural problem: a 191-person self-blinding citizen-science trial found microdosers improved and so did placebo, with no difference between them. Risks include precipitating psychosis in the predisposed, HPPD, and 5-HT2B-mediated valvular damage from chronic repeated dosing — which makes long-run microdosing the least evidenced use of all.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"把过滤器调松，看到的东西就变多"——这句话在好几门学问里都出现过，而且它们各自的警告，今天读起来都还成立：</p>
+<ul>
+<li><b>禅宗 · 见与修</b>：1962 年那场著名的"耶稣受难日实验"，让神学院学生在礼拜中服下裸盖菇素，多数人报告了完整的神秘体验——这在当时被当成"药能通神"的证据。但禅门对这类境界的态度一直很冷：定中的光影一律不许贪着，因为<b>撞开一扇门和自己走到门口，落在往后生活里的不是同一件事</b>。而临床数据恰好在同一处画了同一条线——神秘体验的评分确实和疗效相关，可相关不等于原因，而不致幻的类似物在动物身上照样管用。</li>
+<li><b>赫胥黎 · 减压阀</b>：《众妙之门》里，赫胥黎借柏格森的说法提出：大脑不是意识的产生器，而是<b>减压阀</b>——把浩瀚的一切滤掉绝大部分，只放够活命的那点进来，迷幻药做的是把阀门拧大。这和 REBUS"放松先验"在机制上贴得惊人。但两者的哲学承诺完全不同：先验松开只保证你<b>看到的变多、变怪</b>，一点也不保证多出来的那部分是真的。这个区分，是这一期最该带走的东西。</li>
+<li><b>复杂系统 · 退火</b>：Carhart-Harris 的"熵增的脑"直接借了工程上的<b>退火</b>——把系统的温度临时调高，好让它从一个不够好的坑里跳出来，再慢慢降温、落进更好的坑。抑郁于是可以被读成"卡进了一个很深的局部最优"。这个比喻还带出一条常被忽略的推论：<b>降温的过程和加热一样重要</b>——药之后那几周的整合、谈话、生活安排，不是附赠品，它决定了系统最后落在哪儿。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>那些"神秘体验"到底是疗效的原因，还是一路上的动静？</summary><div>这是这个领域最贵的一个问题。支持"是原因"的证据是相关：体验评分越高的人，后续改善往往越多。但相关有个很朴素的对手解释——<strong>药量越足的人，体验越强、可塑性也越强</strong>，两者都被同一个第三方推着走。真正能判决的实验是不致幻类似物：动物上已经能长棘、能改善行为，若人身上也成立，那"必须亲眼看见点什么"就被证伪了。注意这个问题不只是学术的：如果体验不必要，这类治疗就能从"一次八小时、两个治疗师全程陪同"变成一片药，成本和可及性完全是另一个量级。</div></details>
+<details><summary>微剂量既然基本等于安慰剂，那那么多人说有用是怎么回事？</summary><div>他们大概率<strong>真的变好了</strong>——只是变好的原因不是那点药。愿意去微剂量的人，往往同时在改作息、改工作、开始重视自己的状态；再加上每天一次的仪式感、以及"我正在为自己做点什么"的预期，这些本身就是有效成分。那项自盲研究的价值正在这里：它没说"你的感受是假的"，它说的是<strong>把药换成一模一样的空壳，好转照样发生</strong>。安慰剂效应是真效应，只是不能记在分子头上。</div></details>
+<details><summary>如果盲法注定崩溃，这类药还有可能被严格证明有效吗？</summary><div>只能绕，不能硬碰。常见的几条路：用<strong>活性对照</strong>（换一种也让人明显有感觉、但机制不同的药，比如那项和利他林对照的研究）；先问被试"你猜自己在哪组"，把猜测本身当协变量算进去；用不依赖自我报告的<strong>客观终点</strong>（生理指标、行为任务、他人评定）；以及最釜底抽薪的一条——<strong>做不致幻的类似物</strong>，那样盲法自然就成立了。这也解释了为什么药厂在往那个方向走。</div></details>
+<details><summary>先验松开为什么能治抑郁，而不是让人更混乱？</summary><div>关键在于松开之后发生了什么。抑郁里那套关于自己的先验之所以有害，是因为它已经<strong>不再接受证据修正</strong>——任何反例都会被解释掉。松动只是把它重新变得可写；至于写进去什么，靠的是接下来的经历和关系。这也是为什么单给药、没有前后照料的做法在临床上不被接受：你打开的是一扇门，不是一个疗效。反过来说，同样的松动落在缺乏支持的环境里、或落在本就脆弱的人身上，就是风险本身——<strong>可塑性从来不保证结局是好的</strong>（Topic 30 那条老规矩，在这里同样成立）。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Psychedelic_drug" target="_blank">迷幻药 Psychedelic drug</a> · <a href="https://en.wikipedia.org/wiki/5-HT2A_receptor" target="_blank">5-HT2A 受体</a> — 共同的那把锁</li>
+<li><a href="https://www.nature.com/articles/s41586-024-07624-5" target="_blank">Siegel et al. 2024, Nature — Psilocybin desynchronizes the human brain</a> — 去同步与 DMN</li>
+<li><a href="https://www.science.org/doi/10.1126/science.adf0435" target="_blank">Vargas et al. 2023, Science — 细胞内 5-HT2A 受体</a> — 为什么血清素不致幻</li>
+<li><a href="https://www.cell.com/neuron/fulltext/S0896-6273(21)00423-2" target="_blank">Shao et al. 2021, Neuron — 裸盖菇素与树突棘</a> — 单次给药，一个月后还在</li>
+<li><a href="https://en.wikipedia.org/wiki/Robin_Carhart-Harris" target="_blank">Robin Carhart-Harris</a> — 熵增的脑与 REBUS 模型</li>
+<li><a href="https://elifesciences.org/articles/62878" target="_blank">Szigeti et al. 2021, eLife — 自盲的微剂量公民科学</a> — 微剂量 ≈ 安慰剂</li>
+<li><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2206443" target="_blank">Goodwin et al. 2022, NEJM — COMP360 二期试验</a> — 难治性抑郁的关键数据</li>
+<li><a href="https://en.wikipedia.org/wiki/MDMA-assisted_psychotherapy" target="_blank">MDMA 辅助治疗</a> — 2024 年被 FDA 退回的那一次</li>
+<li><a href="https://en.wikipedia.org/wiki/The_Doors_of_Perception" target="_blank">Aldous Huxley · 众妙之门</a> — "减压阀"的出处</li>
+<li><a href="https://en.wikipedia.org/wiki/Marsh_Chapel_Experiment" target="_blank">耶稣受难日实验（Marsh Chapel）</a> — 1962 年那场神学院实验</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 31 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

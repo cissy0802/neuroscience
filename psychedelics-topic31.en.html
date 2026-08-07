@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 31 · Psychedelics &amp; Neuroscience — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 31 · PHASE D CLINICAL/FRONTIER</span>
+<h1>Psychedelics &amp; Neuroscience</h1>
+<h2>One key turns one lock — and then the whole building changes its rules</h2>
+<div class="date">2026-08-07 · BigCat</div>
+<p class="pitch">The part that makes you see things and the part that makes you better may not be the same part at all.</p>
+</header>
+<div class="intro">
+<p>For decades the argument about psychedelics has been stuck between two camps: a door onto some deeper truth, or just a chemical scrambling the brain for a few hours. The last decade of neuroscience offers a third and much colder version — <strong>a receptor called 5-HT2A gets turned, the cortex's pecking order is temporarily flattened, and then a plasticity window stays open for weeks.</strong> Which sets up the sharpest question in the field: are the visions the reason it works, or just the noise along the way?</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Wildly different molecules, one keyhole</h2>
+<p>LSD, psilocybin (the active ingredient in "magic mushrooms"), DMT, mescaline (from certain cacti) — these molecules look nothing alike, and their effective doses differ by hundreds of times. Yet the experiences people report are strikingly similar. In pharmacology that's a strong hint: <strong>they are probably acting in the same place.</strong></p>
+<p>That place is the <strong>5-HT2A receptor</strong>. A receptor is just a keyhole on a cell — a molecule of the right shape slots in, and only then does the cell respond. This particular keyhole normally belongs to <strong>serotonin</strong>, a chemical messenger that mostly sets the brain's background tone rather than issuing direct orders.</p>
+<figure>
+<svg viewBox="0 0 480 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="p1a" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"></path></marker>
+<marker id="p1b" markerHeight="13" markerUnits="userSpaceOnUse" markerWidth="14" orient="auto" refX="10" refY="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+</defs>
+<path d="M116,33 C152,33 168,112 200,118" fill="none" marker-end="url(#p1a)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<path d="M116,79 C152,79 172,114 200,120" fill="none" marker-end="url(#p1a)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<path d="M116,125 C152,125 174,124 200,124" fill="none" marker-end="url(#p1a)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<path d="M116,171 C152,171 172,130 200,126" fill="none" marker-end="url(#p1a)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<rect fill="rgba(167,139,250,0.10)" height="32" rx="16" stroke="#a78bfa" stroke-width="1.2" width="106" x="10" y="17"></rect>
+<text fill="#efe9ff" font-size="13" text-anchor="middle" x="63" y="38">LSD</text>
+<rect fill="rgba(167,139,250,0.10)" height="32" rx="16" stroke="#a78bfa" stroke-width="1.2" width="106" x="10" y="63"></rect>
+<text fill="#efe9ff" font-size="13" text-anchor="middle" x="63" y="84">Psilocybin</text>
+<rect fill="rgba(167,139,250,0.10)" height="32" rx="16" stroke="#a78bfa" stroke-width="1.2" width="106" x="10" y="109"></rect>
+<text fill="#efe9ff" font-size="13" text-anchor="middle" x="63" y="130">DMT</text>
+<rect fill="rgba(167,139,250,0.10)" height="32" rx="16" stroke="#a78bfa" stroke-width="1.2" width="106" x="10" y="155"></rect>
+<text fill="#efe9ff" font-size="13" text-anchor="middle" x="63" y="176">Mescaline</text>
+<rect fill="rgba(232,121,249,0.12)" height="52" rx="14" stroke="#e879f9" stroke-width="1.5" width="106" x="204" y="96"></rect>
+<text fill="#fff" font-size="14.5" font-weight="700" text-anchor="middle" x="257" y="118">5-HT2A</text>
+<text fill="#f0b6f8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="257" y="136">receptor</text>
+<line marker-end="url(#p1b)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3" x1="312" x2="350" y1="122" y2="122"></line>
+<rect fill="rgba(52,229,224,0.10)" height="58" rx="14" stroke="#34e5e0" stroke-width="1.3" width="122" x="354" y="93"></rect>
+<text fill="#e6faf8" font-size="12" text-anchor="middle" x="415" y="116">Cortical layer 5</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="415" y="136">pyramidal cells</text>
+<line stroke="#f472b6" stroke-dasharray="4 4" stroke-linecap="round" stroke-width="2.6" x1="176" x2="176" y1="22" y2="192"></line>
+<text fill="#f472b6" font-size="11.5" text-anchor="middle" x="176" y="212">Block here first with ketanserin</text>
+<text fill="#c07fa0" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="176" y="232">→ subjective effects nearly vanish</text>
+</svg>
+<figcaption>Structurally unrelated molecules, sharing one keyhole</figcaption>
+</figure>
+<p>How do we know the lock is the switch, rather than something that merely happens to be nearby? There's a clean experiment. Give someone <strong>ketanserin</strong> — a drug that blocks 5-HT2A and largely leaves everything else alone — and then give them LSD. The subjective effects are <strong>almost entirely wiped out</strong>. Plug the keyhole and the key is worthless. That's causation, not correlation.</p>
+<p>One more coincidence of location is worth noticing. Where 5-HT2A is densest in the cortex is on <strong>layer-5 pyramidal neurons</strong> — the cells that wire regions together and broadcast predictions back down toward the senses (the thread from Topic 1). The drug isn't stirring the pot at random. It turns one very specific screw, at the top of the hierarchy. (The messenger system itself: <a class="reflink" href="ref-serotonin-system.en.html">Serotonin system</a>)</p>
+<p>Which raises an obvious question: your brain is full of serotonin every day, and serotonin opens this same lock. So why aren't you tripping? Hold that thought until section three.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>It doesn't switch anything on — it flattens the hierarchy</h2>
+<p>The most widely repeated claim — that psychedelics let you use parts of the brain you normally don't — is backwards. What imaging actually shows is the opposite: <strong>something gets turned down.</strong></p>
+<p>The first thing noticed was the <strong>default mode network</strong>: the set of regions most active when you're drifting, thinking about yourself, narrating your own life. After a dose, its internal synchrony drops. A carefully designed 2024 study made the picture much sharper: the same people received 25 mg psilocybin and, on another occasion, methylphenidate (a common stimulant, used as an active control). Psilocybin disrupted functional connectivity more than three times as much — and the mechanism wasn't "this area up, that area down." It was <strong>desynchronisation</strong>: the correlations within networks and the anticorrelations between them were erased together, so the boundaries between networks simply dissolved. The default mode network was hit hardest, and its suppressed link to the anterior hippocampus was still not fully back weeks later.</p>
+<figure>
+<svg viewBox="0 0 480 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="n2m" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="11" orient="auto" refX="7.5" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#8f89ad"></path></marker>
+</defs>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="118" y="24">Normally</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="360" y="24">Peak psilocybin</text>
+<line stroke="#2a2545" stroke-width="1.4" x1="240" x2="240" y1="14" y2="238"></line>
+<line stroke="#34e5e0" stroke-width="2" x1="48" x2="88" y1="72" y2="56"></line>
+<line stroke="#34e5e0" stroke-width="2" x1="88" x2="78" y1="56" y2="102"></line>
+<line stroke="#34e5e0" stroke-width="2" x1="78" x2="48" y1="102" y2="72"></line>
+<line stroke="#a78bfa" stroke-width="2" x1="172" x2="200" y1="68" y2="98"></line>
+<line stroke="#a78bfa" stroke-width="2" x1="200" x2="158" y1="98" y2="110"></line>
+<line stroke="#a78bfa" stroke-width="2" x1="158" x2="172" y1="110" y2="68"></line>
+<line stroke="#e879f9" stroke-width="2" x1="92" x2="132" y1="186" y2="204"></line>
+<line stroke="#e879f9" stroke-width="2" x1="132" x2="158" y1="204" y2="166"></line>
+<line stroke="#e879f9" stroke-width="2" x1="158" x2="92" y1="166" y2="186"></line>
+<line stroke="#4b4568" stroke-dasharray="3 5" stroke-width="1.2" x1="88" x2="158" y1="56" y2="110"></line>
+<circle cx="48" cy="72" fill="#34e5e0" r="7"></circle><circle cx="88" cy="56" fill="#34e5e0" r="7"></circle><circle cx="78" cy="102" fill="#34e5e0" r="7"></circle>
+<circle cx="172" cy="68" fill="#a78bfa" r="7"></circle><circle cx="200" cy="98" fill="#a78bfa" r="7"></circle><circle cx="158" cy="110" fill="#a78bfa" r="7"></circle>
+<circle cx="92" cy="186" fill="#e879f9" r="7"></circle><circle cx="132" cy="204" fill="#e879f9" r="7"></circle><circle cx="158" cy="166" fill="#e879f9" r="7"></circle>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="180" y="48">DMN</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="118" y="232">Synced within, separate between</text>
+<line stroke="rgba(52,229,224,0.22)" stroke-width="1.4" x1="290" x2="330" y1="72" y2="56"></line>
+<line stroke="rgba(167,139,250,0.22)" stroke-width="1.4" x1="414" x2="442" y1="68" y2="98"></line>
+<line stroke="rgba(232,121,249,0.22)" stroke-width="1.4" x1="334" x2="374" y1="186" y2="204"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="330" x2="414" y1="56" y2="68"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="320" x2="400" y1="102" y2="110"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="290" x2="334" y1="72" y2="186"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="442" x2="374" y1="98" y2="204"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="320" x2="400" y1="102" y2="166"></line>
+<line stroke="#f0b6f8" stroke-width="2" x1="414" x2="334" y1="68" y2="186"></line>
+<circle cx="290" cy="72" fill="#34e5e0" r="7"></circle><circle cx="330" cy="56" fill="#34e5e0" r="7"></circle><circle cx="320" cy="102" fill="#34e5e0" r="7"></circle>
+<circle cx="414" cy="68" fill="#a78bfa" r="7"></circle><circle cx="442" cy="98" fill="#a78bfa" r="7"></circle><circle cx="400" cy="110" fill="#a78bfa" r="7"></circle>
+<circle cx="334" cy="186" fill="#e879f9" r="7"></circle><circle cx="374" cy="204" fill="#e879f9" r="7"></circle><circle cx="400" cy="166" fill="#e879f9" r="7"></circle>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="360" y="232">Boundaries dissolve · links cross</text>
+<line marker-end="url(#n2m)" stroke="#8f89ad" stroke-linecap="round" stroke-width="1.8" x1="196" x2="284" y1="252" y2="252"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="188" y="256">same regions</text>
+</svg>
+<figcaption>Nothing lights up — the walls between networks come down</figcaption>
+</figure>
+<p>Why would falling walls produce that kind of experience? Pick up the thread from Topic 1 and it follows: what you see = the brain's prior expectation × the evidence in front of you, weighted by which one is more reliable. What psychedelics do, in Carhart-Harris's framing, is <strong>REBUS</strong> — <strong>relax the weight on high-level priors</strong>. Loosen the priors and everything they normally hold down comes up: the wallpaper starts breathing (low-level edge signals no longer corrected away by "walls are flat"), a passing remark feels world-historically significant (runaway meaning). And when the topmost prior of all — "I am a continuous, bounded person" — loosens too, you get what's called <strong>ego dissolution</strong> (Topic 17 approached the same thing from the other side). (The network itself: <a class="reflink" href="ref-default-mode-network.en.html">Default mode network</a>)</p>
+<p>That step also hands us a plausible reason it might help depression. Depression looks a lot like a state of <strong>priors locked shut</strong> — the model of yourself (I'm useless, I won't get better) has stopped accepting correction from evidence. Relaxing priors is oil on that lock.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This is the same thing as a knob in generative AI. Image models have a parameter called <b>guidance</b>; chat models have <b>temperature</b>. Both control the same trade: how much to lean on learned regularities versus how much surprise to allow. Turn it toward less constraint and output becomes novel, strange, wildly associative — turn it further and the model confabulates with total confidence. <b>Novelty and nonsense share one knob; there is no setting that buys the first without the second.</b> That is probably also why insight and absurdity arrive together on a psychedelic — and exactly why what you experience under the drug cannot be accepted as truth on delivery.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The part that might actually treat something may not need you to see anything</h2>
+<p>The drug wears off in hours, yet the improvements claimed in clinics last weeks. What fills the gap? The strongest candidate right now is <strong>structural remodelling</strong>.</p>
+<p>A 2021 mouse experiment captured it directly. Researchers opened a window in the skull and used two-photon microscopy to re-image the same layer-5 neurons in medial frontal cortex over time, watching their <strong>dendritic spines</strong> — the little protrusions on a dendrite that serve as physical landing sites for incoming connections, so one more spine is roughly one more usable port. <strong>Within 24 hours of a single dose of psilocybin, spine density and spine size were both up by roughly 10% — and were still elevated a month later.</strong> Pre-treating with ketanserin blocked the density increase. Same lock again. (How connections strengthen and weaken: <a class="reflink" href="ref-synaptic-plasticity.en.html">Synaptic plasticity</a>; what this cortex does: <a class="reflink" href="ref-prefrontal.en.html">Prefrontal cortex</a>)</p>
+<p>Now back to the loose end from section one. A 2023 finding gave an answer that is almost too tidy: <strong>a large share of 5-HT2A receptors aren't on the cell surface at all — they're inside the cell.</strong> Serotonin is hydrophilic and can't cross the fatty membrane, so it only ever reaches the pool at the door. Classic psychedelics are lipophilic: they dissolve straight through and turn the <strong>inner</strong> pool as well — and it's the inner pool that sends the signal to grow spines.</p>
+<figure>
+<svg viewBox="0 0 480 272" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m3c" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="13" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="m3p" markerHeight="13" markerUnits="userSpaceOnUse" markerWidth="14" orient="auto" refX="10" refY="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="26" y="26">Outside</text>
+<rect fill="rgba(167,139,250,0.14)" height="22" rx="4" stroke="rgba(167,139,250,0.4)" stroke-width="1" width="428" x="24" y="118"></rect>
+<text fill="#b9aee0" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="258" y="133">cell membrane (lipid)</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="end" x="452" y="170">Inside</text>
+<text fill="#7bf0e8" font-size="12.5" text-anchor="middle" x="120" y="48">Serotonin · hydrophilic</text>
+<circle cx="120" cy="74" fill="#34e5e0" r="13"></circle>
+<text fill="#06222a" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="120" y="78">5HT</text>
+<rect fill="#0e2c33" height="38" rx="9" stroke="#34e5e0" stroke-width="1.4" width="32" x="52" y="110"></rect>
+<text fill="#e6faf8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="68" y="134">2A</text>
+<path d="M108,82 C94,92 80,98 74,104" fill="none" marker-end="url(#m3c)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.2"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" x="26" y="190">opens the surface pool only</text>
+<line stroke="#34e5e0" stroke-dasharray="4 4" stroke-linecap="round" stroke-width="2.2" x1="128" x2="146" y1="86" y2="114"></line>
+<line stroke="#f472b6" stroke-linecap="round" stroke-width="3.2" x1="142" x2="164" y1="118" y2="140"></line>
+<line stroke="#f472b6" stroke-linecap="round" stroke-width="3.2" x1="164" x2="142" y1="118" y2="140"></line>
+<text fill="#f0a0d0" font-size="11.5" text-anchor="middle" x="153" y="162">can't get through</text>
+<text fill="#f5b8fb" font-size="12.5" text-anchor="middle" x="340" y="48">Psychedelic · lipophilic</text>
+<circle cx="340" cy="74" fill="#e879f9" r="13"></circle>
+<text fill="#2a0a2e" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="340" y="78">LSD</text>
+<line marker-end="url(#m3p)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.8" x1="340" x2="340" y1="90" y2="178"></line>
+<rect fill="#2a0f2e" height="34" rx="10" stroke="#e879f9" stroke-width="1.4" width="72" x="304" y="182"></rect>
+<text fill="#fce4ff" font-size="11.5" text-anchor="middle" x="340" y="204">inner pool</text>
+<line marker-end="url(#m3p)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.6" x1="378" x2="404" y1="199" y2="199"></line>
+<text fill="#f5b8fb" font-size="11.5" x="410" y="195">spines</text>
+<text fill="#f5b8fb" font-size="11.5" x="410" y="212">grow</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="240" y="258">One lock, two pools — crossing the membrane decides which opens</text>
+</svg>
+<figcaption>Why your own serotonin, present all day, neither trips you nor grows spines</figcaption>
+</figure>
+<p>That pushes the field's sharpest question to the front: <strong>can you have the plasticity without the hallucination?</strong> Following the "lipophilic enough to get in" logic, non-hallucinogenic analogues have already been built, and in animals they still grow spines and still produce antidepressant-like behaviour. If that holds in humans, the claim that mystical experience is a necessary ingredient collapses. There is no decisive human data yet.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>The best cross-read for this window isn't an architecture — it's the <b>learning rate</b>, the knob that sets how much a model's parameters are allowed to move on each step. Raise it and the model learns fast and is also far easier to drag off course by whatever batch happens to arrive; a common engineering move is to spike it and then anneal back down, precisely to shake a model out of a bad settled state. The crucial point: <b>the window carries no content</b>. Learning rate governs how much can change, never what it changes into — that is decided entirely by what gets fed in while it's high. Which turns the mystical-sounding clinical phrase <b>set and setting</b> into something quite plain: during those hours, who is present, what you are turning over, and how it gets processed afterwards is the thing actually being written in.</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Where the evidence has got to, and where it's stuck</h2>
+<p>Psilocybin for <strong>treatment-resistant depression</strong> — depression that hasn't responded to several drugs — is the furthest along. A 233-person phase 2 trial in 2022 found a single 25 mg dose clearly beat the 1 mg dose used as a stand-in placebo at three weeks. A subsequent phase 3 trial met its primary endpoint: at week 6 the 25 mg arm's depression score had fallen <strong>3.6 points</strong> further than the comparator, with a highly significant p-value.</p>
+<p>But 3.6 points has to be read against a 0–60 scale — <strong>statistically solid, clinically modest</strong>. Which is why the market shrugged the day the numbers landed. That isn't cynicism; it's the sentence this field most needs stated plainly: <strong>"it works" and "it works enough to be worth all this" are two different questions.</strong></p>
+<p>A second line routinely conflated with the first is <strong>MDMA</strong> for PTSD. It isn't a classic psychedelic — it mainly dumps serotonin wholesale rather than working primarily through 5-HT2A. In August 2024 the US FDA declined to approve it for PTSD and asked for another phase 3 trial, citing blinding, safety reporting and durability of effect among its reasons.</p>
+<p>And <strong>blinding</strong> is the field's structural dead end. A placebo control assumes you don't know which arm you're in — with these drugs, almost nobody fails to work it out, and expectancy moves psychiatric endpoints a long way on its own. One clever study nailed this down: 191 people already microdosing were taught to blind themselves (make visually identical capsules and placebos, and use QR codes so the researchers knew the allocation while they didn't). The result: <strong>the microdosing group improved, the placebo group improved, and there was no difference between them</strong>. The small differences that were detectable are explained by people correctly guessing their arm.</p>
+<p>The risks deserve saying out loud too. A family history of psychotic illness is a contraindication — a first episode can be precipitated. A minority are left with persistent visual disturbances (HPPD). And the least-discussed one: chronic repeated low doses keep stimulating <strong>5-HT2B</strong>, a route already shown to damage heart valves by withdrawn drugs like fenfluramine and pergolide — which makes "microdose daily for years" precisely the least evidenced and least characterised use of all. Regulation, meanwhile, is loosening: Australia has allowed authorised psychiatrists to prescribe psilocybin and MDMA since 2023, and Oregon and Colorado have built state-level supervised-use systems.</p>
+</div>
+<div class="crossx">
+<h3>🌀 CROSSING OVER · INTERDISCIPLINARY</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Loosen the filter and more comes through" is a thought several traditions have had before — and their warnings still hold up:</p>
+<ul>
+<li><b>Zen · seeing vs practising</b>: in the famous 1962 Good Friday Experiment, divinity students took psilocybin during a service and most reported full-blown mystical experiences — taken at the time as proof that a drug could deliver the sacred. Zen has always been cold about exactly this: visions arising in meditation are never to be clung to, because <b>a door kicked open and a door walked up to are not the same thing once you're back in your life</b>. Clinical data happens to draw the line in the same place — mystical-experience scores do correlate with outcome, but correlation isn't cause, and non-hallucinogenic analogues work fine in animals.</li>
+<li><b>Huxley · the reducing valve</b>: in <i>The Doors of Perception</i>, Huxley borrowed Bergson's proposal that the brain is not the producer of consciousness but a <b>reducing valve</b> — filtering out the vast majority of everything and admitting only the trickle needed to stay alive — and that psychedelics widen the aperture. This maps onto REBUS's "relax the priors" with uncomfortable precision. But the two carry very different philosophical commitments: loosened priors guarantee only that <b>you see more, and stranger</b>. They guarantee nothing at all about whether the extra is real. That distinction is the thing to take away from this piece.</li>
+<li><b>Complex systems · annealing</b>: Carhart-Harris's "entropic brain" borrows the engineering idea of <b>annealing</b> directly — raise a system's temperature temporarily so it can escape a poor local minimum, then cool it slowly so it settles somewhere better. Depression then reads as being stuck deep in one such minimum. The metaphor carries an easily missed corollary: <b>the cooling matters as much as the heating</b>. The weeks of integration, conversation and rearranged life after the dose aren't an add-on — they decide where the system finally lands.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// GOING DEEPER</h3>
+<details><summary>Are the mystical experiences the reason it works, or just the noise along the way?</summary><div>This is the most expensive open question in the field. The evidence for "reason" is correlational: people who score higher on experience measures tend to improve more. But correlation has a very ordinary rival explanation — <strong>a bigger dose produces both a stronger experience and more plasticity</strong>, with one third factor driving both. The experiment that could settle it is the non-hallucinogenic analogue: in animals these already grow spines and shift behaviour, and if that carries to humans, "you must see something" is falsified. This isn't merely academic. If the trip is unnecessary, the treatment goes from an eight-hour session with two therapists present to a tablet — a completely different order of cost and access.</div></details>
+<details><summary>If microdosing is basically placebo, what's going on with all the people who say it helps?</summary><div>They very likely <strong>did</strong> get better — just not because of the drug. People who take up microdosing tend to be simultaneously fixing their sleep, changing their work, starting to take their own state seriously; add a daily ritual and the expectation of "I am doing something for myself," and those are active ingredients in their own right. The value of the self-blinding study is precisely here: it doesn't say your experience was fake. It says that <strong>swapping the drug for an identical empty capsule produces the improvement anyway</strong>. Placebo effects are real effects; they just can't be credited to the molecule.</div></details>
+<details><summary>If blinding inevitably breaks, can drugs like this ever be rigorously proven to work?</summary><div>Only by going around the problem. The usual routes: use an <strong>active control</strong> (something that also produces obvious effects by a different mechanism — the methylphenidate comparison is one); ask participants to guess their arm and enter the guess into the analysis as a covariate; use <strong>objective endpoints</strong> that don't rest on self-report (physiology, behavioural tasks, observer ratings); and the most radical fix of all — <strong>build the non-hallucinogenic analogue</strong>, at which point blinding works by construction. That's a good part of why industry is moving that way.</div></details>
+<details><summary>If it loosens priors, why would that treat depression rather than just make people more chaotic?</summary><div>Everything depends on what happens next. What makes the depressive self-model harmful is that it has <strong>stopped accepting correction</strong> — every counterexample gets explained away. Loosening only makes it writable again; what actually gets written depends on the experiences and relationships that follow. Which is why giving the drug without preparation and aftercare isn't clinically acceptable: what you've opened is a door, not a cure. And the converse holds — the same loosening, in an unsupported setting or in someone already fragile, is itself the risk. <strong>Plasticity never guarantees the outcome is good</strong> (Topic 30's rule, still in force here).</div></details>
+</div>
+<div class="refs">
+<h3>// FURTHER READING</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Psychedelic_drug" target="_blank">Psychedelic drug</a> · <a href="https://en.wikipedia.org/wiki/5-HT2A_receptor" target="_blank">5-HT2A receptor</a> — the shared lock</li>
+<li><a href="https://www.nature.com/articles/s41586-024-07624-5" target="_blank">Siegel et al. 2024, Nature — Psilocybin desynchronizes the human brain</a> — desynchronisation and the DMN</li>
+<li><a href="https://www.science.org/doi/10.1126/science.adf0435" target="_blank">Vargas et al. 2023, Science — intracellular 5-HT2A receptors</a> — why serotonin doesn't do this</li>
+<li><a href="https://www.cell.com/neuron/fulltext/S0896-6273(21)00423-2" target="_blank">Shao et al. 2021, Neuron — psilocybin and dendritic spines</a> — one dose, still there a month later</li>
+<li><a href="https://en.wikipedia.org/wiki/Robin_Carhart-Harris" target="_blank">Robin Carhart-Harris</a> — the entropic brain and the REBUS model</li>
+<li><a href="https://elifesciences.org/articles/62878" target="_blank">Szigeti et al. 2021, eLife — self-blinding citizen science on microdosing</a> — microdose ≈ placebo</li>
+<li><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2206443" target="_blank">Goodwin et al. 2022, NEJM — the COMP360 phase 2 trial</a> — the key data in resistant depression</li>
+<li><a href="https://en.wikipedia.org/wiki/MDMA-assisted_psychotherapy" target="_blank">MDMA-assisted therapy</a> — and the 2024 FDA rejection</li>
+<li><a href="https://en.wikipedia.org/wiki/The_Doors_of_Perception" target="_blank">Aldous Huxley · The Doors of Perception</a> — where "reducing valve" comes from</li>
+<li><a href="https://en.wikipedia.org/wiki/Marsh_Chapel_Experiment" target="_blank">The Marsh Chapel (Good Friday) Experiment</a> — the 1962 divinity-school study</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 31 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
