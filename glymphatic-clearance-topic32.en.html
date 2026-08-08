@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 32 · Sleep and Glymphatic Clearance — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 32 · PHASE D CLINICAL/FRONTIER</span>
+<h1>Sleep and Glymphatic Clearance</h1>
+<h2>The brain has no lymphatic vessels, so it plumbed itself a pipe that only runs at night</h2>
+<div class="date">2026-08-08 · BigCat</div>
+<p class="pitch">The bill you run up all day only gets collected once your eyes are shut — and not as an afterthought, but because it can't be collected any other way.</p>
+</header>
+<div class="intro">
+<p>Every organ in your body sits in fluid, and the waste in that fluid is picked up by a network of thin tubes called <strong>lymphatic vessels</strong> and carried off to lymph nodes. Look through an anatomy atlas and exactly one organ is missing from that network: <strong>there are no lymphatic vessels inside the brain.</strong> Which is awkward, because the brain is the body's most expensive tissue — about 2% of your weight burning roughly 20% of your energy. The organ that generates the most waste has no drain. The answer only came together about a decade ago, and it has a very inconvenient property: <strong>this plumbing essentially only runs while you are asleep.</strong></p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>The brain's drain is built out of the outside of its blood vessels</h2>
+<p>The brain does have a drainage route; it just doesn't look like a pipe. An artery isn't inserted bare into brain tissue — it's loosely wrapped in a thin sleeve, like the gap between a wire and its plastic insulation. That gap is the <strong>perivascular space</strong>: a pipe within a pipe.</p>
+<p>Cerebrospinal fluid — the clear fluid the brain and spinal cord float in — gets pushed into the depths of the brain along that sleeve, sweeps sideways through the tissue, and is collected again along the sleeves around veins. In other words, <strong>the brain didn't build a second set of pipes. It laid a jacket over the plumbing it already had, and lets the water run alongside the blood.</strong></p>
+<figure>
+<svg viewbox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="g32a" r="0.95"><stop offset="0" stop-color="#241c46"></stop><stop offset="1" stop-color="#130d29"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.3" id="g32b" r="0.95"><stop offset="0" stop-color="#0e2c33"></stop><stop offset="1" stop-color="#091a20"></stop></radialgradient>
+<radialgradient cx="0.45" cy="0.32" id="g32c" r="0.95"><stop offset="0" stop-color="#4a1740"></stop><stop offset="1" stop-color="#2a0d26"></stop></radialgradient>
+<filter height="220%" id="gl32" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="3.4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m32c" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="m32p" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#a78bfa"></path></marker>
+</defs>
+<line marker-end="url(#m32c)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3" x1="112" x2="140" y1="33" y2="33"></line>
+<line marker-end="url(#m32c)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3" x1="292" x2="320" y1="33" y2="33"></line>
+<line marker-end="url(#m32p)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6" x1="384" x2="384" y1="56" y2="82"></line>
+<rect fill="url(#g32b)" filter="url(#gl32)" height="46" rx="23" stroke="#34e5e0" stroke-width="1.2" width="104" x="4" y="10"></rect>
+<text fill="#e6faf8" font-size="13.5" font-weight="600" text-anchor="middle" x="56" y="31">CSF</text><text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="56" y="46">the brain's fluid</text>
+<rect fill="url(#g32a)" filter="url(#gl32)" height="46" rx="23" stroke="#a78bfa" stroke-width="1.2" width="140" x="144" y="10"></rect>
+<text fill="#efe9ff" font-size="13" font-weight="600" text-anchor="middle" x="214" y="31">Perivascular space</text><text fill="#9a8fc0" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="214" y="46">a pipe within a pipe</text>
+<rect fill="url(#g32a)" filter="url(#gl32)" height="46" rx="23" stroke="#a78bfa" stroke-width="1.2" width="120" x="324" y="10"></rect>
+<text fill="#efe9ff" font-size="13" font-weight="600" text-anchor="middle" x="384" y="31">Brain tissue</text><text fill="#9a8fc0" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="384" y="46">gaps between cells</text>
+<rect fill="url(#g32c)" filter="url(#gl32)" height="40" rx="20" stroke="#e879f9" stroke-width="1.2" width="300" x="196" y="84"></rect>
+<text fill="#fce7ff" font-size="12" font-weight="600" text-anchor="middle" x="346" y="109">veins → meningeal lymphatics → neck nodes</text>
+<circle cx="86" cy="180" fill="rgba(52,229,224,0.06)" r="50" stroke="#34e5e0" stroke-dasharray="4 4" stroke-width="1.2"></circle>
+<circle cx="86" cy="180" fill="none" r="41" stroke="#a78bfa" stroke-dasharray="9 6" stroke-width="5" stroke-opacity="0.6"></circle>
+<circle cx="86" cy="180" fill="url(#g32c)" r="23" stroke="#e879f9" stroke-width="1.4"></circle>
+<text fill="#fce7ff" font-size="11" font-weight="600" text-anchor="middle" x="86" y="184">artery</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="86" y="246">cross-section</text>
+<line stroke="#34e5e0" stroke-linecap="round" stroke-width="3.5" x1="162" x2="182" y1="152" y2="152"></line>
+<text fill="#c6e9e7" font-size="12" x="190" y="156">this sleeve = perivascular space</text>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-opacity="0.7" stroke-width="5" x1="162" x2="182" y1="186" y2="186"></line>
+<text fill="#d8d3ec" font-size="12" x="190" y="190">astrocyte endfeet tile the wall</text>
+<line stroke="#e879f9" stroke-linecap="round" stroke-width="3.5" x1="162" x2="182" y1="216" y2="216"></line>
+<text fill="#ecdcf2" font-size="12" x="190" y="220">the artery itself is in the middle</text>
+</svg>
+<figcaption>CSF is driven in along the sleeve outside arteries, sweeps through the tissue, and leaves via veins and meningeal lymphatics</figcaption>
+</figure>
+<p>What lines that sleeve is the <strong>astrocyte</strong> — a brain cell that never fires, and handles logistics instead. It extends endings (called endfeet) that tile the outside of the vessel like bathroom tiles, and those tiles are studded with tiny doors that let only water molecules through: <strong>AQP4 water channels</strong>. Knock those channels out genetically in mice and clearance drops sharply. That's where the name comes from: glia + lymphatic = <strong>glymphatic</strong>. (<a class="reflink" href="ref-glia.en.html">glia</a> <a class="reflink" href="ref-csf-barriers.en.html">CSF and brain barriers</a>)</p>
+<p>The final stretch — the actual exit — was filled in even later. Only in <strong>2015</strong> did anyone confirm genuine lymphatic vessels in the meninges, the membranes wrapping the brain, draining into lymph nodes in the neck. They had been missed for two centuries because they are thin, sit on a membrane, and get destroyed the moment you peel it off. The trick was to stop peeling: fix the membrane while it was still attached to the skull, and the vessels finally showed up intact.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Why it has to wait until you're asleep</h2>
+<p>The observation that made all of this famous came in 2013: <strong>in sleeping (or anesthetized) mice, the gaps between brain cells widen by about 60%.</strong> Widen the gaps and fluid can actually move — exchange between cerebrospinal and interstitial fluid jumps, and the rate at which waste like amyloid-β gets carried away goes up with it.</p>
+<p>Why would the gaps widen on their own? Largely because <strong>norepinephrine ebbs away</strong>. That's the "stay sharp" signal of the waking brain, and it keeps cells in a slightly swollen state. Fall asleep, it drops, cells shrink a little, and the road gets wider.</p>
+<figure>
+<svg viewbox="0 0 500 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.4" cy="0.3" id="c32w" r="0.95"><stop offset="0" stop-color="#332a5e"></stop><stop offset="1" stop-color="#1a1236"></stop></radialgradient>
+<radialgradient cx="0.4" cy="0.3" id="c32s" r="0.95"><stop offset="0" stop-color="#2b2450"></stop><stop offset="1" stop-color="#161030"></stop></radialgradient>
+<marker id="m32f" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"></path></marker>
+</defs>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="13" font-weight="700" text-anchor="middle" x="125" y="30">Awake</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="13" font-weight="700" text-anchor="middle" x="375" y="30">Deep sleep · slow waves</text>
+<rect fill="rgba(255,255,255,0.03)" height="170" rx="14" stroke="rgba(167,139,250,0.25)" stroke-width="1" width="238" x="6" y="44"></rect>
+<rect fill="rgba(52,229,224,0.04)" height="170" rx="14" stroke="rgba(52,229,224,0.3)" stroke-width="1" width="238" x="256" y="44"></rect>
+<circle cx="50" cy="80" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle><circle cx="104" cy="80" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle><circle cx="158" cy="80" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle><circle cx="212" cy="80" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle>
+<circle cx="50" cy="128" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle><circle cx="104" cy="128" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle><circle cx="158" cy="128" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle><circle cx="212" cy="128" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle>
+<circle cx="50" cy="176" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle><circle cx="104" cy="176" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle><circle cx="158" cy="176" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle><circle cx="212" cy="176" fill="url(#c32w)" r="25" stroke="#a78bfa" stroke-width="1.1"></circle>
+<circle cx="300" cy="80" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle><circle cx="354" cy="80" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle><circle cx="408" cy="80" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle><circle cx="462" cy="80" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle>
+<circle cx="300" cy="128" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle><circle cx="354" cy="128" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle><circle cx="408" cy="128" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle><circle cx="462" cy="128" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle>
+<circle cx="300" cy="176" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle><circle cx="354" cy="176" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle><circle cx="408" cy="176" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle><circle cx="462" cy="176" fill="url(#c32s)" r="20" stroke="#8f7cd0" stroke-width="1.1"></circle>
+<path d="M327,54 C321,86 333,120 327,152 C323,172 329,182 327,196" fill="none" marker-end="url(#m32f)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M381,54 C375,86 387,120 381,152 C377,172 383,182 381,196" fill="none" marker-end="url(#m32f)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M435,54 C429,86 441,120 435,152 C431,172 437,182 435,196" fill="none" marker-end="url(#m32f)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="125" y="234">gaps too narrow, fluid barely moves</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="375" y="234">gaps ~60% wider, fluid can flow</text>
+</svg>
+<figcaption>Schematic: cells shrink slightly, and the space between them becomes wide enough for CSF to push through</figcaption>
+</figure>
+<p>It shows up in humans too. In 2019, researchers recorded EEG while scanning sleeping people with fMRI, and found a three-beat cycle in deep sleep that repeats roughly <strong>every 20 seconds</strong>: a burst of slow waves (the big, brain-wide swings of deep sleep), then blood volume pulling back, then a wave of cerebrospinal fluid rushing into the gap that leaves behind. Three rhythms locked together, like tides.</p>
+<p>What actually does the pumping is still being pinned down. One line of evidence says <strong>the synchronized firing of neurons is itself the pump</strong> — the large ionic and fluid waves produced when huge populations fire in lockstep; flatten those waves artificially and CSF stops getting in. Another caught norepinephrine in the act: during deep sleep it doesn't simply stay low, it <strong>rises and falls slowly</strong>, squeezing and releasing vessel diameter along with it, so the vessels themselves work as a slow pump.</p>
+<p>But here is the part worth keeping: <strong>this isn't cleaning that happens to occur while you sleep. Cleaning and computing compete for the same conditions.</strong> While you're awake the gaps have to be narrow (so signals don't bleed into each other) and norepinephrine has to be high (so you're alert) — and those two facts are exactly what squeeze the waterway shut. The brain can't run at full computational speed and do a deep clean at once, so it time-shares. <strong>Sleep isn't a convenient time to clean up. It's the only time.</strong></p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>The night shift isn't only flushing pipes. A separate line of evidence — the <b>synaptic homeostasis hypothesis</b> — argues that every bit of daytime learning ratchets synapses (the connections between neurons) collectively stronger and fatter, until they approach saturation and amplify noise along with signal; deep sleep then <b>scales them all back down proportionally</b>, preserving the signal-to-noise ratio and leaving room to learn again tomorrow. Artificial neural networks have an almost isomorphic trick called <b>weight decay</b>: at every training step, nudge all connection strengths slightly toward zero, so no few connections dominate and the model doesn't simply memorize its training data. The difference is just as telling — an artificial network genuinely needs weight decay, but it has no metabolic waste to account for, so it <b>doesn't need to sleep</b>. A biological brain has to go offline in one piece because it is also a chemical machine that produces garbage.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Whatever doesn't get cleared goes on the tab</h2>
+<p>First, a misconception to clear: amyloid-β and tau are not foreign toxins. They are ordinary debris shed by a brain doing its job, produced every day and cleared every day. <strong>The problem was never that they exist, but that production outruns clearance over years.</strong> (How these proteins go wrong and turn into disease is <a class="reflink" href="ref-proteostasis.en.html">proteostasis</a>)</p>
+<p>A single night is enough to see it. In a 2018 experiment, 20 healthy adults stayed up all night; PET scans the next day showed amyloid-β had risen in the right <a class="reflink" href="ref-hippocampus.en.html">hippocampus</a> and thalamus. One night.</p>
+<figure>
+<svg viewbox="0 0 500 232" xmlns="http://www.w3.org/2000/svg">
+<rect fill="rgba(167,139,250,0.10)" height="166" width="42" x="113" y="24"></rect>
+<rect fill="rgba(167,139,250,0.10)" height="166" width="42" x="208" y="24"></rect>
+<rect fill="rgba(167,139,250,0.10)" height="166" width="42" x="303" y="24"></rect>
+<rect fill="rgba(167,139,250,0.10)" height="166" width="42" x="398" y="24"></rect>
+<line stroke="#4a4468" stroke-width="1.4" x1="46" x2="480" y1="190" y2="190"></line>
+<line stroke="#4a4468" stroke-width="1.4" x1="46" x2="46" y1="24" y2="190"></line>
+<line stroke="#4a4468" stroke-dasharray="3 5" stroke-width="1" x1="46" x2="440" y1="155" y2="155"></line>
+<polyline fill="none" points="60,155 113,115 155,155 208,115 250,155 303,115 345,155 398,115 440,155" stroke="#34e5e0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8"></polyline>
+<polyline fill="none" points="60,155 113,115 155,133 208,93 250,111 303,71 345,89 398,49 440,67" stroke="#e879f9" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"></polyline>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" text-anchor="end" x="436" y="178">enough sleep</text>
+<text fill="#f0a8fb" font-family="SF Mono,monospace" font-size="11" text-anchor="end" x="436" y="38">chronic short sleep</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" transform="rotate(-90 24 107)" x="24" y="107">waste level in brain</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="250" y="212">time · purple bands = night</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="250" y="228">clear only half of it each night and the level creeps up year by year</text>
+</svg>
+<figcaption>Schematic: the problem isn't any single night, it's that the nightly shortfall accumulates</figcaption>
+</figure>
+<p>One direction is very easy to read backwards. A 2026 randomized crossover trial in 39 people found that <strong>after a normal night's sleep, morning blood levels of amyloid-β and tau were higher than after a night of deprivation.</strong> That sounds like bad news and is the opposite: waste showing up in the blood is precisely the sign that it was flushed out of the brain. Whether a blood level is worrying depends on where the molecules came from.</p>
+<p>Worse, the whole thing closes into a loop: <strong>sleep badly → clear less → accumulate; and the accumulation itself damages the circuits that put you to sleep → sleep worse.</strong> It's part of why, in Alzheimer's disease, sleep fragmentation often shows up years before memory complaints do.</p>
+<p>But don't overstate it. This evidence supports "sleep participates in clearance, and chronic short sleep is a <strong>modifiable risk factor</strong>." It does not support "get eight hours and you won't get Alzheimer's." Topic 25 covered how to read the word "risk."</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>And the whole story is currently being argued about</h2>
+<p>In 2024 a paper turned the conclusion inside out. Instead of injecting tracer into the cerebrospinal fluid upstream, they put fluorescent dye <strong>directly into brain tissue</strong> and watched how fast it disappeared. Clearance in sleeping mice came out about <strong>30% slower</strong> than in awake mice, and about 50% slower under anesthesia.</p>
+<p>How can results differ that much? Because the two camps aren't measuring the same thing. <strong>One looks from upstream at how much gets in; the other looks from downstream at how fast it gets out.</strong> More tracer entering doesn't have to mean waste leaving faster — and molecules jostling their own way out (diffusion) versus being pushed by a current (convection) are extremely hard to separate in a living brain. The argument is not settled.</p>
+<p>What survives the argument is a lot, though: CSF really does move in and out along perivascular spaces, AQP4 really does matter, meningeal lymphatics really do exist, and sleep really is associated with clearance. <strong>What's contested is the size of the effect and where the pump is.</strong></p>
+<p>A rule for reading science news, free of charge: work out whether the fight is about "does this phenomenon exist" or "how big is it and which mechanism drives it." This one is the second kind. A contradicting result doesn't mean the framework collapsed — but it does mean the tidy "sleep gives your brain a bath" story you read in the press is a version that has been smoothed over.</p>
+</div>
+<div class="crossx">
+<h3>🌀 CROSSING OVER · INTERDISCIPLINARY</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">The real protagonists of this topic are empty space and downtime — two things that look like nothing at all:</p>
+<ul>
+<li><b>Daoism · Laozi</b>: "Cut out doors and windows to make a room; it is the emptiness inside that makes the room useful… what exists gives advantage, what is empty gives use." Clearance in the brain depends precisely on the nothing between cells: that sliver of space widens by 60% and only then does the function appear. Usefulness doesn't only live where something was built.</li>
+<li><b>Complex systems · Prigogine</b>: his idea of <b>dissipative structures</b> holds that any order far from equilibrium can only persist by continuously dumping waste and entropy into its surroundings. The brain is the most expensive ordered machine in the body — 2% of the mass burning 20% of the energy — so hauling out a load of garbage every night isn't a defect. It's the price tag on that order.</li>
+<li><b>Engineering and cybernetics · the maintenance window</b>: a subway system has to stop running at night to replace rails; a database has to pause to compact itself. Every heavily loaded system needs a stretch of "closed for business," not out of laziness but because operating and servicing require mutually incompatible conditions. Sleep looks like that engineering constraint written directly into physiology, where it cannot be deleted.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// DIGGING DEEPER</h3>
+<details><summary>Does sleeping on your side clear more?</summary><div>There is a source for this: a 2015 rodent study compared supine, prone and lateral positions and found <strong>clearance was most efficient lying on the side</strong>. But treat it as an interesting lead rather than a sleep-posture guideline: it was done in anesthetized animals, and human head-and-neck proportions, venous drainage, and the dozens of times you roll over in a night are all different. Human evidence is thin. The evidence for "sleep enough, sleep unbroken, don't run a chronic deficit" is far stronger — get the big things right before optimizing your posture.</div></details>
+<details><summary>If a sleeping pill puts me to sleep, does it clean too?</summary><div>This is the most uncomfortable recent finding. In mice, the common sleep aid <strong>zolpidem suppressed those slow norepinephrine oscillations</strong> — that is, it suppressed the pump — and CSF inflow fell along with them. Asleep by the recording, but clearance didn't follow. Don't stop a prescription over this: it's mice, one drug, one dose, and no human evidence yet, while the harm of untreated chronic insomnia is well established. The real lesson is that <strong>"being asleep" and "getting the physiology sleep is supposed to produce" are not the same thing</strong> — an EEG that says asleep doesn't guarantee that every part of the night shift clocked in.</div></details>
+<details><summary>If the 2024 result holds, was this whole topic pointless?</summary><div>No, but it changes how you should read it. What's shaken is the claim about the <strong>magnitude and mechanism</strong> of a sleep-driven boost in clearance. What isn't shaken is the anatomy — perivascular spaces, AQP4, meningeal lymphatics are all right there — nor the epidemiological association. The most common shape of progress in science isn't "overturned," it's "the original effect gets cut into pieces, and one piece doesn't survive better measurement." When a claim travels more smoothly in the popular press than in the journals, that's usually the tell that it has been smoothed.</div></details>
+<details><summary>Could lying still during the day, or just getting anesthetized, substitute?</summary><div>Lying down isn't sleeping. What matters isn't posture or stillness but the physiological state — norepinephrine ebbing, slow waves arriving — and lying awake doesn't produce it. Anesthesia is subtler: early work treated it as a stand-in for sleep since both widen the interstitial space, but the 2024 study measured its slowest clearance precisely under anesthesia. So "anesthesia = one deep clean" has neither human evidence behind it nor agreement with the latest results.</div></details>
+</div>
+<div class="refs">
+<h3>// FURTHER READING</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Glymphatic_system" target="_blank">Glymphatic system</a> — overview of the concept, the controversy, and the history</li>
+<li><a href="https://www.science.org/doi/10.1126/science.1241224" target="_blank">Xie et al. 2013 · Science</a> — the original ~60% interstitial expansion and faster clearance in sleep</li>
+<li><a href="https://www.science.org/doi/10.1126/science.aax5440" target="_blank">Fultz et al. 2019 · Science</a> — coupled slow waves, blood flow and CSF pulses in human deep sleep</li>
+<li><a href="https://www.nature.com/articles/nature14432" target="_blank">Louveau et al. 2015 · Nature</a> — discovery of meningeal lymphatic vessels, the missing exit</li>
+<li><a href="https://www.nature.com/articles/s41586-024-07108-6" target="_blank">Jiang-Xie et al. 2024 · Nature</a> — synchronized neuronal activity itself drives CSF perfusion</li>
+<li><a href="https://www.cell.com/cell/fulltext/S0092-8674(24)01343-6" target="_blank">Hauglund et al. 2025 · Cell</a> — norepinephrine-driven slow vasomotion as the pump; zolpidem suppresses it</li>
+<li><a href="https://www.nature.com/articles/s41593-024-01638-y" target="_blank">Miao et al. 2024 · Nature Neuroscience</a> — the counterargument: clearance is reduced in sleep and anesthesia</li>
+<li><a href="https://www.pnas.org/doi/10.1073/pnas.1721694115" target="_blank">Shokri-Kojori et al. 2018 · PNAS</a> — amyloid-β rises in the human brain after one sleepless night</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/41593094/" target="_blank">Nature Communications 2026 · 39-person crossover trial</a> — human evidence that sleep clears Aβ and tau into plasma</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 32 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
