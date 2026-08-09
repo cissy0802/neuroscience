@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 33 · The Gut-Brain Axis — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 33 · PHASE D CLINICAL/FRONTIER</span>
+<h1>The Gut-Brain Axis</h1>
+<h2>Cut the gut's nervous system free of the brain entirely and it keeps working</h2>
+<div class="date">2026-08-09 · BigCat</div>
+<p class="pitch">The "you" inside your head reads a report filed from your abdomen every day — it just never comes with a byline.</p>
+</header>
+<div class="intro">
+<p>Before you go on stage, before an interview, the lurch in your stomach often arrives before the thought "I'm nervous" does. The obvious explanation is that the brain got anxious first and passed the order down; the gut merely obeyed. But take apart the main cable running between the two and count the fibres, and the traffic points the other way — <strong>the large majority of them run from gut to brain</strong>. Your digestive tract is filing reports every minute of your life. You only get notified when something goes wrong.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>"Second brain" is less of a metaphor than it sounds</h2>
+<p>From your oesophagus to your rectum, a complete neural network is embedded in the wall of the digestive tube. It has all three parts: <strong>sensory neurons</strong> (is the tube stretched? how acidic is it in there?), <strong>interneurons</strong> (which process the signal locally), and <strong>motor neurons</strong> (which order muscles to contract and glands to secrete). A full circuit — built into the gut wall, not the skull. It is called the <strong>enteric nervous system</strong>.</p>
+<p>The headline number is usually wrong. Older popular accounts say "half a billion neurons in your gut"; in 2022 someone counted properly for the first time using one standardised method, and the human figure came out at about <strong>168 million</strong>. Fewer than the legend, still startling — that's on the order of the entire spinal cord, laid out inside the wall of a tube.</p>
+<p>But the hard evidence isn't the count. It's that this network <strong>works on its own</strong>. In 1899 two physiologists ran a plain experiment: take a length of intestine, cut every connection to brain and spinal cord, put something inside it — and it still pushes the contents along, in an orderly way. <strong>It contracts behind the object and relaxes ahead of it</strong>, like a hand squeezing a tube of toothpaste. The reflex became known as the "law of the intestine." In the whole peripheral nervous system, this is the only part that can run a complete reflex with the CNS entirely out of the picture.</p>
+<figure>
+<svg viewbox="0 0 500 258" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.35" id="bolusG" r="0.9"><stop offset="0" stop-color="#fbbf24"></stop><stop offset="1" stop-color="#b07708"></stop></radialgradient>
+<marker id="mPush" markerheight="14" markerunits="userSpaceOnUse" markerwidth="15" orient="auto" refx="10.5" refy="7"><path d="M1,1 L13,7 L1,13 Z" fill="#34e5e0"></path></marker>
+</defs>
+<path d="M26,84 C86,84 108,118 150,118 C192,118 210,80 268,78 C344,76 372,72 474,70 L474,198 C372,196 344,194 268,192 C210,190 192,152 150,152 C108,152 86,186 26,186 Z" fill="rgba(52,229,224,0.055)" stroke="none"></path>
+<path d="M26,84 C86,84 108,118 150,118 C192,118 210,80 268,78 C344,76 372,72 474,70" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="4"></path>
+<path d="M26,186 C86,186 108,152 150,152 C192,152 210,190 268,192 C344,194 372,196 474,198" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="4"></path>
+<ellipse cx="362" cy="134" fill="url(#bolusG)" rx="48" ry="38"></ellipse>
+<text fill="#3a2704" font-size="13" font-weight="700" text-anchor="middle" x="362" y="139">bolus</text>
+<circle cx="70" cy="88" fill="#34e5e0" r="3.4"></circle><circle cx="110" cy="98" fill="#34e5e0" r="3.4"></circle><circle cx="150" cy="122" fill="#34e5e0" r="3.4"></circle><circle cx="196" cy="106" fill="#34e5e0" r="3.4"></circle><circle cx="244" cy="80" fill="#34e5e0" r="3.4"></circle><circle cx="300" cy="76" fill="#34e5e0" r="3.4"></circle><circle cx="360" cy="73" fill="#34e5e0" r="3.4"></circle><circle cx="420" cy="71" fill="#34e5e0" r="3.4"></circle>
+<path d="M70,88 L110,98 L150,122 L196,106 L244,80 L300,76 L360,73 L420,71" fill="none" opacity="0.5" stroke="#34e5e0" stroke-width="1.4"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="250" y="26">myenteric plexus · the net inside the wall</text>
+<text fill="#c9a8f5" font-size="12.5" text-anchor="middle" x="150" y="212">behind: contract</text>
+<text fill="#c9a8f5" font-size="12.5" text-anchor="middle" x="404" y="216">ahead: relax</text>
+<line marker-end="url(#mPush)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3.2" x1="140" x2="410" y1="240" y2="240"></line>
+</svg>
+<figcaption>Every link to brain and spinal cord severed — it still does this</figcaption>
+</figure>
+<p>So "second brain" is more literal than it sounds: a local machine that genuinely makes its own decisions (<a class="reflink" href="ref-enteric-nervous-system.en.html">enteric nervous system</a>).</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>That cable is mostly running upward</h2>
+<p>The main trunk line between viscera and brain is the <strong>vagus nerve</strong> (<a class="reflink" href="ref-vagus-nerve.en.html">vagus &amp; the autonomic system</a>). Intuitively it should be the wire the brain gives orders down — "relax," "slow the digestion." The real ratio is the other way round: <strong>about 80% of its fibres are afferent</strong>, carrying sensation upward, and only about a fifth run down. This is not primarily a remote control. It's a <strong>sensor bus</strong>.</p>
+<p>And it doesn't taste your food directly. Vagal endings stop inside the gut wall, with a layer of epithelium between them and whatever is in the tube. They read two indirect things: <strong>stretch</strong> (how distended the wall is) and <strong>chemical signals handed over by the epithelial cells</strong>.</p>
+<p>That handover was long assumed to work only through hormones drifting across — a matter of minutes. In 2018 that was rewritten. A class of epithelial cells called <strong>neuropod cells</strong> extends a tail and forms a <strong>genuine synapse</strong> onto vagal neurons, using glutamate, on a <strong>millisecond</strong> timescale. Which means the inside of your gut is one synapse away from your brainstem. The sugar you swallow is very nearly read by a nerve directly.</p>
+<figure>
+<svg viewbox="0 0 500 286" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="boxG" r="0.95"><stop offset="0" stop-color="#241c46"></stop><stop offset="1" stop-color="#130d29"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.3" id="boxC" r="0.95"><stop offset="0" stop-color="#0e2c33"></stop><stop offset="1" stop-color="#091a20"></stop></radialgradient>
+<filter height="220%" id="glowG" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="3.6"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="mUp" markerheight="17" markerunits="userSpaceOnUse" markerwidth="18" orient="auto" refx="13" refy="8.5"><path d="M1,1 L16,8.5 L1,16 Z" fill="#34e5e0"></path></marker>
+<marker id="mDn" markerheight="10" markerunits="userSpaceOnUse" markerwidth="11" orient="auto" refx="8" refy="5"><path d="M1,1 L9,5 L1,9 Z" fill="#a78bfa"></path></marker>
+<marker id="mBr" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<rect fill="url(#boxC)" filter="url(#glowG)" height="44" rx="22" stroke="#34e5e0" stroke-width="1.3" width="220" x="140" y="224"></rect>
+<text fill="#e6faf8" font-size="13.5" font-weight="600" text-anchor="middle" x="250" y="252">gut · stretch + chemical signal</text>
+<rect fill="url(#boxG)" filter="url(#glowG)" height="44" rx="22" stroke="#a78bfa" stroke-width="1.3" width="220" x="140" y="132"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="600" text-anchor="middle" x="250" y="152">brainstem · nucleus tractus solitarius</text>
+<line marker-end="url(#mUp)" stroke="#34e5e0" stroke-linecap="butt" stroke-width="9" x1="206" x2="206" y1="221" y2="181"></line>
+<line marker-end="url(#mDn)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4" x1="298" x2="298" y1="181" y2="219"></line>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" text-anchor="end" x="192" y="205">up 80%</text>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="11.5" text-anchor="start" x="312" y="205">down 20%</text>
+<path d="M228,130 C176,116 104,110 90,82" fill="none" marker-end="url(#mBr)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></path>
+<line marker-end="url(#mBr)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2" x1="250" x2="250" y1="130" y2="82"></line>
+<path d="M272,130 C324,116 396,110 410,82" fill="none" marker-end="url(#mBr)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></path>
+<rect fill="url(#boxG)" filter="url(#glowG)" height="42" rx="21" stroke="#e879f9" stroke-width="1.2" width="154" x="13" y="36"></rect>
+<text fill="#fff" font-size="12.5" font-weight="600" text-anchor="middle" x="90" y="53">insula</text>
+<text fill="#e0a8ea" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="90" y="69">maps the body's state</text>
+<rect fill="url(#boxG)" filter="url(#glowG)" height="42" rx="21" stroke="#e879f9" stroke-width="1.2" width="154" x="173" y="36"></rect>
+<text fill="#fff" font-size="12.5" font-weight="600" text-anchor="middle" x="250" y="53">hypothalamus</text>
+<text fill="#e0a8ea" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="250" y="69">metabolism &amp; stress</text>
+<rect fill="url(#boxG)" filter="url(#glowG)" height="42" rx="21" stroke="#e879f9" stroke-width="1.2" width="154" x="333" y="36"></rect>
+<text fill="#fff" font-size="12.5" font-weight="600" text-anchor="middle" x="410" y="53">amygdala</text>
+<text fill="#e0a8ea" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="410" y="69">tags threat</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="250" y="20">almost none of it ever reaches awareness</text>
+</svg>
+<figcaption>The vagus is mostly upward: gut → brainstem → insula / hypothalamus / amygdala</figcaption>
+</figure>
+<p>Where the traffic goes from there: the vagus reaches the brainstem's <strong>nucleus tractus solitarius</strong>, then the parabrachial nucleus, then fans out to the <strong>insula</strong> (which draws the map of "how is the body right now"), the <strong>hypothalamus</strong> (metabolism and stress) and the <strong>amygdala</strong> (which tags things as threatening). Almost all of these reports <strong>never reach consciousness</strong> — you do not "feel" the pH of your small intestine. You get a compressed summary only when it turns into a heavy stomach, feeling stuffed, a wave of nausea.</p>
+<div class="ai">
+<h4>Cross-read with AI</h4>
+<p>Engineering and AI systems have a standard architecture called <b>edge computing</b>: local devices handle the overwhelming majority of work themselves and send only summaries and anomalies to the centre — because the round trip is slow and most events aren't worth waking the centre for. The gut runs the same arrangement: millisecond-scale peristalsis is left to the net in the wall, and the CNS gets reports. Which lands right back on the rule from the perception topic — <b>a correct prediction stays silent; only surprise is reported upward</b>. That's why a gut that's working fine feels like nothing at all.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The microbiome: the signal is real, the marketing is not</h2>
+<p>Trillions of bacteria live in your gut. Can they actually change your brain?</p>
+<p>Two experiments are unusually clean. The first uses <strong>germ-free mice</strong> — mice raised in complete sterility, carrying not one bacterium. The 2004 result: put them under stress and their stress hormones spike far higher than in normal mice (<a class="reflink" href="ref-hpa-axis.en.html">the HPA stress axis</a>). More interesting still, the repair has a window: restore a normal microbiota early and the overshoot corrects; do it in adulthood and it's too late. The microbiota helps <strong>set the factory calibration of the stress axis</strong>.</p>
+<p>The second names the wire. In 2011, mice fed a particular Lactobacillus strain showed less anxiety-like behaviour, along with shifts in the brain's expression of GABA receptors — the receptors that act as the nervous system's brake. Then the researchers <strong>cut the vagus nerve</strong>, and the entire effect disappeared. The bacteria weren't shouting across a gap. They needed that cable.</p>
+<p>Besides the vagus, three routes run in parallel: <strong>immune</strong> (microbes shape gut immunity, and cytokines enter the circulation), <strong>metabolites</strong> (bacteria ferment the dietary fibre you can't digest into small molecules like short-chain fatty acids), and <strong>raw-material diversion</strong> (tryptophan, the precursor for making certain neurotransmitters, gets partly consumed by microbes first).</p>
+<figure>
+<svg viewbox="0 0 500 278" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="gutBar" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#123c30"></stop><stop offset="1" stop-color="#0a2119"></stop></lineargradient>
+<lineargradient id="brainBar" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2b1f52"></stop><stop offset="1" stop-color="#170f31"></stop></lineargradient>
+<marker id="mL1" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="mL2" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+<marker id="mL3" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"></path></marker>
+<marker id="mL4" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"></path></marker>
+</defs>
+<rect fill="url(#gutBar)" height="198" rx="18" stroke="#34e5e0" stroke-width="1.3" width="66" x="10" y="24"></rect>
+<text fill="#e6faf8" font-size="15" font-weight="700" text-anchor="middle" x="43" y="116">gut</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="43" y="140">microbes</text>
+<rect fill="url(#brainBar)" height="198" rx="18" stroke="#a78bfa" stroke-width="1.3" width="66" x="424" y="24"></rect>
+<text fill="#efe9ff" font-size="15" font-weight="700" text-anchor="middle" x="457" y="128">brain</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="250" y="52">vagus nerve · milliseconds</text>
+<line marker-end="url(#mL1)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3" x1="86" x2="414" y1="66" y2="66"></line>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="250" y="100">immune · cytokines</text>
+<line marker-end="url(#mL2)" stroke="#e879f9" stroke-linecap="round" stroke-width="3" x1="86" x2="414" y1="114" y2="114"></line>
+<text fill="#c9a8f5" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="250" y="148">metabolites · short-chain fatty acids</text>
+<line marker-end="url(#mL3)" stroke="#a78bfa" stroke-linecap="round" stroke-width="3" x1="86" x2="414" y1="162" y2="162"></line>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="250" y="196">tryptophan · precursor diverted</text>
+<line marker-end="url(#mL4)" stroke="#fbbf24" stroke-linecap="round" stroke-width="3" x1="86" x2="414" y1="210" y2="210"></line>
+<line stroke="#8a5a2a" stroke-linecap="round" stroke-width="3" x1="86" x2="286" y1="252" y2="252"></line>
+<rect fill="#6b6486" height="42" rx="3" width="7" x="290" y="231"></rect>
+<text fill="#ff6b8a" font-size="19" font-weight="700" text-anchor="middle" x="308" y="259">✕</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="start" x="86" y="240">gut serotonin · 90–95% of the body's</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="start" x="324" y="257">stopped at the barrier</text>
+</svg>
+<figcaption>Four real routes, plus one that goes nowhere — gut serotonin can't get in</figcaption>
+</figure>
+<p>Which lets us dismantle the most-repeated claim of all: "90–95% of your serotonin is in your gut, so fix your gut and fix your mood." The first half is true; the second doesn't follow. Gut serotonin <strong>does not cross the blood-brain barrier</strong>. It governs how your intestine moves and secretes, and it sits in a pool entirely separate from the serotonin inside your skull (<a class="reflink" href="ref-serotonin-system.en.html">serotonin system</a>).</p>
+<p>How far the human evidence actually goes: a cohort of over a thousand people found two butyrate-producing bacterial groups depleted in people with depression — that's a <strong>correlation</strong>, not a cause (low mood changes what you eat, and diet changes your microbes). Plenty of randomised trials have tested probiotics for mood; pooled, the effects are small, the strains and doses are all over the place, and the evidence is thinnest exactly where it matters most, in clinically diagnosed depression. <strong>The pathway is real. "Cure depression with a bottle of yoghurt" is nowhere close.</strong></p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Both directions: stress goes down, inflammation comes up</h2>
+<p>You've lived through the downward half: running to the toilet before an exam, unable to eat after a breakup. Acute stress, via the stress axis and the sympathetic nervous system, can change gut motility, secretion and even the permeability of the gut wall within minutes.</p>
+<p>The upward half is more interesting, and it has one especially clean example: <strong>sickness behaviour</strong>. On the day you run a fever you don't want to move, talk, see anyone, or care about anything — and that isn't simply "feeling bad makes you glum." Signalling molecules released by immune cells in the periphery (cytokines) act through vagal afferents and at the brain's vascular interface to <strong>switch on a ready-made program</strong>: activity down, socialising off, pain sensitivity up, motivation flattened. Evolutionarily it's a good trade (energy saved to fight the infection). Subjectively, it resembles certain days of depression closely enough to be unsettling. It is the hardest demonstration we have that a bodily state can rewrite a mood directly.</p>
+<p>Clinically, the two-way street shows up again in irritable bowel syndrome. No structural damage on any scan, yet the pain is entirely real — which is why the current international standard renamed this whole family <strong>disorders of gut-brain interaction</strong>. The mechanism is <strong>visceral hypersensitivity</strong>: the same pressure inside the gut gets reported upward louder. And running it backwards works too — interventions aimed only at the brain end (gut-directed hypnotherapy, cognitive behavioural therapy) genuinely help. Turn the dial at the brain end, and the gut loosens.</p>
+<p>Which brings this back to the emotion topic: a feeling isn't a sensation that appears out of nowhere. It's an inference the brain makes from bodily signals — and the gut is the largest, most relentless source of those signals you own.</p>
+<div class="ai">
+<h4>Cross-read with AI</h4>
+<p>The perception topic gave a formula: what you experience ≈ prior × evidence, each weighted by how <b>reliable</b> it is. Sensing your own interior runs on the same machinery — the brain is <b>inferring</b> the state of your body. Chronic inflammation amounts to turning up the gain on one sensor channel indefinitely: the evidence itself hasn't changed much, but its weight has, so the inference drifts. <b>Multi-sensor fusion</b> systems in AI have exactly this failure mode: let one sensor sit at a persistent bias while the system keeps trusting it, and the whole state estimate gets dragged along. The fix is the same on both sides — not replacing the sensor, but recalibrating how much it should be believed.</p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"The self that thinks" and "the self that digests" turn out not to be two separate things — a conclusion several very different observation systems have run into:</p>
+<ul>
+<li><b>Chinese medicine · emotion and the spleen-stomach</b>: "Overthinking injures the spleen"; "the spleen and stomach are the root of acquired life." Classical Chinese medicine tied rumination to digestive function and wrote that link into its treatments. This obviously isn't foresight about neuropod cells; what's worth pausing on is that <b>two completely unrelated methods of observation ran into the same stable correlation</b> — one through centuries of clinical observation, one by cutting the vagus and watching an effect vanish.</li>
+<li><b>Phenomenology · Merleau-Ponty</b>: the subject is not a point hiding inside the skull; a person is first of all a <b>body</b>, and the world is given through that body. 168 million enteric neurons and a vagus that runs 80% upward are the least romantic and most literal footnote that idea could have asked for — your self-model has always had a visceral input.</li>
+<li><b>Cybernetics · Ashby and layered control</b>: an old principle says local disturbances belong to local controllers, and the centre should handle only cross-domain coordination — otherwise the system collapses under its own signalling. The enteric nervous system is that engineering constraint made flesh. Not evolutionary laziness: a round trip to the brain is simply too slow to answer "should this segment contract in the next few hundred milliseconds?"</li>
+<li><b>Language · "gut feeling"</b>: English calls intuition a feeling in the bowels; Chinese has "liver and intestines cut to pieces" for grief, "a bellyful of worries" for preoccupation. Millennia before any anatomy, language had already located emotion in the abdomen. That's not evidence — but it is a record of a very long collective experiment in interoception.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>With hundreds of millions of neurons making its own decisions, does the gut feel anything?</summary><div>On the evidence we have, probably not. The candidate conditions the consciousness topics kept circling — widespread <strong>recurrent</strong> connectivity, a structure capable of integrating information into a single whole — are largely absent here: enteric wiring is highly local, segment by segment, with no hub that pulls the whole state into one point of view. So the better description isn't "a second consciousness" but <strong>a highly autonomous local controller with nobody home</strong>. Which cuts the other way as a reminder: neuron count was never the ticket to consciousness. <strong>The shape of the connectivity is.</strong></div></details>
+<details><summary>Is a "gut feeling" actually coming from the gut?</summary><div>Half true. When you make an intuitive judgement your body reacts first — heart rate, gut tension, skin conductance all shift — and those interoceptive signals really are read by the brain and really do feed into the final choice. That line of work goes back decades, though its strong version (the somatic marker hypothesis) has had a rough time in replication. But don't flip it around: the gut is not computing the answer for you. The brain is <strong>treating the body's state as one more stream of evidence</strong> inside an inference it was already making. The genuinely uncomfortable corollary: on a day your stomach is off, your judgement about something entirely unrelated may well be off with it.</div></details>
+<details><summary>Why do such clean causal chains in mice go blurry in humans?</summary><div>Three obstacles stacked. First, a germ-free mouse is an <strong>extreme condition</strong> — nobody grows up with zero bacteria, and the leap from "none at all" to "somewhat more or less" is enormous. Second, human microbiota are shaped by diet, medication, sleep, exercise and the people you live with — all of which <strong>affect mood on their own</strong>, so the confounds are nearly impossible to unpick. Third and most decisive: in mice you can <strong>intervene</strong> (sever the vagus, transplant a microbiota); in humans you're mostly stuck <strong>observing</strong>. Hence the current picture: the mechanism keeps getting firmer in animals while the effect keeps getting smaller in people. Both can be true at once.</div></details>
+<details><summary>If the gut reports upward every minute, why do I feel almost none of it?</summary><div>Because the report is compressed twice. Once in the gut wall: the local network handles the overwhelming majority itself and never files anything. Once again in the brain: most ascending traffic stops at the brainstem and hypothalamus, where it's used to adjust heart rate, secretion and appetite, and is never forwarded to cortex. What survives into <em>sensation</em> is only what's surprising or strong enough — hunger, fullness, nausea, cramping. <strong>The default state of interoception is mute</strong>, and that's not a flaw but a filter: let every gut signal into awareness and you would never finish a sentence.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Enteric_nervous_system" target="_blank">Enteric nervous system</a> — structure, the two plexuses, and autonomous reflexes</li>
+<li><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/nmo.14440" target="_blank">Michel et al. 2022 · Neurogastroenterol Motil</a> — the first standardised count: ~168 million human enteric neurons</li>
+<li><a href="https://www.science.org/doi/10.1126/science.aat5236" target="_blank">Kaelberer et al. 2018 · Science</a> — neuropod cells synapse onto vagal neurons in milliseconds</li>
+<li><a href="https://www.pnas.org/doi/10.1073/pnas.1102999108" target="_blank">Bravo et al. 2011 · PNAS</a> — a Lactobacillus strain changes mouse behaviour; vagotomy abolishes it</li>
+<li><a href="https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.2004.063388" target="_blank">Sudo et al. 2004 · J Physiol</a> — exaggerated stress response in germ-free mice and the early colonisation window</li>
+<li><a href="https://www.nature.com/articles/s41564-018-0337-x" target="_blank">Valles-Colomer et al. 2019 · Nature Microbiology</a> — microbiota and depression in a 1,000+ person cohort (correlational)</li>
+<li><a href="https://en.wikipedia.org/wiki/Sickness_behavior" target="_blank">Sickness behaviour</a> — how immune signals switch on a ready-made program in the brain</li>
+<li><a href="https://en.wikipedia.org/wiki/Michael_D._Gershon" target="_blank">Michael Gershon · <i>The Second Brain</i></a> — where the phrase came from and what it meant</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 33 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
