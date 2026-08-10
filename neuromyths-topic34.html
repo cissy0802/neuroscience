@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 34 · 神经神话与还原论的限度 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 34 · PHASE D 临床/前沿</span>
+<h1>神经神话与还原论的限度</h1>
+<h2>一句「大脑的某某区被点亮了」，为什么让人瞬间放下戒心</h2>
+<div class="date">2026-08-10 · BigCat</div>
+<p class="pitch">最难拆的神话不是「人只用了 10% 的脑」——是「一张脑图本身就算证据」。</p>
+</header>
+<div class="intro">
+<p>你大概听过这几种说法：理科生是左脑人、艺术家是右脑人；人一辈子只用了 10% 的大脑；有人天生是「视觉型学习者」，得配上对应的教法。它们流传得广、听着顺、还都带着一点「科学」的口音。<strong>但这一期真正要拆的不是这三条，是它们背后那台机器</strong>——为什么一个本来站不住的说法，只要沾上「大脑」两个字，就突然可信了。拆到最后你会发现，剩下的问题已经不是「哪条是假的」，而是<strong>知道了神经元那一层，到底算不算懂了这件事</strong>——这个麻烦，神经科学自己也还没解决。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>三条不肯死的神话，都在同一步拐了弯</h2>
+<p>先把最出名的三条过一遍。重点不在「它错了」，在<strong>它是从哪一步开始错的</strong>——每条都是从一个真发现，往前多迈了一格。</p>
+<p><strong>左右脑。</strong>真的那部分：两个半球确实有分工偏好。绝大多数人（右利手里约九成五）的语言加工偏在左边；面孔、说话的语调、空间上的整体感偏在右边。这个偏侧现象叫<strong>侧化</strong>，是实打实的。假的是下一步：把「某个功能稍微偏一边」，读成「人分成左脑型和右脑型」。这一跳的原料来自一批很特殊的病人——为治顽固癫痫，把两个半球之间那座桥切断了的<strong>裂脑人</strong>。在他们身上，两边确实会各干各的。可你没被切。你脑子里那座桥有约两亿条纤维，每一毫秒都在两边对账。后来有人拿一千多人的脑成像专门去找「左脑型／右脑型」的个体，一个也没找到：每个人都是两边一起用。（那座桥怎么工作、切断了会发生什么，<a class="reflink" href="ref-corpus-callosum.html">胼胝体与半球</a>）</p>
+<figure>
+<svg viewbox="0 0 480 282" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter height="200%" id="gA" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<text fill="#e879f9" font-size="12.5" font-weight="600" text-anchor="middle" x="240" y="16">神话版 · 一个人只能是其中一半</text>
+<rect fill="rgba(232,121,249,0.06)" filter="url(#gA)" height="64" rx="14" stroke="#a78bfa" stroke-width="1.3" width="170" x="40" y="30"></rect>
+<text fill="#efe9ff" font-size="14.5" font-weight="600" text-anchor="middle" x="125" y="56">左脑</text>
+<text fill="#a99ccc" font-size="11.5" text-anchor="middle" x="125" y="78">理性 · 逻辑 · 数学</text>
+<rect fill="rgba(232,121,249,0.06)" filter="url(#gA)" height="64" rx="14" stroke="#a78bfa" stroke-width="1.3" width="170" x="270" y="30"></rect>
+<text fill="#efe9ff" font-size="14.5" font-weight="600" text-anchor="middle" x="355" y="56">右脑</text>
+<text fill="#a99ccc" font-size="11.5" text-anchor="middle" x="355" y="78">创意 · 情感 · 艺术</text>
+<line stroke="#e879f9" stroke-dasharray="4 5" stroke-width="2" x1="240" x2="240" y1="26" y2="98"></line>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="116">互不相干</text>
+<text fill="#34e5e0" font-size="12.5" font-weight="600" text-anchor="middle" x="240" y="150">真实版 · 只有轻微偏侧，两边一直在对账</text>
+<rect fill="rgba(52,229,224,0.06)" filter="url(#gA)" height="64" rx="14" stroke="#34e5e0" stroke-width="1.3" width="170" x="40" y="164"></rect>
+<text fill="#e6faf8" font-size="14.5" font-weight="600" text-anchor="middle" x="125" y="190">左半球</text>
+<text fill="#8fd8d4" font-size="11" text-anchor="middle" x="125" y="212">语言加工 · 略偏这边</text>
+<rect fill="rgba(52,229,224,0.06)" filter="url(#gA)" height="64" rx="14" stroke="#34e5e0" stroke-width="1.3" width="170" x="270" y="164"></rect>
+<text fill="#e6faf8" font-size="14.5" font-weight="600" text-anchor="middle" x="355" y="190">右半球</text>
+<text fill="#8fd8d4" font-size="11" text-anchor="middle" x="355" y="212">面孔 · 语调 · 略偏这边</text>
+<path d="M210,176 C232,169 248,169 270,176" fill="none" stroke="#7bf0e8" stroke-linecap="round" stroke-width="2" opacity="0.9"></path>
+<path d="M210,186 C232,181 248,181 270,186" fill="none" stroke="#7bf0e8" stroke-linecap="round" stroke-width="2" opacity="0.7"></path>
+<path d="M210,196 C232,200 248,200 270,196" fill="none" stroke="#7bf0e8" stroke-linecap="round" stroke-width="2" opacity="0.85"></path>
+<path d="M210,206 C232,212 248,212 270,206" fill="none" stroke="#7bf0e8" stroke-linecap="round" stroke-width="2" opacity="0.6"></path>
+<path d="M210,216 C232,223 248,223 270,216" fill="none" stroke="#7bf0e8" stroke-linecap="round" stroke-width="2" opacity="0.8"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="252">胼胝体 · 约 2 亿条纤维 · 毫秒级互通</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="240" y="272">「偏一点」被读成了「分成两种人」</text>
+</svg>
+<figcaption>侧化是真的，「左脑人／右脑人」是把它推过了头</figcaption>
+</figure>
+<p><strong>只用了 10%。</strong>这条一秒就能证伪，而且用的不是脑科学、是算术：脑只占体重的 2%，却吃掉全身约 20% 的能量。演化连一克多余的脂肪都要计较，绝不可能白养一个九成时间闲置的器官。临床上更是天天打脸——中风或外伤只伤到很小一块，也几乎必定带走点什么：认字、认人、或者控制某一根手指。脑子里没有空房间。</p>
+<p><strong>学习风格。</strong>这条最狡猾，因为它有一半是真的：人<strong>确实</strong>有偏好，你可能就是更爱看图、他更爱听讲。假的是后面悄悄接上的第二句——「所以按各人的偏好去教，他就学得更好」。这句叫<strong>匹配假设</strong>，几十年里被反复检验，结果始终是：偏好和「哪种教法对他更有效」基本对不上。真正决定效果的是内容本身该怎么讲——教几何就得上图，教发音就得出声，跟坐在下面的是谁关系不大。</p>
+<p class="en-brief"><b>EN</b> Each classic neuromyth starts from a real finding and takes one step too far. Hemispheric lateralisation is real (language leans left in ~95% of right-handers), but "left-brained people" extrapolates from split-brain patients to intact brains wired by ~200 million callosal fibres. The 10% claim dies on arithmetic: 2% of body mass, ~20% of the energy budget. And learning styles smuggle in a second clause — the "meshing hypothesis" that matching instruction to preference improves learning, which decades of tests have failed to support.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>人工神经网络里栽过几乎一样的跟头。那里面有一堆也叫「神经元」的数字单元，早年大家很自然地假设「一个单元管一个概念」——找到「猫单元」就等于找到了猫。后来发现根本不是：同一个单元会同时参与一堆互不相干的特征（这现象叫<b>叠加</b>），而一个概念摊在成千上万个单元上。「一个格子管一件事」是人最舒服的想象，可惜生物脑和人工网都不这么长。</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>为什么一张脑图特别好使</h2>
+<p>神话能活下来，靠的不是证据，是<strong>它看起来像证据</strong>。这里有几件很具体的事。</p>
+<p>第一，「神经科学口音」本身就加分。有实验给非专业读者两版对同一个心理现象的解释：一版是普通的心理学说法，另一版一模一样，只多塞一句无关痛痒的「因为这时候额叶回路被激活了」。多的那句一点信息都没加，但读者觉得后一版更有说服力。<strong>一个坏解释，套上神经词汇就显得没那么坏了。</strong>（后来还有一路研究专门看「配张脑图会不会更唬人」，结论比当初报告的弱得多、几次重复没做出来——一期讲神经神话的东西，自己引的效应也得老实标上复制状况。）</p>
+<p>第二件更硬：<strong>扫描仪天生就会出假阳性。</strong>一次功能磁共振把脑切成几万个小方块（叫体素），每个方块都单独做一次统计检验。按惯例的门槛，纯靠运气就会有约二十分之一的格子被判为「显著」。几万格乘上二十分之一——只要不做校正，你必然能捞出一片漂亮的彩色斑块。</p>
+<figure>
+<svg viewbox="0 0 480 214" xmlns="http://www.w3.org/2000/svg">
+<text fill="#b8b2d4" font-size="12" text-anchor="middle" x="240" y="26">一次扫描切成很多小格，每格各做一次检验</text>
+<rect x="15" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="45" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="75" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="105" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="135" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="165" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="195" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="225" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="255" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="285" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="315" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="345" y="44" width="26" height="26" rx="6" fill="#e879f9" opacity="0.92"></rect>
+<rect x="375" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="405" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="435" y="44" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="15" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="45" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="75" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="105" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="135" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="165" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="195" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="225" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="255" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="285" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="315" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="345" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="375" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="405" y="74" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="435" y="74" width="26" height="26" rx="6" fill="#e879f9" opacity="0.92"></rect>
+<rect x="15" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="45" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="75" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="105" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="135" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="165" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="195" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="225" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="255" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="285" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="315" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="345" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="375" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="405" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="435" y="104" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="15" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="45" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="75" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="105" y="134" width="26" height="26" rx="6" fill="#e879f9" opacity="0.92"></rect>
+<rect x="135" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="165" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="195" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="225" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="255" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="285" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="315" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="345" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="375" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="405" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<rect x="435" y="134" width="26" height="26" rx="6" fill="#191233" stroke="rgba(167,139,250,0.22)" stroke-width="1"></rect>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="240" y="188">门槛 p&lt;0.05 → 平均每 20 格就有 1 格纯靠运气「显著」</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="240" y="207">真实扫描是几万格，不校正必然捞到一整片</text>
+</svg>
+<figcaption>粉色的三格什么都没发生，只是运气——这就是必须做多重比较校正的原因</figcaption>
+</figure>
+<p>这件事在 2009 年被人用最损也最有效的方式演示了一遍：把一条<strong>死掉的大西洋鲑鱼</strong>放进扫描仪，给它看人像照片，问它照片里的人在体会什么情绪。不做多重比较校正，鱼脑里真的冒出了「显著激活」。作者的目的不是搞笑（虽然为此拿了搞笑诺贝尔奖），是逼整个领域把校正做成默认动作。</p>
+<p>还有一个更隐蔽的坑，叫<strong>双重浸取</strong>：先在全脑里挑出相关最高的那批格子，再拿这批格子去算相关系数，然后报告「相关高达 0.9」。这等于先看了答案再出题，数字必然虚高。2009 年一篇点名批评的文章把这类结果叫「巫毒相关」，直接掀起了社会认知影像领域的一轮方法整顿。</p>
+<p class="en-brief"><b>EN</b> Myths survive because they look like evidence. Adding an irrelevant neuroscience clause makes a bad psychological explanation more convincing to non-experts (the brain-image version of that effect has largely failed to replicate — worth flagging in an issue about myths). Meanwhile fMRI manufactures false positives by construction: tens of thousands of voxels, one test each. Uncorrected, a dead Atlantic salmon shows "significant" activation — the 2009 demonstration that made multiple-comparison correction standard. Circular analysis ("double dipping") inflates correlations the same way.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>同一个坑在 AI 里叫<b>刷榜</b>：跑几十组随机种子和超参数，挑效果最好的那次写进论文。这跟「几万个体素挑最亮的那个」是同一道数学题——在基准测试上多出来的那零点几个点，很多就是那条死鱼。防法两边也一样：预先说清要看什么、留一份从没碰过的数据、把没跑成功的那些次也算进分母。</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>就算真亮了，能推出什么</h2>
+<p>假设校正做得干干净净，那块地方确实亮了。还有一道更根本的坎，叫<strong>逆向推理</strong>。</p>
+<p>正向那一步是好做的：让人害怕，杏仁核多半会亮——这是实验能直接测的。反过来那一步就不成立了：<strong>看到杏仁核亮，推不出这个人在害怕。</strong>因为能点亮它的远不止恐惧：没见过的新东西、说不准的情况、任何强烈的、值得多分一点注意力的事，包括高兴的事，都会让它亮。要从「亮」倒推回「在害怕」，你得先知道这块地方对<strong>别的</strong>事情有多容易亮——而很多脑区几乎对什么都亮，有人统计过，布洛卡区在相当大一部分影像研究里都会出现，不管任务是什么。</p>
+<figure>
+<svg viewbox="0 0 500 232" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter height="200%" id="gC" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="mC" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#a78bfa"></path></marker>
+<marker id="mQ" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<path d="M152,27 C182,27 184,98 204,104" fill="none" marker-end="url(#mC)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2"></path>
+<path d="M152,77 C182,77 188,104 204,110" fill="none" marker-end="url(#mC)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2"></path>
+<path d="M152,127 C182,127 188,124 204,119" fill="none" marker-end="url(#mC)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2"></path>
+<path d="M152,177 C182,177 188,136 204,126" fill="none" marker-end="url(#mC)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2"></path>
+<rect fill="rgba(167,139,250,0.07)" height="38" rx="19" stroke="#a78bfa" stroke-width="1.2" width="142" x="10" y="8"></rect><text fill="#efe9ff" font-size="12.5" text-anchor="middle" x="81" y="32">恐惧</text>
+<rect fill="rgba(167,139,250,0.07)" height="38" rx="19" stroke="#a78bfa" stroke-width="1.2" width="142" x="10" y="58"></rect><text fill="#efe9ff" font-size="12.5" text-anchor="middle" x="81" y="82">没见过的新东西</text>
+<rect fill="rgba(167,139,250,0.07)" height="38" rx="19" stroke="#a78bfa" stroke-width="1.2" width="142" x="10" y="108"></rect><text fill="#efe9ff" font-size="12.5" text-anchor="middle" x="81" y="132">说不准的情况</text>
+<rect fill="rgba(167,139,250,0.07)" height="38" rx="19" stroke="#a78bfa" stroke-width="1.2" width="142" x="10" y="158"></rect><text fill="#efe9ff" font-size="12.5" text-anchor="middle" x="81" y="182">高兴得发抖</text>
+<rect fill="rgba(52,229,224,0.09)" filter="url(#gC)" height="56" rx="16" stroke="#34e5e0" stroke-width="1.4" width="122" x="204" y="86"></rect>
+<text fill="#e6faf8" font-size="13.5" font-weight="700" text-anchor="middle" x="265" y="110">杏仁核亮了</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="265" y="128">扫描上看到的</text>
+<line marker-end="url(#mQ)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4" x1="328" x2="364" y1="114" y2="114"></line>
+<text fill="#e879f9" font-size="15" font-weight="700" text-anchor="middle" x="346" y="100">✕</text>
+<rect fill="rgba(232,121,249,0.05)" height="56" rx="16" stroke="#e879f9" stroke-dasharray="5 4" stroke-width="1.3" width="124" x="366" y="86"></rect>
+<text fill="#f5b8fb" font-size="13" font-weight="600" text-anchor="middle" x="428" y="110">所以他在害怕？</text>
+<text fill="#c98adf" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="428" y="128">推不出来</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="250" y="220">正向：恐惧 → 常常亮（可测）　　反向：亮 → 恐惧（不成立）</text>
+</svg>
+<figcaption>很多条路都通向同一块「亮」，所以从亮倒推回原因是不成立的</figcaption>
+</figure>
+<p>还有一层常被跳过：功能磁共振测的根本不是神经元放电，是<strong>含氧血流的变化</strong>——某处神经活跃，代谢需求上升，血流跟着补过来。这是个代理指标，慢好几秒，一个体素里塞着几十万个神经元；而且它不区分兴奋和抑制——把一片区域<strong>摁住</strong>同样要花能量，看上去也是「亮」。</p>
+<p>最后是那句老话，不过在这里有很具体的分量：<strong>相关不等于因果。</strong>「做 X 的时候 Y 区亮」只说明两件事同时发生。要说 Y 区<strong>在做</strong> X，你得去动它：用经颅磁刺激临时干扰一下、看临床上这块坏掉的人丢了什么、在动物身上用光把特定细胞开关掉。观察只能给出嫌疑人，定罪得靠干预。</p>
+<p class="en-brief"><b>EN</b> Reverse inference is the deeper problem: "fear activates the amygdala" is measurable, but "the amygdala is active, therefore fear" is not — novelty, uncertainty and intense positive arousal light it up too, and some regions activate in a large fraction of all studies. On top of that, BOLD measures oxygenated blood flow, not spikes: a slow proxy, hundreds of thousands of neurons per voxel, and inhibition costs energy too, so suppression also looks "bright". Correlation needs intervention — TMS, lesions, optogenetics — before it becomes causation.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>AI 的可解释性研究里有个几乎同构的做法叫<b>探针</b>：从模型的中间激活里训练一个小分类器，发现能解出「这句话的情绪是正面」，于是宣布「模型在这里表示情绪」。这跟「杏仁核亮＝恐惧」是同一个逻辑错误——<b>能被读出来，不等于模型真的在用它</b>。所以现在做这一行的人必须补上因果那一步：把那部分激活改掉、换掉、切掉，看输出变不变。神经科学花了二十年学会的教训，AI 圈正在原样重走一遍。</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>就算全知道了，也不等于懂了</h2>
+<p>现在假设所有方法学问题都解决了。你拿到了完整的接线图、每个细胞的每一次放电。这就懂了吗？</p>
+<p>有两个很扎心的实例。第一个：秀丽隐杆线虫，一条 1 毫米长的虫子，302 个神经元，完整接线图 1986 年就发表了——四十年过去，还是没人能从那张图推出它下一秒会往哪爬。因为同一套线路会被神经调质<strong>当场重接</strong>成不同的回路：连线是固定的，工作时的电路不是。</p>
+<p>第二个更狠。2017 年两位研究者把神经科学的整套标准分析工具，用到一块 1980 年代的处理器芯片上——那块芯片正在跑《大金刚》和《太空侵略者》，而且它的每一个晶体管、每一根连线，人类都完全知道。他们做「损伤实验」：逐个敲掉晶体管，真的找到了几个「敲掉游戏就跑不起来」的——如果这是脑，你会当场宣布发现了「大金刚神经元」。他们又做调谐曲线、做连接分析、做降维，图都很漂亮。但没有一条结论碰到了「这块处理器究竟怎么工作」。工具没坏，缺的是别的东西。</p>
+<p>缺的是<strong>层次</strong>。视觉科学家 David Marr 早就把它拆成三层：<strong>计算层</strong>（这套系统在解决什么问题、为什么这么解才合理）、<strong>算法层</strong>（用什么表示、走哪些步骤）、<strong>实现层</strong>（神经元、递质、离子通道怎么把上面那些落到实处）。三层各有各的解释，谁也替代不了谁。只盯着实现层往上爬，是爬不出上面两层的——这不是数据不够，是问错了问题。</p>
+<figure>
+<svg viewbox="0 0 480 238" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter height="200%" id="gD" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="3.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="mUp" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+<marker id="mDn" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+</defs>
+<line marker-end="url(#mUp)" stroke="#e879f9" stroke-dasharray="5 5" stroke-linecap="round" stroke-width="2.2" x1="66" x2="66" y1="212" y2="24"></line>
+<line marker-end="url(#mDn)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.2" x1="438" x2="438" y1="24" y2="212"></line>
+<rect fill="rgba(52,229,224,0.07)" filter="url(#gD)" height="54" rx="14" stroke="#34e5e0" stroke-width="1.3" width="300" x="102" y="12"></rect>
+<text fill="#e6faf8" font-size="13.5" font-weight="700" text-anchor="middle" x="252" y="36">计算层</text>
+<text fill="#8fd8d4" font-size="11" text-anchor="middle" x="252" y="56">在解决什么问题、为什么这么解才对</text>
+<rect fill="rgba(167,139,250,0.07)" filter="url(#gD)" height="54" rx="14" stroke="#a78bfa" stroke-width="1.3" width="300" x="102" y="88"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="700" text-anchor="middle" x="252" y="112">算法层</text>
+<text fill="#a99ccc" font-size="11" text-anchor="middle" x="252" y="132">用什么表示、走哪些步骤</text>
+<rect fill="rgba(232,121,249,0.07)" filter="url(#gD)" height="54" rx="14" stroke="#e879f9" stroke-width="1.3" width="300" x="102" y="164"></rect>
+<text fill="#fbe6ff" font-size="13.5" font-weight="700" text-anchor="middle" x="252" y="188">实现层</text>
+<text fill="#c98adf" font-size="11" text-anchor="middle" x="252" y="208">神经元、递质、离子通道</text>
+<text fill="#e879f9" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" transform="rotate(-90 46 118)" x="46" y="118">只从下往上 · 爬不出去</text>
+<text fill="#34e5e0" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" transform="rotate(90 458 118)" x="458" y="118">上层告诉你该找什么</text>
+</svg>
+<figcaption>Marr 的三层：拿到全部实现细节，不会自动交出上面两层的解释</figcaption>
+</figure>
+<p>而且还有反过来的一条：同一件事可以有<strong>很多种实现</strong>。计时可以靠齿轮、靠石英、靠原子跃迁；记忆可以靠突触强度，换个系统也可以靠别的。所以「某某心理状态＝某某神经活动」这种一一对应，本来就不该指望。</p>
+<p>这不是说还原没用。恰恰相反——本站前面三十几期讲的全是还原带来的东西：多巴胺的预测误差、夜里开工的类淋巴清除、迷幻药认准的那一把受体锁。<strong>还原是唯一能给「为什么」提供机制的工具。</strong>它的限度只有一句话：机制不会自动变成解释。你还得说清楚，这台机器到底在解决什么问题。</p>
+<p class="en-brief"><b>EN</b> Even total knowledge of the implementation isn't understanding. C. elegans' 302-neuron connectome has been complete since 1986 and still doesn't predict behaviour, because neuromodulators rewire the same wiring into different circuits. And when two researchers ran neuroscience's standard toolkit on a 1980s microprocessor running Donkey Kong — a system we understand completely — lesions, tuning curves and dimensionality reduction produced beautiful figures and zero understanding of how it works. What's missing is levels: Marr's computational, algorithmic and implementational analyses can't substitute for one another. Reduction supplies mechanism; mechanism doesn't automatically become explanation.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这里有个现成的、结论很不舒服的对照实验：大语言模型的每一个参数我们都握着，可以任意读、任意改、想跑多少遍跑多少遍——这是神经科学家做梦都拿不到的条件。可我们照样说不清它是怎么做两位数加法的；这几年一点点抠出来的那些机制，全是拿放大镜手工挖的。<b>拿到全部实现细节和「懂」之间，隔着的不是数据量，是一套跨层的解释语言</b>——两个领域缺的是同一样东西。</p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">「拆到零件里找不到，不等于它不存在」——这句话不是神经科学的新发现，好几门学问早就在各自的领域里撞上过同一堵墙：</p>
+<ul>
+<li><b>佛学 · 中观（龙树）</b>：车喻——把车拆成轮、轴、辕，每一件都不是车，拼合的方式本身也不是车；找遍所有零件，找不到一个「车之为车」的自性，可车照样能载人。这正是还原论的限度：拆解找不到的东西不等于不存在，只是它不住在零件里，住在<b>关系</b>里。</li>
+<li><b>现象学 · 梅洛-庞蒂</b>：把「看见红色」翻译成某块皮层的放电模式，那份第一人称的红，在翻译中没有位置可放。不是显微镜还不够细，是这两种描述本来就不在同一个坐标系里。（这就是 Topic 10 那个难题的另一种说法。）</li>
+<li><b>物理 · Anderson《More Is Different》(1972)</b>：他本人是彻底的还原论者，承认一切都由基本粒子构成；但他指出，从基本定律出发<b>推不出</b>上层的规律，每一层都得有自己的定律和概念。神经科学与其说需要更细的显微镜，不如说需要更多这样的「层」。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>逆向推理这么不可靠，那功能磁共振还有什么用？</summary><div>有用，但用法得换。它擅长的是<strong>比较</strong>（同一批人、两种条件之间的差别）、<strong>耦合</strong>（几个脑区之间的同步怎么变），以及<strong>解码</strong>（从一整片活动的模式里读出被试在看哪一类图，做得好相当准）。它不擅长的是当读心机，或者一句「这块亮了所以他在 X」。还有个更冷的发现：不少脑与行为的相关研究样本量太小，要上千人才稳得住——一批早期的漂亮结论就是这么撑不住的。</div></details>
+<details><summary>为什么这些神话杀不死？</summary><div>三个理由叠在一起。它们<strong>好用</strong>：左右脑给了人一个身份标签，学习风格给了教学一个简单方案。它们<strong>赚钱</strong>：培训班、玩具、APP 都靠它。而且它们长成了大脑最爱的形状——二分、定位、一因一果。更正一条神话所需的信息量，永远大于神话本身。有意思的是，教师群体里神话的接受率反而偏高，恰恰因为他们最积极地在找神经科学的实用建议。</div></details>
+<details><summary>既然接线图不足以解释行为，连接组学（Topic 42）还值得做吗？</summary><div>值得，但要摆对位置：接线图是<strong>必要而不充分</strong>的。没有它你连假设都提不出来——就像没有电路图没法调试电路；有了它也不会自动交出答案，因为同一套线路会被调质重构成不同回路。它是<strong>约束</strong>，不是<strong>解释</strong>。真正的进展往往来自把它和干预、和计算层的问题一起用。</div></details>
+<details><summary>那本站每期讲机制，是不是也在用「神经科学口音」这个效应？</summary><div>说实话，是。能做的自查只有几条：证据薄的地方明说薄（菌群、类淋巴那两期都标了争议）；区分「机制上说得通」和「临床上验过」；引用尽量给能点开的原文。而你能用的检验更简单——<strong>下次看到一个说法带着脑区名字，先把那个名字划掉再读一遍。如果划掉之后它就不成立了，那它本来就不成立。</strong></div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ten_percent_of_the_brain_myth" target="_blank">10% 大脑神话</a> — 来源、为什么在能量账上就站不住</li>
+<li><a href="https://en.wikipedia.org/wiki/Lateralization_of_brain_function" target="_blank">大脑功能侧化</a> · <a href="https://en.wikipedia.org/wiki/Split-brain" target="_blank">裂脑</a> — 真侧化 vs「左脑人／右脑人」</li>
+<li><a href="https://en.wikipedia.org/wiki/Learning_styles" target="_blank">学习风格</a> — 偏好是真的，匹配假设不是</li>
+<li><a href="https://doi.org/10.1016/j.tics.2005.12.004" target="_blank">Poldrack 2006 · 逆向推理</a> — 「亮了所以他在 X」错在哪</li>
+<li><a href="https://doi.org/10.1016/S1053-8119(09)71202-9" target="_blank">Bennett 等 2009 · 死鲑鱼</a> — 不做多重比较校正的后果</li>
+<li><a href="https://doi.org/10.1038/nn.2303" target="_blank">Kriegeskorte 等 2009 · 双重浸取</a> — 先看答案再出题的循环分析</li>
+<li><a href="https://doi.org/10.1371/journal.pcbi.1005268" target="_blank">Jonas &amp; Kording 2017 · 神经科学家能读懂处理器吗</a> — 全套方法用在一块已知芯片上</li>
+<li><a href="https://en.wikipedia.org/wiki/David_Marr_(neuroscientist)" target="_blank">David Marr · 三个分析层次</a> · <a href="https://en.wikipedia.org/wiki/Multiple_realizability" target="_blank">多重可实现性</a></li>
+<li><a href="https://doi.org/10.1126/science.177.4047.393" target="_blank">Anderson 1972 · More Is Different</a> — 还原论者写的反还原论经典</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 34 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
