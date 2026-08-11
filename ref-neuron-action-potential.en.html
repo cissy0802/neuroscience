@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reference · Neuron &amp; Action Potential — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.en.html">← Reference library</a>
+<header>
+<span class="ref-badge">REFERENCE LIBRARY</span>
+<h1>Neuron &amp; Action Potential<span class="en">Neuron &amp; Action Potential</span></h1>
+<p>The only "letter" the brain writes with: a single all-or-none electrical pulse. This page covers the parts it lives on, how it gets triggered, why it has to be all-or-none — and one fact that usually gets left out: <strong>large parts of the nervous system don't use that letter at all, and finish their computing in smooth, continuous voltage instead</strong>.</p>
+</header>
+
+<h2>Four parts: receive · decide · send · hand off</h2>
+<p>A neuron isn't mysterious. Functionally it's four stages:</p>
+
+<figure>
+<svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="somaG" cx="0.42" cy="0.32" r="0.95"><stop offset="0" stop-color="#2e2352"/><stop offset="1" stop-color="#150e2c"/></radialGradient>
+<marker id="npIn" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" refX="8" refY="5.5" orient="auto"><path d="M1,1 L9.5,5.5 L1,10 Z" fill="#a78bfa"/></marker>
+<marker id="npAx" markerWidth="15" markerHeight="14" markerUnits="userSpaceOnUse" refX="11" refY="7" orient="auto"><path d="M1,1 L13,7 L1,13 Z" fill="#34e5e0"/></marker>
+</defs>
+<path d="M16,34 C52,46 64,66 82,80" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" marker-end="url(#npIn)"/>
+<path d="M12,92 C44,89 60,94 80,93" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" marker-end="url(#npIn)"/>
+<path d="M16,158 C52,146 64,126 82,112" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" marker-end="url(#npIn)"/>
+<circle cx="112" cy="96" r="28" fill="url(#somaG)" stroke="#a78bfa" stroke-width="1.4"/>
+<text x="112" y="101" font-size="12" font-weight="600" fill="#efe9ff" text-anchor="middle">soma</text>
+<line x1="140" y1="96" x2="368" y2="96" stroke="#34e5e0" stroke-width="4.5" stroke-linecap="round" marker-end="url(#npAx)"/>
+<rect x="160" y="84" width="42" height="24" rx="11" fill="rgba(167,139,250,0.22)" stroke="rgba(167,139,250,0.6)" stroke-width="1.1"/>
+<rect x="212" y="84" width="42" height="24" rx="11" fill="rgba(167,139,250,0.22)" stroke="rgba(167,139,250,0.6)" stroke-width="1.1"/>
+<rect x="264" y="84" width="42" height="24" rx="11" fill="rgba(167,139,250,0.22)" stroke="rgba(167,139,250,0.6)" stroke-width="1.1"/>
+<rect x="316" y="84" width="42" height="24" rx="11" fill="rgba(167,139,250,0.22)" stroke="rgba(167,139,250,0.6)" stroke-width="1.1"/>
+<path d="M372,96 C392,92 398,72 406,64" fill="none" stroke="#34e5e0" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M372,96 C388,95 396,93 404,91" fill="none" stroke="#34e5e0" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M372,96 C392,99 398,112 407,122" fill="none" stroke="#34e5e0" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="411" cy="61" r="7.5" fill="rgba(52,229,224,0.55)" stroke="#34e5e0" stroke-width="1.2"/>
+<circle cx="409" cy="89" r="7.5" fill="rgba(52,229,224,0.55)" stroke="#34e5e0" stroke-width="1.2"/>
+<circle cx="412" cy="126" r="7.5" fill="rgba(52,229,224,0.55)" stroke="#34e5e0" stroke-width="1.2"/>
+<text x="58" y="188" font-size="11.5" fill="#a99ccc" text-anchor="middle">dendrites · take input</text>
+<text x="250" y="146" font-size="11.5" fill="#7bf0e8" text-anchor="middle">axon (wrapped in myelin segments)</text>
+<text x="412" y="188" font-size="11.5" fill="#a99ccc" text-anchor="middle">terminals · hand off</text>
+<text x="250" y="210" font-size="11" fill="#8f89ad" text-anchor="middle">the pulse arrives at the far end exactly as tall as it left</text>
+</svg>
+<figcaption>receive (dendrites) → decide (soma) → send (axon) → hand off (terminals)</figcaption>
+</figure>
+
+<dl class="kv">
+<dt>Dendrites</dt><dd>That big bush of branches is the <strong>inbox</strong>. Signals from thousands of upstream neurons land here, some pushing toward "fire," some toward "don't."</dd>
+<dt>Soma (cell body)</dt><dd>Sums all those pushes <strong>continuously</strong>. This stage is fully analog — bigger and smaller, no pulses anywhere yet.</dd>
+<dt>Axon</dt><dd>One long output wire; the longest in your body runs from the spine to the toe (close to a metre). <strong>Action potentials happen only here.</strong></dd>
+<dt>Terminals</dt><dd>The far end, where the electrical signal is converted into a chemical one (neurotransmitter release) and handed to the next cell's dendrites.</dd>
+</dl>
+
+<h2>The action potential: one all-or-none flip</h2>
+<p>At rest there's a voltage difference across the membrane, inside about <strong>−70 millivolts</strong> relative to outside. Input from the dendrites nudges that number upward, and <strong>once it crosses a line (about −55 mV, the threshold) a fixed routine fires off</strong>. Whether you barely cross or blow past it, the flip has the same height, shape and duration:</p>
+
+<figure>
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+<line x1="52" y1="200" x2="472" y2="200" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+<line x1="52" y1="20" x2="52" y2="200" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+<line x1="52" y1="166" x2="472" y2="166" stroke="rgba(52,229,224,0.32)" stroke-width="1" stroke-dasharray="3 5"/>
+<line x1="52" y1="138" x2="472" y2="138" stroke="rgba(251,191,36,0.45)" stroke-width="1" stroke-dasharray="3 5"/>
+<path d="M60,166 L126,166 C136,165 141,156 147,138 C153,114 161,54 175,46 C189,38 196,70 203,100 C211,132 218,172 230,182 C240,188 258,177 288,168 L470,166" fill="none" stroke="#34e5e0" stroke-width="3" stroke-linecap="round"/>
+<text x="44" y="26" font-size="10" fill="#6f6a8c" text-anchor="end">mV</text>
+<text x="44" y="50" font-size="10" fill="#8f89ad" text-anchor="end">+40</text>
+<text x="44" y="142" font-size="10" fill="#f0cf88" text-anchor="end">−55</text>
+<text x="44" y="170" font-size="10" fill="#7bf0e8" text-anchor="end">−70</text>
+<text x="110" y="124" font-size="11" fill="#fbbf24" text-anchor="middle">① threshold</text>
+<text x="232" y="52" font-size="11" fill="#34e5e0" text-anchor="start">② sodium rushes in · spike peaks</text>
+<text x="232" y="86" font-size="11" fill="#a78bfa" text-anchor="start">③ potassium leaves · voltage falls</text>
+<line x1="230" y1="190" x2="230" y2="214" stroke="rgba(232,121,249,0.5)" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="238" y="222" font-size="11" fill="#e879f9" text-anchor="start">④ refractory · can't fire again yet</text>
+<text x="470" y="216" font-size="10.5" fill="#8f89ad" text-anchor="end">time →</text>
+</svg>
+<figcaption>All-or-none: either nothing happens, or this exact routine happens</figcaption>
+</figure>
+
+<dl class="kv">
+<dt>① Threshold</dt><dd>A population of membrane "gates" (sodium channels) is waiting for that voltage. At the line they open together.</dd>
+<dt>② Depolarization</dt><dd>Positively charged sodium ions pour in and the voltage shoots to around +40 mV. This step <strong>drives itself</strong>: the more gates open the more ions flow, and the more ions flow the more gates open — which is exactly where "all-or-none" comes from. Once started, it can't stop halfway.</dd>
+<dt>③ Repolarization</dt><dd>Sodium gates slam shut, potassium channels open, positively charged potassium leaves, and the voltage drops back — usually dipping slightly below rest.</dd>
+<dt>④ Refractory period</dt><dd>Sodium gates need a millisecond or two to reset, and during that window <strong>no amount of input produces another spike</strong>. This hard limit sets the neuron's maximum firing rate (a few hundred per second for most cells) and keeps pulses travelling one way instead of doubling back.</dd>
+</dl>
+
+<h2>Why it has to be all-or-none</h2>
+<p>Because it has to travel <strong>far</strong>. A smoothly varying voltage (an analog signal) decays within about a millimetre of membrane. An all-or-none pulse doesn't: it is <strong>regenerated from scratch at every step along the way</strong>, so a pulse arriving after a metre looks identical to one arriving after a millimetre. The price is that the amplitude dimension is given up entirely — all the information has to be squeezed into <em>when it fires, how densely, and which cell fired</em>.</p>
+<p><strong>Myelin</strong> is the matching accelerator: an insulating sheath that glial cells wrap around the axon (<a href="ref-glia.en.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">glial cells</a>). Along the wrapped stretches the pulse isn't rebuilt point by point; it hops, refreshing only at the bare gaps (nodes of Ranvier), which takes conduction speed from around a metre per second to <strong>over a hundred</strong>. Multiple sclerosis is what happens when the immune system strips that sheath: signals arrive late and out of order.</p>
+
+<h2>Counterintuitive: plenty of places never spike at all</h2>
+<p>Textbooks can leave the impression that nervous system = spikes. Not so. <strong>The first cell layers in the retina — photoreceptors and bipolar cells — produce no action potentials whatsoever.</strong> They work entirely in continuously varying voltage, computing contrast and edges along the way, and only the last layer (ganglion cells) converts the result into pulses for the trip to the brain (<a href="ref-visual-pathway.en.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">visual pathway</a>).</p>
+<p>The rule is clean: <strong>spike when you need distance, stay analog when you're computing locally.</strong> Summation inside dendrites, synaptic strength, small local circuits — all analog. So "a neuron is a switch" is a convenient simplification; a large share of the actual computation happens in the continuous territory <strong>before</strong> the switch.</p>
+<p>There's also a bill to pay. Spikes are expensive: after every one, ion pumps have to haul the displaced sodium and potassium back where they belong, and those pumps are a major share of the brain's energy budget. So evolution kept firing frugal — <strong>only a small fraction of neurons are spiking at any given moment</strong>, while the rest sit quiet. That constraint shapes how the brain encodes everything.</p>
+
+<div class="links">
+<h3>// Cited by these main-track issues</h3>
+<p class="who">Topic 35 Neural coding · Topic 36 Single-neuron computation (dendrites) · Topic 40 Spiking networks &amp; neuromorphic computing · Topic 41 The 20-watt miracle</p>
+<h3 style="margin-top:18px">// Further reading</h3>
+<p><a href="https://en.wikipedia.org/wiki/Action_potential" target="_blank">Action potential</a> · <a href="https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model" target="_blank">The Hodgkin–Huxley model</a> (1963 Nobel — the four steps above, written as equations) · <a href="https://en.wikipedia.org/wiki/Myelin" target="_blank">Myelin</a> · <a href="https://en.wikipedia.org/wiki/Saltatory_conduction" target="_blank">Saltatory conduction</a> · <a href="https://en.wikipedia.org/wiki/Graded_potential" target="_blank">Graded potentials</a></p>
+</div>
+<footer>BigCat · Neuroscience · Reference · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

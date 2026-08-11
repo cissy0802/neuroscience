@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 35 · Neural Coding — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 35 · PHASE E COMPUTATIONAL</span>
+<h1>Neural Coding</h1>
+<h2>One letter in the alphabet — and the whole world to write</h2>
+<div class="date">2026-08-11 · BigCat</div>
+<p class="pitch">There is no word "red" inside your head. There's a small handful of cells firing a bit more than usual.</p>
+</header>
+<div class="intro">
+<p>Right now you're smelling something, hearing the air conditioning, and half-remembering what's due tomorrow. Those three completely unrelated things are carried by exactly one kind of thing in your head: identical little electrical pulses. They have no colour, no scent, no weight; every one looks like every other. <strong>The entire richness of the world has to be squeezed into <em>when</em> a cell fires, <em>how densely</em>, and <em>which</em> cell it is.</strong> This issue is about how the brain writes. By the end you'll hit a harder question: being able to read a code out of the brain is not the same as having found the code the brain itself uses.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>The whole brain has one letter</h2>
+<p>What does a signal in the brain actually look like? The answer is almost disappointingly plain: what runs along a neuron's output wire is a series of brief electrical pulses, about a millisecond each, formally called action potentials and known in the trade as <em>spikes</em>. The crucial part — <strong>they are all exactly the same height</strong>. Not "important things fire harder." Literally the same: either nothing, or that one fixed routine. (How a spike gets triggered and why it has to be all-or-none: <a class="reflink" href="ref-neuron-action-potential.en.html">neuron &amp; action potential</a>)</p>
+<figure>
+<svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg">
+<line x1="40" y1="110" x2="452" y2="110" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+<line x1="40" y1="46" x2="452" y2="46" stroke="rgba(52,229,224,0.28)" stroke-width="1" stroke-dasharray="3 5"/>
+<path d="M57,110 L62,46 L67,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M83,110 L88,46 L93,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M143,110 L148,46 L153,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M171,110 L176,46 L181,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M185,110 L190,46 L195,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M257,110 L262,46 L267,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M325,110 L330,46 L335,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M351,110 L356,46 L361,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M367,110 L372,46 L377,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M415,110 L420,46 L425,110" fill="none" stroke="#34e5e0" stroke-width="2.4" stroke-linejoin="round"/>
+<text x="246" y="32" font-size="11.5" fill="#7bf0e8" text-anchor="middle">every spike is the same height · amplitude carries nothing</text>
+<text x="246" y="140" font-size="12" fill="#a99ccc" text-anchor="middle">all that's left: when it fires · how densely · which cell</text>
+<text x="452" y="128" font-size="10.5" fill="#8f89ad" text-anchor="end">time →</text>
+</svg>
+<figcaption>A spike train: the amplitude dimension has been given up entirely</figcaption>
+</figure>
+<p>It's a bit like a language with only one sound: <em>tick</em>. You can't say <em>tick</em> in a redder or sweeter way. The only room you have is when you tick, how fast, and who's ticking. The whole field of neural coding asks how the world gets packed into those three.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Count the spikes, or read the beat</h2>
+<p>In 1926 Edgar Adrian pushed an electrode into a sensory nerve and stretched a muscle. What he saw later won a Nobel: <strong>the harder the stretch, the faster the neuron fired</strong>. Intensity became frequency. That's <strong>rate coding</strong>, and it's still the most reliable thing we know: press harder on the skin, turn up the light, turn up the volume, and the number of spikes per second goes up.</p>
+<p>But it has a problem: <strong>counting takes time.</strong> To get a decent estimate of "spikes per second" you need a window — tens, often hundreds of milliseconds. People are faster than that. In 1996 Simon Thorpe's group flashed photographs at people who had to say whether an animal was in the picture, and the brain signal separated the two cases within about 150 ms. The signal crosses several stations to get that far, so at each station each neuron may have managed one or two spikes total. One or two spikes is no rate to count.</p>
+<figure>
+<svg viewBox="0 0 480 232" xmlns="http://www.w3.org/2000/svg">
+<text x="240" y="20" font-size="12" fill="#fbbf24" text-anchor="middle">same window · same firing rate</text>
+<line x1="52" y1="58" x2="452" y2="58" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+<line x1="120" y1="58" x2="120" y2="32" stroke="#34e5e0" stroke-width="2.6"/>
+<line x1="196" y1="58" x2="196" y2="32" stroke="#34e5e0" stroke-width="2.6"/>
+<line x1="272" y1="58" x2="272" y2="32" stroke="#34e5e0" stroke-width="2.6"/>
+<line x1="348" y1="58" x2="348" y2="32" stroke="#34e5e0" stroke-width="2.6"/>
+<text x="30" y="52" font-size="11" fill="#8f89ad" text-anchor="start">①</text>
+<text x="120" y="76" font-size="10.5" fill="#8f89ad" text-anchor="start">evenly spread</text>
+<line x1="52" y1="128" x2="452" y2="128" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+<line x1="108" y1="128" x2="108" y2="102" stroke="#34e5e0" stroke-width="2.6"/>
+<line x1="124" y1="128" x2="124" y2="102" stroke="#34e5e0" stroke-width="2.6"/>
+<line x1="140" y1="128" x2="140" y2="102" stroke="#34e5e0" stroke-width="2.6"/>
+<line x1="348" y1="128" x2="348" y2="102" stroke="#34e5e0" stroke-width="2.6"/>
+<text x="30" y="122" font-size="11" fill="#8f89ad" text-anchor="start">②</text>
+<text x="108" y="146" font-size="10.5" fill="#8f89ad" text-anchor="start">burst up front</text>
+<line x1="52" y1="182" x2="452" y2="182" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+<line x1="120" y1="182" x2="120" y2="156" stroke="#34e5e0" stroke-width="2.6"/>
+<line x1="316" y1="182" x2="316" y2="156" stroke="#34e5e0" stroke-width="2.6"/>
+<line x1="332" y1="182" x2="332" y2="156" stroke="#34e5e0" stroke-width="2.6"/>
+<line x1="348" y1="182" x2="348" y2="156" stroke="#34e5e0" stroke-width="2.6"/>
+<text x="30" y="176" font-size="11" fill="#8f89ad" text-anchor="start">③</text>
+<text x="332" y="200" font-size="10.5" fill="#8f89ad" text-anchor="middle">burst at the end</text>
+<text x="424" y="52" font-size="10.5" fill="#a99ccc" text-anchor="middle">4 spikes</text>
+<text x="424" y="122" font-size="10.5" fill="#a99ccc" text-anchor="middle">4 spikes</text>
+<text x="424" y="176" font-size="10.5" fill="#a99ccc" text-anchor="middle">4 spikes</text>
+<text x="240" y="226" font-size="11.5" fill="#e879f9" text-anchor="middle">count only → all three identical; read timing → three different messages</text>
+</svg>
+<figcaption>Equal rate doesn't mean equal content — there's another layer in the timing</figcaption>
+</figure>
+<p>So there's a second scheme: <strong>temporal coding</strong>, where the information sits in <em>when</em> each spike lands. Three common flavours. <strong>Who fires first</strong>: the most strongly driven cells tend to speak up first, and the mere rank order of that first wave is enough to reconstruct a face. <strong>Phase</strong>: the hippocampus has a lovely example — as a rat runs through the patch of space one place cell cares about, that cell fires a little earlier on each cycle of the background brain rhythm, so "how far into the patch am I" gets written into the phase. That's phase precession. <strong>Precise intervals</strong>: how far apart the spikes in a small burst sit is itself content.</p>
+<p>The point isn't to pick one. Several layers can ride the same spike train at once: coarse intensity in the rate, fine timing in the phase — like separate channels on one wire.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>No single cell is in charge of your grandmother</h2>
+<p>A natural guess: maybe somewhere there's one cell dedicated to your grandmother, firing whenever she shows up. That hypothetical got nicknamed the <strong>grandmother cell</strong>. Reality runs almost the other way.</p>
+<p>Take the motor cortex (these experiments later became the foundation of brain–computer interfaces). Have a monkey reach in various directions and you find that every cell has a preferred direction it fires hardest for. But it doesn't fire <em>only</em> for that one — thirty degrees off, sixty degrees off, it still fires, just less. So from one cell alone you cannot tell whether the hand went toward twenty degrees or eighty: <strong>each cell is broadly tuned — opinionated but imprecise</strong>.</p>
+<figure>
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="pvC" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" refX="8" refY="5.5" orient="auto"><path d="M1,1 L9.5,5.5 L1,10 Z" fill="#34e5e0"/></marker>
+<marker id="pvA" markerWidth="16" markerHeight="15" markerUnits="userSpaceOnUse" refX="11.5" refY="7.5" orient="auto"><path d="M1,1 L14,7.5 L1,14 Z" fill="#fbbf24"/></marker>
+</defs>
+<text x="228" y="26" font-size="12" fill="#a99ccc" text-anchor="middle">motor cortex · six cells firing → one direction</text>
+<circle cx="228" cy="140" r="100" fill="none" stroke="rgba(167,139,250,0.16)" stroke-width="1"/>
+<line x1="228" y1="140" x2="305" y2="112" stroke="#34e5e0" stroke-width="2.4" marker-end="url(#pvC)"/>
+<line x1="228" y1="140" x2="242" y2="59" stroke="#34e5e0" stroke-width="2.4" marker-end="url(#pvC)"/>
+<line x1="228" y1="140" x2="202" y2="118" stroke="#34e5e0" stroke-width="2.4" marker-end="url(#pvC)"/>
+<line x1="228" y1="140" x2="196" y2="152" stroke="#34e5e0" stroke-width="2.4" marker-end="url(#pvC)"/>
+<line x1="228" y1="140" x2="222" y2="174" stroke="#34e5e0" stroke-width="2.4" marker-end="url(#pvC)"/>
+<line x1="228" y1="140" x2="254" y2="162" stroke="#34e5e0" stroke-width="2.4" marker-end="url(#pvC)"/>
+<line x1="228" y1="140" x2="295" y2="60" stroke="#fbbf24" stroke-width="4.2" marker-end="url(#pvA)"/>
+<circle cx="228" cy="140" r="4" fill="#e879f9"/>
+<text x="314" y="110" font-size="10.5" fill="#8f89ad" text-anchor="start">①</text>
+<text x="238" y="48" font-size="10.5" fill="#8f89ad" text-anchor="middle">②</text>
+<text x="192" y="116" font-size="10.5" fill="#8f89ad" text-anchor="end">③</text>
+<text x="188" y="156" font-size="10.5" fill="#8f89ad" text-anchor="end">④</text>
+<text x="218" y="192" font-size="10.5" fill="#8f89ad" text-anchor="middle">⑤</text>
+<text x="266" y="172" font-size="10.5" fill="#8f89ad" text-anchor="start">⑥</text>
+<text x="312" y="52" font-size="11" fill="#fbbf24" text-anchor="start">readout</text>
+<line x1="150" y1="262" x2="178" y2="262" stroke="#34e5e0" stroke-width="2.5"/>
+<text x="186" y="266" font-size="11" fill="#a99ccc" text-anchor="start">one cell (longer = firing more)</text>
+<line x1="150" y1="282" x2="178" y2="282" stroke="#fbbf24" stroke-width="4.2"/>
+<text x="186" y="286" font-size="11" fill="#f0cf88" text-anchor="start">summed = the population's direction</text>
+</svg>
+<figcaption>The population vector: each arrow points at that cell's preferred direction, scaled by how much it's firing — then added up</figcaption>
+</figure>
+<p>The precise answer lives in the chorus. Picture every participating cell as an arrow: pointing at its preferred direction, as long as its current firing rate. Add those arrows head to tail, and <strong>the direction of the sum matches where the hand actually went, remarkably well</strong>. That's the population vector — no cell in the group knows the answer; the answer exists only in the act of adding up.</p>
+<p>What about the famous "Jennifer Aniston cell" from 2005? A patient really did have a cell that fired for photos of that actress and not for other people. It is startlingly sparse — but it is <strong>not</strong> a grandmother cell: the same cell fired for many different photos of her, and even for her name in written text, so it codes a <strong>concept</strong> rather than an image. And the researchers did the arithmetic themselves: if one arbitrarily placed electrode can stumble onto such a cell, there cannot be just one — thousands of cells stand behind the same concept. The truth sits between the extremes: not one cell per job, not everyone participating, but <strong>a small handful</strong>.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>In AI this is called a <b>distributed representation</b>. You may have run into the word <em>embedding</em>: when a model handles a word or an image it writes it out as a list of several hundred or thousand numbers. The meaning isn't in any single number, it's in <b>the pattern across the whole list</b> — exactly as direction isn't in any single cell, only in the chorus. How does anything downstream read it? Give each number a weight and add them up — the same move as computing a population vector. Both sides also share the same payoff: <b>the combinations available to a small handful of units vastly outnumber the units themselves</b>.</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Light up two or three squares: a frugal dictionary</h2>
+<p>If a group encodes together, wouldn't involving every cell carry the most information? The brain says no. It goes the other way: <strong>at any instant only a tiny fraction of neurons are firing, and the vast majority are silent</strong>. That's sparse coding.</p>
+<p>The first reason is unglamorous: cost. After every spike a cell has to spend energy hauling displaced ions back where they belong, and the whole brain runs on about twenty watts. By one estimate that budget only affords having on the order of one percent of cortical neurons active at once.</p>
+<p>The second reason is the interesting one. In 1996 Olshausen and Field did something very clean: they fed a simple model a pile of natural photographs with only two demands — <strong>you must be able to rebuild the image out of your parts, and you may only use a few parts at a time</strong>. They told it nothing whatsoever about brains. The set of parts it grew for itself turned out to be small oriented edge stripes, nearly identical to the receptive fields of real simple cells in V1 (V1 is the first cortical stop for visual signals: <a class="reflink" href="ref-visual-pathway.en.html">visual pathway</a>).</p>
+<figure>
+<svg viewBox="0 0 480 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="patchG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2246"/><stop offset="1" stop-color="#120d24"/></linearGradient>
+<marker id="scA" markerWidth="13" markerHeight="12" markerUnits="userSpaceOnUse" refX="9.5" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"/></marker>
+</defs>
+<rect x="24" y="60" width="92" height="92" rx="12" fill="url(#patchG)" stroke="rgba(167,139,250,0.35)" stroke-width="1.2"/>
+<line x1="48" y1="119" x2="92" y2="93" stroke="rgba(251,191,36,0.5)" stroke-width="7" stroke-linecap="round"/>
+<line x1="86" y1="122" x2="54" y2="90" stroke="rgba(251,191,36,0.5)" stroke-width="7" stroke-linecap="round"/>
+<line x1="64" y1="129" x2="76" y2="83" stroke="rgba(251,191,36,0.5)" stroke-width="7" stroke-linecap="round"/>
+<text x="70" y="172" font-size="11" fill="#a99ccc" text-anchor="middle">a patch of a natural image</text>
+<line x1="126" y1="106" x2="162" y2="106" stroke="#a78bfa" stroke-width="2.6" marker-end="url(#scA)"/>
+<text x="144" y="96" font-size="10.5" fill="#a78bfa" text-anchor="middle">split</text>
+<rect x="224" y="46" width="40" height="40" rx="6" fill="rgba(251,191,36,0.14)" stroke="#fbbf24" stroke-width="1.4"/>
+<rect x="224" y="94" width="40" height="40" rx="6" fill="rgba(251,191,36,0.14)" stroke="#fbbf24" stroke-width="1.4"/>
+<rect x="320" y="94" width="40" height="40" rx="6" fill="rgba(251,191,36,0.14)" stroke="#fbbf24" stroke-width="1.4"/>
+<rect x="176" y="46" width="40" height="40" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<rect x="272" y="46" width="40" height="40" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<rect x="320" y="46" width="40" height="40" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<rect x="176" y="94" width="40" height="40" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<rect x="272" y="94" width="40" height="40" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<rect x="176" y="142" width="40" height="40" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<rect x="224" y="142" width="40" height="40" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<rect x="272" y="142" width="40" height="40" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<rect x="320" y="142" width="40" height="40" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<line x1="183" y1="66" x2="209" y2="66" stroke="rgba(167,139,250,0.42)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="233" y1="73" x2="255" y2="60" stroke="#fbbf24" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="286" y1="77" x2="299" y2="55" stroke="rgba(167,139,250,0.42)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="340" y1="53" x2="340" y2="79" stroke="rgba(167,139,250,0.42)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="183" y1="117" x2="209" y2="111" stroke="rgba(167,139,250,0.42)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="241" y1="127" x2="247" y2="101" stroke="#fbbf24" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="295" y1="127" x2="289" y2="101" stroke="rgba(167,139,250,0.42)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="349" y1="123" x2="331" y2="105" stroke="#fbbf24" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="187" y1="171" x2="205" y2="153" stroke="rgba(167,139,250,0.42)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="251" y1="173" x2="238" y2="151" stroke="rgba(167,139,250,0.42)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="305" y1="165" x2="279" y2="159" stroke="rgba(167,139,250,0.42)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="327" y1="164" x2="353" y2="160" stroke="rgba(167,139,250,0.42)" stroke-width="2.4" stroke-linecap="round"/>
+<text x="368" y="104" font-size="11" fill="#7bf0e8" text-anchor="start">≈ simple</text>
+<text x="368" y="124" font-size="11" fill="#7bf0e8" text-anchor="start">cells in V1</text>
+<text x="268" y="206" font-size="11.5" fill="#a99ccc" text-anchor="middle">the learned dictionary · one edge orientation per square</text>
+<text x="268" y="228" font-size="11.5" fill="#fbbf24" text-anchor="middle">any given patch · lights up only two or three</text>
+</svg>
+<figcaption>Given just two demands (reconstruct it, use few parts), the model grew V1 on its own</figcaption>
+</figure>
+<p>The result is a little unnerving: <strong>V1 may look the way it does not because evolution picked that arbitrarily, but because it is the one good solution to "rebuild natural images with as few parts as possible."</strong> And sparseness buys more than electricity — with few things lit at once, whatever reads the code downstream is less likely to smear two things together. Cheap and legible turn out to be the same design here.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This idea has just come roaring back in AI. Large language models have an awkward property called <b>superposition</b>: one unit tends to moonlight for several unrelated concepts at once (the same number handling both "French" and "chemistry"), so staring at a single unit tells you nothing — the same complaint as "single neurons are broadly tuned." The leading fix right now is to train a deliberately wide, deliberately sparse little network to pull the tangle apart, allowing only a few units to be on at a time and thereby forcing one concept per slot. That's a <b>sparse autoencoder</b>, structurally identical to the Olshausen paper, with the natural images swapped out for a model's internal activations.</p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 CROSSING OVER · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Meaning isn't in any single part, only in the relations between them" — several completely unrelated traditions arrived here on their own:</p>
+<ul>
+<li><b>Buddhism · Madhyamaka</b>: <em>dependent origination, emptiness of intrinsic nature</em> — nothing exists as a self-contained essence; things hold together only within a web of conditions. The failure to find grandmother cells is that claim tested inside a skull: the "direction," that face, sits in no individual cell. Strip out the relations and it isn't anywhere at all.</li>
+<li><b>Linguistics · Saussure</b>: a word's meaning comes not from itself but from its <b>differences</b> from other words — language is "a system of differences with no positive terms." That's the distributed representation a century early; Firth's later line, "you shall know a word by the company it keeps," grew directly into today's word vectors.</li>
+<li><b>Information theory · Shannon and Barlow</b>: in 1961 Barlow proposed that sensory systems aim to squeeze the <b>redundancy</b> out of their input — carry the most information with the least activity. Sparse coding is a direct descendant. Neural coding as a field is, in the end, Shannon's question carried into the skull.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// THINKING DEEPER</h3>
+<details><summary>Is the "red" in my head the same pattern as the "red" in yours?</summary><div>Certainly not the same cells — there's no way to match up your neurons with mine one for one. But it might be the same <strong>relational structure</strong>: red sits near orange and far from blue, and that geometry of "what's how far from what" can be highly consistent across two brains. So what lines up may not be the content but the <strong>shape</strong>. This thread leads into neural manifolds later on, and runs straight into the hardest question on the consciousness side: if the geometry matches perfectly, can the experience still differ?</div></details>
+<details><summary>We can already decode images and sentences from brain activity — doesn't that mean the code is cracked?</summary><div>No. <strong>The information a decoder uses is not necessarily information the brain's downstream circuits read.</strong> The same signal might be picked up by ten different decoders while the real downstream circuit taps only one of those lines. "Readable" proves the information is present; it does not prove it is used. Telling the two apart requires intervening — change the signal and see whether behaviour follows. This is "correlation isn't causation" in its computational-level form.</div></details>
+<details><summary>Sparseness taken to its limit is one cell per concept. Why doesn't the brain go all the way?</summary><div>One-cell-per-job has three fatal flaws: cells die (lose one and you lose a concept forever); it can't generalise (something never seen has no cell waiting for it); and it can't compose ("a purple dog" would need a brand-new cell). The combinations available to a small handful of cells, by contrast, explode in number — and they come with fault tolerance and similarity for free, since two similar things light up overlapping squares, which is more or less what "similar" means.</div></details>
+<details><summary>All-or-none spikes throw away the amplitude dimension. Isn't that pure waste?</summary><div>What amplitude buys back is reliable transmission: an analog voltage dies within a millimetre, while an all-or-none pulse is rebuilt from scratch at every step, so it arrives after a metre looking as it did after a millimetre. But the more interesting side is the other one — the constraint pushes computation into the dimension of <strong>time</strong>: event-driven, speak only when there's something to say, otherwise stay silent. That's precisely what neuromorphic chips are trying to copy, and precisely where today's artificial networks are least brain-like: they recompute every unit at every step whether or not it has anything to say.</div></details>
+</div>
+<div class="refs">
+<h3>// FURTHER READING</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Neural_coding" target="_blank">Neural coding</a> — the table of contents for this issue: rate, timing, population, sparseness</li>
+<li><a href="https://en.wikipedia.org/wiki/Edgar_Adrian" target="_blank">Edgar Adrian</a> — 1932 Nobel, the first evidence for rate coding</li>
+<li><a href="https://en.wikipedia.org/wiki/Neuronal_ensemble" target="_blank">Population coding</a> — the population vector and chorus-style readout</li>
+<li><a href="https://en.wikipedia.org/wiki/Phase_precession" target="_blank">Phase precession</a> — the elegant case of position written into the phase of a brain rhythm</li>
+<li><a href="https://en.wikipedia.org/wiki/Grandmother_cell" target="_blank">Grandmother cell</a> — including the backstory of the 2005 "concept cells"</li>
+<li><a href="https://www.nature.com/articles/381607a0" target="_blank">Olshausen &amp; Field 1996 · Nature</a> — demand sparse reconstruction, get V1 filters</li>
+<li><a href="https://en.wikipedia.org/wiki/Efficient_coding_hypothesis" target="_blank">Efficient coding hypothesis (Barlow 1961)</a> — the squeeze-out-redundancy programme</li>
+<li><a href="https://transformer-circuits.pub/2023/monosemantic-features/index.html" target="_blank">Towards Monosemanticity</a> — sparse autoencoders used to pull apart a language model's internal representations</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 35 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
