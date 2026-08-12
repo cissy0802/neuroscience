@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 36 · Single-neuron computation — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 36 · PHASE E COMPUTATIONAL</span>
+<h1>Single-Neuron Computation</h1>
+<h2>There is a whole network inside one cell</h2>
+<div class="date">2026-08-12 · BigCat</div>
+<p class="pitch">The textbook neuron — add up the inputs, fire if you cross a line — was assumed on paper in 1943. Nobody ever measured it.</p>
+</header>
+<div class="intro">
+<p>You have probably seen the picture: a circle with a few lines coming in, each input multiplied by a weight, all of it summed, and an output that fires once the sum crosses a threshold. The picture is so convenient that nearly every introduction to brains <em>and</em> to artificial intelligence still uses it. <strong>But it is an assumption, not a measurement.</strong> Real dendrites — the bushy branches a neuron receives on — are not obedient wires: they leak, they care where an input lands, and they fire little spikes of their own. This issue is about something genuinely subversive: <strong>a serious share of the "computation" happens inside a single cell, finished before it ever decides whether to spike.</strong></p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>A dendrite is not a wire — it's a leaky pipe</h2>
+<p>First, the parts. The branches a neuron receives on are its dendrites. An upstream cell hands its signal over at a contact point on one of those branches (that contact is a synapse — <a class="reflink" href="ref-synaptic-transmission.en.html">synaptic transmission</a>). The signal flows inward toward the cell body, and the cell body is where the decision to send out a spike gets made (<a class="reflink" href="ref-neuron-action-potential.en.html">neurons &amp; action potentials</a>).</p>
+<p>The textbook diagram treats those branches as ideal cables: whatever arrives is delivered intact. <strong>In fact they leak everywhere.</strong> The membrane is not an insulator, so current bleeds out along the way and the signal shrinks as it travels. In the 1960s Wilfrid Rall turned this into equations, solving dendrites as segments of leaky pipe — an approach known as cable theory. The conclusion is blunt: <strong>a synapse out on a distal twig may deliver only a fraction of its push by the time it reaches the cell body.</strong></p>
+<figure>
+<svg viewbox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.4" cy="0.32" id="dcSoma" r="0.95"><stop offset="0" stop-color="#2e2352"></stop><stop offset="1" stop-color="#150e2c"></stop></radialgradient>
+</defs>
+<path d="M82,112 C160,96 240,84 420,74" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="5"></path>
+<path d="M232,86 C250,64 258,48 262,30" fill="none" opacity="0.75" stroke="#a78bfa" stroke-linecap="round" stroke-width="3.4"></path>
+<circle cx="58" cy="120" fill="url(#dcSoma)" r="24" stroke="#a78bfa" stroke-width="1.4"></circle>
+<text fill="#efe9ff" font-size="11.5" font-weight="600" text-anchor="middle" x="58" y="124">soma</text>
+<circle cx="130" cy="103" fill="#fbbf24" r="6.5"></circle>
+<circle cx="369" cy="77" fill="#fbbf24" r="6.5"></circle>
+<text fill="#f0cf88" font-size="11" text-anchor="middle" x="130" y="86">proximal input</text>
+<text fill="#f0cf88" font-size="11" text-anchor="middle" x="369" y="60">distal input</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="250" y="142">dendrite: a branch that leaks all the way</text>
+<text fill="#a99ccc" font-size="11.5" text-anchor="middle" x="240" y="176">same input · how much is left at the soma</text>
+<line stroke="rgba(255,255,255,0.14)" stroke-width="1" x1="40" x2="225" y1="228" y2="228"></line>
+<path d="M40,228 C86,228 92,180 118,180 C142,180 158,226 225,228" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<line stroke="rgba(255,255,255,0.14)" stroke-width="1" x1="255" x2="440" y1="228" y2="228"></line>
+<path d="M255,228 C300,228 308,215 330,215 C352,215 366,227 440,228" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="132" y="248">proximal · nearly intact</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="347" y="248">distal · badly shrunk</text>
+</svg>
+<figcaption>The same push, delivered at different distances, arrives at very different sizes</figcaption>
+</figure>
+<p>That alone is interesting enough: <strong>position is itself a weight.</strong> Move the same upstream cell's contact a little closer to the cell body and its vote counts for more — and this really happens, since synapses grow, shift and get pruned. But if the story ended here, the neuron would still be computing a weighted sum, just with distance folded into the weights. The real turn comes next.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Every branch detonates on its own</h2>
+<p>The dendritic membrane carries gates that can open by themselves, and the most important of them is the NMDA receptor. It has an odd temper: <strong>a magnesium ion plugs it shut, and the plug only pops out once the local stretch of membrane has already been lifted by other inputs.</strong> So it isn't "open when a signal arrives" — it's "open when a signal arrives <em>and</em> the neighbourhood is already busy". A part that demands two things at once is called a coincidence detector.</p>
+<p>The consequence is dramatic. If several inputs land <strong>on the same branch within a few milliseconds</strong>, they first lift that little stretch of membrane; past a certain point the NMDA gates open together, current pours in, and the branch fires a local spike of its own — a dendritic spike — amplifying the total far beyond what the inputs would sum to separately. The same number of inputs <strong>scattered across different branches</strong> lift nothing: each branch adds its modest bit, and the total is close to a straight line.</p>
+<figure>
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<line stroke="rgba(255,255,255,0.18)" stroke-width="1" x1="60" x2="446" y1="200" y2="200"></line>
+<line stroke="rgba(255,255,255,0.18)" stroke-width="1" x1="60" x2="60" y1="34" y2="200"></line>
+<text fill="#6f6a8c" font-size="10.5" text-anchor="start" x="48" y="24">total reaching the soma ↑</text>
+<path d="M60,200 C118,196 150,188 186,176 C212,167 226,110 264,84 C302,58 362,50 436,46" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="3"></path>
+<path d="M60,200 L436,128" fill="none" stroke="#a78bfa" stroke-dasharray="6 5" stroke-width="2.4"></path>
+<text fill="#7bf0e8" font-size="11.5" text-anchor="middle" x="336" y="36">clustered on one branch → ignition</text>
+<text fill="#c0aef8" font-size="11.5" text-anchor="end" x="444" y="112">spread across branches → plain sum</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="252" y="222">number of simultaneous inputs →</text>
+<text fill="#fbbf24" font-size="11" text-anchor="middle" x="162" y="64">same number of inputs</text>
+<text fill="#fbbf24" font-size="11" text-anchor="middle" x="162" y="82">→ tenfold difference</text>
+</svg>
+<figcaption>Inputs clustered on one branch amplify supralinearly; spread out, they merely add</figcaption>
+</figure>
+<p>So a neuron is not an adder. It is <strong>a set of semi-independent little adders — roughly one per branch — each making its own nonlinear judgement first, with the cell body summing those judgements afterwards</strong>. In 2003 Poirazi and Mel put it bluntly: viewed as an input–output device, a cortical pyramidal neuron behaves like a <strong>two-layer</strong> artificial network, not like one unit.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>In artificial networks, "one layer" versus "two layers" is not a difference of size but of <b>capability</b>. One layer means: multiply the inputs by weights, add them up, pass the result through a simple nonlinearity — geometrically, that can only cut the space with a single straight boundary; curved boundaries are out of reach. Add a layer, so that several local nonlinear decisions happen before the summing, and curved — even disconnected — boundaries become possible. That is the real weight of Poirazi and Mel's claim: <b>what you were calling one unit has already crossed that threshold.</b> Counting biological neurons against artificial units breaks down right here.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>One cell can compute XOR</h2>
+<p>First, what XOR is. Picture a lamp with two switches and this rule: <strong>flip one and the lamp comes on; flip both and it goes off again; flip neither and it stays off.</strong> Real houses have this — the pair of switches at either end of a staircase that each control the same light. What makes it awkward is that "more input, more output" fails: halfway is brightest, and pushing further makes it darker.</p>
+<p>This left a scar on the history of AI. In 1969 Minsky and Papert wrote a book proving that the single-layer networks of the day (perceptrons) could not compute XOR. The result pressed an entire research direction flat for years, until multi-layer networks and ways to train them matured. <strong>"A single unit cannot compute XOR" became textbook fact.</strong></p>
+<figure>
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="dcX" markerheight="10" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="7.5" refy="5"><path d="M1,1 L8.5,5 L1,9 Z" fill="#8f89ad"></path></marker>
+<marker id="dcD" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#a99ccc" font-size="11.5" text-anchor="middle" x="106" y="30">XOR: on only with one switch</text>
+<circle cx="44" cy="62" fill="rgba(255,255,255,0.05)" r="8" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<circle cx="72" cy="62" fill="rgba(255,255,255,0.05)" r="8" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<line marker-end="url(#dcX)" stroke="#8f89ad" stroke-width="1.6" x1="90" x2="126" y1="62" y2="62"></line>
+<circle cx="148" cy="62" fill="rgba(255,255,255,0.05)" r="11" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<circle cx="44" cy="102" fill="#fbbf24" r="8"></circle>
+<circle cx="72" cy="102" fill="rgba(255,255,255,0.05)" r="8" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<line marker-end="url(#dcX)" stroke="#8f89ad" stroke-width="1.6" x1="90" x2="126" y1="102" y2="102"></line>
+<circle cx="148" cy="102" fill="rgba(251,191,36,0.85)" r="11" stroke="#fbbf24" stroke-width="1.2"></circle>
+<circle cx="44" cy="142" fill="rgba(255,255,255,0.05)" r="8" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<circle cx="72" cy="142" fill="#fbbf24" r="8"></circle>
+<line marker-end="url(#dcX)" stroke="#8f89ad" stroke-width="1.6" x1="90" x2="126" y1="142" y2="142"></line>
+<circle cx="148" cy="142" fill="rgba(251,191,36,0.85)" r="11" stroke="#fbbf24" stroke-width="1.2"></circle>
+<circle cx="44" cy="182" fill="#fbbf24" r="8"></circle>
+<circle cx="72" cy="182" fill="#fbbf24" r="8"></circle>
+<line marker-end="url(#dcX)" stroke="#8f89ad" stroke-width="1.6" x1="90" x2="126" y1="182" y2="182"></line>
+<circle cx="148" cy="182" fill="rgba(255,255,255,0.05)" r="11" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="58" y="212">two switches</text>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="148" y="212">lamp</text>
+<line stroke="rgba(167,139,250,0.25)" stroke-dasharray="4 6" stroke-width="1" x1="204" x2="204" y1="34" y2="212"></line>
+<line stroke="rgba(255,255,255,0.18)" stroke-width="1" x1="248" x2="452" y1="200" y2="200"></line>
+<line stroke="rgba(255,255,255,0.18)" stroke-width="1" x1="248" x2="248" y1="42" y2="200"></line>
+<path d="M250,198 C282,196 298,140 322,108 C344,80 362,86 384,116 C402,142 424,170 450,190" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="3"></path>
+<path d="M250,198 C300,186 340,150 450,98" fill="none" stroke="rgba(167,139,250,0.5)" stroke-dasharray="6 5" stroke-width="2.2"></path>
+<text fill="#f5b8fb" font-size="11" text-anchor="middle" x="352" y="44">human dendrite: more is less</text>
+<text fill="#c0aef8" font-size="10.5" text-anchor="middle" x="352" y="64">ordinary cell (dashed): more is more</text>
+<line marker-end="url(#dcD)" stroke="#e879f9" stroke-width="1.8" x1="404" x2="424" y1="140" y2="162"></line>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="352" y="222">input strength →</text>
+</svg>
+<figcaption>A response that rises then falls is all one dendrite needs for "on with only one"</figcaption>
+</figure>
+<p>In 2020 Gidon and colleagues put a knife into that verdict in <em>Science</em>. Recording from dendrites of pyramidal neurons in the upper layers (2/3) of human cortex — tissue removed during epilepsy and tumour surgery — they found a previously unseen kind of dendritic spike, driven by calcium. Its most counterintuitive property: <strong>the response is not monotonic. Push the stimulus past a certain strength and the response gets smaller.</strong> That is exactly the shape XOR needs, and the authors showed this single dendritic property suffices to implement it.</p>
+<p>The limits matter: this was measured in slices, with an electrode delivering the stimulus directly. <strong>Whether a waking human brain actually uses the mechanism this way is not known.</strong> It demonstrates a ceiling on capability, not everyday practice.</p>
+<p>A second example, with more behavioural evidence behind it, comes from Matthew Larkum's line of work. The big pyramidal cells of cortex have <strong>two separate input zones</strong>: a bushy set at the bottom receiving feedforward signals just arriving from the world, and one long branch reaching up into the topmost layer to collect feedback flowing back down from higher areas — context, expectation, where attention has settled. The two zones do not simply add. With input to one zone the cell fires mildly; <strong>with both arriving within tens of milliseconds it erupts into a dense burst.</strong> A single cell natively multiplies "the evidence now" by "what was expected" — which is the perception-as-inference story, implemented in one cell.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Do the conversion: how many layers is one neuron worth?</h2>
+<p>In 2021 Beniaguev, Segev and London ran a very clean experiment. They took a detailed biophysical model of a layer-5 cortical pyramidal cell (the kind where every membrane gate is written into the equations with measured parameters), fed it masses of random input, recorded exactly when it spiked, and asked: <strong>how deep does an artificial network have to be before it can imitate this cell's input-to-output map?</strong></p>
+<p>The answer was <strong>roughly five to eight layers</strong>. The control is even prettier: strip the NMDA receptors out of the model and change nothing else, and the required depth collapses back to about one. <strong>Nearly all of that depth is held up by NMDA's "only opens if the neighbourhood is busy" temper.</strong></p>
+<figure>
+<svg viewbox="0 0 480 230" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.4" cy="0.32" id="dcS2" r="0.95"><stop offset="0" stop-color="#2e2352"></stop><stop offset="1" stop-color="#150e2c"></stop></radialgradient>
+<marker id="dcA2" markerheight="14" markerunits="userSpaceOnUse" markerwidth="15" orient="auto" refx="11" refy="7"><path d="M1,1 L13,7 L1,13 Z" fill="#fbbf24"></path></marker>
+</defs>
+<path d="M70,92 C58,74 44,62 32,52" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M74,88 C74,68 74,54 74,38" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M80,92 C94,74 108,62 120,52" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M76,130 C76,146 76,158 76,172" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<circle cx="76" cy="110" fill="url(#dcS2)" r="21" stroke="#a78bfa" stroke-width="1.4"></circle>
+<text fill="#a99ccc" font-size="11" text-anchor="middle" x="76" y="196">one cortical pyramidal cell</text>
+<line marker-end="url(#dcA2)" stroke="#fbbf24" stroke-width="2.4" x1="136" x2="188" y1="110" y2="110"></line>
+<text fill="#f0cf88" font-size="10.5" text-anchor="middle" x="162" y="98">how deep to learn it</text>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="212" y="58"></rect>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="252" y="58"></rect>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="292" y="58"></rect>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="332" y="58"></rect>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="372" y="58"></rect>
+<rect fill="rgba(52,229,224,0.07)" height="104" rx="8" stroke="rgba(52,229,224,0.25)" stroke-dasharray="4 4" stroke-width="1.2" width="26" x="412" y="58"></rect>
+<text fill="#7bf0e8" font-size="11.5" text-anchor="middle" x="326" y="42">≈ 5–8 artificial layers</text>
+<text fill="#f0cf88" font-size="11" text-anchor="middle" x="326" y="196">remove NMDA receptors → about one layer</text>
+</svg>
+<figcaption>That depth is carried almost entirely by NMDA nonlinearity in the dendrites</figcaption>
+</figure>
+<p>The number has its boundaries: five to eight is the fit for <strong>that cell type under those input statistics</strong>; another cell class or another input distribution would move it. Nor does it mean brains beat artificial networks. It says something plainer: <strong>the word "unit" does not refer to the same object on the two sides</strong>, so comparisons like "86 billion neurons versus N billion parameters" fail on units alone.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>The artificial neuron has a clear lineage: in 1943 McCulloch and Pitts, wanting to show that neural activity could be described in logic, <b>deliberately</b> reduced a neuron to "weighted sum plus threshold". Perceptrons inherited that skeleton, and so do today's deep networks. It was a mathematical assumption from the start, never a measurement of biology — it has just been in service so long that many people take it for a fact.</p>
+<p style="margin-top:10px">Read it the other way and it gets interesting. Artificial networks build depth by <b>stacking layers</b>, and every layer computes all of its units on every pass. Brains fold part of that depth <b>inside</b> the unit — different branches of one cell compute separately, none of them knowing what the others are doing, and only one number comes out. The first is easy to train and to parallelise; the second saves wiring and energy. Neither copied the other; they are the economical solutions on two different kinds of hardware.</p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · connections from other fields</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">Step close enough to any "smallest unit" and it opens into another network. Neuroscience is not the only field to have learned this:</p>
+<ul>
+<li><b>Buddhism · Huayan</b>: on Indra's net, each jewel reflects every other jewel — "one is all, all is one". When Cajal's stains first separated neurons one by one, the brain acquired a basic unit for the first time. A century later, up close, that unit turns out to contain a network of its own. The tidiness of a hierarchy is supplied by your viewing distance, not by the world.</li>
+<li><b>Biology · computing without neurons</b>: slime mould, a single-celled organism with no neuron at all, will contract its body into the shortest path connecting two food sources placed in a maze (Nakagaki, 2000). A reminder that "computation" does not bottom out at the neuron — cells were computing long before nervous systems existed, and the tricks inside dendrites look more inherited than invented.</li>
+<li><b>Philosophy of science · the floor keeps dropping</b>: "atom" originally meant indivisible; then came protons and neutrons, then quarks. Every discovery of a smallest unit turns out to be the doorway to the next level of structure. The neuron doctrine has walked the same road: as anatomy it holds up perfectly (cells really are separate), but its other job — being the smallest unit of computation — is being quietly revoked by its own dendrites.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If the computing hides in the dendrites, is the spike we record only a summary?</summary><div>Yes. Almost all in-vivo recording, brain–computer interfaces included, reads the spikes leaving the cell body — the cell's final utterance. What its dozens of branches each computed, and what they vetoed, never appears in that utterance. Not necessarily a bad thing, since a summary is exactly what the downstream needs — but it means <strong>our data is one level short by construction</strong>. Reaching that level requires putting electrodes into dendrites or imaging them with light, and neither is easy in a behaving animal.</div></details>
+<details><summary>If neurons aren't weighted sums, is deep learning built on a false premise?</summary><div>Separate the goals. If the aim is <strong>to get the job done</strong>, a simplified model is judged only by results — and the results are excellent; planes fly without feathers. If the aim is <strong>to understand brains</strong>, the simplification comes with a bill: you may credit "network connectivity" with abilities that actually belong inside the cell, overestimating how many cells are needed and misreading what learning changes. The same model can be a fine tool and a poor explanation.</div></details>
+<details><summary>If one cell can compute XOR, why does the brain need 86 billion of them?</summary><div>Being able to and being able to afford it are different. A single cell's trick is bounded by how many inputs it has, how fast they are and how noisy — it only ever sees the signals landing on its own branches. Numbers buy other things: fault tolerance (losing one changes nothing), parallelism (thousands of things at once) and combinatorial representation (a few cells in different combinations encode astronomically many things, as in the previous issue). <strong>Dendrites raise the compute density per unit; they do not replace scale.</strong></div></details>
+<details><summary>What does learning actually change — strength, or position?</summary><div>The textbook answer is strength: synapses get stronger or weaker (see <a href="ref-synaptic-plasticity.en.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">synaptic plasticity</a>). But if clustering on one branch changes the outcome tenfold, then <strong>which branch a new synapse grows on is itself a learnable quantity</strong>. There is evidence that co-activated synapses tend to cluster on the dendritic tree. If that line holds, learning is not only turning knobs but rewiring — and rewiring has almost no counterpart in today's artificial networks.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Dendrite" target="_blank">Dendrite</a> — morphology, passive and active properties</li>
+<li><a href="https://en.wikipedia.org/wiki/Cable_theory" target="_blank">Cable theory</a> — Rall's equations for how much survives the trip</li>
+<li><a href="https://en.wikipedia.org/wiki/NMDA_receptor" target="_blank">NMDA receptor</a> — the magnesium-plugged coincidence detector</li>
+<li><a href="https://en.wikipedia.org/wiki/Dendritic_spike" target="_blank">Dendritic spike</a> — a branch firing locally on its own</li>
+<li><a href="https://doi.org/10.1016/S0896-6273(03)00149-1" target="_blank">Poirazi &amp; Mel 2003 · Neuron</a> — "pyramidal neuron as two-layer neural network"</li>
+<li><a href="https://www.science.org/doi/10.1126/science.aax6239" target="_blank">Gidon et al. 2020 · Science</a> — non-monotonic dendritic spikes and XOR in human layer 2/3</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2021.07.002" target="_blank">Beniaguev, Segev &amp; London 2021 · Neuron</a> — one cortical neuron ≈ a 5–8 layer network</li>
+<li><a href="https://doi.org/10.1016/j.tins.2012.11.006" target="_blank">Larkum 2013 · Trends in Neurosciences</a> — coupling of the two input zones (BAC firing)</li>
+<li><a href="https://en.wikipedia.org/wiki/Perceptrons_(book)" target="_blank">Perceptrons (Minsky &amp; Papert, 1969)</a> — the book that made XOR famous</li>
+<li><a href="https://www.nature.com/articles/35035159" target="_blank">Nakagaki et al. 2000 · Nature</a> — a slime mould solving a maze, with no neurons at all</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 36 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

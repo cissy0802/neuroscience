@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reference · Synaptic Transmission — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.en.html">← Reference library</a>
+<header>
+<span class="ref-badge">REFERENCE</span>
+<h1>Synaptic Transmission</h1>
+<p>Two neurons are not actually joined — a gap about 20 nanometres wide sits between them. To cross it, the signal has to turn <strong>from electrical into chemical</strong>, drift over, and turn back into electrical. The step is slow, fussy and unreliable, and evolution has held onto it anyway. This page walks through how it happens, and what that nuisance buys.</p>
+</header>
+<h2>The five steps of one transmission</h2>
+<p>Zoom in on the end of an axon (that swollen tip is the presynaptic terminal), facing the dendrite of the next cell. Everything that follows the arrival of a spike takes less than a millisecond:</p>
+<figure>
+<svg viewbox="0 0 500 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.35" cy="0.3" id="stPre" r="0.95"><stop offset="0" stop-color="#2a2148"></stop><stop offset="1" stop-color="#140e28"></stop></radialgradient>
+<marker id="stCa" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"></path></marker>
+<marker id="stIon" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="9" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#34e5e0"></path></marker>
+</defs>
+<line stroke="#34e5e0" stroke-linecap="round" stroke-width="6" x1="8" x2="44" y1="110" y2="110"></line>
+<rect fill="url(#stPre)" height="124" rx="26" stroke="#a78bfa" stroke-width="1.5" width="150" x="40" y="48"></rect>
+<circle cx="78" cy="88" fill="rgba(52,229,224,0.2)" r="8.5" stroke="#34e5e0" stroke-width="1.2"></circle>
+<circle cx="108" cy="72" fill="rgba(52,229,224,0.2)" r="8.5" stroke="#34e5e0" stroke-width="1.2"></circle>
+<circle cx="138" cy="90" fill="rgba(52,229,224,0.2)" r="8.5" stroke="#34e5e0" stroke-width="1.2"></circle>
+<circle cx="100" cy="112" fill="rgba(52,229,224,0.2)" r="8.5" stroke="#34e5e0" stroke-width="1.2"></circle>
+<circle cx="188" cy="138" fill="rgba(251,191,36,0.25)" r="9.5" stroke="#fbbf24" stroke-width="1.3"></circle>
+<line marker-end="url(#stCa)" stroke="#fbbf24" stroke-width="2.2" x1="150" x2="150" y1="22" y2="42"></line>
+<text fill="#f0cf88" font-size="10.5" text-anchor="start" x="158" y="26">calcium</text>
+<circle cx="198" cy="130" fill="#fbbf24" r="3.6"></circle>
+<circle cx="206" cy="146" fill="#fbbf24" r="3.6"></circle>
+<circle cx="214" cy="124" fill="#fbbf24" r="3.6"></circle>
+<circle cx="218" cy="150" fill="#fbbf24" r="3.6"></circle>
+<circle cx="202" cy="112" fill="#fbbf24" r="3.6"></circle>
+<rect fill="rgba(167,139,250,0.10)" height="140" rx="18" stroke="rgba(167,139,250,0.5)" stroke-width="1.3" width="130" x="228" y="40"></rect>
+<rect fill="rgba(52,229,224,0.35)" height="22" rx="3" stroke="#34e5e0" stroke-width="1.1" width="9" x="224" y="80"></rect>
+<rect fill="rgba(52,229,224,0.35)" height="22" rx="3" stroke="#34e5e0" stroke-width="1.1" width="9" x="224" y="112"></rect>
+<rect fill="rgba(52,229,224,0.35)" height="22" rx="3" stroke="#34e5e0" stroke-width="1.1" width="9" x="224" y="144"></rect>
+<line marker-end="url(#stIon)" stroke="#34e5e0" stroke-width="2" x1="240" x2="276" y1="91" y2="91"></line>
+<line marker-end="url(#stIon)" stroke="#34e5e0" stroke-width="2" x1="240" x2="276" y1="123" y2="123"></line>
+<text fill="#a99ccc" font-size="10.5" text-anchor="middle" x="115" y="196">presynaptic terminal</text>
+<text fill="#a99ccc" font-size="10.5" text-anchor="middle" x="293" y="196">dendrite of the next cell</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="209" y="216">the gap: about 20 nm</text>
+<text fill="#fbbf24" font-size="12.5" text-anchor="middle" x="26" y="96">①</text>
+<text fill="#fbbf24" font-size="12.5" text-anchor="middle" x="140" y="34">②</text>
+<text fill="#fbbf24" font-size="12.5" text-anchor="middle" x="166" y="164">③</text>
+<text fill="#fbbf24" font-size="12.5" text-anchor="middle" x="209" y="90">④</text>
+<text fill="#fbbf24" font-size="12.5" text-anchor="middle" x="250" y="64">⑤</text>
+<line stroke="rgba(255,255,255,0.14)" stroke-width="1" x1="376" x2="482" y1="150" y2="150"></line>
+<path d="M376,150 C396,150 400,104 418,104 C438,104 452,148 482,150" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="429" y="88">membrane voltage</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="429" y="172">nudged upward</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="250" y="246">electrical → chemical → electrical, in about half a millisecond</text>
+</svg>
+<figcaption>Five steps, and only then has the signal crossed the gap</figcaption>
+</figure>
+<dl class="kv">
+<dt>① The spike arrives</dt><dd>An action potential travels down the axon to the terminal (<a href="ref-neuron-action-potential.en.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">neurons &amp; action potentials</a>).</dd>
+<dt>② Calcium floods in</dt><dd>The terminal membrane carries gates that respond only to voltage; the spike opens them and calcium ions rush inside. <strong>Calcium is the real switch here</strong> — with no calcium entry, nothing that follows happens.</dd>
+<dt>③ Vesicles dump their cargo</dt><dd>The terminal is stocked with little bubbles, each holding a few thousand chemical molecules (neurotransmitter). Calcium arrives, one or two bubbles fuse with the front membrane and empty their contents into the gap in one go.</dd>
+<dt>④ Drift across</dt><dd>The transmitter crosses those 20 nanometres by simple diffusion — the distance is so short that this step costs almost no time.</dd>
+<dt>⑤ Doors open on the far side</dt><dd>Transmitter slots into receptors on the opposite membrane, the ion channels those receptors carry open, ions move, and <strong>the voltage of that little patch of membrane shifts</strong>. Pushed up it is an excitatory postsynaptic potential (EPSP); pushed down, an inhibitory one (IPSP).</dd>
+</dl>
+<h2>One synapse has a very small voice</h2>
+<p>Here is an easily missed question of scale: <strong>one synapse is nowhere near loud enough to make the downstream cell fire.</strong> A typical cortical excitatory input nudges the far membrane up by a fraction of a millivolt, while the distance from rest to firing threshold is fifteen to twenty millivolts. <strong>So it takes tens, sometimes hundreds, of inputs arriving within a short window to drive a single spike.</strong> This is precisely why "at the same time" matters so much in a brain.</p>
+<p>More surprising still, it isn't reliable: the same spike reaching the same synapse sometimes releases cargo and sometimes doesn't. Many central synapses release with a probability of only a few tenths. That looks like a defect, but a probability is a quantity that can be tuned — <strong>"will it release this time" is itself a knob learning can rewrite</strong> (<a href="ref-synaptic-plasticity.en.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">synaptic plasticity</a>).</p>
+<h2>Two receptors: the fast one and the coincidence detector</h2>
+<p>One excitatory synapse usually carries two kinds of receptor with completely different tempers (the transmitter here is glutamate, the brain's main excitatory messenger — see <a href="ref-neurotransmitters.en.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">neurotransmitter systems</a>):</p>
+<figure>
+<svg viewbox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="stBlk" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+<marker id="stFlow" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+</defs>
+<text fill="#a99ccc" font-size="11" text-anchor="middle" x="118" y="28">voltage low: magnesium plug in place</text>
+<rect fill="rgba(167,139,250,0.12)" height="24" stroke="rgba(167,139,250,0.4)" stroke-width="1" width="180" x="30" y="92"></rect>
+<rect fill="#140e28" height="36" rx="6" stroke="#34e5e0" stroke-width="1.4" width="34" x="102" y="86"></rect>
+<circle cx="119" cy="104" fill="#e879f9" r="8.5"></circle>
+<text fill="#1a1030" font-size="8" font-weight="700" text-anchor="middle" x="119" y="107">Mg</text>
+<circle cx="119" cy="66" fill="#fbbf24" r="5"></circle>
+<text fill="#f0cf88" font-size="10" text-anchor="start" x="130" y="68">transmitter has arrived</text>
+<line marker-end="url(#stBlk)" stroke="#8f89ad" stroke-width="1.8" x1="70" x2="70" y1="52" y2="84"></line>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="70" y="146">nothing gets through</text>
+<line stroke="rgba(167,139,250,0.25)" stroke-dasharray="4 6" stroke-width="1" x1="240" x2="240" y1="26" y2="176"></line>
+<text fill="#a99ccc" font-size="11" text-anchor="middle" x="360" y="28">neighbourhood lifted: plug pops out</text>
+<rect fill="rgba(167,139,250,0.12)" height="24" stroke="rgba(167,139,250,0.4)" stroke-width="1" width="180" x="270" y="92"></rect>
+<rect fill="#140e28" height="36" rx="6" stroke="#34e5e0" stroke-width="1.4" width="34" x="342" y="86"></rect>
+<circle cx="392" cy="66" fill="#e879f9" r="8.5"></circle>
+<text fill="#1a1030" font-size="8" font-weight="700" text-anchor="middle" x="392" y="69">Mg</text>
+<circle cx="359" cy="60" fill="#fbbf24" r="5"></circle>
+<line marker-end="url(#stFlow)" stroke="#34e5e0" stroke-width="2.4" x1="359" x2="359" y1="82" y2="140"></line>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="start" x="368" y="140">calcium comes in too</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="240" y="192">one receptor, two states: needs transmitter AND an already-lifted membrane</text>
+</svg>
+<figcaption>The NMDA receptor: a part that natively demands two things at once</figcaption>
+</figure>
+<dl class="kv">
+<dt>AMPA receptor</dt><dd>The quick draw. It opens the moment transmitter arrives, lets sodium in, shoves the voltage up and is done within a millisecond or two. Everyday signalling runs on it.</dd>
+<dt>NMDA receptor</dt><dd>The coincidence detector. A magnesium ion plugs it, so <strong>transmitter alone cannot open it — the local membrane must already have been lifted by other inputs before the plug pops out</strong>. It therefore conducts only when "the upstream cell fired" and "the downstream patch was already excited" are both true. And when it conducts it admits calcium, the trigger for long-lasting change.</dd>
+</dl>
+<p>These two tempers reach a long way up. NMDA's "both must hold" underwrites Hebbian learning (cells that fire together wire together), and it underwrites the local nonlinearity in dendrites where inputs only ignite if they cluster on one branch — which is the subject of Topic 36, single-neuron computation.</p>
+<h2>Inhibition is not "less excitation"</h2>
+<p>About eighty percent of neurons are excitatory; the remaining fifth are inhibitory interneurons, releasing a transmitter called GABA that pushes the far membrane down, away from threshold. Don't picture that as easing off the accelerator — <strong>it is closer to a set of precision cutting tools</strong>. Some inhibitory cells target the cell body of their partner (vetoing the output outright), some target distal dendrites (silencing one incoming stream only), and some open and close rhythmically on a clock — which is how brain oscillations get their beat. Excitation supplies content; inhibition decides who is allowed to speak, and when.</p>
+<h2>Why not just use a wire</h2>
+<p>There is an electrical version: the <strong>gap junction</strong>, a matched pair of pores letting current pass straight between two cells — near-zero delay, and bidirectional. The brain really does use them, especially where a group of cells has to stay synchronised to the millisecond. So if it's faster, why is the slow chemical synapse the default? Because that gap buys four things a wire cannot give:</p>
+<dl class="kv">
+<dt>Amplification</dt><dd>A small electrical pulse triggers the release of thousands of molecules; the output can be far larger than the input.</dd>
+<dt>One-way flow</dt><dd>Cargo only travels from the side with the vesicles to the side with the receptors. The direction of the signal is written into the structure.</dd>
+<dt>Tunability</dt><dd>Swap the transmitter or the receptor and you get excitation, inhibition, or slow modulation that takes seconds to build and lingers (the dopamine and serotonin family).</dd>
+<dt>Plasticity</dt><dd>Release probability and receptor count can both be rewritten by experience — memory lives in those numbers. A wire has none of these knobs.</dd>
+</dl>
+<p>Put differently: <strong>the 20-nanometre gap is not an engineering flaw. It is where the brain gets to learn.</strong></p>
+<div class="links">
+<h3>// Cited by these main-track issues</h3>
+<p class="who">Topic 4 Long-term memory · Topic 27 Addiction · Topic 35 Neural coding · Topic 36 Single-neuron computation (dendrites) · Topic 39 Biological plausibility of backprop</p>
+<h3 style="margin-top:18px">// Further</h3>
+<p><a href="https://en.wikipedia.org/wiki/Chemical_synapse" target="_blank">Chemical synapse</a> · <a href="https://en.wikipedia.org/wiki/Neurotransmitter_release" target="_blank">Neurotransmitter release</a> · <a href="https://en.wikipedia.org/wiki/AMPA_receptor" target="_blank">AMPA receptor</a> · <a href="https://en.wikipedia.org/wiki/NMDA_receptor" target="_blank">NMDA receptor</a> · <a href="https://en.wikipedia.org/wiki/GABA" target="_blank">GABA</a> · <a href="https://en.wikipedia.org/wiki/Gap_junction" target="_blank">Gap junction</a> · <a href="https://en.wikipedia.org/wiki/Quantal_neurotransmitter_release" target="_blank">Quantal release (Katz)</a></p>
+</div>
+<footer>BigCat · Neuroscience · Reference · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

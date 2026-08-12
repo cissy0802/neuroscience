@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 36 · 单神经元计算 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 36 · PHASE E 计算</span>
+<h1>单神经元计算</h1>
+<h2>一个细胞里，藏着一整张网络</h2>
+<div class="date">2026-08-12 · BigCat</div>
+<p class="pitch">课本上那个「把输入加起来、过线就发」的神经元，是 1943 年两个人在纸上假设出来的，从来没人量到过。</p>
+</header>
+<div class="intro">
+<p>你大概见过那张图：一个圆圈，左边伸出几根线收信号，把它们乘上权重加起来，超过某条线就往外发一下。这张图太顺手了，几乎所有讲大脑和讲人工智能的入门材料都在用它。<strong>但它是个假设，不是一次测量。</strong>真实的树突——神经元用来收信号的那一大丛枝杈——不是老实的电线：它会漏电、会挑位置、自己还会放电。这一期讲一件挺颠覆的事：<strong>相当一部分「计算」发生在一个细胞的内部，在它决定要不要发脉冲之前就已经算完了。</strong></p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>树突不是电线，是一段会漏的水管</h2>
+<p>先摆清零件。一个神经元收信号的地方叫树突，是一大丛分叉的枝杈；上游细胞把信号交到这些枝杈上某个点（那个交接口叫突触，<a class="reflink" href="ref-synaptic-transmission.html">突触传递</a>）；信号往中间的胞体汇，胞体那儿决定要不要发出一个脉冲（<a class="reflink" href="ref-neuron-action-potential.html">神经元与动作电位</a>）。</p>
+<p>课本图默认这些枝杈是理想导线：信号原封不动地被运到胞体。<strong>实际上它到处漏。</strong>细胞膜不是绝缘的，电流走一段就顺着漏出去一些，越走越小。1960 年代 Wilfrid Rall 把这件事算成了方程——他把树突当成一段段会漏电的水管来解，这套算法叫电缆理论。结论很直接：<strong>长在远端枝梢上的一个突触，它那份推力传到胞体时，可能只剩零头。</strong></p>
+<figure>
+<svg viewbox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.4" cy="0.32" id="dcSoma" r="0.95"><stop offset="0" stop-color="#2e2352"></stop><stop offset="1" stop-color="#150e2c"></stop></radialgradient>
+</defs>
+<path d="M82,112 C160,96 240,84 420,74" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="5"></path>
+<path d="M232,86 C250,64 258,48 262,30" fill="none" opacity="0.75" stroke="#a78bfa" stroke-linecap="round" stroke-width="3.4"></path>
+<circle cx="58" cy="120" fill="url(#dcSoma)" r="24" stroke="#a78bfa" stroke-width="1.4"></circle>
+<text fill="#efe9ff" font-size="12" font-weight="600" text-anchor="middle" x="58" y="125">胞体</text>
+<circle cx="130" cy="103" fill="#fbbf24" r="6.5"></circle>
+<circle cx="369" cy="77" fill="#fbbf24" r="6.5"></circle>
+<text fill="#f0cf88" font-size="11" text-anchor="middle" x="130" y="86">近端输入</text>
+<text fill="#f0cf88" font-size="11" text-anchor="middle" x="369" y="60">远端输入</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="250" y="142">树突：一路漏电的枝杈</text>
+<text fill="#a99ccc" font-size="11.5" text-anchor="middle" x="240" y="176">同样强度的一次输入 · 到达胞体时剩多少</text>
+<line stroke="rgba(255,255,255,0.14)" stroke-width="1" x1="40" x2="225" y1="228" y2="228"></line>
+<path d="M40,228 C86,228 92,180 118,180 C142,180 158,226 225,228" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<line stroke="rgba(255,255,255,0.14)" stroke-width="1" x1="255" x2="440" y1="228" y2="228"></line>
+<path d="M255,228 C300,228 308,215 330,215 C352,215 366,227 440,228" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="132" y="248">近端 · 几乎原样</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="347" y="248">远端 · 缩水一大截</text>
+</svg>
+<figcaption>同一份推力，长在哪儿决定了它到胞体时还剩多大</figcaption>
+</figure>
+<p>这一条已经足够有意思：<strong>位置本身就是一种权重。</strong>同一个上游细胞，把接口挪到离胞体近一点的地方，它说话的分量就变大了——而这件事真的会发生，突触在树突上是会长、会挪、会被清掉的。但如果故事只到这儿，神经元还是在做加权求和，只是权重里多了个「距离」项。真正的转折在下一节。</p>
+<p class="en-brief"><b>EN</b> Dendrites are not ideal wires. The membrane leaks, so a synaptic input decays as it travels — Wilfrid Rall's cable theory (1960s) made this quantitative. A distal synapse delivers only a fraction of its push to the soma, which means a synapse's <i>location</i> is itself a weight. But leakage alone would still leave the neuron a weighted sum.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>每根树枝都会自己引爆一次</h2>
+<p>树突膜上带着一批可以自己开的闸门，其中最关键的是一种叫 NMDA 受体的东西。它有个古怪脾气：<strong>平时被一个镁离子塞住，只有当它周围那一小段膜的电压已经被别的输入抬高了，塞子才被顶开。</strong>换句话说，它不是「有信号就开」，而是「有信号、且旁边刚好也热闹」才开。这种要求两件事同时发生的零件，叫巧合检测器。</p>
+<p>后果很戏剧：几个输入若<strong>挤在同一根树枝上、在几毫秒内一起到</strong>，它们先把这一小段膜抬起来，抬过某个点，NMDA 闸门集体开、电流猛涌进来，这根枝杈会自己爆出一次局部的放电（叫树突脉冲），把总和放大到远远超过「各自相加」。而同样多的输入若<strong>分散在不同树枝上</strong>，谁也抬不起谁，每根枝各自老老实实地加一点点，合起来近似一条直线。</p>
+<figure>
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<line stroke="rgba(255,255,255,0.18)" stroke-width="1" x1="60" x2="446" y1="200" y2="200"></line>
+<line stroke="rgba(255,255,255,0.18)" stroke-width="1" x1="60" x2="60" y1="34" y2="200"></line>
+<text fill="#6f6a8c" font-size="10.5" text-anchor="start" x="48" y="24">胞体收到的总和 ↑</text>
+<path d="M60,200 C118,196 150,188 186,176 C212,167 226,110 264,84 C302,58 362,50 436,46" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="3"></path>
+<path d="M60,200 L436,128" fill="none" stroke="#a78bfa" stroke-dasharray="6 5" stroke-width="2.4"></path>
+<text fill="#7bf0e8" font-size="11.5" text-anchor="middle" x="336" y="36">挤在同一根树枝 → 引爆</text>
+<text fill="#c0aef8" font-size="11.5" text-anchor="end" x="444" y="112">分散在不同树枝 → 老实相加</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="252" y="222">同时到达的输入个数 →</text>
+<text fill="#fbbf24" font-size="11" text-anchor="middle" x="162" y="64">同样多的输入</text>
+<text fill="#fbbf24" font-size="11" text-anchor="middle" x="162" y="82">落在哪儿，结果差一个量级</text>
+</svg>
+<figcaption>输入落在同一根枝上会超线性放大，分散开就只是相加</figcaption>
+</figure>
+<p>所以一个神经元不是一个加法器，而是<strong>一堆半独立的小加法器（一根树枝一个），每个先自己做一次非线性判断，胞体再把这些判断结果加起来</strong>。2003 年 Poirazi 和 Mel 把这件事说得很干脆：从输入输出的角度看，一个皮层锥体神经元的行为，更像一个<strong>两层</strong>的人工网络，而不是一个单元。</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>「一层」和「两层」在人工网络里不是数量差别，是<b>能力差别</b>。所谓一层，就是把输入乘权重加起来、再过一个简单的非线性函数——这种结构在几何上只能用一刀直线把东西切成两半，弯的边界画不出来。加一层，中间先做几次局部的非线性，再汇总，才能画出弯的、甚至是不连通的边界。所以 Poirazi 和 Mel 那句话的真正分量是：<b>你以为的一个单元，本身已经跨过了那道门槛。</b>拿神经元的个数去对人工网络的单元个数，从这里开始就对不上了。</p>
+</div>
+<p class="en-brief"><b>EN</b> NMDA receptors are blocked by a magnesium ion and only open when the local membrane is already depolarised — a coincidence detector. Inputs clustered on one dendritic branch within a few milliseconds ignite a local dendritic spike and sum supralinearly; the same inputs scattered across branches sum roughly linearly. Poirazi &amp; Mel (2003): a pyramidal cell behaves like a two-layer network, not one unit.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>一个细胞就能算「异或」</h2>
+<p>先说异或是什么。想象一盏灯配两个开关，规矩是：<strong>只按一个，灯亮；两个都按，灯反而灭；一个都不按，也灭。</strong>生活里真有这种东西——楼梯两头那种能各自控制同一盏灯的开关，就是这个逻辑。它的麻烦在于「越多输入越强」这个直觉在这里失效了：加到一半是最亮的，再加反而暗。</p>
+<p>这件事在人工智能史上留下过一道疤。1969 年 Minsky 和 Papert 写了本书，证明当时那种只有一层的网络（感知机）算不出异或。这个结论直接把一整个研究方向按下去了好些年，要等到多层网络和训练它们的办法成熟才翻篇。<strong>「单个单元算不了异或」，从此成了教科书里的定论。</strong></p>
+<figure>
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="dcX" markerheight="10" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="7.5" refy="5"><path d="M1,1 L8.5,5 L1,9 Z" fill="#8f89ad"></path></marker>
+<marker id="dcD" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#a99ccc" font-size="11.5" text-anchor="middle" x="106" y="30">异或：只按一个才亮</text>
+<circle cx="44" cy="62" fill="rgba(255,255,255,0.05)" r="8" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<circle cx="72" cy="62" fill="rgba(255,255,255,0.05)" r="8" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<line marker-end="url(#dcX)" stroke="#8f89ad" stroke-width="1.6" x1="90" x2="126" y1="62" y2="62"></line>
+<circle cx="148" cy="62" fill="rgba(255,255,255,0.05)" r="11" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<circle cx="44" cy="102" fill="#fbbf24" r="8"></circle>
+<circle cx="72" cy="102" fill="rgba(255,255,255,0.05)" r="8" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<line marker-end="url(#dcX)" stroke="#8f89ad" stroke-width="1.6" x1="90" x2="126" y1="102" y2="102"></line>
+<circle cx="148" cy="102" fill="rgba(251,191,36,0.85)" r="11" stroke="#fbbf24" stroke-width="1.2"></circle>
+<circle cx="44" cy="142" fill="rgba(255,255,255,0.05)" r="8" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<circle cx="72" cy="142" fill="#fbbf24" r="8"></circle>
+<line marker-end="url(#dcX)" stroke="#8f89ad" stroke-width="1.6" x1="90" x2="126" y1="142" y2="142"></line>
+<circle cx="148" cy="142" fill="rgba(251,191,36,0.85)" r="11" stroke="#fbbf24" stroke-width="1.2"></circle>
+<circle cx="44" cy="182" fill="#fbbf24" r="8"></circle>
+<circle cx="72" cy="182" fill="#fbbf24" r="8"></circle>
+<line marker-end="url(#dcX)" stroke="#8f89ad" stroke-width="1.6" x1="90" x2="126" y1="182" y2="182"></line>
+<circle cx="148" cy="182" fill="rgba(255,255,255,0.05)" r="11" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"></circle>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="58" y="212">两个开关</text>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="148" y="212">灯</text>
+<line stroke="rgba(167,139,250,0.25)" stroke-dasharray="4 6" stroke-width="1" x1="204" x2="204" y1="34" y2="212"></line>
+<line stroke="rgba(255,255,255,0.18)" stroke-width="1" x1="248" x2="452" y1="200" y2="200"></line>
+<line stroke="rgba(255,255,255,0.18)" stroke-width="1" x1="248" x2="248" y1="42" y2="200"></line>
+<path d="M250,198 C282,196 298,140 322,108 C344,80 362,86 384,116 C402,142 424,170 450,190" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="3"></path>
+<path d="M250,198 C300,186 340,150 450,98" fill="none" stroke="rgba(167,139,250,0.5)" stroke-dasharray="6 5" stroke-width="2.2"></path>
+<text fill="#f5b8fb" font-size="11" text-anchor="middle" x="352" y="44">人类树突：越强反而变小</text>
+<text fill="#c0aef8" font-size="10.5" text-anchor="middle" x="352" y="64">普通细胞（虚线）：越强越大</text>
+<line marker-end="url(#dcD)" stroke="#e879f9" stroke-width="1.8" x1="404" x2="424" y1="140" y2="162"></line>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="352" y="222">输入强度 →</text>
+</svg>
+<figcaption>反应先升后降，就够用一个树突实现「只按一个才亮」</figcaption>
+</figure>
+<p>2020 年 Gidon 那组在《Science》上捅了这个定论一刀。他们记录人类大脑皮层浅层（第 2/3 层）锥体神经元的树突——组织来自癫痫和肿瘤手术切下来的那部分脑——发现里面有一种此前没见过的树突放电，靠钙离子驱动。它最反直觉的地方是<strong>反应不是越强越大：刺激加到一定程度，它的反应反而缩小。</strong>而这正是异或需要的形状。研究者随后表明，光靠这一段树突的这个特性，就足以实现异或。</p>
+<p>边界得说清楚：这是在离体的脑片上、用电极直接给刺激测出来的，<strong>清醒的人脑在做事时是不是真的这么用它，目前并不知道。</strong>它证明的是能力上限，不是日常用法。</p>
+<p>另一个更有行为证据的例子来自 Matthew Larkum 那条线。皮层里那些大个的锥体细胞有<strong>两个分开的收信口</strong>：底下一丛收「外界刚送进来的」前馈信号，顶上还有一根长长的枝伸到皮层最表层，收「从更高层回流下来的」反馈信号——也就是上下文、期待、注意落脚的地方。关键是这两口不是简单相加：只有一边来，细胞淡淡地发一下；<strong>两边在几十毫秒内同时来，细胞才炸出一串密集的脉冲。</strong>一个细胞天生就在做「当下的证据 × 已有的期待」这个乘法，而这正是感知即推断那一期讲的事，在单个细胞上的实现。</p>
+<p class="en-brief"><b>EN</b> XOR — on with either switch alone, off with both — was Minsky &amp; Papert's (1969) proof that a single-layer perceptron has limits. Gidon et al. (Science, 2020) recorded calcium-mediated dendritic action potentials in human layer 2/3 pyramidal neurons whose response is non-monotonic (stronger input, smaller response), enough for one dendrite to compute XOR — though this was measured in slices, so whether the intact brain uses it that way is unknown. Larkum's BAC firing shows the same cell multiplying feedforward evidence by top-down context.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>换算一下：一个神经元值几层？</h2>
+<p>2021 年 Beniaguev、Segev 和 London 做了个很干净的实验设计。他们拿一个尽量逼真的皮层第 5 层锥体细胞模型（这类模型把膜上的各种闸门都按实测参数写进方程），喂大量随机输入、录下它什么时候发脉冲，然后问：<strong>要多深的人工网络，才能学会模仿这个细胞的输入到输出？</strong></p>
+<p>答案是<strong>大约五到八层</strong>。更漂亮的是对照组：把模型里的 NMDA 受体去掉、别的都不动，需要的深度立刻塌回一层上下。<strong>那几层深度几乎全是 NMDA 那个「要旁边也热闹才开」的脾气撑起来的。</strong></p>
+<figure>
+<svg viewbox="0 0 480 230" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.4" cy="0.32" id="dcS2" r="0.95"><stop offset="0" stop-color="#2e2352"></stop><stop offset="1" stop-color="#150e2c"></stop></radialgradient>
+<marker id="dcA2" markerheight="14" markerunits="userSpaceOnUse" markerwidth="15" orient="auto" refx="11" refy="7"><path d="M1,1 L13,7 L1,13 Z" fill="#fbbf24"></path></marker>
+</defs>
+<path d="M70,92 C58,74 44,62 32,52" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M74,88 C74,68 74,54 74,38" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M80,92 C94,74 108,62 120,52" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M76,130 C76,146 76,158 76,172" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<circle cx="76" cy="110" fill="url(#dcS2)" r="21" stroke="#a78bfa" stroke-width="1.4"></circle>
+<text fill="#a99ccc" font-size="11" text-anchor="middle" x="76" y="196">一个皮层锥体细胞</text>
+<line marker-end="url(#dcA2)" stroke="#fbbf24" stroke-width="2.4" x1="136" x2="188" y1="110" y2="110"></line>
+<text fill="#f0cf88" font-size="10.5" text-anchor="middle" x="162" y="98">要多深才学得会</text>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="212" y="58"></rect>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="252" y="58"></rect>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="292" y="58"></rect>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="332" y="58"></rect>
+<rect fill="rgba(52,229,224,0.16)" height="104" rx="8" stroke="rgba(52,229,224,0.55)" stroke-width="1.3" width="26" x="372" y="58"></rect>
+<rect fill="rgba(52,229,224,0.07)" height="104" rx="8" stroke="rgba(52,229,224,0.25)" stroke-dasharray="4 4" stroke-width="1.2" width="26" x="412" y="58"></rect>
+<text fill="#7bf0e8" font-size="11.5" text-anchor="middle" x="326" y="42">≈ 5–8 层的人工网络</text>
+<text fill="#f0cf88" font-size="11" text-anchor="middle" x="326" y="196">拿掉 NMDA 受体 → 一层左右就够</text>
+</svg>
+<figcaption>那几层深度，几乎全部由树突上的 NMDA 非线性撑起</figcaption>
+</figure>
+<p>这个数字有它的边界：五到八层是拟合<strong>那一类细胞、在那种输入统计下</strong>的结果，换个细胞类型、换个输入分布，数字会变。它也不代表大脑就比人工网络强——它说的是更朴素的一件事：<strong>「单元」这个词在两边指的根本不是同一种东西</strong>，所以「八百多亿神经元 vs 多少亿参数」这种对比，从单位上就不成立。</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>人工神经元的家谱很清楚：1943 年 McCulloch 和 Pitts 为了证明神经活动可以用逻辑来描述，<b>故意</b>把神经元简化成「加权求和 + 过阈值」；后来的感知机、直到今天的深度网络，用的都还是这个骨架。它从一开始就是个数学假设，不是对生物的测量——只是用得太久，很多人把它当成了事实。</p>
+<p style="margin-top:10px">反过来看也有意思：人工网络实现「深度」的办法是<b>把层叠起来</b>，每一层都得把所有单元算一遍；大脑则把一部分深度<b>塞进了单元内部</b>——同一个细胞的不同树枝各算各的，谁都不知道别人在算什么，最后只汇一个数出来。前者好训练、好并行，后者省线、省能量。这不是谁抄谁的问题，是两种硬件下各自划算的解法。</p>
+</div>
+<p class="en-brief"><b>EN</b> Beniaguev, Segev &amp; London (2021) fitted a detailed layer-5 pyramidal cell model with artificial networks: matching its input–output map took roughly 5–8 layers, and removing NMDA receptors collapsed that back to about one. The depth lives in dendritic nonlinearity. So counting biological neurons against artificial units compares different things — deep nets stack depth across layers, brains fold some of it inside the unit.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">「最小单元」这件事，一旦你凑近看，就总是散开成又一张网——这个经验不止神经科学有：</p>
+<ul>
+<li><b>佛学 · 华严</b>：因陀罗网上每一颗宝珠都映现着其余所有宝珠，「一即一切，一切即一」。当年 Cajal 用染色法把神经元一个个分出来，脑才第一次有了「基本单位」；一百年后凑近看，这个单位内部又是一张网。层级的干净是看的距离给的，不是世界给的。</li>
+<li><b>生物学 · 没有神经元的计算</b>：黏菌这种连一个神经元都没有的单细胞生物，被放进迷宫后能把身体收缩成连接两个食物点的最短路径（Nakagaki 2000）。这提醒我们「计算」并不以神经元为最小砖块——细胞早在有神经系统之前就在算了，树突里的这套本事更像是继承来的。</li>
+<li><b>科学哲学 · 还原的底总在下降</b>：原子的原意是「不可再分」，后来分出质子中子，再分出夸克。每一次「找到了最小单位」，都同时是下一层结构的入口。神经元学说走过的正是这条路：它作为解剖学结论完全成立（细胞之间确实是分开的），但作为「计算的最小单位」，这个身份正在被它自己的树突收回。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>如果计算藏在树突里，我们记录到的脉冲是不是只是一份摘要？</summary><div>是。绝大多数在体记录（包括脑机接口）读的都是胞体发出的脉冲，那是这个细胞对外说的最后一句话。它内部那几十根树枝各自算了什么、否决了什么，一律不出现在这句话里。这不一定是坏事——摘要正是下游需要的东西——但它意味着<strong>我们手上的数据在原理上就少了一层</strong>。要看那一层，得把电极扎进树突或用光去照它，两种都很难在清醒行为中做。</div></details>
+<details><summary>神经元不是加权和，那深度学习岂不是建在错误的假设上？</summary><div>要分清目的。如果目的是<strong>把活干成</strong>，简化模型好不好用只看结果，而结果好得很——飞机没有羽毛也照样飞。如果目的是<strong>理解大脑</strong>，那这个简化就要付账：你可能把本该属于细胞内部的能力，错误地记在了「网络连接」头上，从而高估了需要多少个细胞、也误判了学习到底改的是什么。同一个模型，作为工具合格，作为解释未必。</div></details>
+<details><summary>既然一个细胞就能算异或，大脑为什么还要八百多亿个？</summary><div>能算和算得起是两回事。单个细胞的这套本事受限于它的输入数量、速度和可靠性——它一次只能面对落在自己枝杈上的那些信号，而且很吵。数量买来的是别的东西：容错（死一个不塌）、并行（同时处理成千上万件事）、以及组合表示（少数细胞的不同组合能编出天文数字的内容，见上一期）。<strong>树突提升的是每个单元的算力密度，不是取代规模。</strong></div></details>
+<details><summary>学习到底改的是什么——强度，还是位置？</summary><div>教科书答案是强度（突触变强变弱，见 <a href="ref-synaptic-plasticity.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">突触可塑性</a>）。但如果同一根树枝上的聚集与否能把结果差出一个量级，那么<strong>「新突触长在哪根枝上」本身就是一个可学习的量</strong>。已经有证据显示同时被激活的一批突触倾向于在树突上扎堆。这条线如果成立，学习就不只是调旋钮，还包括改布线——而后者在今天的人工网络里几乎没有对应物。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Dendrite" target="_blank">树突 Dendrite</a> — 形态、被动性质与主动性质的总入口</li>
+<li><a href="https://en.wikipedia.org/wiki/Cable_theory" target="_blank">电缆理论 Cable theory</a> — Rall 用来算「信号走多远剩多少」的那套方程</li>
+<li><a href="https://en.wikipedia.org/wiki/NMDA_receptor" target="_blank">NMDA 受体</a> — 被镁塞住的巧合检测器</li>
+<li><a href="https://en.wikipedia.org/wiki/Dendritic_spike" target="_blank">树突脉冲 Dendritic spike</a> — 树枝自己的局部放电</li>
+<li><a href="https://doi.org/10.1016/S0896-6273(03)00149-1" target="_blank">Poirazi &amp; Mel 2003 · Neuron</a> — 「锥体神经元是个两层网络」</li>
+<li><a href="https://www.science.org/doi/10.1126/science.aax6239" target="_blank">Gidon et al. 2020 · Science</a> — 人类 2/3 层树突的非单调放电与异或</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2021.07.002" target="_blank">Beniaguev, Segev &amp; London 2021 · Neuron</a> — 一个皮层神经元 ≈ 5–8 层深网</li>
+<li><a href="https://doi.org/10.1016/j.tins.2012.11.006" target="_blank">Larkum 2013 · Trends in Neurosciences</a> — 两个收信口的耦合（BAC firing）</li>
+<li><a href="https://en.wikipedia.org/wiki/Perceptrons_(book)" target="_blank">Perceptrons（Minsky &amp; Papert 1969）</a> — 单层算不了异或的那本书</li>
+<li><a href="https://www.nature.com/articles/35035159" target="_blank">Nakagaki et al. 2000 · Nature</a> — 黏菌走迷宫，没有神经元的计算</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 36 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
