@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 37 · 神经动力学与神经流形 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 37 · PHASE E 计算</span>
+<h1>神经动力学与神经流形</h1>
+<h2>大脑不是在算出答案，是在滚向答案</h2>
+<div class="date">2026-08-13 · BigCat</div>
+<p class="pitch">几百个细胞各放各的，画出来却只是一张薄面上的一条线——大脑能走的路，远比它的零件数少。</p>
+</header>
+<div class="intro">
+<p>闭上眼，原地转半圈，停下。你还知道自己现在朝哪边。没人告诉你，你也没在心里数角度。这件事在脑子里并不是靠一个「方向」的格子存着——靠的是一圈细胞，它们的活动像一个亮斑停在环上某处；你转身，亮斑就沿着这圈挪同样的角度。这一期换一个看大脑的角度：<strong>别问「这个细胞代表什么」，问「这一群细胞此刻整体在往哪儿走」。</strong>换过去之后，记忆为什么能卡住、动作为什么要先「准备」、以及一件事你今天到底学不学得会，会一起得到解释。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>盯一个细胞，不如盯一群细胞的姿势</h2>
+<p>先换一套记法。假设你同时记录了 100 个细胞，此刻每个细胞都有一个发放快慢的数值。把这 100 个数排成一串，就是这群细胞此刻的<strong>状态</strong>。你可以把它想成一个 100 维空间里的点——维度多得没法画，但道理和「一个点用 x、y 两个数定位」完全一样，只是这里要 100 个数。时间往前走，点跟着动，划出一条<strong>轨迹</strong>。</p>
+<p>这套记法本身没说什么新东西。真正的发现是：<strong>这个点根本不到处乱跑。</strong>一百个细胞理论上有一百个自由度，实际测出来，状态几乎只在少数几个方向上变化——十来个，常常更少。别的方向基本是空的。这块「点被摁住、只能在里头动」的低维面，就叫<strong>神经流形</strong>。</p>
+<figure>
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m37a" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+<marker id="m37b" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+</defs>
+<text fill="#a99ccc" font-size="11.5" x="20" y="30">100 个细胞各自的活动</text>
+<text fill="#6f6a8c" font-size="10" x="20" y="66">细胞 1</text>
+<path d="M20,86 L34,78 L46,92 L58,74 L72,90 L86,80 L100,94 L114,76 L128,88 L142,82" fill="none" stroke="#8f89ad" stroke-width="1.6"></path>
+<text fill="#6f6a8c" font-size="10" x="20" y="120">细胞 2</text>
+<path d="M20,140 L34,132 L46,144 L58,128 L72,142 L86,126 L100,140 L114,134 L128,146 L142,130" fill="none" stroke="#8f89ad" stroke-width="1.6"></path>
+<text fill="#6f6a8c" font-size="10" x="20" y="174">…细胞 100</text>
+<path d="M20,194 L34,186 L46,198 L58,182 L72,196 L86,188 L100,200 L114,184 L128,194 L142,190" fill="none" stroke="#8f89ad" stroke-width="1.6"></path>
+<line marker-end="url(#m37a)" stroke="#8f89ad" stroke-width="1.8" x1="160" x2="196" y1="138" y2="138"></line>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="178" y="128">合看</text>
+<line stroke="rgba(255,255,255,0.22)" stroke-width="1.2" x1="256" x2="256" y1="196" y2="52"></line>
+<line stroke="rgba(255,255,255,0.22)" stroke-width="1.2" x1="256" x2="424" y1="196" y2="196"></line>
+<line stroke="rgba(255,255,255,0.22)" stroke-width="1.2" x1="256" x2="216" y1="196" y2="228"></line>
+<text fill="#6f6a8c" font-size="9.5" x="240" y="46">细胞 1</text>
+<text fill="#6f6a8c" font-size="9.5" x="428" y="200">细胞 2</text>
+<text fill="#6f6a8c" font-size="9.5" x="206" y="242">细胞 3…</text>
+<ellipse cx="340" cy="122" fill="rgba(167,139,250,0.14)" rx="86" ry="40" stroke="rgba(167,139,250,0.5)" stroke-width="1.3" transform="rotate(-19 340 122)"></ellipse>
+<path d="M288,146 C304,120 326,108 348,116 C372,124 386,110 396,88" fill="none" marker-end="url(#m37b)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<circle cx="288" cy="146" fill="#fbbf24" r="4.5"></circle>
+<circle cx="316" cy="128" fill="rgba(52,229,224,0.55)" r="2.8"></circle>
+<circle cx="356" cy="118" fill="rgba(52,229,224,0.55)" r="2.8"></circle>
+<circle cx="378" cy="102" fill="rgba(52,229,224,0.55)" r="2.8"></circle>
+<text fill="#c0aef8" font-size="11" text-anchor="middle" x="356" y="62">所有状态都贴在这张薄面上</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="350" y="178">一个瞬间＝一个点，一段时间＝一条轨迹</text>
+</svg>
+<figcaption>100 个数的状态，实际只在一张低维的面上游走</figcaption>
+</figure>
+<p>打个比方：一百个人在台上挥手，看着像一百份自由，其实他们在跳同一支舞，真正能变的只有几件事——节拍、朝向、幅度。你不必逐个盯人，盯那几件事就够。大脑给人的感觉正是这样：<strong>零件极多，但能摆出的姿势少得多，而且这些姿势彼此连成一片。</strong></p>
+<p class="en-brief"><b>EN</b> Record N neurons and their instantaneous firing rates form a point in an N-dimensional state space; over time that point traces a trajectory. The striking empirical finding is that the point does not roam freely — population activity is confined to a low-dimensional surface, the <i>neural manifold</i>, with only a handful of effective dimensions out of hundreds.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>「维度看着极高、实际贴在一张低维面上」在机器学习里叫<b>流形假说</b>，是这门学科的地基之一：一张 100 万像素的人脸照片，理论上有 100 万个自由度，可真实人脸只占其中薄薄一层——变的无非是角度、光线、表情这些数得过来的东西。深度网络中间层的活动也一样，几千个数值实际只在很少几个方向上有效变化。<b>神经科学和 AI 在这里用的是同一套降维工具</b>（比如把主要变化方向挑出来的 PCA），连图都长得像。</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>山谷：一个念头凭什么能卡住不散</h2>
+<p>有了「状态」和「轨迹」，就可以用一套很省的语言描述大脑：给出此刻的状态、再给一条「下一刻往哪挪」的规则，就等于给了一张<strong>地形</strong>，状态像小球在上面滚。滚下去停住的那个坑，叫<strong>吸引子</strong>。</p>
+<p>最简单的坑是一个点。你被念了一串电话号码，要在心里拎住几秒——这几秒里输入早没了，可一群前额叶细胞还在持续放电（<a class="reflink" href="ref-prefrontal.html">前额叶</a>）。它们靠互相激励把彼此撑住，就是被推进了一个坑。<strong>坑的好处是抗噪：</strong>周围细胞的随机波动把球推歪一点，它自己会滚回来——这正是「记住」需要的那种稳。1982 年 Hopfield 把这件事写成了一个能记东西的网络：每段记忆是地形上的一个坑，回忆就是从一个残缺的线索出发、顺着坡滚到坑底。他因这条线分享了 2024 年的诺贝尔物理学奖。</p>
+<p>坑不一定是个点。<strong>如果它是一整圈呢？</strong>1990 年代有人为了解释头朝向细胞提出：把这些细胞排成一个环，相邻的互相加强、隔得远的互相压制，活动就会自动收成一个亮斑，停在环上任意一处不动；转头的信号则把亮斑沿着环推走。当时这纯属纸上推演。二十多年后，它在果蝇脑里被<strong>直接看见了</strong>：果蝇脑中央有一圈叫椭球体的结构，把它的活动拍下来，果蝇一转身，那个亮斑就沿着圈同步转过同样的角度（Seelig &amp; Jayaraman 2015；Kim 等 2017 进一步证实它就是环吸引子）。后来在小鼠身上也测到同一个环，而且<strong>动物睡着时它照样在转</strong>——梦里也有个朝向。</p>
+<figure>
+<svg viewbox="0 0 480 246" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="g37hill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="rgba(167,139,250,0.22)"></stop><stop offset="1" stop-color="rgba(167,139,250,0.02)"></stop></lineargradient>
+<marker id="m37c" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"></path></marker>
+<marker id="m37d" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+</defs>
+<text fill="#a99ccc" font-size="11.5" x="22" y="32">点吸引子 · 记住一件事</text>
+<path d="M22,96 C50,94 58,158 88,160 C118,162 122,86 152,86 C182,86 186,160 214,162 C226,163 232,140 238,128 L238,214 L22,214 Z" fill="url(#g37hill)" stroke="none"></path>
+<path d="M22,96 C50,94 58,158 88,160 C118,162 122,86 152,86 C182,86 186,160 214,162 C226,163 232,140 238,128" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<circle cx="118" cy="126" fill="rgba(251,191,36,0.22)" r="7" stroke="rgba(251,191,36,0.5)" stroke-width="1.2"></circle>
+<path d="M113,133 C106,144 100,152 96,150" fill="none" marker-end="url(#m37c)" stroke="#fbbf24" stroke-width="1.8"></path>
+<circle cx="88" cy="152" fill="#fbbf24" r="8"></circle>
+<text fill="#f3cf7a" font-size="10.5" x="24" y="60">噪声把球推歪一点，</text>
+<text fill="#f3cf7a" font-size="10.5" x="24" y="76">它会自己滚回坑底</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="128" y="236">坑底 = 一个稳住的状态</text>
+<line stroke="rgba(167,139,250,0.28)" stroke-dasharray="4 6" stroke-width="1" x1="256" x2="256" y1="30" y2="230"></line>
+<text fill="#a99ccc" font-size="11.5" text-anchor="end" x="462" y="32">环吸引子 · 你朝哪边</text>
+<circle cx="372" cy="128" fill="none" r="54" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3 5" stroke-width="1.4"></circle>
+<path d="M367.3,74.2 A54,54 0 0 1 420.9,105.2" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="7" opacity="0.9"></path>
+<circle cx="399" cy="82" fill="#7bf0e8" r="5"></circle>
+<path d="M436,105 A68,68 0 0 1 433,157" fill="none" marker-end="url(#m37d)" stroke="#34e5e0" stroke-width="2"></path>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="372" y="132">亮斑停在</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="372" y="148">环上某处</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="372" y="222">你转身，亮斑就转同样角度</text>
+</svg>
+<figcaption>坑可以是一个点（记住），也可以是一整圈（朝向）</figcaption>
+</figure>
+<p>还有更漂亮的：给老鼠的网格细胞群体做同样的分析，得到的流形是一个<strong>甜甜圈的表面</strong>（Gardner 等 2022）——那正是「在平面上走、走出一格就回到原样」这件事该有的形状（<a class="reflink" href="ref-hippocampus.html">海马与内嗅</a>）。<strong>形状是被任务要求逼出来的，不是巧合。</strong></p>
+<p class="en-brief"><b>EN</b> Give a system a state plus a rule for where it goes next and you get a landscape the state rolls across; the basins are <i>attractors</i>. Point attractors explain persistent prefrontal activity in working memory — noise gets corrected back — and Hopfield (1982) turned this into associative memory (a share of the 2024 Nobel Prize in Physics). A ring attractor, predicted in the 1990s for head-direction cells, was later seen directly in the fly ellipsoid body (Seelig &amp; Jayaraman 2015; Kim et al. 2017), and grid-cell populations live on a torus (Gardner et al. 2022).</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>Hopfield 那个网络是<b>联想记忆</b>的原型：不按地址取东西，而是给一段残缺的线索、让它自己滚到最近的坑里补全——这跟今天的向量检索是一路货。更妙的是后来发现的一条：把 Hopfield 网络的容量推到「现代」版本时，它的取回公式和大语言模型里 <b>attention</b>（模型每一步用当前的问题去和一堆记下来的键比对、按相似度加权取回）的数学式子几乎重合。<b>「往坑里滚」和「按相似度取回」原来是同一个动作的两种写法。</b></p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>计算不是求值，是滚一趟</h2>
+<p>你伸手去拿桌上的杯子。运动皮层怎么把这事办成的？教科书版本是：细胞编码方向，下游把方向读出来发给肌肉（<a class="reflink" href="ref-motor-system.html">运动系统与小脑</a>）。可这个说法一直有个尴尬：<strong>动手之前那两三百毫秒，运动皮层已经很忙了，手却没动。</strong>那阵活动到底在干嘛？</p>
+<p>2012 年 Churchland 那组换了个看法：别问细胞代表什么，看整群的轨迹。结果很干净——每一次伸手，群体状态都在流形上<strong>转圈</strong>，像一个被拨了一下的转盘。于是准备期的意义变得很清楚：<strong>它是在把状态摆到一个特定的起点上。</strong>手一放，回路自己的动力学就把轨迹转出去，肌肉指令是这条轨迹被读出来的结果。要伸向不同方向，改的不是「发什么指令」，是<strong>起点摆在哪儿</strong>。</p>
+<p>那准备期活动那么强，为什么手不动？因为它落在一个<strong>输出零空间</strong>里——这些细胞的变化互相配合得刚刚好，传到下游一加总正好抵消（Kaufman 等 2014）。大脑挑了肌肉「听不见」的那些方向，把话提前说完。</p>
+<figure>
+<svg viewbox="0 0 480 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m37e" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+<marker id="m37f" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+</defs>
+<text fill="#a99ccc" font-size="11.5" x="20" y="30">群体轨迹（流形上）</text>
+<path d="M124,120 C146,104 172,120 170,148 C168,180 130,198 96,188 C58,176 44,132 64,96 C86,56 140,44 184,64" fill="none" marker-end="url(#m37e)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8"></path>
+<circle cx="124" cy="120" fill="#fbbf24" r="6.5"></circle>
+<text fill="#f3cf7a" font-size="10.5" x="20" y="228">① 准备期：把状态摆到黄点这个起点</text>
+<text fill="#7bf0e8" font-size="10.5" x="20" y="248">② 放手后，动力学自己把轨迹转出去</text>
+<line marker-end="url(#m37f)" stroke="#8f89ad" stroke-width="1.8" x1="208" x2="244" y1="120" y2="120"></line>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="226" y="110">读出</text>
+<line stroke="rgba(255,255,255,0.2)" stroke-width="1.2" x1="272" x2="272" y1="48" y2="188"></line>
+<line stroke="rgba(255,255,255,0.2)" stroke-width="1.2" x1="272" x2="456" y1="188" y2="188"></line>
+<path d="M272,152 C292,152 300,80 320,78 C342,76 348,166 372,164 C394,162 398,104 420,106 C438,108 444,142 456,146" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#f0a8f8" font-size="10.5" x="278" y="40">肌肉指令</text>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="364" y="208">时间 →</text>
+</svg>
+<figcaption>准备＝设初值，动作＝让轨迹自己转出去，肌肉指令是它的读出</figcaption>
+</figure>
+<p class="en-brief"><b>EN</b> Churchland et al. (2012) found that motor-cortex population activity rotates on the manifold during reaching. Preparatory activity is not a coded command but an <i>initial condition</i>: set the state, release it, and the circuit's own dynamics unfold the trajectory that muscle commands read out. Preparation does not leak into movement because it lives in an output-null subspace whose components cancel downstream (Kaufman et al. 2014).</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这一条的对读紧到几乎不用翻译。人工网络里有一类<b>循环网络</b>（把自己上一刻的输出接回自己的输入，所以有「状态」，能一步步演化），它和大脑一样是个动力系统。2013 年 Sussillo 和 Barak 训练这种网络去做记忆和决策的任务，然后用「找不动点」的办法拆开它——不动点就是前面说的坑底，把坑和坑周围的坡描出来，网络学到的算法就露了出来。他们发现<b>训练出来的网络自发长出了同一类结构</b>：稳住答案用点吸引子，攒证据用一条缓坡上的慢线，出动作用旋转。今天分析猴子运动皮层数据和分析一个循环网络，用的已经是同一套工具箱——这在两门学科之间是很少见的事。</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>低维是真的吗？以及它到底管不管用</h2>
+<p>先泼一盆冷水。2019 年 Stringer 那组同时记录了一万多个小鼠视觉皮层细胞，给它看几千张自然图像——这回<strong>维度一点也不低</strong>：有效方向一个接一个，衰减得非常慢。这提醒了一件容易被忽略的事：<strong>你测出多少维，很大程度取决于你记了多少细胞、让动物做了多难的事。</strong>让猴子来回够几个固定的靶子，那当然只需要几个自由度。所以更诚实的说法是——流形是<strong>某个任务下</strong>的有效低维，不是大脑本身只有十来个自由度。</p>
+<p>但它确实有<strong>因果上的分量</strong>，而且证据很硬。2014 年 Sadtler 那组让猴子用脑机接口控制光标：从运动皮层实时读活动、按一套映射换成光标位移（<a class="reflink" href="ref-motor-system.html">运动系统与小脑</a>）。练熟之后，实验者偷偷改映射。改成一个<strong>还在原流形里</strong>的新映射，猴子几小时就重新学会；改成一个<strong>需要跑到流形外</strong>的映射，同一天怎么练都学不会。后续工作（Oby 等 2019）显示那种映射不是永远学不会，而是要练好几天，让新的活动模式慢慢长出来。<strong>换句话说，你今天能学会什么，被你现有的流形框着；要突破它，得给时间。</strong></p>
+<figure>
+<svg viewbox="0 0 480 226" xmlns="http://www.w3.org/2000/svg">
+<line stroke="rgba(255,255,255,0.2)" stroke-width="1.2" x1="62" x2="62" y1="28" y2="182"></line>
+<line stroke="rgba(255,255,255,0.2)" stroke-width="1.2" x1="62" x2="452" y1="182" y2="182"></line>
+<text fill="#6f6a8c" font-size="10.5" x="24" y="24">表现 ↑</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="256" y="204">练习时间 →</text>
+<path d="M62,172 C110,146 146,94 204,76 C266,58 348,50 440,46" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="3"></path>
+<path d="M62,172 C140,169 250,166 440,160" fill="none" stroke="#e879f9" stroke-dasharray="6 5" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#7bf0e8" font-size="11" text-anchor="end" x="440" y="36">流形内的新映射 · 几小时就会</text>
+<text fill="#f0a8f8" font-size="11" text-anchor="end" x="440" y="150">流形外的新映射 · 当天学不会</text>
+<line stroke="rgba(255,255,255,0.16)" stroke-dasharray="3 5" stroke-width="1" x1="62" x2="452" y1="104" y2="104"></line>
+<text fill="#6f6a8c" font-size="9.5" x="66" y="100">熟练线</text>
+</svg>
+<figcaption>同样是换一套新映射，落在流形里还是流形外，结果差一个数量级</figcaption>
+</figure>
+<p>另一头是个好消息。同一只猴子隔几年再做同一个动作，<strong>单个细胞的脾气会漂</strong>——这个细胞原本偏爱往左，几年后不一定还偏爱往左。可把群体活动投到流形上看，那套潜在的动力学稳得惊人（Gallego 等 2020）。这对脑机接口是实打实的用处：与其死盯着某几个细胞不放，不如去<strong>对齐流形</strong>，解码器就能跨越几个月甚至几年继续能用（<a class="reflink" href="brain-computer-interface-topic29.html">脑机接口那期</a>讲过读取端的工程，这里是它长期稳定的底气）。</p>
+<p class="en-brief"><b>EN</b> Caveats first: Stringer et al. (2019) recorded &gt;10,000 mouse visual-cortex neurons under rich natural images and found dimensionality that is <i>not</i> low — measured dimensionality depends on how many neurons you record and how hard the task is. Still, manifolds have causal bite: in BCI experiments, monkeys relearn within-manifold perturbations in hours but fail outside-manifold ones the same day (Sadtler et al. 2014), needing days to grow new patterns (Oby et al. 2019). And while single-neuron tuning drifts over years, latent dynamics on the manifold stay stable (Gallego et al. 2020) — the basis for long-term stable decoders.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">「不去推每一步，而是造一个坡、让它自己滚」——这个念头在好几个离神经科学很远的地方都被独立想到过：</p>
+<ul>
+<li><b>兵法 · 孙子</b>：「转圆石于千仞之山者，势也。」他讲的正是这件事：不要逐个去推石头，去造那个坡。动力系统的看法把它落到了脑上——大脑并不逐点算出手该怎么动，它把状态摆到一个位置，剩下的交给回路本身的「势」。<b>准备，就是造势。</b></li>
+<li><b>发育生物学 · Waddington 的地形</b>：1950 年代 Waddington 为了讲一个细胞怎么分化成肝细胞或神经元，画了张山谷图——球从山上滚下，遇到分岔选一边，滚进哪条谷就定型成哪种细胞。同一个「地形加滚球」的比喻，在细胞命运和神经活动这两个差着好几个数量级的尺度上都成立，很难说是巧合：<b>凡是由许多零件互相牵制的系统，能落脚的地方本来就不多。</b></li>
+<li><b>心理学 · 詹姆斯的「意识流」</b>：一百多年前 William James 说，意识不是一颗一颗珠子串起来的，它是一条河，你舀不出一个静止的「当下」。当年这是个文学式的直觉；群体轨迹这套办法总算给了它一个能测量的形状——真正在动的是那条线，你以为的「一个念头」，只是这条线路过一个坑时慢下来的那一段。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>如果计算是一条轨迹，那「这个细胞代表什么」还有意义吗？</summary><div>有，但降级了。单个细胞的偏好是流形被投影到「这一个细胞」这根轴上的影子——影子真实存在，可它随视角而变，也难怪同一个细胞在不同任务里像在代表不同东西。真正的麻烦是反过来的那一步：从一个细胞的偏好去推整群在算什么，等于从一道影子去猜物体的形状。这也是为什么这一行越来越倾向于<strong>同时记录一大群</strong>——不是贪多，是维度不够就根本看不出形状。</div></details>
+<details><summary>低维到底是大脑的性质，还是我们实验的性质？</summary><div>目前最站得住的答案是：两者都有份。任务简单、记录的细胞少，测出来必然低维——这部分是我们造成的。但也有真东西：回路的连接本身就限制了哪些活动模式能被撑住，Sadtler 那个实验里「流形外学不会」正是这层限制的因果证据。稳妥的读法是把流形当成<strong>「在这个任务下、这套连接允许的活动空间」</strong>，而不是大脑的固有维度。</div></details>
+<details><summary>那些「怎么练都不对」的事，是不是就是在流形外？</summary><div>这是个诱人但要小心的类比。实验里的「流形外」有严格定义（就那批细胞、那套映射），日常学习没有这么干净的对应。不过它给的直觉方向大概是对的：<strong>新技能里那些能用旧模式重新组合出来的部分学得飞快，需要脑子长出新模式的部分则慢得多，而且慢在「天」这个量级上</strong>——这也和睡眠里巩固要过夜的时间尺度对得上。真正实用的一条是：卡住的时候，多半不是不够努力，是那部分还没长出来，得给它隔夜的时间。</div></details>
+<details><summary>两个大脑、或者一个大脑和一个人工网络，凭什么说它们「在做同一个计算」？</summary><div>比较单个细胞肯定不行——细胞之间没有对应关系。现在的做法是比较<strong>几何</strong>：两个系统的状态空间里，各种情况之间的相对距离和排布是不是一样，轨迹的形状（转不转、怎么转）像不像。这套办法让「同一个计算」第一次有了可算的定义，但它也有个软肋：形状像不等于机制同，两个完全不同的实现可能画出很像的图。所以它更适合用来<strong>证伪</strong>（形状对不上，那肯定不是同一回事），而不是用来盖章。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Attractor_network" target="_blank">吸引子网络 Attractor network</a> — 点/环/连续吸引子的总入口</li>
+<li><a href="https://en.wikipedia.org/wiki/Hopfield_network" target="_blank">Hopfield 网络</a> — 记忆 = 地形上的坑（2024 诺贝尔物理奖）</li>
+<li><a href="https://doi.org/10.1146/annurev-neuro-092619-094115" target="_blank">Vyas, Golub, Sussillo &amp; Shenoy 2020 · Annual Review of Neuroscience</a> — 「用群体动力学做计算」的综述，这一期的主线来源</li>
+<li><a href="https://doi.org/10.1038/nature11129" target="_blank">Churchland et al. 2012 · Nature</a> — 伸手时运动皮层的旋转动力学</li>
+<li><a href="https://doi.org/10.1038/nn.3643" target="_blank">Kaufman et al. 2014 · Nature Neuroscience</a> — 输出零空间：准备而不动</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2017.05.025" target="_blank">Gallego et al. 2017 · Neuron</a> — 「神经流形」这个说法的奠基综述</li>
+<li><a href="https://doi.org/10.1038/nature13665" target="_blank">Sadtler et al. 2014 · Nature</a> — 流形内 vs 流形外：学习的边界</li>
+<li><a href="https://doi.org/10.1038/s41593-019-0555-4" target="_blank">Gallego et al. 2020 · Nature Neuroscience</a> — 细胞会漂，流形上的动力学不漂</li>
+<li><a href="https://doi.org/10.1038/nature14446" target="_blank">Seelig &amp; Jayaraman 2015 · Nature</a> — 果蝇脑里看见那个转动的亮斑</li>
+<li><a href="https://doi.org/10.1038/s41586-021-04268-7" target="_blank">Gardner et al. 2022 · Nature</a> — 网格细胞群体活动的甜甜圈拓扑</li>
+<li><a href="https://doi.org/10.1038/s41586-019-1346-5" target="_blank">Stringer et al. 2019 · Nature</a> — 一万个细胞看下去，维度并不低</li>
+<li><a href="https://doi.org/10.1162/NECO_a_00409" target="_blank">Sussillo &amp; Barak 2013 · Neural Computation</a> — 用不动点打开循环网络这个黑箱</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 37 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

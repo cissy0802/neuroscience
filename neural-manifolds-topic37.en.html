@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 37 · Neural Dynamics &amp; Neural Manifolds — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 37 · PHASE E COMPUTATIONAL</span>
+<h1>Neural Dynamics &amp; Neural Manifolds</h1>
+<h2>The brain doesn't compute the answer — it rolls toward it</h2>
+<div class="date">2026-08-13 · BigCat</div>
+<p class="pitch">Hundreds of cells firing every which way, and yet the whole thing draws a single line on a thin sheet: a brain has far fewer moves than it has parts.</p>
+</header>
+<div class="intro">
+<p>Close your eyes, turn halfway around, and stop. You still know which way you're facing. Nobody told you, and you didn't count degrees in your head. This isn't stored in some "heading" slot in the brain. It lives in a ring of cells whose activity forms a bump parked somewhere on that ring; when you turn, the bump slides around the ring by the same angle. This issue changes the question we ask of the brain: <strong>stop asking what a single cell represents, and ask where the whole population is heading right now.</strong> Once you make that switch, why a memory can hold, why movement needs preparing, and why some things simply cannot be learned today all fall out of the same picture.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Don't watch one cell — watch the posture of the crowd</h2>
+<p>Start with a change of notation. Say you record 100 cells at once, and right now each one has a number: how fast it's firing. Line those 100 numbers up and you have the population's <strong>state</strong> at this instant. Think of it as a point in a 100-dimensional space — too many dimensions to draw, but the idea is exactly the same as locating a point with an x and a y, only here it takes 100 numbers. Let time run and the point moves, tracing a <strong>trajectory</strong>.</p>
+<p>The notation by itself says nothing new. The finding is this: <strong>the point does not roam.</strong> A hundred cells could in principle give a hundred independent degrees of freedom; what you actually measure is that the state varies along only a handful of directions — a dozen or so, often fewer. The rest are essentially empty. That low-dimensional sheet the point is pinned to is called a <strong>neural manifold</strong>.</p>
+<figure>
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m37a" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+<marker id="m37b" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+</defs>
+<text fill="#a99ccc" font-size="11.5" x="20" y="30">100 cells, one at a time</text>
+<text fill="#6f6a8c" font-size="10" x="20" y="66">cell 1</text>
+<path d="M20,86 L34,78 L46,92 L58,74 L72,90 L86,80 L100,94 L114,76 L128,88 L142,82" fill="none" stroke="#8f89ad" stroke-width="1.6"></path>
+<text fill="#6f6a8c" font-size="10" x="20" y="120">cell 2</text>
+<path d="M20,140 L34,132 L46,144 L58,128 L72,142 L86,126 L100,140 L114,134 L128,146 L142,130" fill="none" stroke="#8f89ad" stroke-width="1.6"></path>
+<text fill="#6f6a8c" font-size="10" x="20" y="174">…cell 100</text>
+<path d="M20,194 L34,186 L46,198 L58,182 L72,196 L86,188 L100,200 L114,184 L128,194 L142,190" fill="none" stroke="#8f89ad" stroke-width="1.6"></path>
+<line marker-end="url(#m37a)" stroke="#8f89ad" stroke-width="1.8" x1="160" x2="196" y1="138" y2="138"></line>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="178" y="128">together</text>
+<line stroke="rgba(255,255,255,0.22)" stroke-width="1.2" x1="256" x2="256" y1="196" y2="52"></line>
+<line stroke="rgba(255,255,255,0.22)" stroke-width="1.2" x1="256" x2="424" y1="196" y2="196"></line>
+<line stroke="rgba(255,255,255,0.22)" stroke-width="1.2" x1="256" x2="216" y1="196" y2="228"></line>
+<text fill="#6f6a8c" font-size="9.5" x="242" y="46">cell 1</text>
+<text fill="#6f6a8c" font-size="9.5" x="428" y="200">cell 2</text>
+<text fill="#6f6a8c" font-size="9.5" x="200" y="242">cell 3…</text>
+<ellipse cx="340" cy="122" fill="rgba(167,139,250,0.14)" rx="86" ry="40" stroke="rgba(167,139,250,0.5)" stroke-width="1.3" transform="rotate(-19 340 122)"></ellipse>
+<path d="M288,146 C304,120 326,108 348,116 C372,124 386,110 396,88" fill="none" marker-end="url(#m37b)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6"></path>
+<circle cx="288" cy="146" fill="#fbbf24" r="4.5"></circle>
+<circle cx="316" cy="128" fill="rgba(52,229,224,0.55)" r="2.8"></circle>
+<circle cx="356" cy="118" fill="rgba(52,229,224,0.55)" r="2.8"></circle>
+<circle cx="378" cy="102" fill="rgba(52,229,224,0.55)" r="2.8"></circle>
+<text fill="#c0aef8" font-size="11" text-anchor="middle" x="356" y="62">every state lies on this thin sheet</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="352" y="178">instant = point · time = trajectory</text>
+</svg>
+<figcaption>A state made of 100 numbers that only ever wanders a low-dimensional sheet</figcaption>
+</figure>
+<p>An analogy: a hundred people on a stage waving looks like a hundred freedoms, but they're dancing the same dance, and only a few things actually vary — the beat, the facing, the size of the gesture. You don't need to watch each person; watch those few things. The brain gives the same impression: <strong>enormously many parts, far fewer postures, and those postures joined into one continuous surface.</strong></p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>"Looks impossibly high-dimensional, actually lives on a thin low-dimensional sheet" is the <b>manifold hypothesis</b> in machine learning, one of the field's foundations. A one-megapixel photo of a face has a million degrees of freedom on paper; real faces occupy a thin slice of that, varying in angle, lighting, expression — a countable handful of things. The activity of a deep network's hidden layer behaves the same way: thousands of numbers, effective variation along very few directions. <b>Neuroscience and AI reach for the same dimensionality-reduction tools here</b> (PCA, which pulls out the directions of greatest variation, for a start), and the resulting plots look alike.</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Basins: why a thought can hold instead of dissolving</h2>
+<p>Once you have states and trajectories, you can describe a brain in a very economical language: give the current state, plus a rule for where it moves next, and you have a <strong>landscape</strong> with the state rolling across it like a ball. Wherever it settles is an <strong>attractor</strong>.</p>
+<p>The simplest kind of basin is a single point. Someone reads you a phone number and you have to hold it for a few seconds — the input is long gone, yet a group of prefrontal cells is still firing (<a class="reflink" href="ref-prefrontal.en.html">prefrontal cortex</a>). They hold each other up by mutual excitation: they've been pushed into a basin. <strong>The value of a basin is noise tolerance:</strong> random fluctuation in the surrounding cells shoves the ball off-centre and it rolls back by itself — exactly the kind of stability "remembering" requires. In 1982 Hopfield turned this into a network that stores things: each memory is a basin in the landscape, and recalling is starting from a partial cue and letting it roll downhill. That line of work earned him a share of the 2024 Nobel Prize in Physics.</p>
+<p>A basin need not be a point. <strong>What if it's an entire ring?</strong> In the 1990s, to explain head-direction cells, theorists proposed arranging them in a ring where neighbours excite each other and distant ones inhibit each other. Activity then collapses into a bump that can sit anywhere on the ring, and a turning signal pushes the bump around it. That was pure paper. Two decades later the ring was <strong>seen directly</strong>, in a fly: a structure at the centre of the fly brain called the ellipsoid body, imaged while the fly turned, shows a bump that rotates by exactly the angle the fly turned (Seelig &amp; Jayaraman 2015; Kim et al. 2017 confirmed the ring-attractor dynamics). The same ring was later found in mice — and <strong>it keeps turning while the animal is asleep</strong>. There is a heading in the dream too.</p>
+<figure>
+<svg viewbox="0 0 480 246" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="g37hill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="rgba(167,139,250,0.22)"></stop><stop offset="1" stop-color="rgba(167,139,250,0.02)"></stop></lineargradient>
+<marker id="m37c" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#fbbf24"></path></marker>
+<marker id="m37d" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+</defs>
+<text fill="#a99ccc" font-size="11.5" x="22" y="32">Point attractor · holding one thing</text>
+<path d="M22,96 C50,94 58,158 88,160 C118,162 122,86 152,86 C182,86 186,160 214,162 C226,163 232,140 238,128 L238,214 L22,214 Z" fill="url(#g37hill)" stroke="none"></path>
+<path d="M22,96 C50,94 58,158 88,160 C118,162 122,86 152,86 C182,86 186,160 214,162 C226,163 232,140 238,128" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4"></path>
+<circle cx="118" cy="126" fill="rgba(251,191,36,0.22)" r="7" stroke="rgba(251,191,36,0.5)" stroke-width="1.2"></circle>
+<path d="M113,133 C106,144 100,152 96,150" fill="none" marker-end="url(#m37c)" stroke="#fbbf24" stroke-width="1.8"></path>
+<circle cx="88" cy="152" fill="#fbbf24" r="8"></circle>
+<text fill="#f3cf7a" font-size="10.5" x="24" y="60">noise nudges the ball off,</text>
+<text fill="#f3cf7a" font-size="10.5" x="24" y="76">it rolls back to the bottom</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="128" y="236">basin floor = a state that holds</text>
+<line stroke="rgba(167,139,250,0.28)" stroke-dasharray="4 6" stroke-width="1" x1="256" x2="256" y1="30" y2="230"></line>
+<text fill="#a99ccc" font-size="11.5" text-anchor="end" x="462" y="32">Ring attractor · which way you face</text>
+<circle cx="372" cy="128" fill="none" r="54" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3 5" stroke-width="1.4"></circle>
+<path d="M367.3,74.2 A54,54 0 0 1 420.9,105.2" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="7" opacity="0.9"></path>
+<circle cx="399" cy="82" fill="#7bf0e8" r="5"></circle>
+<path d="M436,105 A68,68 0 0 1 433,157" fill="none" marker-end="url(#m37d)" stroke="#34e5e0" stroke-width="2"></path>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="372" y="134">the bump</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="372" y="150">rests here</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="372" y="204">it can sit anywhere on the ring —</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="372" y="224">you turn, the bump turns the same angle</text>
+</svg>
+<figcaption>A basin can be a point (holding) or a whole ring (heading)</figcaption>
+</figure>
+<p>Prettier still: run the same analysis on a population of grid cells and the manifold you get is the surface of a <strong>doughnut</strong> (Gardner et al. 2022) — precisely the shape demanded by "walk across a plane, and one grid-spacing later you're back where you started" (<a class="reflink" href="ref-hippocampus.en.html">hippocampus &amp; entorhinal cortex</a>). <strong>The shape is forced by what the task requires; it isn't a coincidence.</strong></p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Hopfield's network is the prototype of <b>associative memory</b>: you don't fetch by address, you hand it a corrupted cue and let it roll into the nearest basin, which completes it — the same family as today's vector retrieval. Better still is what came later: when the network is pushed to its "modern" high-capacity version, its retrieval formula turns out to be all but identical to the equations of <b>attention</b> in a large language model (each step compares the current query against a pile of stored keys and pulls back a similarity-weighted mixture). <b>"Rolling into a basin" and "retrieving by similarity" are two ways of writing the same move.</b></p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Computation isn't evaluating — it's taking a ride</h2>
+<p>You reach for the cup on the table. How does motor cortex get that done? The textbook version: cells encode direction, downstream circuits read the direction out and send it to the muscles (<a class="reflink" href="ref-motor-system.en.html">motor system &amp; cerebellum</a>). That story has always had an embarrassment attached: <strong>for two or three hundred milliseconds before the movement, motor cortex is already busy, and the hand hasn't moved.</strong> What is all that activity doing?</p>
+<p>In 2012 Churchland's group changed the question: never mind what each cell represents, look at the trajectory of the whole population. The answer came out clean — on every reach, the population state <strong>rotates</strong> on the manifold, like a wheel that's been given a spin. Which makes the point of the preparatory period obvious: <strong>it sets the state to a particular starting position.</strong> Let go, and the circuit's own dynamics unwind the trajectory; the muscle command is that trajectory read out. Reaching in a different direction doesn't change "what command to issue" — it changes <strong>where the starting point sits</strong>.</p>
+<p>Then why doesn't such strong preparatory activity move the hand? Because it lives in an <strong>output-null subspace</strong> — those cells' changes are arranged so that they cancel exactly when the downstream sum is taken (Kaufman et al. 2014). The brain picks the directions the muscles can't hear, and says everything it needs to say in advance.</p>
+<figure>
+<svg viewbox="0 0 480 262" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m37e" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+<marker id="m37f" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"></path></marker>
+</defs>
+<text fill="#a99ccc" font-size="11.5" x="20" y="30">Population trajectory (on the manifold)</text>
+<path d="M124,120 C146,104 172,120 170,148 C168,180 130,198 96,188 C58,176 44,132 64,96 C86,56 140,44 184,64" fill="none" marker-end="url(#m37e)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8"></path>
+<circle cx="124" cy="120" fill="#fbbf24" r="6.5"></circle>
+<text fill="#f3cf7a" font-size="10.5" x="20" y="228">① prepare: set the state to the amber point</text>
+<text fill="#7bf0e8" font-size="10.5" x="20" y="248">② release: the dynamics rotate it outward</text>
+<line marker-end="url(#m37f)" stroke="#8f89ad" stroke-width="1.8" x1="208" x2="244" y1="120" y2="120"></line>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="226" y="110">readout</text>
+<line stroke="rgba(255,255,255,0.2)" stroke-width="1.2" x1="272" x2="272" y1="48" y2="188"></line>
+<line stroke="rgba(255,255,255,0.2)" stroke-width="1.2" x1="272" x2="456" y1="188" y2="188"></line>
+<path d="M272,152 C292,152 300,80 320,78 C342,76 348,166 372,164 C394,162 398,104 420,106 C438,108 444,142 456,146" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#f0a8f8" font-size="10.5" x="278" y="40">muscle command</text>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="364" y="208">time →</text>
+</svg>
+<figcaption>Preparation sets the initial condition; the movement is the trajectory unwinding, read out as muscle commands</figcaption>
+</figure>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This one barely needs translating. Artificial networks include a family called <b>recurrent networks</b> — they feed their own output back into their input, so they have a state and evolve step by step, which makes them dynamical systems too. In 2013 Sussillo and Barak trained such networks on memory and decision tasks and then pried them open by <b>finding their fixed points</b> — fixed points being the basin floors from earlier — and mapping the slopes around them, which exposes the algorithm the network learned. What they found is that <b>the trained networks had grown the same repertoire</b>: point attractors to hold an answer, a slow line along a shallow valley to accumulate evidence, rotation to emit an action. Analysing monkey motor cortex and analysing a recurrent network now use one toolbox — a rare thing between two fields.</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Is low-dimensional real? And does it buy anything?</h2>
+<p>Cold water first. In 2019 Stringer's group recorded more than ten thousand cells in mouse visual cortex while showing thousands of natural images — and the dimensionality was <strong>not low at all</strong>: effective directions kept coming, the variance falling off as a slow power law. Which is a reminder of something easy to forget: <strong>how many dimensions you measure depends heavily on how many cells you recorded and how hard a thing you asked the animal to do.</strong> A monkey reaching back and forth between a few fixed targets obviously needs only a few degrees of freedom. So the honest statement is that a manifold is the effective low dimensionality <strong>under a given task</strong>, not proof that the brain itself has a dozen degrees of freedom.</p>
+<p>But manifolds do have <strong>causal bite</strong>, and the evidence is hard. In 2014 Sadtler's group had monkeys drive a cursor through a brain–computer interface: read motor cortex live, convert activity to cursor motion through a mapping (<a class="reflink" href="ref-motor-system.en.html">motor system &amp; cerebellum</a>). Once the animal was fluent, the experimenters quietly swapped the mapping. Swap in a new mapping that <strong>still lives inside the existing manifold</strong> and the monkey relearns within hours. Swap in one that <strong>requires activity outside the manifold</strong> and it cannot be learned that day, no matter how much practice. Follow-up work (Oby et al. 2019) showed such mappings aren't unlearnable forever — they take days, while new activity patterns slowly grow. <strong>What you can learn today is fenced in by the manifold you already have; getting past that fence takes time.</strong></p>
+<figure>
+<svg viewbox="0 0 480 226" xmlns="http://www.w3.org/2000/svg">
+<line stroke="rgba(255,255,255,0.2)" stroke-width="1.2" x1="62" x2="62" y1="28" y2="182"></line>
+<line stroke="rgba(255,255,255,0.2)" stroke-width="1.2" x1="62" x2="452" y1="182" y2="182"></line>
+<text fill="#6f6a8c" font-size="10.5" x="18" y="24">performance ↑</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="256" y="204">practice time →</text>
+<path d="M62,172 C110,146 146,94 204,76 C266,58 348,50 440,46" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="3"></path>
+<path d="M62,172 C140,169 250,166 440,160" fill="none" stroke="#e879f9" stroke-dasharray="6 5" stroke-linecap="round" stroke-width="2.4"></path>
+<text fill="#7bf0e8" font-size="11" text-anchor="end" x="440" y="36">within-manifold remap · learned in hours</text>
+<text fill="#f0a8f8" font-size="11" text-anchor="end" x="440" y="150">outside-manifold remap · not learned that day</text>
+<line stroke="rgba(255,255,255,0.16)" stroke-dasharray="3 5" stroke-width="1" x1="62" x2="452" y1="104" y2="104"></line>
+<text fill="#6f6a8c" font-size="9.5" x="66" y="100">proficient</text>
+</svg>
+<figcaption>The same new mapping: inside or outside the manifold changes the outcome by an order of magnitude</figcaption>
+</figure>
+<p>The other end of it is good news. Bring the same monkey back years later to do the same movement and <strong>individual cells will have drifted</strong> — a cell that once preferred leftward may no longer. Yet project the population onto the manifold and the latent dynamics are strikingly stable (Gallego et al. 2020). That has a concrete payoff for brain–computer interfaces: rather than clinging to a particular set of cells, <strong>align the manifold</strong>, and a decoder keeps working across months or years (<a class="reflink" href="brain-computer-interface-topic29.en.html">the BCI issue</a> covered the engineering of the read-out side; this is why it can stay stable over the long run).</p>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Don't push every step — build a slope and let it roll" is an idea that has been arrived at independently, far from neuroscience:</p>
+<ul>
+<li><b>Strategy · Sun Tzu</b>: "Rolling round boulders down a mountain a thousand fathoms high — that is <i>shi</i>, momentum." His point is exactly this one: don't shove each rock, build the slope. The dynamical view lands it on the brain — motor cortex doesn't compute the hand's path point by point, it sets the state somewhere and leaves the rest to the circuit's own momentum. <b>Preparation is the building of momentum.</b></li>
+<li><b>Developmental biology · Waddington's landscape</b>: in the 1950s Waddington explained how one cell becomes a liver cell or a neuron by drawing valleys — a ball rolls downhill, takes one fork or another, and whichever valley it ends in is what it becomes. The same landscape-and-ball metaphor holds at two scales separated by orders of magnitude, which is hard to write off as coincidence: <b>any system made of many mutually constraining parts has few places it can come to rest.</b></li>
+<li><b>Psychology · William James's "stream of consciousness"</b>: more than a century ago James argued that consciousness isn't beads on a string, it's a river, and you can't scoop out a stationary "now". That was a literary intuition at the time; population trajectories finally give it a measurable shape — what is actually moving is the line, and what you experience as "a thought" is just the stretch where the line slows down passing a basin.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If computation is a trajectory, does "what this cell represents" still mean anything?</summary><div>It does, but it's been demoted. A single cell's preference is the shadow the manifold casts on that one cell's axis — the shadow is real, but it changes with viewpoint, which is why the same cell can look like it represents different things in different tasks. The real trouble is the reverse step: inferring what a population computes from one cell's preference is guessing an object's shape from one shadow. Hence the field's push toward <strong>recording large populations at once</strong> — not greed for data, but the fact that without enough dimensions the shape is invisible.</div></details>
+<details><summary>Is low dimensionality a property of brains or a property of our experiments?</summary><div>The defensible answer is both. Simple tasks and few recorded cells guarantee a low-dimensional measurement — that part is ours. But something real is there too: the circuit's own connectivity limits which activity patterns can be sustained, and "outside-manifold mappings can't be learned today" in the Sadtler experiment is causal evidence of that limit. The safe reading is that a manifold is <strong>the space of activity this connectivity allows under this task</strong>, not the brain's intrinsic dimensionality.</div></details>
+<details><summary>Are the things that "never click no matter how much I practise" outside the manifold?</summary><div>A tempting analogy to handle carefully. "Outside the manifold" has a strict definition in those experiments (that set of cells, that mapping); everyday learning has no such clean counterpart. Still, the direction of the intuition looks right: <strong>the parts of a new skill that can be recombined from existing patterns come fast, and the parts that need genuinely new patterns come slowly — slow on the scale of days</strong>, which matches the overnight timescale of consolidation during sleep. The usable takeaway: when you're stuck, it's usually not effort that's missing, it's that the pattern hasn't grown yet, and growing it takes nights.</div></details>
+<details><summary>What licenses us to say two brains — or a brain and a network — are "doing the same computation"?</summary><div>Comparing single cells can't work; there's no correspondence between them. The current approach compares <strong>geometry</strong>: whether the relative distances and arrangement of conditions in the two state spaces match, and whether the trajectories have the same shape (does it rotate, and how). This gives "the same computation" a computable definition for the first time, but it has a soft spot: similar shape doesn't guarantee similar mechanism, and two very different implementations can draw similar pictures. So it's better suited to <strong>ruling things out</strong> (shapes don't match, so it definitely isn't the same) than to certifying them.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Attractor_network" target="_blank">Attractor network</a> — point, ring and continuous attractors in one place</li>
+<li><a href="https://en.wikipedia.org/wiki/Hopfield_network" target="_blank">Hopfield network</a> — memory as a basin in a landscape (2024 Nobel Prize in Physics)</li>
+<li><a href="https://doi.org/10.1146/annurev-neuro-092619-094115" target="_blank">Vyas, Golub, Sussillo &amp; Shenoy 2020 · Annual Review of Neuroscience</a> — the review on computation through population dynamics; the spine of this issue</li>
+<li><a href="https://doi.org/10.1038/nature11129" target="_blank">Churchland et al. 2012 · Nature</a> — rotational dynamics in motor cortex during reaching</li>
+<li><a href="https://doi.org/10.1038/nn.3643" target="_blank">Kaufman et al. 2014 · Nature Neuroscience</a> — the output-null subspace: preparing without moving</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2017.05.025" target="_blank">Gallego et al. 2017 · Neuron</a> — the review that put "neural manifolds" on the map</li>
+<li><a href="https://doi.org/10.1038/nature13665" target="_blank">Sadtler et al. 2014 · Nature</a> — within- vs outside-manifold: the boundary of learning</li>
+<li><a href="https://doi.org/10.1038/s41593-019-0555-4" target="_blank">Gallego et al. 2020 · Nature Neuroscience</a> — neurons drift, latent dynamics don't</li>
+<li><a href="https://doi.org/10.1038/nature14446" target="_blank">Seelig &amp; Jayaraman 2015 · Nature</a> — watching the bump rotate in a fly brain</li>
+<li><a href="https://doi.org/10.1038/s41586-021-04268-7" target="_blank">Gardner et al. 2022 · Nature</a> — toroidal topology of grid-cell population activity</li>
+<li><a href="https://doi.org/10.1038/s41586-019-1346-5" target="_blank">Stringer et al. 2019 · Nature</a> — ten thousand cells in, dimensionality is not low</li>
+<li><a href="https://doi.org/10.1162/NECO_a_00409" target="_blank">Sussillo &amp; Barak 2013 · Neural Computation</a> — opening the recurrent-network black box with fixed points</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 37 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
