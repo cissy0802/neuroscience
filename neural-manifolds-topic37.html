@@ -63,8 +63,8 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <div class="container">
 <header>
 <span class="week-tag">TOPIC 37 · PHASE E 计算</span>
-<h1>神经动力学与神经流形</h1>
-<h2>大脑不是在算出答案，是在滚向答案</h2>
+<h1 data-tts="669026ca76fc2e3f">神经动力学与神经流形</h1>
+<h2 data-tts="1c5904205491f73b">大脑不是在算出答案，是在滚向答案</h2>
 <div class="date">2026-08-13 · BigCat</div>
 <p class="pitch">几百个细胞各放各的，画出来却只是一张薄面上的一条线——大脑能走的路，远比它的零件数少。</p>
 </header>
@@ -74,7 +74,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 1 -->
 <div class="section">
 <span class="num">// 01</span>
-<h2>盯一个细胞，不如盯一群细胞的姿势</h2>
+<h2 data-tts="5c5996dc208fcce0">盯一个细胞，不如盯一群细胞的姿势</h2>
 <p>先换一套记法。假设你同时记录了 100 个细胞，此刻每个细胞都有一个发放快慢的数值。把这 100 个数排成一串，就是这群细胞此刻的<strong>状态</strong>。你可以把它想成一个 100 维空间里的点——维度多得没法画，但道理和「一个点用 x、y 两个数定位」完全一样，只是这里要 100 个数。时间往前走，点跟着动，划出一条<strong>轨迹</strong>。</p>
 <p>这套记法本身没说什么新东西。真正的发现是：<strong>这个点根本不到处乱跑。</strong>一百个细胞理论上有一百个自由度，实际测出来，状态几乎只在少数几个方向上变化——十来个，常常更少。别的方向基本是空的。这块「点被摁住、只能在里头动」的低维面，就叫<strong>神经流形</strong>。</p>
 <figure>
@@ -119,7 +119,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 2 -->
 <div class="section">
 <span class="num">// 02</span>
-<h2>山谷：一个念头凭什么能卡住不散</h2>
+<h2 data-tts="5c2fcbc7497bb34d">山谷：一个念头凭什么能卡住不散</h2>
 <p>有了「状态」和「轨迹」，就可以用一套很省的语言描述大脑：给出此刻的状态、再给一条「下一刻往哪挪」的规则，就等于给了一张<strong>地形</strong>，状态像小球在上面滚。滚下去停住的那个坑，叫<strong>吸引子</strong>。</p>
 <p>最简单的坑是一个点。你被念了一串电话号码，要在心里拎住几秒——这几秒里输入早没了，可一群前额叶细胞还在持续放电（<a class="reflink" href="ref-prefrontal.html">前额叶</a>）。它们靠互相激励把彼此撑住，就是被推进了一个坑。<strong>坑的好处是抗噪：</strong>周围细胞的随机波动把球推歪一点，它自己会滚回来——这正是「记住」需要的那种稳。1982 年 Hopfield 把这件事写成了一个能记东西的网络：每段记忆是地形上的一个坑，回忆就是从一个残缺的线索出发、顺着坡滚到坑底。他因这条线分享了 2024 年的诺贝尔物理学奖。</p>
 <p>坑不一定是个点。<strong>如果它是一整圈呢？</strong>1990 年代有人为了解释头朝向细胞提出：把这些细胞排成一个环，相邻的互相加强、隔得远的互相压制，活动就会自动收成一个亮斑，停在环上任意一处不动；转头的信号则把亮斑沿着环推走。当时这纯属纸上推演。二十多年后，它在果蝇脑里被<strong>直接看见了</strong>：果蝇脑中央有一圈叫椭球体的结构，把它的活动拍下来，果蝇一转身，那个亮斑就沿着圈同步转过同样的角度（Seelig &amp; Jayaraman 2015；Kim 等 2017 进一步证实它就是环吸引子）。后来在小鼠身上也测到同一个环，而且<strong>动物睡着时它照样在转</strong>——梦里也有个朝向。</p>
@@ -142,7 +142,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <line stroke="rgba(167,139,250,0.28)" stroke-dasharray="4 6" stroke-width="1" x1="256" x2="256" y1="30" y2="230"></line>
 <text fill="#a99ccc" font-size="11.5" text-anchor="end" x="462" y="32">环吸引子 · 你朝哪边</text>
 <circle cx="372" cy="128" fill="none" r="54" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3 5" stroke-width="1.4"></circle>
-<path d="M367.3,74.2 A54,54 0 0 1 420.9,105.2" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="7" opacity="0.9"></path>
+<path d="M367.3,74.2 A54,54 0 0 1 420.9,105.2" fill="none" opacity="0.9" stroke="#34e5e0" stroke-linecap="round" stroke-width="7"></path>
 <circle cx="399" cy="82" fill="#7bf0e8" r="5"></circle>
 <path d="M436,105 A68,68 0 0 1 433,157" fill="none" marker-end="url(#m37d)" stroke="#34e5e0" stroke-width="2"></path>
 <text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="372" y="132">亮斑停在</text>
@@ -161,7 +161,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 3 -->
 <div class="section">
 <span class="num">// 03</span>
-<h2>计算不是求值，是滚一趟</h2>
+<h2 data-tts="1819410b88517ef1">计算不是求值，是滚一趟</h2>
 <p>你伸手去拿桌上的杯子。运动皮层怎么把这事办成的？教科书版本是：细胞编码方向，下游把方向读出来发给肌肉（<a class="reflink" href="ref-motor-system.html">运动系统与小脑</a>）。可这个说法一直有个尴尬：<strong>动手之前那两三百毫秒，运动皮层已经很忙了，手却没动。</strong>那阵活动到底在干嘛？</p>
 <p>2012 年 Churchland 那组换了个看法：别问细胞代表什么，看整群的轨迹。结果很干净——每一次伸手，群体状态都在流形上<strong>转圈</strong>，像一个被拨了一下的转盘。于是准备期的意义变得很清楚：<strong>它是在把状态摆到一个特定的起点上。</strong>手一放，回路自己的动力学就把轨迹转出去，肌肉指令是这条轨迹被读出来的结果。要伸向不同方向，改的不是「发什么指令」，是<strong>起点摆在哪儿</strong>。</p>
 <p>那准备期活动那么强，为什么手不动？因为它落在一个<strong>输出零空间</strong>里——这些细胞的变化互相配合得刚刚好，传到下游一加总正好抵消（Kaufman 等 2014）。大脑挑了肌肉「听不见」的那些方向，把话提前说完。</p>
@@ -195,7 +195,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 4 -->
 <div class="section">
 <span class="num">// 04</span>
-<h2>低维是真的吗？以及它到底管不管用</h2>
+<h2 data-tts="413a8ca4723c28b9">低维是真的吗？以及它到底管不管用</h2>
 <p>先泼一盆冷水。2019 年 Stringer 那组同时记录了一万多个小鼠视觉皮层细胞，给它看几千张自然图像——这回<strong>维度一点也不低</strong>：有效方向一个接一个，衰减得非常慢。这提醒了一件容易被忽略的事：<strong>你测出多少维，很大程度取决于你记了多少细胞、让动物做了多难的事。</strong>让猴子来回够几个固定的靶子，那当然只需要几个自由度。所以更诚实的说法是——流形是<strong>某个任务下</strong>的有效低维，不是大脑本身只有十来个自由度。</p>
 <p>但它确实有<strong>因果上的分量</strong>，而且证据很硬。2014 年 Sadtler 那组让猴子用脑机接口控制光标：从运动皮层实时读活动、按一套映射换成光标位移（<a class="reflink" href="ref-motor-system.html">运动系统与小脑</a>）。练熟之后，实验者偷偷改映射。改成一个<strong>还在原流形里</strong>的新映射，猴子几小时就重新学会；改成一个<strong>需要跑到流形外</strong>的映射，同一天怎么练都学不会。后续工作（Oby 等 2019）显示那种映射不是永远学不会，而是要练好几天，让新的活动模式慢慢长出来。<strong>换句话说，你今天能学会什么，被你现有的流形框着；要突破它，得给时间。</strong></p>
 <figure>
@@ -217,7 +217,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p class="en-brief"><b>EN</b> Caveats first: Stringer et al. (2019) recorded &gt;10,000 mouse visual-cortex neurons under rich natural images and found dimensionality that is <i>not</i> low — measured dimensionality depends on how many neurons you record and how hard the task is. Still, manifolds have causal bite: in BCI experiments, monkeys relearn within-manifold perturbations in hours but fail outside-manifold ones the same day (Sadtler et al. 2014), needing days to grow new patterns (Oby et al. 2019). And while single-neuron tuning drifts over years, latent dynamics on the manifold stay stable (Gallego et al. 2020) — the basis for long-term stable decoders.</p>
 </div>
 <div class="crossx">
-<h3>🌀 越界 · 跨学科的联想</h3>
+<h3 data-tts="bf9d9cc442417cbd">🌀 越界 · 跨学科的联想</h3>
 <p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">「不去推每一步，而是造一个坡、让它自己滚」——这个念头在好几个离神经科学很远的地方都被独立想到过：</p>
 <ul>
 <li><b>兵法 · 孙子</b>：「转圆石于千仞之山者，势也。」他讲的正是这件事：不要逐个去推石头，去造那个坡。动力系统的看法把它落到了脑上——大脑并不逐点算出手该怎么动，它把状态摆到一个位置，剩下的交给回路本身的「势」。<b>准备，就是造势。</b></li>
@@ -226,14 +226,14 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 <div class="thinking">
-<h3>// 深入思考</h3>
+<h3 data-tts="709d8f525fe17fe0">// 深入思考</h3>
 <details><summary>如果计算是一条轨迹，那「这个细胞代表什么」还有意义吗？</summary><div>有，但降级了。单个细胞的偏好是流形被投影到「这一个细胞」这根轴上的影子——影子真实存在，可它随视角而变，也难怪同一个细胞在不同任务里像在代表不同东西。真正的麻烦是反过来的那一步：从一个细胞的偏好去推整群在算什么，等于从一道影子去猜物体的形状。这也是为什么这一行越来越倾向于<strong>同时记录一大群</strong>——不是贪多，是维度不够就根本看不出形状。</div></details>
 <details><summary>低维到底是大脑的性质，还是我们实验的性质？</summary><div>目前最站得住的答案是：两者都有份。任务简单、记录的细胞少，测出来必然低维——这部分是我们造成的。但也有真东西：回路的连接本身就限制了哪些活动模式能被撑住，Sadtler 那个实验里「流形外学不会」正是这层限制的因果证据。稳妥的读法是把流形当成<strong>「在这个任务下、这套连接允许的活动空间」</strong>，而不是大脑的固有维度。</div></details>
 <details><summary>那些「怎么练都不对」的事，是不是就是在流形外？</summary><div>这是个诱人但要小心的类比。实验里的「流形外」有严格定义（就那批细胞、那套映射），日常学习没有这么干净的对应。不过它给的直觉方向大概是对的：<strong>新技能里那些能用旧模式重新组合出来的部分学得飞快，需要脑子长出新模式的部分则慢得多，而且慢在「天」这个量级上</strong>——这也和睡眠里巩固要过夜的时间尺度对得上。真正实用的一条是：卡住的时候，多半不是不够努力，是那部分还没长出来，得给它隔夜的时间。</div></details>
 <details><summary>两个大脑、或者一个大脑和一个人工网络，凭什么说它们「在做同一个计算」？</summary><div>比较单个细胞肯定不行——细胞之间没有对应关系。现在的做法是比较<strong>几何</strong>：两个系统的状态空间里，各种情况之间的相对距离和排布是不是一样，轨迹的形状（转不转、怎么转）像不像。这套办法让「同一个计算」第一次有了可算的定义，但它也有个软肋：形状像不等于机制同，两个完全不同的实现可能画出很像的图。所以它更适合用来<strong>证伪</strong>（形状对不上，那肯定不是同一回事），而不是用来盖章。</div></details>
 </div>
 <div class="refs">
-<h3>// 延伸阅读</h3>
+<h3 data-tts="2cec345e703177dd">// 延伸阅读</h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Attractor_network" target="_blank">吸引子网络 Attractor network</a> — 点/环/连续吸引子的总入口</li>
 <li><a href="https://en.wikipedia.org/wiki/Hopfield_network" target="_blank">Hopfield 网络</a> — 记忆 = 地形上的坑（2024 诺贝尔物理奖）</li>
@@ -251,8 +251,8 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </div>
 <footer>BigCat · Neuroscience · Topic 37 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
-<script src="https://hub.cissychen.com/comments.js" defer></script>
-<script src="https://hub.cissychen.com/search.js" defer></script>
-<script src="https://hub.cissychen.com/index-button.js" defer></script>
-<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+<script defer="" src="https://hub.cissychen.com/comments.js"></script>
+<script defer="" src="https://hub.cissychen.com/search.js"></script>
+<script defer="" src="https://hub.cissychen.com/index-button.js"></script>
+<script defer="" src="https://hub.cissychen.com/i18n-tts.js"></script>
 </body></html>
