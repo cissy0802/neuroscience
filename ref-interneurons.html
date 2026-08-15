@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>参考 · 抑制性中间神经元 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.html">← 参考库</a>
+<header>
+<span class="ref-badge">参考库 · REFERENCE</span>
+<h1>抑制性中间神经元<span class="en">Inhibitory Interneurons</span></h1>
+<p>皮层里大约每五个神经元就有一个不往远处送信，只在本地拉闸。它们不是"把信号关掉"的开关，而是给信号<strong>塑形和定时</strong>的那只手——皮层的节律、注意的门、乃至一个回路会不会失控，都归它们管。</p>
+</header>
+<h2>一支只在本地干活的少数派</h2>
+<p>皮层里的神经元粗分两类。<strong>兴奋细胞</strong>（主要是锥体细胞）占八成上下，用谷氨酸做信使，轴突常常伸到很远的脑区——它们是"说话"的那一方。剩下的一到两成是<strong>中间神经元</strong>：用 GABA 做信使，效果是让下家更难放电；轴突基本不出本地，只在自己这一小片里布线。</p>
+<p>别被"少数派"骗了。它们的种类比兴奋细胞丰富得多，而且<strong>各有各的落点</strong>——贴在目标细胞的哪个部位，直接决定了它能干什么。按分子标记分的三大类，合起来覆盖了皮层里的绝大多数中间神经元：</p>
+<figure>
+<svg viewbox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="inhPV" markerheight="10" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="5" refy="5"><circle cx="5" cy="5" fill="#34e5e0" r="4"></circle></marker>
+<marker id="inhSST" markerheight="10" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="5" refy="5"><circle cx="5" cy="5" fill="#fbbf24" r="4"></circle></marker>
+<marker id="inhVIP" markerheight="10" markerunits="userSpaceOnUse" markerwidth="10" orient="auto" refx="5" refy="5"><circle cx="5" cy="5" fill="#e879f9" r="4"></circle></marker>
+<marker id="axon" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"></path></marker>
+</defs>
+<text fill="#8f89ad" font-size="10" x="16" y="26">线尾的圆点 = 抑制</text>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="3" x1="250" x2="250" y1="120" y2="46"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="250" x2="226" y1="52" y2="34"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="250" x2="274" y1="52" y2="34"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="231" x2="206" y1="152" y2="176"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="269" x2="294" y1="152" y2="176"></line>
+<path d="M250,118 L230,152 L270,152 Z" fill="#2a1c44" stroke="#a78bfa" stroke-width="1.6"></path>
+<line marker-end="url(#axon)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4" x1="250" x2="250" y1="152" y2="204"></line>
+<circle cx="118" cy="168" fill="#0e2c33" r="21" stroke="#34e5e0" stroke-width="1.6"></circle>
+<text fill="#7bf0e8" font-size="12" font-weight="700" text-anchor="middle" x="118" y="172">PV</text>
+<path d="M139,164 C170,166 190,160 222,155" fill="none" marker-end="url(#inhPV)" stroke="#34e5e0" stroke-width="2.2"></path>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="middle" x="118" y="208">抱住胞体 · 一刀切断</text>
+<circle cx="392" cy="64" fill="#33260c" r="21" stroke="#fbbf24" stroke-width="1.6"></circle>
+<text fill="#f3cf7a" font-size="11.5" font-weight="700" text-anchor="middle" x="392" y="68">SST</text>
+<path d="M371,60 C334,54 302,48 268,50" fill="none" marker-end="url(#inhSST)" stroke="#fbbf24" stroke-width="2.2"></path>
+<text fill="#f3cf7a" font-size="10.5" text-anchor="middle" x="392" y="28">缠住树突远端 · 挑输入</text>
+<circle cx="440" cy="148" fill="#33143a" r="19" stroke="#e879f9" stroke-width="1.6"></circle>
+<text fill="#f0a8f8" font-size="11" font-weight="700" text-anchor="middle" x="440" y="152">VIP</text>
+<path d="M434,130 C426,112 414,96 404,86" fill="none" marker-end="url(#inhVIP)" stroke="#e879f9" stroke-width="2.2"></path>
+<text fill="#f0a8f8" font-size="10.5" text-anchor="middle" x="440" y="186">抑制 SST = 放行</text>
+<text fill="#c0aef8" font-size="10.5" text-anchor="middle" x="250" y="228">锥体细胞 · 兴奋、把信号送去远处</text>
+</svg>
+<figcaption>贴在哪儿，决定了它能干什么：胞体、远端树突、以及"抑制抑制者"</figcaption>
+</figure>
+<dl class="kv">
+<dt>PV（小清蛋白）· 篮状细胞</dt><dd>像篮子一样<strong>抱住目标细胞的胞体和出口</strong>——正好卡在动作电位诞生的地方，一压就是整刀切断。它自己放电又快又准，几乎不疲劳。皮层 gamma 节律的拍子主要就是这类细胞打的。</dd>
+<dt>SST（生长抑素）· 马丁诺蒂细胞</dt><dd>轴突爬到锥体细胞<strong>顶端的树突远梢</strong>，那里正是自上而下的反馈信号进来的地方。所以它压的不是"这个细胞别放电"，而是<strong>"这一路输入别被听见"</strong>——是挑输入的手，不是总闸。</dd>
+<dt>VIP（血管活性肠肽）</dt><dd>最有意思的一类：它主要去<strong>抑制 SST</strong>。抑制抑制者，净效果是<strong>放行</strong>。动物一跑动、一被奖励、一开始注意，VIP 就活跃——它是把某片皮层临时"打开"的那个开关。</dd>
+<dt>E-I 平衡</dt><dd>兴奋和抑制像一对跷跷板，被死死拴在一起：兴奋一涨，抑制立刻跟涨。这不是浪费，而是让回路既<strong>不会失控点着</strong>（那是癫痫），又保留了一个<strong>随时可调的时间窗</strong>。</dd>
+</dl>
+<h2>抑制不是"关掉"，是塑形与定时</h2>
+<p><strong>在时间上</strong>：一群细胞被同时摁下去、再一起松开，就把连续的时间切成了"能说话"和"说了也没人听"的一段段。这就是脑振荡的来源，也是"什么时候到"比"送来多少"更要紧的原因。</p>
+<p><strong>在空间上</strong>：本地抑制会让活动最强的那一点把周围压下去，弱的对比因此被拉开——视网膜和皮层用同一招锐化边缘。</p>
+<p><strong>在开关上</strong>：既然抑制是常开的底噪，那么<strong>解除抑制</strong>就成了一种极快的"放行"手段（VIP → SST → 锥体细胞 这条链）。注意、动机、运动状态调制皮层，走的常常是这条路，而不是直接去加大兴奋。</p>
+<h2>出问题的时候</h2>
+<p><strong>癫痫</strong>是最直白的失衡：抑制这一侧兜不住，大片细胞被拉上同一个拍子，同步到极致，功能反而没了。</p>
+<p><strong>精神分裂症</strong>里反复观察到前额叶 PV 细胞的标记物减少、以及任务中 gamma 减弱，这条线索很受重视（<a href="ref-prefrontal.html" style="color:#e879f9">→ 前额叶</a>）。但要说清楚：这些多是死后组织和相关性证据，"PV 出问题导致了症状"这一步<strong>还没有被因果确立</strong>。同理，自闭症的"E/I 失衡假说"也仍是假说，别当结论用。</p>
+<div class="links">
+<h3>// 被这些主线引用</h3>
+<p class="who">Topic 38 脑振荡与同步（gamma 的拍子）· Topic 2 注意（门控与去抑制）· Topic 26 精神疾病作为回路失调</p>
+<h3 style="margin-top:18px">// 延伸</h3>
+<p><a href="https://en.wikipedia.org/wiki/Interneuron" target="_blank">中间神经元 Interneuron</a> · <a href="https://en.wikipedia.org/wiki/GABA" target="_blank">GABA</a> · <a href="https://en.wikipedia.org/wiki/Parvalbumin" target="_blank">小清蛋白 Parvalbumin</a> · <a href="https://en.wikipedia.org/wiki/Gamma_wave" target="_blank">Gamma 波</a> · <a href="https://doi.org/10.1038/nature08002" target="_blank">Cardin et al. 2009 · Nature</a>（驱动 PV 细胞造出 gamma）</p>
+</div>
+<footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
