@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 39 · Is Backpropagation Biologically Plausible? — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 39 · PHASE E COMPUTATIONAL</span>
+<h1>Is Backpropagation Biologically Plausible?</h1>
+<h2>The rule that carries all of AI — and why neurons seem unable to run it</h2>
+<div class="date">2026-08-15 · BigCat</div>
+<p class="pitch">Calling the algorithm unbiological is the easy part. The hard part comes next: how does a brain spread one word — "wrong" — across millions of synapses?</p>
+</header>
+<div class="intro">
+<p>Fall off a bike and you don't go home and retrain every muscle in your body — you roughly know it was the way you leaned on the handlebars. That sounds trivial, and it is the hardest problem in learning: <strong>the outcome hands you a single "wrong", while the parts that produced it number in the millions, and each needs its own correction in its own direction.</strong> AI has one startlingly effective answer, the one every model that chats or draws today is built on. Neuroscience has been saying since 1989 that neurons cannot possibly run it. This issue is about that unfinished argument — and about a more interesting turn in it: rather than asking whether the brain does this, ask <strong>what parts it uses to accomplish the same thing</strong>.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>One word — "wrong" — split across millions of synapses</h2>
+<p>The algorithm itself is no mystery. Picture a long assembly line where every station nudges the workpiece a little, and the finished item comes out three millimetres off spec. Whose fault? From the result alone, nobody knows. But you can walk backwards, asking the last station: <strong>if you had pressed a touch less, how much smaller would the final error be?</strong> Take that number to the station before it, and keep walking back. Now every station holds its own share of the bill: which way to move, and how much. Everyone shifts a little, and the next item comes out closer. That is <strong>backpropagation</strong>, and essentially every AI that learns anything uses it to turn hundreds of billions of knobs.</p>
+<p>The trouble is entirely in that backwards step. To work out the previous station's share, you need <strong>how hard each station pressed on the way forward</strong>. In a computer that's nothing: those numbers sit in memory anyone can read, and the backward pass simply looks them up. A brain isn't built that way. In 1989 Crick laid the problem out, and the field has been arguing from that page ever since:</p>
+<figure>
+<svg viewbox="0 0 480 234" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="g39a" r="0.95"><stop offset="0" stop-color="#241c46"></stop><stop offset="1" stop-color="#130d29"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.3" id="g39b" r="0.95"><stop offset="0" stop-color="#0e2c33"></stop><stop offset="1" stop-color="#091a20"></stop></radialgradient>
+<filter height="220%" id="glow39" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="3.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m39f" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+<marker id="m39b" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" x="16" y="24">Forward · signal moves up, station by station</text>
+<line marker-end="url(#m39f)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3" x1="126" x2="170" y1="76" y2="76"></line>
+<line marker-end="url(#m39f)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3" x1="290" x2="334" y1="76" y2="76"></line>
+<rect fill="url(#g39b)" filter="url(#glow39)" height="44" rx="22" stroke="#34e5e0" stroke-width="1.3" width="110" x="16" y="54"></rect>
+<text fill="#e6faf8" font-size="13" font-weight="600" text-anchor="middle" x="71" y="81">Station 1</text>
+<rect fill="url(#g39a)" filter="url(#glow39)" height="44" rx="22" stroke="#a78bfa" stroke-width="1.3" width="120" x="170" y="54"></rect>
+<text fill="#efe9ff" font-size="13" font-weight="600" text-anchor="middle" x="230" y="81">Station 2</text>
+<rect fill="url(#g39a)" filter="url(#glow39)" height="44" rx="22" stroke="#e879f9" stroke-width="1.3" width="130" x="334" y="54"></rect>
+<text fill="#fbe5fd" font-size="13" font-weight="600" text-anchor="middle" x="399" y="81">Output</text>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="148" y="46">weight w₁</text>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="312" y="46">weight w₂</text>
+<path d="M399,102 C399,142 246,142 240,106" fill="none" marker-end="url(#m39b)" stroke="#e879f9" stroke-dasharray="2 5" stroke-width="2.2"></path>
+<path d="M214,102 C214,178 82,178 74,108" fill="none" marker-end="url(#m39b)" stroke="#e879f9" stroke-dasharray="2 5" stroke-width="2.2"></path>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="196">Error walks back · every step needs w₁, w₂</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="222">but the return path is a different set of synapses</text>
+</svg>
+<figcaption>The weight-transport problem: walking the error back requires the forward strengths</figcaption>
+</figure>
+<p><strong>First thorn: the way back doesn't know the way out.</strong> Synapses are one-way; signal flows only from sender to receiver. A backward pass needs its own descending synapses. But for the shares to come out right, those return synapses would have to be <strong>exactly as strong as the forward ones</strong> — and how would one synapse ever know how strong another synapse currently is? This is the weight-transport problem, the sharpest of the four.</p>
+<p><strong>Second: the brain never pauses.</strong> The algorithm wants the forward pass finished, then a backward sweep from the far end, with nothing changing in between. The brain runs without stopping: sensation keeps arriving, movement keeps leaving, and there is no pause button.</p>
+<p><strong>Third: the error has to be an exact number.</strong> What travels backwards is signed and continuous, and it has to reach each individual synapse. Neurons only ever "fire a spike" — all or none (Topic 35 covered that alphabet).</p>
+<p><strong>Fourth, and most basic: a synapse is blind.</strong> It senses only the two cells it sits between. It cannot see the outcome several layers away, let alone how far off the whole system was (<a class="reflink" href="ref-synaptic-plasticity.en.html">Synaptic plasticity</a>). Backpropagation asks it to change according to a global quantity arriving from somewhere far off.</p>
+<p>Stack the four and the verdict sounds firm: backpropagation needs <strong>global information, exact symmetry, and a network that stops to synchronise</strong>, while the brain's parts are <strong>local, one-way, and always running</strong>. For thirty years, "that algorithm isn't biological" was the default position.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>None of the four objections bites in AI, for a mundane reason: a chip has <b>memory everybody can read</b>. The forward weights sit right there to be looked up on the way back, and the network can happily run "compute forward, then propagate back" because it is a program executing step by step to begin with. The brain has no such shared memory — its memory <i>is</i> the synapses, scattered across millions of places, none of them readable by anyone else. <b>A surprising number of "why doesn't biology just do it this way" questions bottom out in that hardware difference.</b></p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Feed back any old thing, and it still learns</h2>
+<p>A 2016 result scrambled the whole argument. Lillicrap's group did something that looks like a prank: if the return path can't know the forward strengths, then <strong>let it not know</strong> — replace the backward weights with a pile of random numbers, fixed once and never updated again. By rights, assigning blame through gibberish should point every correction in the wrong direction. The networks learned anyway, and nearly as well as with real backpropagation.</p>
+<p>Why? Because <strong>the gibberish, though random, is consistent</strong>. The forward weights are the ones that change, and over training they drift towards the configuration that makes that fixed random feedback useful — after a while the forward weights genuinely line up with the random matrix, the angle between them shrinking from around ninety degrees. <strong>The feedback never becomes correct; the forward pathway learns to cooperate with it.</strong> The effect is called feedback alignment.</p>
+<figure>
+<svg viewbox="0 0 480 212" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m39w" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="m39r" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="20" y="24">at the start</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="268" y="24">after some training</text>
+<line marker-end="url(#m39r)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.8" x1="96" x2="186" y1="150" y2="62"></line>
+<line marker-end="url(#m39w)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8" x1="96" x2="30" y1="150" y2="70"></line>
+<path d="M139,107 A 60 60 0 0 0 60 102" fill="none" stroke="#a78bfa" stroke-dasharray="3 4" stroke-width="1.4"></path>
+<text fill="#c0aef8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="100" y="96">wide angle</text>
+<circle cx="96" cy="150" fill="#0a0714" r="4.5" stroke="#8f89ad" stroke-width="1.4"></circle>
+<text fill="#f0a8f8" font-size="10.5" x="146" y="52">fixed random feedback</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="end" x="52" y="60">forward weights</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="108" y="190">blame comes back pointing nowhere</text>
+<line stroke="rgba(255,255,255,0.14)" stroke-dasharray="4 7" stroke-width="1" x1="240" x2="240" y1="34" y2="196"></line>
+<line marker-end="url(#m39r)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.8" x1="330" x2="420" y1="150" y2="62"></line>
+<line marker-end="url(#m39w)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8" x1="330" x2="384" y1="150" y2="52"></line>
+<path d="M383,101 A 60 60 0 0 0 360 92" fill="none" stroke="#a78bfa" stroke-dasharray="3 4" stroke-width="1.4"></path>
+<text fill="#c0aef8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="330" y="104">angle narrows</text>
+<circle cx="330" cy="150" fill="#0a0714" r="4.5" stroke="#8f89ad" stroke-width="1.4"></circle>
+<text fill="#f0a8f8" font-size="10.5" x="380" y="52">never moves</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="end" x="376" y="42">rotates to match</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="352" y="190">aligned · the returned blame is usable</text>
+</svg>
+<figcaption>Feedback alignment: the feedback never gets better, the forward path turns to meet it</figcaption>
+</figure>
+<p>Half of the sharpest thorn is gone: <strong>the backward weights need not equal the forward ones</strong> — as long as they are stable and consistent, the network will come to them. Nøkland went further the same year, projecting the error from the output <strong>straight into every layer at random</strong>, dispensing with the layer-by-layer walk entirely, and it still learns.</p>
+<p>Don't celebrate too early. In 2018 Bartunov and colleagues pitted these biological variants against hard problems (ImageNet-scale data, convolutional architectures) and the gap showed immediately: working on small datasets is not the same as holding up in genuinely deep networks. <strong>"Random feedback can learn" is a lovely existence proof, not a sufficient answer.</strong></p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Backpropagation has another irritating property: each layer <b>has to wait for the layer before it</b> to finish its share of the bill, which makes the whole network awkward to parallelise. Random feedback cuts that chain — the error goes straight to every layer, and layers can update at once. That is why these algorithms keep resurfacing in <b>on-chip learning</b> (chips that learn while they run, without shipping data back to a central processor) and similar directions. <b>Biology's constraints often turn out to be the hardware's constraints too.</b></p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>No backward pass: fold the error into the activity</h2>
+<p>The other route is more radical: <strong>abolish the backward pass.</strong> If a synapse can only see its own two ends, then make the error <strong>part of what those two ends are doing</strong> — no separate error wiring, just cells whose activity looks different depending on whether there is an error, so that a synapse changing by its usual local rule happens to move in roughly the right direction. Three versions, same skeleton, different parts.</p>
+<p><strong>One: predictive coding.</strong> Neuroscience already had this model (Topic 1): higher levels send predictions down, lower levels report only what wasn't predicted, and the network already contains units whose job is to represent error. Whittington and Bogacz showed in 2017 that if you let such a network relax to equilibrium and then let every synapse change by <strong>the product of its two ends' activity</strong> (fire together, wire together — the classic local rule), what it learns <strong>approximates backpropagation</strong>. The error never travels backwards; it was living in the network all along.</p>
+<p><strong>Two: equilibrium propagation.</strong> Scellier and Bengio take a different angle: let the network settle freely and remember that state, then <strong>nudge the output gently towards the right answer</strong> and let it settle again. <strong>The difference between the two steady states encodes the gradient.</strong> All a synapse has to notice is how its own two ends differed between the two settlings — which is very close to what synaptic plasticity actually looks like in experiments (<a class="reflink" href="ref-synaptic-plasticity.en.html">Synaptic plasticity</a>).</p>
+<p><strong>Three: hand the error to anatomy.</strong> A cortical pyramidal neuron has two ends: basal dendrites near the cell body take feedforward input from below, while one long apical dendrite reaches the cortical surface and receives <strong>feedback sent back from higher areas</strong> (<a class="reflink" href="ref-cortical-microcircuit.en.html">Cortical layers &amp; microcircuit</a>). The two streams land on different parts of the same cell, so they don't collide. Guerguiev and colleagues built networks from such compartmentalised neurons in 2017 and taught them handwritten digits; Payeur and colleagues in 2021 tied the idea to a real physiological mechanism: when the apical dendrite is driven, the cell doesn't fire once, it fires <strong>a burst</strong>. Downstream cells read "a burst" and "a single spike" as two different messages — so one axon carries both the signal and how wrong the answer was.</p>
+<figure>
+<svg viewbox="0 0 490 252" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m39i" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="m39t" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+<marker id="m39o" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+</defs>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="3.2" x1="150" x2="150" y1="128" y2="58"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="150" x2="124" y1="62" y2="36"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="150" x2="176" y1="62" y2="36"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="150" x2="150" y1="62" y2="32"></line>
+<path d="M150,126 L126,166 L174,166 Z" fill="#2a1c44" stroke="#a78bfa" stroke-width="1.6"></path>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="128" x2="102" y1="164" y2="190"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="172" x2="198" y1="164" y2="190"></line>
+<line marker-end="url(#m39o)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4" x1="150" x2="150" y1="166" y2="216"></line>
+<line marker-end="url(#m39t)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.6" x1="26" x2="119" y1="44" y2="40"></line>
+<text fill="#f0a8f8" font-size="10.5" x="26" y="32">feedback from above</text>
+<line marker-end="url(#m39i)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6" x1="20" x2="99" y1="198" y2="192"></line>
+<text fill="#7bf0e8" font-size="10.5" x="20" y="216">feedforward from below</text>
+<text fill="#c0aef8" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="196" y="56">apical</text>
+<text fill="#c0aef8" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="220" y="204">basal</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="150" y="238">one axon carries both</text>
+<path d="M164,216 C232,216 236,102 274,98" fill="none" stroke="rgba(143,137,173,0.5)" stroke-dasharray="3 5" stroke-width="1.4"></path>
+<path d="M164,222 C240,228 244,184 274,180" fill="none" stroke="rgba(143,137,173,0.5)" stroke-dasharray="3 5" stroke-width="1.4"></path>
+<rect fill="rgba(52,229,224,0.05)" height="62" rx="12" stroke="rgba(52,229,224,0.35)" stroke-width="1.2" width="196" x="278" y="66"></rect>
+<path d="M300,116 L308,82 L316,116" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.2"></path>
+<text fill="#e6faf8" font-size="11" x="330" y="94">apical quiet</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" x="330" y="112">single spike = signal</text>
+<rect fill="rgba(232,121,249,0.05)" height="62" rx="12" stroke="rgba(232,121,249,0.35)" stroke-width="1.2" width="196" x="278" y="148"></rect>
+<path d="M296,198 L302,164 L308,198" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M308,198 L314,164 L320,198" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M320,198 L326,164 L332,198" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></path>
+<text fill="#fbe5fd" font-size="11" x="344" y="176">apical driven</text>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="10" x="344" y="194">burst = error carried</text>
+</svg>
+<figcaption>Two streams land on two ends of one cell; single spike or burst carries the error out</figcaption>
+</figure>
+<p>The three routes look unalike, but the skeleton is one: <strong>the error stops being separate wiring and gets folded into the activity itself</strong> — hidden in dedicated error units, in the difference between two steady states, in burst versus single spike. Lillicrap and colleagues put it plainly in their 2020 review: if the brain does gradients at all, this is most likely how.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Maybe the question is wrong</h2>
+<p>At this point it's worth stepping back: <strong>does the brain even need to do this?</strong> Backpropagation solves fine-grained credit assignment across many layers. But the brain may not be one big network trained end to end at all. Marblestone and colleagues sketched a very different picture in 2016: more like <strong>a pile of modules each with its own objective</strong> — what visual cortex optimises, what motor cortex optimises and what hippocampus optimises are simply not the same thing, and many of those objectives are written by development, or set by the system for itself ("predict what you'll see a second from now" needs no teacher). <strong>If no module is deep, the distance blame has to travel is short, and the sharpest thorn stops hurting.</strong></p>
+<p>One impression worth correcting along the way: <strong>learning from error is not exotic in biology</strong>. The cerebellum plainly has a teaching line — every Purkinje cell receives a climbing fibre that fires when a movement goes wrong, and synapses change directly (<a class="reflink" href="ref-motor-system.en.html">Motor system &amp; cerebellum</a>). So the real dispute was never whether brains use error signals, but whether <strong>cortex performs that fine-grained, synapse-by-synapse assignment across many layers</strong>.</p>
+<p>And there is one stubborn fact pointing the other way. The best current models of visual cortical responses happen to be deep networks <strong>trained with backpropagation</strong>: show a monkey and a network the same image, and the network's intermediate layers predict inferotemporal responses rather well. That does not show the brain uses backpropagation. It says something else — <strong>what a representation ends up looking like may be set mostly by the task and the architecture, not by the learning rule.</strong></p>
+<p>So the shape of the argument has changed. Rather than asking whether the brain does backpropagation (which welds an algorithm to one silicon implementation of it), treat it as a <strong>yardstick</strong>: any system that learns well through deep structure has to approximately accomplish something, so go back to the brain and ask what parts might accomplish it. The advantage is that it lands on a lab bench — when exactly the apical dendrite is driven, whether learning collapses once feedback pathways are cut, whether bursting really is yoked to synaptic change: all measurable. <strong>An argument that yields testable predictions has already paid for itself.</strong></p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>The argument is feeding back into AI. Backpropagation's three demands — <b>shared memory, a global pause, every layer waiting on the one before</b> — are no longer only a biologist's complaint; they are an energy bill. The electricity behind training a large model and the twenty watts inside your head (Topic 41 does that arithmetic) differ by orders of magnitude. Hence renewed interest in chips built around <b>local rules and event-driven activity</b> (Topic 40). <b>Constraints once dismissed as biological quirks are now the homework engineers want to copy.</b></p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 CROSSING OVER · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"How does a global optimum get built out of parts that can only see their neighbours?" — the question isn't neuroscience's private property; several distant fields have walked into it:</p>
+<ul>
+<li><b>Cybernetics · Wiener</b>: in 1948 Wiener made one thing clear — "purpose", which sounds so metaphysical, can be manufactured entirely by an error loop. A thermostat has no intentions; it merely sends "how far off the setpoint" back to the heater. Cybernetics moved the question from what the parts are to how the error gets back to where it matters — which is precisely this argument, with the thermostat swapped for a few million synapses.</li>
+<li><b>Economics · Hayek</b>: no central mind knows the whole, yet price — a purely local signal — brings the whole close to coordination. Hayek's 1945 formulation was that knowledge is inherently dispersed, and what central calculation cannot work out, local signals do. Local learning rules approximating a global gradient is the same shape of problem, <b>except that a synapse doesn't even get a price: it has to infer what the whole system meant from the activity at its own two ends.</b></li>
+<li><b>Evolution · search without a gradient</b>: natural selection optimises too, but it has no idea which way to move and can only let mutation take its chances — at a cost measured in hundreds of millions of years. All of backpropagation's magic lives in the phrase "knows which way to change". Which cuts the other way as well: a person learning to ride a bike in a few dozen attempts can hardly be pure trial and error, so the brain must be holding some kind of directional information. The only question is where it comes from.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// GOING DEEPER</h3>
+<details><summary>If the brain doesn't do backpropagation, why do backprop-trained networks look most like visual cortex?</summary><div>The plausible reading is that <strong>constraints determine the outcome more than the learning rule does</strong>. Given the same task, the same kind of architecture (stacked layers, receptive fields growing from small to large) and the same input statistics (natural images), there aren't many ways to do the job well, so different learning rules converge on similar representations — different paths up one mountain. Which is also a warning against reading "resembles" as "is": matching representations tell you <strong>the summit is the same</strong> and say nothing whatsoever about <strong>how each of them climbed</strong>. Topic 34 was about exactly this trap.</div></details>
+<details><summary>"Feedback doesn't have to be right, only consistent" — does that transfer to people?</summary><div>Honest answer: <strong>this is a mathematical phenomenon inside networks, not an experimental result about humans</strong>, so don't use it as a claim about teaching. The most that can be said is a weak, common-sense version: <strong>a consistent standard is easier to adjust to than one that keeps shifting</strong> — you can learn its calibration and correct against it, whereas wobbling feedback leaves you knowing neither what was wrong nor which round to believe. That's an analogy, not evidence.</div></details>
+<details><summary>If someone measured "activity differences carrying error" in cortex, would the argument be over?</summary><div>No, but it would get much easier. Measuring such a difference only shows <strong>the information is there</strong>; two things still need proving — that synapses <strong>actually</strong> change according to that difference rather than merely correlating with it, and that learning <strong>actually</strong> collapses when the pathway is cut. Going from correlation to causation is always the hard step. The good news is that the tools now reach: optogenetics can shut down one class of feedback precisely, or intervene on apical dendrites only at particular moments — so this argument has a real chance of being pushed forward by experiments rather than circling in theory.</div></details>
+<details><summary>If the brain's rule is worse than backpropagation, how does it learn so fast and so cheaply?</summary><div>Because "fast" mostly isn't about better gradients — it's about <strong>not starting from scratch</strong>. Evolution wrote much of the structure in advance (how many layers, what connects to what, what is worth attending to), and a child learning to recognise cats does not begin from random weights. So using "a person needs a handful of pictures, AI needs millions" as a put-down compares two different things: one side starts from random initialisation, the other opens with a few hundred million years of priors.</div></details>
+</div>
+<div class="refs">
+<h3>// FURTHER READING</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Backpropagation" target="_blank">Backpropagation</a> — the algorithm itself</li>
+<li><a href="https://en.wikipedia.org/wiki/Credit_assignment_problem" target="_blank">Credit assignment problem</a> — the real protagonist of this issue</li>
+<li><a href="https://doi.org/10.1038/337129a0" target="_blank">Crick 1989 · Nature</a> — the two pages that first stated the objection clearly</li>
+<li><a href="https://doi.org/10.1038/ncomms13276" target="_blank">Lillicrap et al. 2016 · Nature Communications</a> — random feedback learns: feedback alignment</li>
+<li><a href="https://arxiv.org/abs/1609.01596" target="_blank">Nøkland 2016 · arXiv</a> — projecting the error straight into every layer</li>
+<li><a href="https://doi.org/10.1162/NECO_a_00949" target="_blank">Whittington &amp; Bogacz 2017 · Neural Computation</a> — predictive coding approximates backprop</li>
+<li><a href="https://doi.org/10.3389/fncom.2017.00024" target="_blank">Scellier &amp; Bengio 2017 · Frontiers in Comput. Neuroscience</a> — equilibrium propagation</li>
+<li><a href="https://doi.org/10.7554/eLife.22901" target="_blank">Guerguiev et al. 2017 · eLife</a> — deep learning with segregated dendrites</li>
+<li><a href="https://doi.org/10.1038/s41593-021-00857-x" target="_blank">Payeur et al. 2021 · Nature Neuroscience</a> — burst-dependent plasticity in hierarchical circuits</li>
+<li><a href="https://arxiv.org/abs/1807.04587" target="_blank">Bartunov et al. 2018 · NeurIPS</a> — the sceptical case: these variants don't scale</li>
+<li><a href="https://doi.org/10.1038/s41583-020-0277-3" target="_blank">Lillicrap et al. 2020 · Nature Reviews Neuroscience</a> — the state of the field, and the one to read</li>
+<li><a href="https://doi.org/10.3389/fncom.2016.00094" target="_blank">Marblestone et al. 2016 · Frontiers in Comput. Neuroscience</a> — many cost functions, not one</li>
+<li><a href="https://doi.org/10.1038/nn.4244" target="_blank">Yamins &amp; DiCarlo 2016 · Nature Neuroscience</a> — why goal-driven deep nets resemble visual cortex</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 39 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

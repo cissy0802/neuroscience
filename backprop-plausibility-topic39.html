@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 39 · 反向传播的生物合理性之争 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 39 · PHASE E 计算</span>
+<h1>反向传播的生物合理性之争</h1>
+<h2>AI 最能打的那条规则，神经元凭什么跑不了</h2>
+<div class="date">2026-08-15 · BigCat</div>
+<p class="pitch">说它不生物，很容易。难的是接着回答：那大脑是怎么把一句"错了"，摊到几百万个突触头上的？</p>
+</header>
+<div class="intro">
+<p>学骑车摔一跤，你不会回去把每块肌肉都重练一遍——你多少知道是刚才龙头压狠了。这听着像废话，其实是学习里最难的一道题：<strong>结果只给了一个"不对"，可促成它的零件有几百万个，每个该改多少、往哪边改？</strong>AI 那边有一个惊人有效的答案，今天所有会聊天会画画的模型都靠它；而神经科学这边，从 1989 年起就一直有人说：这套办法，神经元根本跑不了。这一期讲这场没吵完的架，以及一个更有意思的转折——与其问大脑做不做这件事，不如问它<strong>用什么零件办成了同一件事</strong>。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>一句"错了"，怎么摊到几百万个突触头上</h2>
+<p>先把那个算法讲明白，它一点不神秘。想象一条流水线，每一站都对半成品动一下手，最后成品比标准差了三毫米。谁的锅？单看结果没人知道。但你可以从最后一站往回问：<strong>要是你刚才少压一点点，最终这个差错会小多少？</strong>问出一个数，再拿它去问前一站，一站站倒推回去，每一站就都拿到了自己的那份账：我该往哪边动、动多少。然后所有人各自动一小步，下一件半成品就准一点。这就是<strong>反向传播</strong>——今天几乎所有能学的 AI，都靠它在拧成百上千亿个旋钮。</p>
+<p>麻烦全出在"倒着问"那一步。要算清楚上一站的责任，必须用到<strong>去程时每一站到底压了多重</strong>。计算机里这不叫事：那些数就躺在一块谁都能读的内存里，回传时翻一遍就行。大脑不是这么长的。1989 年 Crick 把话挑明，从此成了这一行的起点：</p>
+<figure>
+<svg viewbox="0 0 480 234" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="g39a" r="0.95"><stop offset="0" stop-color="#241c46"></stop><stop offset="1" stop-color="#130d29"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.3" id="g39b" r="0.95"><stop offset="0" stop-color="#0e2c33"></stop><stop offset="1" stop-color="#091a20"></stop></radialgradient>
+<filter height="220%" id="glow39" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="3.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m39f" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+<marker id="m39b" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" x="16" y="24">前向 · 信号一站站往上走</text>
+<line marker-end="url(#m39f)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3" x1="126" x2="170" y1="76" y2="76"></line>
+<line marker-end="url(#m39f)" stroke="#34e5e0" stroke-linecap="round" stroke-width="3" x1="290" x2="334" y1="76" y2="76"></line>
+<rect fill="url(#g39b)" filter="url(#glow39)" height="44" rx="22" stroke="#34e5e0" stroke-width="1.3" width="110" x="16" y="54"></rect>
+<text fill="#e6faf8" font-size="13" font-weight="600" text-anchor="middle" x="71" y="81">第 1 站</text>
+<rect fill="url(#g39a)" filter="url(#glow39)" height="44" rx="22" stroke="#a78bfa" stroke-width="1.3" width="120" x="170" y="54"></rect>
+<text fill="#efe9ff" font-size="13" font-weight="600" text-anchor="middle" x="230" y="81">第 2 站</text>
+<rect fill="url(#g39a)" filter="url(#glow39)" height="44" rx="22" stroke="#e879f9" stroke-width="1.3" width="130" x="334" y="54"></rect>
+<text fill="#fbe5fd" font-size="13" font-weight="600" text-anchor="middle" x="399" y="81">出结果</text>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="148" y="46">强度 w₁</text>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="312" y="46">强度 w₂</text>
+<path d="M399,102 C399,142 246,142 240,106" fill="none" marker-end="url(#m39b)" stroke="#e879f9" stroke-dasharray="2 5" stroke-width="2.2"></path>
+<path d="M214,102 C214,178 82,178 74,108" fill="none" marker-end="url(#m39b)" stroke="#e879f9" stroke-dasharray="2 5" stroke-width="2.2"></path>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="196">误差往回摊 · 每一步都要用去程的 w₁、w₂</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="240" y="222">可回来的是另一批突触 · 它凭什么知道去路上有多强？</text>
+</svg>
+<figcaption>权重传输问题：往回摊责任，得知道去程每一步的强度</figcaption>
+</figure>
+<p><strong>第一根刺：回来的路，不知道去的路。</strong>突触是单向的，信号只从上家流到下家。要往回传，就得另有一批下行的突触。可责任要算得准，这批回来的突触必须<strong>正好和去程那批一样强</strong>——一个突触怎么会知道另一个突触此刻多强？这叫权重传输问题，是四根里最扎的一根。</p>
+<p><strong>第二根：大脑不会停下来等。</strong>算法要求先把前向整个算完，再从末端一层层往回推，这期间谁也不许动。大脑却一刻不停在跑：感觉一直在进来，动作一直在出去，没有"暂停"这个键。</p>
+<p><strong>第三根：误差得是个精确的数。</strong>回传的是有正有负、大小连续的量，还得精确送到每一个突触。神经元之间只会"放一下电"，全或无（Topic 35 讲过这套字母表）。</p>
+<p><strong>第四根，也最根本：突触是瞎的。</strong>一个突触只感觉得到自己两端那两个细胞在干嘛，它看不见几层之外的结果，更不知道整体差了多少（<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>）。反向传播却要求它按一个来自远方的全局量来改自己。</p>
+<p>四条叠起来，结论听着很硬：反向传播要<strong>全局信息、要精确对称、要全网停下来同步</strong>，而大脑的零件<strong>只看局部、只走单向、还一直在跑</strong>。此后三十年，"这算法不生物"几乎成了默认共识。</p>
+<p class="en-brief"><b>EN</b> Learning faces the credit-assignment problem: one error signal, millions of components, each needing its own correction. Backpropagation solves it by walking backwards through the network, and it powers essentially all of modern AI. Crick (1989) laid out why cortex seems unable to run it: the return path would need synapses exactly matching the forward ones (the weight-transport problem), the algorithm requires a strict forward/backward alternation the always-on brain cannot provide, error signals must be signed continuous values rather than all-or-none spikes, and a synapse can only sense its own two ends while backprop demands a global quantity.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这四条硬伤在 AI 那边一条都不成立，原因很土：芯片有一块<b>谁都能读的公共内存</b>。前向用过的权重原样躺在那儿，回传时翻一遍就是；整个网络也可以老老实实按"先算完、再回传"的节奏走，因为它本来就是一段一步步执行的程序。大脑没有这块公共内存——它的"内存"就是突触自己，分散在几百万个地方，谁也读不到别人的。<b>很多"生物为什么不这么干"的疑问，答案都落在这条硬件差别上。</b></p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>随便给个回传，居然也学得会</h2>
+<p>2016 年一个结果把这场架整个搅乱了。Lillicrap 那组人干了件像胡闹的事：既然回来的路没办法知道去路有多强，那<strong>就干脆别知道</strong>——把回传用的权重换成一堆固定的随机数，扔进去再也不改。照道理，用一套乱码摊责任，摊出来的方向该全是错的。结果网络照样学会了，成绩和正经反向传播差不太多。</p>
+<p>为什么？因为<strong>那套乱码虽然乱，却始终如一</strong>。前向的权重是会变的，它们在训练里慢慢朝着"让这套固定乱码刚好变得有用"的方向漂——几轮之后，前向权重的方向真的和随机反馈对上了，两者的夹角从九十度上下一路收窄。<strong>不是反馈学会了正确，是前向学会了配合反馈。</strong>这个现象被叫做反馈对齐。</p>
+<figure>
+<svg viewbox="0 0 480 212" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m39w" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="m39r" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="20" y="24">刚开始</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="268" y="24">训练一阵之后</text>
+<line marker-end="url(#m39r)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.8" x1="96" x2="186" y1="150" y2="62"></line>
+<line marker-end="url(#m39w)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8" x1="96" x2="30" y1="150" y2="70"></line>
+<path d="M139,107 A 60 60 0 0 0 60 102" fill="none" stroke="#a78bfa" stroke-dasharray="3 4" stroke-width="1.4"></path>
+<text fill="#c0aef8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="100" y="96">夹角大</text>
+<circle cx="96" cy="150" fill="#0a0714" r="4.5" stroke="#8f89ad" stroke-width="1.4"></circle>
+<text fill="#f0a8f8" font-size="10.5" x="146" y="52">固定的随机反馈</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="end" x="52" y="60">前向权重</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="108" y="190">摊回来的方向基本是乱的</text>
+<line stroke="rgba(255,255,255,0.14)" stroke-dasharray="4 7" stroke-width="1" x1="240" x2="240" y1="34" y2="196"></line>
+<line marker-end="url(#m39r)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.8" x1="330" x2="420" y1="150" y2="62"></line>
+<line marker-end="url(#m39w)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8" x1="330" x2="384" y1="150" y2="52"></line>
+<path d="M383,101 A 60 60 0 0 0 360 92" fill="none" stroke="#a78bfa" stroke-dasharray="3 4" stroke-width="1.4"></path>
+<text fill="#c0aef8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="330" y="104">夹角收窄</text>
+<circle cx="330" cy="150" fill="#0a0714" r="4.5" stroke="#8f89ad" stroke-width="1.4"></circle>
+<text fill="#f0a8f8" font-size="10.5" x="380" y="52">一动不动</text>
+<text fill="#7bf0e8" font-size="10.5" text-anchor="end" x="376" y="42">自己转过来</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="352" y="190">方向对上了 · 摊回来的账能用了</text>
+</svg>
+<figcaption>反馈对齐：不是反馈变对了，是前向自己转过去迁就它</figcaption>
+</figure>
+<p>这一下，最扎的那根刺被拔掉了一半：<strong>回传的权重不必等于前向那套</strong>，只要稳定、一致，网络自己会来迁就。Nøkland 同年更进一步，把误差从输出端<strong>直接随机投给每一层</strong>，连"一层层往回走"都省了，照样能学。</p>
+<p>但别急着庆祝。2018 年 Bartunov 等人把这些生物版拉到大任务上一比（ImageNet 那种规模、卷积网络），差距立刻现形：小数据集上跑得通，不等于顶得住真正深的网络。<strong>"随机反馈也能学"是个漂亮的存在性证明，不是一个够用的答案。</strong></p>
+<p class="en-brief"><b>EN</b> Feedback alignment (Lillicrap et al. 2016) replaces the transposed forward weights with fixed random feedback — and networks still learn, because the forward weights gradually rotate to align with the random matrix. The feedback never becomes correct; the forward pathway learns to cooperate with it, which removes the weight-transport objection in principle. Direct feedback alignment (Nøkland 2016) goes further, projecting the error straight to every layer. But Bartunov et al. (2018) showed these schemes fall well short of backprop on ImageNet-scale problems: a proof of possibility, not a sufficient account.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>反向传播还有个恼人的性质：每一层<b>得等着前一层把账算完</b>才能更新，整张网因此很难真正并行。随机反馈把这个链条剪断了——误差直接投到每层，各层可以同时改。所以这类算法在<b>片上学习</b>（芯片自己一边跑一边学，不必把数据搬回中央）这些方向上一直有人接着做。<b>生物学的约束，在硬件上常常刚好也是约束。</b></p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>不用回传：把误差折进活动里</h2>
+<p>另一条路更彻底：<strong>取消"回传"这个动作。</strong>既然突触只看得见自己两端，那就让误差<strong>变成两端活动的一部分</strong>——不另拉一套管误差的线路，而是让细胞的活动在"有误差"和"没误差"两种情况下长得不一样，突触照旧只按两端活动改，方向恰好近似那份账。三个代表，骨架相同、零件不同。</p>
+<p><strong>第一个，预测编码。</strong>这个模子神经科学里现成就有（Topic 1）：高层往下发预测，低层只把"没猜中的部分"往上报，网络里本来就住着一批专门表示误差的单元。Whittington 和 Bogacz 2017 年证明：让这样的网络自己弛豫到稳定，再让每个突触只按<strong>两端活动的乘积</strong>去改（一起放电就一起加强，最经典的局部规则），学出来的东西<strong>逼近反向传播</strong>。误差不必回传，它一开始就活在网络里。</p>
+<p><strong>第二个，平衡传播。</strong>Scellier 和 Bengio 换了个招：让网络先自由地稳下来，记住这一刻的活动；再把输出端<strong>轻轻朝正确答案推一下</strong>，让它重新稳下来。<strong>两次稳态的活动之差，就编码了那份账。</strong>突触要做的只是感觉两端"前后两回有什么不同"——这几乎就是实验里看到的可塑性的样子（<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>）。</p>
+<p><strong>第三个，把误差交给解剖结构。</strong>皮层的锥体细胞有两头：靠近胞体的基底树突收下面上来的前馈，一根长长的顶端树突伸到皮层最表层，专接<strong>从高层送回来的反馈</strong>（<a class="reflink" href="ref-cortical-microcircuit.html">皮层分层与微回路</a>）。两路信号落在同一个细胞的不同部位，互不打架。Guerguiev 等人 2017 年用这种分舱神经元搭的网络学会了认手写数字；Payeur 等人 2021 年把它接到一条真实的生理机制上：顶端树突被点着时，细胞不是放一下，而是<strong>连放一串</strong>（叫爆发式放电）。下游把"放一串"和"放一下"读成两种消息——同一根轴突，于是同时载着"信号"和"这次错了多少"。</p>
+<figure>
+<svg viewbox="0 0 490 252" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m39i" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"></path></marker>
+<marker id="m39t" markerheight="12" markerunits="userSpaceOnUse" markerwidth="13" orient="auto" refx="9.5" refy="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"></path></marker>
+<marker id="m39o" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+</defs>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="3.2" x1="150" x2="150" y1="128" y2="58"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="150" x2="124" y1="62" y2="36"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="150" x2="176" y1="62" y2="36"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="150" x2="150" y1="62" y2="32"></line>
+<path d="M150,126 L126,166 L174,166 Z" fill="#2a1c44" stroke="#a78bfa" stroke-width="1.6"></path>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="128" x2="102" y1="164" y2="190"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="172" x2="198" y1="164" y2="190"></line>
+<line marker-end="url(#m39o)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.4" x1="150" x2="150" y1="166" y2="216"></line>
+<line marker-end="url(#m39t)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.6" x1="30" x2="119" y1="44" y2="40"></line>
+<text fill="#f0a8f8" font-size="10.5" x="30" y="32">高层送回的反馈</text>
+<line marker-end="url(#m39i)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6" x1="24" x2="99" y1="198" y2="192"></line>
+<text fill="#7bf0e8" font-size="10.5" x="24" y="216">下面上来的前馈</text>
+<text fill="#c0aef8" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="188" y="56">顶端树突</text>
+<text fill="#c0aef8" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="214" y="204">基底树突</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="150" y="238">同一根轴突送出去</text>
+<path d="M164,216 C232,216 236,102 274,98" fill="none" stroke="rgba(143,137,173,0.5)" stroke-dasharray="3 5" stroke-width="1.4"></path>
+<path d="M164,222 C240,228 244,184 274,180" fill="none" stroke="rgba(143,137,173,0.5)" stroke-dasharray="3 5" stroke-width="1.4"></path>
+<rect fill="rgba(52,229,224,0.05)" height="62" rx="12" stroke="rgba(52,229,224,0.35)" stroke-width="1.2" width="196" x="278" y="66"></rect>
+<path d="M300,116 L308,82 L316,116" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.2"></path>
+<text fill="#e6faf8" font-size="11" x="330" y="94">顶端没被点着</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" x="330" y="112">只放一下 = 信号</text>
+<rect fill="rgba(232,121,249,0.05)" height="62" rx="12" stroke="rgba(232,121,249,0.35)" stroke-width="1.2" width="196" x="278" y="148"></rect>
+<path d="M296,198 L302,164 L308,198" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M308,198 L314,164 L320,198" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M320,198 L326,164 L332,198" fill="none" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2"></path>
+<text fill="#fbe5fd" font-size="11" x="344" y="176">顶端被点着</text>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="10" x="344" y="194">连放一串 = 带上误差</text>
+</svg>
+<figcaption>两路信号落在细胞的两头；放一下还是放一串，把误差捎了出去</figcaption>
+</figure>
+<p>三条路看着很不一样，骨架却是同一个：<strong>误差不再走单开的线路，而是被折进活动本身</strong>——藏在专门的误差单元里，藏在两次稳态的差里，藏在放一串还是放一下里。Lillicrap 等人 2020 年那篇综述把话说得很白：大脑要是真在做梯度这件事，多半是用这种方式做的。</p>
+<p class="en-brief"><b>EN</b> A second family drops the backward pass entirely and encodes the error inside neural activity itself, so that a purely local rule approximates the gradient. Predictive-coding networks already contain error units, and relaxing them to equilibrium with Hebbian updates approximates backprop (Whittington &amp; Bogacz 2017). Equilibrium propagation runs the same dynamics twice — free, then nudged toward the target — and the difference between the two steady states carries the gradient (Scellier &amp; Bengio 2017). A third route uses anatomy: pyramidal neurons receive feedforward input on basal dendrites and top-down feedback on apical dendrites, and apical activation switches the cell from single spikes to bursts, so one axon carries both signal and error (Guerguiev et al. 2017; Payeur et al. 2021). Lillicrap et al. (2020) group these as the most plausible way cortex could approximate gradients.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>也许该换个问法</h2>
+<p>吵到这儿，值得退一步问：<strong>大脑有必要做这件事吗？</strong>反向传播解决的是"跨很多层的精细问责"。可大脑也许压根不是一张从头训到尾的大网。Marblestone 等人 2016 年给了个很不一样的图景：大脑更像<strong>一堆各自带着目标的模块</strong>，视觉那块、运动那块、海马各自在优化的东西根本不是同一个；很多目标还是发育就写好的、自己给自己出的题——"预测下一秒会看到什么"就不需要老师。<strong>模块要是都不深，问责的距离就短，那根最扎的刺自然没那么疼。</strong></p>
+<p>顺带纠正一个容易走偏的印象：<strong>"拿误差来学"在生物里一点也不稀奇</strong>。小脑就明摆着有一条教师线：每个浦肯野细胞收着一根爬行纤维，动作做砸了它就发一下，直接改突触（<a class="reflink" href="ref-motor-system.html">运动系统与小脑</a>）。所以真正有争议的从来不是"大脑会不会用误差"，而是<strong>皮层里那种跨很多层、逐个突触的精细问责</strong>到底存不存在。</p>
+<p>还有一个绕不过去的事实，方向正好反过来。目前<strong>最能预测视觉皮层反应</strong>的模型，恰恰是那些用反向传播训出来的深度网络：给猴子和网络看同一张图，网络中间层的活动能相当准地对上颞叶那些细胞的反应。这不能证明大脑用了反向传播。它更像在说：<strong>决定"表征长成什么样"的，可能主要是任务和结构，而不是用哪条规则学出来的。</strong></p>
+<p>所以这场争论的形状变了。与其问"大脑做不做反向传播"（那是把一个算法和它在硅片上的某一种实现绑死了），不如把它当成一把<strong>标尺</strong>：任何系统想在很深的结构里学好，都得近似地办到某件事；再回脑子里找，它可能用什么零件办的。好处是能落到实验台上——顶端树突什么时候被点着、切断反馈通路之后学习会不会垮、爆发式放电和突触改变是不是真的挂钩，都能测。<strong>吵不出结论没关系，吵出可测的预测就够本了。</strong></p>
+<p class="en-brief"><b>EN</b> The framing has shifted. Marblestone et al. (2016) argue the brain may not need end-to-end credit assignment at all: it looks more like many modules optimizing many locally defined, often self-supervised objectives. Error-driven learning is in any case not exotic in biology — climbing fibers give cerebellar Purkinje cells an explicit teaching signal — so the real dispute is specifically about fine-grained, multi-layer credit assignment in cortex. Meanwhile the best current predictors of visual cortical responses are deep networks trained with backprop (Yamins &amp; DiCarlo 2016), which suggests task and architecture may shape representations more than the learning rule does. Backprop is now most useful as a normative yardstick that generates testable predictions about apical dendrites, feedback pathways and burst-dependent plasticity.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这场争论正在往回反哺 AI。反向传播那三条要求——<b>要一块公共内存、要停下来同步、要每层等着上一层</b>——今天已经不只是生物学的挑剔，也是能耗账单：训练一个大模型的电，和你脑子里那二十瓦（Topic 41 会算这笔账）差着好几个数量级。于是"局部规则 + 事件驱动"的芯片被重新捡起来（Topic 40）。<b>当年被当成生物学怪癖的约束，如今成了工程想抄的作业。</b></p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"全局的最优，怎么靠一堆只看得见邻居的零件做出来"——这个问题不是神经科学的专利，几门离它很远的学问各自撞上过：</p>
+<ul>
+<li><b>控制论 · 维纳</b>：1948 年维纳把一件事讲透了——"目的"这种看着很玄的东西，可以完全由一条误差回路造出来。恒温器没有意图，只是把"和设定值差多少"送回加热器。控制论从此把问题从"零件是什么"移到"误差怎么回到起作用的地方"——这场争论问的正是同一句，只是把恒温器换成了几百万个突触。</li>
+<li><b>经济学 · 哈耶克</b>：没有哪个中枢知道全局，可价格这个纯局部的信号，居然让整体接近了协调——哈耶克 1945 年的说法是，知识本就是分散的，中央算不出的事局部信号算出来了。局部规则近似全局梯度是同形状的问题，<b>只是突触连价格都收不到，只能从两端的活动里推断整个系统的意思。</b></li>
+<li><b>进化论 · 没有梯度的搜索</b>：自然选择也是优化，但它不知道方向，只能靠变异撞运气，代价是以亿年计。反向传播全部的魔力就在"知道往哪边改"这一句。反过来也提示：一个人几十次尝试就学会骑车，几乎不可能是纯试错——大脑手里必定攥着某种方向信息，问题只是它从哪儿来。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>既然大脑不做反向传播，为什么反向传播训出来的网络最像视觉皮层？</summary><div>合理的解释是：<strong>约束条件比学习规则更能决定结果</strong>。给定同一个任务、同一类结构（一层层堆叠、感受野从小到大）、同一种输入统计（自然图像），能把活干好的解法本来就不多，不同的学习规则于是收敛到相似的表征——像不同路线登同一座山。这也提醒别把"像"读成"是"：表征相似只说明<strong>山顶相同</strong>，说不了半个字关于<strong>各自怎么爬上去</strong>。Topic 34 讲过这类坑。</div></details>
+<details><summary>"反馈教得对不对不重要，一致就行"——这条能推到人身上吗？</summary><div>诚实的答案：<strong>这是网络里的一个数学现象，不是关于人的实验结果</strong>，别拿它当教育学结论用。能说的只有一个很弱的版本：<strong>标准稳定的反馈，比时松时紧的更容易让人调整</strong>——你可以学会它的口径，反过来校准自己；摇摆的反馈则让你既不知道错在哪，也不知道该信哪一次。这是类比，不是证据。</div></details>
+<details><summary>如果哪天在皮层里真测到了"活动之差携带误差"，这场争论就算结了吗？</summary><div>不算，但会好办很多。测到那种差只说明<strong>信息在那儿</strong>；还得再证明两件事：突触<strong>确实</strong>按这个差在改（不是恰好相关），以及切掉这条通路之后学习<strong>确实</strong>垮了。从相关到因果永远是最难的一步。好在现在的技术够得着：光遗传学能精确关掉某类反馈、只在特定时刻干预顶端树突——这场争论有机会被实验推着走，不必再在理论里打转。</div></details>
+<details><summary>要是大脑用的规则比反向传播差，它凭什么学得又快又省？</summary><div>因为"学得快"多半不是靠更好的梯度，而是靠<strong>不用从零学</strong>。进化把很多结构预先写好了（该长几层、连去哪儿、什么值得注意），孩子学认猫不是从随机权重开始的。所以拿"人看几张图就会认猫"去嘲笑 AI 要看几百万张，比的其实不是同一件事——一边从随机初始化起步，另一边带着几亿年的先验开局。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Backpropagation" target="_blank">反向传播 Backpropagation</a> — 算法本身的入门词条</li>
+<li><a href="https://en.wikipedia.org/wiki/Credit_assignment_problem" target="_blank">信用分配问题 Credit assignment</a> — 这一期真正的主角</li>
+<li><a href="https://doi.org/10.1038/337129a0" target="_blank">Crick 1989 · Nature</a> — 把"这算法不生物"第一次说清楚的两页纸</li>
+<li><a href="https://doi.org/10.1038/ncomms13276" target="_blank">Lillicrap et al. 2016 · Nature Communications</a> — 随机反馈也能学：反馈对齐</li>
+<li><a href="https://arxiv.org/abs/1609.01596" target="_blank">Nøkland 2016 · arXiv</a> — 直接把误差投给每一层</li>
+<li><a href="https://doi.org/10.1162/NECO_a_00949" target="_blank">Whittington &amp; Bogacz 2017 · Neural Computation</a> — 预测编码网络逼近反向传播</li>
+<li><a href="https://doi.org/10.3389/fncom.2017.00024" target="_blank">Scellier &amp; Bengio 2017 · Frontiers in Comput. Neuroscience</a> — 平衡传播：两次稳态之差</li>
+<li><a href="https://doi.org/10.7554/eLife.22901" target="_blank">Guerguiev et al. 2017 · eLife</a> — 分舱树突的深度学习</li>
+<li><a href="https://doi.org/10.1038/s41593-021-00857-x" target="_blank">Payeur et al. 2021 · Nature Neuroscience</a> — 爆发式放电协调分层回路的学习</li>
+<li><a href="https://arxiv.org/abs/1807.04587" target="_blank">Bartunov et al. 2018 · NeurIPS</a> — 反方：这些生物版扛不住大任务</li>
+<li><a href="https://doi.org/10.1038/s41583-020-0277-3" target="_blank">Lillicrap et al. 2020 · Nature Reviews Neuroscience</a> — 这一行的现状总结，最值得读的一篇</li>
+<li><a href="https://doi.org/10.3389/fncom.2016.00094" target="_blank">Marblestone et al. 2016 · Frontiers in Comput. Neuroscience</a> — 大脑是许多个代价函数，不是一个</li>
+<li><a href="https://doi.org/10.1038/nn.4244" target="_blank">Yamins &amp; DiCarlo 2016 · Nature Neuroscience</a> — 目标驱动的深网为什么像视觉皮层</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 39 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
