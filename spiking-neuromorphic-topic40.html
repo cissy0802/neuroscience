@@ -63,8 +63,8 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <div class="container">
 <header>
 <span class="week-tag">TOPIC 40 · PHASE E 计算</span>
-<h1>脉冲网络与神经形态</h1>
-<h2>让芯片学会那件最难的事：没事就闭嘴</h2>
+<h1 data-tts="99a9833f8e1d0570">脉冲网络与神经形态</h1>
+<h2 data-tts="b06a1e348b6facc1">让芯片学会那件最难的事：没事就闭嘴</h2>
 <div class="date">2026-08-16 · BigCat</div>
 <p class="pitch">你脑子里绝大多数神经元，此刻什么都没干——这不是偷懒，这是它敢用二十瓦的全部原因。</p>
 </header>
@@ -74,7 +74,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 1 -->
 <div class="section">
 <span class="num">// 01</span>
-<h2>它不吐数，它只在某个时刻"啪"一下</h2>
+<h2 data-tts="f1bacbe1cb2c6055">它不吐数，它只在某个时刻"啪"一下</h2>
 <p>先说今天的 AI 里那个"神经元"是什么。它其实就是一小段算术：把上游来的一堆数各乘一个权重、加起来、过一道变换，吐出一个数，比如 0.73。一层几千个这样的单元算完，把几千个数交给下一层，整张网一层层往下推。<strong>注意一个细节：不管输入有没有变，每一轮每个单元都要算一遍、吐个数出来。</strong></p>
 <p>真神经元不这样。它不吐数，只会在某个时刻<strong>"啪"地放一下电</strong>——一个几毫秒的脉冲，大小固定，要么有要么没有，没有"放了 0.73 下"这回事（Topic 35 讲过这套全或无的字母表，<a class="reflink" href="ref-neuron-action-potential.html">神经元与动作电位</a>）。它传出去的不是数值，是<strong>一串散落在时间上的点</strong>：什么时候放的、隔多久放一下、和旁边那个细胞是不是同时放的。信息全在这些点的<strong>时间</strong>里。</p>
 <p>把这件事写成一个能跑的模型，最常用的那个叫<strong>漏电积分放电</strong>，名字唬人，其实就是一只<strong>底下有小孔的杯子</strong>：上游每来一个脉冲就往里滴一点水，同时杯子一直在漏；水攒到杯壁那道刻度线，就"啪"地整杯翻掉——那一翻就是它放的一下电——然后从空杯重新开始。</p>
@@ -115,7 +115,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 2 -->
 <div class="section">
 <span class="num">// 02</span>
-<h2>省电的秘密不在算，在不搬</h2>
+<h2 data-tts="896977d33308f070">省电的秘密不在算，在不搬</h2>
 <p>为什么"没事就闭嘴"能省出几个数量级？这里有个反直觉的事实：<strong>今天的芯片，电基本不是花在算上的，是花在搬上的。</strong></p>
 <p>Horowitz 2014 年把这笔账摊开给业界看：在当时的工艺下，做一次三十二位浮点加法大约花 <strong>0.9 皮焦</strong>（皮焦是极小的能量单位，具体多少不重要，重要的是下面这个对比）；而<strong>从内存里取一个数出来要花几百皮焦</strong>——差了大约七百倍。所以 GPU 跑模型时，绝大部分电是在把成百上千亿个权重从内存搬去计算单元的路上烧掉的。<strong>算几乎不要钱，来回搬才是账单。</strong></p>
 <p>这个毛病有个根源：现在的计算机把<strong>存东西的地方和算东西的地方分成了两处</strong>，中间靠一条通道来回运。大脑没这个毛病——<strong>它的"权重"就是突触本身，而算，也是在同一个突触上当场发生的</strong>。信号到了，突触当场按自己的强度放行，结果直接进下一个细胞。没有取、没有搬、没有写回。</p>
@@ -159,7 +159,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 3 -->
 <div class="section">
 <span class="num">// 03</span>
-<h2>真造出来的东西：三块芯片和一台相机</h2>
+<h2 data-tts="ccc4f7f0fc1f1983">真造出来的东西：三块芯片和一台相机</h2>
 <p>把这套脾气刻进硅片，这一行叫<strong>神经形态</strong>——1990 年 Carver Mead 造的词。他的主张比"仿脑"更激进：别用晶体管去<strong>模拟</strong>方程，而是<strong>让晶体管自己的物理特性直接当计算用</strong>。他注意到，晶体管在很低电压下那条电流随电压变化的曲线，和离子穿过细胞膜上通道的规律形状惊人地像——那就别绕远路，让物理直接把这步算掉。</p>
 <p><strong>TrueNorth</strong>（IBM，2014 年发在《科学》上）第一次让人真瞪大了眼：一百万个神经元、两亿五千六百万个突触、五十四亿个晶体管，实时跑起来<strong>七十毫瓦</strong>——功率密度比常规处理器低了约四个数量级。代价是它只能跑推理，不会学。</p>
 <p><strong>Loihi</strong>（英特尔，2018）补上了这一刀：一百二十八个核、约十三万个神经元、一亿三千万个突触，而且<strong>芯片自己能学</strong>——可塑性规则可以编程，STDP 那类"谁先放谁后放决定加强还是削弱"的局部规则直接跑在片上（<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>）。到 2024 年，英特尔把一千一百五十二块二代 Loihi 塞进一台微波炉大小的机箱，叫 Hala Point：<strong>十一亿五千万个神经元，满负荷两千六百瓦</strong>——神经元数量大致是一只猫头鹰的脑子那个量级。</p>
@@ -208,7 +208,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <!-- 4 -->
 <div class="section">
 <span class="num">// 04</span>
-<h2>那它为什么还没赢</h2>
+<h2 data-tts="a1563a61b18f3732">那它为什么还没赢</h2>
 <p>诚实的部分来了。<strong>第一堵墙：这种网络非常难训。</strong>今天所有能学的 AI 都靠反向传播（Topic 39），而它有个前提——每个零件都得能回答"我稍微改一点点，最后的差错会变多少"。可"放不放电"是个断崖：差一丁点没到阈值，什么都不发生；刚好越过，就整个放一下。这个跳变<strong>几乎处处没有斜率</strong>，回传的账全是零，学不动。</p>
 <p>目前最主流的绕法叫<strong>代理梯度</strong>，办法有点无赖但很管用：往前跑的时候老老实实地放电、断崖照旧；往回算账的时候，<strong>假装那道断崖是一个平滑的小坡</strong>，用这个假的斜率去分配责任。它没有严格的理论保证，但训得出能用的网络。另一条更省事的路是<strong>先用普通网络训好，再转换成脉冲版</strong>去跑。两条路都有点讽刺：<strong>省电的芯片，仍然得靠费电的 GPU 来教。</strong></p>
 <p><strong>第二堵墙：它的优势非常挑活。</strong>英特尔自己 2021 年那篇总结相当坦率：赢面集中在<strong>输入本来就稀疏、又要求马上出结果</strong>的活上——关键词唤醒（一直听着等你喊它，关键在于九成九的时间什么都没发生）、机器人的实时闭环控制、某些优化问题，还有气味识别（Imam 和 Cleland 2020 年照着嗅球的回路在 Loihi 上搭了一个，闻一次就记住，之后在很强的干扰下仍认得出）。可一旦任务是"一次把一大批数据推过一张稠密的网"，GPU 流水线的效率就是碾压性的——那时候<strong>本来就没有稀疏可省</strong>。</p>
@@ -221,7 +221,7 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </div>
 </div>
 <div class="crossx">
-<h3>🌀 越界 · 跨学科的联想</h3>
+<h3 data-tts="983e9ad123f4430d">🌀 越界 · 跨学科的联想</h3>
 <p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"不变就别说话"这条规矩，看着像个省电技巧，其实几门很不一样的学问都从各自的方向撞到过它：</p>
 <ul>
 <li><b>信息论 · 香农</b>：1948 年他把"信息"钉死在一个反直觉的定义上——<b>信息量藏在意外里</b>，完全可预测的信号，携带的信息是零。事件驱动等于把这句话刻进了电路：不变的东西不值得占一次通道。这和 Topic 1 的预测编码是同一条原理的两个化身——大脑用它省带宽，芯片用它省电。</li>
@@ -230,14 +230,14 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 <div class="thinking">
-<h3>// 深入思考</h3>
+<h3 data-tts="ff7b9684a79527c0">// 深入思考</h3>
 <details><summary>脉冲一定比连续的数值更高级吗？</summary><div>很可能不。更像是<strong>被生物学逼出来的妥协</strong>：神经元要把信号沿轴突送出几厘米甚至一米多，一路有电阻、有泄漏、有噪声，连续的电压值送到一半就衰减变形。全或无是唯一稳当的办法——每一小段都<strong>重新生成</strong>一个标准大小的脉冲，走多远都不失真。可硅片上导线只有微米长、噪声可控，传个精确数值毫无压力。<strong>把脉冲当成计算上的优越性，可能是把生物的将就读成了智慧。</strong>真正值钱的是"事件驱动"，不是"必须用脉冲"——这两件事经常被混为一谈。</div></details>
 <details><summary>事件相机听着这么好，为什么手机上一台都没有？</summary><div>因为整个视觉世界是建在"帧"上的：编解码、显示、剪辑、几乎所有现成的算法，全都假设输入是一幅幅图。事件流没有帧，你甚至没法直接"看"它，得先想办法凑回一幅图——那就把优势又还回去了。加上标注数据稀少、分辨率和成本都还没到消费级。所以它已经在用的地方，恰恰是那些<strong>本来就不需要给人看</strong>的场合：高速工业检测、无人机避障、眼动追踪。<strong>一项技术卡住，常常不是它不够好，而是周围的世界不是照着它长的。</strong></div></details>
 <details><summary>既然稀疏是被电费逼的，那 AI 不缺电，是不是就不该学稀疏？</summary><div>这个反问有道理：把生物的约束当成必须抄的美德，是很常见的一种错。但稀疏还顺带带来别的东西——同一时刻只有少数单元活跃，表示之间就不容易互相干扰、单元的含义也更容易读懂（Topic 35 讲过稀疏编码）。而且"AI 不缺电"这前提正在松动：推理端的电费和延迟已是真金白银的约束。合理的态度是<strong>分清哪部分是省电的副产品、哪部分本身就有计算价值</strong>——混合专家站得住，是因为它两头都占。</div></details>
 <details><summary>芯片造得越像大脑，就越可能"有意识"吗？</summary><div>没人知道，但这个问题的形状变了。像 Topic 14 的整合信息论那种理论，判断依据不是材料而是<strong>架构</strong>——纯前馈、跑完就完的系统 Φ 很低，反复回响、彼此纠缠的循环系统才可能高。按这个说法，神经形态芯片（大量循环连接、状态随时间演化、没有明确的"一次前向"）确实和一块跑矩阵乘法的 GPU 不在同一个位置上。<strong>但这只说明它在某个理论里读数不同，而那个理论本身远没被验证。</strong>能确定的只是：架构一变，各家理论就得给出不同的预测——问题从纯思辨往可争论挪了一小步。</div></details>
 </div>
 <div class="refs">
-<h3>// 延伸阅读</h3>
+<h3 data-tts="02757f67505fee27">// 延伸阅读</h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Neuromorphic_computing" target="_blank">神经形态计算 Neuromorphic computing</a> — 这一行的总入口</li>
 <li><a href="https://en.wikipedia.org/wiki/Spiking_neural_network" target="_blank">脉冲神经网络 Spiking neural network</a> — 模型侧的词条</li>
@@ -257,8 +257,8 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </div>
 <footer>BigCat · Neuroscience · Topic 40 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
-<script src="https://hub.cissychen.com/comments.js" defer></script>
-<script src="https://hub.cissychen.com/search.js" defer></script>
-<script src="https://hub.cissychen.com/index-button.js" defer></script>
-<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+<script defer="" src="https://hub.cissychen.com/comments.js"></script>
+<script defer="" src="https://hub.cissychen.com/search.js"></script>
+<script defer="" src="https://hub.cissychen.com/index-button.js"></script>
+<script defer="" src="https://hub.cissychen.com/i18n-tts.js"></script>
 </body></html>
