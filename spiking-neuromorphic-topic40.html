@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 40 · 脉冲网络与神经形态 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 40 · PHASE E 计算</span>
+<h1>脉冲网络与神经形态</h1>
+<h2>让芯片学会那件最难的事：没事就闭嘴</h2>
+<div class="date">2026-08-16 · BigCat</div>
+<p class="pitch">你脑子里绝大多数神经元，此刻什么都没干——这不是偷懒，这是它敢用二十瓦的全部原因。</p>
+</header>
+<div class="intro">
+<p>训练一个大模型要烧掉一座小镇的电，而你此刻一边读这段字一边听见楼下有人说话，用的是<strong>二十瓦</strong>——比一只灯泡还省。差距大到这个份上，多半不是"再优化优化"能补的，而是两台机器打一开始就不是同一种东西。这一期讲一群工程师认真去抄大脑作业：不抄知识，抄<strong>脾气</strong>——没事一动不动，有事才吭一声。这条路已经造出真芯片、真相机，也撞上了一堵挺硬的墙。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>它不吐数，它只在某个时刻"啪"一下</h2>
+<p>先说今天的 AI 里那个"神经元"是什么。它其实就是一小段算术：把上游来的一堆数各乘一个权重、加起来、过一道变换，吐出一个数，比如 0.73。一层几千个这样的单元算完，把几千个数交给下一层，整张网一层层往下推。<strong>注意一个细节：不管输入有没有变，每一轮每个单元都要算一遍、吐个数出来。</strong></p>
+<p>真神经元不这样。它不吐数，只会在某个时刻<strong>"啪"地放一下电</strong>——一个几毫秒的脉冲，大小固定，要么有要么没有，没有"放了 0.73 下"这回事（Topic 35 讲过这套全或无的字母表，<a class="reflink" href="ref-neuron-action-potential.html">神经元与动作电位</a>）。它传出去的不是数值，是<strong>一串散落在时间上的点</strong>：什么时候放的、隔多久放一下、和旁边那个细胞是不是同时放的。信息全在这些点的<strong>时间</strong>里。</p>
+<p>把这件事写成一个能跑的模型，最常用的那个叫<strong>漏电积分放电</strong>，名字唬人，其实就是一只<strong>底下有小孔的杯子</strong>：上游每来一个脉冲就往里滴一点水，同时杯子一直在漏；水攒到杯壁那道刻度线，就"啪"地整杯翻掉——那一翻就是它放的一下电——然后从空杯重新开始。</p>
+<figure>
+<svg viewbox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="16" y="30">上游进来的脉冲</text>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="48" x2="48" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="70" x2="70" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="92" x2="92" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="108" x2="108" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="150" x2="150" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="185" x2="185" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="215" x2="215" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="300" x2="300" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="318" x2="318" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="332" x2="332" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="344" x2="344" y1="42" y2="60"></line>
+<line stroke="rgba(232,121,249,0.55)" stroke-dasharray="4 5" stroke-width="1.2" x1="30" x2="462" y1="100" y2="100"></line>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="10" x="30" y="94">阈值 · 那道刻度线</text>
+<line stroke="rgba(143,137,173,0.35)" stroke-dasharray="3 5" stroke-width="1" x1="30" x2="462" y1="165" y2="165"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" text-anchor="end" x="462" y="160">静息</text>
+<polyline fill="none" points="30,165 48,165 48,143 70,150 70,128 92,136 92,114 108,120 108,98 110,165 150,165 150,148 185,158 185,140 215,152 215,133 250,148 285,161 300,161 300,144 318,150 318,128 332,134 332,112 344,117 344,96 346,165 462,165" stroke="#34e5e0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></polyline>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" x="30" y="180">杯里的水 · 一直在漏</text>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="256" y="198">这一段来得太稀，漏光了 · 不放</text>
+<line stroke="#e879f9" stroke-linecap="round" stroke-width="3" x1="109" x2="109" y1="206" y2="228"></line>
+<line stroke="#e879f9" stroke-linecap="round" stroke-width="3" x1="345" x2="345" y1="206" y2="228"></line>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="10.5" x="360" y="224">它送出去的全部内容</text>
+</svg>
+<figcaption>攒够才翻杯：输出不是一个数值，而是两个时刻</figcaption>
+</figure>
+<p>妙处在这只漏杯的默认状态：<strong>没有输入时，它什么都不做</strong>——不算、不发、不耗电。这叫<strong>事件驱动</strong>：整张网不按节拍空转，只被真正发生的事推着走。你脑子里八百多亿个神经元，此刻绝大多数一声不吭。</p>
+<p class="en-brief"><b>EN</b> An artificial neuron outputs a number every cycle whether or not its input changed; a real neuron outputs nothing but all-or-none spikes, so its message lives in <i>when</i> they occur. The standard model, leaky integrate-and-fire, is a leaking cup: inputs add charge, leak drains it, and crossing threshold empties the cup as one spike. The key property is the default state — with no input, nothing is computed and no energy is spent. That is what event-driven means, and it is why most of your 86 billion neurons are silent right now.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>那你可能会问：人工神经元吐的那个 0.73，对应真神经元的什么？答案是<b>发放率</b>——单位时间里放了几下，密一点就是 0.9，稀一点就是 0.1。也就是说，今天的深度网络其实是把神经元的时间维度<b>压扁成了一个平均数</b>。这个简化换来了巨大的好处（能用矩阵乘法一口气算一层，正好合 GPU 的胃口），代价是把"什么时候放"这一整个维度扔了——而脑子里恰恰有一批计算就住在那儿（Topic 38 的相位、Topic 35 的时序编码）。<b>脉冲网络做的事，就是把时间捡回来。</b></p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>省电的秘密不在算，在不搬</h2>
+<p>为什么"没事就闭嘴"能省出几个数量级？这里有个反直觉的事实：<strong>今天的芯片，电基本不是花在算上的，是花在搬上的。</strong></p>
+<p>Horowitz 2014 年把这笔账摊开给业界看：在当时的工艺下，做一次三十二位浮点加法大约花 <strong>0.9 皮焦</strong>（皮焦是极小的能量单位，具体多少不重要，重要的是下面这个对比）；而<strong>从内存里取一个数出来要花几百皮焦</strong>——差了大约七百倍。所以 GPU 跑模型时，绝大部分电是在把成百上千亿个权重从内存搬去计算单元的路上烧掉的。<strong>算几乎不要钱，来回搬才是账单。</strong></p>
+<p>这个毛病有个根源：现在的计算机把<strong>存东西的地方和算东西的地方分成了两处</strong>，中间靠一条通道来回运。大脑没这个毛病——<strong>它的"权重"就是突触本身，而算，也是在同一个突触上当场发生的</strong>。信号到了，突触当场按自己的强度放行，结果直接进下一个细胞。没有取、没有搬、没有写回。</p>
+<figure>
+<svg viewbox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m40a" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="16" y="24">今天的芯片 · 存和算是两地</text>
+<rect fill="rgba(167,139,250,0.08)" height="40" rx="12" stroke="rgba(167,139,250,0.5)" stroke-width="1.3" width="86" x="16" y="36"></rect>
+<text fill="#efe9ff" font-size="11.5" text-anchor="middle" x="59" y="61">内存 · 存权重</text>
+<rect fill="rgba(52,229,224,0.07)" height="40" rx="12" stroke="rgba(52,229,224,0.5)" stroke-width="1.3" width="86" x="150" y="36"></rect>
+<text fill="#e6faf8" font-size="11.5" text-anchor="middle" x="193" y="61">算的地方</text>
+<line marker-end="url(#m40a)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2" x1="106" x2="144" y1="48" y2="48"></line>
+<line marker-end="url(#m40a)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2" x1="144" x2="106" y1="66" y2="66"></line>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="126" y="96">每算一次，权重都得搬一趟</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="126" y="116">没有输入也照样一拍一拍地空转</text>
+<line stroke="rgba(255,255,255,0.12)" stroke-dasharray="4 7" stroke-width="1" x1="252" x2="252" y1="18" y2="128"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="268" y="24">神经形态 / 大脑 · 存和算在同一处</text>
+<rect fill="rgba(232,121,249,0.07)" height="40" rx="12" stroke="rgba(232,121,249,0.45)" stroke-width="1.3" width="196" x="268" y="36"></rect>
+<text fill="#fbe5fd" font-size="11.5" text-anchor="middle" x="366" y="61">突触 · 既是权重，又是算盘</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="366" y="96">根本没有"搬"这一步</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="366" y="116">没有事件发生就完全不动</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="16" y="162">45 纳米工艺下，一次操作要花的电</text>
+<text fill="#9a94bc" font-size="10.5" text-anchor="end" x="150" y="187">做一次浮点加法</text>
+<rect fill="#34e5e0" height="14" rx="2" width="5" x="158" y="176"></rect>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" x="170" y="187">0.9 皮焦</text>
+<text fill="#9a94bc" font-size="10.5" text-anchor="end" x="150" y="216">从内存取一个数</text>
+<rect fill="#e879f9" height="14" rx="2" width="284" x="158" y="205"></rect>
+<text fill="#2a0a2e" font-family="SF Mono,monospace" font-size="10.5" font-weight="700" text-anchor="end" x="434" y="216">640 皮焦</text>
+</svg>
+<figcaption>搬一趟的电够算七百次（上面那根细条为了看得见已放大）</figcaption>
+</figure>
+<p>省电的第二块来自<strong>稀疏</strong>，而这一块也不是设计上的优雅，是被电费硬逼的。Lennie 2003 年算过一笔扎实的账：皮层里放一下电，代价约二十四亿个 ATP 分子（ATP 是细胞里通用的能量货币）。拿这个单价去除大脑的总功率，结论是——<strong>任何时刻能显著活跃的神经元，可能还不到百分之一。</strong>你脑子不是"选择"了稀疏，是预算只买得起稀疏。</p>
+<p class="en-brief"><b>EN</b> On today's chips, energy goes into moving data, not computing on it: Horowitz (2014) measured a 32-bit float add at about 0.9 pJ against several hundred pJ to fetch one operand from DRAM — a gap of roughly 700×. The brain has no such gap, because the synapse <i>is</i> the weight and the computation happens in place. Sparsity is the second saving, and it is not an elegance but a budget constraint: Lennie (2003) priced one cortical spike at ~2.4×10⁹ ATP molecules and concluded that under the brain's power budget, likely fewer than 1% of neurons can be substantially active at once.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>知道了"贵的是搬不是算"，AI 工程里一堆看着零碎的手艺立刻串成一条线。<b>量化</b>（把权重从三十二位压成八位甚至四位）省的不是算力，是每次搬运的字节数；<b>KV cache</b> 省的是把算过的东西重新搬一遍；<b>混合专家</b>（每次只唤醒一小部分参数）省的是搬那些这次根本用不上的权重。<b>全在做同一件事：少搬点。</b>而这正是大脑在结构上就免疫的那个问题。</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>真造出来的东西：三块芯片和一台相机</h2>
+<p>把这套脾气刻进硅片，这一行叫<strong>神经形态</strong>——1990 年 Carver Mead 造的词。他的主张比"仿脑"更激进：别用晶体管去<strong>模拟</strong>方程，而是<strong>让晶体管自己的物理特性直接当计算用</strong>。他注意到，晶体管在很低电压下那条电流随电压变化的曲线，和离子穿过细胞膜上通道的规律形状惊人地像——那就别绕远路，让物理直接把这步算掉。</p>
+<p><strong>TrueNorth</strong>（IBM，2014 年发在《科学》上）第一次让人真瞪大了眼：一百万个神经元、两亿五千六百万个突触、五十四亿个晶体管，实时跑起来<strong>七十毫瓦</strong>——功率密度比常规处理器低了约四个数量级。代价是它只能跑推理，不会学。</p>
+<p><strong>Loihi</strong>（英特尔，2018）补上了这一刀：一百二十八个核、约十三万个神经元、一亿三千万个突触，而且<strong>芯片自己能学</strong>——可塑性规则可以编程，STDP 那类"谁先放谁后放决定加强还是削弱"的局部规则直接跑在片上（<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>）。到 2024 年，英特尔把一千一百五十二块二代 Loihi 塞进一台微波炉大小的机箱，叫 Hala Point：<strong>十一亿五千万个神经元，满负荷两千六百瓦</strong>——神经元数量大致是一只猫头鹰的脑子那个量级。</p>
+<p><strong>SpiNNaker</strong>（曼彻斯特大学，Steve Furber 主持，他也是 ARM 芯片的设计者之一）走了第三条路：不做特殊的神经元电路，就用一百万个普通的小 ARM 核，心思全花在<strong>专为脉冲设计的路由网络</strong>上——脉冲这种消息极短、极多、去向极散，难的从来不是算，是送。</p>
+<p>但这条路上真正已经在干活的，反而是一台相机。<strong>事件相机</strong>（2008 年那颗奠基的芯片来自苏黎世的 Lichtsteiner 和 Delbrück）把"没事就闭嘴"用在了成像上：它没有"帧"这个概念，<strong>每个像素各管各的，只在自己这一点的亮度变了的时候，自己报一次</strong>——报的是"我这儿变亮了"或"变暗了"，附上一个微秒级的时间戳。画面静止时，它输出的数据是零。这套路子是从视网膜抄来的：视网膜送往大脑的本来就不是一幅幅照片，而主要是"哪里变了"（<a class="reflink" href="ref-visual-pathway.html">视觉通路</a>）。</p>
+<figure>
+<svg viewbox="0 0 480 170" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m40t" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="16" y="24">普通相机 · 一帧一帧</text>
+<rect fill="rgba(255,255,255,0.03)" height="52" rx="8" stroke="rgba(167,139,250,0.3)" stroke-width="1.1" width="62" x="16" y="34"></rect>
+<circle cx="30" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="46" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="62" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="30" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="46" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="62" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="30" cy="76" fill="#34e5e0" r="3.4"></circle><circle cx="46" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="62" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<rect fill="rgba(255,255,255,0.03)" height="52" rx="8" stroke="rgba(167,139,250,0.3)" stroke-width="1.1" width="62" x="88" y="34"></rect>
+<circle cx="102" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="118" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="134" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="102" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="118" cy="62" fill="#34e5e0" r="3.4"></circle><circle cx="134" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="102" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="118" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="134" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<rect fill="rgba(255,255,255,0.03)" height="52" rx="8" stroke="rgba(167,139,250,0.3)" stroke-width="1.1" width="62" x="160" y="34"></rect>
+<circle cx="174" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="190" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="206" cy="48" fill="#34e5e0" r="3.4"></circle>
+<circle cx="174" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="190" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="206" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="174" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="190" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="206" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="119" y="122">整幅重发，不管变没变</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="119" y="144">延迟 ≈ 一帧 33 毫秒</text>
+<line stroke="rgba(255,255,255,0.12)" stroke-dasharray="4 7" stroke-width="1" x1="240" x2="240" y1="18" y2="152"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="258" y="24">事件相机 · 只报变化</text>
+<line marker-end="url(#m40t)" stroke="#8f89ad" stroke-width="1.4" x1="262" x2="460" y1="62" y2="62"></line>
+<line stroke="#34e5e0" stroke-width="1.4" x1="278" x2="278" y1="62" y2="48"></line><circle cx="278" cy="45" fill="#34e5e0" r="3.4"></circle>
+<line stroke="#34e5e0" stroke-width="1.4" x1="292" x2="292" y1="62" y2="48"></line><circle cx="292" cy="45" fill="#34e5e0" r="3.4"></circle>
+<line stroke="#e879f9" stroke-width="1.4" x1="316" x2="316" y1="62" y2="76"></line><circle cx="316" cy="79" fill="#e879f9" r="3.4"></circle>
+<line stroke="#34e5e0" stroke-width="1.4" x1="352" x2="352" y1="62" y2="48"></line><circle cx="352" cy="45" fill="#34e5e0" r="3.4"></circle>
+<line stroke="#e879f9" stroke-width="1.4" x1="366" x2="366" y1="62" y2="76"></line><circle cx="366" cy="79" fill="#e879f9" r="3.4"></circle>
+<line stroke="#34e5e0" stroke-width="1.4" x1="404" x2="404" y1="62" y2="48"></line><circle cx="404" cy="45" fill="#34e5e0" r="3.4"></circle>
+<line stroke="#34e5e0" stroke-width="1.4" x1="440" x2="440" y1="62" y2="48"></line><circle cx="440" cy="45" fill="#34e5e0" r="3.4"></circle>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" x="262" y="36">变亮</text>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="10" x="330" y="96">变暗</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="361" y="122">不动就一个字节都不发</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="361" y="144">延迟 ≈ 15 微秒</text>
+</svg>
+<figcaption>没有帧：每个像素自己决定什么时候说话</figcaption>
+</figure>
+<p>好处不只是省。不必等一帧凑齐，延迟从毫秒掉到<strong>微秒</strong>；每个像素独立管自己的明暗，于是同一画面里阳光下和阴影里的东西都看得清（这本事叫动态范围，它到 120 分贝，普通相机通常只有六十上下）；快速运动还<strong>不会糊</strong>——糊本是"曝光一段时间取平均"的副产品，它压根不曝光。</p>
+<p class="en-brief"><b>EN</b> Carver Mead coined "neuromorphic" in 1990, with a proposal sharper than mere imitation: let the transistor's own subthreshold physics, which resembles ion-channel behaviour, perform the computation directly. IBM's TrueNorth (2014) ran 1M neurons and 256M synapses on 5.4B transistors at 70 mW; Intel's Loihi (2018) added programmable on-chip plasticity, scaling by 2024 to Hala Point — 1,152 Loihi 2 chips, 1.15B neurons, 2,600 W. SpiNNaker took a third route: ordinary ARM cores plus a router built for spike traffic. The most deployed idea is the event camera (Lichtsteiner &amp; Delbrück, 2008): no frames, each pixel reporting its own brightness changes with microsecond timestamps — hence ~15 µs latency, 120 dB dynamic range, no motion blur, and zero output from a static scene, exactly as the retina mostly reports change rather than pictures.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>那它为什么还没赢</h2>
+<p>诚实的部分来了。<strong>第一堵墙：这种网络非常难训。</strong>今天所有能学的 AI 都靠反向传播（Topic 39），而它有个前提——每个零件都得能回答"我稍微改一点点，最后的差错会变多少"。可"放不放电"是个断崖：差一丁点没到阈值，什么都不发生；刚好越过，就整个放一下。这个跳变<strong>几乎处处没有斜率</strong>，回传的账全是零，学不动。</p>
+<p>目前最主流的绕法叫<strong>代理梯度</strong>，办法有点无赖但很管用：往前跑的时候老老实实地放电、断崖照旧；往回算账的时候，<strong>假装那道断崖是一个平滑的小坡</strong>，用这个假的斜率去分配责任。它没有严格的理论保证，但训得出能用的网络。另一条更省事的路是<strong>先用普通网络训好，再转换成脉冲版</strong>去跑。两条路都有点讽刺：<strong>省电的芯片，仍然得靠费电的 GPU 来教。</strong></p>
+<p><strong>第二堵墙：它的优势非常挑活。</strong>英特尔自己 2021 年那篇总结相当坦率：赢面集中在<strong>输入本来就稀疏、又要求马上出结果</strong>的活上——关键词唤醒（一直听着等你喊它，关键在于九成九的时间什么都没发生）、机器人的实时闭环控制、某些优化问题，还有气味识别（Imam 和 Cleland 2020 年照着嗅球的回路在 Loihi 上搭了一个，闻一次就记住，之后在很强的干扰下仍认得出）。可一旦任务是"一次把一大批数据推过一张稠密的网"，GPU 流水线的效率就是碾压性的——那时候<strong>本来就没有稀疏可省</strong>。</p>
+<p><strong>第三堵墙最俗，也最致命：没有生态。</strong>深度学习能起飞，一半功劳在那套谁都能上手的工具链。神经形态这边每家芯片一套写法，能跑的模型库小得可怜，愿意学的人自然少。</p>
+<p>所以把它当成"更好的 GPU"是误会。它是<strong>另一类机器</strong>，赌的是一件还没定的事：<strong>未来卡住我们的，究竟是算得不够快，还是耗电太多、反应太慢。</strong>若是前者，它没什么戏；若是后者——你手腕上、耳朵里、飞在天上那些必须一直醒着又充不起电的东西——它就是唯一走得通的方向。</p>
+<p class="en-brief"><b>EN</b> Three walls. Training: the spike threshold is a step function with no usable derivative, so backprop stalls; the workaround is surrogate gradients — spike hard in the forward pass, pretend the step is a smooth slope in the backward pass (Neftci, Mostafa &amp; Zenke 2019) — or train a conventional network and convert it. Either way, the low-power chip is still taught by power-hungry GPUs. Benchmarks: Intel's own 2021 survey concedes the wins are concentrated in sparse, streaming, latency-critical, small-batch workloads — keyword spotting, closed-loop robotic control, optimisation, one-shot odour recognition (Imam &amp; Cleland 2020) — while dense large-batch matrix work still belongs to GPUs, since there is no sparsity there to exploit. Ecosystem: no CUDA-equivalent. Neuromorphic hardware is not a better GPU; it is a bet that the binding constraint ahead is energy and latency rather than throughput.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这一行还给 Topic 39 那场争论补了个意外的注脚。当年"突触只看得见自己两端、够不到全局信息"被当成生物学的<b>缺陷</b>；可到了硅片上，这条恰恰是最值钱的性质——<b>局部规则不需要把误差搬遍全网</b>，于是芯片可以一边干活一边学，不必把数据送回中心再等一张表发下来。Loihi 能把可塑性规则做进片上，靠的就是这个。<b>生物学的将就，换个衬底就成了工程的优点。</b></p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"不变就别说话"这条规矩，看着像个省电技巧，其实几门很不一样的学问都从各自的方向撞到过它：</p>
+<ul>
+<li><b>信息论 · 香农</b>：1948 年他把"信息"钉死在一个反直觉的定义上——<b>信息量藏在意外里</b>，完全可预测的信号，携带的信息是零。事件驱动等于把这句话刻进了电路：不变的东西不值得占一次通道。这和 Topic 1 的预测编码是同一条原理的两个化身——大脑用它省带宽，芯片用它省电。</li>
+<li><b>热力学 · 兰道尔原理</b>：1961 年兰道尔证明，计算的能耗下限不是工程问题而是<b>物理定律</b>——每擦掉一个比特，至少要向环境放出约 3×10⁻²¹ 焦耳的热。这一下就把"能省到多少"变成了一个有底的问题。今天的芯片离这个底还差好几个数量级，而大脑离得近得多。<b>所以"再省一千倍"未必是幻想——物理还没说不行。</b></li>
+<li><b>佛学 · 刹那生灭</b>：我们以为世界是一个个东西连续地摆在那儿，佛教的说法反过来——所谓事物只是<b>刹那刹那生灭的事件</b>，前一刹那的它和此刻的它并非同一个。普通相机拍的是"东西"，每 33 毫秒把整个世界重新宣告一遍；事件相机记的是"生灭"，除变化本身外什么都不存在。<b>同一片风景，两台机器眼里是两种本体论。</b></li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>脉冲一定比连续的数值更高级吗？</summary><div>很可能不。更像是<strong>被生物学逼出来的妥协</strong>：神经元要把信号沿轴突送出几厘米甚至一米多，一路有电阻、有泄漏、有噪声，连续的电压值送到一半就衰减变形。全或无是唯一稳当的办法——每一小段都<strong>重新生成</strong>一个标准大小的脉冲，走多远都不失真。可硅片上导线只有微米长、噪声可控，传个精确数值毫无压力。<strong>把脉冲当成计算上的优越性，可能是把生物的将就读成了智慧。</strong>真正值钱的是"事件驱动"，不是"必须用脉冲"——这两件事经常被混为一谈。</div></details>
+<details><summary>事件相机听着这么好，为什么手机上一台都没有？</summary><div>因为整个视觉世界是建在"帧"上的：编解码、显示、剪辑、几乎所有现成的算法，全都假设输入是一幅幅图。事件流没有帧，你甚至没法直接"看"它，得先想办法凑回一幅图——那就把优势又还回去了。加上标注数据稀少、分辨率和成本都还没到消费级。所以它已经在用的地方，恰恰是那些<strong>本来就不需要给人看</strong>的场合：高速工业检测、无人机避障、眼动追踪。<strong>一项技术卡住，常常不是它不够好，而是周围的世界不是照着它长的。</strong></div></details>
+<details><summary>既然稀疏是被电费逼的，那 AI 不缺电，是不是就不该学稀疏？</summary><div>这个反问有道理：把生物的约束当成必须抄的美德，是很常见的一种错。但稀疏还顺带带来别的东西——同一时刻只有少数单元活跃，表示之间就不容易互相干扰、单元的含义也更容易读懂（Topic 35 讲过稀疏编码）。而且"AI 不缺电"这前提正在松动：推理端的电费和延迟已是真金白银的约束。合理的态度是<strong>分清哪部分是省电的副产品、哪部分本身就有计算价值</strong>——混合专家站得住，是因为它两头都占。</div></details>
+<details><summary>芯片造得越像大脑，就越可能"有意识"吗？</summary><div>没人知道，但这个问题的形状变了。像 Topic 14 的整合信息论那种理论，判断依据不是材料而是<strong>架构</strong>——纯前馈、跑完就完的系统 Φ 很低，反复回响、彼此纠缠的循环系统才可能高。按这个说法，神经形态芯片（大量循环连接、状态随时间演化、没有明确的"一次前向"）确实和一块跑矩阵乘法的 GPU 不在同一个位置上。<strong>但这只说明它在某个理论里读数不同，而那个理论本身远没被验证。</strong>能确定的只是：架构一变，各家理论就得给出不同的预测——问题从纯思辨往可争论挪了一小步。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Neuromorphic_computing" target="_blank">神经形态计算 Neuromorphic computing</a> — 这一行的总入口</li>
+<li><a href="https://en.wikipedia.org/wiki/Spiking_neural_network" target="_blank">脉冲神经网络 Spiking neural network</a> — 模型侧的词条</li>
+<li><a href="https://doi.org/10.1109/5.58356" target="_blank">Mead 1990 · Proceedings of the IEEE</a> — 造出"神经形态"这个词的那篇</li>
+<li><a href="https://doi.org/10.1126/science.1254642" target="_blank">Merolla et al. 2014 · Science</a> — TrueNorth：一百万神经元、七十毫瓦</li>
+<li><a href="https://doi.org/10.1109/MM.2018.112130359" target="_blank">Davies et al. 2018 · IEEE Micro</a> — Loihi：把学习做进芯片</li>
+<li><a href="https://doi.org/10.1109/JPROC.2021.3067593" target="_blank">Davies et al. 2021 · Proceedings of the IEEE</a> — 最坦率的一篇：它到底赢在哪、输在哪</li>
+<li><a href="https://doi.org/10.1109/JPROC.2014.2304638" target="_blank">Furber et al. 2014 · Proceedings of the IEEE</a> — SpiNNaker：难的不是算，是送</li>
+<li><a href="https://doi.org/10.1109/JSSC.2007.914337" target="_blank">Lichtsteiner et al. 2008 · IEEE JSSC</a> — 事件相机的奠基芯片</li>
+<li><a href="https://arxiv.org/abs/1901.09948" target="_blank">Neftci, Mostafa &amp; Zenke 2019 · arXiv</a> — 代理梯度：怎么训一张会放电的网</li>
+<li><a href="https://doi.org/10.1038/s41586-019-1677-2" target="_blank">Roy, Jaiswal &amp; Panda 2019 · Nature</a> — 综述：基于脉冲的机器智能</li>
+<li><a href="https://doi.org/10.1038/s42256-020-0159-4" target="_blank">Imam &amp; Cleland 2020 · Nature Machine Intelligence</a> — 照着嗅球搭的回路，闻一次就记住</li>
+<li><a href="https://doi.org/10.1109/ISSCC.2014.6757323" target="_blank">Horowitz 2014 · ISSCC</a> — 那笔把整个行业看醒的能量账</li>
+<li><a href="https://doi.org/10.1016/S0960-9822(03)00135-0" target="_blank">Lennie 2003 · Current Biology</a> — 一个脉冲多少钱，于是只养得起百分之一</li>
+<li><a href="https://en.wikipedia.org/wiki/Landauer%27s_principle" target="_blank">兰道尔原理 Landauer's principle</a> — 计算能耗的物理下限</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 40 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 40 · Spiking Networks &amp; Neuromorphic Computing — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 40 · PHASE E COMPUTATION</span>
+<h1>Spiking Networks &amp; Neuromorphic Computing</h1>
+<h2>Teaching a chip the hardest trick of all: shutting up when nothing happens</h2>
+<div class="date">2026-08-16 · BigCat</div>
+<p class="pitch">Most of the neurons in your head are doing absolutely nothing right now — and that idleness is the entire reason the organ gets away with twenty watts.</p>
+</header>
+<div class="intro">
+<p>Training a large model burns through a small town's worth of electricity. Meanwhile you are reading this sentence and simultaneously hearing someone talk downstairs, on <strong>twenty watts</strong> — less than a light bulb. A gap that wide is usually not something you close by optimising harder; it means the two machines were never the same kind of thing to begin with. This one is about a group of engineers who set out to copy the brain's homework in earnest — not its knowledge, but its <strong>temperament</strong>: sit dead still until something actually happens, then say one word. That road has produced real chips and a real camera. It has also run into a fairly hard wall.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>It doesn't emit a number. It goes "pop" at a particular moment.</h2>
+<p>Start with what a "neuron" means inside today's AI. It is a small piece of arithmetic: take the numbers arriving from upstream, multiply each by a weight, add them up, push the sum through a simple transformation, emit one number — say 0.73. A few thousand such units finish at once and hand a few thousand numbers to the next layer, and the whole network grinds downward that way. <strong>Note one detail: whether or not the input changed, every unit computes and emits something on every single round.</strong></p>
+<p>A real neuron does none of this. It emits no number at all; it merely <strong>goes "pop" at some moment</strong> — a few-millisecond electrical spike of fixed size, present or absent, with no such thing as "firing 0.73 of a spike" (Topic 35 covered this all-or-none alphabet, <a class="reflink" href="ref-neuron-action-potential.en.html">Neuron &amp; action potential</a>). So what it sends downstream is not a value but <strong>a scatter of points along time</strong>: when it fired, how long since the last one, whether it fired together with the cell next door. The information lives entirely in the <strong>timing</strong> of those points.</p>
+<p>The standard way to write that down as something you can actually run is called <strong>leaky integrate-and-fire</strong>. The name is forbidding; the thing is a <strong>cup with a small hole in the bottom</strong>. Every incoming spike drips a little water in, while the cup leaks continuously. When the water reaches a mark on the wall, the whole cup tips over — that tipping is its one spike — and refills from empty.</p>
+<figure>
+<svg viewbox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="16" y="30">incoming spikes</text>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="48" x2="48" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="70" x2="70" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="92" x2="92" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="108" x2="108" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="150" x2="150" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="185" x2="185" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="215" x2="215" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="300" x2="300" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="318" x2="318" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="332" x2="332" y1="42" y2="60"></line>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.2" x1="344" x2="344" y1="42" y2="60"></line>
+<line stroke="rgba(232,121,249,0.55)" stroke-dasharray="4 5" stroke-width="1.2" x1="30" x2="462" y1="100" y2="100"></line>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="10" x="30" y="94">threshold · the mark on the wall</text>
+<line stroke="rgba(143,137,173,0.35)" stroke-dasharray="3 5" stroke-width="1" x1="30" x2="462" y1="165" y2="165"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" text-anchor="end" x="462" y="160">rest</text>
+<polyline fill="none" points="30,165 48,165 48,143 70,150 70,128 92,136 92,114 108,120 108,98 110,165 150,165 150,148 185,158 185,140 215,152 215,133 250,148 285,161 300,161 300,144 318,150 318,128 332,134 332,112 344,117 344,96 346,165 462,165" stroke="#34e5e0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></polyline>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" x="30" y="180">water in the cup · always leaking</text>
+<text fill="#8f89ad" font-size="10" text-anchor="middle" x="256" y="198">too sparse here — it all leaks away, no spike</text>
+<line stroke="#e879f9" stroke-linecap="round" stroke-width="3" x1="109" x2="109" y1="206" y2="228"></line>
+<line stroke="#e879f9" stroke-linecap="round" stroke-width="3" x1="345" x2="345" y1="206" y2="228"></line>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="10.5" x="360" y="224">everything it sends out</text>
+</svg>
+<figcaption>Tip only when full: the output is not a value but two moments</figcaption>
+</figure>
+<p>The magic is in that cup's default state: <strong>with no input, it does nothing at all</strong> — no computation, no output, no power drawn. This is what <strong>event-driven</strong> means: the network does not tick along on a clock, it is pushed forward only by things that actually happen. Of the 86 billion or so neurons in your head, the vast majority are silent this second.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>So what does that 0.73 an artificial neuron emits correspond to, biologically? The <b>firing rate</b> — how many spikes per unit time, denser meaning 0.9 and sparser 0.1. Which is to say: today's deep networks have <b>flattened the neuron's time dimension into an average</b>. That simplification bought something enormous (a whole layer becomes one matrix multiplication, exactly what a GPU likes) at the cost of throwing away the entire "when" axis — and a certain amount of the brain's computation lives precisely there (the phase codes of Topic 38, the temporal codes of Topic 35). <b>Spiking networks are the attempt to pick time back up.</b></p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>The saving isn't in the computing. It's in not fetching.</h2>
+<p>Why should "shut up when nothing happens" be worth orders of magnitude? Because of a counterintuitive fact about modern chips: <strong>the electricity mostly does not go into computing. It goes into moving data around.</strong></p>
+<p>Horowitz laid the accounts out for the industry in 2014. At the process node he measured, a 32-bit floating-point addition cost about <strong>0.9 picojoules</strong> (a picojoule is a very small unit of energy; the absolute number matters less than the comparison coming next), while <strong>fetching a single number out of main memory cost several hundred</strong> — a gap of roughly 700×. So when a GPU runs a model, most of the power is burned hauling hundreds of billions of weights from memory to the arithmetic units. <strong>Computing is nearly free. The round trip is the bill.</strong></p>
+<p>This has a root cause: today's computers keep <strong>the place that stores things and the place that computes on them physically apart</strong>, with a channel ferrying data between. The brain does not have this problem, because <strong>its "weights" are the synapses themselves, and the computing happens right there at the synapse</strong>. A signal arrives, the synapse passes it on scaled by its own strength, and the result goes straight into the next cell. Nothing is fetched, moved, or written back.</p>
+<figure>
+<svg viewbox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m40a" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#e879f9"></path></marker>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" x="16" y="24">today's chips · two separate places</text>
+<rect fill="rgba(167,139,250,0.08)" height="40" rx="12" stroke="rgba(167,139,250,0.5)" stroke-width="1.3" width="86" x="16" y="36"></rect>
+<text fill="#efe9ff" font-size="11.5" text-anchor="middle" x="59" y="61">memory</text>
+<rect fill="rgba(52,229,224,0.07)" height="40" rx="12" stroke="rgba(52,229,224,0.5)" stroke-width="1.3" width="86" x="150" y="36"></rect>
+<text fill="#e6faf8" font-size="11.5" text-anchor="middle" x="193" y="61">compute</text>
+<line marker-end="url(#m40a)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2" x1="106" x2="144" y1="48" y2="48"></line>
+<line marker-end="url(#m40a)" stroke="#e879f9" stroke-linecap="round" stroke-width="2.2" x1="144" x2="106" y1="66" y2="66"></line>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="126" y="96">every operation hauls the weight over</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="126" y="116">and it ticks along even with no input</text>
+<line stroke="rgba(255,255,255,0.12)" stroke-dasharray="4 7" stroke-width="1" x1="252" x2="252" y1="18" y2="128"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" x="264" y="24">neuromorphic / brain · one place</text>
+<rect fill="rgba(232,121,249,0.07)" height="40" rx="12" stroke="rgba(232,121,249,0.45)" stroke-width="1.3" width="196" x="268" y="36"></rect>
+<text fill="#fbe5fd" font-size="11.5" text-anchor="middle" x="366" y="61">synapse = weight + compute</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="366" y="96">there is no fetch step at all</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="366" y="116">no event, no activity whatsoever</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="16" y="162">energy per operation at 45 nm</text>
+<text fill="#9a94bc" font-size="10.5" text-anchor="end" x="150" y="187">one float add</text>
+<rect fill="#34e5e0" height="14" rx="2" width="5" x="158" y="176"></rect>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" x="170" y="187">0.9 pJ</text>
+<text fill="#9a94bc" font-size="10.5" text-anchor="end" x="150" y="216">one fetch from DRAM</text>
+<rect fill="#e879f9" height="14" rx="2" width="284" x="158" y="205"></rect>
+<text fill="#2a0a2e" font-family="SF Mono,monospace" font-size="10.5" font-weight="700" text-anchor="end" x="434" y="216">640 pJ</text>
+</svg>
+<figcaption>One fetch buys seven hundred adds (the thin bar is enlarged to stay visible)</figcaption>
+</figure>
+<p>The second saving is <strong>sparsity</strong>, and it too is not an elegance but a consequence of the electricity bill. Lennie ran the numbers carefully in 2003: one cortical spike costs roughly 2.4 billion molecules of ATP (the cell's universal energy currency). Divide the brain's total power budget by that unit price and you get — <strong>fewer than about 1% of neurons can be substantially active at any moment.</strong> Your brain did not "choose" sparsity. Its budget can only afford sparsity.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Once you know the expensive part is the fetching, a pile of apparently unrelated engineering tricks snaps into a single line. <b>Quantisation</b> (squeezing weights from 32 bits to 8 or 4) saves not arithmetic but bytes moved per fetch; the <b>KV cache</b> saves re-fetching things already computed; <b>mixture-of-experts</b> (waking only a small slice of the parameters each time) saves hauling the weights this token doesn't need. <b>All of them are doing one thing: fetch less.</b> Which is precisely the problem the brain is structurally immune to.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>What actually got built: three chips and a camera</h2>
+<p>Carving that temperament into silicon is a field called <strong>neuromorphic engineering</strong> — Carver Mead's coinage, 1990. His proposal was sharper than mere imitation: don't use transistors to <strong>simulate</strong> equations, <strong>let the transistor's own physics do the computing</strong>. He had noticed that the way current varies with voltage in a transistor held at very low voltage has a shape strikingly like the behaviour of ions crossing channels in a cell membrane. So take the short cut and let physics do that step directly.</p>
+<p><strong>TrueNorth</strong> (IBM, published in <i>Science</i> in 2014) was the first result that genuinely made people sit up: a million neurons, 256 million synapses, 5.4 billion transistors, running in real time on <strong>70 milliwatts</strong> — a power density roughly four orders of magnitude below a conventional processor. The catch: it could only run inference. It could not learn.</p>
+<p><strong>Loihi</strong> (Intel, 2018) closed that gap: 128 cores, about 130,000 neurons, 130 million synapses, and <strong>learning on the chip itself</strong> — the plasticity rule is programmable, so local rules of the STDP family ("who fired first decides whether the connection strengthens or weakens") run directly on silicon (<a class="reflink" href="ref-synaptic-plasticity.en.html">Synaptic plasticity</a>). By 2024 Intel had packed 1,152 second-generation Loihi chips into a chassis the size of a microwave, called Hala Point: <strong>1.15 billion neurons at up to 2,600 watts</strong> — a neuron count in the neighbourhood of an owl's brain.</p>
+<p><strong>SpiNNaker</strong> (University of Manchester, led by Steve Furber, one of the designers of the original ARM chip) took a third route entirely: no special neuron circuits, just a million ordinary little ARM cores, with all the ingenuity poured into <strong>a routing network built for spike traffic</strong> — because spikes are very short, very numerous and scattered to very many destinations, and the hard part was never the computing but the delivery.</p>
+<p>The idea that is actually out doing work, though, is a camera. The <strong>event camera</strong> (the founding chip came out of Zurich in 2008, from Lichtsteiner and Delbrück) applies "shut up when nothing happens" to imaging: there is no such thing as a frame. <strong>Each pixel minds its own business and reports only when the brightness at its own point changes</strong> — reporting "I got brighter" or "I got darker" with a microsecond timestamp. Point it at a static scene and its output is zero. The idea is lifted from the retina, which never sent the brain a series of photographs either, but mostly a report of what changed (<a class="reflink" href="ref-visual-pathway.en.html">Visual pathway</a>).</p>
+<figure>
+<svg viewbox="0 0 480 170" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="m40t" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="16" y="24">normal camera · frame by frame</text>
+<rect fill="rgba(255,255,255,0.03)" height="52" rx="8" stroke="rgba(167,139,250,0.3)" stroke-width="1.1" width="62" x="16" y="34"></rect>
+<circle cx="30" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="46" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="62" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="30" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="46" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="62" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="30" cy="76" fill="#34e5e0" r="3.4"></circle><circle cx="46" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="62" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<rect fill="rgba(255,255,255,0.03)" height="52" rx="8" stroke="rgba(167,139,250,0.3)" stroke-width="1.1" width="62" x="88" y="34"></rect>
+<circle cx="102" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="118" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="134" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="102" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="118" cy="62" fill="#34e5e0" r="3.4"></circle><circle cx="134" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="102" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="118" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="134" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<rect fill="rgba(255,255,255,0.03)" height="52" rx="8" stroke="rgba(167,139,250,0.3)" stroke-width="1.1" width="62" x="160" y="34"></rect>
+<circle cx="174" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="190" cy="48" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="206" cy="48" fill="#34e5e0" r="3.4"></circle>
+<circle cx="174" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="190" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="206" cy="62" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<circle cx="174" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="190" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle><circle cx="206" cy="76" fill="rgba(255,255,255,0.13)" r="2.4"></circle>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="119" y="122">resends the whole grid regardless</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="119" y="144">latency ≈ 33 ms per frame</text>
+<line stroke="rgba(255,255,255,0.12)" stroke-dasharray="4 7" stroke-width="1" x1="240" x2="240" y1="18" y2="152"></line>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="258" y="24">event camera · changes only</text>
+<line marker-end="url(#m40t)" stroke="#8f89ad" stroke-width="1.4" x1="262" x2="460" y1="62" y2="62"></line>
+<line stroke="#34e5e0" stroke-width="1.4" x1="278" x2="278" y1="62" y2="48"></line><circle cx="278" cy="45" fill="#34e5e0" r="3.4"></circle>
+<line stroke="#34e5e0" stroke-width="1.4" x1="292" x2="292" y1="62" y2="48"></line><circle cx="292" cy="45" fill="#34e5e0" r="3.4"></circle>
+<line stroke="#e879f9" stroke-width="1.4" x1="316" x2="316" y1="62" y2="76"></line><circle cx="316" cy="79" fill="#e879f9" r="3.4"></circle>
+<line stroke="#34e5e0" stroke-width="1.4" x1="352" x2="352" y1="62" y2="48"></line><circle cx="352" cy="45" fill="#34e5e0" r="3.4"></circle>
+<line stroke="#e879f9" stroke-width="1.4" x1="366" x2="366" y1="62" y2="76"></line><circle cx="366" cy="79" fill="#e879f9" r="3.4"></circle>
+<line stroke="#34e5e0" stroke-width="1.4" x1="404" x2="404" y1="62" y2="48"></line><circle cx="404" cy="45" fill="#34e5e0" r="3.4"></circle>
+<line stroke="#34e5e0" stroke-width="1.4" x1="440" x2="440" y1="62" y2="48"></line><circle cx="440" cy="45" fill="#34e5e0" r="3.4"></circle>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" x="262" y="36">brighter</text>
+<text fill="#f0a8f8" font-family="SF Mono,monospace" font-size="10" x="330" y="96">darker</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="361" y="122">nothing moves, nothing is sent</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="361" y="144">latency ≈ 15 µs</text>
+</svg>
+<figcaption>No frames: each pixel decides for itself when to speak</figcaption>
+</figure>
+<p>And the payoff is not only power. With no frame to wait for, latency drops from milliseconds to <strong>microseconds</strong>. Because each pixel handles its own light level independently, sunlight and deep shadow in the same scene are both legible (that capacity is called dynamic range; it reaches 120 dB here, against roughly 60 for a normal camera). And fast motion does not <strong>blur</strong> — blur is a by-product of averaging over an exposure, and this sensor never exposes.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>So why hasn't it won</h2>
+<p>Now the honest part. <strong>Wall one: these networks are very hard to train.</strong> Every AI that learns today runs on backpropagation (Topic 39), which has a prerequisite — each component must be able to answer "if I changed slightly, how much would the final error change?" But "spike or don't spike" is a cliff: a hair below threshold and nothing happens; a hair above and the whole spike fires. That jump <strong>has essentially no slope anywhere</strong>, so the credit coming back is all zeros and nothing learns.</p>
+<p>The standard workaround is called the <strong>surrogate gradient</strong>, and it is faintly disreputable but effective: on the way forward the neuron spikes for real, cliff and all; on the way back, <strong>pretend the cliff is a gentle smooth slope</strong> and use that fake gradient to assign blame. There is no rigorous guarantee behind it, but it trains usable networks. The other route is to train a conventional network first and convert it into a spiking one. Both are a little ironic: <strong>the low-power chip still has to be taught by power-hungry GPUs.</strong></p>
+<p><strong>Wall two: the advantage is extremely picky about the job.</strong> Intel's own 2021 survey is admirably frank: the wins cluster in work that is <strong>sparse to begin with and needs an answer immediately</strong> — keyword spotting (always listening for you to call it, where the point is that 99.9% of the time nothing happens), closed-loop robotic control, certain optimisation problems, and odour recognition (Imam and Cleland built a circuit modelled on the olfactory bulb on Loihi in 2020; it learns a smell in one exposure and still recognises it under heavy interference). But the moment the task is "push one large batch of data through a dense network", GPU pipelines win crushingly — because in that regime <strong>there is no sparsity to exploit in the first place</strong>.</p>
+<p><strong>Wall three is the most mundane and the most lethal: no ecosystem.</strong> Half the reason deep learning took off is a toolchain anyone can pick up in an afternoon. Over here, every chip has its own way of being programmed, the library of runnable models is thin, and so few people bother to learn it.</p>
+<p>Which is why treating it as "a better GPU" is a category error. It is <strong>a different kind of machine</strong>, and it is a bet on something not yet settled: <strong>whether what constrains us next is being too slow, or drawing too much power and reacting too late.</strong> If it's the former, it has little future. If it's the latter — the things on your wrist, in your ear, flying overhead, that must stay awake permanently and cannot be plugged in — it is the only direction that works.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>This field also adds an unexpected footnote to the argument in Topic 39. Back then, "a synapse can only sense its own two ends and cannot reach global information" was filed as a biological <b>defect</b>. On silicon it turns out to be the most valuable property in the room: <b>a local rule never has to haul the error across the whole network</b>, so a chip can learn while it works, without shipping data back to a centre and waiting for a table of corrections to come down. That is exactly what lets Loihi put plasticity on-chip. <b>Biology's compromise, on a different substrate, becomes engineering's advantage.</b></p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"If it hasn't changed, don't speak" looks like a power-saving trick, but several very different disciplines have arrived at it from their own directions:</p>
+<ul>
+<li><b>Information theory · Shannon</b>: in 1948 he pinned "information" to a counterintuitive definition — <b>information lives in surprise</b>, and a perfectly predictable signal carries exactly none. Event-driven hardware writes that sentence straight into the circuit: the unchanged does not deserve a slot on the bus. It is also the same principle as the predictive coding of Topic 1, wearing different clothes — the brain spends it on bandwidth, the chip on watts.</li>
+<li><b>Thermodynamics · Landauer's principle</b>: in 1961 Landauer showed that the lower bound on the energy of computation is not an engineering matter but a <b>law of physics</b> — erasing one bit must dump at least about 3×10⁻²¹ joules of heat into the environment. That turns "how much can we possibly save" into a question with a floor: today's chips sit several orders of magnitude above it, and the brain sits far closer. <b>So "a thousand times more efficient" is not fantasy — physics hasn't said no yet.</b></li>
+<li><b>Buddhist philosophy · momentariness</b>: we take the world to be made of things sitting there continuously; the Buddhist account inverts it — what we call a thing is only <b>events arising and ceasing moment by moment</b>, and the thing of the previous instant is not the thing of this one. A normal camera photographs objects, re-announcing the entire world every 33 milliseconds. An event camera records arisings and ceasings, and outside of change nothing exists at all. <b>Same landscape, two ontologies.</b></li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>Are spikes actually superior to continuous values?</summary><div>Probably not. It looks much more like <strong>a compromise biology was forced into</strong>: a neuron has to send a signal down an axon for centimetres, sometimes more than a metre, past resistance, leakage and noise — a continuous voltage would be degraded beyond use halfway there. All-or-none is the only robust answer: every short stretch <strong>regenerates</strong> a spike of standard size, so it travels any distance undistorted. On silicon the wires are microns long, the noise is controlled, and transmitting a precise value costs nothing. <strong>Reading spikes as a computational virtue may be reading biology's workaround as wisdom.</strong> The genuinely valuable idea is "event-driven", not "must use spikes" — and the two get conflated constantly.</div></details>
+<details><summary>If event cameras are that good, why isn't there one in any phone?</summary><div>Because the entire visual world is built on frames: codecs, displays, editing tools, nearly every off-the-shelf algorithm assumes the input is a series of images. An event stream has no frames — you cannot even look at it directly without reconstructing something frame-like first, which gives the advantage straight back. Add scarce labelled data, and resolution and cost that are not yet consumer-grade. So where it is already deployed are the places that <strong>never needed a human to look at the output</strong>: high-speed industrial inspection, drone obstacle avoidance, eye tracking. <strong>Technologies stall not because they are inferior but because the world around them grew up shaped for something else.</strong></div></details>
+<details><summary>If sparsity is only forced by the energy bill, and AI isn't short of power, should AI bother?</summary><div>The objection is fair: treating a biological constraint as a virtue worth copying is a common mistake. But sparsity brings other things along — with only a few units active at once, representations interfere less and individual units become more interpretable (Topic 35 covered sparse coding). And the premise that "AI isn't short of power" is eroding: at inference time, energy and latency are already hard commercial constraints. So the sane position is to <strong>separate what is a side effect of saving power from what has computational value in its own right</strong> — mixture-of-experts holds up because it happens to score on both.</div></details>
+<details><summary>Does a chip that resembles the brain more closely become more likely to be conscious?</summary><div>Nobody knows, but the shape of the question has changed. A theory like the integrated information theory of Topic 14 judges by <strong>architecture</strong> rather than material — purely feedforward, run-once systems score low on Φ, while systems that reverberate and entangle can score high. On that account a neuromorphic chip (densely recurrent, state evolving in time, with no clean "one forward pass") really does sit somewhere different from a GPU doing matrix multiplication. <strong>But that only says its reading differs under one theory, and that theory is nowhere near validated.</strong> All we can be sure of is that changing the architecture forces the competing theories to make different predictions — which nudges the question a small step from pure speculation toward something arguable.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Neuromorphic_computing" target="_blank">Neuromorphic computing</a> — the field's front door</li>
+<li><a href="https://en.wikipedia.org/wiki/Spiking_neural_network" target="_blank">Spiking neural network</a> — the modelling side</li>
+<li><a href="https://doi.org/10.1109/5.58356" target="_blank">Mead 1990 · Proceedings of the IEEE</a> — the paper that coined "neuromorphic"</li>
+<li><a href="https://doi.org/10.1126/science.1254642" target="_blank">Merolla et al. 2014 · Science</a> — TrueNorth: a million neurons at 70 mW</li>
+<li><a href="https://doi.org/10.1109/MM.2018.112130359" target="_blank">Davies et al. 2018 · IEEE Micro</a> — Loihi: putting learning on the chip</li>
+<li><a href="https://doi.org/10.1109/JPROC.2021.3067593" target="_blank">Davies et al. 2021 · Proceedings of the IEEE</a> — the frankest account of where it wins and loses</li>
+<li><a href="https://doi.org/10.1109/JPROC.2014.2304638" target="_blank">Furber et al. 2014 · Proceedings of the IEEE</a> — SpiNNaker: delivery, not arithmetic, is the hard part</li>
+<li><a href="https://doi.org/10.1109/JSSC.2007.914337" target="_blank">Lichtsteiner et al. 2008 · IEEE JSSC</a> — the founding event-camera chip</li>
+<li><a href="https://arxiv.org/abs/1901.09948" target="_blank">Neftci, Mostafa &amp; Zenke 2019 · arXiv</a> — surrogate gradients: how to train a spiking net</li>
+<li><a href="https://doi.org/10.1038/s41586-019-1677-2" target="_blank">Roy, Jaiswal &amp; Panda 2019 · Nature</a> — review: spike-based machine intelligence</li>
+<li><a href="https://doi.org/10.1038/s42256-020-0159-4" target="_blank">Imam &amp; Cleland 2020 · Nature Machine Intelligence</a> — an olfactory-bulb circuit that learns a smell in one shot</li>
+<li><a href="https://doi.org/10.1109/ISSCC.2014.6757323" target="_blank">Horowitz 2014 · ISSCC</a> — the energy accounting that woke the industry up</li>
+<li><a href="https://doi.org/10.1016/S0960-9822(03)00135-0" target="_blank">Lennie 2003 · Current Biology</a> — the price of a spike, hence a budget for only 1%</li>
+<li><a href="https://en.wikipedia.org/wiki/Landauer%27s_principle" target="_blank">Landauer's principle</a> — the physical floor on the energy of computation</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 40 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
