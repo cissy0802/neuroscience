@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 41 · The 20-Watt Miracle — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 41 · PHASE E COMPUTATIONAL</span>
+<h1>The 20-Watt Miracle</h1>
+<h2>Your brain has never once run at full load — it cannot afford to</h2>
+<div class="date">2026-08-17 · BigCat</div>
+<p class="pitch">Solving a hard problem and staring blankly out the window cost your brain almost exactly the same.</p>
+</header>
+<div class="intro">
+<p>The brain you are reading this with draws about <strong>20 watts</strong> — less than the little bulb inside your fridge. It is under 2% of your body weight yet takes roughly 20% of your energy at rest. The genuinely strange part is something else: <strong>that bill barely moves.</strong> Whether you are doing algebra or daydreaming, the number differs by a few percent at most. Pull on that thread and the causality flips: it is not that the brain evolved into this shape and happened to be frugal. It is that <strong>the energy budget has been making its design decisions from the start</strong> — how many neurons it can keep, how many can be lit at once, how the wiring is laid out, and even why you have to cook your food.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>The money doesn't go into thinking — it goes into putting the ions back</h2>
+<p>Intuition says the expensive part must be the thinking. Open the books and the bulk of it turns out to go on something remarkably dull: <strong>restoring the status quo</strong>.</p>
+<p>A neuron stores a kind of potential energy in the <strong>ion concentration difference</strong> across its membrane — like a dam holding water. Firing once (an electrical pulse a few milliseconds long) is essentially <strong>opening the sluice gate</strong>: ions rush through on their own, down the gradient, and that step costs almost nothing. The bill arrives afterwards, when a protein called the <strong>sodium–potassium pump</strong> burns ATP (the cell's universal energy currency) to haul every displaced ion back behind the dam. Every signal is paid for after it has already happened.</p>
+<figure>
+<svg viewbox="0 0 500 232" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="bA" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e879f9"></stop><stop offset="1" stop-color="#c05fd8"></stop></lineargradient>
+<lineargradient id="bB" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#34e5e0"></stop><stop offset="1" stop-color="#1f9fae"></stop></lineargradient>
+<lineargradient id="bC" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#a78bfa"></stop><stop offset="1" stop-color="#7256c4"></stop></lineargradient>
+<lineargradient id="bD" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#fbbf24"></stop><stop offset="1" stop-color="#c08a12"></stop></lineargradient>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" x="12" y="18">Where the signalling money goes</text>
+<rect fill="rgba(255,255,255,0.05)" height="26" rx="6" width="300" x="196" y="34"></rect>
+<rect fill="url(#bA)" height="26" rx="6" width="150" x="196" y="34"></rect>
+<text fill="#e6dff2" font-size="12.5" text-anchor="end" x="186" y="52">Receiving (postsynaptic)</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="12.5" x="352" y="52">≈ 50%</text>
+<rect fill="rgba(255,255,255,0.05)" height="26" rx="6" width="300" x="196" y="76"></rect>
+<rect fill="url(#bB)" height="26" rx="6" width="66" x="196" y="76"></rect>
+<text fill="#e6dff2" font-size="12.5" text-anchor="end" x="186" y="94">Firing itself</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12.5" x="272" y="94">≈ 22%</text>
+<rect fill="rgba(255,255,255,0.05)" height="26" rx="6" width="300" x="196" y="118"></rect>
+<rect fill="url(#bC)" height="26" rx="6" width="60" x="196" y="118"></rect>
+<text fill="#e6dff2" font-size="12.5" text-anchor="end" x="186" y="136">Doing nothing (resting potential)</text>
+<text fill="#c9b6ff" font-family="SF Mono,monospace" font-size="12.5" x="266" y="136">≈ 20%</text>
+<rect fill="rgba(255,255,255,0.05)" height="26" rx="6" width="300" x="196" y="160"></rect>
+<rect fill="url(#bD)" height="26" rx="6" width="24" x="196" y="160"></rect>
+<text fill="#e6dff2" font-size="12.5" text-anchor="end" x="186" y="178">Recycling transmitter, etc.</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="12.5" x="230" y="178">≈ 8%</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="12" y="212">Another 1/4 to 1/2 of total use is non-signalling "rent": building proteins, keeping cells alive</text>
+</svg>
+<figcaption>Energy budget of rat neocortex (updated estimates, Howarth et al. 2012)</figcaption>
+</figure>
+<p>The most interesting line in the budget is that <strong>receiving costs more than sending</strong>. A neuron's own spikes take roughly a fifth, while being hit by other neurons — thousands of synapses opening ion channels on the receiving side — takes about half, because every one of them has to be cleaned up afterwards. (When Attwell and Laughlin first drew up this budget in 2001, spikes looked like nearly half the cost; a decade of better measurements cut that share dramatically.) And there is a line people forget: <strong>doing nothing isn't free</strong> — membranes leak, the pump must keep topping up, and that alone is a fifth.</p>
+<p>Add it up and the cost structure of "mental work" looks nothing like a factory. It looks like a <strong>reservoir with the pumps running year-round</strong>. (How a spike actually happens: <a class="reflink" href="ref-neuron-action-potential.en.html">neurons &amp; action potentials</a>; the synaptic side: <a class="reflink" href="ref-synaptic-transmission.en.html">synaptic transmission</a>)</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Which is why only about one percent can be lit at once</h2>
+<p>Read that budget backwards and it becomes a hard constraint. In 2003 Lennie did a plain piece of division: work out the ATP a single spike plus its postsynaptic consequences costs, then divide the brain's 20 watts by it. The answer stops you short — <strong>the cortex can only afford about 1% of its neurons being substantially active at any moment</strong>, with average firing rates pushed below one spike per neuron per second.</p>
+<figure>
+<svg viewbox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.5" id="dotOn" r="0.8"><stop offset="0" stop-color="#7bf0e8"></stop><stop offset="1" stop-color="#22a8b8"></stop></radialgradient>
+</defs>
+<rect fill="rgba(52,229,224,0.04)" height="182" rx="14" stroke="rgba(52,229,224,0.25)" stroke-width="1" width="214" x="12" y="14"></rect>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="119" y="38">The real cortex</text>
+<g fill="#2b2547">
+<circle cx="42" cy="62" r="6"></circle><circle cx="68" cy="62" r="6"></circle><circle cx="94" cy="62" r="6"></circle><circle cx="120" cy="62" r="6"></circle><circle cx="146" cy="62" r="6"></circle><circle cx="172" cy="62" r="6"></circle><circle cx="198" cy="62" r="6"></circle>
+<circle cx="42" cy="88" r="6"></circle><circle cx="68" cy="88" r="6"></circle><circle cx="94" cy="88" r="6"></circle><circle cx="146" cy="88" r="6"></circle><circle cx="172" cy="88" r="6"></circle><circle cx="198" cy="88" r="6"></circle>
+<circle cx="42" cy="114" r="6"></circle><circle cx="68" cy="114" r="6"></circle><circle cx="94" cy="114" r="6"></circle><circle cx="120" cy="114" r="6"></circle><circle cx="146" cy="114" r="6"></circle><circle cx="172" cy="114" r="6"></circle><circle cx="198" cy="114" r="6"></circle>
+<circle cx="42" cy="140" r="6"></circle><circle cx="68" cy="140" r="6"></circle><circle cx="94" cy="140" r="6"></circle><circle cx="120" cy="140" r="6"></circle><circle cx="146" cy="140" r="6"></circle><circle cx="172" cy="140" r="6"></circle><circle cx="198" cy="140" r="6"></circle>
+</g>
+<circle cx="120" cy="88" fill="url(#dotOn)" r="7.5"></circle>
+<text fill="#cfc9e6" font-size="12.5" text-anchor="middle" x="119" y="176">~1% firing · 20 W covers it</text>
+<rect fill="rgba(232,121,249,0.05)" height="182" rx="14" stroke="rgba(232,121,249,0.28)" stroke-width="1" width="214" x="274" y="14"></rect>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="381" y="38">If they all fired at once</text>
+<g fill="url(#dotOn)">
+<circle cx="304" cy="62" r="7"></circle><circle cx="330" cy="62" r="7"></circle><circle cx="356" cy="62" r="7"></circle><circle cx="382" cy="62" r="7"></circle><circle cx="408" cy="62" r="7"></circle><circle cx="434" cy="62" r="7"></circle><circle cx="460" cy="62" r="7"></circle>
+<circle cx="304" cy="88" r="7"></circle><circle cx="330" cy="88" r="7"></circle><circle cx="356" cy="88" r="7"></circle><circle cx="382" cy="88" r="7"></circle><circle cx="408" cy="88" r="7"></circle><circle cx="434" cy="88" r="7"></circle><circle cx="460" cy="88" r="7"></circle>
+<circle cx="304" cy="114" r="7"></circle><circle cx="330" cy="114" r="7"></circle><circle cx="356" cy="114" r="7"></circle><circle cx="382" cy="114" r="7"></circle><circle cx="408" cy="114" r="7"></circle><circle cx="434" cy="114" r="7"></circle><circle cx="460" cy="114" r="7"></circle>
+<circle cx="304" cy="140" r="7"></circle><circle cx="330" cy="140" r="7"></circle><circle cx="356" cy="140" r="7"></circle><circle cx="382" cy="140" r="7"></circle><circle cx="408" cy="140" r="7"></circle><circle cx="434" cy="140" r="7"></circle><circle cx="460" cy="140" r="7"></circle>
+</g>
+<text fill="#f0b8f6" font-size="12.5" text-anchor="middle" x="381" y="176">bill many times over · unaffordable</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="250" y="222">Sparseness is not an aesthetic taste — it is financial discipline</text>
+</svg>
+<figcaption>The budget doesn't cap how many neurons you have — it caps how many can talk at once</figcaption>
+</figure>
+<p>So <strong>sparseness</strong> — only a tiny fraction of neurons active at any instant — isn't a taste neuroscientists happen to have. It is discipline enforced by the electricity bill. In 1996 Levy and Baxter reached the same place from pure theory: <strong>once energy enters the objective function, the code with the greatest representational capacity is no longer the optimal one</strong>, and the optimum slides towards low firing rates. The department enforcing the rule is inhibition, holding everything down and letting only the few that matter through (<a class="reflink" href="ref-interneurons.en.html">inhibitory interneurons</a>).</p>
+<p>This also resolves the opening paradox: how can a brain own 86 billion neurons and still burn only 20 watts? Because <strong>the bill tracks how many are active at once, not how many exist</strong>. Capacity and cost are two separate things here — you can own an enormous library as long as you only switch on one lamp at a time.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Artificial networks are the mirror image. In a <b>dense matrix multiplication</b> — the basic move of nearly every model today: multiply the input by a huge table of weights and sum — <b>every single parameter has to be read out and multiplied</b>. The bill tracks <b>size</b>, not how much of the model this particular input actually needed. That's why bigger models cost more, period. The fashionable fix, <b>mixture-of-experts</b> (activating only a small sub-network each time), is precisely a move towards the brain's arrangement: let cost track activity. How wide is the gap? Training GPT-3 once took roughly 1287 MWh (Patterson and colleagues' estimate) — the same electricity would run a 20-watt brain continuously for over seven thousand years.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The brain's dark energy: thinking hard barely moves the bill</h2>
+<p>Here is the most counterintuitive box on the page. If spiking costs money, surely energy use spikes when you concentrate? It doesn't: <strong>task-evoked increases are typically under 5%</strong>. The other 95%-plus is a baseline that burns regardless of what you are doing. Raichle gave it a name — <strong>the brain's dark energy</strong>.</p>
+<figure>
+<svg viewbox="0 0 500 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="baseB" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7c67d6"></stop><stop offset="1" stop-color="#3d2f74"></stop></lineargradient>
+<marker id="a41" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+</defs>
+<rect fill="url(#baseB)" height="146" rx="7" width="74" x="34" y="56"></rect>
+<rect fill="#34e5e0" height="7" rx="3" width="74" x="34" y="47"></rect>
+<text fill="#cfc9e6" font-size="12.5" text-anchor="middle" x="71" y="134">always-on</text>
+<text fill="#cfc9e6" font-size="12.5" text-anchor="middle" x="71" y="152">baseline</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" x="170" y="55">task adds &lt; 5%</text>
+<line marker-end="url(#a41)" stroke="#8f89ad" stroke-width="1.4" x1="162" x2="116" y1="50" y2="50"></line>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="71" y="220">whole-brain use</text>
+<line stroke="rgba(255,255,255,0.10)" stroke-width="1" x1="278" x2="278" y1="26" y2="212"></line>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="11.5" x="296" y="44">the stimulated patch</text>
+<rect fill="#e879f9" height="70" rx="6" width="46" x="300" y="132"></rect>
+<text fill="#fff" font-family="SF Mono,monospace" font-size="13" text-anchor="middle" x="323" y="122">+29%</text>
+<text fill="#e6dff2" font-size="12" text-anchor="middle" x="323" y="220">blood flow</text>
+<rect fill="#fbbf24" height="14" rx="5" width="46" x="392" y="188"></rect>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="13" text-anchor="middle" x="415" y="178">+5%</text>
+<text fill="#e6dff2" font-size="12" text-anchor="middle" x="415" y="220">oxygen use</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="370" y="240">surplus oxygen, unused → the signal fMRI sees</text>
+</svg>
+<figcaption>Left: the whole-brain bill hardly moves with task. Right: local blood flow wildly overshoots (Fox &amp; Raichle 1986)</figcaption>
+</figure>
+<p>That inverts a default assumption. The brain is mostly not an <strong>input-driven response machine</strong>. Almost all of its effort goes into itself: continuously maintaining an internal model of the world, the body and you, with sensory input arriving mainly to nudge that model. Which lands exactly on the Topic 1 thread — guess first, correct with evidence. The most visible territory of this ongoing activity is the network that lights up when your mind wanders (<a class="reflink" href="ref-default-mode-network.en.html">the default mode network</a>).</p>
+<p>Two popular claims can be cleared away in passing. <strong>"Thinking burns lots of calories"</strong>: the increment adds up to a few dozen kcal a day, less than a small handful of nuts — mental work is exhausting, but what it exhausts is mostly not energy (Topic 34 covers this family of misreadings). <strong>"We only use 10% of our brains"</strong>: the energy books rule it out — the organ already takes a fifth of your budget, and evolution does not pay that for tissue idle 90% of the time.</p>
+<p>There's a by-product worth knowing: fMRI exists only because the local response <strong>overshoots</strong>. When a finger is lightly stimulated, blood flow to that patch of cortex rises about 29% while oxygen consumption rises only about 5%. The surplus oxygen stays in the blood and changes its magnetic properties — that difference is what the scanner reads. <strong>The bright blob on an fMRI image is blood, not spikes.</strong> (The supply machinery: <a class="reflink" href="ref-neurovascular-coupling.en.html">brain energy supply &amp; neurovascular coupling</a>)</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Large language models show something that looks similar from outside: whether you ask "what's 1+1" or hand it a proof, <b>one forward pass (running the input through the whole network once) costs a fixed amount of compute</b>, independent of difficulty — just as the brain's bill doesn't track task difficulty. The mechanism is entirely different, though: the model has to push every parameter through every time, whereas in the brain most of the spending was already going to intrinsic activity. What's interesting is that both are loosening. Models have recently learned to <b>think for longer</b> — spend more compute generating intermediate steps on harder problems, known as test-time compute. The brain can't really do that: its budget is hard, so it can only <b>reallocate</b> rather than turn the total power up.</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>The electricity bill sculpted the organ</h2>
+<p>The budget governs something larger still — the shape of the thing.</p>
+<p><strong>It has almost no warehouse.</strong> Unlike muscle, the brain keeps no meaningful fuel reserve; blood delivers everything just in time. Cut the flow and consciousness goes in about 10 seconds, with irreversible damage in minutes. To keep the supply line matched to demand, the brain runs a fine-grained piece of infrastructure: whichever patch gets busy, its vessels widen within seconds (<a class="reflink" href="ref-neurovascular-coupling.en.html">brain energy supply &amp; neurovascular coupling</a>).</p>
+<p><strong>Wiring is charged by the kilometre.</strong> An axon (the "cable" a neuron sends out) gets more expensive the longer and thicker it is: it takes volume, it needs myelin, and holding its potential keeps the pumps working. So connectivity everywhere settles into the same pattern — <strong>a vast number of short local connections plus a scarce few long-range ones</strong>. This isn't simple minimisation: pure thrift would pack everything together and forbid distant contact, and information would crawl. Bullmore and Sporns call it the <strong>economics</strong> of brain networks: <strong>a running negotiation between saving money and taking shortcuts</strong>. Out of that negotiation come the few hubs and many local clusters we actually see — along with cortical folding and the myelin on long axons (which both speeds signals up and saves energy).</p>
+<figure>
+<svg viewbox="0 0 500 226" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" stroke="#34e5e0" stroke-opacity="0.5" stroke-width="1.6">
+<path d="M70,80 C88,64 108,66 124,78"></path><path d="M124,78 C142,92 138,110 120,120"></path><path d="M120,120 C100,128 80,118 70,102"></path><path d="M70,102 C62,92 62,88 70,80"></path><path d="M92,70 C104,86 110,104 100,124"></path>
+<path d="M330,86 C348,70 372,72 386,86"></path><path d="M386,86 C400,102 394,120 376,128"></path><path d="M376,128 C356,134 338,124 330,108"></path><path d="M330,108 C324,98 324,94 330,86"></path><path d="M352,74 C364,90 370,110 360,130"></path>
+</g>
+<g fill="#0e2c33" stroke="#34e5e0" stroke-width="1.3">
+<circle cx="70" cy="80" r="7"></circle><circle cx="124" cy="78" r="7"></circle><circle cx="120" cy="120" r="7"></circle><circle cx="70" cy="102" r="7"></circle><circle cx="92" cy="70" r="6"></circle><circle cx="100" cy="124" r="6"></circle>
+<circle cx="330" cy="86" r="7"></circle><circle cx="386" cy="86" r="7"></circle><circle cx="376" cy="128" r="7"></circle><circle cx="330" cy="108" r="7"></circle><circle cx="352" cy="74" r="6"></circle><circle cx="360" cy="130" r="6"></circle>
+</g>
+<path d="M124,78 C200,44 280,50 330,86" fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-width="6" stroke-opacity="0.9"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="118" y="168">local connections</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="118" y="186">thin, cheap · enormously many</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="365" y="168">long-range connection</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="365" y="186">long, thick, myelinated · very few</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="228" y="34">one of these costs as much as a whole patch of local wiring</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="250" y="214">hence: dense local clusters + a few expensive hubs</text>
+</svg>
+<figcaption>Wiring economics: the structure that falls out of thrift versus shortcuts</figcaption>
+</figure>
+<p><strong>Finally, it is expensive enough to compete with the rest of the body.</strong> In 1995 Aiello and Wheeler proposed the "expensive tissue hypothesis": humans afford a big brain by trading away gut (the specific trade didn't hold up well in later, broader cross-species data, but the core point — this organ is costly enough that something must give — survived). Herculano-Houzel's arithmetic is blunter: roughly 6 kcal per day per billion neurons, so 86 billion runs to around five hundred kcal a day. Raising that on raw food would have great apes chewing eight or nine hours a day, with no room left to add neurons. <strong>Cooking</strong> — outsourcing part of digestion to fire — is what lifted the ceiling. Part of the reason you have this brain is that somebody learned to cook first.</p>
+</div>
+<div class="crossx">
+<h3>🌀 CROSSING OVER · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Energy is limited" sounds like an engineering footnote. It is actually the shared starting line of several very different disciplines:</p>
+<ul>
+<li><b>Economics · Robbins</b>: his 1932 definition still stands — economics is <b>the study of how people choose among scarce means with alternative uses</b>. Transplant that onto the brain and it holds word for word: sparseness, modularity, myelin, a few hubs are all solutions to one constrained-optimisation problem. What's striking is that the direction reverses — in economics scarcity is the predicament to overcome; in the brain, <b>scarcity is the designer</b>.</li>
+<li><b>Complex systems · Kleiber's law</b>: metabolic rate scales roughly as body mass to the ¾ power, from mice to whales. West, Brown and colleagues argue the limit sits not in the cells but in <b>the fractal transport network</b> — the geometry by which vessels deliver resources everywhere sets what the whole can burn. Same for the brain: part of the ceiling on its computation is hidden in the plumbing.</li>
+<li><b>Daoism · the Tao Te Ching, "being frugal, one can be expansive"</b>: Laozi lists frugality among his three treasures, and not out of moral fastidiousness — the argument is that <b>only what you save can be spread wide</b>. The brain is the biological edition of that sentence: precisely because each act of activity is so cheap and most of it stays silent, it can afford 86 billion neurons. <b>Restraint isn't the opposite of capability; it is the precondition for it.</b></li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// GOING DEEPER</h3>
+<details><summary>So would eating more sugar make my brain run faster?</summary><div>Essentially no. With normal blood sugar, how much glucose the brain takes is not set by how much you eat — it has priority access, and the body sacrifices elsewhere to protect it. The reverse is real, though: <strong>let blood sugar fall and cognition visibly degrades</strong>, attention and judgement first. Experiments giving people glucose to boost performance exist in numbers, but the effects are scattered and small, mostly showing up when someone was already hypoglycemic or the task ran very long. <strong>"Brain food" sells an illusion about the bill</strong> — this is a nearly constant line of spending, not an engine that goes faster when you add fuel.</div></details>
+<details><summary>Is comparing 20 watts to a GPU even fair?</summary><div>Strictly, no, and in more than one way. That 20 watts excludes twenty years of development, excludes an entire body supplying it with blood and glucose, and excludes the fact that its "training data" came from running a body around the world; nor can it be copied like a model. In the other direction, the chip figures people quote are usually the total electricity for one training run, which is not a running-power number. <strong>Put all of that on the scales and the orders of magnitude are still there.</strong> The thing worth remembering is the structural difference: the brain's cost tracks activity, a chip's cost tracks size. That's not an accounting convention — those are two different cost functions.</div></details>
+<details><summary>Given unlimited energy, would a brain get smarter?</summary><div>Unknown, and the question smuggles in an assumption worth watching. One answer is yes: sparseness is plainly a compromise, so lift the budget and you could activate more units at once and compute richer things. The other is no, possibly worse: sparseness buys other goods along the way — with few units active, representations interfere less and stay separable (Topic 35 covered that value of sparse coding). But don't oversell that either. <strong>Reading every biological compromise as hidden wisdom is a common piece of after-the-fact rationalisation.</strong> The one safe statement: lifting the budget would call for a redesign, not for turning up the power dial on the same brain.</div></details>
+<details><summary>If most of the energy goes to intrinsic activity, what is the brain doing at rest?</summary><div>Not idling. At minimum: maintaining and updating that internal model (Topic 1), replaying and consolidating the day's experience offline (Topic 22), and running autobiographical simulation in the default mode network — remembering, imagining, modelling what other people think. So daydreaming is charged at full price on the energy books; what it buys just doesn't show up in your awareness. Which is a decidedly unsentimental argument for leaving yourself some blank space: <strong>you're paying for it either way — the only question is whether it gets used.</strong></div></details>
+</div>
+<div class="refs">
+<h3>// FURTHER READING</h3>
+<ul>
+<li><a href="https://doi.org/10.1097/00004647-200110000-00001" target="_blank">Attwell &amp; Laughlin 2001 · JCBFM</a> — the first energy budget for the brain</li>
+<li><a href="https://doi.org/10.1038/jcbfm.2012.35" target="_blank">Howarth, Gleeson &amp; Attwell 2012 · JCBFM</a> — the update: spikes are cheaper, receiving is dearer</li>
+<li><a href="https://doi.org/10.1016/S0960-9822(03)00135-0" target="_blank">Lennie 2003 · Current Biology</a> — what a spike costs, hence only 1% active</li>
+<li><a href="https://doi.org/10.1162/neco.1996.8.3.531" target="_blank">Levy &amp; Baxter 1996 · Neural Computation</a> — price in energy and the optimal code turns sparse</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2012.08.019" target="_blank">Harris, Jolivet &amp; Attwell 2012 · Neuron</a> — synaptic energy use and supply</li>
+<li><a href="https://doi.org/10.1126/science.1134405" target="_blank">Raichle 2006 · Science</a> — the brain's dark energy</li>
+<li><a href="https://doi.org/10.1073/pnas.83.4.1140" target="_blank">Fox &amp; Raichle 1986 · PNAS</a> — flow +29%, oxygen +5%: where BOLD comes from</li>
+<li><a href="https://doi.org/10.1038/nrn3214" target="_blank">Bullmore &amp; Sporns 2012 · Nature Reviews Neuroscience</a> — the economy of brain network organization</li>
+<li><a href="https://doi.org/10.1086/204350" target="_blank">Aiello &amp; Wheeler 1995 · Current Anthropology</a> — the expensive-tissue hypothesis</li>
+<li><a href="https://doi.org/10.1038/nature10629" target="_blank">Navarrete, van Schaik &amp; Isler 2011 · Nature</a> — the counter-case: no brain-versus-gut tradeoff across species</li>
+<li><a href="https://doi.org/10.1073/pnas.1206390109" target="_blank">Fonseca-Azevedo &amp; Herculano-Houzel 2012 · PNAS</a> — raw food can't pay for this many neurons</li>
+<li><a href="https://doi.org/10.1073/pnas.1201895109" target="_blank">Herculano-Houzel 2012 · PNAS</a> — about 6 kcal per day per billion neurons</li>
+<li><a href="https://arxiv.org/abs/2104.10350" target="_blank">Patterson et al. 2021 · arXiv</a> — what training a large model actually costs in electricity</li>
+<li><a href="https://en.wikipedia.org/wiki/Kleiber%27s_law" target="_blank">Kleiber's law</a> — metabolic rate and the ¾ power of body mass</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 41 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

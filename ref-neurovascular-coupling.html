@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>参考 · 脑供能与神经血管耦合 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:480px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.html">← 参考库</a>
+<header>
+<span class="ref-badge">参考库 · REFERENCE</span>
+<h1>脑供能与神经血管耦合<span class="en">Brain Energy Supply</span></h1>
+<p>脑几乎不存燃料，全靠血液实时送。哪块地方忙起来，那儿的血管就立刻多送一点——而且<strong>送得比用掉的多</strong>。fMRI 之所以能看见"脑区亮了"，靠的正是这笔多送的账。</p>
+</header>
+<h2>没有仓库：断供十秒就熄灯</h2>
+<p>肌肉能囤糖原，脂肪是一整座油库；脑几乎什么都不囤（只有星形胶质细胞里存着一点点糖原，撑不了多久）。它要的葡萄糖和氧气，全靠血液<strong>现送现用</strong>——所以脑虽然只占体重约 2%，却分走了心脏泵出血量的约 15%。</p>
+<p>代价是没有缓冲：<strong>血流一停，大约 10 秒就失去意识，几分钟内就是不可逆的损伤</strong>。卒中之所以是急症、"时间就是脑组织"，根子就在这里。</p>
+<h2>神经血管单元：谁在开阀门</h2>
+<p>忙起来的那块脑组织怎么让血管知道"这儿要加量"？靠一个由几种细胞组成的小团队，合称<strong>神经血管单元</strong>：</p>
+<figure>
+<svg viewbox="0 0 460 306" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="nvbox" r="0.95"><stop offset="0" stop-color="#241c46"></stop><stop offset="1" stop-color="#130d29"></stop></radialgradient>
+<marker id="nvA" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
+</defs>
+<line marker-end="url(#nvA)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6" x1="150" x2="150" y1="56" y2="76"></line>
+<line marker-end="url(#nvA)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6" x1="150" x2="150" y1="126" y2="146"></line>
+<line marker-end="url(#nvA)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6" x1="150" x2="150" y1="196" y2="216"></line>
+<rect fill="url(#nvbox)" height="44" rx="12" stroke="#34e5e0" stroke-width="1.3" width="252" x="24" y="12"></rect>
+<text fill="#e6faf8" font-size="13.5" font-weight="600" text-anchor="middle" x="150" y="34">神经元忙起来</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="150" y="48">放电与突触活动增加</text>
+<rect fill="url(#nvbox)" height="44" rx="12" stroke="#a78bfa" stroke-width="1.3" width="252" x="24" y="82"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="600" text-anchor="middle" x="150" y="104">星形胶质细胞终足放信号</text>
+<text fill="#c9b6ff" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="150" y="118">一氧化氮 · 前列腺素 · 钾离子</text>
+<rect fill="url(#nvbox)" height="44" rx="12" stroke="#e879f9" stroke-width="1.4" width="252" x="24" y="152"></rect>
+<text fill="#fff" font-size="13.5" font-weight="700" text-anchor="middle" x="150" y="174">局部小动脉扩张</text>
+<text fill="#f0b8f6" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="150" y="188">血流 +29%（几秒内）</text>
+<rect fill="url(#nvbox)" height="46" rx="12" stroke="#fbbf24" stroke-width="1.4" width="252" x="24" y="222"></rect>
+<text fill="#faf0dc" font-size="13.5" font-weight="700" text-anchor="middle" x="150" y="244">耗氧只 +5%，氧留在血里</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="150" y="258">血的磁性变了 = fMRI 读到的 BOLD</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="292" y="38">秒级</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="292" y="108">只在忙的那一小块</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="292" y="178">周细胞 / 平滑肌</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" x="292" y="248">机器看到的是这格</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="230" y="292">整条链上没有一格是"放电"本身</text>
+</svg>
+<figcaption>从神经元忙起来，到机器上出现一个亮斑</figcaption>
+</figure>
+<dl class="kv">
+<dt>星形胶质细胞（Astrocyte）</dt><dd>一头贴着突触、另一头用"终足"抱住血管，正好站在需求和供给之间，是最主要的传话人。</dd>
+<dt>周细胞与平滑肌（Pericyte / smooth muscle）</dt><dd>趴在毛细血管和小动脉上的收缩细胞，真正负责把管径拧大拧小的那只手。</dd>
+<dt>功能性充血（Functional hyperemia）</dt><dd>忙的地方血流在几秒内变多——这个反应是<strong>局部的</strong>，所以才可能"哪儿亮了"分得出来。</dd>
+<dt>信号分子</dt><dd>一氧化氮、前列腺素、以及活动时漏出来的钾离子等，都会让血管平滑肌放松。</dd>
+</dl>
+<h2>血流涨得比耗氧多，于是有了 fMRI</h2>
+<p>直觉上血流该正好补上多用掉的氧。但 1986 年 Fox 和 Raichle 量出来的是：刺激手指时，那一小块皮层的<strong>血流涨了约 29%，耗氧只涨约 5%</strong>。多送来的氧没被用掉，留在静脉血里——含氧血和缺氧血的磁性不一样，机器读的就是这个差额，叫 <strong>BOLD 信号</strong>（血氧水平依赖信号）。</p>
+<p>所以有三件事值得一直记着：fMRI 测的是<strong>血，不是放电</strong>；它慢（血流反应要几秒，而放电是毫秒级）；它也分不清兴奋和抑制——<strong>抑制同样要花能量，同样会让血流增加</strong>。"某区亮了"离"某区在负责这件事"还隔着好几层推理。</p>
+<h2>燃料：葡萄糖为主，还有几块备胎</h2>
+<p>脑基本只烧<strong>葡萄糖</strong>，一天约 120 克。血脑屏障上有专门的转运蛋白替它挑门（<a href="ref-csf-barriers.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">脑脊液与脑屏障</a>）。长时间断食或生酮饮食时，肝脏产的<strong>酮体</strong>能顶上相当一部分——这是脑少有的备用燃料。至于星形胶质细胞是否把乳酸递给神经元当燃料（"乳酸穿梭"假说），二十多年来一直有争议，还没定论。</p>
+<p>反过来看就明白低血糖为什么那么凶：没有仓库、燃料单一、又停不下来。<strong>血糖掉下去，最先垮的就是判断力和注意力。</strong></p>
+<div class="links">
+<h3>// 被这些主线引用</h3>
+<p class="who">Topic 41 · 20 瓦的奇迹（能量约束）　·　Topic 11 / 34（fMRI 能说明什么）　·　Topic 32（睡眠与清除）</p>
+<h3 style="margin-top:18px">// 延伸</h3>
+<p><a href="https://doi.org/10.1073/pnas.83.4.1140" target="_blank">Fox &amp; Raichle 1986 · PNAS</a> — 血流 +29%、耗氧 +5% · <a href="https://doi.org/10.1038/nature09613" target="_blank">Attwell et al. 2010 · Nature</a> — 谁在控制脑血流 · <a href="https://doi.org/10.1016/j.neuron.2017.07.030" target="_blank">Iadecola 2017 · Neuron</a> — 神经血管单元综述 · <a href="https://doi.org/10.1038/nature06976" target="_blank">Logothetis 2008 · Nature</a> — fMRI 能做什么、不能做什么 · <a href="https://en.wikipedia.org/wiki/Blood-oxygen-level-dependent_imaging" target="_blank">BOLD 信号</a></p>
+</div>
+<footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

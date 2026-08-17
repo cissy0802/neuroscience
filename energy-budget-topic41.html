@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 41 · 20 瓦的奇迹 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 41 · PHASE E 计算</span>
+<h1>20 瓦的奇迹</h1>
+<h2>你的脑子从来没"满载"过——它付不起</h2>
+<div class="date">2026-08-17 · BigCat</div>
+<p class="pitch">你解一道难题和你发呆看窗外，脑子花的钱几乎一样多。</p>
+</header>
+<div class="intro">
+<p>你此刻这颗脑子，功率大约 <strong>20 瓦</strong>——比冰箱里那盏小灯泡还省。它占体重不到 2%，却要吃掉你静息时约 20% 的能量。真正奇怪的是另一件事：<strong>这张账单几乎从不波动。</strong>不管你在演算还是在发呆，数字都差不了几个百分点。顺着这条线往下拉，会得到一个反过来的结论——不是脑先长成这样、然后碰巧很省电；而是<strong>"电费"这张预算表从一开始就在替它做设计决定</strong>：能养多少神经元、同一时刻能亮起几个、连线怎么铺、甚至你为什么必须把食物煮熟。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>钱不是花在"想"上，是花在把离子搬回去</h2>
+<p>直觉会说：费电的当然是思考。但把账拆开会发现，大头花在一件特别不起眼的事上——<strong>恢复原状</strong>。</p>
+<p>神经元靠细胞膜内外的<strong>离子浓度差</strong>存着一份"势能"，像一座蓄了水的坝。它放一次电（一个电脉冲，几毫秒），本质是<strong>开闸放水</strong>——离子顺着浓度差自己冲进冲出，这一步几乎不花钱。真正要付账的是事后：一个叫<strong>钠钾泵</strong>的蛋白拿 ATP（细胞里的通用能量货币）当燃料，一颗一颗把跑错位置的离子<strong>再抽回坝里</strong>。所以每一次信号的电费，都是在信号过去之后才结的。</p>
+<figure>
+<svg viewbox="0 0 500 232" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="bA" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e879f9"></stop><stop offset="1" stop-color="#c05fd8"></stop></lineargradient>
+<lineargradient id="bB" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#34e5e0"></stop><stop offset="1" stop-color="#1f9fae"></stop></lineargradient>
+<lineargradient id="bC" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#a78bfa"></stop><stop offset="1" stop-color="#7256c4"></stop></lineargradient>
+<lineargradient id="bD" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#fbbf24"></stop><stop offset="1" stop-color="#c08a12"></stop></lineargradient>
+</defs>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" x="12" y="18">信号这部分的钱，都花去了哪儿</text>
+<rect fill="rgba(255,255,255,0.05)" height="26" rx="6" width="300" x="176" y="34"></rect>
+<rect fill="url(#bA)" height="26" rx="6" width="150" x="176" y="34"></rect>
+<text fill="#e6dff2" font-size="12.5" text-anchor="end" x="166" y="52">突触后的接收</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="12.5" x="332" y="52">≈ 50%</text>
+<rect fill="rgba(255,255,255,0.05)" height="26" rx="6" width="300" x="176" y="76"></rect>
+<rect fill="url(#bB)" height="26" rx="6" width="66" x="176" y="76"></rect>
+<text fill="#e6dff2" font-size="12.5" text-anchor="end" x="166" y="94">放电本身</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12.5" x="252" y="94">≈ 22%</text>
+<rect fill="rgba(255,255,255,0.05)" height="26" rx="6" width="300" x="176" y="118"></rect>
+<rect fill="url(#bC)" height="26" rx="6" width="60" x="176" y="118"></rect>
+<text fill="#e6dff2" font-size="12.5" text-anchor="end" x="166" y="136">什么都不干（维持静息）</text>
+<text fill="#c9b6ff" font-family="SF Mono,monospace" font-size="12.5" x="246" y="136">≈ 20%</text>
+<rect fill="rgba(255,255,255,0.05)" height="26" rx="6" width="300" x="176" y="160"></rect>
+<rect fill="url(#bD)" height="26" rx="6" width="24" x="176" y="160"></rect>
+<text fill="#e6dff2" font-size="12.5" text-anchor="end" x="166" y="178">递质回收等</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="12.5" x="210" y="178">≈ 8%</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" x="12" y="212">另有约 1/4 到 1/2 的总能耗是与放电无关的"房租"：造蛋白、维持细胞</text>
+</svg>
+<figcaption>大鼠新皮层的能量预算（Howarth 等 2012 的修正版估算）</figcaption>
+</figure>
+<p>预算表里最耐人寻味的一项，是<strong>接收比发送贵</strong>。神经元自己放电只占约两成，而"被别的神经元轰过来、在突触后打开一堆离子通道"这件事占了约一半——因为一个神经元身上挂着成千上万个突触，每一个被激活都要事后打扫。（2001 年 Attwell 和 Laughlin 头一回把这张表列出来时，以为放电占近一半；十年后测量改进，账重算了一遍，放电的份额被砍掉一大半。）还有一笔常被忘掉的：<strong>什么都不干也要交钱</strong>——细胞漏电，泵就得一直补，这一项就占了两成。</p>
+<p>把这些加起来，你会发现所谓"脑力劳动"的成本结构很不像工厂，倒像一座<strong>常年开着水泵的水库</strong>。（一次放电到底怎么发生的：<a class="reflink" href="ref-neuron-action-potential.html">神经元与动作电位</a>；突触那一侧的细节：<a class="reflink" href="ref-synaptic-transmission.html">突触传递</a>）</p>
+<p class="en-brief"><b>EN</b> Most of the brain's energy goes not into "computing" but into restoring the ion gradients that signalling spends — the Na⁺/K⁺ pump paying the bill after the fact. In the updated cortical budget, postsynaptic receptor currents (receiving) take about half, action potentials about a fifth, and simply holding the resting potential another fifth; a quarter to a half of total consumption is non-signalling housekeeping.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>于是它同时只点得亮百分之一</h2>
+<p>预算表倒过来读，就成了一条硬约束。2003 年 Lennie 做了一道很朴素的除法：先算一个脉冲连带它引起的突触后效应大概要烧掉多少 ATP，再拿人脑那 20 瓦去除。答案让人愣一下——<strong>皮层同一时刻只养得起约 1% 的神经元真正活跃</strong>，平均下来每个神经元每秒放电得压到一次以下。</p>
+<figure>
+<svg viewbox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.5" id="dotOn" r="0.8"><stop offset="0" stop-color="#7bf0e8"></stop><stop offset="1" stop-color="#22a8b8"></stop></radialgradient>
+</defs>
+<rect fill="rgba(52,229,224,0.04)" height="182" rx="14" stroke="rgba(52,229,224,0.25)" stroke-width="1" width="214" x="12" y="14"></rect>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="119" y="38">真实的皮层</text>
+<g fill="#2b2547">
+<circle cx="42" cy="62" r="6"></circle><circle cx="68" cy="62" r="6"></circle><circle cx="94" cy="62" r="6"></circle><circle cx="120" cy="62" r="6"></circle><circle cx="146" cy="62" r="6"></circle><circle cx="172" cy="62" r="6"></circle><circle cx="198" cy="62" r="6"></circle>
+<circle cx="42" cy="88" r="6"></circle><circle cx="68" cy="88" r="6"></circle><circle cx="94" cy="88" r="6"></circle><circle cx="146" cy="88" r="6"></circle><circle cx="172" cy="88" r="6"></circle><circle cx="198" cy="88" r="6"></circle>
+<circle cx="42" cy="114" r="6"></circle><circle cx="68" cy="114" r="6"></circle><circle cx="94" cy="114" r="6"></circle><circle cx="120" cy="114" r="6"></circle><circle cx="146" cy="114" r="6"></circle><circle cx="172" cy="114" r="6"></circle><circle cx="198" cy="114" r="6"></circle>
+<circle cx="42" cy="140" r="6"></circle><circle cx="68" cy="140" r="6"></circle><circle cx="94" cy="140" r="6"></circle><circle cx="120" cy="140" r="6"></circle><circle cx="146" cy="140" r="6"></circle><circle cx="172" cy="140" r="6"></circle><circle cx="198" cy="140" r="6"></circle>
+</g>
+<circle cx="120" cy="88" fill="url(#dotOn)" r="7.5"></circle>
+<text fill="#cfc9e6" font-size="12.5" text-anchor="middle" x="119" y="176">约 1% 在放电 · 20 瓦付得起</text>
+<rect fill="rgba(232,121,249,0.05)" height="182" rx="14" stroke="rgba(232,121,249,0.28)" stroke-width="1" width="214" x="274" y="14"></rect>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="12" text-anchor="middle" x="381" y="38">假如全都同时放电</text>
+<g fill="url(#dotOn)">
+<circle cx="304" cy="62" r="7"></circle><circle cx="330" cy="62" r="7"></circle><circle cx="356" cy="62" r="7"></circle><circle cx="382" cy="62" r="7"></circle><circle cx="408" cy="62" r="7"></circle><circle cx="434" cy="62" r="7"></circle><circle cx="460" cy="62" r="7"></circle>
+<circle cx="304" cy="88" r="7"></circle><circle cx="330" cy="88" r="7"></circle><circle cx="356" cy="88" r="7"></circle><circle cx="382" cy="88" r="7"></circle><circle cx="408" cy="88" r="7"></circle><circle cx="434" cy="88" r="7"></circle><circle cx="460" cy="88" r="7"></circle>
+<circle cx="304" cy="114" r="7"></circle><circle cx="330" cy="114" r="7"></circle><circle cx="356" cy="114" r="7"></circle><circle cx="382" cy="114" r="7"></circle><circle cx="408" cy="114" r="7"></circle><circle cx="434" cy="114" r="7"></circle><circle cx="460" cy="114" r="7"></circle>
+<circle cx="304" cy="140" r="7"></circle><circle cx="330" cy="140" r="7"></circle><circle cx="356" cy="140" r="7"></circle><circle cx="382" cy="140" r="7"></circle><circle cx="408" cy="140" r="7"></circle><circle cx="434" cy="140" r="7"></circle><circle cx="460" cy="140" r="7"></circle>
+</g>
+<text fill="#f0b8f6" font-size="12.5" text-anchor="middle" x="381" y="176">账单翻上十几倍 · 血供不上</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="250" y="222">稀疏不是一种美学品味，是一条财务纪律</text>
+</svg>
+<figcaption>能预算卡住的不是"能有多少神经元"，而是"同一时刻能有几个在说话"</figcaption>
+</figure>
+<p>所以<strong>稀疏</strong>——同一时刻只有极少数神经元在活跃——不是神经科学家偏爱的美学，是被电费逼出来的纪律。1996 年 Levy 和 Baxter 从纯理论那头也走到了同一个结论：<strong>一旦把能耗算进目标函数，"表达能力最强"的编码就不再是最优的</strong>，最优解会自动往低放电率那边挪。而执行这条纪律的部门是抑制性神经元：它们全天候摁着，只放最该说话的那几个过（<a class="reflink" href="ref-interneurons.html">抑制性中间神经元</a>）。</p>
+<p>这也解开了开头那个悖论：脑怎么能拥有 860 亿个神经元、还只烧 20 瓦？因为<strong>账单跟着"同时有多少在活跃"走，不跟着"总共有多少"走</strong>。容量和电费在这里是分开的两件事——你可以拥有一座巨大的图书馆，只要你一次只开一盏灯。</p>
+<p class="en-brief"><b>EN</b> Divide the brain's 20 W by the ATP cost of a single spike and you get a hard ceiling: only about 1% of cortical neurons can be substantially active at once (Lennie 2003). Sparseness is therefore a budget constraint, not an aesthetic — and it decouples capacity from cost: the bill tracks how many neurons are active, not how many exist.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>人工网络恰好相反。一次<b>密集矩阵乘法</b>（今天几乎所有模型的基本动作：把输入和一大张权重表逐个相乘再加起来）里，<b>每一个参数都要被读出来、乘一遍</b>——账单跟着<b>规模</b>走，而不是跟着"这次真正用得上多少"走。模型越大越贵，是这么来的。这两年很火的<b>混合专家</b>（每次只激活其中一小块子网络）本质就是在往脑这边挪：让花销跟活跃度走。差距还有多远？训练一次 GPT-3 大约用掉 1287 兆瓦时（Patterson 等人的估算）——同样的电，够一颗 20 瓦的脑连续运转七千多年。</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>脑的暗能量：你想不想事，账单几乎不动</h2>
+<p>现在来看最反直觉的一格。既然放电要花钱，那认真思考时脑的能耗总该飙一下吧？测出来不是这样：<strong>任务带来的能耗增量，通常在 5% 以内</strong>。剩下 95% 以上，是不管你在干什么都一直在烧的底噪。Raichle 给它起了个名字——<strong>脑的暗能量</strong>。</p>
+<figure>
+<svg viewbox="0 0 500 244" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="baseB" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7c67d6"></stop><stop offset="1" stop-color="#3d2f74"></stop></lineargradient>
+<marker id="a41" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="8.5" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+</defs>
+<rect fill="url(#baseB)" height="146" rx="7" width="74" x="34" y="56"></rect>
+<rect fill="#34e5e0" height="7" rx="3" width="74" x="34" y="47"></rect>
+<text fill="#cfc9e6" font-size="12.5" text-anchor="middle" x="71" y="134">一直在烧</text>
+<text fill="#cfc9e6" font-size="12.5" text-anchor="middle" x="71" y="152">的底噪</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" x="170" y="55">任务增量 &lt; 5%</text>
+<line marker-end="url(#a41)" stroke="#8f89ad" stroke-width="1.4" x1="162" x2="116" y1="50" y2="50"></line>
+<text fill="#9a94bc" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="71" y="220">全脑能耗</text>
+<line stroke="rgba(255,255,255,0.10)" stroke-width="1" x1="266" x2="266" y1="26" y2="212"></line>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="11.5" x="290" y="44">被刺激的那一小块皮层</text>
+<rect fill="#e879f9" height="70" rx="6" width="46" x="300" y="132"></rect>
+<text fill="#fff" font-family="SF Mono,monospace" font-size="13" text-anchor="middle" x="323" y="122">+29%</text>
+<text fill="#e6dff2" font-size="12" text-anchor="middle" x="323" y="220">血流</text>
+<rect fill="#fbbf24" height="14" rx="5" width="46" x="392" y="188"></rect>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="13" text-anchor="middle" x="415" y="178">+5%</text>
+<text fill="#e6dff2" font-size="12" text-anchor="middle" x="415" y="220">耗氧</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="370" y="240">多送来、没用掉的氧 → 这就是 fMRI 看到的信号</text>
+</svg>
+<figcaption>左：全脑账单几乎不随任务波动。右：局部血流的反应远远"过头"（Fox &amp; Raichle 1986）</figcaption>
+</figure>
+<p>这一下就把一个默认假设翻了过来：脑主要不是一台<strong>被输入驱动的反应机器</strong>。它绝大部分力气花在自己身上——持续维护一套关于世界、身体和自己的内部模型，感官输入只是进来微调它。这正好接上 Topic 1 那条主线：先有猜测，再拿证据纠错。而这套自发活动最显眼的地盘，就是你走神时特别活跃的那张网（<a class="reflink" href="ref-default-mode-network.html">默认模式网络</a>）。</p>
+<p>顺手可以清掉两个流行说法。<strong>"用脑很费卡路里"</strong>：增量算下来一天不过几十千卡，抵不过一小把坚果——脑力活让人累，累的多半不是能量而是别的（Topic 34 讲过这类误读）。<strong>"我们只用了 10% 的大脑"</strong>：能量账上根本立不住——脑已经吃掉你两成能量，进化不会替一块常年闲置九成的组织付这笔钱。</p>
+<p>还有个副产品：fMRI 之所以能存在，恰恰因为局部的反应<strong>太过头</strong>了。手指被轻轻刺激时，那一小块皮层的血流涨了约 29%，而耗氧只涨约 5%。多送来的氧没被用掉，留在血里改变了血液的磁性——机器读到的就是这个差额。<strong>所以你在 fMRI 图上看到的亮斑，是血，不是放电。</strong>（这套供能与耦合机制：<a class="reflink" href="ref-neurovascular-coupling.html">脑供能与神经血管耦合</a>）</p>
+<p class="en-brief"><b>EN</b> Task-evoked energy use rises less than ~5% above a huge ongoing baseline — Raichle's "dark energy" of the brain. Intrinsic activity, not stimulus-driven response, is the main job. A side effect: during activation local blood flow overshoots oxygen consumption (+29% vs +5%), leaving surplus oxygenated blood behind — which is exactly what fMRI measures.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>大语言模型这边有个形似的现象：不管你问"1+1 等于几"还是丢给它一道证明题，<b>一次前向计算（把输入过一遍整张网络）的算力是定死的</b>，跟题目难不难无关——就像脑的账单不随任务波动。但机制完全不同：模型是"每次都得把全部参数过一遍"，脑是"绝大部分开销本来就花在自发活动上"。有意思的是两边都在松动这一点：模型这两年学会了<b>想久一点</b>（难题就多生成一些中间步骤、多花算力，业内叫推理时计算）；而脑很难这么做——它的预算是硬的，只能靠<b>把算力挪去别处</b>，而不是把总功率开大。</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>电费把这颗脑捏成了现在的形状</h2>
+<p>预算表还管着更大的东西——它决定了这颗器官长什么样。</p>
+<p><strong>它几乎没有仓库。</strong>脑不像肌肉那样囤着一大罐燃料，全靠血液现送。所以血流一断，约 10 秒就失去意识，几分钟就是不可逆的损伤。为了让这条供应链跟得上，脑配了一整套精细的基建：哪块地方忙起来，那儿的血管就立刻扩开、多送一点（<a class="reflink" href="ref-neurovascular-coupling.html">脑供能与神经血管耦合</a>）。</p>
+<p><strong>连线也要按公里收费。</strong>轴突（神经元伸出去的那根"电线"）越长越粗就越贵：占体积、要包髓鞘、维持电位也要泵一直干活。于是脑的连接呈现出一个到处都能看到的格局——<strong>海量的本地短连接，加上少得可怜的长程连接</strong>。这不是简单的"越省越好"：真要最省，把所有东西挤成一团、谁也不远距离联系就行了，可那样信息传得太慢。Bullmore 和 Sporns 把这称作脑网络的"经济学"：<strong>在省钱和抄近路之间反复砍价</strong>，砍出来的就是我们看到的那种少数枢纽、大量本地簇的结构。皮层要折叠、长程轴突要包髓鞘（既提速又省电），都是同一张账单逼出来的解。</p>
+<figure>
+<svg viewbox="0 0 500 226" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" stroke="#34e5e0" stroke-opacity="0.5" stroke-width="1.6">
+<path d="M70,80 C88,64 108,66 124,78"></path><path d="M124,78 C142,92 138,110 120,120"></path><path d="M120,120 C100,128 80,118 70,102"></path><path d="M70,102 C62,92 62,88 70,80"></path><path d="M92,70 C104,86 110,104 100,124"></path>
+<path d="M330,86 C348,70 372,72 386,86"></path><path d="M386,86 C400,102 394,120 376,128"></path><path d="M376,128 C356,134 338,124 330,108"></path><path d="M330,108 C324,98 324,94 330,86"></path><path d="M352,74 C364,90 370,110 360,130"></path>
+</g>
+<g fill="#0e2c33" stroke="#34e5e0" stroke-width="1.3">
+<circle cx="70" cy="80" r="7"></circle><circle cx="124" cy="78" r="7"></circle><circle cx="120" cy="120" r="7"></circle><circle cx="70" cy="102" r="7"></circle><circle cx="92" cy="70" r="6"></circle><circle cx="100" cy="124" r="6"></circle>
+<circle cx="330" cy="86" r="7"></circle><circle cx="386" cy="86" r="7"></circle><circle cx="376" cy="128" r="7"></circle><circle cx="330" cy="108" r="7"></circle><circle cx="352" cy="74" r="6"></circle><circle cx="360" cy="130" r="6"></circle>
+</g>
+<path d="M124,78 C200,44 280,50 330,86" fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-width="6" stroke-opacity="0.9"></path>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="97" y="168">本地短连接</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="97" y="186">又细又便宜 · 数量极多</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="355" y="168">长程连接</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="355" y="186">又长又粗还得包髓鞘 · 极少</text>
+<text fill="#f0cf88" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="228" y="34">一条这样的线，抵得上一大片本地连接的开销</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="250" y="214">于是脑长成了：密集的本地簇 + 少数昂贵的枢纽</text>
+</svg>
+<figcaption>布线的经济学：省钱与抄近路之间砍出来的结构</figcaption>
+</figure>
+<p><strong>最后，它贵到会跟身体其它器官抢饭。</strong>1995 年 Aiello 和 Wheeler 提出"昂贵组织假说"：人类之所以供得起这么大的脑，是拿缩小的肠道换的（这个具体的交换在后来更大范围的跨物种数据里没能稳稳站住，但"贵到必须有代价"这个内核留下来了）。Herculano-Houzel 的算法更直白：每十亿个神经元每天大约要 6 千卡，860 亿个就是五百千卡上下。靠生食凑这笔钱，大猿每天得嚼上八九个小时，再想加神经元就没时间了。<strong>把食物煮熟</strong>——相当于把一部分消化工序外包给火——才把这道天花板抬开。你今天能有这颗脑子，一部分原因是有人先学会了做饭。</p>
+<p class="en-brief"><b>EN</b> The budget also shapes the organ. The brain stores almost no fuel (≈10 s of blood loss and you're out), so it needs tight neurovascular supply. Long axons are expensive, so connectivity settles into dense local clusters plus a few costly hubs — network economics, not pure wire minimisation. And at ~6 kcal/day per billion neurons, 86 billion neurons are unaffordable on raw food: cooking is what lifted the ceiling.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"能量有限"听着只是个工程细节，但它其实是几门很不一样的学问共用的那条起跑线：</p>
+<ul>
+<li><b>经济学 · 罗宾斯</b>：1932 年他给经济学下的那个定义至今没人换掉——<b>研究人在稀缺手段与多种用途之间如何选择的学问</b>。这句话原封不动搬到脑上就成立：稀疏、模块化、髓鞘、少数枢纽，全都能读成同一道约束优化题的解。有意思的是方向反了——经济学里稀缺是要克服的困境，在脑这儿，<b>稀缺是设计者</b>。</li>
+<li><b>复杂系统 · 克莱伯定律</b>：动物的代谢率大致随体重的 3/4 次方走，从老鼠到鲸鱼都贴着这条线。West 和 Brown 等人给的解释是：极限不在细胞，而在<b>那套分形的输运网络</b>——血管把资源送到每一处的几何方式，决定了整体能烧多少。脑同理：它算力的天花板，一部分藏在水管里。</li>
+<li><b>道家 · 《道德经》"俭故能广"</b>：老子把"俭"列为三宝之一，理由不是道德洁癖，而是<b>省下来，才铺得开</b>。脑恰好是这句话的生物学版本——正因为单次活动极省、绝大多数时候闭嘴，它才敢养 860 亿个神经元。<b>节制不是能力的对立面，是能力的前提。</b></li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>那多吃点糖，脑子是不是就转得快些？</summary><div>基本不能。在血糖正常的情况下，脑取多少糖并不由你嘴里进来多少决定——它有一套自己的优先取用权，血糖低到一定程度身体会先牺牲别处保它。反过来倒是真的：<strong>血糖掉下去，认知会明显垮</strong>，注意力、判断力都跟着走。补糖能提高认知的实验做过不少，效应零散而且小，多半只在本来就低血糖、或者任务拖得特别长的情况下才看得出来。<strong>"补脑食品"卖的是账单的错觉</strong>——它是一条几乎恒定的支出线，不是一台你多加油就多跑的引擎。</div></details>
+<details><summary>拿 20 瓦跟 GPU 比，公平吗？</summary><div>严格说不公平，而且不止一处。脑那 20 瓦不含发育二十年的成本、不含整个身体在替它供血供糖、不含它"训练数据"是靠一副身体在世界里跑出来的；而且它没法像模型那样被复制一份。反过来，人们常引用的芯片数字往往是训练一次的总电，跟"运行时功率"不是一码事。<strong>但把这些都算进去，量级差距依然在那儿。</strong>更该记住的其实是那个结构性的差别：脑的开销跟活跃度走，芯片的开销跟规模走——这不是口径问题，是两种不同的成本函数。</div></details>
+<details><summary>如果给脑无限的能量，它会变得更聪明吗？</summary><div>不清楚，而且值得警惕这个问题里的假设。一种答案是"会"：稀疏摆明了是妥协，放开预算就能同时激活更多单元、算更复杂的东西。另一种答案是"不会，甚至更糟"：稀疏顺带买来了别的好处——活跃的少，表示之间就不容易互相糊成一团（Topic 35 讲过稀疏编码的这层价值）。但也别把这话说得太美：<strong>把生物的将就一律读成智慧，是常见的一种事后合理化。</strong>能确定的只有一点——放开预算之后需要的是重新设计，而不是把同一颗脑子的功率旋钮拧大。</div></details>
+<details><summary>大部分能量都花在"自发活动"上，那休息时脑到底在忙什么？</summary><div>不是空转。已知的至少有：维持并更新那套内部模型（Topic 1）、把白天的经验拿出来离线重放和巩固（Topic 22）、在默认模式网络里做自传式的推演——回想、设想、想别人怎么想。所以"发呆"在能量账上是全价的，它买到的东西只是不显示在你的意识里。这也给了一个不那么鸡汤的理由去留白：<strong>那笔钱你反正在付，区别只是有没有让它派上用场。</strong></div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://doi.org/10.1097/00004647-200110000-00001" target="_blank">Attwell &amp; Laughlin 2001 · JCBFM</a> — 第一张脑的能量预算表</li>
+<li><a href="https://doi.org/10.1038/jcbfm.2012.35" target="_blank">Howarth, Gleeson &amp; Attwell 2012 · JCBFM</a> — 修正版：放电没那么贵，接收才贵</li>
+<li><a href="https://doi.org/10.1016/S0960-9822(03)00135-0" target="_blank">Lennie 2003 · Current Biology</a> — 一个脉冲多少钱，于是只养得起百分之一</li>
+<li><a href="https://doi.org/10.1162/neco.1996.8.3.531" target="_blank">Levy &amp; Baxter 1996 · Neural Computation</a> — 把能耗算进去，最优编码自己变稀疏</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2012.08.019" target="_blank">Harris, Jolivet &amp; Attwell 2012 · Neuron</a> — 突触这一头的能量账与供应</li>
+<li><a href="https://doi.org/10.1126/science.1134405" target="_blank">Raichle 2006 · Science</a> — 脑的暗能量</li>
+<li><a href="https://doi.org/10.1073/pnas.83.4.1140" target="_blank">Fox &amp; Raichle 1986 · PNAS</a> — 血流涨 29%、耗氧只涨 5%：BOLD 的由来</li>
+<li><a href="https://doi.org/10.1038/nrn3214" target="_blank">Bullmore &amp; Sporns 2012 · Nature Reviews Neuroscience</a> — 脑网络的经济学</li>
+<li><a href="https://doi.org/10.1086/204350" target="_blank">Aiello &amp; Wheeler 1995 · Current Anthropology</a> — 昂贵组织假说</li>
+<li><a href="https://doi.org/10.1038/nature10629" target="_blank">Navarrete, van Schaik &amp; Isler 2011 · Nature</a> — 反例：跨物种没看到脑与内脏的此消彼长</li>
+<li><a href="https://doi.org/10.1073/pnas.1206390109" target="_blank">Fonseca-Azevedo &amp; Herculano-Houzel 2012 · PNAS</a> — 生食供不起这么多神经元</li>
+<li><a href="https://doi.org/10.1073/pnas.1201895109" target="_blank">Herculano-Houzel 2012 · PNAS</a> — 每十亿神经元每天约 6 千卡</li>
+<li><a href="https://arxiv.org/abs/2104.10350" target="_blank">Patterson et al. 2021 · arXiv</a> — 训练一次大模型到底用多少电</li>
+<li><a href="https://en.wikipedia.org/wiki/Kleiber%27s_law" target="_blank">克莱伯定律 Kleiber's law</a> — 代谢率与体重的 3/4 次方</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 41 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
