@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 42 · 连接组学 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 42 · PHASE E 计算</span>
+<h1>连接组学</h1>
+<h2>把一颗脑逐根电线画出来，得到的是什么？</h2>
+<div class="date">2026-08-18 · BigCat</div>
+<p class="pitch">我们已经有 40 年的线虫全脑接线图——它 302 个神经元的每一条线都在纸上，我们还是猜不透它下一秒会往哪儿爬。</p>
+</header>
+<div class="intro">
+<p>"要把大脑接线图画出来"——你多半听过这类雄心。想象一下把 860 亿个神经元、几百万亿突触全数标出来、连成一张图；直觉会觉得，那时候心智还能剩多少神秘？<strong>1986 年，一支英国团队真的把这件事做完了——不过是在一条只有 302 个神经元的线虫身上。</strong>四十年过去，那份图还印在无数实验室的墙上，我们依然不能只凭它读出这条虫在想什么。这一期就是要看清这道落差：为什么"知道每一根线"离"看懂这颗脑"，还差着一段谁也没想到会这么远的路。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2 data-tts="cnx42s1">一份四十年读不出心意的图</h2>
+<p>1960 年代末，Sydney Brenner 决定挑一种小到"能被看穿"的动物做样本——秀丽隐杆线虫 <em>C. elegans</em>，只有约 1 毫米长、身体透明、每一只成年雌雄同体虫的神经元数目与位置<strong>都完全一样</strong>。他的学生 John White 领着一群人拿电子显微镜切了十几年，1986 年发表：<strong>302 个神经元，约 7000 个化学突触，约 900 个电突触</strong>。这是历史上第一份完整的连接组。</p>
+<figure>
+<svg viewbox="0 0 500 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.5" id="c42n1" r="0.9"><stop offset="0" stop-color="#7bf0e8"></stop><stop offset="1" stop-color="#22a8b8"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.5" id="c42n2" r="0.9"><stop offset="0" stop-color="#c9b6ff"></stop><stop offset="1" stop-color="#6a52b6"></stop></radialgradient>
+</defs>
+<g stroke="#5a537a" stroke-opacity="0.55" stroke-width="0.9">
+<path d="M60,60 C120,50 180,90 240,80" fill="none"></path>
+<path d="M60,60 C100,120 170,140 260,150" fill="none"></path>
+<path d="M240,80 C280,60 340,70 400,90" fill="none"></path>
+<path d="M260,150 C310,140 360,120 400,90" fill="none"></path>
+<path d="M100,110 C150,100 200,110 240,80" fill="none"></path>
+<path d="M120,160 C160,140 200,130 240,80" fill="none"></path>
+<path d="M340,150 C380,130 420,110 440,60" fill="none"></path>
+<path d="M300,110 C340,100 380,120 400,90" fill="none"></path>
+<path d="M180,90 C220,100 260,120 300,110" fill="none"></path>
+<path d="M170,60 C220,80 260,90 300,110" fill="none"></path>
+<path d="M60,110 C100,140 140,150 180,140" fill="none"></path>
+<path d="M180,140 C220,150 260,160 300,150" fill="none"></path>
+<path d="M400,90 C420,120 440,150 460,140" fill="none"></path>
+<path d="M60,60 C80,90 100,110 120,110" fill="none"></path>
+</g>
+<g fill="url(#c42n1)">
+<circle cx="60" cy="60" r="5.5"></circle><circle cx="120" cy="110" r="5"></circle><circle cx="170" cy="60" r="5"></circle><circle cx="180" cy="90" r="4.5"></circle><circle cx="240" cy="80" r="6"></circle><circle cx="260" cy="150" r="5"></circle><circle cx="300" cy="110" r="5.5"></circle><circle cx="340" cy="150" r="4.5"></circle><circle cx="400" cy="90" r="6"></circle><circle cx="440" cy="60" r="5"></circle><circle cx="460" cy="140" r="4.5"></circle><circle cx="100" cy="110" r="4.5"></circle><circle cx="120" cy="160" r="4.5"></circle><circle cx="60" cy="110" r="4.5"></circle><circle cx="180" cy="140" r="4.5"></circle><circle cx="300" cy="150" r="4.5"></circle>
+</g>
+<g fill="url(#c42n2)">
+<circle cx="240" cy="80" r="7" fill-opacity="0.35"></circle>
+<circle cx="400" cy="90" r="7" fill-opacity="0.35"></circle>
+</g>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="250" y="192">302 个神经元 · 约 7000 化学突触 · 40 年才慢慢开始"读"</text>
+<text fill="#c9b6ff" font-family="SF Mono,monospace" font-size="10.5" x="12" y="24">C. elegans · 一份完整连接组的样子</text>
+</svg>
+<figcaption>示意图：每个点是一个神经元，每根线是一条连接（真图密得多）</figcaption>
+</figure>
+<p>然后<strong>怪事</strong>发生了。四十年间这张图印在墙上、录进数据库，可要它回答一个非常朴素的问题——"这条虫下一秒往哪爬"——它还是不够用。要靠它拆出躲避、觅食、交配这些基础动作，得等到近十年，人们把<strong>基因表达图、神经调质地图、活体钙成像</strong>一层层叠上去、再对着接线图看，才勉强跑起来一部分。</p>
+<p>为什么？因为接线图只画了<strong>网络的骨架</strong>——两个神经元之间有没有物理电缆。可它俩到底传不传信号、传得多强、什么时候传，还取决于一堆图上根本不显示的东西：突触当前是强是弱（<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>天天在改）、这一块被什么神经调质浸着（一颗多巴胺就能把整条回路的增益换掉，Topic 26）、下游有没有跟着当下振荡的节拍开门（Topic 38）。连接组学界有一句诚实的话：<strong>接线图是必要的，但远远不够。</strong></p>
+<p class="en-brief"><b>EN</b> The first complete connectome — <em>C. elegans</em>, 302 neurons and ~7,000 chemical synapses — was published by White and colleagues in 1986. Four decades later, that wiring alone still doesn't predict what the worm will do next: mapping behaviour requires overlaying gene-expression, neuromodulator, and live-imaging data on top. Wiring is the skeleton; it isn't the circuit.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2 data-tts="cnx42s2">从毫米切到纳米：怎么把一颗脑变成一张图</h2>
+<p>要在能看见单个突触的精度（也就是几纳米级别）画一颗脑，目前只有一条路：<strong>电子显微镜连续切片</strong>。流程听起来像拆一本超厚的书。</p>
+<figure>
+<svg viewbox="0 0 500 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="c42blk" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2b2547"></stop><stop offset="1" stop-color="#140e28"></stop></lineargradient>
+<lineargradient id="c42slice" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3a3162"></stop><stop offset="1" stop-color="#1b1436"></stop></lineargradient>
+<marker id="c42arr" markerheight="11" markerunits="userSpaceOnUse" markerwidth="12" orient="auto" refx="9" refy="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"></path></marker>
+</defs>
+<rect fill="url(#c42blk)" height="90" rx="6" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1" width="90" x="18" y="60"></rect>
+<text fill="#cfc9e6" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="63" y="170">① 一小块脑</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="63" y="184">树脂里包住</text>
+<path d="M115,105 L155,105" fill="none" marker-end="url(#c42arr)" stroke="#8f89ad" stroke-width="1.2"></path>
+<g>
+<rect fill="url(#c42slice)" height="86" rx="3" stroke="#7bf0e8" stroke-opacity="0.35" stroke-width="0.7" width="6" x="160" y="62"></rect>
+<rect fill="url(#c42slice)" height="86" rx="3" stroke="#7bf0e8" stroke-opacity="0.35" stroke-width="0.7" width="6" x="170" y="62"></rect>
+<rect fill="url(#c42slice)" height="86" rx="3" stroke="#7bf0e8" stroke-opacity="0.35" stroke-width="0.7" width="6" x="180" y="62"></rect>
+<rect fill="url(#c42slice)" height="86" rx="3" stroke="#7bf0e8" stroke-opacity="0.35" stroke-width="0.7" width="6" x="190" y="62"></rect>
+<rect fill="url(#c42slice)" height="86" rx="3" stroke="#7bf0e8" stroke-opacity="0.35" stroke-width="0.7" width="6" x="200" y="62"></rect>
+<rect fill="url(#c42slice)" height="86" rx="3" stroke="#7bf0e8" stroke-opacity="0.35" stroke-width="0.7" width="6" x="210" y="62"></rect>
+<rect fill="url(#c42slice)" height="86" rx="3" stroke="#7bf0e8" stroke-opacity="0.35" stroke-width="0.7" width="6" x="220" y="62"></rect>
+</g>
+<text fill="#cfc9e6" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="195" y="170">② 切成几十纳米薄片</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="195" y="184">头发丝的两千分之一</text>
+<path d="M235,105 L270,105" fill="none" marker-end="url(#c42arr)" stroke="#8f89ad" stroke-width="1.2"></path>
+<rect fill="rgba(52,229,224,0.06)" height="90" rx="6" stroke="#34e5e0" stroke-opacity="0.5" stroke-width="1" width="90" x="278" y="60"></rect>
+<g stroke="#7bf0e8" stroke-width="0.7">
+<line x1="286" x2="360" y1="72" y2="72"></line>
+<line x1="286" x2="360" y1="82" y2="82"></line>
+<line x1="286" x2="360" y1="92" y2="92"></line>
+<line x1="286" x2="360" y1="102" y2="102"></line>
+<line x1="286" x2="360" y1="112" y2="112"></line>
+<line x1="286" x2="360" y1="122" y2="122"></line>
+<line x1="286" x2="360" y1="132" y2="132"></line>
+<line x1="286" x2="360" y1="142" y2="142"></line>
+</g>
+<text fill="#cfc9e6" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="323" y="170">③ 电镜一张张拍</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="323" y="184">拼回三维</text>
+<path d="M375,105 L410,105" fill="none" marker-end="url(#c42arr)" stroke="#8f89ad" stroke-width="1.2"></path>
+<g fill="none" stroke-width="1.5">
+<path d="M425,70 C445,90 460,100 475,80" stroke="#e879f9" stroke-opacity="0.75"></path>
+<path d="M420,120 C440,105 455,130 475,120" stroke="#34e5e0" stroke-opacity="0.75"></path>
+<path d="M425,145 C445,135 460,150 480,140" stroke="#fbbf24" stroke-opacity="0.75"></path>
+</g>
+<g fill="#0e2c33" stroke-width="0.9">
+<circle cx="425" cy="70" r="2.5" stroke="#e879f9"></circle>
+<circle cx="475" cy="80" r="2.5" stroke="#e879f9"></circle>
+<circle cx="420" cy="120" r="2.5" stroke="#34e5e0"></circle>
+<circle cx="475" cy="120" r="2.5" stroke="#34e5e0"></circle>
+</g>
+<text fill="#cfc9e6" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="450" y="170">④ 追出每根神经元</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="450" y="184">如今主要靠 AI</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10" x="14" y="30">Serial-section EM connectomics · 四步</text>
+</svg>
+<figcaption>切、拍、拼、追——每一步一旦放大到脑的尺度都很吓人</figcaption>
+</figure>
+<p>可怕的地方在<strong>规模</strong>。这套工艺的数据量按 EB（10 的 18 次方字节）计。近几十年的里程碑，按发表年份排一下就能看到坡有多陡：</p>
+<p><strong>· 1986</strong>：秀丽线虫，302 神经元（White 等）。<strong>· 2019</strong>：线虫的雄性版本、加上重画的雌雄同体（Cook 等），第一次两性都齐。<strong>· 2020</strong>：果蝇"半脑" hemibrain，约 2.5 万神经元、2000 万突触（Scheffer 等）。<strong>· 2024</strong>：FlyWire 果蝇<strong>全脑</strong>，约 13 万神经元、5000 万突触（Dorkenwald & Matsliah 等）——这是首个复杂动物的完整脑接线图。<strong>· 2024</strong>：哈佛/Google 一份人脑颞叶 1 立方毫米样本（Shapson-Coe 等）——1.4 PB 数据、约 5 万神经元、1.5 亿突触，只为了一小指甲盖那么大。<strong>· 2025</strong>：MICrONS 小鼠视觉皮层 1 立方毫米，约 20 万神经元、5 亿突触，同一块地皮同时录了活体功能数据。</p>
+<p>把这条曲线外推到<strong>人脑</strong>——1500 立方厘米、约 860 亿神经元——用同一套方法要至少几十年、耗电以千兆瓦时计。所以人脑的连接组主要走另一条低分辨率、但活体可测的路子：<strong>弥散磁共振</strong>顺着水分子在白质束里的方向做"纤维追踪"，画出的是"哪些大区之间有粗电缆"，而不是单突触级别的图。这就是<strong>Human Connectome Project</strong>（2010 年起，Van Essen 等）在做的事——一份粗看得见、细看不见的地图。（皮层上下六层的微回路：<a class="reflink" href="ref-cortical-microcircuit.html">皮层分层与微回路</a>；感觉端的一条走线：<a class="reflink" href="ref-visual-pathway.html">视觉通路</a>）</p>
+<p class="en-brief"><b>EN</b> Nanoscale connectomes require serial-section electron microscopy: fix → slice at tens of nanometres → image every slice → stitch → trace. Milestones climb steeply: <em>C. elegans</em> (1986) → hemibrain fly (2020, ~25k neurons) → FlyWire whole fly brain (2024, ~130k) → a 1 mm³ human temporal cortex sample (Harvard/Google 2024, 1.4 PB) → MICrONS 1 mm³ mouse visual cortex with matched activity (2025). Full human brain at that resolution is still decades away; macroscale human maps come from diffusion MRI (the Human Connectome Project).</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2 data-tts="cnx42s3">接线不等于电路：结构 vs 功能</h2>
+<p>就算把一份人脑接线图端上桌，还是要把两件事分开：</p>
+<p><strong>结构连接（structural）</strong>：两个区之间有没有物理电缆。<strong>功能连接（functional）</strong>：这两个区在实际活动里，信号有没有真的在走、走到什么程度（一般用 fMRI 里活动的相关性、或 MEG 里振荡的同步来估）。</p>
+<p>两者的关系一点都不平凡。<strong>同一份接线，可以支撑截然不同的功能状态。</strong>你在睡、在算数、在做梦、在麻醉，同样的电线在传的东西天差地远（Topic 16、Topic 22）。为什么？信号能不能过，除了看有没有线，还要看：突触当前的强弱（<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>时时刻刻在改）、这一片被什么<strong>神经调质</strong>浸着（多巴胺、血清素等把"增益旋钮"来回拧）、以及下游是不是<strong>对上了当下的振荡节拍</strong>——对不上就等于没通（Topic 38）。</p>
+<figure>
+<svg viewbox="0 0 500 232" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.5" id="c42d1" r="0.9"><stop offset="0" stop-color="#c9b6ff"></stop><stop offset="1" stop-color="#5f4aa8"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.5" id="c42d2" r="0.9"><stop offset="0" stop-color="#7bf0e8"></stop><stop offset="1" stop-color="#1f9fae"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.5" id="c42d3" r="0.9"><stop offset="0" stop-color="#f5b8fb"></stop><stop offset="1" stop-color="#a24bb5"></stop></radialgradient>
+</defs>
+<text fill="#cfc9e6" font-family="SF Mono,monospace" font-size="11" x="12" y="20">同一份接线</text>
+<g stroke="#5a537a" stroke-opacity="0.55" stroke-width="1">
+<path d="M55,90 C90,70 110,110 145,95" fill="none"></path>
+<path d="M55,90 C85,130 130,150 145,95" fill="none"></path>
+<path d="M55,90 C80,50 120,50 145,95" fill="none"></path>
+<path d="M55,150 C90,130 110,170 145,155" fill="none"></path>
+<path d="M145,95 C165,120 165,140 145,155" fill="none"></path>
+<path d="M55,90 C55,120 55,140 55,150" fill="none"></path>
+</g>
+<g fill="#251c48" stroke="#a78bfa" stroke-width="1.1">
+<circle cx="55" cy="90" r="7"></circle><circle cx="145" cy="95" r="7"></circle><circle cx="55" cy="150" r="6"></circle><circle cx="145" cy="155" r="6"></circle>
+</g>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9.5" text-anchor="middle" x="100" y="200">wiring · 结构</text>
+<line stroke="rgba(255,255,255,0.10)" stroke-width="1" x1="200" x2="200" y1="20" y2="220"></line>
+<text fill="#c9b6ff" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="252" y="42">睡眠</text>
+<g stroke="#5a537a" stroke-opacity="0.35" stroke-width="1">
+<path d="M215,90 C245,70 260,110 295,95" fill="none"></path>
+<path d="M215,150 C245,130 260,170 295,155" fill="none"></path>
+</g>
+<g stroke="url(#c42d1)" stroke-opacity="0.8" stroke-width="2.5">
+<path d="M215,90 C240,120 275,150 295,155" fill="none"></path>
+</g>
+<g fill="#251c48" stroke="#a78bfa" stroke-width="1.1">
+<circle cx="215" cy="90" r="6"></circle><circle cx="295" cy="95" r="6"></circle><circle cx="215" cy="150" r="6"></circle><circle cx="295" cy="155" r="6"></circle>
+</g>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="252" y="200">慢波把长距离整合起来</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="345" y="42">解题</text>
+<g stroke="#5a537a" stroke-opacity="0.35" stroke-width="1">
+<path d="M312,90 C345,70 365,110 390,95" fill="none"></path>
+<path d="M312,150 C345,130 365,170 390,155" fill="none"></path>
+<path d="M312,90 C340,120 370,150 390,155" fill="none"></path>
+</g>
+<g stroke="url(#c42d2)" stroke-opacity="0.9" stroke-width="2.5">
+<path d="M312,90 C345,70 365,110 390,95" fill="none"></path>
+<path d="M390,95 C395,120 395,140 390,155" fill="none"></path>
+</g>
+<g fill="#0e2c33" stroke="#34e5e0" stroke-width="1.1">
+<circle cx="312" cy="90" r="6"></circle><circle cx="390" cy="95" r="6"></circle><circle cx="312" cy="150" r="6"></circle><circle cx="390" cy="155" r="6"></circle>
+</g>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="349" y="200">前额-顶叶回路点亮</text>
+<text fill="#f5b8fb" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="445" y="42">麻醉</text>
+<g stroke="#5a537a" stroke-opacity="0.2" stroke-width="1">
+<path d="M412,90 C445,70 465,110 490,95" fill="none"></path>
+<path d="M412,150 C445,130 465,170 490,155" fill="none"></path>
+<path d="M412,90 C440,120 470,150 490,155" fill="none"></path>
+</g>
+<g stroke="url(#c42d3)" stroke-opacity="0.55" stroke-dasharray="2 4" stroke-width="1.5">
+<path d="M412,90 C420,110 420,120 412,150" fill="none"></path>
+<path d="M490,95 C498,120 498,130 490,155" fill="none"></path>
+</g>
+<g fill="#3a1240" stroke="#e879f9" stroke-width="1">
+<circle cx="412" cy="90" r="6"></circle><circle cx="490" cy="95" r="6"></circle><circle cx="412" cy="150" r="6"></circle><circle cx="490" cy="155" r="6"></circle>
+</g>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="9" text-anchor="middle" x="450" y="200">只剩本地的碎片</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="250" y="222">同一张骨架，跑出完全不同的功能图</text>
+</svg>
+<figcaption>结构是不变的电缆，功能是随状态在电缆上"选择性通电"的活图</figcaption>
+</figure>
+<p>MICrONS 那份 2025 年的小鼠视觉皮层给了一个特别干净的例子——同一块 1 立方毫米的皮层，纳米级接线图和活体功能记录一起公开。结果比较冷淡：<strong>两个神经元之间有多少突触，只是它们功能相关性的一个弱预测因子。</strong>换句话说，一颗脑不是一根根电话线的加总，是一张多层的、根据当下状态<strong>选择性联通</strong>的网。静态图给了骨架，剩下那些让骨架"活起来"的东西——递质、可塑性、节律——每一样都不写在图上。</p>
+<p class="en-brief"><b>EN</b> Structural connectivity (is there a cable?) and functional connectivity (is signal actually flowing?) are two different graphs on the same brain. The same wiring supports radically different states — asleep, solving, dreaming, anaesthetised — because whether a signal passes depends on synaptic strength, neuromodulator context, and oscillatory phase alignment (Topic 38). MICrONS (2025) showed it cleanly: how many synapses two neurons share is only a weak predictor of their functional correlation.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2 data-tts="cnx42s4">图论上一颗脑长成什么样</h2>
+<p>换一层看。把神经元当图上的点、把突触当边，跑一下图论的常规量，会得到几个稳定的规律——不论是线虫、果蝇还是人脑，都长得像。</p>
+<figure>
+<svg viewbox="0 0 500 226" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.5" id="c42hub" r="0.9"><stop offset="0" stop-color="#fbbf24"></stop><stop offset="1" stop-color="#8a6008"></stop></radialgradient>
+<radialgradient cx="0.5" cy="0.5" id="c42loc" r="0.9"><stop offset="0" stop-color="#7bf0e8"></stop><stop offset="1" stop-color="#22a8b8"></stop></radialgradient>
+</defs>
+<g stroke="#34e5e0" stroke-opacity="0.35" stroke-width="0.8">
+<path d="M60,60 C70,70 80,80 90,65" fill="none"></path>
+<path d="M60,60 C50,80 70,90 85,80" fill="none"></path>
+<path d="M85,80 C90,90 100,90 90,65" fill="none"></path>
+<path d="M60,60 L90,65"></path>
+<path d="M110,150 C120,140 130,135 145,145" fill="none"></path>
+<path d="M110,150 C100,160 120,170 130,165" fill="none"></path>
+<path d="M130,165 C140,155 150,155 145,145" fill="none"></path>
+<path d="M110,150 L130,165"></path>
+<path d="M380,60 C390,70 400,80 410,65" fill="none"></path>
+<path d="M380,60 C370,80 390,90 405,80" fill="none"></path>
+<path d="M405,80 C410,90 420,90 410,65" fill="none"></path>
+<path d="M380,60 L410,65"></path>
+<path d="M400,150 C410,140 420,135 435,145" fill="none"></path>
+<path d="M400,150 C390,160 410,170 420,165" fill="none"></path>
+<path d="M420,165 C430,155 440,155 435,145" fill="none"></path>
+<path d="M400,150 L420,165"></path>
+</g>
+<g stroke="#fbbf24" stroke-opacity="0.85" stroke-width="2.2">
+<path d="M180,100 C220,90 260,90 300,100" fill="none"></path>
+<path d="M300,100 C320,120 320,140 300,155" fill="none"></path>
+<path d="M180,100 C220,115 260,140 300,155" fill="none"></path>
+<path d="M180,100 C200,115 220,130 240,140" fill="none"></path>
+<path d="M240,140 C260,130 280,110 300,100" fill="none"></path>
+</g>
+<g stroke="#fbbf24" stroke-opacity="0.55" stroke-width="1.4">
+<path d="M85,80 C120,80 150,90 180,100" fill="none"></path>
+<path d="M130,165 C160,150 170,120 180,100" fill="none"></path>
+<path d="M405,80 C370,80 340,90 300,100" fill="none"></path>
+<path d="M420,165 C380,150 340,140 300,155" fill="none"></path>
+<path d="M240,140 C220,155 200,160 130,165" fill="none"></path>
+<path d="M240,140 C260,150 300,155 420,165" fill="none"></path>
+</g>
+<g fill="url(#c42loc)">
+<circle cx="60" cy="60" r="4.5"></circle><circle cx="90" cy="65" r="4.5"></circle><circle cx="85" cy="80" r="4"></circle><circle cx="110" cy="150" r="4.5"></circle><circle cx="130" cy="165" r="4.5"></circle><circle cx="145" cy="145" r="4"></circle><circle cx="380" cy="60" r="4.5"></circle><circle cx="410" cy="65" r="4.5"></circle><circle cx="405" cy="80" r="4"></circle><circle cx="400" cy="150" r="4.5"></circle><circle cx="420" cy="165" r="4.5"></circle><circle cx="435" cy="145" r="4"></circle>
+</g>
+<g fill="url(#c42hub)">
+<circle cx="180" cy="100" r="8"></circle><circle cx="300" cy="100" r="8"></circle><circle cx="240" cy="140" r="8"></circle><circle cx="300" cy="155" r="7.5"></circle>
+</g>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="98" y="200">本地簇（模块）</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="415" y="200">另一个本地簇</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="10.5" text-anchor="middle" x="250" y="200">枢纽 · 富人俱乐部</text>
+<text fill="#8f89ad" font-family="SF Mono,monospace" font-size="10" text-anchor="middle" x="250" y="220">模块化 + 少数超连接枢纽 = 小世界</text>
+<text fill="#cfc9e6" font-family="SF Mono,monospace" font-size="11" x="14" y="22">脑网络反复长出的三样东西</text>
+</svg>
+<figcaption>本地簇一大群 · 少数超连接枢纽 · 枢纽之间彼此更爱连（"富人俱乐部"）</figcaption>
+</figure>
+<p><strong>· 模块化</strong>：神经元分成一群一群的"社群"，社群内密、社群间稀。<strong>· 小世界</strong>：任何两个点之间平均跳几步就能到——本地簇很密，加上少数长距离捷径。<strong>· 富人俱乐部（rich club）</strong>：几个连接特别多的大枢纽相互之间比随机更爱连——走得起长途的往往是同一批"贵族"（van den Heuvel & Sporns 2011）。</p>
+<p>Bullmore 和 Sporns 把这套图论视角带进神经科学后，事情第一次能被<strong>整体量化</strong>地讨论：<strong>同一份布线里藏着"能整合"（信号要能跨到远处去汇合）和"能省电"（Topic 41 那张预算表）两条目标之间的谈判结果。</strong>这些属性都不是设计者手挑的，是这两条目标互推出来的解。所以连接组学能不能"读出"一颗脑，可能不主要看"每根线通到哪里"，而是看<strong>整张图有什么形状</strong>——那才是它开始真正说话的地方。</p>
+<p class="en-brief"><b>EN</b> Run graph theory on connectomes and the same features reappear across species: modular communities, small-world layout (dense local clusters + a few long shortcuts), and a rich-club of over-connected hubs preferentially wired to one another. Bullmore & Sporns framed all this as brain network economics — the wiring is the negotiated solution between integration and cost (Topic 41). Reading a brain may depend less on tracing every cable than on reading the shape of the whole graph.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>人工神经网络本身就是一张图——单元当点、权重当边。但架构一直很规整：全连接层、卷积层、注意力层，都是模板化的规则连接。近些年生物启发的一支叫<b>图神经网络</b>（GNN），干脆把"图不再是规整的"当默认：分子结构、社交关系、蛋白网络，点和边都可以带信息、形状可以任意。反过来还有一个更近的对读——<b>知道一个训练好的大模型里每一个权重，能读懂它在算什么吗？</b>这就是<b>机制可解释性</b>（mechanistic interpretability）在做的事，目前答案是：远远不够。这两边其实撞在同一堵墙上——<b>光有静态图不够，你得看电流真正怎么在里面跑。</b></p>
+</div>
+</div>
+<div class="crossx">
+<h3 data-tts="cnx42cx">🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"一个东西是它的连接决定的"——这个念头看着现代，其实好几门老学问早就抵达过；连接组学只是给它接上了物理坐标：</p>
+<ul>
+<li><b>数学 · 欧拉的七桥</b>：1736 年 Euler 面对 Königsberg 的七座桥，提炼出人类第一张抽象的"点+线"图——从此有了图论。三个世纪后，Bullmore 用同一套语言分析人脑网络。<b>能被讲清楚的复杂系统，几乎都要过图论这一关</b>——脑不是第一个，也不会是最后一个。</li>
+<li><b>佛学 · 缘起 / 中观</b>：一件事物没有独立于其他一切的"自性"，它是什么，取决于它和什么相接。连接组学以最物理的方式说同一句话：<b>一个神经元本身什么都不是；它是它连的那些神经元。</b>你把这个推到底就会发现——"你"这个词的每一个内容，都能照此推。这不是取消个体，而是把个体重新定义在关系里。</li>
+<li><b>哲学 · 忒修斯之船 / 洛克的人格同一性</b>：如果一比一复制你的连接组到另一个介质里，那个东西还是"你"吗？Sebastian Seung 抛出的一句"You are your connectome"把这道两千年的老题第一次拽到了实验室里——两派都不满意的答案是：<b>问题第一次有了坐标，但坐标并不自动给出答案。</b></li>
+</ul>
+</div>
+<div class="thinking">
+<h3 data-tts="cnx42th">// 深入思考</h3>
+<details><summary>如果扫描并"上传"我的连接组，那还是我吗？</summary><div>今天这道题分成两半。<strong>物理上</strong>：即使精度做到突触级别，也还差一大截——你的记忆和习惯有相当部分不在"哪根线连哪"里，而在<strong>每根线当下的强度</strong>（LTP/STDP）、<strong>局部的化学环境</strong>（哪种神经调质此刻多）、甚至<strong>身体的实时反馈</strong>（Topic 8 的内感受）。这些统统不在静态接线图里。<strong>哲学上</strong>：就算全都复制过去了、跑起来了，那也只是造出了"另一个你"——从他自己的第一视角看是"我"，从原来的你看仍是"他"。两个"我"同时存在的一瞬间，日常意义上的人格同一性就已经断裂了。所以别急着相信"上传就永生"这类说法。</div></details>
+<details><summary>四十年了都读不出线虫，是不是这条路走死了？</summary><div>没走死，但天真的版本走死了。天真版本是：<strong>拿到连接组 → 输入模型 → 输出行为</strong>。现在人们做得多得多——把接线图套上基因表达（每根线上挂着什么受体）、神经调质地图（这一片当下泡在什么里）、活体成像（真活的时候谁在放电），才让线虫的一部分行为跑得动。这几年 OpenWorm、NemaNode 一直在攒这套多层数据。<strong>教训是：连接组是必要图层之一，不是唯一图层。</strong>指望它单独说话，是搞错了它的角色。</div></details>
+<details><summary>花几十亿把这些图画出来，值吗？</summary><div>说实话，短期的理论回报不算高——大部分产出是<strong>工具、数据集、方法</strong>。但这种基础设施型的科学往往要过一代人才见果：人类基因组计划刚出的时候也被批"贵得没道理"，二十年后没人再这么讲。连接组学更实际的价值可能在几个地方：一是给电路水平的疾病假说提供锚点（自闭症、精神分裂里到底哪条线出了问题）；二是给 AI 的架构提供不那么规整的启发；三是给 Topic 11 提到的 IIT vs GNW 那类意识理论第一次提供<strong>可以直接反证</strong>的解剖数据——不是给出答案，是让答案有机会被证伪。</div></details>
+<details><summary>一份完美的连接组，能告诉我们意识在哪里吗？</summary><div>不能，至少不能靠它一份。<strong>意识不是"哪几根线连着"，是"这几根线在此刻怎么被使用"</strong>——它是一个功能属性、不是一个结构属性。这也正是 Topic 11 那些对抗性实验（Cogitate 联盟）非要在活体上做的原因：结构给出可能空间，意识发生在这个空间上的某种活动模式。反过来说，没有连接组这套边界条件，意识理论的每一句话都是自由发挥——所以它不是答案，是让答案<strong>能够被回答</strong>的前提。</div></details>
+</div>
+<div class="refs">
+<h3 data-tts="cnx42rf">// 延伸阅读</h3>
+<ul>
+<li><a href="https://doi.org/10.1098/rstb.1986.0056" target="_blank">White, Southgate, Thomson &amp; Brenner 1986 · Phil Trans R Soc B</a> — <em>The mind of a worm</em>：第一份完整连接组</li>
+<li><a href="https://doi.org/10.1038/s41586-019-1352-7" target="_blank">Cook et al. 2019 · Nature</a> — 秀丽线虫两性连接组</li>
+<li><a href="https://doi.org/10.7554/eLife.57443" target="_blank">Scheffer et al. 2020 · eLife</a> — 果蝇 hemibrain：约 2.5 万神经元</li>
+<li><a href="https://doi.org/10.1038/s41586-024-07558-y" target="_blank">Dorkenwald &amp; Matsliah et al. 2024 · Nature</a> — FlyWire：果蝇全脑连接组</li>
+<li><a href="https://doi.org/10.1126/science.adk4858" target="_blank">Shapson-Coe et al. 2024 · Science</a> — 人脑颞叶 1 立方毫米</li>
+<li><a href="https://doi.org/10.1038/s41586-025-08790-w" target="_blank">MICrONS Consortium 2025 · Nature</a> — 小鼠视皮层 1 立方毫米 · 结构 + 功能同时公开</li>
+<li><a href="https://doi.org/10.1016/j.neuroimage.2013.05.041" target="_blank">Van Essen et al. 2013 · NeuroImage</a> — Human Connectome Project 概述</li>
+<li><a href="https://doi.org/10.1038/nrn2575" target="_blank">Bullmore &amp; Sporns 2009 · Nat Rev Neurosci</a> — 图论方法引入脑网络</li>
+<li><a href="https://doi.org/10.1523/JNEUROSCI.3539-11.2011" target="_blank">van den Heuvel &amp; Sporns 2011 · J Neurosci</a> — 人脑的富人俱乐部</li>
+<li><a href="https://doi.org/10.1038/nn.4502" target="_blank">Bassett &amp; Sporns 2017 · Nature Neuroscience</a> — network neuroscience 综述</li>
+<li><a href="https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg" target="_blank">Seven Bridges of Königsberg</a> — 图论的起点</li>
+<li><a href="https://en.wikipedia.org/wiki/OpenWorm" target="_blank">OpenWorm</a> — 把线虫连接组变成能跑的模型</li>
+<li><a href="https://en.wikipedia.org/wiki/Connectome" target="_blank">Connectome</a> — 术语与项目概览</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 42 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
