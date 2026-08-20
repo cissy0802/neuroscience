@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>参考 · 脑干与唤醒系统 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.78;min-height:100vh;
+  background:radial-gradient(1000px 560px at 90% -5%,rgba(232,121,249,0.10),transparent 60%),radial-gradient(900px 640px at 0% 3%,rgba(167,139,250,0.08),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:720px;margin:0 auto;padding:26px 20px 90px}
+.backlink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#8f89ad;text-decoration:none;margin-bottom:8px}
+.backlink:hover{color:#e879f9}
+header{padding:26px 0 22px;border-bottom:1px solid rgba(232,121,249,0.2)}
+.ref-badge{display:inline-block;font-size:0.72rem;color:#e879f9;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(232,121,249,0.4);padding:3px 12px;border-radius:20px;margin-bottom:14px;background:rgba(232,121,249,0.06)}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:0.5px;color:#fff}
+header h1 .en{font-size:1rem;color:#8f89ad;font-weight:400;margin-left:10px;font-family:"SF Mono",Menlo,monospace}
+header p{margin-top:12px;color:#b8b2d4;font-size:0.95rem}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.8rem;color:#8f89ad;margin-top:11px;font-family:"SF Mono",Menlo,monospace}
+h2{font-size:1.12rem;color:#e879f9;margin:36px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+h2::before{content:"◆";font-size:0.7rem;color:#a78bfa}
+p{margin-bottom:13px;color:#d4cfe8;font-size:0.95rem}
+strong{color:#fff}
+.kv{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 20px;margin:16px 0}
+.kv dt{color:#7bf0e8;font-family:"SF Mono",Menlo,monospace;font-size:0.82rem;margin-top:10px}
+.kv dt:first-child{margin-top:0}
+.kv dd{color:#d4cfe8;font-size:0.9rem;margin-top:2px}
+.links{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08)}
+.links h3{font-size:0.8rem;color:#a78bfa;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:10px}
+.links a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.links a:hover{color:#7bf0e8}
+.links .who{color:#8f89ad;font-size:0.86rem}
+footer{text-align:center;padding:44px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.45rem}}
+</style></head><body>
+<div class="container">
+<a class="backlink" href="index.html">← 参考库</a>
+<header>
+<span class="ref-badge">参考库 · REFERENCE</span>
+<h1>脑干与唤醒系统<span class="en">Brainstem &amp; Arousal</span></h1>
+<p>大脑皮层可以被切掉整整一大块，人还醒着。脑干里一块指甲盖大的地方坏掉，人就再也醒不过来了——<strong>"醒着"这件事，根本不在皮层里决定</strong>。</p>
+</header>
+
+<h2>一小撮细胞，喂养整个皮层</h2>
+<p><strong>脑干</strong>是脑连到脊髓那一段"柄"，从上到下依次是中脑、脑桥、延髓，总共也就拇指那么粗。它管呼吸、心跳、吞咽这些不用你操心的事——但它真正惊人的功能是另一件：<strong>决定上面那 160 亿皮层神经元此刻是不是"在线"</strong>。</p>
+<p>1949 年，Moruzzi 和 Magoun 在麻醉的猫身上电刺激脑干中央那团松散的细胞（叫<strong>网状结构</strong>），猫的脑电立刻从睡眠时的大慢波变成清醒时的小快波。他们把这条上行的通路叫<strong>网状激活系统</strong>（ARAS）。它不传递任何具体内容——不传图像、不传声音——只做一件事：<strong>把皮层调到"能工作"的状态</strong>。</p>
+<p>今天知道这不是一团模糊的"网"，而是几伙有名有姓的细胞，各自造一种化学信使，各自往全脑喷。它们走两条路上去：</p>
+
+<figure>
+<svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar1" markerWidth="9" markerHeight="9" refX="3.6" refY="3.6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0.4,0.4 L7.2,3.6 L0.4,6.8 Z" fill="#a78bfa"/></marker>
+<marker id="ar2" markerWidth="9" markerHeight="9" refX="3.6" refY="3.6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0.4,0.4 L7.2,3.6 L0.4,6.8 Z" fill="#fbbf24"/></marker>
+<marker id="ar3" markerWidth="11" markerHeight="11" refX="4.4" refY="4.4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0.5,0.5 L8.8,4.4 L0.5,8.3 Z" fill="#34e5e0"/></marker>
+<radialGradient id="bg1" cx="0.5" cy="0.3" r="0.95"><stop offset="0" stop-color="#2a1c44"/><stop offset="1" stop-color="#160e2c"/></radialGradient>
+</defs>
+
+<rect x="352" y="16" width="140" height="176" rx="18" fill="rgba(52,229,224,0.07)" stroke="#34e5e0" stroke-width="1.3"/>
+<text x="422" y="44" text-anchor="middle" fill="#e6faf8" font-size="14" font-weight="700">大脑皮层</text>
+<text x="422" y="62" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">感知 · 思考 · 意识内容</text>
+<text x="422" y="94" text-anchor="middle" fill="#cfeeeb" font-size="10.5">被持续"喂"着 →</text>
+<text x="422" y="112" text-anchor="middle" fill="#cfeeeb" font-size="10.5">才有在线状态</text>
+<text x="422" y="146" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">断供 = 昏迷</text>
+<text x="422" y="166" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">部分断 = 睡眠</text>
+
+<rect x="14" y="70" width="118" height="112" rx="14" fill="url(#bg1)" stroke="#e879f9" stroke-width="1.4"/>
+<text x="73" y="90" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">脑干唤醒核团</text>
+<circle cx="30" cy="108" r="4" fill="#34e5e0"/><text x="40" y="112" fill="#d4cfe8" font-size="9.5">蓝斑 · 去甲肾上腺素</text>
+<circle cx="30" cy="127" r="4" fill="#e879f9"/><text x="40" y="131" fill="#d4cfe8" font-size="9.5">中缝核 · 血清素</text>
+<circle cx="30" cy="146" r="4" fill="#fbbf24"/><text x="40" y="150" fill="#d4cfe8" font-size="9.5">腹侧被盖区 · 多巴胺</text>
+<circle cx="30" cy="165" r="4" fill="#a78bfa"/><text x="40" y="169" fill="#d4cfe8" font-size="9.5">脚桥核 · 乙酰胆碱</text>
+
+<rect x="196" y="30" width="112" height="46" rx="14" fill="url(#bg1)" stroke="#a78bfa" stroke-width="1.3"/>
+<text x="252" y="50" text-anchor="middle" fill="#efe9ff" font-size="12" font-weight="600">丘脑</text>
+<text x="252" y="66" text-anchor="middle" fill="#9a8fc0" font-size="9" font-family="SF Mono,monospace">板内核 · 总闸</text>
+
+<rect x="196" y="158" width="112" height="52" rx="14" fill="url(#bg1)" stroke="#fbbf24" stroke-width="1.3"/>
+<text x="252" y="178" text-anchor="middle" fill="#faf0dc" font-size="12" font-weight="600">下丘脑 / 基底前脑</text>
+<text x="252" y="194" text-anchor="middle" fill="#f0cf88" font-size="9" font-family="SF Mono,monospace">组胺 · 食欲素 · 胆碱</text>
+
+<path d="M 134,102 C 164,88 172,62 192,54" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" marker-end="url(#ar1)"/>
+<path d="M 134,152 C 164,166 172,180 192,184" fill="none" stroke="#fbbf24" stroke-width="2.4" stroke-linecap="round" marker-end="url(#ar2)"/>
+<path d="M 310,52 C 332,52 330,74 348,80" fill="none" stroke="#34e5e0" stroke-width="3" stroke-linecap="round" marker-end="url(#ar3)"/>
+<path d="M 310,184 C 332,184 330,150 348,140" fill="none" stroke="#34e5e0" stroke-width="3" stroke-linecap="round" marker-end="url(#ar3)"/>
+
+<text x="152" y="66" text-anchor="middle" fill="#b8a8e8" font-size="9" font-family="SF Mono,monospace">经丘脑</text>
+<text x="163" y="209" text-anchor="middle" fill="#e8c88a" font-size="9" font-family="SF Mono,monospace">绕开丘脑</text>
+<text x="250" y="232" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">两条路平行上行 —— 断一条还能撑，两条都断就是昏迷</text>
+</svg>
+<figcaption>唤醒不是一个开关，是几种化学信使沿两条路持续往上"供电"</figcaption>
+</figure>
+
+<dl class="kv">
+<dt>蓝斑（LC · 去甲肾上腺素）</dt><dd>藏在脑桥里，两边加起来只有几万个神经元——却是<strong>全脑皮层去甲肾上腺素的唯一来源</strong>。它管的是"警觉度"：突然一声响，它抢先放电，让整个皮层瞬间提高信噪比。深睡和快速眼动睡眠时它几乎完全静默。</dd>
+<dt>中缝核（Raphe · 血清素）</dt><dd>沿脑干中线排成一串，全脑血清素基本都产自这里。清醒时稳定放电、睡着时降下来。<a class="reflink" href="ref-serotonin-system.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">→ 血清素系统</a></dd>
+<dt>腹侧被盖区（VTA · 多巴胺）</dt><dd>中脑里的多巴胺源。它出名是因为奖赏，但它同样参与维持清醒——<strong>"有事值得起床"和"醒着"在这里是同一套细胞</strong>。<a class="reflink" href="ref-reward-circuit.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">→ 奖赏回路</a></dd>
+<dt>胆碱能细胞（脚桥核 + 基底前脑）</dt><dd>脑桥的一伙、前脑底部的另一伙，都造乙酰胆碱。特别之处：它们在<strong>清醒和做梦时都高度活跃</strong>，唯独深睡时安静——这正是做梦时脑电看起来像清醒的原因之一。（基底前脑严格说不在脑干，但功能上是同一条链的最后一棒。）</dd>
+<dt>组胺（结节乳头核）与食欲素</dt><dd>都在下丘脑。组胺维持清醒——所以吃了老一代抗过敏药会犯困，它顺手把脑里的组胺也堵了。食欲素（orexin）不直接叫醒你，它<strong>负责让"醒着"这个状态别乱跳</strong>；这群细胞死掉九成，就是发作性睡病：白天说睡就睡，一激动还会突然瘫软。<a class="reflink" href="ref-hypothalamus.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">→ 下丘脑</a></dd>
+</dl>
+
+<h2>它是开关，不是调光器</h2>
+<p>你可能以为清醒是连续可调的，像旋钮一样从"很困"平滑转到"很精神"。<strong>不是。</strong>睡和醒之间是一个<strong>双稳态开关</strong>：下丘脑有一小群细胞（VLPO）专职促眠，它和上面那些唤醒核团<strong>互相压制</strong>——谁占上风谁就把对方摁死。</p>
+
+<figure>
+<svg viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="inh1" markerWidth="12" markerHeight="12" refX="1.5" refY="6" orient="auto" markerUnits="userSpaceOnUse"><rect x="0" y="1" width="2.4" height="10" fill="#e879f9"/></marker>
+<marker id="inh2" markerWidth="12" markerHeight="12" refX="1.5" refY="6" orient="auto" markerUnits="userSpaceOnUse"><rect x="0" y="1" width="2.4" height="10" fill="#34e5e0"/></marker>
+<marker id="stb" markerWidth="9" markerHeight="9" refX="3.6" refY="3.6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0.4,0.4 L7.2,3.6 L0.4,6.8 Z" fill="#fbbf24"/></marker>
+</defs>
+<rect x="30" y="42" width="140" height="60" rx="16" fill="rgba(232,121,249,0.09)" stroke="#e879f9" stroke-width="1.4"/>
+<text x="100" y="68" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">唤醒核团</text>
+<text x="100" y="86" text-anchor="middle" fill="#e0a8ea" font-size="9.5" font-family="SF Mono,monospace">蓝斑·中缝·组胺·胆碱</text>
+
+<rect x="318" y="42" width="140" height="60" rx="16" fill="rgba(52,229,224,0.08)" stroke="#34e5e0" stroke-width="1.4"/>
+<text x="388" y="68" text-anchor="middle" fill="#e6faf8" font-size="12.5" font-weight="700">VLPO 促眠细胞</text>
+<text x="388" y="86" text-anchor="middle" fill="#7bf0e8" font-size="9.5" font-family="SF Mono,monospace">下丘脑 · 抑制性</text>
+
+<path d="M 172,60 L 314,60" fill="none" stroke="#e879f9" stroke-width="2.2" stroke-linecap="butt" marker-end="url(#inh1)"/>
+<path d="M 316,86 L 174,86" fill="none" stroke="#34e5e0" stroke-width="2.2" stroke-linecap="butt" marker-end="url(#inh2)"/>
+<text x="244" y="52" text-anchor="middle" fill="#e0a8ea" font-size="9" font-family="SF Mono,monospace">压制</text>
+<text x="244" y="105" text-anchor="middle" fill="#7bf0e8" font-size="9" font-family="SF Mono,monospace">压制</text>
+
+<rect x="186" y="118" width="128" height="30" rx="15" fill="rgba(251,191,36,0.09)" stroke="#fbbf24" stroke-width="1.2"/>
+<text x="250" y="138" text-anchor="middle" fill="#faf0dc" font-size="10.5" font-weight="600">食欲素 · 防抖动</text>
+<path d="M 190,124 C 150,116 122,112 104,106" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" marker-end="url(#stb)"/>
+
+<text x="100" y="26" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">赢了 = 醒</text>
+<text x="388" y="26" text-anchor="middle" fill="#8f89ad" font-size="9.5" font-family="SF Mono,monospace">赢了 = 睡</text>
+</svg>
+<figcaption>互相压制 = 双稳态：只有两个稳定结局，中间地带待不住</figcaption>
+</figure>
+
+<p>这种"互相压制"的接法，工程上叫<strong>触发器</strong>（flip-flop）：中间状态天生不稳，一有偏移就自我加强，"啪"地倒向一边。所以你入睡和惊醒都是<strong>突然</strong>发生的，很难卡在半睡半醒——真卡住了反而是病（睡瘫、梦游都属于开关没切干净）。</p>
+<p>那什么在推这个开关？<strong>腺苷</strong>。它是细胞用完能量后的废料，你醒着的每一分钟它都在脑里堆积，堆到一定程度就去摁住唤醒核团、同时帮 VLPO 一把——这就是"越熬越困"的化学基础。而<strong>咖啡因</strong>做的事非常朴素：它长得像腺苷，抢先坐在腺苷的座位上，让腺苷喊不动人。注意，它<strong>没有帮你消掉困意</strong>，只是把账单往后压——药效一过，堆积的腺苷一起找上门。</p>
+
+<h2>反直觉：它不产生意识，它只是把电闸合上</h2>
+<p>最容易误读的一点：脑干这么关键，是不是"意识就在脑干里"？<strong>恰恰相反。</strong>两个临床对照说得很清楚：</p>
+<p><strong>闭锁综合征</strong>——脑桥腹侧（往下走的运动通路）中断，人全身瘫痪、说不出话，但唤醒通路完好、皮层完好，于是<strong>意识完全清醒</strong>，只能靠眼球上下动跟外界沟通。脑干坏了一部分，意识毫发无损。</p>
+<p><strong>无反应觉醒综合征</strong>（旧称植物状态）——反过来：脑干和唤醒系统好着，皮层大面积毁了。于是这个人有完整的睡-醒周期，会睁眼、会打哈欠，看上去"醒着"，却没有可察觉的意识内容。</p>
+<p>把两个case放一起，分工就清楚了：<strong>意识的"内容"在皮层里，意识的"电源"在脑干里</strong>。脑干不知道你在想什么，它只负责让皮层处在能想事的状态。这也是为什么麻醉药起效的靶点大量落在这条唤醒链和 <a class="reflink" href="ref-thalamus.html" style="color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)">→ 丘脑</a> 上——不用动皮层一根汗毛，把电闸拉了就够了。</p>
+
+<div class="links">
+<h3>// 被这些主线引用</h3>
+<p class="who">Topic 16 意识的开关 · Topic 13 全局工作空间 · Topic 22 睡眠作为主动干预 · Topic 23 光照·节律·迷走神经</p>
+<h3 style="margin-top:18px">// 延伸</h3>
+<p><a href="https://en.wikipedia.org/wiki/Reticular_formation" target="_blank">网状结构 Reticular formation</a> · <a href="https://en.wikipedia.org/wiki/Locus_coeruleus" target="_blank">蓝斑 Locus coeruleus</a> · <a href="https://en.wikipedia.org/wiki/Ventrolateral_preoptic_nucleus" target="_blank">VLPO 与睡眠开关</a> · <a href="https://en.wikipedia.org/wiki/Orexin" target="_blank">食欲素 Orexin</a> · <a href="https://en.wikipedia.org/wiki/Locked-in_syndrome" target="_blank">闭锁综合征</a> · <a href="https://en.wikipedia.org/wiki/Giuseppe_Moruzzi" target="_blank">Moruzzi &amp; Magoun 1949</a></p>
+</div>
+
+<footer>BigCat · Neuroscience · 参考库 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
