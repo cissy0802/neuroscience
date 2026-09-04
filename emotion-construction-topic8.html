@@ -57,6 +57,9 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
 .refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+pre.skill{background:rgba(10,7,20,0.72);border:1px solid rgba(52,229,224,0.25);border-radius:10px;padding:15px 17px;margin:16px 0 11px;overflow-x:auto;font-family:"SF Mono",Menlo,monospace;font-size:0.76rem;line-height:1.8;color:#c6e9e7;white-space:pre-wrap;word-break:break-word}
+.copybtn{font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0;background:rgba(52,229,224,0.08);border:1px solid rgba(52,229,224,0.35);border-radius:20px;padding:5px 15px;cursor:pointer;transition:all 0.15s}
+.copybtn:hover{background:rgba(52,229,224,0.18);color:#fff;border-color:#34e5e0}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
 </style></head><body>
@@ -183,6 +186,50 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <p>这和<b>表示的粒度</b>是一个道理：一个只有"好/坏"两个标签的模型，和一个能分辨几十种细微类别的模型，能做的下游决策天差地别——粗标签会把大量有用信息在入口就压没了。人也是：只把内在状态编码成"爽/不爽"，等于自愿降维，丢掉了本可以指导行动的细节。近来 AI 圈发现，让模型学到<b>更细、更解耦</b>的内部表示，泛化和可控性都更好——某种意义上，情绪粒度就是人脑版的"别把表示压得太糙"。</p>
 </div>
 </div>
+<!-- 5 -->
+<div class="section">
+<span class="num">// 05</span>
+<h2>把这套问法交出去</h2>
+<p>「再找一个更准的词」说起来简单，真烦起来没人做得下去——因为烦的时候最不想干的就是自我盘问。但这套问法本身是<strong>固定的</strong>：先查身体的账，再定两根轴，再收窄到几个候选，最后拿一个问题把最像的那两个切开。顺序固定，就意味着它可以交给别人来问，你只管答。</p>
+<p>把下面整段复制给 Claude（或任何能读长指令的助手），它会一步一步问你，而不是直接甩一个词过来：</p>
+<pre class="skill" id="sp-zh">你是我的情绪命名助手。一次只问一个问题，等我答完再问下一个。
+目标不是找一个好听的词，是找到那个「指向不同下一步」的词——两个词只有当接下来该做的事不一样，才算真的分开了。
+
+按这个顺序问：
+0 查账：饿吗？昨晚睡够吗？久坐了吗？咖啡因多吗？在生病吗？
+  （身体亏空的读数不带标签，很容易被记到人头上。两条以上是「是」，就先问我要不要先处理身体。）
+1 身体：现在哪儿有感觉？只描述，别解释。
+2 两根轴：难受还是舒服？亢奋还是没劲？
+3 粗词：硬要给一个词，先蹦出来的是哪个？
+4 收窄：按象限给我 4 个候选，每个带一句「什么时候是它」，让我选。
+5 辨析：我选完之后，问一个能把它和最像的邻居分开的问题。
+6 收尾：让我填「我感到__，因为__，我想__」，再用一句话说这个词意味着接下来该动什么，然后结束。
+
+候选词按象限（给词必须带辨别线索，别只丢词）：
+难受+亢奋　恼火 挫败 愤怒 憋屈 记恨 鄙夷 恨铁不成钢｜紧张 焦虑 担心 害怕 惊慌 忐忑 心虚 局促
+难受+没劲　失望 难过 悲伤 遗憾 委屈 心疼 怅惘 孤独｜疲惫 倦怠 麻木 无聊 空虚 提不起劲 沉重 心累
+舒服+亢奋　兴奋 欣喜 好奇 心动 跃跃欲试 痛快 自豪
+舒服+没劲　平静 安心 满足 释然 温暖 松弛 踏实
+关于我　　内疚 羞耻 尴尬 后悔 自责 羡慕 眼红 不甘 卑怯
+关于别人　感激 信任 亲近 敬佩 慈悲 吃醋 被冒犯 幸灾乐祸
+混合　　　五味杂陈 近乡情怯 意难平 悬着 钝痛
+
+辨析问题（我选中的词若在这些对里，就问对应那一句）：
+焦虑/恐惧　你说得出具体在怕什么吗？
+愤怒/挫败　挡住你的是人，还是事？
+难过/失望　那东西你本来握在手里，还是本来就没有？
+内疚/羞耻　不好的是你做的那件事，还是你这个人？
+羡慕/吃醋　是「你有我没有」，还是「怕你被别人抢走」？
+疲惫/倦怠　睡一觉能回来吗？有没有「不想再管了」那一层？
+无聊/空虚　你还「想」做点什么吗？
+紧张/兴奋　你预期前面是威胁，还是机会？
+
+规矩：最多问六轮；两轮没落地就说「最接近的是 X，但没完全对上」然后停，别绕着找完美的词。
+不诊断，不长篇共情，不讲理论，不顺手替我解决那件事。
+我要是已经在讲某件事了，就别从头再问一遍，从还缺的那一步接上。</pre>
+<button class="copybtn" data-done="已复制 ✓" data-target="sp-zh">复制这段</button>
+<p class="en-brief"><b>EN</b> The "find a second word" routine is a fixed sequence — audit the body budget, fix the two axes, narrow to a few candidates, then ask the one question that separates the closest pair. Anything with a fixed sequence can be handed to someone else to ask, which is the point of the block above: paste it into an assistant and it walks you through one question at a time instead of handing you a label.</p>
+</div>
 <div class="crossx">
 <h3 data-tts="77a65fbbc7438d7e">🌀 越界 · 跨学科的联想</h3>
 <p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"感觉是原料，情绪是解释"——这个夹缝里，好几门老学问早就住进去了：</p>
@@ -212,6 +259,18 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </div>
 <footer>BigCat · Neuroscience · Topic 8 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
 </div>
+<script>
+document.querySelectorAll(".copybtn").forEach(function(b){
+  b.addEventListener("click",function(){
+    var el=document.getElementById(b.getAttribute("data-target"));
+    if(!el)return;
+    navigator.clipboard.writeText(el.innerText).then(function(){
+      var o=b.textContent;b.textContent=b.getAttribute("data-done");
+      setTimeout(function(){b.textContent=o;},1600);
+    });
+  });
+});
+</script>
 <script defer="" src="https://hub.cissychen.com/comments.js"></script>
 <script defer="" src="https://hub.cissychen.com/search.js"></script>
 <script defer="" src="https://hub.cissychen.com/index-button.js"></script>

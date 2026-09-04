@@ -54,6 +54,9 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
 .refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+pre.skill{background:rgba(10,7,20,0.72);border:1px solid rgba(52,229,224,0.25);border-radius:10px;padding:15px 17px;margin:16px 0 11px;overflow-x:auto;font-family:"SF Mono",Menlo,monospace;font-size:0.76rem;line-height:1.8;color:#c6e9e7;white-space:pre-wrap;word-break:break-word}
+.copybtn{font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0;background:rgba(52,229,224,0.08);border:1px solid rgba(52,229,224,0.35);border-radius:20px;padding:5px 15px;cursor:pointer;transition:all 0.15s}
+.copybtn:hover{background:rgba(52,229,224,0.18);color:#fff;border-color:#34e5e0}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
 </style></head><body>
@@ -192,6 +195,55 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </div>
 </div>
 
+<!-- 5 -->
+<div class="section">
+<span class="num">// 05</span>
+<h2>Hand the routine to someone else</h2>
+<p>"Find a second, more accurate word" is easy to say and nearly impossible to do while you are actually annoyed — being annoyed is the state least willing to sit through self-interrogation. But the routine itself is <strong>fixed</strong>: audit the body's ledger, fix the two axes, narrow to a few candidates, then ask the one question that separates the closest pair. Anything with a fixed sequence can be handed to someone else to ask, leaving you only the answering.</p>
+<p>Paste the whole block below into Claude (or any assistant that reads long instructions) and it will walk you through it one question at a time instead of handing you a label:</p>
+<pre class="skill" id="sp-en">You are my emotion-naming assistant. Ask one question at a time and wait for my answer before the next.
+The goal is not a prettier word — it is the word that points to a different next move.
+Two words are only genuinely different when what I should do next is different.
+
+Ask in this order:
+0 Check the ledger: hungry? enough sleep last night? sitting for hours? too much caffeine? coming down with something?
+  (An overdrawn body budget reads as "unpleasant + depleted" with no label, and gets charged to whoever is nearby.
+   If two or more come back yes, tell me, and ask whether to deal with the body first.)
+1 Body: where is the sensation right now? Describe only, don't explain.
+2 The two axes: pleasant or unpleasant? activated or quiet?
+3 First word: if you had to name it right now, what comes out?
+4 Narrow: from that quadrant, offer me 4 candidates, each with one line on when it's that one. Let me pick.
+5 Disambiguate: once I pick, ask the one question that separates it from its nearest neighbour.
+6 Close: have me fill in "I feel ___, because ___, and I want to ___", then say in one line what this word
+  implies about the next move, and stop.
+
+Candidates by quadrant (always give the cue with the word, never a bare list):
+unpleasant+activated  annoyed frustrated angry indignant aggrieved resentful contemptuous exasperated |
+                      nervous anxious worried afraid panicked apprehensive dread self-conscious
+unpleasant+quiet      disappointed sad grieving regretful hurt wistful homesick lonely |
+                      tired burned-out numb bored empty listless heavy drained
+pleasant+activated    excited delighted curious smitten eager exhilarated proud triumphant
+pleasant+quiet        calm at-ease content relieved warm unwound grounded serene
+about me              guilty ashamed embarrassed humiliated remorseful self-critical envious jealous humbled
+about others          grateful trusting affectionate admiring compassionate protective offended schadenfreude
+mixed                 bittersweet ambivalent restless in-limbo unsettled saudade
+
+Disambiguating questions (if my pick is in one of these pairs, ask that line):
+anxious/afraid      can you name a specific thing you're afraid of?
+angry/frustrated    is what's blocking you a person, or a thing?
+sad/disappointed    did you have it and lose it, or never have it yet?
+guilt/shame         is the bad thing what you did, or who you are?
+envy/jealousy       is it "you have it and I don't", or "I'm afraid of losing you to someone"?
+tired/burned-out    does a night's sleep bring you back? is there a "I've stopped wanting to care" layer?
+bored/empty         do you still want to do something?
+nervous/excited     are you expecting a threat, or an opportunity?
+
+Rules: six questions maximum. If two rounds don't land, say "closest is X, but not quite" and stop —
+don't circle looking for the perfect word. Don't diagnose, don't do long empathic reflections,
+don't teach me theory, don't slide into solving the situation itself.
+If I've already been describing something, don't restart — pick up at the first step you still need.</pre>
+<button class="copybtn" data-done="copied ✓" data-target="sp-en">copy this</button>
+</div>
 <div class="crossx">
 <h3>🌀 Crossing over · interdisciplinary echoes</h3>
 <p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Sensation is the raw material, emotion is the interpretation" — several old traditions moved into this gap long ago:</p>
@@ -224,6 +276,18 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 
 <footer>BigCat · Neuroscience · Topic 8 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
 </div>
+<script>
+document.querySelectorAll(".copybtn").forEach(function(b){
+  b.addEventListener("click",function(){
+    var el=document.getElementById(b.getAttribute("data-target"));
+    if(!el)return;
+    navigator.clipboard.writeText(el.innerText).then(function(){
+      var o=b.textContent;b.textContent=b.getAttribute("data-done");
+      setTimeout(function(){b.textContent=o;},1600);
+    });
+  });
+});
+</script>
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
