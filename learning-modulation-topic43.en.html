@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 43 · Learning as a Modulable Process — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 43 · PHASE C SELF-MODULATION</span>
+<h1>Learning Has Knobs</h1>
+<h2>The way that feels smoothest is the one that works worst</h2>
+<div class="date">2026-09-14 · BigCat</div>
+<p class="pitch">The smoother it feels going in — the more it feels like "got it" — the less of it survives the week.</p>
+</header>
+<div class="intro">
+<p>You've probably had this moment: you read a passage four or five times, it gets smoother every pass, and when you close the book you're sure of it — "I've got this." A week later someone asks, and your mind is blank. That isn't a bad memory. The problem sits further upstream: <strong>the yardstick your brain uses to judge "have I learned this" doesn't measure learning at all — it measures how smoothly things are going right now.</strong> And decades of experiments keep landing on the same finding: make studying harder, slower, more awkward in the moment, and more of it survives. Learning isn't a black box you can only push on by spending more hours. It's a machine <strong>with knobs</strong>.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>"I've got this" is an illusion</h2>
+<p>Rereading makes material familiar, and <strong>familiar is not the same as retrievable</strong>. Your brain has no gauge that reads out how much you've actually stored, so it substitutes the handiest available signal: how smoothly this is going. That silky feeling on the fourth pass gets mistaken for evidence of learning.</p>
+<p>A 2006 experiment put this on the table. One group read a passage four times; another read it once and then closed the book and recalled it three times. <strong>Tested five minutes later, the rereaders won</strong> (about 83% vs 71%). <strong>Tested a week later, it flipped completely</strong> (about 40% vs 61%). The sting is in the students' own predictions — they all bet on rereading.</p>
+<figure>
+<svg viewbox="0 0 480 238" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#a78bfa" stroke-width="2.6" x1="52" x2="78" y1="18" y2="18"></line>
+<text fill="#cfc9e6" font-size="11.5" x="85" y="22">reread ×4</text>
+<line stroke="#34e5e0" stroke-width="2.6" x1="228" x2="254" y1="18" y2="18"></line>
+<text fill="#cfc9e6" font-size="11.5" x="261" y="22">read once + recall ×3</text>
+<line stroke="#4a4468" stroke-width="1.2" x1="62" x2="62" y1="38" y2="196"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="62" x2="424" y1="196" y2="196"></line>
+<line opacity="0.5" stroke="#3a3558" stroke-dasharray="3 5" stroke-width="1" x1="62" x2="424" y1="136" y2="136"></line>
+<line opacity="0.5" stroke="#3a3558" stroke-dasharray="3 5" stroke-width="1" x1="62" x2="424" y1="106" y2="106"></line>
+<line opacity="0.5" stroke="#3a3558" stroke-dasharray="3 5" stroke-width="1" x1="62" x2="424" y1="76" y2="76"></line>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="55" y="140">40</text>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="55" y="110">60</text>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="55" y="80">80</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" transform="rotate(-90 26 117)" x="26" y="117">% recalled</text>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.8" x1="140" x2="380" y1="71" y2="136"></line>
+<line stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8" x1="140" x2="380" y1="90" y2="105"></line>
+<circle cx="140" cy="71" fill="#a78bfa" r="5"></circle>
+<circle cx="380" cy="136" fill="#a78bfa" r="5"></circle>
+<circle cx="140" cy="90" fill="#34e5e0" r="5"></circle>
+<circle cx="380" cy="105" fill="#34e5e0" r="5"></circle>
+<text fill="#c9b6f7" font-family="SF Mono,monospace" font-size="12" text-anchor="end" x="131" y="68">83</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12" text-anchor="end" x="131" y="98">71</text>
+<text fill="#c9b6f7" font-family="SF Mono,monospace" font-size="12" x="392" y="140">40</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12" x="392" y="109">61</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="140" y="214">after 5 min</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="380" y="214">after 1 week</text>
+</svg>
+<figcaption>The short term wasn't lying to you. Everything after day two was.</figcaption>
+</figure>
+<p>The mechanism makes sense. <strong>Pulling a memory out is itself an act of rewriting</strong>: it doesn't get read once more, it gets written once more, and the path leading to it gets easier to travel every time you travel it. Rereading invests in the <strong>input</strong>; recalling invests in the <strong>output</strong> — and every occasion you'll actually need this thing asks for output. (Where that retrieval and rewriting happens: <a class="reflink" href="ref-hippocampus.en.html">hippocampus</a>)</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>There are two ways to train a model to write. One hands it <b>the correct first half of the sentence</b> at every step and asks only for the next word — that's teacher forcing. It trains fast and the curves look lovely; but let the model write from scratch and one wrong step sends it off a cliff, a failure with its own name: <b>exposure bias</b>. The other way makes it generate first and corrects against the truth afterwards. The first is rereading: prompted the whole way, suspiciously smooth. The second is self-testing: nobody hands you the first half, and you only find the gaps by falling into them.</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>You have to forget a little first</h2>
+<p>The same total hours, spread across several days, stick far better than the same hours piled into one night. The rule is old enough that Ebbinghaus dug it out of his own head in the 1880s, and a century of work hasn't dislodged it.</p>
+<p>Why does spreading pay? Because <strong>when you review back-to-back, the previous pass is still warm</strong> — it's still hanging around in working memory, so this pass barely retrieves anything. It's a free lap. Leave a gap and you've forgotten a little, which means this time you really do have to haul it back. <strong>The hauling is the exercise.</strong> If it comes back effortlessly, you didn't train.</p>
+<figure>
+<svg viewbox="0 0 480 246" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#a78bfa" stroke-width="2.6" x1="46" x2="72" y1="20" y2="20"></line>
+<text fill="#cfc9e6" font-size="11.5" x="79" y="24">massed: 3× on day 0</text>
+<line stroke="#34e5e0" stroke-width="2.6" x1="252" x2="278" y1="20" y2="20"></line>
+<text fill="#cfc9e6" font-size="11.5" x="285" y="24">spaced: day 0 / 1 / 3</text>
+<line stroke="#4a4468" stroke-width="1.2" x1="58" x2="58" y1="44" y2="190"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="58" x2="444" y1="190" y2="190"></line>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" transform="rotate(-90 28 117)" x="28" y="117">how retrievable</text>
+<path d="M66,62 C 120,104 250,152 416,178" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M66,62 C 84,80 100,94 116,104 L116,60 C 152,78 188,94 216,106 L216,56 C 280,70 350,84 416,92" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8"></path>
+<circle cx="116" cy="60" fill="#fbbf24" r="4.5"></circle>
+<circle cx="216" cy="56" fill="#fbbf24" r="4.5"></circle>
+<circle cx="66" cy="62" fill="#fbbf24" r="4.5"></circle>
+<circle cx="416" cy="92" fill="#34e5e0" r="4.5"></circle>
+<circle cx="416" cy="178" fill="#a78bfa" r="4.5"></circle>
+<circle cx="266" cy="137" fill="#fbbf24" r="4.5"></circle>
+<text fill="#fbbf24" font-size="11.5" x="278" y="141">= one more session</text>
+<line stroke="#4a4468" stroke-width="1.2" x1="66" x2="66" y1="190" y2="196"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="116" x2="116" y1="190" y2="196"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="216" x2="216" y1="190" y2="196"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="416" x2="416" y1="190" y2="196"></line>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="66" y="212">day 0</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="116" y="212">day 1</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="216" y="212">day 3</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="416" y="212">day 7</text>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="250" y="234">same three sessions · only the placement differs</text>
+</svg>
+<figcaption>Every haul-back flattens the forgetting slope one notch</figcaption>
+</figure>
+<p>There's a second layer. Encoding isn't the same as stored. For hours and nights afterwards the hippocampus keeps <strong>replaying</strong> the activity sequences it ran during the day, gradually transcribing them into cortex — and replay is densest during deep sleep. So <strong>a gap that crosses a night is worth more than the same gap inside one day</strong>. As for how long a gap: a rough ratio holds up well — <strong>set the gap to ten or twenty percent of how long you want to keep it</strong>. Want it for a week? Leave a day. For a year? Leave a month or two. (What changes at the synapse along that path: <a class="reflink" href="ref-synaptic-plasticity.en.html">synaptic plasticity</a>)</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>Neural networks have an old ailment: train them on a new task and their skill on the old one collapses wholesale — <b>catastrophic forgetting</b>. The workhorse fix is <b>experience replay</b>: while training on new material, mix a proportion of old samples back in and run them again. That is exactly the hippocampus replaying the day into cortex at night, and even the fine print matches — both sides ended up prioritising which items get replayed. Both are solving one tension: <b>learn the new thing without washing out the old.</b></p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Don't let practice get comfortable</h2>
+<p>Another knob: the order. Given the same set of problems, do you work one problem type straight through (blocked), or shuffle the types together (interleaved)? A 2007 study on maths practice gave a blunt answer.</p>
+<figure>
+<svg viewbox="0 0 480 248" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#a78bfa" height="12" rx="2" width="12" x="128" y="16"></rect>
+<text fill="#cfc9e6" font-size="11.5" x="146" y="26">blocked</text>
+<rect fill="#34e5e0" height="12" rx="2" width="12" x="256" y="16"></rect>
+<text fill="#cfc9e6" font-size="11.5" x="274" y="26">interleaved</text>
+<line stroke="#4a4468" stroke-width="1.2" x1="52" x2="52" y1="48" y2="200"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="52" x2="452" y1="200" y2="200"></line>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" transform="rotate(-90 24 124)" x="24" y="124">% correct</text>
+<rect fill="#a78bfa" height="134" rx="4" width="46" x="112" y="66"></rect>
+<rect fill="#34e5e0" height="90" rx="4" width="46" x="170" y="110"></rect>
+<rect fill="#a78bfa" height="30" rx="4" width="46" x="286" y="170"></rect>
+<rect fill="#34e5e0" height="95" rx="4" width="46" x="344" y="105"></rect>
+<text fill="#c9b6f7" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="135" y="58">89</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="193" y="102">60</text>
+<text fill="#c9b6f7" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="309" y="162">20</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="367" y="97">63</text>
+<text fill="#d8d3ec" font-size="12.5" text-anchor="middle" x="164" y="222">during practice</text>
+<text fill="#d8d3ec" font-size="12.5" text-anchor="middle" x="338" y="222">tested a week later</text>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="252" y="240">looking good ≠ learning</text>
+</svg>
+<figcaption>Blocked practice is near-perfect on the day and down to a fifth a week later</figcaption>
+</figure>
+<p>When you practise in blocks you never have to work out <strong>which method this problem calls for</strong> — whatever the last one used, this one uses too. Interleaving forces you to <strong>identify the type first and then pick the tool</strong>. And on the day you actually need any of it, nobody will have sorted the problems by type for you.</p>
+<p>All of this points at a larger rule that Bjork named <strong>desirable difficulty</strong>. He splits memory into two quantities: <strong>storage strength</strong> (how solidly it's in there — it only ever grows) and <strong>retrieval strength</strong> (how easy it is to reach right now). Massed repetition pins retrieval strength at the ceiling, which is why it feels so good — but practising again while retrieval strength is already high adds almost nothing to storage. To grow storage you have to practise when getting it back <strong>costs you something</strong>. Which gives the uncomfortable corollary: <strong>how well you perform during practice and how much you're actually learning are different things, and they routinely move in opposite directions.</strong></p>
+<p>"Desirable" is doing real work in that phrase, though. Difficulty so high that you can't retrieve at all and end up flipping to the answer isn't retrieval — it's rereading again. <strong>The sweet spot is effortful but reachable</strong>: when someone is stuck, a small hint beats the full answer by a wide margin.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>On the machine side this one is so basic nobody mentions it: training data has to be <b>shuffled</b>. Feed it in class-sized blocks — ten thousand cats, then ten thousand dogs — and the model washes out cats while learning dogs, oscillating at every block boundary. Shuffling <i>is</i> interleaving. And yet <b>curriculum learning</b> (ordering material easy-to-hard) shows that maximal disorder isn't optimal either. Put the two together and you land where the humans did: <b>keep the difficulty on the line marked "reachable but not comfortable."</b></p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>First ask which kind of thing you're learning</h2>
+<p>None of these knobs works equally on everything, because the brain runs more than one learning system. The famous evidence comes from H.M., a patient whose medial temporal lobes — hippocampus included — were removed on both sides to treat epilepsy. Afterwards he could no longer hold on to new facts or episodes. But have him practise <strong>mirror drawing</strong>, that awkward tracing-while-watching-a-reflection task, and his scores climbed day after day — <strong>while he insisted every single day that he had never done it before</strong>. The craft was growing; the memory of acquiring it was blank.</p>
+<figure>
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="nd43" r="0.95"><stop offset="0" stop-color="#241c46"></stop><stop offset="1" stop-color="#130d29"></stop></radialgradient>
+<marker id="a43L" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
+<marker id="a43R" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+</defs>
+<rect fill="url(#nd43)" height="44" rx="22" stroke="#e879f9" stroke-width="1.3" width="200" x="140" y="12"></rect>
+<text fill="#f7e6fb" font-size="14.5" font-weight="600" text-anchor="middle" x="240" y="40">one practice session</text>
+<line marker-end="url(#a43L)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6" x1="206" x2="132" y1="60" y2="102"></line>
+<line marker-end="url(#a43R)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6" x1="274" x2="348" y1="60" y2="102"></line>
+<rect fill="url(#nd43)" height="46" rx="14" stroke="#a78bfa" stroke-width="1.3" width="204" x="18" y="108"></rect>
+<text fill="#efe9ff" font-size="13.5" font-weight="600" text-anchor="middle" x="120" y="137">hippocampus · MTL</text>
+<rect fill="url(#nd43)" height="46" rx="14" stroke="#34e5e0" stroke-width="1.3" width="204" x="258" y="108"></rect>
+<text fill="#e6faf8" font-size="13.5" font-weight="600" text-anchor="middle" x="360" y="137">striatum + cerebellum</text>
+<text fill="#c9b6f7" font-size="13" text-anchor="middle" x="120" y="182">declarative · sayable</text>
+<text fill="#8f89ad" font-size="12" text-anchor="middle" x="120" y="204">facts / concepts / episodes</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="120" y="228">train with: retrieval + spacing</text>
+<text fill="#7bf0e8" font-size="13" text-anchor="middle" x="360" y="182">procedural · only doable</text>
+<text fill="#8f89ad" font-size="12" text-anchor="middle" x="360" y="204">movements / feel / sequences</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="360" y="228">train with: varied repetition</text>
+</svg>
+<figcaption>One session, two systems taking their share — each with its own training rules</figcaption>
+</figure>
+<p>So there are two lines. The <strong>declarative</strong> one runs through the hippocampus and then out into cortex, carrying facts, concepts and episodes, and you can say it out loud. The <strong>procedural</strong> one runs through the striatum inside the <a class="reflink" href="ref-basal-ganglia.en.html">basal ganglia</a> and through the <a class="reflink" href="ref-motor-system.en.html">cerebellum</a>, carrying cycling, instruments, technique — things you can't say, only do. The striatum slowly welds "in this situation, that action" into place; the cerebellum takes the error on each attempt and trims the aim.</p>
+<p>The training rules fork accordingly. <strong>Facts and concepts</strong> — vocabulary, anatomical names, what a formula means — respond to retrieval and spacing, and extra readings are mostly waste. <strong>Skills</strong> need volume, but the repetition has to carry <strong>variation</strong> (shift the conditions a little each time; don't shoot the same ball from the same spot), and the feedback should be <strong>prompt but not constant</strong> — feed it continuously and what you train is dependence on feedback. Real learning is usually a blend, of course: cooking involves both "when does the salt go in" and something in the hands you can't articulate. <strong>Diagnose which one you're training before you reach for a knob</strong> — get that wrong and all the effort downstream leaks out.</p>
+<div class="ai">
+<h4>AI cross-read</h4>
+<p>AI has split into exactly these two camps right now: one presses ability <b>into the parameters</b> (training and fine-tuning — it changes the network itself: slow, expensive, and once forgotten it's gone), the other hangs knowledge <b>outside and looks it up on demand</b> (retrieval augmentation — fast, editable, traceable). It's nearly a one-to-one read of procedural ↔ declarative. And the failure modes match too: feel can only be trained into weights, facts are better looked up, and <b>picking the wrong camp burns compute — or, on the human side, years.</b></p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · interdisciplinary echoes</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"Learning isn't stuffing things in, it's repeatedly taking them back out" — a claim the lab only got around to measuring twenty-five centuries later:</p>
+<ul>
+<li><b>Confucianism · the opening line of the Analects</b>: <i>xué ér shí xí zhī</i> — "to learn, and to rehearse it in season." The old graph for <i>xí</i> (習, "rehearse") pictures a fledgling beating its wings over and over: it always meant practising, never reading. And <i>shí</i>, "in season," is the sharp part — practice has to be distributed in time. The companion line, "warm up the old and you will know something new," asks for more than a reread: return after a gap, retrieve again, and <b>what comes back should differ from last time</b> — which is precisely the sense in which retrieval rewrites.</li>
+<li><b>Buddhism · hearing, reflecting, practising</b>: what you're told is <i>śruta</i>; reconstructing it yourself in your own mind is <i>cintā</i>; doing it repeatedly in real situations is <i>bhāvanā</i>. Three words that happen to lay encoding, retrieval and proceduralisation out in order — and state plainly that the first two don't finish the job. The related image of <i>vāsanā</i>, "perfuming" — smoke on cloth, no trace from one pass, a little from every pass — is the classical write-up of spaced accumulation.</li>
+<li><b>Cybernetics · only error drives update</b>: a control system adjusts itself only while the error is non-zero. Get everything right and there's no error signal, so there's no update. "Desirable difficulty" is that sentence in psychological dress — <b>you have to hand the system something it can't quite answer before it will move</b>. The cerebellum tunes aim from error, a model edits weights from loss, and a person is forced into remembering by failing to remember. One mechanism, three costumes.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If "feeling fluent" is unreliable, what should I use to tell whether I've learned something?</summary><div>The one signal that doesn't lie is <strong>what you can produce with the material closed</strong>: reconstruct the structure on a blank page, explain it to someone who doesn't know the field, write your own exam questions. Where you stall is your actual boundary — and rereading can never locate that boundary, because the text is sitting right there. Timing matters too: test yourself immediately after reading and you're measuring the echo still sitting in working memory. <strong>Test a day later and you're reading long-term memory.</strong></div></details>
+<details><summary>So rereading is worthless?</summary><div>It's useful, just misplaced. The first pass has to be reading — without a scaffold there's nothing to retrieve. Rereading's real problem is that <strong>it gets used during the phase that called for retrieval</strong>. The sane order: read once → close it and test yourself → go back and reread only what failed to come back. Reading is patching holes, not the main course.</div></details>
+<details><summary>If retrieval and spacing work this well, why doesn't school — or me — actually do it?</summary><div>Because their payoff <strong>arrives late while their cost is paid upfront</strong>. Cramming really does score higher on tomorrow's exam; the short term isn't lying to you. What it lies about is everything after tomorrow. Institutions grade on short-term scores and people grade on present feeling, so both parties pick the wrong option together. It also explains why "study technique" is a thing almost everyone has to lose money on personally before believing.</div></details>
+<details><summary>Does sleeping on it actually add learning, or am I just less tired?</summary><div>Both, but the replay part is directly measurable: during sleep the hippocampus re-runs sequences it ran during the day, matching in order and in proportion. The harder evidence comes from <strong>targeted memory reactivation</strong> — pair some material with a scent or a sound during learning, then quietly present it again during deep sleep, and that material is better retained the next day. Which says what happens at night isn't only rest. It's <strong>a selective rewrite</strong>: whatever gets replayed is what stays.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Testing_effect" target="_blank">Testing effect</a> — why retrieval practice beats rereading</li>
+<li><a href="https://en.wikipedia.org/wiki/Spacing_effect" target="_blank">Spacing effect</a> — same hours, spread out, better held</li>
+<li><a href="https://en.wikipedia.org/wiki/Forgetting_curve" target="_blank">Forgetting curve</a> — the experiments Ebbinghaus ran on himself</li>
+<li><a href="https://en.wikipedia.org/wiki/Desirable_difficulty" target="_blank">Desirable difficulty</a> — storage strength vs retrieval strength</li>
+<li><a href="https://en.wikipedia.org/wiki/Robert_A._Bjork" target="_blank">Robert Bjork</a> — the main architect of that line of work</li>
+<li><a href="https://en.wikipedia.org/wiki/Henry_Molaison" target="_blank">H.M. · Henry Molaison</a> — no memory of practising, and the skill grew anyway</li>
+<li><a href="https://en.wikipedia.org/wiki/Procedural_memory" target="_blank">Procedural memory</a> — the striatal and cerebellar line</li>
+<li><a href="https://en.wikipedia.org/wiki/Catastrophic_interference" target="_blank">Catastrophic interference</a> — the same tension on the AI side</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 43 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

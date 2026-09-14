@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 43 · 学习作为可调制的过程 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 43 · PHASE C 自我调制</span>
+<h1>学习是可以调的</h1>
+<h2>你感觉最顺的那种学法，恰好最不管用</h2>
+<div class="date">2026-09-14 · BigCat</div>
+<p class="pitch">学的时候越顺、越有"我会了"的感觉，一周后忘得越干净。</p>
+</header>
+<div class="intro">
+<p>你大概有过这种时刻：一段材料来回看了四五遍，越看越顺，合上书那一刻信心满满——"这我会了"。一周后被问到，脑子一片空白。这不是你记性差。问题出在更上游的地方：<strong>大脑用来判断"我学会没有"的那把尺子，量的根本不是学会，而是眼下顺不顺。</strong>而这几十年的实验反复坐实了一件事——让学习当场变难一点、慢一点、别扭一点，最后留下的反而更多。学习不是一个只能靠"多花时间"硬推的黑箱，它是一台<strong>有旋钮的机器</strong>。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>"我会了"是一种错觉</h2>
+<p>重读会让材料变得眼熟，而<strong>眼熟不等于捞得出来</strong>。大脑没有一个能直接读出"我记住了多少"的仪表，只好拿手边最现成的信号顶替：读起来顺不顺。于是重读第四遍时那份顺滑，被你当成了学会的证据。</p>
+<p>2006 年有个实验把这件事拍在了桌上。一组学生把文章读四遍，另一组只读一遍、然后合上书回忆三次。<strong>五分钟后考，重读组赢</strong>（约 83% 对 71%）；<strong>一周后再考，整个反过来</strong>（约 40% 对 61%）。更扎心的是学生自己的预测——他们一致看好重读组。</p>
+<figure>
+<svg viewbox="0 0 480 238" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#a78bfa" stroke-width="2.6" x1="62" x2="88" y1="18" y2="18"></line>
+<text fill="#cfc9e6" font-size="11.5" x="95" y="22">重读四遍</text>
+<line stroke="#34e5e0" stroke-width="2.6" x1="240" x2="266" y1="18" y2="18"></line>
+<text fill="#cfc9e6" font-size="11.5" x="273" y="22">读一遍 + 回忆三次</text>
+<line stroke="#4a4468" stroke-width="1.2" x1="62" x2="62" y1="38" y2="196"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="62" x2="424" y1="196" y2="196"></line>
+<line opacity="0.5" stroke="#3a3558" stroke-dasharray="3 5" stroke-width="1" x1="62" x2="424" y1="136" y2="136"></line>
+<line opacity="0.5" stroke="#3a3558" stroke-dasharray="3 5" stroke-width="1" x1="62" x2="424" y1="106" y2="106"></line>
+<line opacity="0.5" stroke="#3a3558" stroke-dasharray="3 5" stroke-width="1" x1="62" x2="424" y1="76" y2="76"></line>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="55" y="140">40</text>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="55" y="110">60</text>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="10.5" text-anchor="end" x="55" y="80">80</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" transform="rotate(-90 26 117)" x="26" y="117">回忆出多少 %</text>
+<line stroke="#a78bfa" stroke-linecap="round" stroke-width="2.8" x1="140" x2="380" y1="71" y2="136"></line>
+<line stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8" x1="140" x2="380" y1="90" y2="105"></line>
+<circle cx="140" cy="71" fill="#a78bfa" r="5"></circle>
+<circle cx="380" cy="136" fill="#a78bfa" r="5"></circle>
+<circle cx="140" cy="90" fill="#34e5e0" r="5"></circle>
+<circle cx="380" cy="105" fill="#34e5e0" r="5"></circle>
+<text fill="#c9b6f7" font-family="SF Mono,monospace" font-size="12" text-anchor="end" x="131" y="68">83</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12" text-anchor="end" x="131" y="98">71</text>
+<text fill="#c9b6f7" font-family="SF Mono,monospace" font-size="12" x="392" y="140">40</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12" x="392" y="109">61</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="140" y="214">五分钟后</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="380" y="214">一周后</text>
+</svg>
+<figcaption>短期它没骗你，骗你的是"第二天之后"</figcaption>
+</figure>
+<p>机制上说得通。<strong>把一段记忆取出来，本身就是一次改写</strong>：它不是被"读了一遍"，而是被重新写了一遍，这条通往它的路每走一次就更好走一次。重读是在给<strong>输入</strong>加戏，回忆是在给<strong>输出</strong>铺路——而以后你真正需要它的时候，考的全是输出。（这套取出与改写发生在哪里，<a class="reflink" href="ref-hippocampus.html">海马与内嗅</a>）</p>
+<p class="en-brief"><b>EN</b> Rereading breeds fluency, and the brain mistakes fluency for learning. In Roediger &amp; Karpicke's 2006 study, repeated study beat retrieval practice after five minutes (~83% vs 71%) but lost badly after a week (~40% vs 61%) — and students predicted the opposite. Retrieving a memory rewrites it; rereading only strengthens the input path, while every real test asks for output.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>训练一个会写字的模型有两种喂法。一种是每一步都把<b>正确答案的前半句</b>递给它、只让它接下一个词（叫 teacher forcing）——训得又快又顺，曲线好看；可真让它自己从头写，一步走偏就一路歪，这毛病有个专名叫<b>曝光偏差</b>。另一种是让它先自己生成、再拿真答案纠。前者就是重读：全程有人递提示，流畅得可疑。后者就是自测：没人递前半句，错了才知道哪没记住。</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>先忘掉一点，才记得住</h2>
+<p>同样的总时长，摊到几天里，比堆在一个晚上记得久得多。这条规律老到 19 世纪就被艾宾浩斯在自己身上试出来了，一百多年来没被推翻过。</p>
+<p>为什么摊开更划算？因为<strong>连着复习时，上一遍还热着没凉</strong>——它还挂在工作记忆里，你这一遍几乎不用真去捞，等于空刷。隔上一段再来，你已经忘了一点点，这次才是真提取。<strong>"费劲捞回来"这个动作本身，就是练习</strong>；捞得太轻松，等于没练。</p>
+<figure>
+<svg viewbox="0 0 480 246" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#a78bfa" stroke-width="2.6" x1="62" x2="88" y1="20" y2="20"></line>
+<text fill="#cfc9e6" font-size="11.5" x="95" y="24">集中：三次都在第 0 天</text>
+<line stroke="#34e5e0" stroke-width="2.6" x1="262" x2="288" y1="20" y2="20"></line>
+<text fill="#cfc9e6" font-size="11.5" x="295" y="24">间隔：0/1/3 天各一次</text>
+<line stroke="#4a4468" stroke-width="1.2" x1="58" x2="58" y1="44" y2="190"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="58" x2="444" y1="190" y2="190"></line>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" transform="rotate(-90 28 117)" x="28" y="117">还捞得出来的程度</text>
+<path d="M66,62 C 120,104 250,152 416,178" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6"></path>
+<path d="M66,62 C 84,80 100,94 116,104 L116,60 C 152,78 188,94 216,106 L216,56 C 280,70 350,84 416,92" fill="none" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.8"></path>
+<circle cx="116" cy="60" fill="#fbbf24" r="4.5"></circle>
+<circle cx="216" cy="56" fill="#fbbf24" r="4.5"></circle>
+<circle cx="66" cy="62" fill="#fbbf24" r="4.5"></circle>
+<circle cx="416" cy="92" fill="#34e5e0" r="4.5"></circle>
+<circle cx="416" cy="178" fill="#a78bfa" r="4.5"></circle>
+<circle cx="276" cy="137" fill="#fbbf24" r="4.5"></circle>
+<text fill="#fbbf24" font-size="11.5" x="288" y="141">黄点 = 又练了一次</text>
+<line stroke="#4a4468" stroke-width="1.2" x1="66" x2="66" y1="190" y2="196"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="116" x2="116" y1="190" y2="196"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="216" x2="216" y1="190" y2="196"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="416" x2="416" y1="190" y2="196"></line>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="66" y="212">第 0 天</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="116" y="212">第 1 天</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="216" y="212">第 3 天</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="416" y="212">第 7 天</text>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="250" y="234">同样三次练习 · 只是摆放位置不同</text>
+</svg>
+<figcaption>每次捞回来，遗忘的斜坡就变缓一档</figcaption>
+</figure>
+<p>还有一层：编码完不等于存好了。之后的几小时到几个晚上，海马会一遍遍<strong>重放</strong>白天跑过的那串活动，把它慢慢转写进皮层——深睡时重放最密。所以<strong>让间隔跨过一夜，比在同一天里拉开更值</strong>。至于间隔设多长，有个好用的粗略比例：<strong>你想记多久，间隔就设成它的一到两成</strong>——想撑一周，隔一天；想撑一年，隔一两个月。（这条路上突触那一端的改写，<a class="reflink" href="ref-synaptic-plasticity.html">突触可塑性</a>）</p>
+<p class="en-brief"><b>EN</b> Massed repetition is cheap because the trace is still warm — you never really retrieve it. Spacing forces genuine retrieval after partial forgetting, and consolidation keeps running for hours to nights afterward, with hippocampal replay densest in deep sleep. A workable rule of thumb: set the gap to 10–20% of how long you want the memory to last.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>神经网络有个老毛病：拿新任务接着训，旧任务的本事会整块塌掉，叫<b>灾难性遗忘</b>。最管用的土办法是<b>经验回放</b>——训新东西时，按比例把旧样本掺回来重放一遍。这跟海马夜里重放白天、反复掺给皮层是同一招，连"按重要性优先重放哪些"这种细节两边都撞上了。说到底双方在解同一个矛盾：<b>既要学新的，又不能把旧的冲掉。</b></p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>别让练习太顺手</h2>
+<p>还有一个旋钮：练的顺序。同一批题，是一个题型练完一整组（成块），还是几个题型打散着练（交错）？2007 年一个数学练习的实验给了很干脆的答案。</p>
+<figure>
+<svg viewbox="0 0 480 248" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#a78bfa" height="12" rx="2" width="12" x="148" y="16"></rect>
+<text fill="#cfc9e6" font-size="11.5" x="166" y="26">成块练</text>
+<rect fill="#34e5e0" height="12" rx="2" width="12" x="268" y="16"></rect>
+<text fill="#cfc9e6" font-size="11.5" x="286" y="26">交错练</text>
+<line stroke="#4a4468" stroke-width="1.2" x1="52" x2="52" y1="48" y2="200"></line>
+<line stroke="#4a4468" stroke-width="1.2" x1="52" x2="452" y1="200" y2="200"></line>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" transform="rotate(-90 24 124)" x="24" y="124">答对率 %</text>
+<rect fill="#a78bfa" height="134" rx="4" width="46" x="112" y="66"></rect>
+<rect fill="#34e5e0" height="90" rx="4" width="46" x="170" y="110"></rect>
+<rect fill="#a78bfa" height="30" rx="4" width="46" x="286" y="170"></rect>
+<rect fill="#34e5e0" height="95" rx="4" width="46" x="344" y="105"></rect>
+<text fill="#c9b6f7" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="135" y="58">89</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="193" y="102">60</text>
+<text fill="#c9b6f7" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="309" y="162">20</text>
+<text fill="#7bf0e8" font-family="SF Mono,monospace" font-size="12.5" text-anchor="middle" x="367" y="97">63</text>
+<text fill="#d8d3ec" font-size="12.5" text-anchor="middle" x="164" y="222">练习当场</text>
+<text fill="#d8d3ec" font-size="12.5" text-anchor="middle" x="338" y="222">一周后测验</text>
+<text fill="#6f6a8c" font-family="SF Mono,monospace" font-size="11" text-anchor="middle" x="252" y="240">练得好看 ≠ 学到手</text>
+</svg>
+<figcaption>成块练在练习当场几乎全对，一周后只剩两成</figcaption>
+</figure>
+<p>成块练的时候你其实不用判断"这题该用哪一招"——上一题用什么，这题照抄就行。交错逼你每次先<strong>认出这是哪一类，再去挑方法</strong>。而真到用得着的那天，没人会替你把题按类型分好组。</p>
+<p>这些实验指向同一条更大的规律，Bjork 管它叫<strong>合意的困难</strong>。他把记忆拆成两个量：<strong>存储强度</strong>（存得多结实，只增不减）和<strong>提取强度</strong>（此刻好不好捞）。集中重复会把提取强度顶满，所以感觉爽；但提取强度已经很高时再练一遍，几乎加不了存储强度。想涨存储，就得在<strong>捞起来有点费劲</strong>的时候练。于是有了那个让人不舒服的推论：<strong>练习当场的表现，和你到底学进去多少，是两码事，还常常反着走。</strong></p>
+<p>但"合意"两个字是有边界的：难到根本捞不出来、只能翻答案，那就不叫提取，又变回重读了。<strong>难度的甜区是"跳一下够得着"</strong>——卡住时给个小提示，比直接给答案有用得多。</p>
+<p class="en-brief"><b>EN</b> Blocked practice looks great in the moment (89% correct) and collapses a week later (20%); interleaved practice feels worse (60%) and holds up (63%). Blocking lets you skip the hardest step — deciding which method applies. Bjork's framing: storage strength only grows when retrieval strength has dipped, so performance during practice and actual learning routinely move in opposite directions. The sweet spot is effortful-but-reachable, not merely hard.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>这条在 AI 里常识到没人再提：训练数据必须<b>打乱</b>再喂。要是按类别成块喂——先一万张猫、再一万张狗——模型学狗时会把猫冲掉，在块的边界上来回横跳。打乱，其实就是交错。可另一头，<b>课程学习</b>（先易后难地排顺序）又证明顺序不是越乱越好。两头合起来，结论和人这边一模一样：<b>难度要卡在"够得着但不轻松"那条线上。</b></p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>先问一句：你要学的是哪一种</h2>
+<p>上面这些旋钮不是对所有东西都同样管用，因为大脑根本不止一套学习系统。最有名的证据来自一位因癫痫手术切除了两侧内侧颞叶（含海马）的病人 H.M.：手术后他再也记不住新的事实和经历。可让他每天练<strong>照镜子描图</strong>这种别扭的手上功夫，他的成绩一天比一天好——<strong>而他每天都坚称自己从没做过这个任务</strong>。手艺在长，关于手艺的记忆是一片空白。</p>
+<figure>
+<svg viewbox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="0.5" cy="0.3" id="nd43" r="0.95"><stop offset="0" stop-color="#241c46"></stop><stop offset="1" stop-color="#130d29"></stop></radialgradient>
+<marker id="a43L" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#a78bfa"></path></marker>
+<marker id="a43R" markerheight="13" markerunits="userSpaceOnUse" markerwidth="14" orient="auto" refx="10" refy="6.5"><path d="M1,1 L12,6.5 L1,12 Z" fill="#34e5e0"></path></marker>
+</defs>
+<rect fill="url(#nd43)" height="44" rx="22" stroke="#e879f9" stroke-width="1.3" width="180" x="150" y="12"></rect>
+<text fill="#f7e6fb" font-size="14.5" font-weight="600" text-anchor="middle" x="240" y="40">同一次练习</text>
+<line marker-end="url(#a43L)" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.6" x1="206" x2="132" y1="60" y2="102"></line>
+<line marker-end="url(#a43R)" stroke="#34e5e0" stroke-linecap="round" stroke-width="2.6" x1="274" x2="348" y1="60" y2="102"></line>
+<rect fill="url(#nd43)" height="46" rx="14" stroke="#a78bfa" stroke-width="1.3" width="196" x="22" y="108"></rect>
+<text fill="#efe9ff" font-size="14" font-weight="600" text-anchor="middle" x="120" y="137">海马 · 内侧颞叶</text>
+<rect fill="url(#nd43)" height="46" rx="14" stroke="#34e5e0" stroke-width="1.3" width="196" x="262" y="108"></rect>
+<text fill="#e6faf8" font-size="14" font-weight="600" text-anchor="middle" x="360" y="137">纹状体 + 小脑</text>
+<text fill="#c9b6f7" font-size="13" text-anchor="middle" x="120" y="182">陈述性 · 说得出来</text>
+<text fill="#8f89ad" font-size="12" text-anchor="middle" x="120" y="204">事实 / 概念 / 经历</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="120" y="228">练法：提取 + 间隔</text>
+<text fill="#7bf0e8" font-size="13" text-anchor="middle" x="360" y="182">程序性 · 只做得出来</text>
+<text fill="#8f89ad" font-size="12" text-anchor="middle" x="360" y="204">动作 / 手感 / 序列</text>
+<text fill="#fbbf24" font-family="SF Mono,monospace" font-size="11.5" text-anchor="middle" x="360" y="228">练法：带变化的重复</text>
+</svg>
+<figcaption>同一次练习，两套系统各拿走一半，而且各有各的练法</figcaption>
+</figure>
+<p>所以有两条线。<strong>陈述性</strong>的那条走海马再转到皮层，装事实、概念、经历，说得出来；<strong>程序性</strong>的那条走<a class="reflink" href="ref-basal-ganglia.html">基底节</a>里的纹状体和<a class="reflink" href="ref-motor-system.html">小脑</a>，装骑车、乐器、手法，说不出来只做得出来。纹状体负责把"什么情境该出哪一招"慢慢焊死，小脑负责拿每次的误差一遍遍修准头。</p>
+<p>练法就跟着分岔了。<strong>事实和概念</strong>——外语词、解剖名、公式的含义——提取加间隔最省时间，多读几遍基本是浪费。<strong>技能</strong>就得靠量，但重复要带<strong>变化</strong>（每次条件稍微挪一点，别每次都在同一个位置投同一个球），反馈要<strong>及时但别太密</strong>——一直喂反馈，你练出来的是依赖反馈。真实的学习当然常是两种混着：学做菜既有"盐什么时候放"，也有那点说不清的手感。<strong>先分清你在练哪一种，再选旋钮</strong>，这一步错了，后面再努力都在漏。</p>
+<p class="en-brief"><b>EN</b> H.M. lost the ability to form new declarative memories yet improved at mirror drawing day after day while insisting he had never done it. Declarative memory runs through the hippocampus; procedural learning runs through the striatum and cerebellum. Facts respond to retrieval and spacing; skills need volume, variability, and feedback that is timely but not constant. Diagnose which one you're training before you pick the knob.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>AI 眼下也正好分成这两摊：一摊把本事<b>压进参数</b>（训练、微调——改的是网络自己，慢、贵、忘了就捞不回来），一摊把知识<b>挂在外面随用随查</b>（检索增强——快、可改、可溯源）。这几乎是程序性 ↔ 陈述性的一比一对读。而两边踩的坑也一样：手感只能练进权重，事实不如去查；<b>分错了摊，就是在白烧算力，或者白烧时间。</b></p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<p style="color:#c4a6e4;font-size:0.9rem;margin-bottom:16px">"学不是往脑子里塞，是反复往外取"——这句话，实验室两千五百年后才测出来：</p>
+<ul>
+<li><b>儒家 · 《论语》开篇</b>：「学而时习之」——「习」的本字画的是雏鸟反复振翅，说的从来是练不是读；「时」更是点睛，练要落在时间的分布上。而「温故而知新」比现代版还狠：它要求的不是重看旧书，是隔一段回头再取一次，<b>取出来的东西还得和上次不一样</b>——这正是提取会改写记忆的那一面。</li>
+<li><b>佛学 · 闻思修</b>：听来的是「闻」，自己在心里重推一遍是「思」，在境遇里反复做到是「修」。三个字恰好把编码、提取、程序化排成了序，而且明说了前两步不算完。至于「熏习」——像烟熏布，一次不留痕、次次留一点——就是间隔累积的古典写法。</li>
+<li><b>控制论 · 误差才驱动更新</b>：一个控制系统只在误差不为零时才调整自己；全对，就没有误差信号，也就没有更新。「合意的困难」不过是这句话的心理学版本——<b>你得给系统制造一点它答不上来的东西，它才动</b>。小脑用误差学准头，模型用 loss 改权重，人用"想不起来"逼自己记住，三件事是一件事。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>既然"感觉顺"不可靠，那我该拿什么判断自己学会没有？</summary><div>唯一不骗人的信号是<strong>合上材料之后你还能产出什么</strong>：空白纸上复述结构、把它讲给一个不懂的人听、自己出题考自己。卡住的地方，才是你真实的边界——而重读永远量不到这条边界，因为书就摊在那儿。测的时机也很关键：刚看完立刻测，测到的是还挂在工作记忆里的残影；<strong>隔一天再测，才是长期记忆的读数</strong>。</div></details>
+<details><summary>那"重读"就彻底没用了？</summary><div>有用，只是位置放错了。第一遍建立框架必须靠读，没有框架，后面提取的是空气。重读真正的问题在于——<strong>它被用在了该提取的阶段</strong>。合理的顺序是：读一遍 → 合上自测 → 只回头读那些没捞出来的。读是补漏，不该当主菜。</div></details>
+<details><summary>提取和间隔都这么有效，为什么学校和我自己都不这么干？</summary><div>因为它们的收益<strong>延迟到场，成本却当场付</strong>。考前突击在第二天的考试上确实更高分——短期它没骗你，它骗你的是"第二天之后"。制度按短期分数打分，人按当下感觉打分，于是两边一起选中了错的那个。这也解释了为什么"学习方法"这件事，几乎人人都得亲自吃一次亏才肯信。</div></details>
+<details><summary>睡一觉真能"多学到一点"，还是只是没那么累？</summary><div>两者都有，但重放是能被直接测到的：睡眠中海马会重演白天跑过的序列，顺序和比例都对得上白天。更硬的证据来自<strong>定向记忆重激活</strong>——学习时配一种气味或一段声音，深睡时再悄悄放一次，那部分内容第二天保留得更好。这说明夜里发生的不只是休息，而是<strong>一次有选择的重写</strong>：谁被重放，谁留下。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Testing_effect" target="_blank">测验效应 Testing effect</a> — 提取练习为何胜过重读</li>
+<li><a href="https://en.wikipedia.org/wiki/Spacing_effect" target="_blank">间隔效应 Spacing effect</a> — 同样时长，摊开比堆着强</li>
+<li><a href="https://en.wikipedia.org/wiki/Forgetting_curve" target="_blank">遗忘曲线 Forgetting curve</a> — 艾宾浩斯在自己身上做的那批实验</li>
+<li><a href="https://en.wikipedia.org/wiki/Desirable_difficulty" target="_blank">合意的困难 Desirable difficulty</a> — 存储强度 vs 提取强度</li>
+<li><a href="https://en.wikipedia.org/wiki/Robert_A._Bjork" target="_blank">Robert Bjork</a> — 这条线索的主要提出者</li>
+<li><a href="https://en.wikipedia.org/wiki/Henry_Molaison" target="_blank">H.M. · Henry Molaison</a> — 记不住做过，手艺却一天天在长</li>
+<li><a href="https://en.wikipedia.org/wiki/Procedural_memory" target="_blank">程序性记忆 Procedural memory</a> — 纹状体与小脑那一条线</li>
+<li><a href="https://en.wikipedia.org/wiki/Catastrophic_interference" target="_blank">灾难性遗忘 Catastrophic interference</a> — AI 这边的同一个矛盾</li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 43 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
