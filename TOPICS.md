@@ -8,7 +8,7 @@
 - **主线** `{slug}-topic{N}.html`（按顺序读）：认知 → 意识 → 自我调制 → 临床/前沿 → 计算。
 - **参考库** `ref-{slug}.html`（不编号、按需 link）：构件/系统的机制解释。主线碰到某构件/系统就 `→ ref` 链过去；若该 ref 页还不存在就**顺手生成一张**放进参考库栏。于是参考库随主线自然长满，你永不用冷启动读地基，但"最终构件/系统都有独立 page"也自动达成。
 
-## Phase A · 认知（Topic 1–9）
+## Phase A · 认知（Topic 1–9 · 45）
 - Topic 1: 感知即推断 — 预测加工/贝叶斯大脑, 错觉作为先验, 主动推理 ｜AI: 生成模型/世界模型 ｜ref→视觉通路
 - Topic 2: 注意 — 自上而下 vs 自下而上, 注意瓶颈, 丘脑门控 ｜AI: Transformer attention（点破"同名不同机制"：偏向竞争/门控 ≠ QKV 点积）｜ref→丘脑
 - Topic 3: 工作记忆 — 前额叶, 容量限制, 持续放电 vs 突触机制 ｜AI: context window / KV cache ｜ref→前额叶
@@ -18,8 +18,9 @@
 - Topic 7: 语言的大脑 — Broca/Wernicke 的现代修正, 语言网络, 预测与理解 ｜AI: LLM ｜ref→语言网络
 - Topic 8: 情绪的建构 — 经典观 vs 建构论(Barrett), 内感受, 情绪粒度 ｜AI: valence/reward 建模 ｜ref→杏仁核·内感受
 - Topic 9: 社会脑与心智理论 — 镜像系统, ToM, 共情回路 ｜AI: multi-agent 里的 ToM ｜ref→镜像系统
+- Topic 45: 语义的群体编码 — 人类海马单神经元里的「词向量」, 以及神经元也是多义的: 2026-09 Nature Neuroscience 在受试者听叙事语音时记录海马神经元, 控制音素与语法后仍有稳健语义编码, 单个神经元对多个语义类别的多个词有反应, 群体反应距离与词义距离相关(同 LLM 嵌入几何), 反应模式随多义度变化=编码随语境变; 同方向: 2026-06 Nature 用语言模型在额颞皮层单神经元上定位语法关系/词性/句法结构; 边界: 对齐最好的是 GPT-2 一档嵌入, 「相似」在表示几何层面, 不等于机制相同(承 Topic 2「同名不同机制」; 接 Topic 7 语言的大脑 / Topic 35 神经编码; 月度前沿刷新纳入 2026-10; 来源: https://www.nature.com/articles/s41593-026-02436-4 与 https://www.nature.com/articles/s41586-026-10691-5) ｜AI: polysemanticity / superposition(方法本身见 ai-ml Day 27 的 SAE, 本站只讲生物脑证据) ｜ref→海马与内嗅
 
-## Phase B · 意识（Topic 10–17）
+## Phase B · 意识（Topic 10–17 · 44）
 - Topic 10: 意识的难题 — 易问题 vs 难问题, 感受质, 解释鸿沟
 - Topic 11: 意识的神经关联(NCC) — 寻找神经标志, 双眼竞争, no-report 范式, Cogitate 联盟的 IIT vs GNW 对抗性实验
 - Topic 12: 高阶理论与注意图式 — 高阶理论(HOT, Lau/Rosenthal), 注意图式(AST, Graziano), 递归加工(Lamme) ｜AI: agent 的自我状态模型/元认知
@@ -28,6 +29,7 @@
 - Topic 15: 预测加工与自由能 — Friston, 主动推理, 意识作为最优模型 ｜AI: active inference agent
 - Topic 16: 意识的开关 — 麻醉, 睡眠阶段, 做梦, 清醒梦, 意识的连续谱
 - Topic 17: 自我的神经科学 — 身体自我, 叙事自我, 自我消解(冥想/迷幻) ｜ref→默认模式网络
+- Topic 44: 麻醉的共同终点 — 从人到线虫, 意识被同一种动力学关掉: Luppi 等 2026-09 Nature Neuroscience 对麻醉期神经活动刻画六千多种动力学特征、覆盖六个物种, 找到共享的动力学终点(局部活动时空隔离: 区域间同步下降、内在时间尺度缩短), 其空间分布与兴奋/抑制递质转录图谱共变并在人/猕猴/小鼠皮层保守; 因果证据: 猕猴中央中核丘脑深部电刺激逆转该动力学并恢复觉醒; 不依赖任何一派意识理论的跨演化经验约束(接 Topic 16 意识的开关; 月度前沿刷新纳入 2026-10; 来源: https://www.nature.com/articles/s41593-026-02460-4 , 开放预印本 https://www.biorxiv.org/content/10.1101/2025.03.22.644729v1.full.pdf) ｜AI: 内在时间尺度与跨区整合 ↔ 循环网络里信息能保持多久、传多远 ｜ref→丘脑
 
 ## Phase C · 自我调制与预防（hack 你的神经系统）（Topic 18–25 · 43）
 > 机制向：某干预在神经层面动了前面学的哪个回路/网络、为什么就改变了它。给做法时 cross-ref health-longevity，不重复协议细节。
