@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 46 · Creativity &amp; Insight — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 46 · PHASE A COGNITION</span>
+<h1>Creativity &amp; Insight</h1>
+<h2>Why letting go is how you figure it out — and what happens in the second before "aha"</h2>
+<div class="date">2026-10-06 · BigCat</div>
+<p class="pitch">The first answer that pops up while you're straining is often the very wall blocking the good one.</p>
+</header>
+<div class="intro">
+<p>A name is on the tip of your tongue. The harder you push, the further away it gets. You turn to pour a glass of water, and there it is. A problem won't budge all evening; you sleep on it, and it clicks while you're brushing your teeth. Almost everyone has had this happen, and it's strange when you think about it: <strong>the moment you stop thinking about it is the moment you get it.</strong></p>
+<p>We tend to treat creativity as an extra gift, and insight as a bolt from the blue. Neuroscience sees something else. Insight has a sequence: get stuck, loosen up, rearrange. It has a clear timeline in brain recordings. And it's most likely when you're <strong>not at your best</strong>: tired, drowsy, half asleep.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>You get stuck because your first idea is too strong</h2>
+<p>Try one. Each of these three words forms a common compound or phrase with the same fourth word. What is it?</p>
+<figure>
+<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="fa1" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#fbbf24"/></marker>
+<marker id="fa2" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker>
+</defs>
+<text x="70" y="26" fill="#f6d79a" font-size="12" text-anchor="middle">First thought (strong)</text>
+<text x="230" y="26" fill="#8f89ad" font-size="12" text-anchor="middle">Puzzle</text>
+<text x="400" y="26" fill="#9fe6e2" font-size="12" text-anchor="middle">Remote link (weak)</text>
+<rect x="190" y="50" width="80" height="38" rx="10" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="230" y="75" fill="#efe9ff" font-size="16" font-weight="700" text-anchor="middle">pine</text>
+<rect x="190" y="116" width="80" height="38" rx="10" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="230" y="141" fill="#efe9ff" font-size="16" font-weight="700" text-anchor="middle">crab</text>
+<rect x="190" y="182" width="80" height="38" rx="10" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="230" y="207" fill="#efe9ff" font-size="16" font-weight="700" text-anchor="middle">sauce</text>
+<line x1="188" y1="69" x2="120" y2="69" stroke="#fbbf24" stroke-width="3.2" marker-end="url(#fa1)"/>
+<line x1="188" y1="135" x2="120" y2="135" stroke="#fbbf24" stroke-width="3.2" marker-end="url(#fa1)"/>
+<line x1="188" y1="201" x2="120" y2="201" stroke="#fbbf24" stroke-width="3.2" marker-end="url(#fa1)"/>
+<rect x="30" y="52" width="84" height="34" rx="17" fill="rgba(251,191,36,0.10)" stroke="#fbbf24" stroke-width="1.3"/>
+<text x="72" y="74" fill="#fff4da" font-size="13" text-anchor="middle">tree·cone</text>
+<rect x="30" y="118" width="84" height="34" rx="17" fill="rgba(251,191,36,0.10)" stroke="#fbbf24" stroke-width="1.3"/>
+<text x="72" y="140" fill="#fff4da" font-size="13" text-anchor="middle">sea·claw</text>
+<rect x="30" y="184" width="84" height="34" rx="17" fill="rgba(251,191,36,0.10)" stroke="#fbbf24" stroke-width="1.3"/>
+<text x="72" y="206" fill="#fff4da" font-size="13" text-anchor="middle">pasta·soy</text>
+<path d="M272,69 L376,126" fill="none" stroke="#34e5e0" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#fa2)"/>
+<line x1="272" y1="135" x2="372" y2="135" stroke="#34e5e0" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#fa2)"/>
+<path d="M272,201 L376,144" fill="none" stroke="#34e5e0" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#fa2)"/>
+<circle cx="400" cy="135" r="24" fill="rgba(52,229,224,0.08)" stroke="#34e5e0" stroke-width="1.6"/>
+<text x="400" y="142" fill="#d6fbf9" font-size="20" font-weight="700" text-anchor="middle">?</text>
+<text x="240" y="254" fill="#8f89ad" font-size="11.5" text-anchor="middle">The thick links light up first and hog attention; the dashed path to the answer is drowned out</text>
+</svg>
+<figcaption>Sketch: thick lines are first thoughts; the dashed ones lead to the answer</figcaption>
+</figure>
+<p>The answer is "apple": pineapple, crab apple, applesauce. You probably thought of "tree," "sea" or "pasta" first. Those are the most common, strongest associations. Once they light up they take all your attention, and the weak path that actually leads to the answer gets buried. Psychologists call this <strong>fixation</strong>: once a wrong line of thought grabs the spot, pushing harder just keeps you circling.</p>
+<p>About a century ago the English scholar Graham Wallas split creative work into four stages: <strong>preparation</strong> (working hard on it), <strong>incubation</strong> (setting it aside), <strong>illumination</strong> (it suddenly clicks) and <strong>verification</strong> (checking it's right). Incubation is the mysterious one. How do you make progress by doing nothing? There are three explanations, and they can all be true at once:</p>
+<p><strong>① Fixation fades</strong>: step away and the dominant wrong idea cools down, so it doesn't grab you the moment you come back. <strong>② Misleading cues are forgotten</strong>: in experiments where people are first handed a misleading hint, they get sidetracked right away. Test them again after a delay, once they've forgotten the hint, and they do better. <strong>③ Unconscious association</strong>: you aren't thinking about it, but associations in memory keep slowly spreading, and some remote path quietly connects.</p>
+<p>Here's where the effect stops: incubation is real, just less magical than the legend. A 2009 meta-analysis (a study that pools many studies to estimate the average effect) of 117 studies found <strong>a modest positive effect</strong> overall. The benefit was biggest for divergent tasks, where you come up with as many ideas as you can, and smaller for puzzles with one right answer. Two conditions mattered: you have to <strong>prepare properly first</strong>, and during the break you should do something <strong>undemanding</strong>. That beat pure rest, and it beat switching to another hard task.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Imagination and critique aren't rivals. They're partners</h2>
+<p>One set of brain regions is especially active when you're <strong>not focused on a task out in the world</strong>: daydreaming, mind-wandering, remembering the past, picturing tomorrow. Together they're called the <strong>default mode network</strong>, or DMN. <a class="reflink" href="ref-default-mode-network.en.html">Default mode network</a> Another set, mainly in the prefrontal and parietal cortex, takes over when you concentrate and follow rules. That's the <strong>executive control network</strong>. <a class="reflink" href="ref-prefrontal.en.html">Prefrontal cortex</a></p>
+<p>Older textbooks often described the two as a seesaw: when one goes up, the other goes down. The DMN lights up when your mind wanders, the executive network when you focus. Some people concluded that creativity means "switch off control and let imagination run free."</p>
+<p>The team of the American psychologist Roger Beaty found something different. They asked more than a hundred people in a scanner to think of unusual uses for a sock. <strong>The better someone's ideas, the stronger the connection between their DMN and executive network.</strong> A third network also took part: the <strong>salience network</strong>, which judges what matters right now and switches between the other two. In 2018 they used this connection pattern alone to predict, to a modest degree, the creativity scores of a fresh group of participants.</p>
+<figure>
+<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="fb1" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#a78bfa"/></marker>
+<marker id="fb2" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#34e5e0"/></marker>
+<marker id="fb3" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"/></marker>
+</defs>
+<rect x="170" y="18" width="140" height="48" rx="12" fill="rgba(232,121,249,0.10)" stroke="#e879f9" stroke-width="1.5"/>
+<text x="240" y="39" fill="#fbe3fd" font-size="14" font-weight="700" text-anchor="middle">Salience network</text>
+<text x="240" y="57" fill="#f0b6f8" font-size="11.5" text-anchor="middle">decides who leads now</text>
+<rect x="22" y="140" width="140" height="62" rx="14" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="1.6"/>
+<text x="92" y="165" fill="#efe9ff" font-size="13.5" font-weight="700" text-anchor="middle">Default mode</text>
+<text x="92" y="186" fill="#c4b5f5" font-size="11.5" text-anchor="middle">generate: associate</text>
+<rect x="318" y="140" width="140" height="62" rx="14" fill="rgba(52,229,224,0.10)" stroke="#34e5e0" stroke-width="1.6"/>
+<text x="388" y="165" fill="#d6fbf9" font-size="13.5" font-weight="700" text-anchor="middle">Executive control</text>
+<text x="388" y="186" fill="#9fe6e2" font-size="11.5" text-anchor="middle">evaluate: filter, fix</text>
+<path d="M164,152 Q240,108 314,152" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#fb1)"/>
+<text x="240" y="118" fill="#c4b5f5" font-size="11.5" text-anchor="middle">a pile of candidate ideas</text>
+<path d="M316,192 Q240,238 166,192" fill="none" stroke="#34e5e0" stroke-width="2" marker-end="url(#fb2)"/>
+<text x="240" y="236" fill="#9fe6e2" font-size="11.5" text-anchor="middle">"Nope, try another direction"</text>
+<path d="M200,68 L134,134" fill="none" stroke="#e879f9" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#fb3)"/>
+<path d="M280,68 L346,134" fill="none" stroke="#e879f9" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#fb3)"/>
+<text x="240" y="262" fill="#8f89ad" font-size="11" text-anchor="middle">More creative people: more back-and-forth, stronger links among all three</text>
+</svg>
+<figcaption>Sketch: creativity is a generate → evaluate → regenerate loop, not one side switched on</figcaption>
+</figure>
+<p>In everyday terms this makes sense. Wild ideas with nobody checking them are mostly nonsense. Checking without daring to imagine only gets you the same old answers. <strong>Good creative work passes the ball back and forth</strong>: one side throws ideas out, the other catches them and picks; whatever doesn't make the cut gets sent back for another throw.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>One second before "aha": first a blink, then ignition</h2>
+<p>The most fascinating thing about insight is how it feels. The answer isn't worked out step by step. It shows up all at once, and you're instantly sure it's right. Is there a signal in the brain that goes with that?</p>
+<p>In 2004 the American researchers Mark Jung-Beeman and John Kounios used exactly the three-word puzzles above (pine, crab, sauce → apple). After each solution, participants said whether they'd worked it out step by step or it had come with an "aha." Then the researchers compared brain activity between the two kinds of solution.</p>
+<p>They found two signals. First, "aha" solutions came with more activity in <strong>the upper front part of the right temporal lobe</strong> (right anterior superior temporal gyrus), a region thought to be good at linking <strong>distantly related information</strong>. Second, the EEG timing: about 0.3 seconds before the answer button was pressed, a sudden <strong>burst of high-frequency gamma waves</strong> appeared over that spot. Better still, about a second before that, visual areas at the back of the right hemisphere showed a rise in <strong>alpha waves</strong>, often read as a signal for "turn the input down."</p>
+<figure>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="fc1" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<line x1="30" y1="200" x2="456" y2="200" stroke="#8f89ad" stroke-width="1.6" marker-end="url(#fc1)"/>
+<line x1="60" y1="195" x2="60" y2="205" stroke="#8f89ad" stroke-width="1.4"/>
+<text x="60" y="222" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace" text-anchor="middle">−2 s</text>
+<line x1="230" y1="195" x2="230" y2="205" stroke="#8f89ad" stroke-width="1.4"/>
+<text x="230" y="222" fill="#8f89ad" font-size="11" font-family="SF Mono,monospace" text-anchor="middle">−1 s</text>
+<line x1="400" y1="195" x2="400" y2="205" stroke="#8f89ad" stroke-width="1.4"/>
+<text x="400" y="222" fill="#fbbf24" font-size="11" font-family="SF Mono,monospace" text-anchor="middle">0 press</text>
+<path d="M60,150 Q80,138 100,150 T140,150 T180,150 T220,150 T260,150 T300,150 T340,150 T380,150" fill="none" stroke="#3a3558" stroke-width="1.2"/>
+<path d="M100,150 Q112,108 124,150 T148,150 T172,150 T196,150" fill="none" stroke="#a78bfa" stroke-width="2.2"/>
+<text x="148" y="90" fill="#efe9ff" font-size="12.5" font-weight="600" text-anchor="middle">α rise · right visual cortex</text>
+<text x="148" y="106" fill="#c4b5f5" font-size="11" text-anchor="middle">input turned down for a moment</text>
+<path d="M340,150 L344,128 L348,172 L352,124 L356,176 L360,126 L364,174 L368,130 L372,170 L376,138 L380,150" fill="none" stroke="#34e5e0" stroke-width="2"/>
+<text x="352" y="60" fill="#d6fbf9" font-size="12.5" font-weight="600" text-anchor="middle">γ burst · right aSTG</text>
+<text x="352" y="76" fill="#9fe6e2" font-size="11" text-anchor="middle">a remote link connects</text>
+<line x1="352" y1="82" x2="352" y2="116" stroke="#34e5e0" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="400" cy="150" r="9" fill="#fbbf24"/>
+<text x="436" y="146" fill="#fff4da" font-size="13" font-weight="700" text-anchor="middle">aha</text>
+<text x="240" y="248" fill="#8f89ad" font-size="11" text-anchor="middle">Time runs left to right; shows insight minus step-by-step solutions</text>
+</svg>
+<figcaption>Sketch: Jung-Beeman et al. 2004 — an α "blink," then γ "ignition" ~0.3 s before</figcaption>
+</figure>
+<p>The researchers gave that alpha a memorable name: <strong>the brain blink</strong>. It's like the way you glance away or stare at the ceiling while thinking. The brain turns outside distractions down a little, giving the faint remote association inside a chance to surface. A few hundred milliseconds later it connects, lights up as a gamma burst, and reaches awareness.</p>
+<p>Kounios later found that the brain state <strong>before a puzzle even appears</strong> predicts whether it will be solved by insight. More inward states, where attention isn't locked onto the outside world, are more likely to lead to an aha. These are averaged differences, though. A single EEG trace can't tell you "you're about to have an insight."</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Tired, drowsy, half asleep: loosen control and the long way opens up</h2>
+<p>Put the pieces together and insight doesn't need more effort. It needs <strong>the grip of the dominant idea to loosen a little</strong>. That explains some findings that sound backwards at first.</p>
+<p><strong>Insight comes easier at your off-peak time.</strong> In 2011, Wieth and Zacks had morning types and night owls solve problems at different times of day. For problems solved by step-by-step reasoning, the time made little difference. For insight puzzles, people did better <strong>at their own worse time of day</strong>. Their explanation: when you're off form, your ability to hold back irrelevant thoughts weakens, so more "seemingly irrelevant" material gets in, and the long way is hidden in there.</p>
+<p><strong>Sleep on it and find the hidden rule.</strong> In a 2004 German experiment published in <em>Nature</em>, people practised a number-transformation task that hid a shortcut nobody mentioned. Of the group who slept 8 hours after practice, <strong>59%</strong> found the shortcut. Of those who stayed awake for the same time, only <strong>22%</strong> did. Other studies suggest that REM sleep, the dream-heavy rapid-eye-movement stage, helps link remote associations.</p>
+<p><strong>The first seconds of sleep are the sweet spot.</strong> A 2021 French study borrowed Edison's old trick: hold a small object and doze, and when you fall asleep it drops and wakes you. People who spent at least 15 seconds in the lightest stage of sleep (N1) found the hidden rule <strong>83%</strong> of the time, against <strong>30%</strong> for those who stayed awake. For people who went into deeper sleep, the benefit disappeared. <strong>A light doze is just right; sleep too deep and it's gone.</strong></p>
+<figure>
+<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+<text x="120" y="24" fill="#d6fbf9" font-size="12.5" font-weight="600" text-anchor="middle">Low temperature: top pick wins</text>
+<text x="360" y="24" fill="#fbe3fd" font-size="12.5" font-weight="600" text-anchor="middle">High temperature: long shots too</text>
+<text x="240" y="44" fill="#8f89ad" font-size="11.5" text-anchor="middle">Probability of each candidate next word after "snow __"</text>
+<line x1="20" y1="210" x2="220" y2="210" stroke="#3a3558" stroke-width="1.2"/>
+<line x1="260" y1="210" x2="460" y2="210" stroke="#3a3558" stroke-width="1.2"/>
+<rect x="32" y="77" width="28" height="133" rx="3" fill="#34e5e0"/>
+<rect x="70" y="202" width="28" height="8" rx="2" fill="#34e5e0" opacity="0.75"/>
+<rect x="108" y="205" width="28" height="5" rx="2" fill="#34e5e0" opacity="0.6"/>
+<rect x="146" y="207" width="28" height="3" rx="1" fill="#34e5e0" opacity="0.5"/>
+<rect x="184" y="209" width="28" height="1" fill="#34e5e0" opacity="0.4"/>
+<text x="46" y="70" fill="#d6fbf9" font-size="11" text-anchor="middle">89%</text>
+<text x="84" y="196" fill="#9fe6e2" font-size="11" text-anchor="middle">6%</text>
+<rect x="272" y="154" width="28" height="56" rx="3" fill="#e879f9"/>
+<rect x="310" y="182" width="28" height="28" rx="3" fill="#e879f9" opacity="0.85"/>
+<rect x="348" y="185" width="28" height="25" rx="3" fill="#e879f9" opacity="0.8"/>
+<rect x="386" y="189" width="28" height="21" rx="3" fill="#e879f9" opacity="0.75"/>
+<rect x="424" y="194" width="28" height="16" rx="3" fill="#e879f9" opacity="0.7"/>
+<text x="286" y="147" fill="#fbe3fd" font-size="11" text-anchor="middle">38%</text>
+<text x="324" y="175" fill="#f0b6f8" font-size="11" text-anchor="middle">19%</text>
+<g fill="#d8d3ec" font-size="11" text-anchor="middle">
+<text x="46" y="230">white</text><text x="84" y="230">flake</text><text x="122" y="230">man</text><text x="160" y="230">ball</text><text x="198" y="230">drift</text>
+<text x="286" y="230">white</text><text x="324" y="230">flake</text><text x="362" y="230">man</text><text x="400" y="230">ball</text><text x="438" y="230">drift</text>
+</g>
+<text x="240" y="258" fill="#8f89ad" font-size="11" text-anchor="middle">Same underlying preferences, flattened to different degrees (illustrative numbers)</text>
+</svg>
+<figcaption>Sketch: the higher the temperature, the flatter the distribution, the likelier a remote pick</figcaption>
+</figure>
+<p>All of this tilts the odds. None of it is a switch. Effects vary by person and by problem, and the looseness you get from an all-nighter or a drink isn't worth what it costs. A more reliable approach: <strong>dig in properly first, and when you're stuck, go for a walk, take a shower, or sleep on it</strong>, with a pen and paper by the bed.</p>
+<div class="ai">
+<h4>AI parallel</h4>
+<p>When a large language model writes, at every step it gives each candidate word a probability of being picked. <b>Greedy decoding</b> always takes the most likely one. It's safe, but you get the most predictable sentence every time, a lot like fixation. <b>Temperature</b> is a dial. Turn it up and the probabilities flatten, so long-shot words get a chance. The output gets more varied and also more error-prone. Another common trick is to <b>rerun with a new random seed</b>. On hard problems, a search often gets stuck in a pit that looks best nearby but isn't the best overall, a <b>local optimum</b>; backing off and starting from somewhere else often gets you out. Computer science even has an algorithm called <b>simulated annealing</b>: jump around at high temperature, then cool down slowly to settle. The brain has no parameter called "temperature." But the structure is the same kind of idea as the loop in section 2, where the DMN generates and the executive network filters: first relax the constraints and widen the search, then tighten the evaluation.</p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · cross-disciplinary links</h3>
+<ul>
+<li><b>Zen · kōans and sudden awakening</b>: kōans like "the sound of one hand" or "does a dog have Buddha-nature?" have no logical answer, on purpose. The student runs ordinary reasoning into the wall again and again until that way of thinking exhausts itself and collapses. Zen calls this "great doubt, great awakening." The structure is strikingly close to fixation → impasse → restructuring: insight doesn't add a new inference, it loosens the old frame. The old dispute between Huineng's "sudden awakening" lineage and the Northern school's "gradual cultivation" can be read as restructuring versus accumulation, two ways of learning.</li>
+<li><b>Gestalt psychology · Köhler's chimpanzees</b>: over a century ago Wolfgang Köhler watched a chimp named Sultan who couldn't reach a banana. Sultan tried and failed, stopped, and then suddenly fitted two short sticks into one long one. The Gestalt school called this <b>restructuring</b>: none of the pieces of the problem change, only what they're seen as. Modern insight research is still asking about that moment.</li>
+<li><b>Mathematics · Poincaré on the bus</b>: in <em>Science and Method</em>, Henri Poincaré recalled struggling fruitlessly with a class of functions, then going on a trip. As he stepped onto a bus the answer appeared, while he was thinking about something else entirely. He argued that conscious hard work stocks the pantry for the unconscious, and that without it nothing would surface later. That fits incubation's condition: it only works after preparation.</li>
+<li><b>Writing · Koestler's "bisociation"</b>: in <em>The Act of Creation</em>, Arthur Koestler proposed that creativity is the sudden joining of two previously unrelated frames of thought, and that jokes, scientific discovery and art share this root. In today's terms, two chains of association that are usually far apart get connected at a single point.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>Is the right brain more creative?</summary><div>Not really. "Left brain logical, right brain creative" is a popular myth (see Topic 34). Insight studies show the right anterior superior temporal gyrus is relatively more active for <strong>the insight style of solving</strong>, maybe because it handles loose, remote meaning relations well. Creative tasks overall recruit large networks spanning both hemispheres. The DMN, executive and salience networks are all bilateral.</div></details>
+<details><summary>Can you trust the "aha" feeling of certainty?</summary><div>Mostly, but it's no guarantee. Some studies find that answers reached by insight are, on average, more often correct than step-by-step ones. Others have deliberately produced "false insights," making people feel a strong aha about a wrong answer. That certainty is a signal from the brain, worth taking seriously, but you still need Wallas's fourth stage: verification.</div></details>
+<details><summary>If loosening control helps insight, why not stay loose all the time?</summary><div>Because most of the time you need accuracy, not novelty. Almost all remote associations are noise; only a few are gold. Strong inhibition when you're in good form is exactly what keeps the noise out. Creativity needs the ability to switch between the two modes, not to sit at one end forever. That's the point of the three-network diagram in section 2.</div></details>
+<details><summary>What should you do during incubation?</summary><div>The meta-analysis suggests that something undemanding (a walk, chores, simple repetitive work) often beats both complete rest and switching to another hard task. The bigger condition comes first, though: you have to have been properly stuck on the problem for a while. Letting go without preparation is just giving up.</div></details>
+<details><summary>Are large language models "creative"?</summary><div>It depends on the definition. If creativity means "novel and useful," models can already produce plenty of novel-looking combinations on divergent tasks. But that novelty comes from recombining and sampling existing text, and the evaluation step often depends on a person or another model to check it. That's just another version of the generate/evaluate split, only this time the two halves may belong to a person and a machine.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://doi.org/10.1371/journal.pbio.0020097" target="_blank">Jung-Beeman, Kounios et al. · Neural Activity When People Solve Verbal Problems with Insight</a> — PLoS Biology, 2004: right aSTG and the gamma burst</li>
+<li><a href="https://doi.org/10.1073/pnas.1713532115" target="_blank">Beaty et al. · Robust prediction of individual creative ability from brain functional connectivity</a> — PNAS, 2018: three-network connectivity predicts creativity</li>
+<li><a href="https://doi.org/10.1037/a0014212" target="_blank">Sio &amp; Ormerod · Does incubation enhance problem solving? A meta-analytic review</a> — Psychological Bulletin, 2009: the limits of incubation</li>
+<li><a href="https://doi.org/10.1080/13546783.2011.625663" target="_blank">Wieth &amp; Zacks · Time of day effects on problem solving: When the non-optimal is optimal</a> — Thinking &amp; Reasoning, 2011</li>
+<li><a href="https://doi.org/10.1038/nature02223" target="_blank">Wagner et al. · Sleep inspires insight</a> — Nature, 2004: finding a hidden rule after sleep</li>
+<li><a href="https://doi.org/10.1126/sciadv.abj5866" target="_blank">Lacaux et al. · Sleep onset is a creative sweet spot</a> — Science Advances, 2021: N1 sleep onset</li>
+<li><a href="https://en.wikipedia.org/wiki/Insight" target="_blank">Insight (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Incubation_(psychology)" target="_blank">Incubation (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Remote_Associates_Test" target="_blank">Remote Associates Test (Wikipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Simulated_annealing" target="_blank">Simulated annealing (Wikipedia)</a> — hot random jumps, then a slow cool-down</li>
+<li><a href="https://en.wikipedia.org/wiki/The_Act_of_Creation" target="_blank">Koestler, The Act of Creation (Wikipedia)</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 46 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
