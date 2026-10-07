@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 47 · A Day in the Life of Attention — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 47 · PHASE C SELF-MODULATION</span>
+<h1>A Day in the Life of Attention</h1>
+<h2>Zero-sum in every moment, but not a tank that runs dry: two clocks, an inverted U, and the sleep debt you can't feel</h2>
+<div class="date">2026-10-07 · BigCat</div>
+<p class="pitch">The 3 p.m. slump usually isn't your willpower running out. It's one of your clocks loosening its grip right on schedule.</p>
+</header>
+<div class="intro">
+<p>At 9 a.m. you blast through twenty emails. At 3 p.m. you read the same page of a report three times and still can't say what it's about. At 9 p.m., when you should be sleepy, your head is weirdly clear. The usual explanation is a metaphor: <strong>attention is a tank of fuel</strong>. Full in the morning, a little less with every use, empty by mid-afternoon.</p>
+<p>It sounds right, but the evidence doesn't back it up well. Attention really is zero-sum <strong>in any given moment</strong>: look at this and you can't take in that. But the ups and downs across a day mostly aren't about "using it up." They come from two clocks stacked on top of each other, where you sit on an arousal curve, and a sleep debt you can't detect in yourself. Which one is at work changes what you should do about it.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Zero-sum in each moment, but the day isn't a fuel tank</h2>
+<p>Start with "right now." In front of you there are words on a screen, a bird flying past the window, the hum of the fridge. The neurons handling each of them are <strong>competing</strong>: whatever gets amplified gets seen; whatever doesn't is pushed down. This is called <strong>biased competition</strong>. The "bias" comes from your goals: a thought held in the prefrontal cortex like "I'm reading the report" gives the relevant signals an extra push. <a class="reflink" href="ref-prefrontal.en.html">Prefrontal cortex</a> So in any moment, attention really is a pie being divided: more here means less there (see Topic 2).</p>
+<p>"Less and less over the day" is a different claim. In 1998 the American psychologist Roy Baumeister proposed <strong>ego depletion</strong>: self-control is like a muscle that tires with each use. People who first resisted eating cookies gave up sooner on a hard puzzle afterwards. The idea was hugely popular for more than a decade, and it spawned the claim that a glass of sugary drink could top you back up.</p>
+<figure>
+<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ga1" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text x="240" y="24" fill="#d8d3ec" font-size="13" font-weight="600" text-anchor="middle">How big is the "ego depletion" effect?</text>
+<text x="240" y="42" fill="#8f89ad" font-size="11" text-anchor="middle">Effect size d: 0 = no difference; 0.2 ≈ small; 0.5 ≈ medium</text>
+<line x1="170" y1="58" x2="170" y2="214" stroke="#5b5678" stroke-width="1.2"/>
+<line x1="245" y1="58" x2="245" y2="214" stroke="#5b5678" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="245" y="232" fill="#8f89ad" font-size="11" text-anchor="middle">0.2</text>
+<text x="170" y="232" fill="#8f89ad" font-size="11" text-anchor="middle">0</text>
+<text x="395" y="232" fill="#8f89ad" font-size="11" text-anchor="middle">0.6</text>
+<line x1="170" y1="214" x2="456" y2="214" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#ga1)"/>
+<text x="160" y="86" fill="#f6d79a" font-size="12" text-anchor="end">2010 · early studies</text>
+<text x="160" y="102" fill="#8f89ad" font-size="10.5" text-anchor="end">83 small studies pooled</text>
+<rect x="170" y="78" width="232" height="26" rx="4" fill="#fbbf24" opacity="0.85"/>
+<text x="410" y="96" fill="#fff4da" font-size="12" font-weight="700">0.62</text>
+<text x="160" y="139" fill="#9fe6e2" font-size="12" text-anchor="end">2016 · 23 labs</text>
+<text x="160" y="155" fill="#8f89ad" font-size="10.5" text-anchor="end">preregistered · ~2,100 people</text>
+<rect x="170" y="131" width="15" height="26" rx="3" fill="#34e5e0"/>
+<text x="193" y="149" fill="#d6fbf9" font-size="12" font-weight="700">0.04</text>
+<text x="160" y="186" fill="#9fe6e2" font-size="12" text-anchor="end">2021 · 36 labs</text>
+<text x="160" y="202" fill="#8f89ad" font-size="10.5" text-anchor="end">preregistered · ~3,500 people</text>
+<rect x="170" y="178" width="22" height="26" rx="3" fill="#34e5e0"/>
+<text x="200" y="196" fill="#d6fbf9" font-size="12" font-weight="700">0.06</text>
+<text x="240" y="258" fill="#8f89ad" font-size="11" text-anchor="middle">In large replications planned in advance, the effect nearly vanishes</text>
+</svg>
+<figcaption>Hagger 2010 meta-analysis vs the Hagger 2016 and Vohs 2021 multi-lab replications</figcaption>
+</figure>
+<p>The trouble came with replication. In 2016, 23 labs and more than two thousand people repeated the experiment using one protocol, published before any data came in. This is called <strong>preregistration</strong>, and it stops researchers from picking the flattering results afterwards. The effect was close to zero. A second round in 2021, with 36 labs and 3,500 people, found nearly zero again. The large early effects most likely came from small samples and the habit of publishing only studies that "worked."</p>
+<p>So is the feeling of getting worn down fake? No, it's real. But it may work less like a fuel gauge and more like an <strong>accountant</strong>. Another theory says the brain is constantly estimating whether carrying on with the current task is worth it. By sticking with it you give up other options (rest, something more fun), and that's the <strong>opportunity cost</strong>. As it rises, you get a nudge in the form of feeling tired or fed up. This fits a familiar scene: too tired to read another page of the report, you play a round of a game and suddenly perk up. Attention wasn't used up; the price of keeping it <em>here</em> just went up.</p>
+<div class="ai">
+<h4>AI parallel</h4>
+<p>In a large language model, the <b>attention mechanism</b> gives every earlier position a weight each time it produces a word. A function called <b>softmax</b> normalizes those weights so they <b>add up to exactly 1</b>. More weight on one word means less on others, so it's zero-sum in the moment, just like biased competition. But the model doesn't "get tired" as it writes: the thousandth word gets the same computation as the first. There's no ego depletion. What really is limited is two kinds of <b>budget</b>. One is the <b>context window</b>, the total amount of text the model can see at once. The other is <b>reasoning compute</b>: some models can be told how long a hidden draft to write before answering, more for hard problems, less for easy ones. That second one is close to the opportunity-cost idea: the resource isn't fuel that runs dry, it's a budget you keep deciding where to spend.</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Two clocks: one piles up sleepiness, one props up wakefulness</h2>
+<p>The classic explanation for how alertness rises and falls over a day is the <strong>two-process model</strong>, proposed in 1982 by the Swiss sleep researcher Alexander Borbély. Two curves are playing tug-of-war in your head.</p>
+<p><strong>The first, Process S, is your stock of sleepiness.</strong> For every hour you're awake, brain cells burn energy and leave behind a molecule called <strong>adenosine</strong>. It slowly builds up, like sand in an hourglass, and the more of it there is, the stronger the pressure to sleep. Sleep clears it, and the next morning starts from a low point again. Caffeine works by blocking the sites where adenosine is received, so you stop feeling the sleepiness for a while. But the sand hasn't gone anywhere; when the caffeine wears off, the sleepiness comes back all at once.</p>
+<p><strong>The second, Process C, is your body clock.</strong> Its master switch is a small cluster of neurons in the hypothalamus called the <strong>suprachiasmatic nucleus</strong>. <a class="reflink" href="ref-hypothalamus.en.html">Hypothalamus</a> It runs on a roughly 24-hour rhythm and resets itself to morning light. Through the day it sends out a growing "stay awake" signal that cancels out the mounting sleepiness. When this cluster was destroyed in monkeys, they didn't become more alert. Their daytime wakefulness broke into fragments, with many more naps. One of this clock's big jobs, in other words, is holding the day together.</p>
+<figure>
+<svg viewBox="0 0 480 290" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="gb1" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+<marker id="gb2" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"/></marker>
+</defs>
+<line x1="50" y1="226" x2="460" y2="226" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#gb1)"/>
+<g fill="#8f89ad" font-size="11" font-family="SF Mono,monospace" text-anchor="middle">
+<text x="50" y="244">07</text><text x="150" y="244">11</text><text x="250" y="244">15</text><text x="350" y="244">19</text><text x="450" y="244">23</text>
+</g>
+<rect x="200" y="60" width="75" height="164" fill="rgba(232,121,249,0.07)"/>
+<path d="M50,215 C150,165 300,120 450,80" fill="none" stroke="#fbbf24" stroke-width="2.6"/>
+<path d="M50,180 C100,130 160,104 205,106 C230,107 250,120 275,112 C320,95 365,48 405,46 C428,45 442,62 450,80" fill="none" stroke="#34e5e0" stroke-width="2.6"/>
+<rect x="60" y="20" width="14" height="4" fill="#fbbf24"/>
+<text x="80" y="26" fill="#f6d79a" font-size="12">S: sleep pressure (adenosine)</text>
+<rect x="60" y="40" width="14" height="4" fill="#34e5e0"/>
+<text x="80" y="46" fill="#9fe6e2" font-size="12">C: the clock's "stay awake" signal</text>
+<text x="237" y="186" fill="#f0b6f8" font-size="12" font-weight="600" text-anchor="middle">Post-lunch dip</text>
+<text x="237" y="203" fill="#c9a8f5" font-size="10.5" text-anchor="middle">alerting signal pauses</text>
+<text x="340" y="16" fill="#d6fbf9" font-size="11.5" text-anchor="middle">Evening "forbidden zone"</text>
+<path d="M392,22 L401,39" fill="none" stroke="#e879f9" stroke-width="1.4" marker-end="url(#gb2)"/>
+<text x="250" y="274" fill="#8f89ad" font-size="11" text-anchor="middle">The higher cyan sits above amber, the more alert you are (schematic)</text>
+</svg>
+<figcaption>Schematic: Borbély's two-process model: sleepiness S keeps rising, clock C keeps propping you up</figcaption>
+</figure>
+<p>Put the two curves together and the shape of the day appears. <strong>From about 1–2 p.m. to 3–4 p.m.</strong>, the clock's alerting signal pauses briefly while sleepiness has been piling up for half a day, which gives you the <strong>post-lunch dip</strong>. Lunch isn't the whole story: the dip shows up even in experiments where people skip lunch, and a big meal just makes it more obvious. Then, <strong>two or three hours before bedtime</strong>, the alerting signal hits its daily peak. That window is actually the hardest time to fall asleep, sometimes called the "forbidden zone" for sleep. It's why you can feel oddly wired at 9 p.m.</p>
+<p>Everyone's clock is also set a bit differently. This is your <strong>chronotype</strong>: some people are natural larks, others night owls. Genes play a part, the whole curve shifts later in adolescence, and it moves earlier again in old age. A series of studies found a <strong>synchrony effect</strong>: tasks that need focus and resistance to distraction go better at <strong>your own peak time</strong>. Off-peak, the first thing to slip is often the ability to hold back irrelevant thoughts. Interestingly, as the previous topic showed, that's exactly what makes off-peak hours better for insight.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>The longer you watch, the looser you get: vigilance decrement and the inverted U</h2>
+<p>During the Second World War, the Royal Air Force noticed a strange problem: the later into a shift, the more often radar operators missed submarine signals on their screens. The psychologist Norman Mackworth built a clock test. A pointer ticked forward one step at a time and occasionally jumped two; your job was to spot the jumps. <strong>Within half an hour</strong>, misses rose clearly, then kept slowly getting worse. This is the <strong>vigilance decrement</strong>: the more monotonous a watch-keeping task, and the rarer its targets, the less time you can hold up.</p>
+<p>Why do we slip? One key player sits in the brainstem: a small cluster of neurons called the <strong>locus coeruleus</strong>. <a class="reflink" href="ref-brainstem-arousal.en.html">Brainstem arousal system</a> There are only tens of thousands of them, yet their fibers reach almost the entire brain, releasing <strong>norepinephrine</strong>, a chemical messenger that tunes how alert you are. <a class="reflink" href="ref-neurotransmitters.en.html">Neurotransmitters</a> Its output acts like a volume knob for how sensitive the whole cortex is to incoming signals.</p>
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="gc1" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<line x1="50" y1="212" x2="460" y2="212" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#gc1)"/>
+<line x1="50" y1="212" x2="50" y2="22" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#gc1)"/>
+<text x="62" y="30" fill="#8f89ad" font-size="11">Performance</text>
+<text x="456" y="230" fill="#8f89ad" font-size="11" text-anchor="end">Arousal (locus coeruleus baseline firing) →</text>
+<path d="M70,200 C160,40 340,40 430,200" fill="none" stroke="#a78bfa" stroke-width="2.6"/>
+<circle cx="116" cy="139" r="6" fill="#a78bfa"/>
+<circle cx="250" cy="80" r="7" fill="#34e5e0"/>
+<circle cx="384" cy="139" r="6" fill="#e879f9"/>
+<text x="250" y="42" fill="#d6fbf9" font-size="12.5" font-weight="700" text-anchor="middle">Focused</text>
+<text x="250" y="60" fill="#9fe6e2" font-size="11" text-anchor="middle">moderate baseline + crisp bursts</text>
+<text x="86" y="104" fill="#efe9ff" font-size="12.5" font-weight="700" text-anchor="middle">Drowsy</text>
+<text x="86" y="120" fill="#c4b5f5" font-size="11" text-anchor="middle">too little firing</text>
+<text x="414" y="104" fill="#fbe3fd" font-size="12.5" font-weight="700" text-anchor="middle">Jittery</text>
+<text x="414" y="120" fill="#f0b6f8" font-size="11" text-anchor="middle">too much firing</text>
+<g stroke-width="1.6">
+<line x1="70" y1="250" x2="160" y2="250" stroke="#3a3558"/>
+<line x1="88" y1="250" x2="88" y2="240" stroke="#a78bfa"/><line x1="131" y1="250" x2="131" y2="240" stroke="#a78bfa"/>
+<line x1="205" y1="250" x2="295" y2="250" stroke="#3a3558"/>
+<line x1="212" y1="250" x2="212" y2="242" stroke="#34e5e0"/><line x1="226" y1="250" x2="226" y2="242" stroke="#34e5e0"/>
+<line x1="246" y1="250" x2="246" y2="230" stroke="#34e5e0"/><line x1="250" y1="250" x2="250" y2="230" stroke="#34e5e0"/><line x1="254" y1="250" x2="254" y2="230" stroke="#34e5e0"/>
+<line x1="272" y1="250" x2="272" y2="242" stroke="#34e5e0"/><line x1="288" y1="250" x2="288" y2="242" stroke="#34e5e0"/>
+<line x1="340" y1="250" x2="430" y2="250" stroke="#3a3558"/>
+<line x1="345" y1="250" x2="345" y2="240" stroke="#e879f9"/><line x1="353" y1="250" x2="353" y2="240" stroke="#e879f9"/><line x1="361" y1="250" x2="361" y2="240" stroke="#e879f9"/><line x1="369" y1="250" x2="369" y2="240" stroke="#e879f9"/><line x1="377" y1="250" x2="377" y2="240" stroke="#e879f9"/><line x1="385" y1="250" x2="385" y2="240" stroke="#e879f9"/><line x1="393" y1="250" x2="393" y2="240" stroke="#e879f9"/><line x1="401" y1="250" x2="401" y2="240" stroke="#e879f9"/><line x1="409" y1="250" x2="409" y2="240" stroke="#e879f9"/><line x1="417" y1="250" x2="417" y2="240" stroke="#e879f9"/><line x1="425" y1="250" x2="425" y2="240" stroke="#e879f9"/>
+</g>
+<text x="115" y="268" fill="#8f89ad" font-size="10.5" text-anchor="middle">sparse</text>
+<text x="250" y="268" fill="#8f89ad" font-size="10.5" text-anchor="middle">quiet, then a burst</text>
+<text x="385" y="268" fill="#8f89ad" font-size="10.5" text-anchor="middle">always on, no focus</text>
+<text x="240" y="292" fill="#8f89ad" font-size="10.5" text-anchor="middle">Bottom row: locus coeruleus firing, schematic (each tick = one spike)</text>
+</svg>
+<figcaption>Schematic: Aston-Jones &amp; Cohen 2005 adaptive gain theory: arousal vs performance is an inverted U</figcaption>
+</figure>
+<p>The American neuroscientists Gary Aston-Jones and Jonathan Cohen pulled this together into an <strong>inverted U</strong>. When the locus coeruleus's baseline firing is too low, you're groggy and nothing grabs you. At a moderate level, it stays quiet most of the time and then fires <strong>a crisp burst</strong> the moment a target appears, strongly amplifying that one signal. That's peak focus. When baseline firing is too high, it's firing all the time and everything gets amplified, so everything seems important and you end up restless and scanning around. Another researcher, Amy Arnsten, found the same shape in the prefrontal cortex: a moderate amount of norepinephrine helps it keep hold of the current thought, while too much, as under acute stress, knocks it offline. <a class="reflink" href="ref-prefrontal.en.html">Prefrontal cortex</a></p>
+<p>Now map it onto a day. Just after waking and in the post-lunch dip, you're on the left side of the curve. After a deadline crunch, three coffees in a row or a stressful meeting, you may have overshot to the right. <strong>"Can't focus" on the left needs a lift; on the right it needs calming down.</strong> The first calls for a short walk or some daylight, the second for slow breathing or one fewer coffee. And long, monotonous monitoring slowly slides you toward the left, which is one source of the vigilance decrement.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>The sleep debt you can't feel, and the fixes that work in minutes</h2>
+<p>Everything so far has been about a single day. There's a sneakier layer underneath: <strong>sleep loss that builds up over several days</strong>. In 2003, Hans Van Dongen's team at the University of Pennsylvania split healthy young adults into groups allowed 4, 6 or 8 hours in bed each night for two straight weeks, plus a group kept awake for three nights in a row. Every day they measured attention with a very simple test: a counter lights up on a screen at random moments and you press a button as soon as you see it. <strong>Any response slower than half a second counts as a "lapse."</strong></p>
+<figure>
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="gd1" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto" refX="8" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"/></marker>
+</defs>
+<text x="128" y="24" fill="#d8d3ec" font-size="12.5" font-weight="600" text-anchor="middle">Measured: attention lapses</text>
+<text x="358" y="24" fill="#d8d3ec" font-size="12.5" font-weight="600" text-anchor="middle">Felt: how sleepy you think you are</text>
+<line x1="40" y1="215" x2="222" y2="215" stroke="#8f89ad" stroke-width="1.3" marker-end="url(#gd1)"/>
+<line x1="270" y1="215" x2="452" y2="215" stroke="#8f89ad" stroke-width="1.3" marker-end="url(#gd1)"/>
+<text x="128" y="234" fill="#8f89ad" font-size="10.5" text-anchor="middle">day 0 → 14</text>
+<text x="358" y="234" fill="#8f89ad" font-size="10.5" text-anchor="middle">day 0 → 14</text>
+<line x1="40" y1="125" x2="215" y2="125" stroke="#5b5678" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="40" y1="75" x2="215" y2="75" stroke="#5b5678" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="44" y="120" fill="#8f89ad" font-size="10">≈ 1 night awake</text>
+<text x="44" y="70" fill="#8f89ad" font-size="10">≈ 2 nights awake</text>
+<path d="M40,205 L215,203" fill="none" stroke="#34e5e0" stroke-width="2.4"/>
+<path d="M40,205 C90,180 160,150 215,125" fill="none" stroke="#a78bfa" stroke-width="2.4"/>
+<path d="M40,205 C80,160 150,105 215,78" fill="none" stroke="#e879f9" stroke-width="2.4"/>
+<text x="222" y="207" fill="#9fe6e2" font-size="11">8h</text>
+<text x="222" y="129" fill="#c4b5f5" font-size="11">6h</text>
+<text x="222" y="82" fill="#f0b6f8" font-size="11">4h</text>
+<path d="M270,200 L445,198" fill="none" stroke="#34e5e0" stroke-width="2.4"/>
+<path d="M270,200 C285,175 300,165 320,163 C360,161 410,160 445,158" fill="none" stroke="#a78bfa" stroke-width="2.4"/>
+<path d="M270,200 C285,155 300,138 320,135 C360,130 410,127 445,125" fill="none" stroke="#e879f9" stroke-width="2.4"/>
+<text x="451" y="202" fill="#9fe6e2" font-size="11">8h</text>
+<text x="451" y="162" fill="#c4b5f5" font-size="11">6h</text>
+<text x="451" y="129" fill="#f0b6f8" font-size="11">4h</text>
+<text x="358" y="96" fill="#fbbf24" font-size="11" text-anchor="middle">rises for a few days, then barely moves</text>
+<text x="240" y="258" fill="#8f89ad" font-size="11" text-anchor="middle">Left keeps climbing; right quickly "gets used to it": that's the gap</text>
+</svg>
+<figcaption>Schematic based on Van Dongen et al. 2003: 4, 6 or 8 hours a night for 14 days</figcaption>
+</figure>
+<p>The results sting. The 8-hour group barely changed. In the 6-hour group, lapses <strong>climbed day after day</strong>, and after two weeks they were close to the level of people who had stayed up for one to two whole nights. The 4-hour group was worse still. Yet when asked to rate how sleepy they felt, the 6-hour group's ratings rose a little over the first few days <strong>and then hardly rose at all</strong>. Performance kept sliding while people felt they had "adjusted." When you're short on sleep, your sense of your own state is exactly the gauge you can trust least.</p>
+<p>The good news is that some fixes really do take just minutes. In a 2011 experiment, people did a monotonous 50-minute watch-keeping task. One group was briefly switched to a different task twice along the way, and <strong>their performance barely dropped</strong>, while the group that watched non-stop declined as usual. A short "change of channel" seems to let attention re-lock onto the goal. A review pooling twenty-odd studies also found that <strong>micro-breaks</strong> of ten minutes or less reliably reduce fatigue and boost energy. Their effect on work performance is smaller, and clearer for routine tasks than for demanding mental work. A few minutes of brisk walking or stair climbing also gives attention and reaction speed a small lift for a short while afterwards.</p>
+<p>Keep the two apart, though. Micro-breaks and short bouts of movement fix vigilance decrement and your position on the curve <strong>within a day</strong>. <strong>Sleep debt built up over days can only be paid back with sleep.</strong> Coffee can block the adenosine signal, but it can't flatten that climbing line in Van Dongen's experiment.</p>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · cross-disciplinary links</h3>
+<ul>
+<li><b>History of psychology · William James</b>: In <i>The Principles of Psychology</i> (1890), James wrote that there is no such thing as voluntary attention sustained for more than a few seconds at a time. What we call long concentration is really pulling a wandering attention back to the same object over and over. More than a century later, research on vigilance decrement and moment-to-moment fluctuations in attention is largely filling in the data for that sentence.</li>
+<li><b>Zen practice · sitting and walking meditation</b>: In a traditional Zen hall, after a period of sitting you rise for <b>kinhin</b>, slow walking around the room, before sitting again. It's not only about stretching the legs. Watching your breath for a long time is itself a monotonous vigilance task, and switching to a different activity at intervals lets attention gather again: the same structure as "a short change of channel prevents decline." Buddhist meditation manuals also name two faults, dullness and agitation, one too slack and one too tight, which land neatly at the two ends of the inverted U.</li>
+<li><b>Nonlinear dynamics · Steven Strogatz</b>: The mathematician Steven Strogatz wrote his doctoral thesis on the human sleep-wake cycle, analyzing it with the mathematics of coupled oscillators. The tug-of-war between the body clock and sleep pressure is a textbook case of two processes with different time courses combining into complex rhythms. He later carried the same ideas over to fireflies flashing in sync and power grids locking together.</li>
+<li><b>Economics · opportunity cost</b>: Robert Kurzban and colleagues used the economist's notion of opportunity cost to recast mental fatigue. Fatigue isn't fuel running out; it's the brain quoting a price: "everything else you're giving up by keeping your computing power on this is getting more valuable." That turns a physiological question into a resource-allocation one.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If ego depletion fell apart, is "limited willpower" completely wrong?</summary><div>"Completely wrong" is too fast. What large replications knocked down was one specific experimental setup: do a small self-control task, and a second self-control task right after gets worse. People really do get tired and want to quit, and that feeling is real. The debate is about the cause: is some resource actually used up, or is the brain re-evaluating whether carrying on is worth it? The second view makes a testable prediction: give "depleted" people a strong enough reason, or a more interesting task, and they often bounce back immediately.</div></details>
+<details><summary>Can you push through the post-lunch dip?</summary><div>You can, but it costs. It's easier to work with it: put work that needs deep focus or resistance to distraction in your own peak hours, and save sorting, replies and routine tasks for roughly 1–4 p.m. A short nap of about 20 minutes or less is also a common way over the hump; sleep much longer and you risk sliding into deep sleep and waking up groggier.</div></details>
+<details><summary>Is coffee helping you or fooling you?</summary><div>Both. It blocks adenosine's "sleepy" signal, so attention and reaction speed genuinely improve for a while. That's a real gain. But adenosine keeps piling up and arrives all at once when the caffeine wears off; drunk late in the afternoon, it can also delay sleep and cut into deep sleep, making the next day sleepier. For someone chronically short on sleep, coffee is more like covering up a warning light on the dashboard.</div></details>
+<details><summary>Why do sleep-deprived people overrate how they're doing?</summary><div>Judging "how am I doing right now" is itself a job for the prefrontal cortex, which happens to be among the regions most sensitive to sleep loss. Worse, people tend to compare themselves with how they've felt over the last few days rather than with their well-rested selves. When the reference point sinks along with you, things seem "fine." An objective check, such as a few minutes of a reaction-time test, is far more reliable than gut feeling.</div></details>
+<details><summary>If attention is zero-sum in each moment, does multitasking always lose?</summary><div>Most of the time, yes. Doing two things "at once" usually means switching rapidly between them, and each switch costs a little reloading. That's the switch cost, the subject of the next topic. The exception is when one of the tasks is highly automatic, like walking for a practised walker, which takes almost no attention.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://doi.org/10.1177/1745691616652873" target="_blank">Hagger et al. · A Multilab Preregistered Replication of the Ego-Depletion Effect</a> — Perspectives on Psychological Science, 2016: the 23-lab replication</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Vohs+multisite+preregistered+paradigmatic+test+ego-depletion" target="_blank">Vohs et al. · A Multisite Preregistered Paradigmatic Test of the Ego-Depletion Effect</a> — Psychological Science, 2021 (PubMed)</li>
+<li><a href="https://doi.org/10.1017/S0140525X12003196" target="_blank">Kurzban et al. · An opportunity cost model of subjective effort and task performance</a> — Behavioral and Brain Sciences, 2013</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Borbely+two-process+model+of+sleep+regulation+reappraisal" target="_blank">Borbély et al. · The two-process model of sleep regulation: a reappraisal</a> — Journal of Sleep Research, 2016 (PubMed)</li>
+<li><a href="https://doi.org/10.1146/annurev.neuro.28.061604.135709" target="_blank">Aston-Jones &amp; Cohen · An integrative theory of locus coeruleus-norepinephrine function</a> — Annual Review of Neuroscience, 2005: adaptive gain and the inverted U</li>
+<li><a href="https://doi.org/10.1038/nrn2648" target="_blank">Arnsten · Stress signalling pathways that impair prefrontal cortex structure and function</a> — Nature Reviews Neuroscience, 2009</li>
+<li><a href="https://doi.org/10.1093/sleep/26.2.117" target="_blank">Van Dongen et al. · The cumulative cost of additional wakefulness</a> — Sleep, 2003: cumulative effects of sleep restriction</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Ariga+Lleras+brief+and+rare+mental+breaks+keep+you+focused" target="_blank">Ariga &amp; Lleras · Brief and rare mental "breaks" keep you focused</a> — Cognition, 2011 (PubMed)</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Albulescu+give+me+a+break+micro-breaks+meta-analysis" target="_blank">Albulescu et al. · Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks</a> — PLOS ONE, 2022 (PubMed)</li>
+<li><a href="https://doi.org/10.1146/annurev.ne.18.030195.001205" target="_blank">Desimone &amp; Duncan · Neural mechanisms of selective visual attention</a> — Annual Review of Neuroscience, 1995: biased competition</li>
+<li><a href="https://en.wikipedia.org/wiki/Ego_depletion" target="_blank">Ego depletion (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Chronotype" target="_blank">Chronotype (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Locus_coeruleus" target="_blank">Locus coeruleus (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law" target="_blank">Yerkes–Dodson law (Wikipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vigilance_(psychology)" target="_blank">Vigilance (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Psychomotor_vigilance_task" target="_blank">Psychomotor vigilance task (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Adenosine" target="_blank">Adenosine (Wikipedia)</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 47 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

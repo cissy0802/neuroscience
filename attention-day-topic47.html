@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 47 · 注意力的一天 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 47 · PHASE C 自我调制</span>
+<h1>注意力的一天</h1>
+<h2>每一刻都在抢，但一天下来不是油箱见底：两个钟、一条倒 U 曲线，和你察觉不到的睡眠债</h2>
+<div class="date">2026-10-07 · BigCat</div>
+<p class="pitch">下午三点犯困，往往不是因为你上午用光了意志力，而是一只钟在那个点本来就松了手。</p>
+</header>
+<div class="intro">
+<p>早上九点，你一口气回了二十封邮件；下午三点，一页报告读了三遍还不知道在讲什么；晚上九点，本该困了，脑子却又清醒得出奇。我们通常用一个比喻解释这条曲线：<strong>注意力是一箱油</strong>，早上满、用一点少一点，到下午就见底了。</p>
+<p>这个比喻听着顺，可证据不太支持。注意在<strong>每一瞬间</strong>确实是零和的——看了这个就顾不上那个；但一天之内的起落，主要不是「用光了」，而是两个钟的叠加、一条唤醒曲线上的位置，以及一笔你自己根本察觉不到的睡眠债。弄清楚是哪一个在起作用，对策完全不一样。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>每一瞬间是零和，一整天却不是油箱</h2>
+<p>先说「此刻」。你眼前同时有屏幕上的字、窗外飞过的鸟、冰箱的嗡嗡声。大脑里负责处理它们的神经元在<strong>互相竞争</strong>：谁被放大，谁就被看见；没被放大的，就被压下去。这叫<strong>偏向竞争</strong>——「偏向」来自你的目标，比如前额叶里那句「我在读报告」，会给相关的信号加一把力。<a class="reflink" href="ref-prefrontal.html">前额叶</a> 所以在每一刻，注意确实是一块分来分去的饼，多给这边就少给那边（详见 Topic 2）。</p>
+<p>可「一整天越用越少」是另一回事。1998 年，美国心理学家鲍迈斯特（Roy Baumeister）提出<strong>自我损耗</strong>：自控力像肌肉，用一次就累一点，先忍住不吃饼干的人，接下来解难题更早放弃。这个理论红了十几年，还衍生出「喝点糖水就能补回来」的说法。</p>
+<figure>
+<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ga1" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text x="240" y="24" fill="#d8d3ec" font-size="13" font-weight="600" text-anchor="middle">「自我损耗」效应有多大？</text>
+<text x="240" y="42" fill="#8f89ad" font-size="11" text-anchor="middle">效应量 d：0 = 没差别；0.2 ≈ 小；0.5 ≈ 中等</text>
+<line x1="170" y1="58" x2="170" y2="214" stroke="#5b5678" stroke-width="1.2"/>
+<line x1="245" y1="58" x2="245" y2="214" stroke="#5b5678" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="245" y="232" fill="#8f89ad" font-size="11" text-anchor="middle">0.2</text>
+<text x="170" y="232" fill="#8f89ad" font-size="11" text-anchor="middle">0</text>
+<text x="395" y="232" fill="#8f89ad" font-size="11" text-anchor="middle">0.6</text>
+<line x1="170" y1="214" x2="456" y2="214" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#ga1)"/>
+<text x="160" y="86" fill="#f6d79a" font-size="12" text-anchor="end">2010 · 早期研究汇总</text>
+<text x="160" y="102" fill="#8f89ad" font-size="10.5" text-anchor="end">83 项小型研究</text>
+<rect x="170" y="78" width="232" height="26" rx="4" fill="#fbbf24" opacity="0.85"/>
+<text x="410" y="96" fill="#fff4da" font-size="12" font-weight="700">0.62</text>
+<text x="160" y="139" fill="#9fe6e2" font-size="12" text-anchor="end">2016 · 23 个实验室</text>
+<text x="160" y="155" fill="#8f89ad" font-size="10.5" text-anchor="end">事先登记 · 约 2100 人</text>
+<rect x="170" y="131" width="15" height="26" rx="3" fill="#34e5e0"/>
+<text x="193" y="149" fill="#d6fbf9" font-size="12" font-weight="700">0.04</text>
+<text x="160" y="186" fill="#9fe6e2" font-size="12" text-anchor="end">2021 · 36 个实验室</text>
+<text x="160" y="202" fill="#8f89ad" font-size="10.5" text-anchor="end">事先登记 · 约 3500 人</text>
+<rect x="170" y="178" width="22" height="26" rx="3" fill="#34e5e0"/>
+<text x="200" y="196" fill="#d6fbf9" font-size="12" font-weight="700">0.06</text>
+<text x="240" y="258" fill="#8f89ad" font-size="11" text-anchor="middle">大规模、事先写好方案的重复实验里，效应几乎归零</text>
+</svg>
+<figcaption>Hagger 2010 元分析 vs Hagger 2016、Vohs 2021 多实验室重复</figcaption>
+</figure>
+<p>麻烦出在重复实验上。2016 年，23 个实验室、两千多人，按事先公开登记好的同一套方案一起重做（这叫<strong>预注册</strong>，防止事后挑对自己有利的数据），效应几乎是零。2021 年又一轮，36 个实验室、三千五百人，结果还是接近零。早期那么大的效应，很可能来自小样本和「只发表有结果的研究」。</p>
+<p>那「越干越累」的感觉是假的吗？不是假的，但它也许不是油量表，而更像一个<strong>记账员</strong>。另一种理论认为：大脑在不停估算「继续干这件事」划不划算，你放弃了别的可能（休息、更有意思的事），这叫<strong>机会成本</strong>；成本越来越高，就以「累」「烦」的感觉提醒你换个事。这能解释一个常见现象——累得看不下去报告的人，换去打一局游戏，忽然又精神了。注意没用光，是「继续投在这里」的报价变低了。</p>
+<p class="en-brief"><b>EN</b> Attention is zero-sum moment to moment (biased competition), but not a tank that drains over the day: ego depletion, once d≈0.62 in small studies, shrank to d≈0.04 (Hagger 2016, 23 labs) and d≈0.06 (Vohs 2021, 36 labs) in preregistered replications. Mental fatigue may instead signal rising opportunity cost (Kurzban 2013).</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>大语言模型里的<b>注意力机制</b>，每生成一个字，都要给前文每个位置分一个权重，这些权重被一个叫 <b>softmax</b> 的函数归一化，<b>加起来恰好等于 1</b>——给这个词多一点，别的词就少一点，和偏向竞争一样是瞬时零和。但模型不会「越写越累」：第一千个字和第一个字用的是同一套算力，没有自我损耗。真正有限的是两种<b>预算</b>：一是<b>上下文窗口</b>，即它一次能看到的文字总长度；二是<b>推理算力</b>，有些模型可以设定先在内部打多长的草稿再回答，难题多给、简单题少给。后者和「机会成本」的思路很像：资源不是会耗干的油，而是要不停决定往哪儿投的预算。</p>
+</div>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>两只钟：一只攒困意，一只撑清醒</h2>
+<p>一天里清醒程度的起落，最经典的解释是瑞士睡眠研究者博尔贝伊（Alexander Borbély）1982 年提出的<strong>双过程模型</strong>。脑子里有两条曲线在拔河。</p>
+<p><strong>第一条叫 S 过程，是困意的存量。</strong>你醒着的每一小时，脑细胞消耗能量，留下一种叫<strong>腺苷</strong>的分子，它在脑内慢慢堆积，像沙漏里的沙；腺苷越多，「想睡」的压力越大。睡一觉，它被清掉，第二天早上从低点重新开始。咖啡因的作用正是挡住腺苷的接收位点，让你暂时感觉不到困——但沙子并没有少，药效一过，困意会一起涌上来。</p>
+<p><strong>第二条叫 C 过程，是生物钟。</strong>它的总开关在下丘脑里一小团叫<strong>视交叉上核</strong>的神经元，<a class="reflink" href="ref-hypothalamus.html">下丘脑</a> 按约 24 小时的节律、跟着早晨的光来对表。它在白天发出一股越来越强的「保持清醒」信号，刚好去抵消越积越多的困意。猴子实验里把这团神经元毁掉，动物并不是更清醒，而是白天的清醒变得零零碎碎，打盹次数更多——说明这只钟的一大职责就是「撑住」白天。</p>
+<figure>
+<svg viewBox="0 0 480 290" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="gb1" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+<marker id="gb2" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"/></marker>
+</defs>
+<line x1="50" y1="226" x2="460" y2="226" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#gb1)"/>
+<g fill="#8f89ad" font-size="11" font-family="SF Mono,monospace" text-anchor="middle">
+<text x="50" y="244">07</text><text x="150" y="244">11</text><text x="250" y="244">15</text><text x="350" y="244">19</text><text x="450" y="244">23</text>
+</g>
+<rect x="200" y="60" width="75" height="164" fill="rgba(232,121,249,0.07)"/>
+<path d="M50,215 C150,165 300,120 450,80" fill="none" stroke="#fbbf24" stroke-width="2.6"/>
+<path d="M50,180 C100,130 160,104 205,106 C230,107 250,120 275,112 C320,95 365,48 405,46 C428,45 442,62 450,80" fill="none" stroke="#34e5e0" stroke-width="2.6"/>
+<rect x="60" y="20" width="14" height="4" fill="#fbbf24"/>
+<text x="80" y="26" fill="#f6d79a" font-size="12">S：困意存量（腺苷堆积）</text>
+<rect x="60" y="40" width="14" height="4" fill="#34e5e0"/>
+<text x="80" y="46" fill="#9fe6e2" font-size="12">C：生物钟的「保持清醒」信号</text>
+<text x="237" y="186" fill="#f0b6f8" font-size="12" font-weight="600" text-anchor="middle">午后低谷</text>
+<text x="237" y="203" fill="#c9a8f5" font-size="10.5" text-anchor="middle">清醒信号停一停</text>
+<text x="328" y="32" fill="#d6fbf9" font-size="11.5" text-anchor="middle">晚间「禁睡区」</text>
+<path d="M374,31 L396,41" fill="none" stroke="#e879f9" stroke-width="1.4" marker-end="url(#gb2)"/>
+<text x="250" y="274" fill="#8f89ad" font-size="11" text-anchor="middle">青线高出黄线越多，你越清醒；两线贴近时最难撑（示意）</text>
+</svg>
+<figcaption>示意：Borbély 双过程模型 —— 困意 S 一路上涨，生物钟 C 一路托底</figcaption>
+</figure>
+<p>两条线一叠，一天的形状就出来了。<strong>下午一两点到三四点</strong>，生物钟的清醒信号有一个小停顿，困意却已攒了大半天，于是出现<strong>午后低谷</strong>——它不全是午饭的锅，不吃午饭的实验里也照样出现，吃得多只是让它更明显。而在<strong>睡前两三个小时</strong>，清醒信号冲到全天最高，这段时间反而最难入睡，被称为「禁睡区」。这就是为什么晚上九点你会莫名精神。</p>
+<p>每个人的钟还拨得不一样，这叫<strong>时型</strong>：有人天生早起型，有人是夜猫子，受基因影响，青春期整体往后拨，老了又往前挪。一系列研究发现了<strong>同步效应</strong>：在你<strong>自己的高峰时段</strong>做需要专注、需要压住干扰的事，表现更好；错开高峰，最先变差的往往是「压住无关念头」的能力。有意思的是，上一期讲过，这恰恰让非高峰时段更适合顿悟。</p>
+<p class="en-brief"><b>EN</b> Alertness over the day reflects Borbély's two-process model: homeostatic sleep pressure (S, tracked by adenosine build-up, which caffeine masks) versus a circadian alerting signal (C) from the suprachiasmatic nucleus. Their interplay produces the post-lunch dip and an evening "wake maintenance zone"; chronotype shifts the curve, and tasks needing inhibition suffer most off-peak.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>盯得越久越松：警觉衰减与唤醒的倒 U</h2>
+<p>二战时，英国皇家空军发现雷达员一个奇怪的问题：值班越往后，越容易漏掉屏幕上的潜艇信号。心理学家麦克沃思（Norman Mackworth）做了个钟表实验：一根指针一格一格跳，偶尔跳两格，要你发现。结果<strong>半小时内</strong>漏报率就明显上升，之后继续缓慢变差。这叫<strong>警觉衰减</strong>：越是单调、少有目标出现的盯梢任务，越撑不久。</p>
+<p>为什么会松？其中一个关键角色在脑干：一小团叫<strong>蓝斑</strong>的神经元，<a class="reflink" href="ref-brainstem-arousal.html">脑干唤醒系统</a> 数量只有几万个，却把纤维铺到几乎整个大脑，释放<strong>去甲肾上腺素</strong>——一种调节「警醒程度」的化学信使。<a class="reflink" href="ref-neurotransmitters.html">神经递质</a> 它的输出像一个音量旋钮，调的是整个皮层对信号的敏感度。</p>
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="gc1" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<line x1="50" y1="212" x2="460" y2="212" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#gc1)"/>
+<line x1="50" y1="212" x2="50" y2="22" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#gc1)"/>
+<text x="62" y="30" fill="#8f89ad" font-size="11">表现</text>
+<text x="456" y="230" fill="#8f89ad" font-size="11" text-anchor="end">唤醒水平（蓝斑基础放电）→</text>
+<path d="M70,200 C160,40 340,40 430,200" fill="none" stroke="#a78bfa" stroke-width="2.6"/>
+<circle cx="116" cy="139" r="6" fill="#a78bfa"/>
+<circle cx="250" cy="80" r="7" fill="#34e5e0"/>
+<circle cx="384" cy="139" r="6" fill="#e879f9"/>
+<text x="250" y="42" fill="#d6fbf9" font-size="12.5" font-weight="700" text-anchor="middle">专注</text>
+<text x="250" y="60" fill="#9fe6e2" font-size="11" text-anchor="middle">中等基础放电 + 清脆的爆发</text>
+<text x="86" y="104" fill="#efe9ff" font-size="12.5" font-weight="700" text-anchor="middle">昏沉</text>
+<text x="86" y="120" fill="#c4b5f5" font-size="11" text-anchor="middle">放电太少</text>
+<text x="418" y="104" fill="#fbe3fd" font-size="12.5" font-weight="700" text-anchor="middle">焦躁分心</text>
+<text x="418" y="120" fill="#f0b6f8" font-size="11" text-anchor="middle">放电太多</text>
+<g stroke-width="1.6">
+<line x1="70" y1="250" x2="160" y2="250" stroke="#3a3558"/>
+<line x1="88" y1="250" x2="88" y2="240" stroke="#a78bfa"/><line x1="131" y1="250" x2="131" y2="240" stroke="#a78bfa"/>
+<line x1="205" y1="250" x2="295" y2="250" stroke="#3a3558"/>
+<line x1="212" y1="250" x2="212" y2="242" stroke="#34e5e0"/><line x1="226" y1="250" x2="226" y2="242" stroke="#34e5e0"/>
+<line x1="246" y1="250" x2="246" y2="230" stroke="#34e5e0"/><line x1="250" y1="250" x2="250" y2="230" stroke="#34e5e0"/><line x1="254" y1="250" x2="254" y2="230" stroke="#34e5e0"/>
+<line x1="272" y1="250" x2="272" y2="242" stroke="#34e5e0"/><line x1="288" y1="250" x2="288" y2="242" stroke="#34e5e0"/>
+<line x1="340" y1="250" x2="430" y2="250" stroke="#3a3558"/>
+<line x1="345" y1="250" x2="345" y2="240" stroke="#e879f9"/><line x1="353" y1="250" x2="353" y2="240" stroke="#e879f9"/><line x1="361" y1="250" x2="361" y2="240" stroke="#e879f9"/><line x1="369" y1="250" x2="369" y2="240" stroke="#e879f9"/><line x1="377" y1="250" x2="377" y2="240" stroke="#e879f9"/><line x1="385" y1="250" x2="385" y2="240" stroke="#e879f9"/><line x1="393" y1="250" x2="393" y2="240" stroke="#e879f9"/><line x1="401" y1="250" x2="401" y2="240" stroke="#e879f9"/><line x1="409" y1="250" x2="409" y2="240" stroke="#e879f9"/><line x1="417" y1="250" x2="417" y2="240" stroke="#e879f9"/><line x1="425" y1="250" x2="425" y2="240" stroke="#e879f9"/>
+</g>
+<text x="115" y="268" fill="#8f89ad" font-size="10.5" text-anchor="middle">稀稀拉拉</text>
+<text x="250" y="268" fill="#8f89ad" font-size="10.5" text-anchor="middle">平时安静，目标来时一阵爆发</text>
+<text x="385" y="268" fill="#8f89ad" font-size="10.5" text-anchor="middle">一直在响，分不出重点</text>
+<text x="240" y="292" fill="#8f89ad" font-size="10.5" text-anchor="middle">下排：蓝斑放电示意（每根竖线 = 一次放电）</text>
+</svg>
+<figcaption>示意：Aston-Jones &amp; Cohen 2005 适应性增益理论 —— 唤醒与表现呈倒 U</figcaption>
+</figure>
+<p>美国神经科学家阿斯顿-琼斯（Gary Aston-Jones）和科恩（Jonathan Cohen）总结出一条<strong>倒 U 曲线</strong>。蓝斑的「基础放电」太低，你昏昏沉沉，什么都提不起劲；适中时，它平时安静，一旦目标出现就<strong>一阵清脆的爆发</strong>，把这个信号狠狠放大——这是最专注的状态；基础放电太高，它一直在响，什么都被放大，于是什么都显得重要，你坐立不安、东张西望。另一位研究者阿恩斯滕（Amy Arnsten）在前额叶里也找到了同样的形状：去甲肾上腺素适中时帮前额叶稳住手头的念头，太多时（比如急性压力下）反而让它「掉线」。<a class="reflink" href="ref-prefrontal.html">前额叶</a></p>
+<p>放回一天：早上刚醒和午后低谷，你在曲线左边；赶截止日、连喝三杯咖啡、焦虑的会议后，你可能已经冲到右边。<strong>同样是「集中不了」，左边需要提一提，右边需要降一降</strong>——前者适合走两步、晒晒太阳，后者适合慢呼吸、少一杯咖啡。而长时间单调的盯梢，会让你慢慢滑向左边，这就是警觉衰减的一个来源。</p>
+<p class="en-brief"><b>EN</b> Vigilance decays within ~30 min of monotonous monitoring (Mackworth 1948). The locus coeruleus–norepinephrine system sets arousal along an inverted U (Aston-Jones &amp; Cohen 2005): low tonic firing = drowsy; moderate tonic with crisp phasic bursts = focused; high tonic = distractible. Prefrontal function shows the same curve (Arnsten 2009), so "can't focus" can mean too little or too much arousal.</p>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>你察觉不到的睡眠债，和几分钟就见效的小修补</h2>
+<p>前面说的都是「一天之内」。可还有一层更隐蔽的：<strong>好几天累积的睡眠不足</strong>。2003 年，美国宾夕法尼亚大学的范东恩（Hans Van Dongen）团队把健康年轻人分组，连续两周每晚只许睡 4 小时、6 小时或 8 小时，另有一组连续三晚不睡。每天用一个很简单的测试量注意：屏幕上随机亮起一个计数器，看到就按，<strong>反应慢过半秒就记一次「走神」</strong>。</p>
+<figure>
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="gd1" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto" refX="8" refY="5.5"><path d="M1,1 L10,5.5 L1,10 Z" fill="#8f89ad"/></marker>
+</defs>
+<text x="128" y="24" fill="#d8d3ec" font-size="12.5" font-weight="600" text-anchor="middle">客观：注意走神次数</text>
+<text x="358" y="24" fill="#d8d3ec" font-size="12.5" font-weight="600" text-anchor="middle">主观：自己觉得有多困</text>
+<line x1="40" y1="215" x2="222" y2="215" stroke="#8f89ad" stroke-width="1.3" marker-end="url(#gd1)"/>
+<line x1="270" y1="215" x2="452" y2="215" stroke="#8f89ad" stroke-width="1.3" marker-end="url(#gd1)"/>
+<text x="128" y="234" fill="#8f89ad" font-size="10.5" text-anchor="middle">第 0 → 14 天</text>
+<text x="358" y="234" fill="#8f89ad" font-size="10.5" text-anchor="middle">第 0 → 14 天</text>
+<line x1="40" y1="125" x2="215" y2="125" stroke="#5b5678" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="40" y1="75" x2="215" y2="75" stroke="#5b5678" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="44" y="120" fill="#8f89ad" font-size="10">≈ 通宵 1 夜</text>
+<text x="44" y="70" fill="#8f89ad" font-size="10">≈ 通宵 2 夜</text>
+<path d="M40,205 L215,203" fill="none" stroke="#34e5e0" stroke-width="2.4"/>
+<path d="M40,205 C90,180 160,150 215,125" fill="none" stroke="#a78bfa" stroke-width="2.4"/>
+<path d="M40,205 C80,160 150,105 215,78" fill="none" stroke="#e879f9" stroke-width="2.4"/>
+<text x="222" y="207" fill="#9fe6e2" font-size="11">8h</text>
+<text x="222" y="129" fill="#c4b5f5" font-size="11">6h</text>
+<text x="222" y="82" fill="#f0b6f8" font-size="11">4h</text>
+<path d="M270,200 L445,198" fill="none" stroke="#34e5e0" stroke-width="2.4"/>
+<path d="M270,200 C285,175 300,165 320,163 C360,161 410,160 445,158" fill="none" stroke="#a78bfa" stroke-width="2.4"/>
+<path d="M270,200 C285,155 300,138 320,135 C360,130 410,127 445,125" fill="none" stroke="#e879f9" stroke-width="2.4"/>
+<text x="451" y="202" fill="#9fe6e2" font-size="11">8h</text>
+<text x="451" y="162" fill="#c4b5f5" font-size="11">6h</text>
+<text x="451" y="129" fill="#f0b6f8" font-size="11">4h</text>
+<text x="358" y="96" fill="#fbbf24" font-size="11" text-anchor="middle">头几天涨，之后就不怎么涨了</text>
+<text x="240" y="258" fill="#8f89ad" font-size="11" text-anchor="middle">左边一路往上爬；右边很快「习惯了」——差距就藏在这里</text>
+</svg>
+<figcaption>示意：据 Van Dongen 等 2003，每晚睡 4/6/8 小时、连续 14 天</figcaption>
+</figure>
+<p>结果很扎心。8 小时组基本没变化；6 小时组的走神次数<strong>一天天往上爬</strong>，两周后的水平，接近连续通宵一到两夜的人；4 小时组更糟。可是让他们自己打分「有多困」，6 小时组的感受在头几天涨了一点，<strong>之后就几乎不再涨了</strong>。也就是说：表现在持续变差，人却觉得「我已经适应了」。你对自己状态的感觉，在睡眠不足时恰恰是最不可靠的那个仪表。</p>
+<p>好消息是，有些修补真的只需要几分钟。一项 2011 年的实验让人做 50 分钟的单调盯梢任务，中途偶尔插两次很短的别的任务，结果<strong>他们的表现几乎没有下滑</strong>，而一直盯着的那组照常衰减——短暂地「换个频道」，像是让注意重新校准了目标。对二十多项研究的汇总也显示，十分钟以内的<strong>微休息</strong>能可靠地减轻疲劳感、提升精神；对工作表现的帮助则小一些，而且对重复性工作比对高难度脑力活更明显。几分钟的快走或爬楼梯，之后的一小段时间里注意和反应也会有小幅提升。</p>
+<p>但要分清：微休息和小运动，修的是<strong>一天之内</strong>的警觉衰减和曲线位置；<strong>几天攒下的睡眠债，只有睡眠能还</strong>。咖啡能挡住腺苷的信号，却挡不住范东恩实验里那条一路上爬的线。</p>
+<p class="en-brief"><b>EN</b> Two weeks of 6-hour nights drove attention lapses up steadily, toward the level of one to two nights without sleep, while self-rated sleepiness plateaued after a few days (Van Dongen 2003) — people stop noticing. Brief task switches can prevent vigilance decrement (Ariga &amp; Lleras 2011), and micro-breaks reliably reduce fatigue, but only sleep repays sleep debt.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<ul>
+<li><b>心理学史 · 威廉·詹姆斯</b>：1890 年，詹姆斯在《心理学原理》里写道，并不存在能持续超过几秒的「自愿注意」；我们所谓的长时间专注，其实是一次次把走开的注意重新拉回同一个对象。一百多年后，警觉衰减和「注意每隔几秒就有起伏」的研究，基本是在给这句话补数据。</li>
+<li><b>禅修 · 坐禅与经行</b>：传统禅堂里，坐一支香之后要起身<b>经行</b>——在室内缓步绕行，再回来坐下。这不只是活动腿脚：长时间盯住呼吸本身就是一项单调的警觉任务，定期换一个动作让注意重新聚拢，和「短暂换频道能防衰减」是同一个结构。佛教修定的典籍也常讲「昏沉」与「掉举」两种毛病，前者是太松，后者是太紧，恰好落在倒 U 曲线的两端。</li>
+<li><b>非线性动力学 · 斯特罗加茨</b>：数学家斯特罗加茨（Steven Strogatz）的博士论文就是用耦合振荡器的数学去分析人类睡眠-觉醒周期。生物钟和困意压力的拔河，是「两个不同周期的过程叠加，产生复杂节律」的经典例子，后来他把这套思路推广到萤火虫同步闪光和电网同步。</li>
+<li><b>经济学 · 机会成本</b>：库尔茨班（Robert Kurzban）等人用经济学的机会成本概念重新解释「心累」：疲劳不是燃料耗尽，而是大脑在报价——「把计算资源继续押在这里，你放弃的别的东西越来越值钱」。这把一个生理问题，变成了一个资源分配问题。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>自我损耗被推翻了，那「意志力有限」完全是错的吗？</summary><div>说「完全错」也太快了。被大规模重复否定的，是那个特定的实验范式：先做一件需要自控的小事，紧接着另一件自控任务就变差。人确实会疲劳、会想放弃，这种感觉是真的；争论的是它的原因——是某种资源真的被用光了，还是大脑在重新评估「继续干值不值」。后者有个可检验的预测：给足动机或换成更有意思的任务，「耗尽」的人常常能立刻恢复。</div></details>
+<details><summary>午后低谷能「扛」过去吗？</summary><div>能扛，但成本不低。更省力的做法是顺着它安排：把需要高度专注或压住干扰的工作放在自己的高峰时段，把整理、回复、机械性的事放在下午一两点到三四点。一个不超过 20 分钟左右的小睡也常被用来过这个坎——睡太久容易进入深睡，醒来反而更昏沉。</div></details>
+<details><summary>咖啡到底是在帮你还是在骗你？</summary><div>两者都有。它挡住的是腺苷的「困」信号，所以短时间内注意和反应确实会变好，这是真实的提升。但腺苷照样在堆，药效过后会集中涌来；下午晚些时候喝，还可能推迟入睡、削减深睡，第二天的困意更大。对长期睡眠不足的人，咖啡更像在掩盖仪表盘上的警告灯。</div></details>
+<details><summary>为什么睡眠不足的人最容易高估自己的状态？</summary><div>判断「我现在状态怎么样」本身也是一项要靠前额叶完成的工作，而它恰好是对睡眠不足最敏感的部位之一。更麻烦的是，人往往拿「最近几天的自己」做参照，而不是拿「睡够了的自己」——参照点一起下沉，就觉得「好像也还行」。客观测一测（比如几分钟的反应速度测试）比凭感觉可靠得多。</div></details>
+<details><summary>如果注意每一刻是零和的，一心多用是不是就一定吃亏？</summary><div>大多数时候是。看起来同时做两件事，往往是在两者之间快速来回切换，每次切换都要付一点重新「装载」的代价——这就是下一期要讲的切换成本。例外是其中一件已经高度自动化，比如熟练的走路，它几乎不抢注意。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://doi.org/10.1177/1745691616652873" target="_blank">Hagger 等 · A Multilab Preregistered Replication of the Ego-Depletion Effect</a> — Perspectives on Psychological Science, 2016，23 个实验室的重复</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Vohs+multisite+preregistered+paradigmatic+test+ego-depletion" target="_blank">Vohs 等 · A Multisite Preregistered Paradigmatic Test of the Ego-Depletion Effect</a> — Psychological Science, 2021（PubMed）</li>
+<li><a href="https://doi.org/10.1017/S0140525X12003196" target="_blank">Kurzban 等 · An opportunity cost model of subjective effort and task performance</a> — Behavioral and Brain Sciences, 2013</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Borbely+two-process+model+of+sleep+regulation+reappraisal" target="_blank">Borbély 等 · The two-process model of sleep regulation: a reappraisal</a> — Journal of Sleep Research, 2016（PubMed）</li>
+<li><a href="https://doi.org/10.1146/annurev.neuro.28.061604.135709" target="_blank">Aston-Jones &amp; Cohen · An integrative theory of locus coeruleus-norepinephrine function</a> — Annual Review of Neuroscience, 2005，适应性增益与倒 U</li>
+<li><a href="https://doi.org/10.1038/nrn2648" target="_blank">Arnsten · Stress signalling pathways that impair prefrontal cortex structure and function</a> — Nature Reviews Neuroscience, 2009</li>
+<li><a href="https://doi.org/10.1093/sleep/26.2.117" target="_blank">Van Dongen 等 · The cumulative cost of additional wakefulness</a> — Sleep, 2003，睡眠限制的累积损伤</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Ariga+Lleras+brief+and+rare+mental+breaks+keep+you+focused" target="_blank">Ariga &amp; Lleras · Brief and rare mental "breaks" keep you focused</a> — Cognition, 2011（PubMed）</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Albulescu+give+me+a+break+micro-breaks+meta-analysis" target="_blank">Albulescu 等 · Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks</a> — PLOS ONE, 2022（PubMed）</li>
+<li><a href="https://doi.org/10.1146/annurev.ne.18.030195.001205" target="_blank">Desimone &amp; Duncan · Neural mechanisms of selective visual attention</a> — Annual Review of Neuroscience, 1995，偏向竞争</li>
+<li><a href="https://en.wikipedia.org/wiki/Ego_depletion" target="_blank">自我损耗 Ego depletion（维基）</a> · <a href="https://en.wikipedia.org/wiki/Chronotype" target="_blank">时型 Chronotype（维基）</a> · <a href="https://en.wikipedia.org/wiki/Locus_coeruleus" target="_blank">蓝斑 Locus coeruleus（维基）</a> · <a href="https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law" target="_blank">耶基斯-多德森定律（维基）</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vigilance_(psychology)" target="_blank">警觉 Vigilance（维基）</a> · <a href="https://en.wikipedia.org/wiki/Psychomotor_vigilance_task" target="_blank">精神运动警觉测试 PVT（维基）</a> · <a href="https://en.wikipedia.org/wiki/Adenosine" target="_blank">腺苷 Adenosine（维基）</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 47 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
