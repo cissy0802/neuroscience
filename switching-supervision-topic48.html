@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 48 · 切换的代价与监督自动化 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 48 · PHASE C 自我调制</span>
+<h1>切换的代价与监督自动化</h1>
+<h2>每换一次手，脑子要重新装一次台；而盯着机器干活，恰好是人最不擅长的那份工作</h2>
+<div class="date">2026-10-08 · BigCat</div>
+<p class="pitch">把活儿都交给机器、自己只负责「看着」，听上去最轻松——可「看着」正是人脑最做不好的事。</p>
+</header>
+<div class="intro">
+<p>你在写一份文档，手机亮了一下，你扫一眼回了个「好」，再回到文档——光标还在原处，可刚才那句话要怎么接，忽然想不起来了。我们习惯觉得每次只花了几秒，<strong>真正的账单却不在那几秒里</strong>。</p>
+<p>与此同时，越来越多的工作变成了另一种形状：机器（自动驾驶、自动化流程、AI 助手）在干，人在旁边<strong>盯着、在关键时刻接手</strong>。这听上去是把人从苦差中解放出来，可几十年的研究给出的结论有点反直觉：<strong>长时间被动监视、偶尔紧急接管</strong>，恰好踩中了人脑的好几个弱点。这一期把这两件事放在一起看——它们背后是同一套有限的「控制」机器。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>换一次手，要重新装一次台</h2>
+<p>心理学家做过一个很朴素的实验。屏幕上出现一个字母加一个数字，比如「G7」。有时要你判断数字是单数还是双数，有时要你判断字母是元音还是辅音，按固定顺序轮换：做两次数字、两次字母、两次数字……1995 年，英国心理学家罗杰斯（Robert Rogers）和蒙塞尔（Stephen Monsell）发现：<strong>每逢换任务的那一题，反应都明显变慢、错得也更多</strong>，哪怕你早就知道下一题要换。这叫<strong>切换成本</strong>。</p>
+<figure>
+<svg viewBox="0 0 480 305" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ha1" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text fill="#d8d3ec" font-size="13" font-weight="600" text-anchor="middle" x="240" y="22">轮流做两件事：每次换任务，都慢一拍</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="56" y="52">反应</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="56" y="66">时间</text>
+<line stroke="#5b5678" stroke-width="1.2" x1="62" x2="430" y1="130" y2="130"/>
+<rect fill="#34e5e0" height="45" rx="3" width="40" x="80" y="85" opacity="0.75"/>
+<rect fill="#34e5e0" height="45" rx="3" width="40" x="135" y="85" opacity="0.75"/>
+<rect fill="#a78bfa" height="80" rx="3" width="40" x="190" y="50" stroke="#e879f9" stroke-width="2"/>
+<rect fill="#a78bfa" height="45" rx="3" width="40" x="245" y="85" opacity="0.75"/>
+<rect fill="#34e5e0" height="80" rx="3" width="40" x="300" y="50" stroke="#e879f9" stroke-width="2"/>
+<rect fill="#34e5e0" height="45" rx="3" width="40" x="355" y="85" opacity="0.75"/>
+<g fill="#d8d3ec" font-size="11.5" text-anchor="middle">
+<text x="100" y="146">数字</text><text x="155" y="146">数字</text><text x="210" y="146">字母</text><text x="265" y="146">字母</text><text x="320" y="146">数字</text><text x="375" y="146">数字</text>
+</g>
+<text fill="#f0b6f8" font-size="11" font-weight="600" text-anchor="middle" x="210" y="162">换！</text>
+<text fill="#f0b6f8" font-size="11" font-weight="600" text-anchor="middle" x="320" y="162">换！</text>
+<line stroke="#3a3558" stroke-dasharray="3 5" stroke-width="1" x1="30" x2="450" y1="176" y2="176"/>
+<text fill="#d8d3ec" font-size="12.5" font-weight="600" text-anchor="middle" x="250" y="198">提前给准备时间：代价缩小，但不归零</text>
+<line marker-end="url(#ha1)" stroke="#8f89ad" stroke-width="1.4" x1="90" x2="448" y1="278" y2="278"/>
+<line marker-end="url(#ha1)" stroke="#8f89ad" stroke-width="1.4" x1="90" x2="90" y1="278" y2="208"/>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="84" y="222">切换</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="84" y="236">代价</text>
+<line stroke="#fbbf24" stroke-dasharray="5 4" stroke-width="1.2" x1="92" x2="440" y1="260" y2="260"/>
+<path d="M100,216 C150,240 200,254 260,257 C320,259 380,259 438,259" fill="none" stroke="#e879f9" stroke-width="2.6"/>
+<text fill="#f6d79a" font-size="11" text-anchor="end" x="440" y="252">残余切换成本</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="446" y="298">准备时间（零点几秒 → 一秒多）</text>
+</svg>
+<figcaption>示意：据 Rogers &amp; Monsell 1995 交替任务范式</figcaption>
+</figure>
+<p>慢在哪儿？研究者把这叫<strong>任务集重配置</strong>。「判断单双数」不只是一个念头，而是一整套临时设置：看哪个符号、用什么规则、左手右手各代表什么。换任务，就要把旧设置卸下、新设置装上，像换一道菜之前要把灶台收拾一遍。脑成像里，负责这件事的是一条从<strong>前额叶</strong>延伸到<strong>顶叶</strong>（头顶偏后的皮层）的网络，<a class="reflink" href="ref-prefrontal.html">前额叶</a> 前额叶把「现在在做哪件事」的规则握在手里，顶叶帮着把注意对准相关的那部分信息。</p>
+<p>还有一个门卫：<strong>基底节</strong>。<a class="reflink" href="ref-basal-ganglia.html">基底节</a> 计算模型认为，它决定什么时候把新的规则「放进」前额叶的工作台、什么时候把旧的关在门外。门开得太勤，你会被每个新刺激带跑；关得太死，你会卡在旧任务里转不过来。</p>
+<p>关键的发现在图下半部分：如果提前一两秒告诉你「下一题要换」，代价会缩小一截——这部分是你<strong>主动</strong>提前装好的台；但<strong>剩下的一截怎么准备都去不掉</strong>，它似乎要等新任务的刺激真的出现、真做了一次，旧设置才彻底让位。也就是说，切换有一部分是你能预付的，有一部分只能当场付。</p>
+<p class="en-brief"><b>EN</b> Switching between tasks costs time and accuracy even when the switch is predictable (Rogers &amp; Monsell 1995). The cost reflects "task-set reconfiguration" by a frontoparietal control network, with the basal ganglia gating which rules enter prefrontal working memory; advance preparation shrinks the cost but leaves a residual that only clears once the new task is actually performed.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>走了还留着：注意力残留</h2>
+<p>切换成本是以毫秒计的。可日常里更贵的，是另一种拖累。美国组织行为学者勒鲁瓦（Sophie Leroy）2009 年的实验里，让一组人做一道题做到一半就被叫去做另一件事，另一组人先把题做完再换。结果，<strong>没做完就被叫走的人，在第二件事上表现更差</strong>——他们的一部分心思还挂在前一件事上。她把这叫<strong>注意力残留</strong>。</p>
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hb1" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#c9a8f5"/></marker>
+</defs>
+<text fill="#8f89ad" font-size="11" x="40" y="40">直接切走</text>
+<rect fill="rgba(167,139,250,0.18)" height="44" rx="8" stroke="#a78bfa" stroke-width="1.5" width="120" x="40" y="50"/>
+<text fill="#efe9ff" font-size="12" text-anchor="middle" x="100" y="70">任务 A</text>
+<text fill="#c4b5f5" font-size="10.5" text-anchor="middle" x="100" y="86">没做完</text>
+<line marker-end="url(#hb1)" stroke="#c9a8f5" stroke-width="1.6" x1="166" x2="210" y1="72" y2="72"/>
+<rect fill="rgba(52,229,224,0.10)" height="44" rx="8" stroke="#34e5e0" stroke-width="1.5" width="222" x="218" y="50"/>
+<rect fill="rgba(167,139,250,0.35)" height="44" rx="8" width="86" x="218" y="50"/>
+<text fill="#efe9ff" font-size="11" text-anchor="middle" x="261" y="70">A 还在</text>
+<text fill="#efe9ff" font-size="11" text-anchor="middle" x="261" y="85">脑子里转</text>
+<text fill="#d6fbf9" font-size="12" text-anchor="middle" x="372" y="70">任务 B</text>
+<text fill="#9fe6e2" font-size="10.5" text-anchor="middle" x="372" y="86">只分到一部分注意</text>
+<text fill="#8f89ad" font-size="11" x="40" y="140">先留个交接</text>
+<rect fill="rgba(167,139,250,0.18)" height="44" rx="8" stroke="#a78bfa" stroke-width="1.5" width="96" x="40" y="150"/>
+<text fill="#efe9ff" font-size="12" text-anchor="middle" x="88" y="177">任务 A</text>
+<rect fill="rgba(251,191,36,0.14)" height="44" rx="8" stroke="#fbbf24" stroke-width="1.5" width="96" x="144" y="150"/>
+<text fill="#fff4da" font-size="11" text-anchor="middle" x="192" y="170">写下回来</text>
+<text fill="#fff4da" font-size="11" text-anchor="middle" x="192" y="185">先做哪一步</text>
+<line marker-end="url(#hb1)" stroke="#c9a8f5" stroke-width="1.6" x1="246" x2="276" y1="172" y2="172"/>
+<rect fill="rgba(52,229,224,0.10)" height="44" rx="8" stroke="#34e5e0" stroke-width="1.5" width="156" x="284" y="150"/>
+<text fill="#d6fbf9" font-size="12" text-anchor="middle" x="362" y="170">任务 B</text>
+<text fill="#9fe6e2" font-size="10.5" text-anchor="middle" x="362" y="186">注意基本收得回来</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="240" y="230">残留来自「没了结」：给 A 一个明确的落脚点，它才肯放手</text>
+</svg>
+<figcaption>示意：Leroy 2009 注意力残留；Leroy &amp; Glomb 2018「准备好回来」计划</figcaption>
+</figure>
+<p>为什么没做完的事会粘着不放？一种解释是：大脑为了日后能接着干，会让这个目标保持在一种「随时待命」的状态，时不时把它翻出来复习一下，免得忘了——这份复习就占用了本该给新任务的资源。勒鲁瓦和格洛姆（Theresa Glomb）2018 年的后续研究找到一个便宜的补救：被打断时，花一两分钟<strong>写下「我做到哪了、回来先做哪一步」</strong>，残留明显减少，接下来那件事也做得更好。目标有了落脚点，脑子才敢松手。</p>
+<p>被打断的另一个代价不在表现上。美国信息学者马克（Gloria Mark）团队 2008 年的实验发现，被频繁打断的人<strong>完成得并不慢</strong>，甚至更快——但他们报告的压力、挫败感和费力程度明显更高。人会加速来补回时间，账记在了身体上。</p>
+<p>这又牵出一个硬上限：<strong>工作记忆</strong>，也就是脑子里那块能临时摆放、随时取用信息的小工作台（Topic 3）。研究者估计，它一次大约只能稳稳放下<strong>四件左右</strong>的东西。你同时挂着三个没收尾的线程，每个都在台面上占了一格，留给眼前这件事的就所剩无几。能同时「盯」几条线，不取决于意志力，而取决于这块台子有多大、上面堆了多少没收拾的东西。</p>
+<p class="en-brief"><b>EN</b> Leaving a task unfinished leaves "attention residue" that impairs the next task (Leroy 2009); a brief "ready-to-resume" plan reduces it (Leroy &amp; Glomb 2018). Interrupted workers compensate by working faster, but at the cost of more stress and effort (Mark et al. 2008). Working memory holds only about four chunks (Cowan 2001), which caps how many open threads you can track.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>大语言模型也有一块「工作台」，叫<b>上下文窗口</b>：它一次能读进来的全部文字。人们让 AI 在长任务里接力工作时，常用的办法是在交接时写一份<b>摘要或待办清单</b>，把「做到哪了、下一步是什么」存下来，下次只读这一份，而不是把全部历史塞回去——这和「准备好回来」计划几乎是同一个思路：<b>把没了结的状态外置成一张纸条</b>，台面才腾得出来。区别在于模型没有「残留」：切到新对话，旧内容就彻底不在了；人脑则做不到这么干净。</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>为什么忍不住一遍遍去看：不确定的奖励</h2>
+<p>如果切换这么贵，为什么人还是每隔几分钟就去看一眼邮箱、消息、进度条？答案藏在大脑的奖赏系统里。</p>
+<p>中脑里有一小群释放<strong>多巴胺</strong>的神经元。<a class="reflink" href="ref-reward-circuit.html">奖赏回路</a> 多巴胺常被叫作「快乐分子」，但更准确的说法是：它报告的是<strong>「比预期好多少」</strong>。德国神经科学家舒尔茨（Wolfram Schultz）在猴子身上发现，意料之外的果汁会让这些神经元猛地一放；可一旦猴子学会了某个信号预示果汁，放电就提前到看见信号的那一刻，果汁本身来了反而没反应——因为没有意外。这个「实际减预期」的差值，叫<strong>奖励预测误差</strong>。</p>
+<figure>
+<svg viewBox="0 0 480 290" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hc1" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text fill="#d8d3ec" font-size="13" font-weight="600" text-anchor="middle" x="250" y="24">等待时的多巴胺：一半一半时最「吊着」</text>
+<line marker-end="url(#hc1)" stroke="#8f89ad" stroke-width="1.4" x1="60" x2="452" y1="230" y2="230"/>
+<line marker-end="url(#hc1)" stroke="#8f89ad" stroke-width="1.4" x1="60" x2="60" y1="230" y2="44"/>
+<text fill="#8f89ad" font-size="10.5" x="68" y="52">等待期间的持续放电</text>
+<path d="M80,220 Q250,20 420,220" fill="none" stroke="#fbbf24" stroke-width="2.6"/>
+<circle cx="80" cy="220" fill="#a78bfa" r="5.5"/>
+<circle cx="165" cy="145" fill="#fbbf24" r="5"/>
+<circle cx="250" cy="120" fill="#e879f9" r="7"/>
+<circle cx="335" cy="145" fill="#fbbf24" r="5"/>
+<circle cx="420" cy="220" fill="#34e5e0" r="5.5"/>
+<g fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle">
+<text x="80" y="248">0</text><text x="165" y="248">25%</text><text x="250" y="248">50%</text><text x="335" y="248">75%</text><text x="420" y="248">100%</text>
+</g>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="250" y="266">信号之后奖励出现的概率</text>
+<text fill="#fbe3fd" font-size="12" font-weight="700" text-anchor="middle" x="250" y="96">一半一半</text>
+<text fill="#f0b6f8" font-size="10.5" text-anchor="middle" x="250" y="110">最不确定</text>
+<text fill="#c4b5f5" font-size="10.5" text-anchor="start" x="96" y="226">肯定没有</text>
+<text fill="#9fe6e2" font-size="10.5" text-anchor="end" x="404" y="226">肯定有</text>
+<text fill="#f6d79a" font-size="11" text-anchor="middle" x="250" y="284">刷新邮箱、下拉刷新：大多时候没有，偶尔有——正好落在峰顶附近</text>
+</svg>
+<figcaption>示意：据 Fiorillo, Tobler &amp; Schultz 2003（猴，等待期持续放电随不确定性变化）</figcaption>
+</figure>
+<p>更有意思的是 2003 年舒尔茨团队的另一个发现：当信号之后果汁<strong>时有时无</strong>，在等待结果的那几秒里，多巴胺神经元会出现一种<strong>缓缓爬升的持续放电</strong>；它的大小跟着<strong>不确定性</strong>走——必然有、必然没有时几乎没有，<strong>一半一半时最高</strong>。</p>
+<p>这和行为学家斯金纳（B. F. Skinner）几十年前在鸽子身上看到的现象对得上：按<strong>不固定的次数</strong>给奖励（啄几下才有说不准），鸽子会最卖力、最难戒掉，这叫<strong>间歇强化</strong>。查消息就是这种结构：大多数时候什么也没有，偶尔有一封要紧的、一条有趣的——你永远不知道下一次是不是那一次。每一次「看一眼」都便宜，加起来就是一天几十上百次切换。要强调的是，这条线索把「为什么反复查看」和奖赏系统的计算连了起来，但「刷手机 = 某种成瘾」这样的说法远比这复杂，不能直接画等号（Topic 27）。</p>
+<p class="en-brief"><b>EN</b> Dopamine neurons signal reward prediction error — actual minus expected reward (Schultz 1997). When reward is uncertain, they also show a sustained ramp of activity while waiting that peaks at 50% probability (Fiorillo, Tobler &amp; Schultz 2003). Variable reward schedules sustain checking behavior, which helps explain why we keep switching to look at inboxes and feeds.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p><b>强化学习</b>是让机器通过试错、靠奖励信号学会做事的方法。其中一类算法叫<b>时序差分学习</b>，它在每一步计算一个「这一步之后的实际结果比我预估的好多少」的差值，并用它来修正预估——这个差值叫<b>TD 误差</b>。1997 年舒尔茨与达扬（Peter Dayan）、蒙塔古（Read Montague）把猴子多巴胺的放电和 TD 误差摆在一起，发现形状几乎一致：意外的奖励引起正误差，奖励移到信号上，预期的奖励没来就出现一个下陷。这是神经科学与 AI 之间最紧密、被验证得最充分的一对对应之一。</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>人是糟糕的监视者：自动化的讽刺</h2>
+<p>1983 年，英国心理学家班布里奇（Lisanne Bainbridge）写了一篇只有几页、后来被引用上千次的文章，叫<strong>《自动化的讽刺》</strong>。核心观点是：设计者把能自动化的部分都自动化了，留给人的恰好是两件最难的事——<strong>一直盯着</strong>，以及<strong>在机器搞不定的时候接手</strong>。</p>
+<figure>
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hd1" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"/></marker>
+</defs>
+<rect fill="rgba(52,229,224,0.10)" height="46" rx="10" stroke="#34e5e0" stroke-width="1.5" width="176" x="152" y="30"/>
+<text fill="#d6fbf9" font-size="12" text-anchor="middle" x="240" y="51">① 自动化接手日常操作</text>
+<text fill="#9fe6e2" font-size="10.5" text-anchor="middle" x="240" y="67">九成九的时间都很稳</text>
+<rect fill="rgba(167,139,250,0.14)" height="46" rx="10" stroke="#a78bfa" stroke-width="1.5" width="140" x="322" y="138"/>
+<text fill="#efe9ff" font-size="12" text-anchor="middle" x="392" y="159">② 人只负责盯着</text>
+<text fill="#c4b5f5" font-size="10.5" text-anchor="middle" x="392" y="175">单调、几乎不出事</text>
+<rect fill="rgba(251,191,36,0.10)" height="46" rx="10" stroke="#fbbf24" stroke-width="1.5" width="176" x="152" y="246"/>
+<text fill="#fff4da" font-size="12" text-anchor="middle" x="240" y="267">③ 警觉衰减 + 手艺生疏</text>
+<text fill="#f6d79a" font-size="10.5" text-anchor="middle" x="240" y="283">也不再清楚机器在想什么</text>
+<rect fill="rgba(232,121,249,0.12)" height="46" rx="10" stroke="#e879f9" stroke-width="1.5" width="140" x="18" y="138"/>
+<text fill="#fbe3fd" font-size="12" text-anchor="middle" x="88" y="159">④ 罕见故障来了</text>
+<text fill="#f0b6f8" font-size="10.5" text-anchor="middle" x="88" y="175">最难的时刻交还给人</text>
+<path d="M332,62 Q384,76 390,130" fill="none" marker-end="url(#hd1)" stroke="#e879f9" stroke-width="1.8"/>
+<path d="M390,190 Q384,248 336,262" fill="none" marker-end="url(#hd1)" stroke="#e879f9" stroke-width="1.8"/>
+<path d="M148,262 Q96,248 90,192" fill="none" marker-end="url(#hd1)" stroke="#e879f9" stroke-width="1.8"/>
+<path d="M90,132 Q96,76 144,62" fill="none" marker-end="url(#hd1)" stroke="#e879f9" stroke-width="1.8"/>
+<text fill="#f5b8fb" font-size="13" font-weight="700" text-anchor="middle" x="240" y="156">自动化的讽刺</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="240" y="174">越可靠，人越难接得住</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="240" y="312">据 Bainbridge 1983 的论证整理（示意）</text>
+</svg>
+<figcaption>示意：自动化越成熟，留给人的越是「长时间盯 + 偶尔救火」</figcaption>
+</figure>
+<p>为什么这两件事难？第一，上一期讲过的<strong>警觉衰减</strong>：越是单调、极少出事的盯梢任务，人越撑不久，半小时左右漏报就开始上升。<a class="reflink" href="ref-brainstem-arousal.html">脑干唤醒系统</a> 机器越可靠，「出事」越稀有，盯梢就越单调。</p>
+<p>第二，<strong>自动化自满</strong>。1993 年帕拉休拉曼（Raja Parasuraman）团队的飞行模拟实验里，人要一边手动操作别的任务，一边监视一个自动系统有没有出错。当自动系统的可靠度<strong>一直很高、一成不变</strong>时，人发现它出错的比例明显低于可靠度时高时低的情况。有意思的是，如果「监视」是唯一的任务，人反而盯得很好——自满主要出现在<strong>人手上还有别的事</strong>的时候。</p>
+<p>第三，<strong>手艺生疏与「脱离回路」</strong>。人不亲手做，技能就慢慢退化；更糟的是，人不再清楚机器此刻在干什么、为什么这样干。等它突然把控制权交回来，往往是在<strong>最罕见、最复杂、最紧急</strong>的时刻。2009 年法航 447 航班坠毁的调查中，空速探头结冰导致自动驾驶断开，机组突然接手手动飞行，在混乱中没能识别出飞机已经失速——调查报告专门讨论了高空手动操纵训练不足与情境意识的丧失。</p>
+<p>放到今天：当一个人同时调度好几个 AI 助手，人的角色从<strong>执行者</strong>变成了<strong>调度者和审查者</strong>。前面几节的账全都要算进来：每看一个助手的结果就是一次切换；每个没收尾的线程都在工作台上占一格；助手「偶尔出彩、偶尔出错」的节奏，又恰好是那条让你一遍遍去看的不确定奖励曲线。研究给出的方向不是「更用力地盯」，而是重新设计：让审查集中成批、而不是随时被叫；让每次中断都附带一张「做到哪了」的交接条；让人定期亲手做一部分，保持手艺和对系统的理解。</p>
+<p class="en-brief"><b>EN</b> Bainbridge's "Ironies of Automation" (1983): automating the routine leaves humans the hardest jobs — sustained monitoring and taking over in rare failures. Vigilance decays; complacency appears when automation is highly and constantly reliable and the human is multitasking (Parasuraman et al. 1993); skills and situation awareness erode, as in Air France 447. Supervising many AI agents inherits all of these costs.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p><b>人在回路</b>（human-in-the-loop）指的是让人在自动系统的关键环节把关，比如 AI 助手执行危险操作前先问一句「可以吗」。这套设计默认人的注意是免费、随叫随到的——而前面讲的恰好相反。如果助手每隔几分钟就弹出一个确认，人很快会<b>不看内容、直接点同意</b>，这正是自动化自满；如果只在极少数时候才问，被问到时人又已脱离了上下文。所以设计 <b>agent 编排</b>（让多个 AI 助手分工协作的流程）时，「什么时候打断人、打断时给多少上下文」本身就是要认真设计的部分：把需要人的决定攒成一批、附上清楚的摘要、只在真正有风险的地方停下来——这是把人脑的切换成本当成一种稀缺资源来预算。</p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<ul>
+<li><b>庄子 · 汉阴丈人</b>：《庄子·天地》里，子贡劝一位抱瓮浇园的老人用省力的桔槔（一种提水机械），老人回答：「有机械者必有机事，有机事者必有机心。」用了机器，人心也会跟着变。两千多年后，自动化研究里的「手艺生疏」「脱离回路」，可以算是给这句话补上的一份实验记录。</li>
+<li><b>禅宗 · 大珠慧海</b>：有人问禅师修行和常人有何不同，禅师说：饥来吃饭，困来即眠；常人「吃饭时不肯吃饭，百种须索；睡时不肯睡，千般计较」。吃饭时心里还挂着一百件事，这几乎就是注意力残留的古代版描述——禅宗把「做一件事时就只做这一件事」当成修行本身。</li>
+<li><b>控制论 · 阿什比</b>：英国控制论学者阿什比（W. Ross Ashby）提出<b>必要多样性定律</b>：一个调控者要管得住一个系统，它能做出的应对种类，至少要和系统可能出现的状况一样多。被动盯着、很少亲手操作的人，手里能用的「应对种类」在一点点萎缩，而交到他手里的偏偏是最离奇的状况——自动化的讽刺，用控制论的话说就是调控者的多样性被掏空了。</li>
+<li><b>经济学 · 西蒙</b>：诺奖得主西蒙（Herbert Simon）1971 年写道：信息的丰富，造成了注意的贫乏。当信息、消息和机器产出都几乎免费，真正稀缺的就是人去看、去判断的那一点注意——这把切换成本从一个心理学现象，变成了一个资源分配问题。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>有人说自己「很擅长多任务」，这可能是真的吗？</summary><div>大多数人所谓的同时做几件事，其实是在快速来回切换，每次都付切换成本，只是自己察觉不到。真正能并行的情况，通常是其中一件已经高度自动化（熟练的走路、开熟悉的路），几乎不抢控制资源。</div></details>
+<details><summary>既然没做完的事会留下残留，是不是每件事都要做完才能换？</summary><div>现实里做不到，也没必要。研究给出的折中是：给中断一个「结尾」。哪怕只花一两分钟写下「做到哪了、回来第一步做什么」，目标就从脑子里搬到了纸上，大脑不必再时不时翻出来复习。真正伤人的是那种悬着、没有任何交接就被拽走的中断。</div></details>
+<details><summary>机器越可靠，人越容易出事——那是不是机器别做得太可靠？</summary><div>不是让机器变差，而是别让人只剩「看着」。一些行业的做法是：定期安排人手动操作一段，保持技能；让系统把它的判断和把握程度说出来，人才能知道什么时候该更警惕；在可能的情况下，把交接设计成提前预警、逐步移交，而不是在最危险的那一秒突然撒手。</div></details>
+<details><summary>如果一个人要同时盯好几个 AI 助手，大概能盯几个？</summary><div>没有一个通用的数字，但几个约束是清楚的：工作记忆大约只能稳稳放下四件左右的东西；每看一次结果都是一次切换；每个没收尾的线程都在占位。所以与其问「能盯几个」，不如问「每个助手需要我多久被打断一次、每次需要我装载多少上下文」。把这两个数压下来，能管的数量自然就上去了。</div></details>
+<details><summary>知道了「不确定奖励」的机制，能用它来对付反复查看的冲动吗？</summary><div>可以从结构上动手：把查看从「随时可能有」改成「固定时间批量看」，不确定性就小了很多——你知道下午四点会一次看完，此刻再看的「吊胃口」程度就降下来。关掉非必要的推送也是同一个道理：它把「可能有」变成了一次次真实的打断。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://doi.org/10.1037/0096-3445.124.2.207" target="_blank">Rogers &amp; Monsell · Costs of a predictable switch between simple cognitive tasks</a> — Journal of Experimental Psychology: General, 1995</li>
+<li><a href="https://doi.org/10.1016/S1364-6613(03)00028-7" target="_blank">Monsell · Task switching</a> — Trends in Cognitive Sciences, 2003，综述</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=O%27Reilly+Frank+making+working+memory+work+basal+ganglia" target="_blank">O'Reilly &amp; Frank · Making working memory work: a computational model of learning in the prefrontal cortex and basal ganglia</a> — Neural Computation, 2006（PubMed）</li>
+<li><a href="https://doi.org/10.1016/j.obhdp.2009.04.002" target="_blank">Leroy · Why is it so hard to do my work? The challenge of attention residue when switching between work tasks</a> — Organizational Behavior and Human Decision Processes, 2009</li>
+<li><a href="https://doi.org/10.1287/orsc.2017.1184" target="_blank">Leroy &amp; Glomb · Tasks interrupted … how a "ready-to-resume" plan mitigates the effects</a> — Organization Science, 2018</li>
+<li><a href="https://doi.org/10.1145/1357054.1357072" target="_blank">Mark, Gudith &amp; Klocke · The cost of interrupted work: more speed and stress</a> — CHI, 2008</li>
+<li><a href="https://doi.org/10.1017/S0140525X01003922" target="_blank">Cowan · The magical number 4 in short-term memory</a> — Behavioral and Brain Sciences, 2001</li>
+<li><a href="https://doi.org/10.1126/science.275.5306.1593" target="_blank">Schultz, Dayan &amp; Montague · A neural substrate of prediction and reward</a> — Science, 1997，多巴胺与 TD 误差</li>
+<li><a href="https://doi.org/10.1126/science.1077349" target="_blank">Fiorillo, Tobler &amp; Schultz · Discrete coding of reward probability and uncertainty by dopamine neurons</a> — Science, 2003</li>
+<li><a href="https://doi.org/10.1016/0005-1098(83)90046-8" target="_blank">Bainbridge · Ironies of automation</a> — Automatica, 1983</li>
+<li><a href="https://ntrs.nasa.gov/citations/19930055574" target="_blank">Parasuraman, Molloy &amp; Singh · Performance consequences of automation-induced "complacency"</a> — International Journal of Aviation Psychology, 1993（NASA 记录）</li>
+<li><a href="https://doi.org/10.1177/0018720810376055" target="_blank">Parasuraman &amp; Manzey · Complacency and bias in human use of automation: an attentional integration</a> — Human Factors, 2010</li>
+<li><a href="https://en.wikipedia.org/wiki/Task_switching_(psychology)" target="_blank">任务切换 Task switching（维基）</a> · <a href="https://en.wikipedia.org/wiki/Reinforcement#Intermittent_reinforcement_schedules" target="_blank">间歇强化（维基）</a> · <a href="https://en.wikipedia.org/wiki/Automation_bias" target="_blank">自动化偏差 Automation bias（维基）</a> · <a href="https://en.wikipedia.org/wiki/Air_France_Flight_447" target="_blank">法航 447（维基）</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Variety_(cybernetics)" target="_blank">必要多样性定律 Variety（维基）</a> · <a href="https://en.wikipedia.org/wiki/Attention_economy" target="_blank">注意力经济 Attention economy（维基）</a> · <a href="https://en.wikipedia.org/wiki/Human-in-the-loop" target="_blank">人在回路 Human-in-the-loop（维基）</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 48 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 48 · The Cost of Switching and Supervising Automation — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 48 · PHASE C SELF-MODULATION</span>
+<h1>The Cost of Switching and Supervising Automation</h1>
+<h2>Every time you change tasks, the brain has to reset its workbench; and watching a machine do the work is exactly the job humans are worst at</h2>
+<div class="date">2026-10-08 · BigCat</div>
+<p class="pitch">Handing the work to machines and just "keeping an eye on it" sounds like the easy part. Keeping an eye on things is precisely what the human brain does worst.</p>
+</header>
+<div class="intro">
+<p>You're writing a document. Your phone lights up, you glance at it, reply "ok," and come back. The cursor is right where you left it, but how that sentence was supposed to end has evaporated. We tend to think each one costs a few seconds. <strong>The real bill isn't in those seconds.</strong></p>
+<p>Meanwhile, more and more work is taking a different shape: the machine (an autopilot, an automated pipeline, an AI assistant) does the work, and a person sits beside it, <strong>watching and ready to step in</strong>. That sounds like liberation from drudgery, but decades of research reach a slightly counterintuitive verdict: <strong>long stretches of passive monitoring with the occasional emergency takeover</strong> hit several of the brain's weak spots at once. This topic looks at both together, because underneath they run on the same limited "control" machinery.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Every switch means resetting the workbench</h2>
+<p>Psychologists ran a very plain experiment. A letter and a digit appear on screen, say "G7." Sometimes you judge whether the digit is odd or even; sometimes whether the letter is a vowel or a consonant, in a fixed rotation: digits twice, letters twice, digits twice... In 1995 the British psychologists Robert Rogers and Stephen Monsell found that <strong>on every trial where the task changed, people were clearly slower and made more errors</strong>, even though they knew perfectly well the switch was coming. This is the <strong>switch cost</strong>.</p>
+<figure>
+<svg viewBox="0 0 480 305" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ha1" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text fill="#d8d3ec" font-size="13" font-weight="600" text-anchor="middle" x="240" y="22">Alternating two tasks: every switch costs a beat</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="56" y="52">Response</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="56" y="66">time</text>
+<line stroke="#5b5678" stroke-width="1.2" x1="62" x2="430" y1="130" y2="130"/>
+<rect fill="#34e5e0" height="45" rx="3" width="40" x="80" y="85" opacity="0.75"/>
+<rect fill="#34e5e0" height="45" rx="3" width="40" x="135" y="85" opacity="0.75"/>
+<rect fill="#a78bfa" height="80" rx="3" width="40" x="190" y="50" stroke="#e879f9" stroke-width="2"/>
+<rect fill="#a78bfa" height="45" rx="3" width="40" x="245" y="85" opacity="0.75"/>
+<rect fill="#34e5e0" height="80" rx="3" width="40" x="300" y="50" stroke="#e879f9" stroke-width="2"/>
+<rect fill="#34e5e0" height="45" rx="3" width="40" x="355" y="85" opacity="0.75"/>
+<g fill="#d8d3ec" font-size="11" text-anchor="middle">
+<text x="100" y="146">digit</text><text x="155" y="146">digit</text><text x="210" y="146">letter</text><text x="265" y="146">letter</text><text x="320" y="146">digit</text><text x="375" y="146">digit</text>
+</g>
+<text fill="#f0b6f8" font-size="11" font-weight="600" text-anchor="middle" x="210" y="162">switch!</text>
+<text fill="#f0b6f8" font-size="11" font-weight="600" text-anchor="middle" x="320" y="162">switch!</text>
+<line stroke="#3a3558" stroke-dasharray="3 5" stroke-width="1" x1="30" x2="450" y1="176" y2="176"/>
+<text fill="#d8d3ec" font-size="12.5" font-weight="600" text-anchor="middle" x="250" y="198">Time to prepare shrinks the cost, but never to zero</text>
+<line marker-end="url(#ha1)" stroke="#8f89ad" stroke-width="1.4" x1="90" x2="448" y1="278" y2="278"/>
+<line marker-end="url(#ha1)" stroke="#8f89ad" stroke-width="1.4" x1="90" x2="90" y1="278" y2="208"/>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="84" y="222">Switch</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="84" y="236">cost</text>
+<line stroke="#fbbf24" stroke-dasharray="5 4" stroke-width="1.2" x1="92" x2="440" y1="260" y2="260"/>
+<path d="M100,216 C150,240 200,254 260,257 C320,259 380,259 438,259" fill="none" stroke="#e879f9" stroke-width="2.6"/>
+<text fill="#f6d79a" font-size="11" text-anchor="end" x="440" y="252">residual switch cost</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="end" x="446" y="298">preparation time (a fraction of a second → over a second)</text>
+</svg>
+<figcaption>Schematic: after Rogers &amp; Monsell 1995, alternating-runs paradigm</figcaption>
+</figure>
+<p>Where does the time go? Researchers call it <strong>task-set reconfiguration</strong>. "Judge odd or even" isn't a single thought but a whole bundle of temporary settings: which symbol to look at, which rule to apply, what the left and right keys mean. Switching tasks means unloading the old settings and loading new ones, like clearing the stove before cooking the next dish. In brain imaging, the job falls to a network stretching from the <strong>prefrontal cortex</strong> to the <strong>parietal cortex</strong> (toward the top and back of the head). <a class="reflink" href="ref-prefrontal.en.html">Prefrontal cortex</a> The prefrontal cortex holds the rule for "which task am I doing now," and the parietal cortex helps aim attention at the relevant information.</p>
+<p>There's also a gatekeeper: the <strong>basal ganglia</strong>. <a class="reflink" href="ref-basal-ganglia.en.html">Basal ganglia</a> Computational models propose that they decide when a new rule gets "let in" to the prefrontal workbench and when the old one gets kept out. Open the gate too often and every new stimulus pulls you off course; keep it shut too tight and you get stuck in the old task.</p>
+<p>The key finding is in the lower half of the figure. If you're told a second or so in advance that the next trial will switch, the cost shrinks noticeably. That part is the workbench you <strong>actively</strong> set up ahead of time. But <strong>the remainder won't go away no matter how much you prepare</strong>. It seems the old settings only fully give way once the new task's stimulus actually shows up and you actually do it once. Part of a switch can be prepaid; part of it can only be paid on the spot.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Gone but still here: attention residue</h2>
+<p>Switch costs are measured in milliseconds. In daily life, a different drag is more expensive. In a 2009 experiment by the American organizational researcher Sophie Leroy, one group was pulled away halfway through a puzzle to do something else; another group finished first and then switched. <strong>The people pulled away mid-task did worse on the second task.</strong> Part of their mind was still hanging on the first one. She called it <strong>attention residue</strong>.</p>
+<figure>
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hb1" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#c9a8f5"/></marker>
+</defs>
+<text fill="#8f89ad" font-size="11" x="40" y="40">Switch away abruptly</text>
+<rect fill="rgba(167,139,250,0.18)" height="44" rx="8" stroke="#a78bfa" stroke-width="1.5" width="120" x="40" y="50"/>
+<text fill="#efe9ff" font-size="12" text-anchor="middle" x="100" y="70">Task A</text>
+<text fill="#c4b5f5" font-size="10.5" text-anchor="middle" x="100" y="86">unfinished</text>
+<line marker-end="url(#hb1)" stroke="#c9a8f5" stroke-width="1.6" x1="166" x2="210" y1="72" y2="72"/>
+<rect fill="rgba(52,229,224,0.10)" height="44" rx="8" stroke="#34e5e0" stroke-width="1.5" width="222" x="218" y="50"/>
+<rect fill="rgba(167,139,250,0.35)" height="44" rx="8" width="86" x="218" y="50"/>
+<text fill="#efe9ff" font-size="11" text-anchor="middle" x="261" y="70">A still</text>
+<text fill="#efe9ff" font-size="11" text-anchor="middle" x="261" y="85">spinning</text>
+<text fill="#d6fbf9" font-size="12" text-anchor="middle" x="372" y="70">Task B</text>
+<text fill="#9fe6e2" font-size="10.5" text-anchor="middle" x="372" y="86">gets only part of you</text>
+<text fill="#8f89ad" font-size="11" x="40" y="140">Leave a handoff note first</text>
+<rect fill="rgba(167,139,250,0.18)" height="44" rx="8" stroke="#a78bfa" stroke-width="1.5" width="96" x="40" y="150"/>
+<text fill="#efe9ff" font-size="12" text-anchor="middle" x="88" y="177">Task A</text>
+<rect fill="rgba(251,191,36,0.14)" height="44" rx="8" stroke="#fbbf24" stroke-width="1.5" width="96" x="144" y="150"/>
+<text fill="#fff4da" font-size="10.5" text-anchor="middle" x="192" y="170">Write down the</text>
+<text fill="#fff4da" font-size="10.5" text-anchor="middle" x="192" y="185">first step back</text>
+<line marker-end="url(#hb1)" stroke="#c9a8f5" stroke-width="1.6" x1="246" x2="276" y1="172" y2="172"/>
+<rect fill="rgba(52,229,224,0.10)" height="44" rx="8" stroke="#34e5e0" stroke-width="1.5" width="156" x="284" y="150"/>
+<text fill="#d6fbf9" font-size="12" text-anchor="middle" x="362" y="170">Task B</text>
+<text fill="#9fe6e2" font-size="10.5" text-anchor="middle" x="362" y="186">attention mostly back</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="240" y="230">Residue comes from loose ends: give A a clear landing spot and it lets go</text>
+</svg>
+<figcaption>Schematic: Leroy 2009 attention residue; Leroy &amp; Glomb 2018 "ready-to-resume" plan</figcaption>
+</figure>
+<p>Why do unfinished things stick? One explanation: so that you can pick it up later, the brain keeps that goal on standby and periodically pulls it out for a quick review so it isn't forgotten. That review uses up resources that should be going to the new task. A follow-up by Leroy and Theresa Glomb in 2018 found a cheap fix: when interrupted, spend a minute or two <strong>writing down "where I am and the first thing I'll do when I come back."</strong> Residue dropped noticeably, and performance on the next task improved. Once the goal has somewhere to land, the mind is willing to let go.</p>
+<p>Interruptions carry another cost that doesn't show up in output. In a 2008 experiment by the American informatics researcher Gloria Mark and colleagues, frequently interrupted people <strong>didn't finish more slowly</strong>, and were sometimes even faster, but they reported markedly more stress, frustration and effort. People speed up to make up the time, and the body picks up the tab.</p>
+<p>That brings in a hard limit: <strong>working memory</strong>, the small mental workbench where you temporarily lay out information you need on hand (Topic 3). Researchers estimate it can reliably hold <strong>about four items</strong> at once. With three unfinished threads open, each takes up a slot, leaving little room for what's in front of you. How many lines you can "watch" at once depends not on willpower but on how big the workbench is and how much unfinished clutter is piled on it.</p>
+<div class="ai">
+<h4>AI parallel</h4>
+<p>Large language models have a "workbench" too, called the <b>context window</b>: all the text they can take in at once. When people have AI systems work in relays on long tasks, a common technique is to write a <b>summary or to-do list</b> at each handoff, storing "where we are, what's next," so the next round reads just that note rather than stuffing the whole history back in. It's almost the same idea as the ready-to-resume plan: <b>move the unfinished state out of your head and onto a slip of paper</b>, and the workbench clears. The difference is that models have no residue: switch to a new conversation and the old one is completely gone. Human brains can't be that clean.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Why we keep checking: uncertain rewards</h2>
+<p>If switching is so expensive, why do people still glance at email, messages and progress bars every few minutes? The answer lies in the brain's reward system.</p>
+<p>A small group of neurons in the midbrain release <strong>dopamine</strong>. <a class="reflink" href="ref-reward-circuit.en.html">Reward circuit</a> Dopamine is often called the "pleasure molecule," but more accurately it reports <strong>"how much better than expected."</strong> The German neuroscientist Wolfram Schultz found in monkeys that unexpected juice makes these neurons fire hard; but once a monkey learns that a certain cue predicts juice, the firing moves to the moment the cue appears, and the juice itself produces no response, because there's no surprise. That gap between "actual minus expected" is called the <strong>reward prediction error</strong>.</p>
+<figure>
+<svg viewBox="0 0 480 290" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hc1" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text fill="#d8d3ec" font-size="13" font-weight="600" text-anchor="middle" x="250" y="24">Dopamine while waiting: most "hooked" at fifty-fifty</text>
+<line marker-end="url(#hc1)" stroke="#8f89ad" stroke-width="1.4" x1="60" x2="452" y1="230" y2="230"/>
+<line marker-end="url(#hc1)" stroke="#8f89ad" stroke-width="1.4" x1="60" x2="60" y1="230" y2="44"/>
+<text fill="#8f89ad" font-size="10.5" x="68" y="52">sustained firing while waiting</text>
+<path d="M80,220 Q250,20 420,220" fill="none" stroke="#fbbf24" stroke-width="2.6"/>
+<circle cx="80" cy="220" fill="#a78bfa" r="5.5"/>
+<circle cx="165" cy="145" fill="#fbbf24" r="5"/>
+<circle cx="250" cy="120" fill="#e879f9" r="7"/>
+<circle cx="335" cy="145" fill="#fbbf24" r="5"/>
+<circle cx="420" cy="220" fill="#34e5e0" r="5.5"/>
+<g fill="#8f89ad" font-family="SF Mono,monospace" font-size="11" text-anchor="middle">
+<text x="80" y="248">0</text><text x="165" y="248">25%</text><text x="250" y="248">50%</text><text x="335" y="248">75%</text><text x="420" y="248">100%</text>
+</g>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="250" y="266">probability that reward follows the cue</text>
+<text fill="#fbe3fd" font-size="12" font-weight="700" text-anchor="middle" x="250" y="96">fifty-fifty</text>
+<text fill="#f0b6f8" font-size="10.5" text-anchor="middle" x="250" y="110">most uncertain</text>
+<text fill="#c4b5f5" font-size="10.5" text-anchor="start" x="96" y="226">surely nothing</text>
+<text fill="#9fe6e2" font-size="10.5" text-anchor="end" x="404" y="226">surely reward</text>
+<text fill="#f6d79a" font-size="11" text-anchor="middle" x="250" y="284">Inbox, pull-to-refresh: usually nothing, sometimes something — near the peak</text>
+</svg>
+<figcaption>Schematic: after Fiorillo, Tobler &amp; Schultz 2003 (monkeys; sustained firing tracks uncertainty)</figcaption>
+</figure>
+<p>Even more interesting is another 2003 finding from Schultz's group. When juice followed a cue <strong>only some of the time</strong>, the dopamine neurons showed a <strong>slowly rising, sustained firing</strong> during the seconds of waiting for the outcome. Its size tracked <strong>uncertainty</strong>: almost nothing when the reward was certain or certainly absent, and <strong>highest at fifty-fifty</strong>.</p>
+<p>This lines up with what the behaviorist B. F. Skinner saw in pigeons decades earlier: give rewards after an <strong>unpredictable number</strong> of pecks, and the pigeons work hardest and are hardest to wean off. That's <strong>intermittent reinforcement</strong>. Checking messages has exactly this structure: most of the time there's nothing, now and then something important or fun arrives, and you never know whether the next check is the one. Each glance is cheap; together they add up to dozens or hundreds of switches a day. To be clear, this links "why we keep checking" to the reward system's computations, but claims like "scrolling = addiction" are far more complicated and can't be read off this directly (Topic 27).</p>
+<div class="ai">
+<h4>AI parallel</h4>
+<p><b>Reinforcement learning</b> is a way of letting machines learn by trial and error, guided by a reward signal. One family of its algorithms, <b>temporal-difference learning</b>, computes at each step a gap of "how much better the actual outcome after this step was than I predicted," and uses it to update the prediction. That gap is the <b>TD error</b>. In 1997 Schultz, Peter Dayan and Read Montague set monkey dopamine firing next to the TD error and found nearly the same shape: an unexpected reward gives a positive error, the response moves to the cue with learning, and a dip appears when an expected reward fails to arrive. It's one of the tightest and best-tested correspondences between neuroscience and AI.</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Humans are poor monitors: the ironies of automation</h2>
+<p>In 1983 the British psychologist Lisanne Bainbridge wrote a paper only a few pages long that has since been cited thousands of times: <strong>"Ironies of Automation."</strong> Her core point: designers automate everything that can be automated, and what's left for people is exactly the two hardest jobs — <strong>watching continuously</strong>, and <strong>taking over when the machine can't cope</strong>.</p>
+<figure>
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hd1" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="6"><path d="M1,1 L11,6 L1,11 Z" fill="#e879f9"/></marker>
+</defs>
+<rect fill="rgba(52,229,224,0.10)" height="46" rx="10" stroke="#34e5e0" stroke-width="1.5" width="176" x="152" y="30"/>
+<text fill="#d6fbf9" font-size="11.5" text-anchor="middle" x="240" y="51">① Automation runs routine</text>
+<text fill="#9fe6e2" font-size="10.5" text-anchor="middle" x="240" y="67">rock-solid 99.9% of the time</text>
+<rect fill="rgba(167,139,250,0.14)" height="46" rx="10" stroke="#a78bfa" stroke-width="1.5" width="140" x="322" y="138"/>
+<text fill="#efe9ff" font-size="11.5" text-anchor="middle" x="392" y="159">② Human just watches</text>
+<text fill="#c4b5f5" font-size="10.5" text-anchor="middle" x="392" y="175">dull, almost no events</text>
+<rect fill="rgba(251,191,36,0.10)" height="46" rx="10" stroke="#fbbf24" stroke-width="1.5" width="176" x="152" y="246"/>
+<text fill="#fff4da" font-size="11" text-anchor="middle" x="240" y="267">③ Vigilance decays, skills fade</text>
+<text fill="#f6d79a" font-size="10.5" text-anchor="middle" x="240" y="283">loses track of what it's doing</text>
+<rect fill="rgba(232,121,249,0.12)" height="46" rx="10" stroke="#e879f9" stroke-width="1.5" width="140" x="18" y="138"/>
+<text fill="#fbe3fd" font-size="11.5" text-anchor="middle" x="88" y="159">④ A rare failure hits</text>
+<text fill="#f0b6f8" font-size="10.5" text-anchor="middle" x="88" y="175">at the worst moment</text>
+<path d="M332,62 Q384,76 390,130" fill="none" marker-end="url(#hd1)" stroke="#e879f9" stroke-width="1.8"/>
+<path d="M390,190 Q384,248 336,262" fill="none" marker-end="url(#hd1)" stroke="#e879f9" stroke-width="1.8"/>
+<path d="M148,262 Q96,248 90,192" fill="none" marker-end="url(#hd1)" stroke="#e879f9" stroke-width="1.8"/>
+<path d="M90,132 Q96,76 144,62" fill="none" marker-end="url(#hd1)" stroke="#e879f9" stroke-width="1.8"/>
+<text fill="#f5b8fb" font-size="13" font-weight="700" text-anchor="middle" x="240" y="156">Ironies of automation</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="240" y="174">the more reliable,</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="240" y="188">the harder to catch</text>
+<text fill="#8f89ad" font-size="10.5" text-anchor="middle" x="240" y="312">Summarizing Bainbridge 1983 (schematic)</text>
+</svg>
+<figcaption>Schematic: the more mature the automation, the more the human's job becomes "watch for hours, firefight occasionally"</figcaption>
+</figure>
+<p>Why are these two jobs hard? First, the <strong>vigilance decrement</strong> from the last topic: the duller the watch and the rarer the event, the sooner people flag, with misses climbing within about half an hour. <a class="reflink" href="ref-brainstem-arousal.en.html">Brainstem arousal system</a> The more reliable the machine, the rarer the "event," and the duller the watch.</p>
+<p>Second, <strong>automation complacency</strong>. In a 1993 flight-simulation study by Raja Parasuraman's group, people handled other tasks manually while monitoring an automated system for failures. When the automation's reliability was <strong>consistently high and never changed</strong>, people caught its failures noticeably less often than when reliability varied. Interestingly, when monitoring was the <em>only</em> task, people watched very well. Complacency showed up mainly when <strong>their hands were busy with other things</strong>.</p>
+<p>Third, <strong>skill decay and being "out of the loop."</strong> Skills you don't use slowly erode; worse, you lose track of what the machine is doing right now and why. When it suddenly hands control back, it's usually at the <strong>rarest, most complex, most urgent</strong> moment. In the 2009 crash of Air France Flight 447, iced-over airspeed probes caused the autopilot to disconnect; the crew suddenly had to fly by hand and, in the confusion, failed to recognize that the aircraft had stalled. The investigation specifically discussed insufficient training in high-altitude manual handling and a loss of situational awareness.</p>
+<p>Bring that to today: when one person directs several AI assistants at once, their role shifts from <strong>doer</strong> to <strong>dispatcher and reviewer</strong>. Every cost from the earlier sections lands here. Each look at an assistant's output is a switch; each unfinished thread takes a slot on the workbench; and the assistants' rhythm of "sometimes brilliant, sometimes wrong" sits right on that uncertain-reward curve that keeps you checking. The research points not toward "watch harder" but toward redesign: batch reviews instead of being summoned at any moment; attach a "where things stand" note to every interruption; and have people regularly do part of the work by hand, to keep both their skills and their grasp of the system.</p>
+<div class="ai">
+<h4>AI parallel</h4>
+<p><b>Human-in-the-loop</b> means having a person sign off at key points in an automated system, for example an AI assistant asking "OK to proceed?" before a risky action. That design quietly assumes human attention is free and always on call, which is the opposite of everything above. If the assistant pops up a confirmation every few minutes, people soon <b>stop reading and just click approve</b>: automation complacency. If it asks only rarely, the person is out of context by the time it does. So in designing <b>agent orchestration</b> (workflows where several AI assistants divide up a job), "when to interrupt the human, and with how much context" is itself something to design carefully: batch the decisions that need a person, attach a clear summary, and stop only where the risk is real. That's budgeting the human brain's switch cost as a scarce resource.</p>
+</div>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · cross-disciplinary links</h3>
+<ul>
+<li><b>Zhuangzi · the old gardener of Hanyin</b>: In the <i>Zhuangzi</i> ("Heaven and Earth"), Zigong urges an old man who waters his garden by carrying a jar to use a well-sweep, a labor-saving lifting device. The old man answers: "Where there are machines, there will be machine affairs; where there are machine affairs, there will be machine hearts." Use the machine, and the mind changes with it. More than two thousand years later, automation research on skill decay and being out of the loop reads like an experimental appendix to that line.</li>
+<li><b>Chan Buddhism · Dazhu Huihai</b>: Asked how a practitioner differs from ordinary people, the Chan master said: when hungry, eat; when tired, sleep. Ordinary people "won't just eat when they eat, but make a hundred demands; won't just sleep when they sleep, but run through a thousand calculations." Eating with a hundred other things still hanging in your mind is practically an ancient description of attention residue. Chan treats "when doing one thing, do only that one thing" as the practice itself.</li>
+<li><b>Cybernetics · Ashby</b>: The British cybernetician W. Ross Ashby proposed the <b>law of requisite variety</b>: to control a system, a regulator needs at least as many kinds of response as the system has kinds of disturbance. A person who mostly watches and rarely acts sees their repertoire of responses slowly shrink, and the situations handed to them are precisely the strangest ones. In cybernetic terms, the irony of automation is a regulator whose variety has been hollowed out.</li>
+<li><b>Economics · Simon</b>: Nobel laureate Herbert Simon wrote in 1971 that a wealth of information creates a poverty of attention. When information, messages and machine output are nearly free, what's genuinely scarce is the bit of human attention that looks and judges. That turns switch costs from a psychology curiosity into a resource-allocation problem.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>Some people say they're "great at multitasking." Could that be true?</summary><div>What most people call doing several things at once is actually rapid switching, paying the switch cost each time without noticing. Genuine parallelism usually happens only when one of the tasks is highly automatic (practiced walking, driving a familiar route) and barely touches the control machinery.</div></details>
+<details><summary>If unfinished tasks leave residue, should you always finish before switching?</summary><div>In real life you can't, and you don't need to. The compromise from the research: give the interruption an ending. Even a minute or two spent writing down "where I am, what I'll do first when I'm back" moves the goal from your head onto paper, and the brain no longer has to keep pulling it out for review. What really hurts is the interruption that drags you away with nothing settled and no handoff at all.</div></details>
+<details><summary>If more reliable machines make humans more error-prone, should machines be less reliable?</summary><div>The answer isn't to make machines worse but to stop leaving people with nothing but watching. Some industries schedule regular stretches of manual operation to keep skills alive; have systems state their judgments and how confident they are, so people know when to be more alert; and, where possible, design handoffs as early warnings and gradual transfers rather than letting go abruptly at the most dangerous second.</div></details>
+<details><summary>If one person supervises several AI assistants, roughly how many can they handle?</summary><div>There's no universal number, but the constraints are clear: working memory holds about four items; every look at a result is a switch; every unfinished thread occupies a slot. So rather than asking "how many can I watch," ask "how often does each assistant interrupt me, and how much context do I have to reload each time?" Push those two numbers down and the number you can manage goes up on its own.</div></details>
+<details><summary>Knowing the uncertain-reward mechanism, can you use it against the urge to keep checking?</summary><div>You can change the structure: move checking from "something might be there any moment" to "batch it at fixed times," and the uncertainty drops a lot. If you know you'll go through everything at 4 p.m., checking right now is much less of a tease. Turning off nonessential notifications works the same way: they turn "might be something" into a string of real interruptions.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://doi.org/10.1037/0096-3445.124.2.207" target="_blank">Rogers &amp; Monsell · Costs of a predictable switch between simple cognitive tasks</a> — Journal of Experimental Psychology: General, 1995</li>
+<li><a href="https://doi.org/10.1016/S1364-6613(03)00028-7" target="_blank">Monsell · Task switching</a> — Trends in Cognitive Sciences, 2003, review</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=O%27Reilly+Frank+making+working+memory+work+basal+ganglia" target="_blank">O'Reilly &amp; Frank · Making working memory work: a computational model of learning in the prefrontal cortex and basal ganglia</a> — Neural Computation, 2006 (PubMed)</li>
+<li><a href="https://doi.org/10.1016/j.obhdp.2009.04.002" target="_blank">Leroy · Why is it so hard to do my work? The challenge of attention residue when switching between work tasks</a> — Organizational Behavior and Human Decision Processes, 2009</li>
+<li><a href="https://doi.org/10.1287/orsc.2017.1184" target="_blank">Leroy &amp; Glomb · Tasks interrupted … how a "ready-to-resume" plan mitigates the effects</a> — Organization Science, 2018</li>
+<li><a href="https://doi.org/10.1145/1357054.1357072" target="_blank">Mark, Gudith &amp; Klocke · The cost of interrupted work: more speed and stress</a> — CHI, 2008</li>
+<li><a href="https://doi.org/10.1017/S0140525X01003922" target="_blank">Cowan · The magical number 4 in short-term memory</a> — Behavioral and Brain Sciences, 2001</li>
+<li><a href="https://doi.org/10.1126/science.275.5306.1593" target="_blank">Schultz, Dayan &amp; Montague · A neural substrate of prediction and reward</a> — Science, 1997, dopamine and TD error</li>
+<li><a href="https://doi.org/10.1126/science.1077349" target="_blank">Fiorillo, Tobler &amp; Schultz · Discrete coding of reward probability and uncertainty by dopamine neurons</a> — Science, 2003</li>
+<li><a href="https://doi.org/10.1016/0005-1098(83)90046-8" target="_blank">Bainbridge · Ironies of automation</a> — Automatica, 1983</li>
+<li><a href="https://ntrs.nasa.gov/citations/19930055574" target="_blank">Parasuraman, Molloy &amp; Singh · Performance consequences of automation-induced "complacency"</a> — International Journal of Aviation Psychology, 1993 (NASA record)</li>
+<li><a href="https://doi.org/10.1177/0018720810376055" target="_blank">Parasuraman &amp; Manzey · Complacency and bias in human use of automation: an attentional integration</a> — Human Factors, 2010</li>
+<li><a href="https://en.wikipedia.org/wiki/Task_switching_(psychology)" target="_blank">Task switching (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Reinforcement#Intermittent_reinforcement_schedules" target="_blank">Intermittent reinforcement (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Automation_bias" target="_blank">Automation bias (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Air_France_Flight_447" target="_blank">Air France Flight 447 (Wikipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Variety_(cybernetics)" target="_blank">Requisite variety (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Attention_economy" target="_blank">Attention economy (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Human-in-the-loop" target="_blank">Human-in-the-loop (Wikipedia)</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 48 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
