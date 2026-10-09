@@ -8,7 +8,7 @@
 - **主线** `{slug}-topic{N}.html`（按顺序读）：认知 → 意识 → 自我调制 → 临床/前沿 → 计算。
 - **参考库** `ref-{slug}.html`（不编号、按需 link）：构件/系统的机制解释。主线碰到某构件/系统就 `→ ref` 链过去；若该 ref 页还不存在就**顺手生成一张**放进参考库栏。于是参考库随主线自然长满，你永不用冷启动读地基，但"最终构件/系统都有独立 page"也自动达成。
 
-## Phase A · 认知（Topic 1–9 · 45–46）
+## Phase A · 认知（Topic 1–9 · 45–46 · 49）
 - Topic 1: 感知即推断 — 预测加工/贝叶斯大脑, 错觉作为先验, 主动推理 ｜AI: 生成模型/世界模型 ｜ref→视觉通路
 - Topic 2: 注意 — 自上而下 vs 自下而上, 注意瓶颈, 丘脑门控 ｜AI: Transformer attention（点破"同名不同机制"：偏向竞争/门控 ≠ QKV 点积）｜ref→丘脑
 - Topic 3: 工作记忆 — 前额叶, 容量限制, 持续放电 vs 突触机制 ｜AI: context window / KV cache ｜ref→前额叶
@@ -20,6 +20,7 @@
 - Topic 9: 社会脑与心智理论 — 镜像系统, ToM, 共情回路 ｜AI: multi-agent 里的 ToM ｜ref→镜像系统
 - Topic 45: 语义的群体编码 — 人类海马单神经元里的「词向量」, 以及神经元也是多义的: 2026-09 Nature Neuroscience 在受试者听叙事语音时记录海马神经元, 控制音素与语法后仍有稳健语义编码, 单个神经元对多个语义类别的多个词有反应, 群体反应距离与词义距离相关(同 LLM 嵌入几何), 反应模式随多义度变化=编码随语境变; 同方向: 2026-06 Nature 用语言模型在额颞皮层单神经元上定位语法关系/词性/句法结构; 边界: 对齐最好的是 GPT-2 一档嵌入, 「相似」在表示几何层面, 不等于机制相同(承 Topic 2「同名不同机制」; 接 Topic 7 语言的大脑 / Topic 35 神经编码; 月度前沿刷新纳入 2026-10; 来源: https://www.nature.com/articles/s41593-026-02436-4 与 https://www.nature.com/articles/s41586-026-10691-5) ｜AI: polysemanticity / superposition(方法本身见 ai-ml Day 27 的 SAE, 本站只讲生物脑证据) ｜ref→海马与内嗅
 - Topic 46: 创造力与顿悟 — 酝酿效应为何"放下才想通"(固着消退/错误线索遗忘/无意识联想三种解释), DMN 与执行控制网络的协作而非对立(Beaty), 顿悟时刻的右前颞上回 gamma 爆发与之前的 alpha 闭眼门控(Jung-Beeman/Kounios), 非高峰时段反而更易顿悟(Wieth & Zacks), 睡眠/REM 与远距联想(Wagner 2004 隐藏规律); 边界: 酝酿效应元分析效应量中等、依任务类型而异(Sio & Ormerod 2009)(接 Topic 5 结尾预告的「创造力与洞察」) ｜AI: 温度采样/探索 vs 贪心解码, 换种子重开 ↔ 跳出局部最优 ｜ref→默认模式网络
+- Topic 49: 为什么故事比事实好记 — 「22 倍」的出处之谜与真实效应量(Bower & Clark 1969 叙事串联; Mar 2021 元分析), 因果连接度预测回忆(Trabasso), 事件边界与海马存档峰(Ben-Yakov & Henson; Baldassano), 跨人共享的事件表征(Chen 2017 Sherlock)与说者-听者神经耦合(Stephens & Hasson 2010), 图式加速巩固(Tse 2007)与图式改写(Bartlett), 好奇/情绪调高编码优先级(Gruber 2014; McGaugh), 代价: 记住大意丢细节、个案压倒统计(接 Topic 4 长时记忆 / Topic 46) ｜AI: 可预测即可压缩 ↔ 有结构文本的低困惑度; 按「意外」切分事件的 LLM 情节记忆(EM-LLM) ｜ref→海马与内嗅·默认模式网络
 
 ## Phase B · 意识（Topic 10–17 · 44）
 - Topic 10: 意识的难题 — 易问题 vs 难问题, 感受质, 解释鸿沟
