@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 50 · Switching Neurons with Light — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 50 · PHASE D CLINICAL/FRONTIER</span>
+<h1>Switching neurons with light</h1>
+<h2>The 2026 Nobel Prize in Physiology or Medicine: how a green alga's "eye" moved neuroscience from watching to intervening</h2>
+<div class="date">2026-10-09 · BigCat</div>
+<p class="pitch">People asking why a single-celled alga swims toward light ended up handing brain science its most useful switch.</p>
+</header>
+<div class="intro">
+<p>On 5 October 2026 the Nobel Prize in Physiology or Medicine went to Karl Deisseroth, Peter Hegemann and Georg Nagel "for their discoveries concerning light-gated ion channels and optogenetics".</p>
+<p>The prize doesn't reward a conclusion about the brain. It rewards a <strong>tool</strong>. For the first time, researchers could pick out one type of neuron and, with a flash of light timed to the millisecond, make those cells fire or fall silent, then watch how an animal's behaviour changed. Whenever an earlier issue said "switch these cells on in a mouse and it…", this is usually what was behind it. What it changed is not what we know but <strong>how we can know it</strong>: from "this region lit up" to "this caused it".</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>You could watch, but you couldn't touch</h2>
+<p>Most of neuroscience's old methods were about watching. Brain imaging shows which region brightens when you're afraid; electrodes pick up which neuron fires when a rat turns a corner. But all of this is <strong>correlation</strong>: two things happening together doesn't tell you which one caused the other. Maybe the region is just along for the ride.</p>
+<p>To prove causation you have to <strong>intervene</strong>: switch it off and see whether the thing still happens; switch it on and see whether the thing appears out of nowhere. The trouble is that different types of neuron are packed together like wires of different colours twisted into one cable. Pass current through an electrode and every nearby cell is stimulated; use a drug and it takes minutes to act and spreads across the brain.</p>
+<figure>
+<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ha1" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#fbbf24"/></marker>
+</defs>
+<text fill="#c4b5f5" font-size="12.5" font-weight="600" text-anchor="middle" x="120" y="24">Recording: watch only</text>
+<text fill="#9fe6e2" font-size="12.5" font-weight="600" text-anchor="middle" x="360" y="24">Optogenetics: intervene</text>
+<line stroke="#2a2645" stroke-width="1" x1="240" x2="240" y1="40" y2="210"/>
+<line stroke="#8f89ad" stroke-width="2" x1="75" x2="75" y1="44" y2="100"/>
+<text fill="#8f89ad" font-size="11" x="82" y="56">electrode</text>
+<circle cx="75" cy="130" fill="rgba(167,139,250,0.10)" r="40" stroke="#a78bfa" stroke-width="1.4"/>
+<circle cx="62" cy="116" fill="#a78bfa" r="6"/><circle cx="90" cy="120" fill="#a78bfa" r="6"/><circle cx="66" cy="146" fill="#a78bfa" r="6"/><circle cx="92" cy="148" fill="#a78bfa" r="6"/>
+<line stroke="#8f89ad" stroke-dasharray="4 4" stroke-width="1.4" x1="118" x2="146" y1="130" y2="130"/>
+<text fill="#f6d79a" font-size="15" font-weight="700" text-anchor="middle" x="132" y="120">?</text>
+<rect fill="rgba(255,255,255,0.04)" height="34" rx="9" stroke="#8f89ad" stroke-width="1.2" width="76" x="148" y="113"/>
+<text fill="#e8e4f5" font-size="12" text-anchor="middle" x="186" y="135">freezes</text>
+<line stroke="#34e5e0" stroke-width="3" x1="315" x2="315" y1="44" y2="88"/>
+<text fill="#9fe6e2" font-size="11" x="322" y="56">optical fibre</text>
+<path d="M309,88 L321,88 L338,112 L292,112 Z" fill="rgba(52,229,224,0.20)"/>
+<circle cx="315" cy="130" fill="rgba(52,229,224,0.06)" r="40" stroke="#34e5e0" stroke-width="1.4"/>
+<circle cx="302" cy="116" fill="#34e5e0" r="6"/><circle cx="330" cy="120" fill="none" r="6" stroke="#5b5678" stroke-width="1.4"/><circle cx="306" cy="146" fill="none" r="6" stroke="#5b5678" stroke-width="1.4"/><circle cx="332" cy="148" fill="#34e5e0" r="6"/>
+<line marker-end="url(#ha1)" stroke="#fbbf24" stroke-width="2" x1="358" x2="384" y1="130" y2="130"/>
+<rect fill="rgba(251,191,36,0.10)" height="34" rx="9" stroke="#fbbf24" stroke-width="1.2" width="72" x="388" y="113"/>
+<text fill="#fff4da" font-size="12" text-anchor="middle" x="424" y="135">freezes</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="120" y="200">They co-occur; which causes which?</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="360" y="200">Only cyan cells lit; behaviour changes</text>
+</svg>
+<figcaption>Sketch: what separates correlation from causation is a hand that can move one cell type</figcaption>
+</figure>
+<p>In 1979 Francis Crick, co-discoverer of the DNA double helix, wrote a wish in <em>Scientific American</em>: neuroscience needed a way to <strong>switch off one type of cell while leaving all the others untouched</strong>. Later he suggested light might do it. When he made that wish, the answer was hiding somewhere that had nothing to do with brains.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>A green alga's "eye"</h2>
+<p><em>Chlamydomonas</em> is a green alga made of a single cell, with a small orange-red spot called an <strong>eyespot</strong>. It uses the eyespot to sense where light is coming from and beats its two flagella to swim toward it, so it can photosynthesise. From the 1980s and 1990s, Hegemann kept asking: how exactly does it "see" light?</p>
+<p>He and Nagel (with their collaborator Ernst Bamberg) eventually found the answer: the alga's membrane carries a protein that, when struck by light, opens a tiny pore by itself and lets charged ions through. It was named <strong>channelrhodopsin</strong>. They reported the first one (ChR1) in 2002 and a second, more useful one (<strong>ChR2</strong>) in 2003: shine blue light on it and positive ions rush into the cell.</p>
+<p>What makes it so neat is that <strong>one protein does two jobs</strong>: it's both the light sensor and the gate. Others had controlled neurons with light before, such as Gero Miesenböck's 2002 system, but those needed several genes at once. ChR2 needs just one.</p>
+<p>A neuron fires when positively charged ions suddenly pour in, flipping its voltage upward into a spike called an <strong>action potential</strong>. <a class="reflink" href="ref-neuron-action-potential.en.html">Neurons &amp; action potentials</a> In 2005, in Deisseroth's lab at Stanford, with experiments led by Ed Boyden (then a PhD student) and Feng Zhang and in collaboration with Nagel and Bamberg, the team put the ChR2 gene into rat neurons: <strong>every flash of blue light made the neuron fire once</strong>, with millisecond precision. Two years later they borrowed another microbe's light-sensitive protein, <strong>halorhodopsin</strong>: yellow light drives negative ions in and holds the neuron down so it can't fire. Now they had both switches.</p>
+<figure>
+<svg viewBox="0 0 480 276" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hb1" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#34e5e0"/></marker>
+<marker id="hb2" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#fbbf24"/></marker>
+<marker id="hb3" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#e879f9"/></marker>
+</defs>
+<text fill="#9fe6e2" font-size="12.5" font-weight="600" text-anchor="middle" x="125" y="22">On: ChR2 · blue light</text>
+<text fill="#f6d79a" font-size="12.5" font-weight="600" text-anchor="middle" x="365" y="22">Off: halorhodopsin · yellow light</text>
+<text fill="#8f89ad" font-size="10.5" x="30" y="92">outside</text>
+<text fill="#8f89ad" font-size="10.5" x="30" y="148">inside</text>
+<rect fill="rgba(167,139,250,0.16)" height="30" stroke="#a78bfa" stroke-width="1.2" width="190" x="30" y="100"/>
+<rect fill="rgba(167,139,250,0.16)" height="30" stroke="#a78bfa" stroke-width="1.2" width="190" x="270" y="100"/>
+<line marker-end="url(#hb1)" stroke="#34e5e0" stroke-width="2" x1="82" x2="108" y1="42" y2="90"/>
+<text fill="#9fe6e2" font-size="11" text-anchor="middle" x="72" y="38">blue</text>
+<rect fill="rgba(52,229,224,0.28)" height="38" rx="4" stroke="#34e5e0" stroke-width="1.4" width="24" x="113" y="96"/>
+<text fill="#efe9ff" font-size="11" x="144" y="119">ChR2</text>
+<text fill="#fff4da" font-size="12" x="134" y="62">Na⁺</text>
+<line marker-end="url(#hb2)" stroke="#fbbf24" stroke-width="2" x1="125" x2="125" y1="56" y2="168"/>
+<line marker-end="url(#hb2)" stroke="#fbbf24" stroke-width="2" x1="322" x2="348" y1="42" y2="90"/>
+<text fill="#f6d79a" font-size="11" text-anchor="middle" x="312" y="38">yellow</text>
+<rect fill="rgba(251,191,36,0.22)" height="38" rx="4" stroke="#fbbf24" stroke-width="1.4" width="24" x="353" y="96"/>
+<text fill="#efe9ff" font-size="11" x="384" y="119">NpHR</text>
+<text fill="#fbe3fd" font-size="12" x="374" y="62">Cl⁻</text>
+<line marker-end="url(#hb3)" stroke="#e879f9" stroke-width="2" x1="365" x2="365" y1="56" y2="168"/>
+<path d="M30,214 L66,214 L70,182 L74,224 L80,214 L106,214 L110,182 L114,224 L120,214 L146,214 L150,182 L154,224 L160,214 L220,214" fill="none" stroke="#34e5e0" stroke-width="1.8"/>
+<rect fill="#34e5e0" height="6" width="8" x="64" y="236"/><rect fill="#34e5e0" height="6" width="8" x="104" y="236"/><rect fill="#34e5e0" height="6" width="8" x="144" y="236"/>
+<text fill="#9fe6e2" font-size="10.5" x="164" y="242">flashes</text>
+<path d="M270,214 L290,214 L294,182 L298,224 L304,214 L310,218 L460,218" fill="none" stroke="#e879f9" stroke-width="1.8"/>
+<rect fill="#fbbf24" height="6" width="140" x="306" y="236"/>
+<text fill="#9fe6e2" font-size="11" text-anchor="middle" x="125" y="268">One flash, one spike</text>
+<text fill="#fbe3fd" font-size="11" text-anchor="middle" x="365" y="268">Firing held down while the light is on</text>
+</svg>
+<figcaption>Sketch: positive ions in → firing; negative ions in → silence (membrane voltage traces below)</figcaption>
+</figure>
+<p>The last piece of the puzzle was <strong>choosing which cells</strong>. In front of the light-sensitive gene you can attach a "keycard" sequence, a promoter, that only certain neuron types will read, so only they build the protein; then an optical fibre a little thicker than a hair goes into the target region. Within one piece of brain tissue, only the chosen cell type takes orders from the light. Crick's wish had come true.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Flip the switch and see what happens</h2>
+<p>With a switch in hand, many "we think it works like this" ideas could be tested directly for the first time.</p>
+<p><strong>Is a memory really stored in a small group of cells?</strong> In 2012 Xu Liu, Steve Ramirez and colleagues in Susumu Tonegawa's lab gave a mouse a mild shock in one box while tagging the hippocampal cells active at that moment with ChR2. <a class="reflink" href="ref-hippocampus.en.html">Hippocampus &amp; entorhinal cortex</a> Later they put it in a new, perfectly safe box and turned on blue light: the mouse <strong>froze</strong> at once, as if back in the frightening place. Lighting up that small group of cells was enough to bring back a fear memory. Such cells came to be called a <strong>memory engram</strong>, echoing Topic 4.</p>
+<p><strong>Does dopamine really report "how much better than expected"?</strong> Topic 6 showed that dopamine neurons fire like a <strong>reward prediction error</strong>: more firing when things turn out better than expected, and learning is driven by that difference. <a class="reflink" href="ref-reward-circuit.en.html">Reward circuit</a> But that was only correlation. In 2013 Elizabeth Steinberg and colleagues used a clever trick: first rats learned "light means sugar"; then light and a tone came together. Because the sugar was already predicted by the light, there was no surprise, and rats normally fail to learn what the tone means. But if a burst of dopamine-neuron firing was <strong>added artificially with light</strong> at the moment the sugar arrived, the rats learned it. The difference signal doesn't merely accompany learning; it <strong>causes</strong> it.</p>
+<p>One limit needs stating: artificial stimulation drives hundreds or thousands of cells in lockstep, far more uniformly than anything natural. "Switching it on can cause a behaviour" shows it is <strong>sufficient</strong> to produce the effect, not that the brain <strong>normally</strong> uses it that way. Good experiments test both directions, on and off, and compare against natural recordings.</p>
+<div class="ai">
+<h4>AI parallel</h4>
+<p>People studying what goes on inside large language models (a field called <b>interpretability</b>) have walked the same road. An early method is the <b>probe</b>: check whether certain numbers in a layer correlate with "this sentence is about Paris", which is only correlation. Later methods <b>intervene</b>: swap the model's internal values at one location for the values from a different run, called <b>activation patching</b>, or simply set them to zero, called <b>ablation</b>, and see whether the output changes. A 2022 study used this kind of "causal tracing" to locate facts like "the Eiffel Tower is in Paris" in specific parts of the model's middle layers, and could rewrite them there directly. Artificial networks are far more convenient than brains: every number is visible and editable, no algae required. But the limit is the same: if changing a spot changes the output, it's sufficient to matter, not proof that the model normally relies only on it.</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Three laureates, more than three people's work</h2>
+<figure>
+<svg viewBox="0 0 480 190" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hc1" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#8f89ad"/></marker>
+</defs>
+<line marker-end="url(#hc1)" stroke="#8f89ad" stroke-width="1.5" x1="20" x2="472" y1="95" y2="95"/>
+<g fill="#a78bfa"><circle cx="40" cy="95" r="5"/><circle cx="120" cy="95" r="5"/><circle cx="175" cy="95" r="5"/><circle cx="235" cy="95" r="5"/><circle cx="290" cy="95" r="5"/><circle cx="345" cy="95" r="5"/><circle cx="400" cy="95" r="5"/></g>
+<circle cx="450" cy="95" fill="#fbbf24" r="6"/>
+<g font-family="SF Mono,monospace" font-size="11" text-anchor="middle">
+<text fill="#c4b5f5" x="40" y="78">1971</text><text fill="#c4b5f5" x="175" y="78">2003</text><text fill="#c4b5f5" x="290" y="78">2007</text><text fill="#c4b5f5" x="400" y="78">2021</text>
+<text fill="#c4b5f5" x="120" y="118">2002</text><text fill="#c4b5f5" x="235" y="118">2005</text><text fill="#c4b5f5" x="345" y="118">2012</text><text fill="#fbbf24" x="450" y="118">2026</text>
+</g>
+<g font-size="11" text-anchor="middle">
+<text fill="#e8e4f5" x="50" y="60">bacteriorhodopsin</text><text fill="#e8e4f5" x="175" y="60">ChR2</text><text fill="#e8e4f5" x="290" y="60">light-off switch</text><text fill="#e8e4f5" x="400" y="60">partial sight restored</text>
+<text fill="#e8e4f5" x="120" y="136">ChR1</text><text fill="#e8e4f5" x="235" y="136">ms control of neurons</text><text fill="#e8e4f5" x="345" y="136">engram reactivated</text><text fill="#f6d79a" x="446" y="136">Nobel Prize</text>
+</g>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="240" y="176">Key milestones (spacing not to scale)</text>
+</svg>
+<figcaption>Sketch: half a century from how microbes sense light to a new way of doing neuroscience</figcaption>
+</figure>
+<p>Each Nobel prize can go to at most three people, and optogenetics clearly took more than three pairs of hands. Controversy arrived with the announcement, centred on <strong>Ed Boyden</strong>: first author of the key 2005 paper, then a PhD student, later at MIT. Others often named include <strong>Zhuo-Hua Pan</strong>, who used ChR2 to make retinal neurons respond to light in early 2004, about six months before the Stanford experiment; <strong>Gero Miesenböck</strong>, who achieved light control of neurons earlier; and <strong>Ernst Bamberg</strong>, co-author on the ChR2 papers. The committee chair declined to comment on why these three were chosen. A common reading is that the committee honoured "those who discovered the molecule" plus "the person who turned it into a neuroscience tool".</p>
+<p>How far is it from people? Optogenetics first needs a virus to deliver the gene into cells, then needs light delivered deep into tissue, and both are hard in a human brain. The closest application is the eye, because the retina is already transparent to light. In 2021 José-Alain Sahel and colleagues reported a 58-year-old man blinded by retinitis pigmentosa who had a light-sensitive protein gene injected into one eye and then wore special goggles turning images into amber light pulses. He became able to make out the white stripes of a pedestrian crossing and count objects on a table. This is <strong>one case from an early trial</strong>: proof of concept, still far from a routine therapy.</p>
+<p>It also has alternatives and successors: <strong>chemogenetics</strong> switches cells with a designed receptor plus a matching drug, no fibre needed, but much slower; methods using ultrasound instead of light are being explored. The brain–computer interface issue (Topic 29) was about "reading"; optogenetics opened up "writing". In animals, writing is now routine; in people, it's only just beginning.</p>
+</div>
+<div class="crossx">
+<h3>🌀 Cross-disciplinary echoes</h3>
+<ul>
+<li><b>Causal inference · Pearl's "do"</b>: the computer scientist Judea Pearl draws a sharp line between "the probability of Y when we see X" and "the probability of Y when we <b>make</b> X happen", written do(X). The two can be completely different: more drownings happen when ice-cream sales are high, but banning ice cream won't reduce drownings. Optogenetics is the "do" that neuroscience finally got.</li>
+<li><b>History of science · Dyson on tools</b>: the physicist Freeman Dyson remarked that new directions in science are launched by new tools much more often than by new concepts. The microscope for cells, the telescope for astronomy, optogenetics for neural circuits: first came what you could do, then the questions you could ask.</li>
+<li><b>Science policy · Flexner's "usefulness of useless knowledge"</b>: in 1939 Abraham Flexner, founder of the Institute for Advanced Study in Princeton, wrote an essay of that title arguing that research driven purely by curiosity often turns out, decades later, to be enormously useful in ways no one foresaw. None of the people studying why algae swim toward light, or how bacteria use light to pump ions, were looking for a way to treat blindness or study memory.</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// Think deeper</h3>
+<details><summary>Could optogenetics treat depression or Parkinson's?</summary><div>In animals it has helped pin down specific circuits involved in these diseases, guiding where existing treatments such as deep brain stimulation should target. But using optogenetics directly in a human brain still has hurdles: the safety of gene delivery, long-term expression, implanting fibres. Outside the eye, it remains mainly a research tool.</div></details>
+<details><summary>What's the gap between "switching it on causes a behaviour" and "it normally does this job"?</summary><div>The gap between "sufficient" and "necessary", and between "artificial" and "natural". If lighting up some cells makes a mouse freeze, they're sufficient to cause freezing; only if switching them off stops the mouse freezing in real danger are they necessary. Even when both hold, the uniform rhythm of artificial drive differs from natural activity, so natural recordings are still needed to interpret it.</div></details>
+<details><summary>Is the three-laureate rule fair?</summary><div>It keeps the honour clear, but fits less and less with science done today by teams, students and multi-lab collaborations. Many argue that the contributions of PhD students and early-career researchers are the most easily obscured under this rule. Others point out that no prize can distribute all the credit anyway, and that reading the author lists of the original papers is the fairer record.</div></details>
+<details><summary>Why did this tool come from algae rather than from studying the brain itself?</summary><div>Because the brain has no need for a "light opens the door" mechanism: animal visual pigments affect ion channels only through a relay of signals, which is slow and complicated. Microbes that live directly off light evolved one-step light-controlled channels. The best tools are often borrowed from completely unrelated organisms.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://www.nobelprize.org/prizes/medicine/2026/summary/" target="_blank">The Nobel Prize in Physiology or Medicine 2026 · official page</a>: Deisseroth / Hegemann / Nagel, "light-gated ion channels and optogenetics"</li>
+<li><a href="https://www.nobelprize.org/prizes/medicine/2026/popular-information/" target="_blank">NobelPrize.org · popular information</a></li>
+<li><a href="https://doi.org/10.1126/science.1072068" target="_blank">Nagel et al. · Channelrhodopsin-1: a light-gated proton channel in green algae</a>: Science, 2002</li>
+<li><a href="https://doi.org/10.1073/pnas.1936192100" target="_blank">Nagel et al. · Channelrhodopsin-2, a directly light-gated cation-selective membrane channel</a>: PNAS, 2003</li>
+<li><a href="https://doi.org/10.1038/nn1525" target="_blank">Boyden, Zhang, Bamberg, Nagel &amp; Deisseroth · Millisecond-timescale, genetically targeted optical control of neural activity</a>: Nature Neuroscience, 2005</li>
+<li><a href="https://doi.org/10.1038/nature05744" target="_blank">Zhang et al. · Multimodal fast optical interrogation of neural circuitry</a>: Nature, 2007, the halorhodopsin off switch</li>
+<li><a href="https://doi.org/10.1038/nature11028" target="_blank">Liu, Ramirez et al. · Optogenetic stimulation of a hippocampal engram activates fear memory recall</a>: Nature, 2012</li>
+<li><a href="https://doi.org/10.1038/nn.3413" target="_blank">Steinberg et al. · A causal link between prediction errors, dopamine neurons and learning</a>: Nature Neuroscience, 2013</li>
+<li><a href="https://doi.org/10.1038/s41591-021-01351-4" target="_blank">Sahel et al. · Partial recovery of visual function in a blind patient after optogenetic therapy</a>: Nature Medicine, 2021</li>
+<li><a href="https://www.science.org/content/article/method-controlling-brain-cells-light-wins-nobel" target="_blank">Science news · Method for controlling brain cells with light wins Nobel</a>: 2026, including the debate over uncredited contributors</li>
+<li><a href="https://arxiv.org/abs/2202.05262" target="_blank">Meng et al. · Locating and Editing Factual Associations in GPT (causal tracing)</a>: 2022</li>
+<li><a href="https://en.wikipedia.org/wiki/Optogenetics" target="_blank">Optogenetics (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Channelrhodopsin" target="_blank">Channelrhodopsin (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Chlamydomonas_reinhardtii" target="_blank">Chlamydomonas reinhardtii (Wikipedia)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/The_Book_of_Why" target="_blank">Pearl, The Book of Why (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Abraham_Flexner" target="_blank">Abraham Flexner (Wikipedia)</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 50 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

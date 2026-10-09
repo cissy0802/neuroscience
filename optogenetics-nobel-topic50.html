@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 50 · 用光拨动神经元 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 50 · PHASE D 临床/前沿</span>
+<h1>用光拨动神经元</h1>
+<h2>2026 诺贝尔生理学或医学奖：一只绿藻的「眼睛」，怎样让神经科学从「看见」走到「动手」</h2>
+<div class="date">2026-10-09 · BigCat</div>
+<p class="pitch">研究一种单细胞绿藻为什么会朝光游的人，最后给了脑科学一个最趁手的开关。</p>
+</header>
+<div class="intro">
+<p>2026 年 10 月 5 日，诺贝尔生理学或医学奖授予卡尔·戴瑟罗斯（Karl Deisseroth）、彼得·黑格曼（Peter Hegemann）和格奥尔格·纳格尔（Georg Nagel），理由是「发现光门控离子通道并发展出光遗传学」。</p>
+<p>这一奖并不奖励某个关于大脑的结论，奖的是一件<strong>工具</strong>。它让研究者第一次可以挑出某一类神经元，用一束光在千分之一秒的精度上让它们放电或闭嘴，然后看动物的行为怎么变。前面好多期里那句「在小鼠身上把这群细胞打开，它就……」，背后用的多半就是它。它改变的不是我们知道什么，而是<strong>我们能怎样知道</strong>：从「这里亮了」，走到「是它导致的」。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>看得见，却拨不动</h2>
+<p>神经科学的老办法大多是「看」。脑成像能看到哪块区域在你害怕时变亮，电极能听到哪个神经元在老鼠转弯时放电。可这些都只是<strong>相关</strong>：两件事一起出现，并不说明谁导致谁。也许那块区域只是跟着凑热闹。</p>
+<p>要证明因果，就得<strong>动手</strong>：把它关掉，看事情还会不会发生；把它打开，看事情会不会凭空出现。难处在于，脑子里不同类型的神经元像不同颜色的电线紧紧缠在一起。插一根电极通电，周围所有细胞一起被刺激；用药物，起效要几分钟，还会波及全脑。</p>
+<figure>
+<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ha1" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#fbbf24"/></marker>
+</defs>
+<text fill="#c4b5f5" font-size="12.5" font-weight="600" text-anchor="middle" x="120" y="24">记录：只能看</text>
+<text fill="#9fe6e2" font-size="12.5" font-weight="600" text-anchor="middle" x="360" y="24">光遗传：可以拨</text>
+<line stroke="#2a2645" stroke-width="1" x1="240" x2="240" y1="40" y2="210"/>
+<line stroke="#8f89ad" stroke-width="2" x1="75" x2="75" y1="44" y2="100"/>
+<text fill="#8f89ad" font-size="11" x="82" y="56">电极</text>
+<circle cx="75" cy="130" fill="rgba(167,139,250,0.10)" r="40" stroke="#a78bfa" stroke-width="1.4"/>
+<circle cx="62" cy="116" fill="#a78bfa" r="6"/><circle cx="90" cy="120" fill="#a78bfa" r="6"/><circle cx="66" cy="146" fill="#a78bfa" r="6"/><circle cx="92" cy="148" fill="#a78bfa" r="6"/>
+<line stroke="#8f89ad" stroke-dasharray="4 4" stroke-width="1.4" x1="118" x2="146" y1="130" y2="130"/>
+<text fill="#f6d79a" font-size="15" font-weight="700" text-anchor="middle" x="132" y="120">?</text>
+<rect fill="rgba(255,255,255,0.04)" height="34" rx="9" stroke="#8f89ad" stroke-width="1.2" width="76" x="148" y="113"/>
+<text fill="#e8e4f5" font-size="12" text-anchor="middle" x="186" y="135">老鼠僵住</text>
+<line stroke="#34e5e0" stroke-width="3" x1="315" x2="315" y1="44" y2="88"/>
+<text fill="#9fe6e2" font-size="11" x="322" y="56">光纤</text>
+<path d="M309,88 L321,88 L338,112 L292,112 Z" fill="rgba(52,229,224,0.20)"/>
+<circle cx="315" cy="130" fill="rgba(52,229,224,0.06)" r="40" stroke="#34e5e0" stroke-width="1.4"/>
+<circle cx="302" cy="116" fill="#34e5e0" r="6"/><circle cx="330" cy="120" fill="none" r="6" stroke="#5b5678" stroke-width="1.4"/><circle cx="306" cy="146" fill="none" r="6" stroke="#5b5678" stroke-width="1.4"/><circle cx="332" cy="148" fill="#34e5e0" r="6"/>
+<line marker-end="url(#ha1)" stroke="#fbbf24" stroke-width="2" x1="358" x2="384" y1="130" y2="130"/>
+<rect fill="rgba(251,191,36,0.10)" height="34" rx="9" stroke="#fbbf24" stroke-width="1.2" width="72" x="388" y="113"/>
+<text fill="#fff4da" font-size="12" text-anchor="middle" x="424" y="135">老鼠僵住</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="120" y="200">一起出现，分不清谁导致谁</text>
+<text fill="#8f89ad" font-size="11.5" text-anchor="middle" x="360" y="200">只点亮青色那类细胞，行为随之改变</text>
+</svg>
+<figcaption>示意：从「相关」到「因果」，差的是一只只拨得动某一类细胞的手</figcaption>
+</figure>
+<p>1979 年，DNA 双螺旋的发现者之一克里克在《科学美国人》上写过一个愿望：神经科学需要一种方法，<strong>只关掉一种类型的细胞，其他细胞完全不受影响</strong>。后来他又提过，也许可以用光来做。他说出这个愿望时，答案正藏在一个和脑毫不相干的地方。</p>
+<p class="en-brief"><b>EN</b> Recording and imaging only show correlation. Proving causation means intervening — switching cells off or on and watching behaviour change — but electrodes hit every nearby cell and drugs are slow and diffuse. Francis Crick wished in 1979 for a way to switch off a single cell type while leaving others untouched, and later suggested light might do it.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>一只绿藻的「眼睛」</h2>
+<p>衣藻是一种只有一个细胞的绿藻，身上有一个橘红色的小斑点，叫<strong>眼点</strong>。它靠这个眼点感知光的方向，甩动两根鞭毛游过去，好进行光合作用。黑格曼从上世纪八九十年代起就追问：它到底是怎么「看见」光的？</p>
+<p>他和纳格尔（以及合作者班贝格）最终找到了答案：衣藻的细胞膜上有一种蛋白质，一被光照到，自己就打开一个小孔，让带电的离子穿过去。这种蛋白叫<strong>视紫红质通道蛋白</strong>（channelrhodopsin）。2002 年他们报告了第一种（ChR1），2003 年报告了更好用的第二种（<strong>ChR2</strong>）：蓝光一照，正离子就涌进细胞。</p>
+<p>它妙在<strong>一个蛋白身兼两职</strong>：既是感光器，又是闸门。之前也有人用光控制神经元，比如米森伯克（Gero Miesenböck）在 2002 年的方案，但要同时装进好几个基因。ChR2 只需要一个基因。</p>
+<p>神经元的放电，本质就是带正电的离子突然涌进细胞，电压翻上去，形成一个尖峰，叫<strong>动作电位</strong>。<a class="reflink" href="ref-neuron-action-potential.html">神经元与动作电位</a> 2005 年，戴瑟罗斯在斯坦福的实验室，由当时还是博士生的博伊登（Ed Boyden）和张锋主导实验，与纳格尔、班贝格合作，把 ChR2 的基因装进大鼠的神经元：<strong>每闪一下蓝光，神经元就放一次电</strong>，精度到毫秒。两年后，他们又借来另一种微生物的光敏蛋白<strong>盐视紫红质</strong>：黄光一照，负离子涌入，神经元被按住，不再放电。开关齐了。</p>
+<figure>
+<svg viewBox="0 0 480 276" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hb1" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#34e5e0"/></marker>
+<marker id="hb2" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#fbbf24"/></marker>
+<marker id="hb3" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#e879f9"/></marker>
+</defs>
+<text fill="#9fe6e2" font-size="12.5" font-weight="600" text-anchor="middle" x="125" y="22">开：ChR2 · 蓝光</text>
+<text fill="#f6d79a" font-size="12.5" font-weight="600" text-anchor="middle" x="365" y="22">关：盐视紫红质 · 黄光</text>
+<text fill="#8f89ad" font-size="10.5" x="30" y="92">细胞外</text>
+<text fill="#8f89ad" font-size="10.5" x="30" y="148">细胞内</text>
+<rect fill="rgba(167,139,250,0.16)" height="30" stroke="#a78bfa" stroke-width="1.2" width="190" x="30" y="100"/>
+<rect fill="rgba(167,139,250,0.16)" height="30" stroke="#a78bfa" stroke-width="1.2" width="190" x="270" y="100"/>
+<line marker-end="url(#hb1)" stroke="#34e5e0" stroke-width="2" x1="82" x2="108" y1="42" y2="90"/>
+<text fill="#9fe6e2" font-size="11" text-anchor="middle" x="72" y="38">蓝光</text>
+<rect fill="rgba(52,229,224,0.28)" height="38" rx="4" stroke="#34e5e0" stroke-width="1.4" width="24" x="113" y="96"/>
+<text fill="#efe9ff" font-size="11" x="144" y="119">ChR2</text>
+<text fill="#fff4da" font-size="12" x="134" y="62">Na⁺</text>
+<line marker-end="url(#hb2)" stroke="#fbbf24" stroke-width="2" x1="125" x2="125" y1="56" y2="168"/>
+<line marker-end="url(#hb2)" stroke="#fbbf24" stroke-width="2" x1="322" x2="348" y1="42" y2="90"/>
+<text fill="#f6d79a" font-size="11" text-anchor="middle" x="312" y="38">黄光</text>
+<rect fill="rgba(251,191,36,0.22)" height="38" rx="4" stroke="#fbbf24" stroke-width="1.4" width="24" x="353" y="96"/>
+<text fill="#efe9ff" font-size="11" x="384" y="119">NpHR</text>
+<text fill="#fbe3fd" font-size="12" x="374" y="62">Cl⁻</text>
+<line marker-end="url(#hb3)" stroke="#e879f9" stroke-width="2" x1="365" x2="365" y1="56" y2="168"/>
+<path d="M30,214 L66,214 L70,182 L74,224 L80,214 L106,214 L110,182 L114,224 L120,214 L146,214 L150,182 L154,224 L160,214 L220,214" fill="none" stroke="#34e5e0" stroke-width="1.8"/>
+<rect fill="#34e5e0" height="6" width="8" x="64" y="236"/><rect fill="#34e5e0" height="6" width="8" x="104" y="236"/><rect fill="#34e5e0" height="6" width="8" x="144" y="236"/>
+<text fill="#9fe6e2" font-size="10.5" x="164" y="242">闪光</text>
+<path d="M270,214 L290,214 L294,182 L298,224 L304,214 L310,218 L460,218" fill="none" stroke="#e879f9" stroke-width="1.8"/>
+<rect fill="#fbbf24" height="6" width="140" x="306" y="236"/>
+<text fill="#9fe6e2" font-size="11" text-anchor="middle" x="125" y="268">每闪一次，放一次电</text>
+<text fill="#fbe3fd" font-size="11" text-anchor="middle" x="365" y="268">黄光持续期间，放电被按住</text>
+</svg>
+<figcaption>示意：正离子涌入→放电；负离子涌入→沉默（下方为膜电位记录）</figcaption>
+</figure>
+<p>最后一块拼图是<strong>挑人</strong>。光遗传的基因前面可以接一段「门禁卡」式的启动序列，只有特定类型的神经元才会读它、造出光敏蛋白；再把一根比头发略粗的光纤插到目标脑区。于是同一片脑组织里，只有被选中的那类细胞听光的指挥，克里克的愿望成真了。</p>
+<p class="en-brief"><b>EN</b> The single-celled alga Chlamydomonas steers toward light with an eyespot. Nagel, Hegemann and colleagues found that its sensor is itself a light-gated ion channel — channelrhodopsin (ChR1 2002, ChR2 2003): one gene, both sensor and gate. In 2005 Deisseroth's lab (experiments led by Boyden and Zhang, with Nagel and Bamberg) made rat neurons fire with millisecond blue flashes; halorhodopsin added a yellow-light off switch. Cell-type promoters and implanted optical fibres make the control specific.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>拨一下，看会发生什么</h2>
+<p>有了开关，很多「我们猜是这样」的问题，第一次能被直接检验。</p>
+<p><strong>记忆真的存在一小群细胞里吗？</strong>2012 年利根川进实验室的刘旭、拉米雷斯等人做了一个实验：让小鼠在一个箱子里受一次轻微电击，同时给那一刻被激活的海马细胞装上 ChR2。<a class="reflink" href="ref-hippocampus.html">海马与内嗅皮层</a> 之后把它放进一个从没出过事、很安全的新箱子，打开蓝光，小鼠立刻<strong>僵住</strong>，就像回到了那个可怕的地方。点亮的那一小群细胞，足以唤回一段恐惧记忆。这类细胞后来被称为<strong>记忆痕迹</strong>（engram），呼应 Topic 4。</p>
+<p><strong>多巴胺真是在报「比预期好多少」吗？</strong>Topic 6 讲过，多巴胺神经元的放电看起来像<strong>奖赏预测误差</strong>：结果比预期好就多放电，学习就靠这个差值推动。<a class="reflink" href="ref-reward-circuit.html">奖赏回路</a> 但那原本只是相关。2013 年斯坦伯格等人用了一个巧招：先让大鼠学会「灯亮就有糖」，再同时亮灯加响铃。因为糖已经被灯预测到了，没有意外，大鼠本来学不会铃的意义。可如果在糖出现的那一刻<strong>用光人为补上一阵多巴胺放电</strong>，大鼠就学会了。差值信号不只是伴随学习，它<strong>导致</strong>学习。</p>
+<p>还要说清一个边界：人工点亮时，成百上千个细胞被同步驱动，节奏整齐得不像自然状态。「拨它能引起某行为」证明它<strong>足以</strong>产生这个效果，不等于大脑平时<strong>就是</strong>这样用它的。好的实验会同时做「打开」和「关掉」两个方向，再对照自然记录。</p>
+<p class="en-brief"><b>EN</b> Optogenetics turned guesses into tests. Reactivating ChR2-tagged hippocampal cells from a fear experience made mice freeze in a safe box (Liu, Ramirez … Tonegawa 2012) — a memory engram. Adding a burst of dopamine-neuron activity when a reward was fully expected restored learning in a blocking task, showing prediction-error signals cause learning (Steinberg 2013). Caveat: artificial, synchronised activation shows sufficiency, not how the brain normally works.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>研究大语言模型内部的人（这个领域叫<b>可解释性</b>）走过同一条路。早期的办法叫<b>探针</b>：看某层的某些数值和「这句话在说巴黎」是否相关，这只是相关。后来的办法是<b>动手</b>：把模型某个位置的内部数值换成另一次运行时的数值，叫<b>激活修补</b>；或者直接把它清零，叫<b>消融</b>。然后看输出变不变。2022 年一项研究用这种「因果追踪」，把「埃菲尔铁塔在巴黎」这类事实定位到模型中间几层的特定部位，还能在那儿直接改写它。人工网络比大脑方便得多：每个数都看得见、改得动，不需要绿藻。可边界是同一条：改了某处输出就变，说明它足以起作用，未必说明模型平时只靠它。</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>奖给了三个人，功劳不止三个人</h2>
+<figure>
+<svg viewBox="0 0 480 190" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="hc1" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#8f89ad"/></marker>
+</defs>
+<line marker-end="url(#hc1)" stroke="#8f89ad" stroke-width="1.5" x1="20" x2="472" y1="95" y2="95"/>
+<g fill="#a78bfa"><circle cx="40" cy="95" r="5"/><circle cx="120" cy="95" r="5"/><circle cx="175" cy="95" r="5"/><circle cx="235" cy="95" r="5"/><circle cx="290" cy="95" r="5"/><circle cx="345" cy="95" r="5"/><circle cx="400" cy="95" r="5"/></g>
+<circle cx="450" cy="95" fill="#fbbf24" r="6"/>
+<g font-family="SF Mono,monospace" font-size="11" text-anchor="middle">
+<text fill="#c4b5f5" x="40" y="78">1971</text><text fill="#c4b5f5" x="175" y="78">2003</text><text fill="#c4b5f5" x="290" y="78">2007</text><text fill="#c4b5f5" x="400" y="78">2021</text>
+<text fill="#c4b5f5" x="120" y="118">2002</text><text fill="#c4b5f5" x="235" y="118">2005</text><text fill="#c4b5f5" x="345" y="118">2012</text><text fill="#fbbf24" x="450" y="118">2026</text>
+</g>
+<g font-size="11" text-anchor="middle">
+<text fill="#e8e4f5" x="44" y="60">细菌视紫红质</text><text fill="#e8e4f5" x="175" y="60">ChR2</text><text fill="#e8e4f5" x="290" y="60">光控关闭</text><text fill="#e8e4f5" x="400" y="60">盲人部分复明</text>
+<text fill="#e8e4f5" x="120" y="136">ChR1</text><text fill="#e8e4f5" x="235" y="136">神经元毫秒光控</text><text fill="#e8e4f5" x="345" y="136">记忆痕迹再激活</text><text fill="#f6d79a" x="446" y="136">诺贝尔奖</text>
+</g>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="240" y="176">关键节点（间距不按比例）</text>
+</svg>
+<figcaption>示意：从研究微生物怎样感光，到改写神经科学的工作方式，用了半个世纪</figcaption>
+</figure>
+<p>诺贝尔奖每个奖项最多授给三个人，而光遗传学的诞生显然不止三双手。获奖消息一出，争议就来了，焦点是<strong>博伊登</strong>：2005 年那篇关键论文的第一作者，当时还是博士生，后来去了麻省理工。还常被提到的有：<strong>潘卓华</strong>，他在 2004 年初就用 ChR2 让视网膜神经细胞对光起反应，比斯坦福的实验早了约半年；<strong>米森伯克</strong>，更早实现了光控神经元；以及 ChR2 论文的合作者<strong>班贝格</strong>。评委会主席拒绝评论为何只选这三人。一个常见的解读是：评委会奖的是「发现分子的人」加上「把它变成神经科学工具的人」。</p>
+<p>它离人还有多远？光遗传要先用病毒把基因送进细胞，还要把光送进组织深处，在人脑里两样都难。目前最接近应用的是眼睛，因为视网膜本来就透光。2021 年萨埃尔等人报告：一位因视网膜色素变性失明的 58 岁男子，一只眼睛注射了光敏蛋白基因，再戴上一副把画面转成琥珀色光脉冲的特制眼镜，之后能认出斑马线的白条、数出桌上的物体。这只是<strong>早期试验里的一个病例</strong>，概念得到了验证，离常规疗法还很远。</p>
+<p>它也有替代者和后继者：<strong>化学遗传学</strong>用一种设计过的受体加一种专门的药来开关细胞，不用光纤，但慢得多；用超声代替光的方法也在探索。脑机接口那一期（Topic 29）讲的是「读」，光遗传学打开的是「写」。在动物身上，「写」已经成了日常；在人身上，它才刚刚起步。</p>
+<p class="en-brief"><b>EN</b> The prize is capped at three, and many hands built optogenetics: Ed Boyden (first author of the 2005 paper, then a PhD student), Zhuo-Hua Pan (light-responsive retinal neurons with ChR2 in early 2004), Gero Miesenböck and Ernst Bamberg. Human use is still nascent because of gene delivery and light penetration; the eye leads — a blind 58-year-old man regained partial vision with ChrimsonR and engineered goggles (Sahel 2021), a single-case proof of concept.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<ul>
+<li><b>因果推断 · 珀尔的「做」</b>：计算机科学家珀尔把「看到 X 时 Y 发生的概率」和「<b>让</b> X 发生时 Y 发生的概率」严格分开，后者写作 do(X)。两者可以完全不同：冰淇淋卖得多时溺水的人也多，但禁止卖冰淇淋并不会减少溺水。光遗传学就是神经科学拿到的那个「do」。</li>
+<li><b>科学史 · 戴森论工具</b>：物理学家戴森说过，科学里的新方向，由新工具开启的远比由新概念开启的多。显微镜之于细胞，望远镜之于天文学，光遗传学之于神经回路：先有了能做的事，才有了能问的问题。</li>
+<li><b>科学政策 · 弗莱克斯纳「无用知识的用处」</b>：1939 年，普林斯顿高等研究院的创办人弗莱克斯纳写过一篇同名文章，主张纯粹出于好奇的研究，常常在几十年后以没人预料的方式变得极其有用。研究衣藻为何趋光、细菌怎样用光泵离子的人，没有一个是在找治疗失明或研究记忆的方法。</li>
+</ul>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>光遗传学能用来治疗抑郁或帕金森吗？</summary><div>在动物身上，它已经帮助找到了与这些疾病相关的具体回路，指导了深部脑刺激等现有疗法该刺激哪里。但直接在人脑里用光遗传学，还要过基因递送的安全性、长期表达、光纤植入等几道关。眼科之外，目前仍以研究为主。</div></details>
+<details><summary>「拨它能引起行为」和「它平时负责这个行为」差在哪？</summary><div>差在「足以」和「必需」，也差在「人工」和「自然」。点亮一群细胞能让老鼠僵住，说明它们足以引起僵住；关掉它们、老鼠在真实危险前不再僵住，才说明它们是必需的。即便两者都成立，人工驱动的整齐节奏也和自然活动不同，所以还需要对照自然记录来解释。</div></details>
+<details><summary>诺奖只给三个人，这个规则合理吗？</summary><div>它让荣誉清晰，却越来越不贴合今天由团队、学生和多实验室合作完成的科学。很多人认为，博士生和年轻研究者的贡献最容易在这种规则下被遮蔽。也有人指出，奖项本就无法分配全部功劳，读原始论文的作者列表才是更公道的方式。</div></details>
+<details><summary>为什么这个工具来自绿藻，而不是来自研究大脑本身？</summary><div>因为大脑自己没有「见光就开门」的需要，动物的视觉感光蛋白要经过一串信号接力才影响离子通道，又慢又复杂。微生物要直接靠光生存，演化出了一步到位的光控通道。最好的工具，常常借自完全不相干的生物。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://www.nobelprize.org/prizes/medicine/2026/summary/" target="_blank">2026 诺贝尔生理学或医学奖 · 官方页面</a>：Deisseroth / Hegemann / Nagel，「光门控离子通道与光遗传学」</li>
+<li><a href="https://www.nobelprize.org/prizes/medicine/2026/popular-information/" target="_blank">诺贝尔奖官网 · 科普介绍</a></li>
+<li><a href="https://doi.org/10.1126/science.1072068" target="_blank">Nagel 等 · Channelrhodopsin-1: a light-gated proton channel in green algae</a>：Science，2002</li>
+<li><a href="https://doi.org/10.1073/pnas.1936192100" target="_blank">Nagel 等 · Channelrhodopsin-2, a directly light-gated cation-selective membrane channel</a>：PNAS，2003</li>
+<li><a href="https://doi.org/10.1038/nn1525" target="_blank">Boyden, Zhang, Bamberg, Nagel &amp; Deisseroth · Millisecond-timescale, genetically targeted optical control of neural activity</a>：Nature Neuroscience，2005</li>
+<li><a href="https://doi.org/10.1038/nature05744" target="_blank">Zhang 等 · Multimodal fast optical interrogation of neural circuitry</a>：Nature，2007，盐视紫红质关闭开关</li>
+<li><a href="https://doi.org/10.1038/nature11028" target="_blank">Liu, Ramirez 等 · Optogenetic stimulation of a hippocampal engram activates fear memory recall</a>：Nature，2012</li>
+<li><a href="https://doi.org/10.1038/nn.3413" target="_blank">Steinberg 等 · A causal link between prediction errors, dopamine neurons and learning</a>：Nature Neuroscience，2013</li>
+<li><a href="https://doi.org/10.1038/s41591-021-01351-4" target="_blank">Sahel 等 · Partial recovery of visual function in a blind patient after optogenetic therapy</a>：Nature Medicine，2021</li>
+<li><a href="https://www.science.org/content/article/method-controlling-brain-cells-light-wins-nobel" target="_blank">Science 新闻 · Method for controlling brain cells with light wins Nobel</a>：2026，含未获奖贡献者的讨论</li>
+<li><a href="https://arxiv.org/abs/2202.05262" target="_blank">Meng 等 · Locating and Editing Factual Associations in GPT（因果追踪）</a>：2022</li>
+<li><a href="https://en.wikipedia.org/wiki/Optogenetics" target="_blank">光遗传学 Optogenetics（维基）</a> · <a href="https://en.wikipedia.org/wiki/Channelrhodopsin" target="_blank">视紫红质通道蛋白 Channelrhodopsin（维基）</a> · <a href="https://en.wikipedia.org/wiki/Chlamydomonas_reinhardtii" target="_blank">莱茵衣藻（维基）</a></li>
+<li><a href="https://en.wikipedia.org/wiki/The_Book_of_Why" target="_blank">珀尔《为什么》The Book of Why（维基）</a> · <a href="https://en.wikipedia.org/wiki/Abraham_Flexner" target="_blank">弗莱克斯纳 Abraham Flexner（维基）</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 50 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
