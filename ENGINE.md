@@ -39,8 +39,27 @@
    - **`.en-brief`**：一句英文简介（`<p class="en-brief"><b>EN</b> …</p>`）总结该节核心。**只在中文页有；英文页去掉这些块**（整页本就是英文）。
    - **`.ai` AI 对读**（青框）：生物脑 ↔ 人工网络的对读。**只在有"真·紧密"对应时才写**（认知/计算期几乎每期有：感知↔生成模型、注意↔attention、记忆↔RAG、决策↔RL、反传↔backprop）；没有自然对应的（意识难题、营养、脑机接口工程…）**就不放这个框，别硬凑**。AI 概念也要顺手解释。
 4. **`.crossx` 🌀 越界 · 跨学科的联想**（品红框，放"深入思考"之前）：**1…N 条**（`<ul><li><b>学科·人物</b>：…</li></ul>`），反直觉的越界联想——佛学（唯识/中观/禅）、道家、儒、康德/现象学、量子（测量/观察者，仅意识/自由意志等真相关处）、复杂系统/控制论。**只挂真联系、能挂几条挂几条；牵强就不挂、整期没有就不放此框。**
-5. `.thinking` 深入思考：3–5 个 `<details>` 开放问题。
-6. `.refs` 延伸阅读：**每条都要可点链接**（维基词条 / arXiv / 出版社，别放纯文本；书/人链维基，稳不死链、对零基础友好）。
+5. **`.takeaways` 十条要点**（2026-10-16 起，**只在主线 `*-topic{N}.html` 页写，参考库 `ref-*.html` 不写**；**必写，正好 10 条**；放在越界框之后（本期没有越界框就放在最后一节之后）、「深入思考」之前）：读者拿它直接记笔记。每条一句完整的话，约 20–45 字，**单独抄出去也能看懂**：写出人名、脑区名和概念名，不用「它」「这块区域」「这个回路」这类要靠上下文的代词。覆盖各节最值得记的观点、实验和机制，以及 AI 对读 / 越界里的一两条（有才写）；顺序跟正文走。**只总结正文已经写过的东西**，不加新信息，不放引语。英文页标题 `// Ten takeaways`。人名不必每条都当主语开头：全组里主角的名字出现两三次就够，其余各条直接写观点、机制或事实（写「欺诈的最优数量大于零」，不写「X 认为欺诈的最优数量大于零」）。
+   ```html
+   <div class="tk">
+   <h3>// 十条要点</h3>
+   <ol class="takeaways">
+   <li>…</li>
+   </ol>
+   </div>
+   ```
+   CSS（基准页 `<style>` 里没有这段，拷完基准页样式后**把它追加进去**）：
+   ```css
+   .tk{margin:40px 0}
+   .tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+   .takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+   .takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+   .takeaways li:first-child{border-top:none}
+   .takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
+   ```
+   篇幅：十条要点约 350 字，`.maxchars` 已为它从 4500 上调到 4850（2026-10-16）。
+6. `.thinking` 深入思考：3–5 个 `<details>` 开放问题。
+7. `.refs` 延伸阅读：**每条都要可点链接**（维基词条 / arXiv / 出版社，别放纯文本；书/人链维基，稳不死链、对零基础友好）。
 
 ## 双语双页
 - 中文 `{slug}-topic{N}.html`（`<html lang="zh-CN">`）+ 英文 `.en.html`（`<html lang="en">`）。
@@ -54,4 +73,5 @@
 
 ## 自检
 真实不编造、引用先验证；术语两边都解释了；图是 SVG 且清晰易读、准确表达（箭头/连线渲染后都在）；AI 对读/越界框都"有真才写"；英文页无 `.en-brief`、SVG 标签已英译；中文地道无翻译腔；没假设 BigCat 年龄/性别/背景。
+- **十条要点**（主线页）：正好 10 条（`publish.sh` 已内置拦截，只卡新主线页，`ref-*` 不查）；每条脱离上下文能看懂、没有正文之外的新信息。
 - **SVG 箭头自查（发布前必过）**：`node tools/check-svg-arrows.js`（`publish.sh` 已内置拦截，命中就不让发）。它抓"轴对齐直线叠 filter/退化渐变→整条线消失只剩浮空三角"这类坑。命中就按上面「图」的规则修：直线连杆去 filter/渐变改纯色、箭头用 `marker-end` + `orient="auto"`。
