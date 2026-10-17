@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -255,6 +261,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>控制论 · 增益与稳定</b>：工程上判断一个系统病没病，从来不看零件清单，看它的增益、延迟和反馈。增益过高会震荡，反馈迟钝会漂移，零件却完好如初。"精神疾病是回路失调"翻译成工程语言就是这句话——也顺带解释了为什么同一个旋钮既能治病也能致病：中间那段才是健康区。</li>
 <li><b>现象学 · 雅斯贝尔斯</b>：1913 年他就分开了两种做法——<b>理解</b>（顺着这个人的处境和意义走进去）和<b>说明</b>（从外面找机制与因果）。他的判断是：两者谁也替不了谁。回路视角是"说明"这一侧的重大进展，但一个人为什么在此刻崩溃，仍要在"理解"那一侧才答得上——把痛苦全部翻译成参数，反而会漏掉治疗真正要抓的东西。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>满足诊断手册抑郁症标准的症状组合有两百多种，两个症状毫不重叠的人可以拿到同一个诊断。</li>
+<li>精神科共病是常态，对上千人的症状做统计分解，会得到横跨几乎全部诊断的 p 因子。</li>
+<li>把机制不同的人塞进同一个诊断格子再求平均，共同的脑特征被抹平，生物指标自然找不到。</li>
+<li>2013 年美国国立精神卫生研究所改用 RDoC，按威胁、奖赏、认知控制等功能维度而非病名组织研究。</li>
+<li>RDoC 十年后仍未成为临床诊断工具；更保守的 HiTOP 不预设机制，先用统计把症状排成层级。</li>
+<li>回路失调可落到增益、平衡、切换三件事上；精神分裂症中抑制性神经元标记减少，高频节律变弱。</li>
+<li>凸显网络像扳道工，决定什么值得当回事、何时在默认模式网络与中央执行网络之间切换。</li>
+<li>精神分裂症越来越被看作异常凸显：多巴胺在错误时刻把无关事物标成重要，妄想是事后编出的解释。</li>
+<li>经颅磁刺激的靶点可按个人功能连接来算，与膝下扣带回越反相关的位置疗效越好。</li>
+<li>闭环深部脑刺激只在检出个人情绪跌落信号时放电，但脑影像分亚型未能复制，可用的诊断标记仍没有。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="452cf673ca0d5686">// 深入思考</h3>

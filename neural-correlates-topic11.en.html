@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -254,6 +260,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>The neural correlates of consciousness (NCC), the target Crick and Koch set in 1990, are the minimal neural activity sufficient for one specific experience.</li>
+<li>Since most brain activity never reaches awareness, finding the NCC is subtraction: same stimulus, aware versus unaware, and compare the difference.</li>
+<li>In binocular rivalry each eye sees a different image; the input never changes, yet awareness flips between the two every few seconds.</li>
+<li>Logothetis's monkey recordings showed that higher up the visual hierarchy, more neurons follow what the animal consciously sees rather than the physical stimulus.</li>
+<li>Hunting the NCC by subtraction mirrors AI mechanistic interpretability, where linear probes ask which units inside a network encode a given concept.</li>
+<li>Asking subjects to press a button drags in working memory, decisions and motor commands, all prefrontal jobs that contaminate the consciousness signal.</li>
+<li>No-report paradigms read the current percept from optokinetic eye movements or pupil size, and prefrontal "consciousness signals" shrink sharply without a report.</li>
+<li>Whether consciousness lives in prefrontal cortex or in Koch's posterior hot zone is still open, though no-report evidence tilts the debate toward the back.</li>
+<li>The Cogitate consortium had Global Neuronal Workspace Theory and Integrated Information Theory pre-register predictions, then let neutral labs test them on the same subjects.</li>
+<li>The 2025 Nature result was a draw: posterior cortex carried the seen content, but neither IIT's sustained synchrony nor GNWT's offset ignition appeared.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going Deeper</h3>
 <details><summary>Even if we nail down the NCC, isn't it still just a "correlate" — what says it's consciousness rather than a by-product or consequence of it?</summary><div>This is the deepest soft spot of the NCC approach, and also its honest part — the name says "correlate," not "cause." Finding "every time X lights up there's an experience of red" leaves three logical options: X <strong>produces</strong> the experience, X is the experience's <strong>consequence</strong>, or X and the experience are both <strong>joint results</strong> of some third thing. Just seeing them "light up together" can't tell these apart. To press toward "cause," you need to be able to <strong>intervene</strong> — directly switch X on or off and see whether the experience follows (which is exactly why no-report, plus the direct electrical stimulation and TMS we'll cover later, matter so much: they try to push "correlation" toward "causation"). And above all this sits last issue's hard problem: even with causation nailed down, "<strong>why</strong> this causal chain <strong>feels</strong> like anything" stays untouched. The NCC is the doable part, not the whole.</div></details>

@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -217,6 +223,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Theory of mind is the ability to attribute unseen mental states — beliefs, desires, intentions — to others and use them to predict behavior.</li>
+<li>The Sally–Anne false-belief task tests whether you can track someone's mistaken belief; most children pass it reliably only around age four.</li>
+<li>Mind-reading recurses — "I know you think I don't know" — and that nesting powers lies, jokes, politeness and games like chess.</li>
+<li>The mentalizing network spans medial prefrontal cortex, the temporoparietal junction, precuneus/posterior cingulate and temporal poles, with the TPJ tied to tracking beliefs.</li>
+<li>The mentalizing network largely overlaps the default mode network, so an idle brain drifts by default into thinking about people.</li>
+<li>Mirror neurons, found in macaques by a team in Parma, fire both when the monkey grasps a peanut and when it merely watches someone else do it.</li>
+<li>Mirroring is real motor resonance but not mind-reading or empathy, and it likely arises mostly from learning to link seeing an action with doing it.</li>
+<li>Cognitive empathy (understanding someone's pain via mentalizing) dissociates from affective empathy, which lights up your own anterior insula and cingulate.</li>
+<li>Tania Singer separates empathic distress, which leads to burnout and withdrawal, from compassion — warm concern and an urge to help — and compassion can be trained.</li>
+<li>Buddhism has long kept compassion apart from merely suffering along, a split that lands squarely on Singer's distinction.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>Is autism a "broken mind-reading" faculty?</summary><div>The classic claim was indeed a "theory-of-mind deficit," but it's been heavily revised in recent years — and criticized for stigmatizing. A more balanced picture has two parts: one, mind-reading is a continuum, and many autistic people aren't worse at <strong>explicit reasoning</strong> about minds; what's hard is reading social cues <strong>fast, in real time</strong>. Two, the recent <strong>"double empathy problem"</strong> (Milton) points out that communication breakdown is often <strong>mutual</strong> — it's not just that autistic people can't read neurotypicals; neurotypicals equally can't read autistic people; the two run different "social operating systems." So rather than "one side is broken," it's better framed as a <strong>mismatch</strong>. This is also why single-cause stories like the "broken mirror" hold up less and less.</div></details>

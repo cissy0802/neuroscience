@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -228,6 +234,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>复杂系统 · 克莱伯定律</b>：动物的代谢率大致随体重的 3/4 次方走，从老鼠到鲸鱼都贴着这条线。West 和 Brown 等人给的解释是：极限不在细胞，而在<b>那套分形的输运网络</b>——血管把资源送到每一处的几何方式，决定了整体能烧多少。脑同理：它算力的天花板，一部分藏在水管里。</li>
 <li><b>道家 · 《道德经》"俭故能广"</b>：老子把"俭"列为三宝之一，理由不是道德洁癖，而是<b>省下来，才铺得开</b>。脑恰好是这句话的生物学版本——正因为单次活动极省、绝大多数时候闭嘴，它才敢养 860 亿个神经元。<b>节制不是能力的对立面，是能力的前提。</b></li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>人脑功率约 20 瓦，占体重不到 2%，却吃掉静息时约 20% 的能量。</li>
+<li>神经元放电几乎不花钱，真正的开销是钠钾泵事后消耗 ATP 把离子抽回原位。</li>
+<li>修正后的皮层能量预算里，突触后接收约占一半，放电本身只占约两成。</li>
+<li>Lennie 用 20 瓦除以单个脉冲的成本，算出皮层同一时刻只养得起约 1% 的神经元活跃。</li>
+<li>把能耗算进目标函数后，最优编码会自动走向稀疏和低放电率。</li>
+<li>脑的电费跟着同时活跃的神经元数量走，不跟着神经元总数走，所以容量和成本是分开的。</li>
+<li>任务带来的能耗增量通常不到 5%，Raichle 把其余一直在烧的底噪称为脑的暗能量。</li>
+<li>局部血流增幅远超耗氧增幅（约 29% 对 5%），fMRI 测到的亮斑反映的是多余的血，而不是放电本身。</li>
+<li>长程轴突昂贵，脑网络因此在省钱和抄近路之间折中，长成密集本地簇加少数枢纽的结构。</li>
+<li>每十亿个神经元每天约需 6 千卡，生食供不起 860 亿个神经元，把食物煮熟才抬开了这道天花板。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="faac346493371190">// 深入思考</h3>

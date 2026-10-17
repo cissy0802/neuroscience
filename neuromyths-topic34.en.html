@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -284,6 +290,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Phenomenology · Merleau-Ponty</b>: translate "seeing red" into a firing pattern in some cortical patch, and the first-person redness has nowhere to land in the translation. Not because the microscope is too coarse, but because the two descriptions were never in the same coordinate system. (Which is the hard problem of Topic 10, restated.)</li>
 <li><b>Physics · Anderson, "More Is Different" (1972)</b>: he was a thoroughgoing reductionist who accepted that everything is made of elementary particles — and argued that the laws of the upper levels nevertheless <b>cannot be derived</b> from the basic ones; each level needs its own laws and concepts. Neuroscience may need more such levels rather more urgently than it needs a finer microscope.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Each classic neuromyth takes one step too far from a real finding: lateralisation is real, but "left-brained people" is not.</li>
+<li>The 10% myth dies on arithmetic: the brain is 2% of body mass yet burns about 20% of the body's energy.</li>
+<li>Learning preferences exist, but the meshing hypothesis — that teaching to them improves learning — has failed decades of tests.</li>
+<li>Adding an irrelevant clause about brain regions makes a psychological explanation seem more convincing to non-experts.</li>
+<li>fMRI runs one test per voxel across tens of thousands of voxels; uncorrected, even a dead salmon shows "significant" activation.</li>
+<li>Reverse inference fails: fear lights up the amygdala, but amygdala activity doesn't imply fear, since novelty and uncertainty light it too.</li>
+<li>fMRI tracks oxygenated blood flow, not spikes, and correlation only becomes causation through intervention — TMS, lesions, optogenetics.</li>
+<li>The 302-neuron wiring diagram of C. elegans has been complete since 1986, yet it still can't predict where the worm crawls next.</li>
+<li>Neuroscience's full toolkit, applied to a fully known microprocessor, explained nothing; what's missing is Marr's computational, algorithmic and implementational levels.</li>
+<li>Madhyamaka's chariot: no part is the chariot, so what reduction can't find lives not in the parts but in their relations.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Thinking further</h3>

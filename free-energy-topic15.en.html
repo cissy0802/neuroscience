@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -164,6 +170,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Predictive processing holds that the brain constantly sends predictions downward, and lower levels report only the mismatch — the prediction error.</li>
+<li>You stop hearing a fridge's hum because it is perfectly predicted; when it stops, the sudden silence is the surprise.</li>
+<li>The free energy a variational autoencoder minimizes — reconstruction error plus drift from the prior — is the same mathematical quantity as Friston's.</li>
+<li>Active inference says prediction error can be cancelled two ways: revise the guess, which is perception, or change the world, which is action.</li>
+<li>When you reach for a cup, the brain first predicts your hand is already there, and moving the muscles fulfills that prophecy.</li>
+<li>The free energy principle claims that any system that keeps itself together over time must keep its surprise to a minimum.</li>
+<li>The dark-room problem dissolves through prior preferences: for a creature that gets hungry and restless, lying in the dark forever is itself a huge surprise.</li>
+<li>A Markov blanket is an informational curtain of sensing and acting that gives a mathematical definition of a separate self.</li>
+<li>Anil Seth calls conscious experience a controlled hallucination: the brain's guesses, stabilized after constant pruning by the senses.</li>
+<li>The sharpest criticism of the free energy principle is that it fits almost any self-maintaining system, making it hard to falsify experimentally.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>If action is just "a prophecy the body fulfills," is "I decided to move" a real cause, or subtitles added after the fact?</summary><div>Active inference recasts movement as "happening automatically to erase prediction error," which pulls the middle link out of the classic "will → command → muscle" chain. A sharp question follows: is your crisp sense of "it was me who chose to grab the cup" what <strong>launched</strong> the action, or a bit of narration the brain <strong>subtitles on</strong> after the action is already underway? This connects straight to Libet's classic experiments where the "decision" seems to precede awareness. Active inference doesn't deny you feel agency, but it redefines will as "choosing which future to believe" — and whether "choosing" is yet another layer of inference needing explanation just pushes the problem back a step.</div></details>

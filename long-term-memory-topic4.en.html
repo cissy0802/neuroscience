@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -223,6 +229,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Recall is not replaying a tape: an experience is split up and stored across different brain regions, and nowhere holds the complete scene.</li>
+<li>The hippocampus acts like a staple or an index, and recall follows its bookmark to gather the scattered fragments and reassemble them on the spot.</li>
+<li>Each reassembly patches gaps with similar experiences and present expectations, so memory is generated, drifts, and can even be prompted into existence.</li>
+<li>A large language model's hallucinations and a human's false memories share one flaw: both rebuild rather than replay verbatim, and rebuilding can fill in wrong.</li>
+<li>A new memory starts out on the hippocampus and must be consolidated into the stable warehouse of the cortex, a move that mostly happens during sleep.</li>
+<li>In deep sleep the hippocampus replays the day's place-cell sequences compressed into a few hundred milliseconds, over and over, until the cortex stores them itself.</li>
+<li>Sleep replay in the hippocampus is the same idea as experience replay in reinforcement learning, a link the 1995 complementary learning systems theory already drew.</li>
+<li>The hippocampus uses pattern separation to encode similar experiences as far-apart codes, and pattern completion to pull a whole memory from a partial cue.</li>
+<li>A Hopfield network lets a damaged pattern roll into the nearest stored whole, the mathematical model of pattern completion; vector search and RAG are its practical cousins.</li>
+<li>Forgetting is what lets rules be distilled; Ebbinghaus's curve shows spaced review slows forgetting, while reconsolidation quietly rewrites a memory on every recall.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>Can a memory be "planted" from nothing?</summary><div>Yes, and more easily than you'd think. The psychologist Loftus got subjects to "remember" being lost in a mall as a child — an event that never happened — and many not only accepted it but embellished it with details. Since memory is <strong>reconstructed</strong>, give it enough plausible fragments and the brain will assemble "the scene" for you. More hardcore: scientists can now use light to <strong>directly activate</strong> a small group of memory cells in a mouse, fabricating a false memory that makes it fear a place that was never a threat. That memory can be implanted is the most direct proof that it's generated, not recorded.</div></details>

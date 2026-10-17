@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -266,6 +272,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>现象学 · 梅洛-庞蒂</b>：盲人的手杖用熟了，就不再是"被摸的东西"，而变成了"摸的器官"——注意力落在杖尖，不落在手心。熟练用户的光标也一样。工具成熟的标志，恰恰是它<b>从意识里消失</b>；而这正好解释了为什么闭环适应比解码精度更决定成败。</li>
 <li><b>佛学 · 无我与所缘</b>：如果意图能在你自觉之前被读出，而身体的边界又能延伸到一片硅上，那"我到哪儿为止"就不是被发现的事实，是被约定的划法。唯识把身体看作被"执"出来的一个所缘而非本有的我——脑机接口把这句很抽象的话，变成了可以调的工程参数。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>脑机接口读到的不是念头，而是运动皮层本要发给肌肉、却在脊髓断处没人接的运动指令。</li>
+<li>头皮 EEG 被颅骨抹到厘米级，贴皮层的 ECoG 到毫米级，只有扎进皮层的微电极能听见单个神经元。</li>
+<li>非侵入式脑机接口的上限主要是物理问题：颅骨抹掉的神经信息，算法算不回来。</li>
+<li>运动皮层单个神经元的方向调谐很宽，按放电率加权合成的群体向量却能准确指向运动方向。</li>
+<li>神经解码本质是监督学习回归，已实现想象手写每分钟约 90 字符、想象说话每分钟 60–80 词。</li>
+<li>语音脑机接口先解出音素概率再交给语言模型补全，所以词表越受限，准确率看上去越高。</li>
+<li>脑机接口是闭环：用户看到光标就调整，神经活动分布随之改变，解码器和人在同时互相学习。</li>
+<li>新解码映射落在神经元群的内在流形之内，猴子几分钟就学会；落在流形之外，练几天也学不会。</li>
+<li>电刺激写入脑是“喊话”：一个电极激活半径内所有细胞，人工耳蜗能成功靠的是耳蜗按频率排布的地图。</li>
+<li>植入式脑机接口的现实难题是胶质瘢痕导致信号逐年变差，以及公司倒闭后体内设备无人支持。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="3256113fb251620c">// 深入思考</h3>

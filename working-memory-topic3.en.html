@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -208,6 +214,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Working memory is not a shrunken long-term memory but a small desk holding only what you are handling right now.</li>
+<li>Working memory's real job is holding plus manipulating, classically measured in the delay after a stimulus disappears.</li>
+<li>A large language model's context window resembles working memory: only a short span is visible, and whatever slides out is forgotten.</li>
+<li>Without silent rehearsal, pure working-memory capacity is about four items, not the legendary seven plus or minus two.</li>
+<li>Working memory counts chunks, not individual items, so experts seem to remember more mostly because they pack denser chunks.</li>
+<li>On the persistent-firing view, prefrontal neurons keep spiking through the delay after a stimulus vanishes, and that firing is the memory.</li>
+<li>On the activity-silent view, a memory can sit briefly in synaptic weights, invisible as spikes until an incoming input revives it.</li>
+<li>Working memory has no private storehouse: content stays in sensory areas while the lateral prefrontal cortex holds goals and blocks distraction.</li>
+<li>The prefrontal cortex matures late and ages early, and stress hormones can scatter its fragile firing, blanking your mind in an exam.</li>
+<li>Miller's Magical Number Seven drew on Shannon's limited-bandwidth channel, and chunking works like re-encoding that slips past the bandwidth limit.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>Is working memory really just "long-term memory that's been lit up"?</summary><div>More and more people see it that way (Cowan's "embedded-process" model). On this view there's no separate "working-memory storehouse" at all — what we call working memory is just <strong>the small handful within long-term memory that attention has lit up right now</strong>, and that "four slots" limit is really <strong>how much attention can illuminate at once</strong>. If so, "good memory" and "strong attention" are two faces of one thing — which also connects to last issue's "attention decides what enters consciousness."</div></details>

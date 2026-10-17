@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -235,6 +241,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Attention is not a spotlight; it quietly tips the scales in a competition already raging among neural representations, a process called biased competition.</li>
+<li>The cocktail party effect: you can lock onto one voice, yet your own name from across the room still hijacks attention through its built-in weight.</li>
+<li>Transformer attention and brain attention match only at the abstract level of weighting information by relevance; their underlying mechanisms are entirely different.</li>
+<li>Bottom-up attention is driven by salience, so sudden motion, a loud bang or a red notification dot captures you before you can decide.</li>
+<li>Top-down attention is deployed by goals: look for your red car in a parking lot and every red thing suddenly pops out.</li>
+<li>The two sources often clash and the involuntary one usually wins, which is exactly what notifications and ads are engineered to exploit.</li>
+<li>In the invisible gorilla experiment, about half of viewers counting basketball passes miss a person in a gorilla suit crossing the frame: inattentional blindness.</li>
+<li>Multitasking is really rapid switching with a reload cost on every switch, so texting while driving leaves stretches when nobody is steering.</li>
+<li>The thalamus relays nearly all senses to the cortex, and its inhibitory shell, the thalamic reticular nucleus, decides which channels pass, Crick's searchlight gate.</li>
+<li>The same thalamic gate that fine-tunes attention shuts down thalamus-to-cortex traffic in deep sleep and anesthesia, part of how consciousness is lost.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>If attention is mostly automatic competition and the part I actively control is tiny, how much of "me concentrating" is really "me"?</summary><div>The honest answer: less than it feels. Salient stimuli hijacking you, your name cutting through — these happen without your consent; the force you can exert is mainly that top-down bias that keeps "weighting" your goal — and that force is tiring and easily interrupted. But this hands "freedom" an actionable foothold: you may not be able to stop "what pops up to grab you," but you can train <strong>how fast you pull attention back to the goal</strong>. The core move of mindfulness training is exactly this "notice the drift → pull it back" — what's trained isn't not-drifting, it's the speed of return. This thread opens up head-on in Topic 20 on meditation.</div></details>

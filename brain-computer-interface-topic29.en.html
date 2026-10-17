@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -259,6 +265,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Phenomenology · Merleau-Ponty</b>: a blind person's cane, once mastered, stops being a thing that is touched and becomes the organ that touches — attention sits at the tip, not in the palm. An expert user's cursor does the same. The mark of a mature tool is that it <b>disappears from awareness</b> — which is exactly why closed-loop adaptation decides success more than decoding accuracy does.</li>
 <li><b>Buddhism · non-self and the object of clinging</b>: if intention can be read before you notice it, and the boundary of the body can extend onto a slab of silicon, then "where do I end" is not a discovered fact but an agreed-on cut. Yogācāra treats the body as an object constructed by clinging rather than an intrinsic self — a BCI turns that abstract claim into an adjustable engineering parameter.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>A brain-computer interface does not read thoughts; it intercepts the motor command that cortex still sends toward muscles cut off at the spinal cord.</li>
+<li>Scalp EEG is blurred by the skull to centimetres, surface ECoG reaches millimetres, and only penetrating microelectrodes hear single neurons.</li>
+<li>The ceiling on non-invasive BCIs is mostly physics: neural detail the skull smears away cannot be recovered by any algorithm.</li>
+<li>Single motor-cortex neurons are broadly tuned, yet their preferred directions weighted by firing rate sum to a population vector that points accurately.</li>
+<li>Neural decoding is supervised regression, and it now delivers imagined handwriting at about 90 characters and imagined speech at 60–80 words per minute.</li>
+<li>Speech BCIs decode phoneme probabilities and let a language model fill the gaps, which is why smaller vocabularies look far more accurate.</li>
+<li>A BCI is a closed loop: the user reacts to the cursor, the neural data shift, and decoder and brain end up learning each other at once.</li>
+<li>Monkeys relearn a swapped decoder within minutes if it stays inside the neurons' intrinsic manifold, but fail for days if it falls outside.</li>
+<li>Electrical stimulation shouts rather than speaks; the cochlear implant succeeds because the cochlea lays out frequency as a clean map of place.</li>
+<li>The practical limits of implanted BCIs are glial scarring that degrades signals over years, and devices orphaned when their maker goes under.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// GOING DEEPER</h3>

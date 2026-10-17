@@ -58,6 +58,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -204,6 +210,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>In the visual pathway, connections running from higher areas back down outnumber those running up from the eyes.</li>
+<li>The main direction of perception is top-down prediction from the brain, not raw data flowing up from the eyes.</li>
+<li>Two identical grays look different on light and dark backgrounds because brightness is inferred from context, not measured.</li>
+<li>Generative models share the brain's skeleton: propose a hypothesis, generate a version, then correct it by its mismatch with the input.</li>
+<li>Each cortical layer passes upward only what it failed to predict — the prediction error — while well-predicted signals stay silent.</li>
+<li>You stop hearing your fridge but notice the instant it stops: the familiar is subtracted in advance, and attention is saved for surprise.</li>
+<li>What you perceive weights prior expectation against sensory evidence by reliability, so in dim light the expectation wins.</li>
+<li>Attention can be defined as the brain temporarily turning up the precision, or trustworthiness, of evidence from one place.</li>
+<li>Prediction error can be cancelled two ways: update beliefs to fit the world (perception) or act to make the world fit the prediction (active inference).</li>
+<li>Yogācāra Buddhism and Kant both held that we only reach the version of the world the mind presents; predictive processing supplies the neural mechanism.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>If what I "see" is forever the brain's guess, what gives me the right to trust that the world I see is real?</summary><div>Strictly, you've never "directly" touched the world — what you touch is always the brain's model. But this doesn't collapse into doubting everything: that model is tethered to reality by <strong>continuous error</strong>, and guessing wrong carries a cost (you walk into a wall, you grasp at nothing). So perception isn't a hallucination — it's a <strong>"controlled hallucination" constantly recalibrated by reality</strong> — real enough to keep you alive, but never pixel-level truth. This also explains why two people can "see" different things: different expectations, different results.</div></details>

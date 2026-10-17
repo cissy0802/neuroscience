@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -203,6 +209,22 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>语言学 · 萨丕尔-沃尔夫假说</b>：母语会不会反过来塑造你怎么想（比如有些语言没有"左右"、只用东南西北，其使用者方向感惊人）？强版本"语言决定思维"已被推翻——没有语言照样能想；但弱版本站得住：语言像一副<b>习惯性的取景框</b>，悄悄调你更容易注意到什么、忽略什么。它拧不动思维的有无，拧得动思维的默认镜头。</li>
 </ul>
 </div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>教科书里“布洛卡区管说、韦尼克区管懂、中间一根线”的两点图，来自一百五十年前的病人尸检推断。</li>
+<li>现代脑成像显示，语言靠的是左脑从额叶到颞叶一整片彼此紧连的网络，远不止两个点。</li>
+<li>只损伤布洛卡区往往不会造成持久的说话障碍，要真正毁掉语言得伤到语言网络里更大一片。</li>
+<li>Evelina Fedorenko 发现语言网络只为有意义的语言点亮，做算术、听音乐、读代码时几乎纹丝不动。</li>
+<li>严重失语的人仍能算术、推理、懂因果，不会说话的婴儿也有丰富思维，说明语言是沟通工具而非思维本身。</li>
+<li>脑子里的内心独白更像思维的播报员，把已经想好的东西翻译成话，思考本身在开口前就完成了。</li>
+<li>听人说话时大脑一路抢跑猜下一个词，冒出意外的词会激起一记 N400 脑波，波越大说明越出乎意料。</li>
+<li>大语言模型的训练目标就是预测下一个词，越会猜词的模型，其内部活动与人脑语言网络对得越齐。</li>
+<li>Mahowald 与 Fedorenko 把语言能力分成形式能力和功能能力，大脑把两者交给不同系统分别处理。</li>
+<li>语言模型的形式能力已以假乱真，功能能力却可能在多步推理和常识上翻车，流利不等于会思考。</li>
+</ol>
+</div>
+
 <div class="thinking">
 <h3 data-tts="60b11174312fccec">// 深入思考</h3>
 <details><summary>如果思维不需要语言，那我脑子里那个说个不停的"声音"到底是什么？</summary><div>那叫<strong>内心言语</strong>——很可能是大脑借用了语言系统，给已经成形的思维配上一条"字幕"，方便你把它抓稳、排序、反刍。证据是：有些人报告自己<strong>几乎没有内心独白</strong>，照样思考、决策、生活如常。所以内心的声音更像思维的一个<strong>常用外挂</strong>，不是它的引擎。它确实有用——把念头说成话，能帮你把模糊的东西钉成清晰的一串，这也是"写下来就想通了"的由来。</div></details>

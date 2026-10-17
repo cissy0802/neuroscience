@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -212,6 +218,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Philosophy · Merleau-Ponty's embodied cognition</b>: cognition is not a computation sealed inside the skull; the body is a condition of it. That line was long treated as an elegant slogan — until the signal that makes the hippocampus grow turned out to be released by the muscles in your legs. <b>Here "the body takes part in thought" isn't a metaphor; it has molecular names.</b></li>
 <li><b>Complex systems · hormesis</b>: exercise is essentially <b>controlled damage</b> — hypoxia, oxidative stress, micro-tears in muscle fibre. The system is pushed off equilibrium, overcompensates, and comes back stronger. This is a property shared by a whole class of systems: <b>moderate perturbation strengthens; total protection makes fragile</b>. Immunity, bone and psychological resilience all follow it — which is also why "doing nothing" is never a neutral option.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Muscle is not just an engine but a secretory organ: every contraction releases myokines such as lactate and irisin that carry signals to the brain.</li>
+<li>Exercise raises BDNF in the hippocampus, making synapses easier to strengthen; in humans only blood BDNF can be measured, so the brain-level rise is inferred.</li>
+<li>Running wheels reliably boost new neurons in the mouse dentate gyrus, but whether the adult human hippocampus still makes neurons remains contested.</li>
+<li>A 2025 single-cell sequencing study found dividing neural progenitors in adult human hippocampus, with enormous variation from one person to the next.</li>
+<li>Adult-born hippocampal neurons are thought to serve pattern separation, giving new experiences fresh cells, much as AI adds new units to fight catastrophic forgetting.</li>
+<li>The famous 2% growth of the anterior hippocampus after a year of aerobic training shrinks under meta-analysis to holding volume steady rather than regrowing it.</li>
+<li>Exercise's sturdiest cognitive payoff is executive function rather than memory, largest in children and older adults, and sticking with it beats picking aerobic or strength.</li>
+<li>Walking, yoga and strength training all ease depressive symptoms, but exercise trials cannot be blinded, so the true effect is probably smaller than reported.</li>
+<li>Trained muscle converts kynurenine into kynurenic acid, which cannot cross the blood-brain barrier, intercepting a depression-linked stress metabolite before it reaches the brain.</li>
+<li>Runner's high is more likely endocannabinoid than endorphin, since endorphin molecules are too large to cross the blood-brain barrier.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// GOING DEEPER</h3>

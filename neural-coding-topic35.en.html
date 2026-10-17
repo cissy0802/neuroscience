@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -243,6 +249,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Linguistics · Saussure</b>: a word's meaning comes not from itself but from its <b>differences</b> from other words — language is "a system of differences with no positive terms." That's the distributed representation a century early; Firth's later line, "you shall know a word by the company it keeps," grew directly into today's word vectors.</li>
 <li><b>Information theory · Shannon and Barlow</b>: in 1961 Barlow proposed that sensory systems aim to squeeze the <b>redundancy</b> out of their input — carry the most information with the least activity. Sparse coding is a direct descendant. Neural coding as a field is, in the end, Shannon's question carried into the skull.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Every action potential is an all-or-none pulse of the same height, so amplitude carries nothing; only timing, density and which cell fires remain.</li>
+<li>In 1926 Edgar Adrian found that a harder muscle stretch makes a sensory nerve fire faster: intensity becomes frequency, which is rate coding.</li>
+<li>Rate codes need a counting window, yet people categorise a flashed photo in about 150 ms, leaving each neuron time for only one or two spikes.</li>
+<li>Temporal codes put information in when spikes land: which cells fire first, phase relative to a brain rhythm, and precise intervals within a burst.</li>
+<li>A hippocampal place cell fires a little earlier on each rhythm cycle as a rat crosses its patch, so phase precession writes progress into phase.</li>
+<li>Motor cortex neurons each have a preferred reach direction but are broadly tuned, so a single cell cannot tell you where the hand is going.</li>
+<li>The population vector sums each cell's preferred direction weighted by its firing rate, and the result closely matches the actual reach direction.</li>
+<li>The 2005 "Jennifer Aniston cell" codes a concept, not a picture, and thousands of such cells must stand behind any one concept.</li>
+<li>In sparse coding only a small fraction of neurons fire at any moment, partly because the whole brain runs on roughly twenty watts.</li>
+<li>Asked only to rebuild natural images from as few parts as possible, Olshausen and Field's model grew edge filters resembling V1 simple cells.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// THINKING DEEPER</h3>

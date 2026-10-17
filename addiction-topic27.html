@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -224,6 +230,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>控制论 · 对抗过程与稳态漂移</b>：任何带负反馈的系统被同一个方向反复冲击，都会长出一个反向过程来对冲。刺激一撤，剩下的就是纯粹的反向过程——这就是戒断。更麻烦的是系统会把新的平衡点当成"正常"，于是"回到从前"这个目标在数学上根本不存在，只能重新长一个设定点出来。</li>
 <li><b>经济学 · 双曲折扣与奥德修斯</b>：人对未来奖赏的打折不是平滑的，越近越陡，于是"三小时后的我"和"此刻的我"会偏好翻转——今天真心想戒，晚上真心想抽，两个都不是假的。奥德修斯的解法至今最有效：不跟当下的自己讲道理，<b>提前把自己绑在桅杆上</b>（预先承诺）。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>多巴胺不是“快乐分子”：它管的是“想要”和去够，“爽不爽”由另一套系统负责。</li>
+<li>多巴胺被清空的大鼠不再主动找糖水，但糖水滴进嘴里时，“好吃”的表情和正常大鼠一样。</li>
+<li>快感来自伏隔核和腹侧苍白球里的“享乐热点”，范围小、难拧大，所以快感有天花板而渴望没有。</li>
+<li>多巴胺传递的是奖励预测误差：好过预期就爆发，正如预期就沉默，差于预期就掉到基线以下。</li>
+<li>成瘾物质绕过预测直接从化学上抬高多巴胺，误差永不归零，相关线索被反复涂上“重要”的高光。</li>
+<li>随着反复使用，行为控制从腹侧纹状体的“值不值”迁到背侧纹状体的习惯，行为与原本目的脱钩。</li>
+<li>成瘾者纹状体D2受体可用量下降，降得越多前额叶代谢越低，相当于油门更灵、刹车更轻。</li>
+<li>成瘾的三期循环是暴用中毒、戒断负性情绪、渴求预期，动机从“为了变爽”变成“为了别难受”。</li>
+<li>消退不等于删除：戒断只是在旧的奖赏记忆上盖了一层绑定语境的新记忆，旧语境、压力或一小口都能让它翻上来。</li>
+<li>越战返乡士兵中约两成自评成瘾，回国头一年复发的只有约百分之五，说明换掉环境和线索分量极重。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="72ae640240dee5a5">// 深入思考</h3>

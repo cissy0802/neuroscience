@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -218,6 +224,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>自由意志 · Libet 的读秒</b>：让你"随时想动就动一下手"，脑电里那个准备动作的信号，竟在你<b>自觉"决定要动"之前几百毫秒</b>就起来了——像是脑子先动了手，你才补一句"这是我决定的"。够惊悚。但对照本期就没那么玄了：有理论（Schurger）说那个信号不过是<b>噪声在慢慢累积、够了就触发</b>——正是漂移扩散那台机器。所谓"自由的一刻"，也许只是水位撞线的一刻。</li>
 <li><b>佛学 · 缘起无我</b>：我们默认脑子里坐着个"我"在拍板。可拆到齿轮级，看到的只是证据在累积、价值在被误差反复改写、闸门到点放行——<b>没找到那个居中发号施令的小人</b>。这出奇地呼应"诸法因缘生，无有作者"：选择是众多条件汇成的一次涌现，而非一个独立自我的钦定。看清这点，未必让你更被动，反倒松开一点"都怪我／全靠我"的紧绷。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>漂移扩散模型把决策看成证据带着噪声往门槛爬，先撞到哪一侧门槛就选哪一边。</li>
+<li>难的选择更慢是因为证据弱、漂移小；把门槛调低能换来速度，却要牺牲准确率，即速度-准确率权衡。</li>
+<li>为了比较苹果、打盹和十块钱这类不同种类的选项，大脑先把它们折成同一把“价值”尺上的数。</li>
+<li>眶额皮层神经元给选项标价，编码的不是果汁甜不甜，而是猴子有多想喝那一款。</li>
+<li>基底节像一道闸门，平时把各种动作摁住，直到某个选项胜出才专门给它放行。</li>
+<li>多巴胺报告的不是快乐，而是“现实减预期”的差价，即奖励预测误差。</li>
+<li>Schultz 的经典记录显示：意外的果汁引发多巴胺爆发，学会铃声预兆后爆发移到铃响，预期落空时跌破基线。</li>
+<li>AI 中时序差分学习的“预测误差”先在计算机里推出，后来被发现与多巴胺神经元的放电严丝合缝地吻合。</li>
+<li>面对探索与利用的两难，一个关键策略是把“不确定”本身当作加分，并随处境调节探索的旋钮。</li>
+<li>Libet 实验中先于自觉决定的准备信号，按 Schurger 的解释可能只是噪声累积到门槛后的触发。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="d6e559b6188fc358">// 深入思考</h3>

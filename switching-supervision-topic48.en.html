@@ -58,6 +58,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -246,6 +252,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Cybernetics · Ashby</b>: The British cybernetician W. Ross Ashby proposed the <b>law of requisite variety</b>: to control a system, a regulator needs at least as many kinds of response as the system has kinds of disturbance. A person who mostly watches and rarely acts sees their repertoire of responses slowly shrink, and the situations handed to them are precisely the strangest ones. In cybernetic terms, the irony of automation is a regulator whose variety has been hollowed out.</li>
 <li><b>Economics · Simon</b>: Nobel laureate Herbert Simon wrote in 1971 that a wealth of information creates a poverty of attention. When information, messages and machine output are nearly free, what's genuinely scarce is the bit of human attention that looks and judges. That turns switch costs from a psychology curiosity into a resource-allocation problem.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Switching tasks slows responses and raises errors even when the switch is fully predictable; this is the switch cost.</li>
+<li>A switch means unloading old rules and loading new ones, run by a frontoparietal network, with the basal ganglia gating which rules reach prefrontal cortex.</li>
+<li>Advance preparation shrinks the switch cost, but a residual remains until the new task is actually performed once.</li>
+<li>Sophie Leroy found that leaving a task unfinished leaves attention residue that drags down performance on the next one.</li>
+<li>Spending a minute or two noting where you stopped and what to do first on return markedly reduces attention residue.</li>
+<li>Working memory holds only about four items at once, and every unfinished thread occupies one of those slots.</li>
+<li>Dopamine neurons signal reward prediction error, actual minus expected reward, closely matching the TD error of reinforcement learning.</li>
+<li>When reward is uncertain, dopamine ramps up while waiting and peaks at 50% odds; with intermittent reinforcement, this helps explain compulsive checking.</li>
+<li>Lisanne Bainbridge's ironies of automation: machines leave people the hardest jobs, constant monitoring and taking over in rare failures.</li>
+<li>Complacency is worst when automation is constantly reliable and the human is busy with other tasks, so machine errors slip past.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Going deeper</h3>

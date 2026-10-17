@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -249,6 +255,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Cybernetics · gain and stability</b>: engineers never judge whether a system is sick by auditing its parts list — they look at gain, delay and feedback. Too much gain and it oscillates; sluggish feedback and it drifts, with every component still perfectly intact. "Mental illness is circuit dysregulation" is that sentence translated — and it explains why the same knob can both treat and cause: health lives in the middle of the range.</li>
 <li><b>Phenomenology · Jaspers</b>: in 1913 he separated two moves — <b>understanding</b> (entering a person's situation and its meaning) and <b>explaining</b> (finding mechanism and cause from outside) — and argued neither can substitute for the other. The circuit view is a real advance on the explaining side. Why this person collapsed at this moment is still answered on the understanding side, and translating all suffering into parameters is how you lose the thing treatment actually has to grip.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Hundreds of symptom combinations satisfy the DSM criteria for major depression, so two patients sharing no symptom can get the same diagnosis.</li>
+<li>Comorbidity is the norm in psychiatry, and factor analysis of symptoms keeps yielding a general p factor that spans almost every diagnosis.</li>
+<li>Averaging brains across a diagnosis that lumps together different mechanisms washes out shared features, which is why biomarkers keep vanishing.</li>
+<li>In 2013 the NIMH stopped funding by DSM category and launched RDoC, organising research around dimensions like threat, reward and cognitive control.</li>
+<li>A decade on, RDoC has produced no clinical diagnostic tool, while HiTOP lets statistics rebuild the hierarchy of symptoms without assuming circuits.</li>
+<li>Circuit dysregulation comes down to gain, balance and switching; in schizophrenia, inhibitory interneuron markers and fast oscillations are reduced.</li>
+<li>The salience network works like a switch operator, flagging what matters and toggling between the default-mode and central-executive networks.</li>
+<li>Psychosis is increasingly read as aberrant salience: dopamine tags irrelevant things as important, and delusions are explanations built afterwards.</li>
+<li>TMS targets for depression can now be computed from each person's connectivity; sites more anticorrelated with the subgenual cingulate work better.</li>
+<li>Closed-loop DBS fires only on a patient-specific signal of mood decline, yet imaging subtypes failed to replicate and no usable biomarker exists.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Going deeper</h3>

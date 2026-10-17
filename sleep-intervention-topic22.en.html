@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -285,6 +291,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>History · Roger Ekirch</b>: pre-industrial Europeans commonly slept in two shifts — a first sleep, an hour or two awake around midnight to pray, talk and get things done, then a "second sleep." <i>At Day's Close</i> unearthed more than five hundred such references. The unbroken eight-hour block looks more like a product of artificial light and factory timetables than a human factory setting — waking once at night isn't necessarily a fault. (This is a historian's argument, and how universal the pattern was is still debated.)</li>
 <li><b>Cybernetics · the stability–plasticity dilemma</b>: any system that must learn new things while keeping old skills runs into the same bind — change too hard and you erase what you had, don't change and you can't learn. The standard engineering answer is to <b>separate them in time</b>: run online, integrate offline. The brain scheduled that answer as day and night, at the cost of several hours daily when it can't serve the outside world. Seen this way, sleep isn't a hole in your efficiency. It's the price of being plastic.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>In deep sleep, cortical slow oscillations, thalamic spindles and hippocampal ripples nest inside one another to move memories from hippocampus into stable cortical connections.</li>
+<li>Nightly replay mirrors interleaved replay in AI, which fights catastrophic forgetting by mixing old examples in while a network learns new ones.</li>
+<li>Rasch and colleagues showed in 2007 that an odour paired with learning boosts memory when replayed during slow-wave sleep, but not during REM or wakefulness.</li>
+<li>Faint clicks timed to the up-state of the slow oscillation strengthen spindles and next-day word recall; the same clicks out of phase do nothing.</li>
+<li>Later closed-loop studies boosted the oscillations without reliably boosting memory, so the method is a research tool, not a memory enhancer.</li>
+<li>Borbély's two-process model treats sleepiness as the gap between adenosine-driven sleep pressure and the circadian clock of the suprachiasmatic nucleus.</li>
+<li>Caffeine supplies no energy; it occupies adenosine's receptors and hides the sleepiness signal while the sleep debt stays unpaid.</li>
+<li>After two weeks of six-hour nights, performance sinks toward the level of a full night awake, yet people's own sleepiness ratings barely climb.</li>
+<li>One night without sleep amplifies the amygdala's response to aversive images and loosens the medial prefrontal brake that normally holds it down.</li>
+<li>Total sleep deprivation lifts mood in over half of depressed patients, but about 83% relapse after one recovery night, so sleep and mood are not a simple lever.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// DEEPER QUESTIONS</h3>

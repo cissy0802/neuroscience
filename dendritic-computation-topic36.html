@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -228,6 +234,22 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>科学哲学 · 还原的底总在下降</b>：原子的原意是「不可再分」，后来分出质子中子，再分出夸克。每一次「找到了最小单位」，都同时是下一层结构的入口。神经元学说走过的正是这条路：它作为解剖学结论完全成立（细胞之间确实是分开的），但作为「计算的最小单位」，这个身份正在被它自己的树突收回。</li>
 </ul>
 </div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>课本里「加权求和、过阈值就发放」的神经元，是 1943 年的数学假设，从来不是一次测量。</li>
+<li>细胞膜会漏电，Rall 的电缆理论表明，远端突触的输入传到胞体时可能只剩零头。</li>
+<li>突触长在树突上离胞体多远本身就是一种权重，挪近一点，这个输入的分量就变大。</li>
+<li>NMDA 受体平时被镁离子堵住，只有周围膜电压已被别的输入抬高才打开，是一种巧合检测器。</li>
+<li>几个输入挤在同一根树枝上、几毫秒内一起到达，会引爆树突脉冲，总和远超各自相加。</li>
+<li>Poirazi 和 Mel 2003 年指出，一个皮层锥体神经元的行为更像两层人工网络，而非一个单元。</li>
+<li>Minsky 和 Papert 1969 年证明单层感知机算不了异或，这从此成了教科书定论。</li>
+<li>Gidon 等人 2020 年在离体人脑切片里发现越强反应越小的树突钙放电，一段树突就能实现异或。</li>
+<li>大锥体细胞的前馈输入和顶端反馈输入几十毫秒内同时到达才爆发密集脉冲，相当于证据乘以期待。</li>
+<li>模仿一个第 5 层锥体细胞模型约需五到八层人工网络，去掉 NMDA 受体后一层左右就够。</li>
+</ol>
+</div>
+
 <div class="thinking">
 <h3 data-tts="00d324626d370e8c">// 深入思考</h3>
 <details><summary>如果计算藏在树突里，我们记录到的脉冲是不是只是一份摘要？</summary><div>是。绝大多数在体记录（包括脑机接口）读的都是胞体发出的脉冲，那是这个细胞对外说的最后一句话。它内部那几十根树枝各自算了什么、否决了什么，一律不出现在这句话里。这不一定是坏事——摘要正是下游需要的东西——但它意味着<strong>我们手上的数据在原理上就少了一层</strong>。要看那一层，得把电极扎进树突或用光去照它，两种都很难在清醒行为中做。</div></details>

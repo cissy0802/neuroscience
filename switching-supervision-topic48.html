@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -250,6 +256,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>控制论 · 阿什比</b>：英国控制论学者阿什比（W. Ross Ashby）提出<b>必要多样性定律</b>：一个调控者要管得住一个系统，它能做出的应对种类，至少要和系统可能出现的状况一样多。被动盯着、很少亲手操作的人，手里能用的「应对种类」在一点点萎缩，而交到他手里的偏偏是最离奇的状况——自动化的讽刺，用控制论的话说就是调控者的多样性被掏空了。</li>
 <li><b>经济学 · 西蒙</b>：诺奖得主西蒙（Herbert Simon）1971 年写道：信息的丰富，造成了注意的贫乏。当信息、消息和机器产出都几乎免费，真正稀缺的就是人去看、去判断的那一点注意——这把切换成本从一个心理学现象，变成了一个资源分配问题。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>即使事先知道下一题要换任务，换任务的那一题反应仍会变慢、出错更多，这叫切换成本。</li>
+<li>切换要卸下旧规则、装上新规则，由前额叶—顶叶控制网络执行，基底节把关哪条规则能进前额叶。</li>
+<li>提前准备能缩小切换成本，但总剩一截残余代价，要等新任务真做一次才消失。</li>
+<li>勒鲁瓦发现，事情没做完就被叫走，一部分注意会残留在旧任务上，拖累下一件事。</li>
+<li>被打断时花一两分钟写下「做到哪了、回来先做哪一步」，能明显减少注意力残留。</li>
+<li>工作记忆一次只能稳稳放下约四件东西，每个没收尾的线程都会占掉一格。</li>
+<li>多巴胺神经元报告的是奖励预测误差，即实际奖励减去预期，其形状与强化学习的 TD 误差几乎一致。</li>
+<li>奖励时有时无时，多巴胺在等待期持续爬升、一半概率时最高，这和间歇强化一起解释了人为何反复查看消息。</li>
+<li>班布里奇的「自动化的讽刺」：自动化把最难的两件事留给人，长时间盯着，以及在罕见故障时接手。</li>
+<li>自动系统一直高度可靠、人手上又有别的活时，人最容易产生自满，漏掉机器出的错。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="025f34b816ae262d">// 深入思考</h3>

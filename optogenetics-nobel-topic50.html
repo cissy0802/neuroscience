@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -206,6 +212,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>科学史 · 戴森论工具</b>：物理学家戴森说过，科学里的新方向，由新工具开启的远比由新概念开启的多。显微镜之于细胞，望远镜之于天文学，光遗传学之于神经回路：先有了能做的事，才有了能问的问题。</li>
 <li><b>科学政策 · 弗莱克斯纳「无用知识的用处」</b>：1939 年，普林斯顿高等研究院的创办人弗莱克斯纳写过一篇同名文章，主张纯粹出于好奇的研究，常常在几十年后以没人预料的方式变得极其有用。研究衣藻为何趋光、细菌怎样用光泵离子的人，没有一个是在找治疗失明或研究记忆的方法。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>光遗传学让神经科学从只能观察「相关」走到能动手干预、检验「因果」，相当于拿到了珀尔所说的 do(X)。</li>
+<li>克里克 1979 年许愿：神经科学需要一种只关掉一类细胞、其他细胞不受影响的方法，后来又提出也许可以用光。</li>
+<li>衣藻眼点里的视紫红质通道蛋白一被光照就自己打开小孔放离子通过，一个蛋白既是感光器又是闸门。</li>
+<li>2005 年戴瑟罗斯实验室把 ChR2 基因装进大鼠神经元，每闪一下蓝光，神经元就放一次电，精度到毫秒。</li>
+<li>盐视紫红质被黄光照到会让负离子涌入、按住神经元不放电，于是光遗传学同时有了「开」和「关」两个开关。</li>
+<li>在光敏基因前接上只有特定神经元会读的启动序列，再插入光纤，同一片脑组织里就只有被选中的那类细胞听光指挥。</li>
+<li>2012 年利根川进实验室用光点亮恐惧时标记的海马细胞，小鼠在安全的新箱子里也立刻僵住。</li>
+<li>糖已被预测时用光补上一阵多巴胺放电，大鼠就学会了新线索，说明奖赏预测误差导致学习。</li>
+<li>人工点亮只证明细胞「足以」引起行为，不等于大脑平时这样用它；大模型的激活修补也有同样边界。</li>
+<li>诺奖最多授予三人，戴瑟罗斯、黑格曼、纳格尔获奖后，博伊登、潘卓华、米森伯克和班贝格的贡献引发争议。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="243eabec1ae5fa8d">// 深入思考</h3>

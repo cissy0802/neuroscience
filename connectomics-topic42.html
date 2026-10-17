@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -327,6 +333,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>佛学 · 缘起 / 中观</b>：一件事物没有独立于其他一切的"自性"，它是什么，取决于它和什么相接。连接组学以最物理的方式说同一句话：<b>一个神经元本身什么都不是；它是它连的那些神经元。</b>你把这个推到底就会发现——"你"这个词的每一个内容，都能照此推。这不是取消个体，而是把个体重新定义在关系里。</li>
 <li><b>哲学 · 忒修斯之船 / 洛克的人格同一性</b>：如果一比一复制你的连接组到另一个介质里，那个东西还是"你"吗？Sebastian Seung 抛出的一句"You are your connectome"把这道两千年的老题第一次拽到了实验室里——两派都不满意的答案是：<b>问题第一次有了坐标，但坐标并不自动给出答案。</b></li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>1986 年 John White 团队发表秀丽线虫的 302 个神经元接线图，这是历史上第一份完整的连接组。</li>
+<li>四十年来，单凭线虫接线图仍预测不了它下一秒往哪爬，要叠上基因表达、神经调质和钙成像才行。</li>
+<li>接线图只画出神经元之间有没有物理电缆，突触强弱、神经调质和振荡节拍都不在图上。</li>
+<li>纳米级连接组只能靠电子显微镜连续切片：切成几十纳米薄片、逐张拍摄、拼回三维再追踪每根神经元。</li>
+<li>2024 年 FlyWire 画出约 13 万神经元的果蝇全脑，是首个复杂动物的完整脑接线图。</li>
+<li>人脑颞叶仅 1 立方毫米样本就产生 1.4 PB 数据，突触级人脑全图用同法至少还要几十年。</li>
+<li>Human Connectome Project 用弥散磁共振追踪白质纤维，画的是大区之间的粗电缆而非单个突触。</li>
+<li>MICrONS 小鼠视觉皮层数据显示，两个神经元之间的突触数只是其功能相关性的弱预测因子。</li>
+<li>跨物种的脑网络都呈现模块化、小世界和富人俱乐部枢纽，Bullmore 与 Sporns 视之为整合与省电的折中。</li>
+<li>机制可解释性面对同一堵墙：知道大模型每个权重也读不懂它在算什么，必须看信号实际怎么流。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="e266fc002cc0aae2">// 深入思考</h3>

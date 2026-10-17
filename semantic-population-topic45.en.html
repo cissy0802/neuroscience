@@ -58,6 +58,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -211,6 +217,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Philosophy · Frege and Wittgenstein</b>: Frege’s context principle says a word has meaning only in the context of a sentence; Wittgenstein went further: “the meaning of a word is its use in the language.” Static embeddings losing to contextual ones looks like a vote for both, cast at the level of neurons.</li>
 <li><b>Buddhism · Madhyamaka, dependent origination and emptiness</b>: nothing has a fixed, independent “own-nature”; things appear only within conditions and relations. A word likewise has no standalone “essence cell” in the brain — it shows up only in the relations among hundreds of cells, under the conditions of this sentence. Change the sentence and it changes shape.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>In 2026 Franch, Hayden and colleagues recorded hundreds of hippocampal neurons in epilepsy patients and found word meaning robustly encoded.</li>
+<li>Even after stripping out the influence of sound and grammatical role, hippocampal firing could still be predicted from what a word means.</li>
+<li>There is no dedicated dog neuron: a single hippocampal cell typically responds to several words from several unrelated categories.</li>
+<li>When one unit takes part in many unrelated things at once, that is called mixed selectivity, or polysemanticity.</li>
+<li>Meaning lives not in any one cell but in the joint firing pattern across hundreds of neurons, which is what a population code is.</li>
+<li>The distance between two words' population responses tracks how different their meanings are, a geometry nobody taught the neurons.</li>
+<li>The same word's population response shifts with context, and words that shift more are the ones language models rate as more polysemous.</li>
+<li>The hippocampal meaning-geometry matches contextual embeddings such as GPT-2 and BERT, but reverses for static ones like word2vec.</li>
+<li>Large language models also have polysemantic neurons, and superposition theory treats concepts as directions spread over many units, a picture the hippocampal data fit.</li>
+<li>The brain-LLM resemblance is geometric, not proof of a shared algorithm, and the hippocampus may be binding meaning to the episode rather than storing a dictionary.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Going deeper</h3>

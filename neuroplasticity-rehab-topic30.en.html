@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -203,6 +209,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Confucian classics · Aristotle</b>: the <i>Book of Documents</i> says "habit and nature grow into one"; Aristotle says virtue is a habit — "we become just by doing just acts." Both treat character as the long integral of behaviour rather than a value you were issued at birth. Neuroscience only supplied a picture of the integrator.</li>
 <li><b>Cybernetics · complex systems</b>: any adaptive system meant to last is caught in the <b>stability–plasticity dilemma</b> — too easy to change and new experience washes out what was learned; too hard to change and nothing new gets in. Closing a critical period is therefore not decay but the step where a system <b>locks what it learned into hardware</b>. Perineuronal nets are biology's lock; deep learning's various "don't drift too far from the original" regularisers are engineering's.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>After a stroke, tissue around the infarct briefly returns to a development-like growth state, making the first one to three months the best-paying window for rehab.</li>
+<li>The proportional recovery rule says patients regain about 70% of what is recoverable, but that 0.7 is likely a statistical artifact and cannot predict an individual.</li>
+<li>Learned non-use is a habit the brain acquires: Taub's monkeys stopped using a deafferented arm even though its motor pathways were intact.</li>
+<li>Constraint-induced movement therapy restrains the good hand and makes the affected hand do real tasks; the EXCITE trial showed it improves arm function in subacute stroke.</li>
+<li>Earlier and harder is not better: in the VECTORS and AVERT trials, very early high-intensity protocols did no better than standard care, or worse.</li>
+<li>A typical arm rehab session delivers only about thirty useful repetitions, while animal studies need hundreds before cortical maps shift.</li>
+<li>Merzenich's monkey experiments showed body maps in cortex are redrawn by use: heavily used fingers gain territory, and sewn-together fingers fuse their representations.</li>
+<li>Plasticity is neutral, so musicians' focal dystonia, phantom limb pain and central sensitisation in chronic pain are all cases of maps trained the wrong way.</li>
+<li>Critical periods close not because capacity runs out but because brakes like perineuronal nets lock circuits; digesting the nets reopens the window in animals.</li>
+<li>Adult plasticity is real but costly: it needs plenty of repetition, difficulty at the edge of ability, genuine attention, and sleep to lock changes in.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Going deeper</h3>

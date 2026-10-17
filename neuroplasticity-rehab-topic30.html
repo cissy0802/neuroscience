@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -209,6 +215,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>儒 · 亚里士多德</b>：《尚书》说「习与性成」，亚里士多德说德性是习惯——"我们由做公正的事，才成为公正的人"。两边都把性格当成行为的长期积分，而不是天生的一个值。神经科学只是补上了积分器长什么样。</li>
 <li><b>控制论 · 复杂系统</b>：任何要长期活下去的自适应系统，都卡在<b>稳定性与可塑性的两难</b>里——太容易改，学到的东西会被新经验冲掉；太难改，就再学不动新的。关键期关闭因此不该读成退化，而是系统把学到的结构<b>锁进硬件</b>的一步。围神经元网是生物的锁；深度学习里各种"别偏离原来太多"的正则项，是工程的锁。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>中风后梗死周围的脑组织会临时退回类似发育期的生长态，头一到三个月是康复训练回报最高的窗口。</li>
+<li>比例恢复法则说病人能拿回约七成可恢复功能，但这个 0.7 很可能是统计假象，不能用来预测个人。</li>
+<li>习得性不用是学出来的回避习惯：Taub 的猴子切断感觉神经后，运动通路完好也不再用那条手臂。</li>
+<li>强制诱导运动疗法绑住好手、逼患手做真实任务，EXCITE 试验证实它能改善亚急性期手臂功能。</li>
+<li>康复并非越早越猛越好：VECTORS 和 AVERT 试验里，超早期高强度方案反而不如常规甚至更差。</li>
+<li>常规上肢康复每次只有三十来次有效重复，而动物实验里皮层地图要挪动需要几百次重复起步。</li>
+<li>Merzenich 的猴子实验表明皮层身体地图按使用量重画：多用的手指地盘扩大，缝合的手指代表区融合。</li>
+<li>可塑性本身是中性的，音乐家的局灶性肌张力障碍、幻肢痛和慢性痛的中枢敏化都是地图被练坏的例子。</li>
+<li>关键期关闭不是能力用光，而是围神经元网等刹车把线路锁住，动物身上消化掉这层网就能重开关键期。</li>
+<li>成人可塑性存在但昂贵，需要足量重复、贴着能力边缘的难度、真实在场的注意力和睡眠来固定改动。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="374d2ad08f288513">// 深入思考</h3>

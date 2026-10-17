@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -222,6 +228,22 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Philosophy of science · the floor keeps dropping</b>: "atom" originally meant indivisible; then came protons and neutrons, then quarks. Every discovery of a smallest unit turns out to be the doorway to the next level of structure. The neuron doctrine has walked the same road: as anatomy it holds up perfectly (cells really are separate), but its other job — being the smallest unit of computation — is being quietly revoked by its own dendrites.</li>
 </ul>
 </div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>The textbook neuron that sums weighted inputs and fires past a threshold was a 1943 mathematical assumption, never a measurement.</li>
+<li>Cell membranes leak, and Rall's cable theory shows that a distal synapse may deliver only a fraction of its push to the soma.</li>
+<li>How far a synapse sits from the soma is itself a weight: move it closer and that input counts for more.</li>
+<li>NMDA receptors are plugged by a magnesium ion and open only when other inputs have already raised the local voltage, making them coincidence detectors.</li>
+<li>Several inputs landing on the same branch within a few milliseconds ignite a dendritic spike and sum far beyond simple addition.</li>
+<li>Poirazi and Mel argued in 2003 that a cortical pyramidal neuron behaves more like a two-layer artificial network than a single unit.</li>
+<li>Minsky and Papert's 1969 proof that a single-layer perceptron cannot compute XOR made 'one unit can't do XOR' textbook dogma.</li>
+<li>Gidon and colleagues (2020) found a calcium dendritic spike in human cortical slices that shrinks as input grows, enough for one dendrite to compute XOR.</li>
+<li>Large pyramidal cells burst only when feedforward input and top-down feedback on the apical tuft arrive together, in effect multiplying evidence by expectation.</li>
+<li>Mimicking a detailed layer-5 pyramidal cell model takes roughly five to eight network layers; remove NMDA receptors and about one layer suffices.</li>
+</ol>
+</div>
+
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>If the computing hides in the dendrites, is the spike we record only a summary?</summary><div>Yes. Almost all in-vivo recording, brain–computer interfaces included, reads the spikes leaving the cell body — the cell's final utterance. What its dozens of branches each computed, and what they vetoed, never appears in that utterance. Not necessarily a bad thing, since a summary is exactly what the downstream needs — but it means <strong>our data is one level short by construction</strong>. Reaching that level requires putting electrodes into dendrites or imaging them with light, and neither is easy in a behaving animal.</div></details>

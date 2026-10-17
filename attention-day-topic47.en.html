@@ -58,6 +58,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -242,6 +248,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Nonlinear dynamics · Steven Strogatz</b>: The mathematician Steven Strogatz wrote his doctoral thesis on the human sleep-wake cycle, analyzing it with the mathematics of coupled oscillators. The tug-of-war between the body clock and sleep pressure is a textbook case of two processes with different time courses combining into complex rhythms. He later carried the same ideas over to fireflies flashing in sync and power grids locking together.</li>
 <li><b>Economics · opportunity cost</b>: Robert Kurzban and colleagues used the economist's notion of opportunity cost to recast mental fatigue. Fatigue isn't fuel running out; it's the brain quoting a price: "everything else you're giving up by keeping your computing power on this is getting more valuable." That turns a physiological question into a resource-allocation one.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Attention is zero-sum from moment to moment: in biased competition, signals boosted by your goals win and the rest get suppressed.</li>
+<li>Baumeister's ego-depletion theory cast self-control as a muscle that tires with each use, and it stayed popular for over a decade.</li>
+<li>In preregistered replications across 23 labs in 2016 and 36 labs in 2021, the ego-depletion effect shrank to nearly zero.</li>
+<li>Mental fatigue may be a bookkeeper rather than a fuel gauge, signaling that the opportunity cost of staying on a task has risen.</li>
+<li>In Borbély's two-process model, adenosine builds up while you are awake as sleep pressure S; caffeine masks the signal without clearing it.</li>
+<li>The circadian clock C, run by the suprachiasmatic nucleus, sends a rising alerting signal through the day that offsets mounting sleep pressure.</li>
+<li>The post-lunch dip comes from a pause in the circadian alerting signal, even without lunch, while the evening hours before bed are hardest for falling asleep.</li>
+<li>Vigilance decrement, first noticed in WWII radar operators, makes misses climb within half an hour of monotonous monitoring.</li>
+<li>Norepinephrine from the locus coeruleus links arousal to focus along an inverted U: too low is drowsy, too high is distractible.</li>
+<li>After two weeks of 6-hour nights, attention lapses approach one or two all-nighters while felt sleepiness plateaus; only sleep repays sleep debt.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Going deeper</h3>

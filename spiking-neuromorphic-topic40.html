@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -228,6 +234,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>热力学 · 兰道尔原理</b>：1961 年兰道尔证明，计算的能耗下限不是工程问题而是<b>物理定律</b>——每擦掉一个比特，至少要向环境放出约 3×10⁻²¹ 焦耳的热。这一下就把"能省到多少"变成了一个有底的问题。今天的芯片离这个底还差好几个数量级，而大脑离得近得多。<b>所以"再省一千倍"未必是幻想——物理还没说不行。</b></li>
 <li><b>佛学 · 刹那生灭</b>：我们以为世界是一个个东西连续地摆在那儿，佛教的说法反过来——所谓事物只是<b>刹那刹那生灭的事件</b>，前一刹那的它和此刻的它并非同一个。普通相机拍的是"东西"，每 33 毫秒把整个世界重新宣告一遍；事件相机记的是"生灭"，除变化本身外什么都不存在。<b>同一片风景，两台机器眼里是两种本体论。</b></li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>人工神经元每一轮都要吐出一个数，真神经元只发大小固定、全或无的脉冲，信息藏在发放的时刻里。</li>
+<li>漏电积分放电模型像一只漏水的杯子：输入攒电、同时泄漏，攒到阈值就放一个脉冲并清零。</li>
+<li>事件驱动的意思是没有输入就不算、不发、不耗电，大脑里绝大多数神经元此刻都一声不吭。</li>
+<li>深度网络把神经元的发放率压成一个平均数来换取矩阵乘法的便利，代价是丢掉了时间维度。</li>
+<li>Horowitz 测算，从内存取一个数比做一次浮点加法贵约七百倍，芯片的电主要花在搬数据上。</li>
+<li>大脑的突触既存权重又当场计算，没有存算分离，也就没有来回搬运权重这笔开销。</li>
+<li>Lennie 按 ATP 成本推算，同一时刻显著活跃的皮层神经元可能不到百分之一，稀疏是能量预算所迫。</li>
+<li>神经形态芯片里，TrueNorth 只能推理，Loihi 能片上学习，SpiNNaker 专攻脉冲路由。</li>
+<li>事件相机没有帧，每个像素只在亮度变化时报告，因此延迟只有微秒级、动态范围高、快速运动也不糊。</li>
+<li>脉冲网络难训练、只在稀疏且求快的任务上占优，它赌的是未来瓶颈在能耗和延迟而非算力。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="ff7b9684a79527c0">// 深入思考</h3>

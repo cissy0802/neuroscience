@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -215,6 +221,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>控制论 · 阿什比与分层控制</b>：控制论有条老原则：本地的扰动交给本地的控制器，中央只管跨域协调；否则光是来回传信号，系统就先垮了。肠神经系统是这条工程约束的活体样本——不是演化偷懒，是从肠子到脑跑一趟，对"下一秒该不该收缩"这种问题来说实在太慢。</li>
 <li><b>语言 · gut feeling 与「愁肠百结」</b>：英语把直觉叫作"肠子的感觉"，汉语有"肝肠寸断""牵肠挂肚""满腹心事"。语言早在解剖学之前几千年，就把情绪定位到了腹腔——它当然不是证据，但它是几千年集体内感受留下的一份记录。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>消化道管壁里的肠神经系统三类神经元齐全，2022 年首次统一计数约 1.68 亿个，与整根脊髓同一量级。</li>
+<li>1899 年的实验显示，切断与脑和脊髓全部联系的一段肠子，仍会上游收缩、下游舒张地推送内容物。</li>
+<li>迷走神经约 80% 的纤维是从肠往脑走的感觉纤维，它主要是传感器总线，不是遥控器。</li>
+<li>2018 年发现肠壁的 neuropod 细胞与迷走神经元形成谷氨酸突触，肠腔到脑干只隔一个突触。</li>
+<li>肠道信号经孤束核、臂旁核分送岛叶、下丘脑和杏仁核，绝大部分永远不进入意识。</li>
+<li>无菌小鼠的应激激素反应过强，只有早期补回菌群才能纠正，说明菌群参与设定应激轴的出厂值。</li>
+<li>喂乳酸杆菌能减少小鼠的焦虑样行为，但切断迷走神经后效果全部消失，菌群得借这根线传话。</li>
+<li>体内 90–95% 的血清素在肠道，但它过不了血脑屏障，养肠道改情绪的说法把前提用错了地方。</li>
+<li>发烧时的病态行为由细胞因子经迷走和脑血管界面启动，是身体状态直接改写情绪的最硬证明。</li>
+<li>肠易激综合征已被改称脑-肠互动障碍，机制是内脏高敏感，肠道导向催眠和认知行为治疗对它有效。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="292175d09ac56dd8">// 深入思考</h3>

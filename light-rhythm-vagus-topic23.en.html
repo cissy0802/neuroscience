@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -238,6 +244,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Cybernetics · Wiener and the delay in a feedback loop</b>: what cybernetics cared about first was exactly "what happens to a feedback loop with a delay in it" — the delay fixes its natural period, and driving it at that period amplifies the swing. The blood-pressure loop's delay is about five seconds, and resonance breathing is built on that number. What you're tuning isn't your mood, it's the phase of a physical loop.</li>
 <li><b>Agricultural history · timekeeping</b>: nearly every ancient civilisation poured resources into calendars, gnomons and bureaus of astronomy — ten days early or late in the planting is the difference in the harvest. The striking part is that those bureaus and the handful of cells in your retina hold the same job: <b>take light from the sky and reset a clock that runs on its own but runs wrong.</b> One of them was correcting a nation's planting season; the other is correcting yours.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>A tiny set of retinal ganglion cells carrying melanopsin forms no images; they report overall brightness and respond best near 480 nm.</li>
+<li>Those melanopsin cells run a dedicated line to the suprachiasmatic nucleus, the body's master clock; people with no eyes at all drift later every day.</li>
+<li>The human circadian period runs about 24.2 hours, so morning light has to nudge the master clock roughly twelve minutes earlier each day.</li>
+<li>The molecular clock is a delayed feedback loop: CLOCK/BMAL1 switch on Per and Cry, whose proteins then shut that switch off, in nearly every cell.</li>
+<li>Light's effect depends on timing: after the core-temperature minimum it advances the clock, before it delays it, which is why late nights compound.</li>
+<li>Indoor light sits around 100–500 lux while sunny daylight tops 100,000, so getting outside by day beats cutting blue light at night.</li>
+<li>Melatonin signals darkness rather than sedating you, and physiological doses of 0.3–0.5 mg shift the clock as well as 3–10 mg.</li>
+<li>Peripheral organs keep their own clocks, the liver's set mainly by mealtimes, so jet lag and shift work hurt through internal desynchrony.</li>
+<li>Roughly 80% of vagal fibres carry signals up from the body to the brain, while the downward cardiac branch works as a constant brake on heart rate.</li>
+<li>Inhaling eases the vagal brake and exhaling reapplies it, so a longer exhale or breathing near six breaths a minute directly moves heart rate.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// DEEPER QUESTIONS</h3>

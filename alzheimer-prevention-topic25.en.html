@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -240,6 +246,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Cybernetics · von Neumann</b>: in 1956 he wrote on building reliable systems from unreliable components — how redundancy and majority voting can assemble something dependable out of parts that keep failing. Cognitive reserve is the biological edition: individual synapses and neurons are wildly unreliable, yet the whole degrades and keeps working for decades. The converse holds too: <b>how much damage a system absorbs without showing it depends on how many alternative routes were built in from the start.</b></li>
 <li><b>Philosophy · Locke and the ship of Theseus</b>: Locke staked personal identity on continuity of memory — so is someone whose memory chain has broken still the same person? This isn't a parlour game: an advance directive is precisely a decision made by "the past me" on behalf of "the present me", and those two may no longer want the same thing.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>In the Nun Study, a woman whose brain was packed with plaques and tangles stayed lucid to 101: pathology and symptoms can decouple.</li>
+<li>Cognitive reserve means a brain network with more detour routes; it buys time rather than immunity, and decline is steeper once symptoms surface.</li>
+<li>The amyloid cascade hypothesis casts Aβ as the upstream trigger, yet plaque load tracks symptoms poorly while the spread of tau tangles tracks them well.</li>
+<li>Lecanemab slowed decline by about 27%, proving Aβ sits on the causal chain, but the absolute gain was just 0.45 points on an 18-point scale.</li>
+<li>Aβ starts piling up some twenty years before symptoms, so anti-amyloid drugs aimed upstream but given downstream were always going to look weak.</li>
+<li>Pure Alzheimer's pathology is the exception in older brains; plaques and tangles usually come mixed with small-vessel disease and other deposits.</li>
+<li>Midlife hypertension, high LDL and diabetes wear down the neurovascular unit, slowing every route the brain uses to clear Aβ.</li>
+<li>Microglia both clear Aβ and can wrongly restart the developmental complement-tagging program, pruning synapses that are still in use.</li>
+<li>The 2024 Lancet Commission's 14 modifiable risk factors link to about 45% of dementia — a population attributable fraction, not a personal risk cut.</li>
+<li>The first FDA-cleared Alzheimer's blood test (2025) is a diagnostic aid for people with symptoms, not a fortune-teller for the healthy.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Going deeper</h3>

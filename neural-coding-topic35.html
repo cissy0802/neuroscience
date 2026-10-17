@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -250,6 +256,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>语言学 · 索绪尔</b>：一个词的意义不来自它自己，而来自它和别的词的<b>差异</b>——语言是一个「只有差异、没有实项」的系统。这几乎是分布式表示的一百年前版本；后来 Firth 那句「看一个词跟谁混，就知道它什么意思」，直接长成了今天的词向量。</li>
 <li><b>信息论 · 香农与 Barlow</b>：Barlow 在 1961 年提出，感觉系统的目标是把输入里的<b>冗余</b>榨干——用尽量少的活动传尽量多的信息。稀疏编码是这句话的直接后代。说到底，神经编码这门学问，是把香农的问题搬进了颅骨。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>神经元输出的动作电位全或无、高度一样，幅度不携带信息，只剩发放时刻、密度和哪个细胞在发。</li>
+<li>1926 年 Edgar Adrian 发现刺激越强、感觉神经发放越快，强度被写成频率，这就是频率编码。</li>
+<li>频率编码要数一段时间窗口，而快速识别照片约 150 毫秒就完成，每个神经元只来得及发一两个脉冲。</li>
+<li>时间编码把信息放在脉冲落点上：谁先发、相对脑波的相位，以及一簇脉冲之间的精确间隔。</li>
+<li>海马位置细胞在老鼠穿过其位置野时一次比一次发得早，这种相位进动把走过的进度写进相位。</li>
+<li>运动皮层每个细胞都有偏爱方向但调谐很宽，单看一个细胞无法判断手往哪个方向伸。</li>
+<li>群体向量把每个细胞的偏爱方向按放电量加权相加，合成方向与手的实际运动方向高度吻合。</li>
+<li>2005 年发现的「詹妮弗·安妮斯顿细胞」编码的是概念而非图像，同一概念背后仍有成千上万个细胞。</li>
+<li>稀疏编码指任一瞬间只有一小撮神经元在发放，部分原因是全脑仅约二十瓦的能量预算。</li>
+<li>只要求稀疏重建自然图像，Olshausen 和 Field 的模型就自己长出了像 V1 简单细胞的边缘滤波器。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="75fff64fdf4618e5">// 深入思考</h3>

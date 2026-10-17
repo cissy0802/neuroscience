@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -222,6 +228,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>现象学 · 胡塞尔</b>：意识总是"关于某物"的，他把注意描述成一束可以投射、可以移动的<b>目光之光</b>（Blickstrahl）——同一个场景，注意之光落处不同，呈现给你的意义就不同。这与"自上而下的滤镜"惊人地同构，只是他从第一人称的体验、而非神经元讲起。</li>
 <li><b>信息论 · 控制论</b>：最早把注意讲成"<b>窄带宽通道 + 一道过滤器</b>"的心理学家布罗德本特，灵感直接来自香农的信息论——把大脑当成一条容量有限的信道，注意就是入口那道选择性闸门。本期的"瓶颈"，血统就在这儿。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>注意不是照亮目标的探照灯，而是给脑内本就在互相竞争的神经元表征暗中加码，这叫偏向竞争。</li>
+<li>鸡尾酒会效应说明，你能锁定一个人的声音，而远处有人喊你的名字仍会凭自带的高权重抢走注意。</li>
+<li>Transformer 的注意力和大脑的注意只在“按相关性分配权重”这层相同，机制是两回事。</li>
+<li>自下而上的注意由刺激显著性说了算，突然的动静、巨响和红点会不经你决定就把注意拽过去。</li>
+<li>自上而下的注意由目标驱动，在停车场找红车时，满场的红色就会自动跳出来。</li>
+<li>两股注意常常打架且硬闯的那股多半赢，推送和广告的生意就是专门制造能压过你目标的显著刺激。</li>
+<li>在“看不见的大猩猩”实验里，约一半专心数传球的人没看见走过画面中央的大猩猩，这叫非注意盲视。</li>
+<li>多任务其实是大脑在两件事之间飞快切换，每切一次都要付重新装载的代价，边开车边发消息就是如此。</li>
+<li>丘脑网状核裹在中继站丘脑外层，只靠抑制决定哪路感官信号能上皮层，克里克称之为探照灯闸门。</li>
+<li>丘脑门控往细了调是注意，深睡和麻醉时大面积关断丘脑到皮层的通路，是失去意识的一部分机制。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="ffd980c2e0d118e7">// 深入思考</h3>

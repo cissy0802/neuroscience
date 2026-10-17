@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -231,6 +237,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>儒家 · 《乐记》</b>：「乐者为同，礼者为异。」礼把人分出差别，乐把人拉成一体。古人早就发现，让一群人协同起来最省力的办法不是挨个下命令，是给他们一个共同的节奏——军队踏步、龙舟的鼓、寺院的钟磬，都是拿节律做协同。大脑做的是同一件事，只是尺度小到毫秒。</li>
 <li><b>工程 · 时隙与时钟域</b>：无线电用时隙把一条频道分给许多人轮流用；数字电路里，两块用着不同时钟的部件要传数据，必须先过一道"对齐"，否则数据会丢。这两个约束和大脑面对的一模一样：<b>线路有限又要复用，就只能拿时间来分；而任何跨时钟的通信，都得先解决对表。</b>被逼到同一个墙角的系统，往往会想出同一个办法。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>脑电和场电位测的是成千上万个细胞膜电流的叠加，脑波强说明放电放得齐，不等于放电多。</li>
+<li>节律来自抑制性中间神经元反复把一片皮层一起摁下去，抑制退去的快慢决定了振荡的频率。</li>
+<li>2009 年的光遗传学实验显示，只驱动快放电的抑制细胞就能让皮层长出 gamma，驱动兴奋细胞则不行。</li>
+<li>相位是大脑自带的时间戳：同一次放电落在周期的不同位置，传的是两条不同的消息。</li>
+<li>O'Keefe 和 Recce 发现位置细胞的放电相位随老鼠前进逐轮提前，叫相位进动。</li>
+<li>一个 theta 周期里套着七八个 gamma 周期，每个装一个条目，数目与工作记忆容量相近。</li>
+<li>Fries 认为解剖连线只决定两个脑区能不能通，此刻通不通看双方节奏的相位对没对上。</li>
+<li>注意会增强相应细胞群的 gamma 同步；前馈信号偏 gamma，反馈信号偏 beta。</li>
+<li>gamma 频率随画面对比度漂移，两区同步也可能只是共同输入，所以振荡可能只是副产品。</li>
+<li>深睡时在慢振荡的上相位播一声轻响能改善次日记忆，换到相反相位就无效。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="42a1ef754155026f">// 深入思考</h3>

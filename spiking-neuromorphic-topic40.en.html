@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -222,6 +228,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Thermodynamics · Landauer's principle</b>: in 1961 Landauer showed that the lower bound on the energy of computation is not an engineering matter but a <b>law of physics</b> — erasing one bit must dump at least about 3×10⁻²¹ joules of heat into the environment. That turns "how much can we possibly save" into a question with a floor: today's chips sit several orders of magnitude above it, and the brain sits far closer. <b>So "a thousand times more efficient" is not fantasy — physics hasn't said no yet.</b></li>
 <li><b>Buddhist philosophy · momentariness</b>: we take the world to be made of things sitting there continuously; the Buddhist account inverts it — what we call a thing is only <b>events arising and ceasing moment by moment</b>, and the thing of the previous instant is not the thing of this one. A normal camera photographs objects, re-announcing the entire world every 33 milliseconds. An event camera records arisings and ceasings, and outside of change nothing exists at all. <b>Same landscape, two ontologies.</b></li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>An artificial neuron outputs a number every cycle; a real neuron fires fixed-size, all-or-none spikes, and the information lives in their timing.</li>
+<li>The leaky integrate-and-fire model works like a leaking cup: inputs add charge, leak drains it, and crossing threshold fires a spike and resets.</li>
+<li>Event-driven means that with no input nothing is computed, sent or powered, which is why most neurons in your brain are silent right now.</li>
+<li>Deep networks squash a neuron's spiking into an average firing rate to make matrix multiplication easy, throwing away the time dimension.</li>
+<li>Horowitz's 2014 figures show fetching one number from memory costs roughly 700 times a floating-point add, so chips burn energy moving data, not computing.</li>
+<li>In the brain the synapse both stores the weight and computes on the spot, so there is no memory-compute split and no weight shuttling to pay for.</li>
+<li>Pricing each spike in ATP, Lennie estimated in 2003 that under 1% of cortical neurons can be strongly active at once: sparsity is forced by the energy budget.</li>
+<li>Neuromorphic chips range from IBM's 70-milliwatt TrueNorth and Intel's on-chip-learning Loihi to SpiNNaker, built around a router for spike traffic.</li>
+<li>An event camera has no frames; each pixel reports only its own brightness changes, giving microsecond latency, high dynamic range and no motion blur.</li>
+<li>Spiking networks are hard to train, win only on sparse latency-critical work and lack a software ecosystem; they are a bet that energy, not throughput, is the coming bottleneck.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Going deeper</h3>

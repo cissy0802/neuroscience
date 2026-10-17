@@ -58,6 +58,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -214,6 +220,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Complex systems · coupling and phase transitions</b>: a pile of parts becomes &quot;one thing&quot; not because of the parts but because of how strongly they are coupled. Turn global coupling gain down continuously and at some point the system flips abruptly from one to many — standard phase-transition language. Anaesthetics look like a hand on that knob, and the presence or absence of consciousness may sit near the critical point.</li>
 <li><b>Buddhism · a taxonomy of nothingness</b>: the classical traditions insisted early that sleep, fainting and the meditative attainment of &quot;no perception&quot; are not the same state, and gave each its own criteria. Two thousand years later, dynamical fingerprints are doing the same job: not settling for &quot;the person stopped responding&quot;, but asking whether these blanks are mechanistically one blank or several.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Propofol and sevoflurane strengthen the brain's inhibition while ketamine blocks excitation, yet both leave people equally unresponsive and amnesic.</li>
+<li>With no shared pharmacology to point to, Luppi and colleagues asked instead which mathematical properties of brain activity change under anaesthesia, assuming no theory of consciousness.</li>
+<li>Using the hctsa toolbox, the team computed over 6,000 features per activity trace across humans, macaques, marmosets, mice, larval zebrafish and C. elegans.</li>
+<li>The most consistent cross-species signature of anaesthesia is faster-decaying autocorrelation, meaning shorter intrinsic timescales in each brain region.</li>
+<li>Anaesthesia does not turn the brain's volume down: neurons keep firing, but activity loses its continuity over time.</li>
+<li>A recurrent neural network whose memory-retention coefficients are turned down loses long-range dependencies, which is statistically what the anaesthetised brain resembles.</li>
+<li>Shorter local timescales bring lower synchrony between regions, so anaesthesia isolates local activity in both time and space.</li>
+<li>Global Workspace Theory and Integrated Information Theory predict the same direction here, so the result is a constraint on every theory rather than a verdict between them.</li>
+<li>The cortical areas most altered by anaesthesia track gene-expression maps for excitatory and inhibitory neurotransmission, a pattern shared by humans, macaques and mice.</li>
+<li>Stimulating the centromedian thalamus of anaesthetised macaques pushed brain dynamics back the other way and restored behavioural responses, turning correlation into causation.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Going deeper</h3>

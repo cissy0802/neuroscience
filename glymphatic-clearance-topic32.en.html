@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -198,6 +204,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Complex systems · Prigogine</b>: his idea of <b>dissipative structures</b> holds that any order far from equilibrium can only persist by continuously dumping waste and entropy into its surroundings. The brain is the most expensive ordered machine in the body — 2% of the mass burning 20% of the energy — so hauling out a load of garbage every night isn't a defect. It's the price tag on that order.</li>
 <li><b>Engineering and cybernetics · the maintenance window</b>: a subway system has to stop running at night to replace rails; a database has to pause to compact itself. Every heavily loaded system needs a stretch of "closed for business," not out of laziness but because operating and servicing require mutually incompatible conditions. Sleep looks like that engineering constraint written directly into physiology, where it cannot be deleted.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>The brain has no lymphatic vessels, yet at 2% of body weight it burns about 20% of the body's energy and makes the most waste.</li>
+<li>Cerebrospinal fluid is pushed deep into the brain along the perivascular space around arteries, sweeps through tissue, and leaves along veins.</li>
+<li>Astrocyte endfeet tile the outside of blood vessels, and knocking out their AQP4 water channels sharply cuts clearance in mice.</li>
+<li>True meningeal lymphatic vessels, the glymphatic system's final outlet to the neck's lymph nodes, were only confirmed in 2015.</li>
+<li>A 2013 mouse study found the space between brain cells widens by about 60% in sleep or anesthesia as norepinephrine falls.</li>
+<li>Human deep sleep shows a roughly 20-second cycle: a slow wave, then a dip in blood volume, then a pulse of incoming cerebrospinal fluid.</li>
+<li>Waking needs narrow gaps and high norepinephrine, which throttle fluid flow, so sleep is not a good time to clean but the only time.</li>
+<li>Amyloid-β and tau are everyday metabolic debris; trouble starts only when production outpaces clearance over the long run.</li>
+<li>In Alzheimer's the loop is vicious: poor sleep reduces clearance, and the buildup damages the very circuits that generate sleep.</li>
+<li>A 2024 study injecting dye straight into brain tissue found slower clearance during sleep; the dispute is over magnitude and the pump, not the anatomy.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// DIGGING DEEPER</h3>

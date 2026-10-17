@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -207,6 +213,22 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Philosophy · Wittgenstein</b>: early on he wrote "the limits of my language are the limits of my world," and whereof one cannot speak, one must stay silent; later he overturned himself, treating language as a "game" flowing with life. A man who argued himself to a draw landed right on this issue's fault line: is language the cage of thought, or a tool thought grabs when handy? The brain leans toward the latter.</li>
 <li><b>Linguistics · Sapir-Whorf</b>: does your native tongue shape how you think (some languages have no "left/right," only compass directions — and their speakers have uncanny orientation)? The strong version, "language determines thought," is dead — you can think fine without language. But the weak version holds: language is a <b>habitual viewfinder</b>, quietly tuning what you tend to notice and what you overlook. It can't switch thought on or off, but it can nudge thought's default lens.</li>
 </ul>
+</div>
+
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>The textbook picture of Broca's area for speaking, Wernicke's for understanding and one wire between them comes from 19th-century autopsies.</li>
+<li>Modern brain imaging shows language runs on a whole, tightly interconnected network stretching from the left frontal lobe to the temporal lobe.</li>
+<li>Damaging Broca's area alone rarely causes lasting speech loss; truly destroying language takes out a much broader swath of the network.</li>
+<li>Evelina Fedorenko found the language network lights up only for meaningful language and barely stirs during arithmetic, music or reading code.</li>
+<li>People with severe aphasia still calculate and reason, and pre-verbal infants think richly, so language is a communication tool, not thought itself.</li>
+<li>The inner monologue works like thought's announcer, translating ideas that are already formed; the thinking is done before you speak.</li>
+<li>Listening is prediction: the brain guesses each next word, and a surprising word triggers an N400 brainwave that grows with the surprise.</li>
+<li>Large language models are trained purely to predict the next word, and the better they predict, the more closely they match the brain's language network.</li>
+<li>Mahowald and Fedorenko split language ability into formal and functional competence, and the brain hands the two to separate systems.</li>
+<li>Language models have near-perfect formal competence but can stumble on multi-step reasoning and common sense: fluency is form, not thinking.</li>
+</ol>
 </div>
 
 <div class="thinking">

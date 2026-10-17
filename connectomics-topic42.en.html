@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -321,6 +327,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Buddhism · dependent origination / Madhyamaka</b>: nothing has an intrinsic essence independent of the rest; what a thing is is set by what it is in relation to. Connectomics says the same thing in the most physical form imaginable: <b>a neuron by itself is nothing; it is the neurons it connects to.</b> Push that all the way and you notice that every content of the word "you" can be redefined the same way — not to abolish the individual, but to relocate the individual inside its relations.</li>
 <li><b>Philosophy · the Ship of Theseus / Locke on personal identity</b>: if we copy your connectome one-to-one into another substrate, is that thing still "you"? Sebastian Seung's line "You are your connectome" dragged this two-thousand-year-old question into the lab for the first time. Neither side is fully satisfied with the answer, but <b>the question now has coordinates — and coordinates don't automatically supply answers.</b></li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>In 1986 John White's team published the wiring of all 302 neurons in C. elegans, the first complete connectome ever made.</li>
+<li>Forty years on, the worm's wiring alone still can't predict where it will crawl next without gene-expression, neuromodulator and imaging layers.</li>
+<li>A wiring diagram only shows which neurons share a physical cable; synaptic strength, neuromodulators and oscillatory timing are missing.</li>
+<li>Nanoscale connectomes require serial-section electron microscopy: slice tissue into tens-of-nanometre sheets, image each, stitch in 3D, trace every neuron.</li>
+<li>FlyWire's 2024 map of roughly 130,000 neurons was the first complete brain wiring diagram of a complex animal, the fruit fly.</li>
+<li>A single cubic millimetre of human temporal cortex yielded 1.4 PB of data; a synapse-level whole human brain is still decades off.</li>
+<li>The Human Connectome Project traces white-matter tracts with diffusion MRI, mapping thick cables between regions rather than individual synapses.</li>
+<li>MICrONS mouse visual cortex data show that synapse count between two neurons only weakly predicts how correlated their activity is.</li>
+<li>Across species, brain networks are modular, small-world and anchored by a rich club of hubs, a trade-off Bullmore and Sporns frame as integration versus wiring cost.</li>
+<li>Mechanistic interpretability hits the same wall: knowing every weight of a trained model doesn't reveal its computation without watching signals flow.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// GOING DEEPER</h3>

@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -200,6 +206,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>现象学 · 胡塞尔 / 威廉·詹姆斯</b>：詹姆斯说我们体验的"现在"不是一个数学点，而是一段有厚度的"<b>似是而非的当下</b>"；胡塞尔把它拆成刚过去的<b>滞留</b>和马上来的前摄。你能听懂一句话、一段旋律，正因为大脑把刚过去的几秒一直"端着"——工作记忆，很可能就是这个"活的当下"的神经基质。</li>
 <li><b>佛学 · 阿毗达摩 · 念念相续</b>：把心识看成一串<b>刹那生灭</b>的心念，前一念灭、后一念起，连成看似连续的"心流"。这与工作记忆"不断刷新、旧的一挤就掉"的易失本性出奇地合拍——所谓"当下"，从来不是一块稳定的存在，而是一段被反复重写的活动。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>工作记忆不是缩小版的长时记忆，而是只摆放此刻正在处理之物的一张小桌面。</li>
+<li>工作记忆的本行是“托着加上加工”，经典测法是延迟反应里东西消失后的那段空档。</li>
+<li>大语言模型的上下文窗口很像工作记忆：只能当场看见一小段，滑出窗口的内容就被忘掉。</li>
+<li>不许偷偷默念复述时，纯工作记忆的容量约为四样，而不是传说中的“7 加减 2”。</li>
+<li>工作记忆按组块计数而非按零件计数，高手显得记性好，多半是因为打包打得更狠。</li>
+<li>持续放电说认为，东西撤走后前额叶神经元在空档里一直放电，这份放电本身就是记忆。</li>
+<li>活动静默说认为，记忆可以暂时写进突触权重，放电上看不见，等一次输入扫过才重新显形。</li>
+<li>工作记忆没有专属仓库：内容留在感觉区，前额叶外侧负责举着目标、把关并抵挡分心。</li>
+<li>前额叶成熟极晚、衰老最早，压力激素还会打散它脆弱的持续放电，让人考试时脑子一片空白。</li>
+<li>Miller 的《神奇的数字七》受香农“有限带宽信道”启发，组块就像信道编码里的压缩。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="8b74171f8618e05e">// 深入思考</h3>

@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -190,6 +196,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>哲学 · 康德</b>：我们永远只认识得到"现象"（大脑呈现给你的那一版），够不到"物自体"（世界本来的样子）。两百年后，神经科学给这道界线补上了器官层面的机制。</li>
 <li><b>道家 · 庄周梦蝶 ／ 古希腊 · 柏拉图洞穴</b>：庄子分不清"我梦蝴蝶还是蝴蝶梦我"，柏拉图的囚徒只看得见墙上的影子——两个古老寓言说的是同一件事：我们活在自己脑内的模型里，从没直接见过洞外的光。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>大脑视觉通路里从高层往低层倒着走的连接，远多于从眼睛往上走的连接。</li>
+<li>感知的主方向是大脑往下发预测，而不是眼睛往上送原始数据。</li>
+<li>同一块灰色放在深色背景上看起来更亮，因为亮度是大脑结合背景猜出来的。</li>
+<li>生成模型和大脑共用一个骨架：先给假设、生成一版、再按与输入的差错修正。</li>
+<li>大脑每一层只把没猜中的部分（预测误差）往上报，猜中的信号保持静默。</li>
+<li>冰箱嗡嗡声听不见、一停反而警觉，说明熟悉的东西被提前扣掉，注意力留给意外。</li>
+<li>最终所见是预期与证据的加权组合，谁更可靠谁的权重更大，光线昏暗时预期占上风。</li>
+<li>注意可以定义为大脑临时调高某处感官证据的可信度（精度）。</li>
+<li>预测误差有两种消法：改信念贴合世界是感知，用动作改世界贴合预测是主动推理。</li>
+<li>佛学唯识与康德都主张人只碰得到心或大脑呈现的那一版世界，预测加工给了它神经机制。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="eb07fd2b73b34ceb">// 深入思考</h3>

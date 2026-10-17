@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -212,6 +218,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>协同学 · 相变与序参量</b>：物理学家 Haken 的协同学讲——大量单元自组织时，会冒出一个<b>序参量</b>，反过来"号令"所有单元同步（激光就是这么点亮的）。点燃几乎是教科书式的例子：无数神经元的局部竞争，过了临界点<b>突变</b>成一个全局的、自我维持的相干态。意识的"啪一下"，是复杂系统的<b>相变</b>，不是某个开关被按下。</li>
 <li><b>哲学 · Dennett 的"脑内成名"</b>：Dennett 反对剧场里有块"意识专属的银幕"，改说意识是<b>一场竞争的胜出</b>——哪份内容争到了最大的后续影响力（被记住、被说出、左右行为），哪份就"红"了，就是意识。这跟"抢上公告台、赢家通吃广播权"是同一个故事的两种讲法，也提醒我们：别把工作空间又偷偷想象成一个有观众席的小剧场。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>Baars 的“意识剧场”：无数无意识专家在暗处各干各的，某条信息被聚光灯照亮、广播给全场，才成为意识内容。</li>
+<li>“公告台”比方源自早年 AI 的黑板架构，Transformer 的 attention 同样在做“竞争上台、赢家广播”。</li>
+<li>Dehaene 的掩蔽实验显示，信息进入意识是“全有或全无”的陡崖，几乎没有“半看见”的中间地带。</li>
+<li>刺激一过临界点，活动就从视觉区突然向前额叶、顶叶大面积扩散并持续燃烧，这一过程叫“点燃”。</li>
+<li>点燃的脑电指纹是约 0.3 秒后冒出的又晚又大的 P3b 波，没进入意识的刺激不会引发这个晚波。</li>
+<li>无意识专家的成果锁在单一部门里，没法被说出口、存进长期记忆，也没法拿去临时拼出新计划。</li>
+<li>全局工作空间理论给意识下的功能主义定义：有意识，就是这条信息此刻对全脑可用。</li>
+<li>Bengio 的“意识先验”让智能体把内部状态挤过极窄的瓶颈再广播给所有模块，借此学会协作与泛化。</li>
+<li>全局工作空间理论押注前额叶—顶叶广播网，但无报告范式提示，前额叶晚活动可能只是忙着汇报的账。</li>
+<li>意识的“点燃”可看作复杂系统的相变，正如 Haken 协同学里序参量号令大量单元同步、把激光点亮。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="60ffa6c7097d27db">// 深入思考</h3>

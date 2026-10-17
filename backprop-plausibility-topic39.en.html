@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -221,6 +227,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Economics · Hayek</b>: no central mind knows the whole, yet price — a purely local signal — brings the whole close to coordination. Hayek's 1945 formulation was that knowledge is inherently dispersed, and what central calculation cannot work out, local signals do. Local learning rules approximating a global gradient is the same shape of problem, <b>except that a synapse doesn't even get a price: it has to infer what the whole system meant from the activity at its own two ends.</b></li>
 <li><b>Evolution · search without a gradient</b>: natural selection optimises too, but it has no idea which way to move and can only let mutation take its chances — at a cost measured in hundreds of millions of years. All of backpropagation's magic lives in the phrase "knows which way to change". Which cuts the other way as well: a person learning to ride a bike in a few dozen attempts can hardly be pure trial and error, so the brain must be holding some kind of directional information. The only question is where it comes from.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Learning hinges on credit assignment: a single “wrong” must be turned into the right change for each of millions of synapses.</li>
+<li>Backpropagation walks the error backwards layer by layer, giving every weight its own share of blame, and it trains nearly all modern AI.</li>
+<li>Crick argued in 1989 that cortex cannot run backprop, the sharpest objection being weight transport: return synapses would have to match the forward ones exactly.</li>
+<li>Three more mismatches: the brain never pauses for a forward pass to finish, neurons send all-or-none spikes, and a synapse senses only its own two ends.</li>
+<li>In 2016 Lillicrap and colleagues swapped the backward weights for fixed random ones, and networks still learned — a result called feedback alignment.</li>
+<li>Feedback alignment works not because the random feedback becomes correct, but because the forward weights gradually rotate to cooperate with it.</li>
+<li>Bartunov and colleagues showed in 2018 that these biologically motivated rules fall well short of real backprop on ImageNet-scale tasks.</li>
+<li>Predictive coding, equilibrium propagation and bursting in apical dendrites all fold the error into neural activity, so a local rule can approximate the gradient.</li>
+<li>Climbing fibers already hand cerebellar Purkinje cells an explicit error signal, so the real dispute is only about fine-grained, multi-layer credit assignment in cortex.</li>
+<li>Backprop-trained deep networks are the best predictors of visual cortex, hinting that task and architecture shape representations more than the learning rule does.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// GOING DEEPER</h3>

@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -213,6 +219,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>In Baars' theater of consciousness, countless unconscious specialists work in the dark; information becomes conscious only when spotlit and broadcast to the whole audience.</li>
+<li>The shared-noticeboard image comes from the blackboard architecture of early AI, and Transformer attention runs the same compete-then-broadcast logic.</li>
+<li>Dehaene's masking experiments show that entering consciousness is all-or-none: a cliff, with almost no half-seen zone in between.</li>
+<li>Past a threshold, activity suddenly spreads from visual cortex into prefrontal and parietal cortex and keeps burning; this is called ignition.</li>
+<li>Ignition's EEG fingerprint is the P3b, a late, large wave about 0.3 seconds in that never appears for stimuli that stay unconscious.</li>
+<li>Unconscious specialists are capable but siloed: their output can't be reported, stored in long-term memory, or used to improvise a new plan.</li>
+<li>Global workspace theory defines consciousness functionally: being conscious of something means that information is now available to the whole brain.</li>
+<li>Bengio's consciousness prior squeezes an agent's internal state through a narrow bottleneck and broadcasts the winners to every module, to help it cooperate and generalize.</li>
+<li>The workspace theory bets on a prefrontal-parietal broadcast network, yet no-report paradigms suggest late prefrontal activity may just reflect the act of reporting.</li>
+<li>Ignition looks like a phase transition in a complex system, much as an order parameter in Haken's synergetics forces countless units into sync to light a laser.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>Even if you prove "conscious content is always broadcast brain-wide," isn't that still correlation — why say broadcast <em>is</em> consciousness rather than merely accompanying it?</summary><div>This is the chronic disease of all "correlation-type" theories of consciousness, and workspace theory can't dodge it either. It can beautifully spell out the <strong>functional features</strong> of conscious content (reportable, storable, recruitable), but doesn't squarely answer Topic 10's hard problem: <strong>why should "information being broadcast," a purely functional fact, be accompanied by a "what it's like"?</strong> Sending a message to the whole brain seems as if it could logically happen <strong>in total darkness</strong> (no experience at all). The supporters' rebuttal pulls the rug out: the supposed "extra feeling" is itself an illusion; once broadcast is complete, consciousness is complete, with nothing left over to explain. Whether you buy that step depends on whether you think the hard problem is a real problem or a pseudo-problem — and the great watershed of all of Phase B loops right back to here.</div></details>

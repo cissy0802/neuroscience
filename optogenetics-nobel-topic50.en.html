@@ -58,6 +58,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -201,6 +207,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>History of science · Dyson on tools</b>: the physicist Freeman Dyson remarked that new directions in science are launched by new tools much more often than by new concepts. The microscope for cells, the telescope for astronomy, optogenetics for neural circuits: first came what you could do, then the questions you could ask.</li>
 <li><b>Science policy · Flexner's "usefulness of useless knowledge"</b>: in 1939 Abraham Flexner, founder of the Institute for Advanced Study in Princeton, wrote an essay of that title arguing that research driven purely by curiosity often turns out, decades later, to be enormously useful in ways no one foresaw. None of the people studying why algae swim toward light, or how bacteria use light to pump ions, were looking for a way to treat blindness or study memory.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Optogenetics moved neuroscience from observing correlations to intervening and testing causes, giving the field its own version of Judea Pearl's do(X).</li>
+<li>In 1979 Francis Crick wished for a way to switch off one cell type while leaving all others untouched, and later suggested light might do it.</li>
+<li>Channelrhodopsin, found in the eyespot of the alga Chlamydomonas, opens its own pore when light hits it: one protein is both light sensor and gate.</li>
+<li>In 2005 Deisseroth's lab put the ChR2 gene into rat neurons, and every flash of blue light triggered exactly one spike, with millisecond precision.</li>
+<li>Halorhodopsin lets negative ions in under yellow light and keeps neurons from firing, giving optogenetics an off switch to match the on switch.</li>
+<li>A cell-type-specific promoter in front of the light-sensitive gene, plus an implanted optical fibre, makes only the chosen neurons obey the light.</li>
+<li>In 2012 Tonegawa's lab relit hippocampal cells tagged during a fear experience, and mice froze in a safe new box: direct evidence for a memory engram.</li>
+<li>Steinberg's 2013 study added a burst of dopamine firing when sugar was already expected and rats still learned, so reward prediction errors cause learning.</li>
+<li>Artificial activation shows a set of cells is sufficient for a behaviour, not that the brain normally uses it that way; activation patching in AI models has the same limit.</li>
+<li>The Nobel caps each prize at three: Deisseroth, Hegemann and Nagel won, and the omission of Boyden, Pan, Miesenböck and Bamberg sparked debate.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Think deeper</h3>

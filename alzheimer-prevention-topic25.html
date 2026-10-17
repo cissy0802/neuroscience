@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -247,6 +253,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>控制论 · 冯·诺依曼</b>：1956 年他写过一篇《用不可靠元件构造可靠系统》——如何用一堆随时会坏的零件，靠冗余和多路表决搭出可靠的整体。认知储备就是它的生物版：单个突触、单个神经元都极不可靠，整体却能一边烂一边工作几十年。反过来也成立：<b>一个系统能承受多少损坏而不露馅，取决于它当初留了多少条备用路径。</b></li>
 <li><b>哲学 · 洛克与忒修斯之船</b>：洛克把人格同一性押在记忆的连续性上——那记忆链断掉的人还是不是同一个人？这不是思辨游戏：预立医疗指示正是「过去那个我」替「现在这个我」做的决定，而两个我的意愿可能已经不一样了。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>修女研究里有人脑内满是斑块和缠结，却到 101 岁仍思路清楚，说明病理和症状可以脱钩。</li>
+<li>认知储备是神经网络有更多可绕行的支路；它买来的是时间而非免疫，症状一旦出现衰退更陡。</li>
+<li>淀粉样级联假说把 Aβ 当作最上游的扳机，但斑块多少与症状轻重对不上，tau 缠结的分布反而对得准。</li>
+<li>lecanemab 让病情恶化减慢约 27%，证明 Aβ 确在因果链上，但绝对差只有 18 分量表上的 0.45 分。</li>
+<li>Aβ 在症状出现前约二十年就开始沉积，抗淀粉样药打上游却在下游才用，效果小是结构决定的。</li>
+<li>老年人的脑里纯粹的阿尔茨海默病理是少数，斑块缠结常与小血管病变等其他病变混在一起。</li>
+<li>中年的高血压、高 LDL 和糖尿病磨损神经血管单元，会让 Aβ 的几条清除路一起变慢。</li>
+<li>小胶质细胞既清除 Aβ，又可能错误重启发育期的补体标签修剪，把仍在用的突触一起吃掉。</li>
+<li>《柳叶刀》2024 年列出 14 项可改变风险因素、关联约 45% 痴呆，这是人群归因分数而非个人降幅。</li>
+<li>2025 年 FDA 清出的首个阿尔茨海默血液检测用于有症状者的鉴别诊断，不是给无症状的人算命。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="5d12572b857c5b9d">// 深入思考</h3>

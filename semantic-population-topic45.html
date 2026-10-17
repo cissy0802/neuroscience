@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -216,6 +222,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>哲学 · 弗雷格与维特根斯坦</b>：弗雷格的语境原则说，只有在句子里，一个词才有意义；维特根斯坦更进一步：「一个词的意义就是它在语言中的用法。」静态词向量输给上下文词向量，像是这两句话在神经元层面被投了一票。</li>
 <li><b>佛学 · 中观「缘起性空」</b>：一切事物都没有独立不变的「自性」，只在条件和关系里显现。一个词在脑子里也找不到一个独立的「本体细胞」，它只在几百个细胞的关系里、在这句话的条件下现身——换一句话，它就换一个样子。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>2026 年 9 月 Franch 与 Hayden 等人在癫痫病人海马里记录几百个神经元，发现其放电能稳健编码词义。</li>
+<li>把读音和语法角色的影响扣掉之后，海马神经元的放电仍能用词的意思来预测。</li>
+<li>海马里没有专管「狗」的神经元：单个细胞往往对好几个不相干类别里的好几个词都有反应。</li>
+<li>一个单元同时参与多种不相干内容的现象，叫混合选择性，也叫多义性。</li>
+<li>词义不住在单个细胞里，而在几百个神经元一起摆出的放电组合里，这就是群体编码。</li>
+<li>两个词的群体反应离得多远，和它们意思差多远对得上，这种几何结构并没有人教过神经元。</li>
+<li>同一个词的群体反应会随上下文挪动，挪得越厉害的词，在语言模型里估出的多义程度也越高。</li>
+<li>海马的词义几何与 GPT-2、BERT 这类上下文词向量对得上，换成 word2vec 这类静态词向量反而反过来。</li>
+<li>大模型里也有多义神经元，「叠加」理论认为概念是由很多神经元合成的方向，海马数据与此相容。</li>
+<li>人脑与大模型的相似只在几何层面，不说明算法相同，海马也可能是在把词义和当下的经历绑在一起。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="0d03f5f85732bdb4">// 深入思考</h3>

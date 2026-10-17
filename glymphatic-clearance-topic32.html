@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -207,6 +213,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>复杂系统 · 普里高津</b>：他讲的<b>耗散结构</b>说，任何远离平衡态的秩序，都只能靠不停地向环境倾倒废物和熵来维持。脑是全身最贵的一台有序机器（2% 的重量烧 20% 的能量），那么它每天要往外运一趟垃圾，就不是缺陷，而是这份秩序的标价。</li>
 <li><b>工程与控制论 · 维护窗口</b>：地铁得夜里停运才能换轨，数据库要停下来才能压缩重整。任何高负载系统都得给维护留一段"不营业"的时间——不是因为懒，是因为营业和检修需要互相冲突的条件。睡眠像是这条工程约束被直接写进了生理层，删不掉。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>脑里没有淋巴管，却只占体重 2% 而烧掉全身约 20% 的能量，是最能造废物的器官。</li>
+<li>脑脊液沿动脉外的血管周隙压进脑深处，穿过脑组织后从静脉外侧的夹层被收走。</li>
+<li>星形胶质细胞的终足贴满血管外壁，上面的 AQP4 水通道被敲掉后清除效率会大幅下降。</li>
+<li>脑膜上的淋巴管直到 2015 年才被确认，废液经它流入颈部淋巴结，这是类淋巴系统的最后出口。</li>
+<li>2013 年发现睡着或被麻醉的小鼠脑细胞间隙扩大约 60%，与去甲肾上腺素退潮有关。</li>
+<li>人在深睡里有约每 20 秒一轮的节律：先一阵慢波，再血流后退，随后脑脊液涌入一波。</li>
+<li>清醒时窄缝隙和高去甲肾上腺素恰好关小水路，所以睡眠不是清除的好时机，而是唯一的时机。</li>
+<li>β-淀粉样蛋白和 tau 是脑天天产也天天清的碎屑，出问题的是产出长期大于清除。</li>
+<li>睡不好会让清除变少、废物堆积，堆积又会损伤负责睡眠的回路，在阿尔茨海默里形成恶性循环。</li>
+<li>2024 年一项把染料直接打进脑组织的研究发现睡眠中清除反而更慢，争议焦点在幅度和泵的位置。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="d4471f3fdd601f41">// 深入思考</h3>

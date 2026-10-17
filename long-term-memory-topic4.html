@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -218,6 +224,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>赫拉克利特 &amp; 佛学 · 无常</b>："人不能两次踏进同一条河。"<b>再巩固</b>说的正是这个——你也无法两次想起"同一段"记忆，因为提取这个动作本身已经改了它。佛家讲诸行无常、念念迁流；记忆也一样：它不是躺在那儿的实体，而是每次被唤起时<b>重新生灭的一段过程</b>。</li>
 <li><b>博尔赫斯 &amp; 尼采 · 遗忘的必要</b>：博尔赫斯写过一个什么都忘不掉的人——富内斯，他能记住每一片叶子在每一刻的模样，却因此再也无法思考，因为"<b>思考就是遗忘差异、就是概括</b>"。尼采也说，缺了遗忘的能力，人会被过去压垮、无法行动。<b>忘，是抽象与轻装前行的前提。</b></li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>回忆不是重放录像：一段经历被拆开分存在不同脑区，大脑里没有任何一处存着完整的那一幕。</li>
+<li>海马像一枚订书钉或一份索引，回忆时顺着书签把散落的碎片召集起来当场重新拼装。</li>
+<li>每次拼装都用相似经验和当下的期待补缺，所以记忆是生成出来的，会串味，也能被“提醒”出从未发生的事。</li>
+<li>大语言模型的幻觉和人的错误记忆是同一种毛病：都靠重建而非逐字回放，重建就可能填错。</li>
+<li>新记忆先挂在海马上，要靠巩固慢慢搬进大脑皮层这个稳定仓库，而巩固主要发生在睡眠中。</li>
+<li>深睡时海马把白天位置细胞的放电顺序压缩到几百毫秒反复重放，一遍遍教会皮层自己存下。</li>
+<li>海马睡眠重放与强化学习的经验回放是同一思路，1995 年的互补学习系统理论早已点破这层对应。</li>
+<li>海马用模式分离把相似经历编码成差很远的两份，用模式补全从残缺线索勾出整段记忆。</li>
+<li>Hopfield 网络让残缺图案滚向最近的完整图案，是模式补全的数学原型；向量检索和 RAG 是它的实用版。</li>
+<li>遗忘是提炼规律的前提；艾宾浩斯遗忘曲线显示间隔复习让遗忘变慢，而每次回忆都会经再巩固被悄悄改写。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="3ac685134e335afd">// 深入思考</h3>

@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -219,6 +225,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Developmental biology · Waddington's landscape</b>: in the 1950s Waddington explained how one cell becomes a liver cell or a neuron by drawing valleys — a ball rolls downhill, takes one fork or another, and whichever valley it ends in is what it becomes. The same landscape-and-ball metaphor holds at two scales separated by orders of magnitude, which is hard to write off as coincidence: <b>any system made of many mutually constraining parts has few places it can come to rest.</b></li>
 <li><b>Psychology · William James's "stream of consciousness"</b>: more than a century ago James argued that consciousness isn't beads on a string, it's a river, and you can't scoop out a stationary "now". That was a literary intuition at the time; population trajectories finally give it a measurable shape — what is actually moving is the line, and what you experience as "a thought" is just the stretch where the line slows down passing a basin.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Line up a population's firing rates at one instant and you get a point in a high-dimensional space; over time it traces a trajectory.</li>
+<li>Population activity varies along only a few directions, a low-dimensional surface called the neural manifold: many parts, few postures.</li>
+<li>The state rolls across a landscape like a ball; the basins are attractors, and because they resist noise, working memory can hold for seconds.</li>
+<li>A Hopfield network stores each memory as a basin, so recall means rolling downhill from a partial cue to the bottom.</li>
+<li>Head direction rides a ring attractor: a bump of activity sits on a ring of cells and turns as the animal turns, seen directly in the fly ellipsoid body.</li>
+<li>Grid-cell population activity lives on the surface of a torus, a shape forced by what the task demands.</li>
+<li>Churchland and colleagues found motor-cortex activity rotating on the manifold during reaches; preparation sets the starting point of that rotation.</li>
+<li>Preparatory activity sits in an output-null subspace that cancels downstream, which is why motor cortex can be busy while the hand stays still.</li>
+<li>Measured dimensionality depends on how many neurons you record and how hard the task is; a manifold is low-dimensional for a task, not for the brain.</li>
+<li>In BCI experiments, within-manifold mappings are relearned in hours and outside-manifold ones take days, while latent dynamics stay stable as single cells drift.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Going deeper</h3>

@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -224,6 +230,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>发育生物学 · Waddington 的地形</b>：1950 年代 Waddington 为了讲一个细胞怎么分化成肝细胞或神经元，画了张山谷图——球从山上滚下，遇到分岔选一边，滚进哪条谷就定型成哪种细胞。同一个「地形加滚球」的比喻，在细胞命运和神经活动这两个差着好几个数量级的尺度上都成立，很难说是巧合：<b>凡是由许多零件互相牵制的系统，能落脚的地方本来就不多。</b></li>
 <li><b>心理学 · 詹姆斯的「意识流」</b>：一百多年前 William James 说，意识不是一颗一颗珠子串起来的，它是一条河，你舀不出一个静止的「当下」。当年这是个文学式的直觉；群体轨迹这套办法总算给了它一个能测量的形状——真正在动的是那条线，你以为的「一个念头」，只是这条线路过一个坑时慢下来的那一段。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>把一群细胞此刻的发放率排成一串，就是高维空间里的一个点，随时间划出一条轨迹。</li>
+<li>群体活动实际只在少数几个方向上变化，这块低维面叫神经流形：零件极多，能摆的姿势很少。</li>
+<li>状态在地形上像小球一样滚，停住的坑叫吸引子；坑能抗噪，所以工作记忆能稳住几秒。</li>
+<li>Hopfield 网络把每段记忆当作地形上的一个坑，回忆就是从残缺线索顺坡滚到坑底。</li>
+<li>头朝向靠环吸引子：亮斑停在一圈细胞上，转身时沿环转过同样角度，果蝇椭球体里被直接看见。</li>
+<li>网格细胞群体活动的流形是甜甜圈表面，形状是被任务要求逼出来的。</li>
+<li>Churchland 发现伸手时运动皮层群体状态在流形上转圈；准备期是把状态摆到一个起点。</li>
+<li>准备期活动落在输出零空间里，下游加总正好抵消，所以运动皮层很忙而手不动。</li>
+<li>测出多少维取决于记录多少细胞和任务多难；流形是某个任务下的有效低维，不是大脑的固有维度。</li>
+<li>脑机接口里流形内的新映射几小时学会，流形外的要练几天；单个细胞会漂，流形上的动力学却多年稳定。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="709d8f525fe17fe0">// 深入思考</h3>

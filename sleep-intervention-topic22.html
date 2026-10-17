@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -291,6 +297,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>历史 · Roger Ekirch</b>：工业化之前的欧洲人普遍睡两段——先睡一觉，半夜起来一两个小时祈祷、聊天、做事，再睡"第二觉"。他在《At Day's Close》里翻出五百多处这样的记载。"必须一觉八小时不断"更像是照明和工厂时刻表的产物，不是人类的出厂设置——半夜醒一次未必是坏了。（这是历史学的论断，其普遍程度仍有争论。）</li>
 <li><b>控制论 · 稳定—可塑的两难</b>：任何一边要学新东西、一边要保住旧本事的系统都会撞上同一个矛盾——改得太狠会抹掉已有的，不改就学不动。工程上常用的解法是把两件事<b>分到不同时间</b>：在线只管跑，离线再统一整合。生物脑把这个解法排成了昼与夜，代价是每天必须有几小时不能对外服务。从这个角度看，睡眠不是效率的漏洞，是可塑性的价格。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>深睡里皮层慢振荡、丘脑纺锤波和海马涟漪层层嵌套，合力把记忆从海马挪进皮层的稳定连接。</li>
+<li>夜间重放对应 AI 防止灾难性遗忘的交错重放：学新东西时把旧例子掺进来一起学。</li>
+<li>Rasch 等人发现，学习时配过的气味在慢波睡眠中再放能增强记忆，放在 REM 期或清醒时无效。</li>
+<li>卡准慢振荡上峰播放轻微咔哒声能增强纺锤波和次日单词记忆，错开相位播放就毫无作用。</li>
+<li>闭环声刺激的后续研究增强了振荡却没稳定提高记忆，它目前是研究机制的工具，不是记忆增强器。</li>
+<li>Borbély 双过程模型认为，困意是腺苷累积的睡眠压力与视交叉上核生物钟之间的差距。</li>
+<li>咖啡因并不提供能量，只是抢占腺苷的受体，把困倦信号暂时挡在门外，睡眠债并没有还。</li>
+<li>连续两周每晚只睡六小时，反应表现逼近通宵不睡的水平，主观困倦评分却几乎不再上升。</li>
+<li>一夜不睡后杏仁核对负面画面的反应被放大，前额叶内侧对杏仁核的抑制刹车明显松动。</li>
+<li>整夜不睡能让过半抑郁患者次日情绪好转，但补睡一晚后约 83% 会回弹，睡眠与情绪并非单调关系。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="460f63fe6449e877">// 深入思考</h3>

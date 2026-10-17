@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -247,6 +253,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>非线性动力学 · 斯特罗加茨</b>：数学家斯特罗加茨（Steven Strogatz）的博士论文就是用耦合振荡器的数学去分析人类睡眠-觉醒周期。生物钟和困意压力的拔河，是「两个不同周期的过程叠加，产生复杂节律」的经典例子，后来他把这套思路推广到萤火虫同步闪光和电网同步。</li>
 <li><b>经济学 · 机会成本</b>：库尔茨班（Robert Kurzban）等人用经济学的机会成本概念重新解释「心累」：疲劳不是燃料耗尽，而是大脑在报价——「把计算资源继续押在这里，你放弃的别的东西越来越值钱」。这把一个生理问题，变成了一个资源分配问题。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>注意在每一瞬间是零和的：神经元偏向竞争，被目标放大的信号胜出，其余被压下去。</li>
+<li>鲍迈斯特的自我损耗理论认为自控力像肌肉，用一次少一点，红了十几年。</li>
+<li>2016 年 23 个实验室、2021 年 36 个实验室的预注册重复里，自我损耗效应几乎归零。</li>
+<li>「越干越累」更像记账员在报价：继续投入当前任务的机会成本升高，大脑就用疲劳感提醒换事。</li>
+<li>博尔贝伊的双过程模型里，醒着时腺苷堆积成困意 S，咖啡因只是挡住信号而不清掉存量。</li>
+<li>视交叉上核主导的生物钟 C 在白天送出越来越强的清醒信号，用来抵消越积越多的困意。</li>
+<li>午后低谷来自生物钟清醒信号的停顿加上半天的困意，不吃午饭也照样出现；睡前两三小时反而最难入睡。</li>
+<li>单调少目标的盯梢任务半小时内漏报就明显增加，这种警觉衰减最早在二战雷达员身上被发现。</li>
+<li>蓝斑释放的去甲肾上腺素与专注呈倒 U：太低昏沉、太高焦躁，适中且目标来时爆发最专注。</li>
+<li>每晚只睡 6 小时，两周后注意走神接近通宵一两夜，自觉困意却早早停涨；睡眠债只有睡眠能还。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="4fb8fbba500f10d3">// 深入思考</h3>

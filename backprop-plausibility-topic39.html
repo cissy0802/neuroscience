@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -227,6 +233,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>经济学 · 哈耶克</b>：没有哪个中枢知道全局，可价格这个纯局部的信号，居然让整体接近了协调——哈耶克 1945 年的说法是，知识本就是分散的，中央算不出的事局部信号算出来了。局部规则近似全局梯度是同形状的问题，<b>只是突触连价格都收不到，只能从两端的活动里推断整个系统的意思。</b></li>
 <li><b>进化论 · 没有梯度的搜索</b>：自然选择也是优化，但它不知道方向，只能靠变异撞运气，代价是以亿年计。反向传播全部的魔力就在"知道往哪边改"这一句。反过来也提示：一个人几十次尝试就学会骑车，几乎不可能是纯试错——大脑手里必定攥着某种方向信息，问题只是它从哪儿来。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>学习的核心难题是信用分配：结果只给一个“错了”，却要算出几百万个突触各该怎么改。</li>
+<li>反向传播从输出端一层层往回推，给每个权重算出自己那份责任，几乎所有现代 AI 都靠它训练。</li>
+<li>Crick 1989 年指出最扎手的是权重传输问题：回程突触必须和去程突触一样强。</li>
+<li>大脑不会暂停等前向算完，神经元只发全或无的脉冲，突触也只感知自己两端，这三条同样卡住反向传播。</li>
+<li>Lillicrap 等人 2016 年把回传权重换成固定随机数，网络照样能学，这叫反馈对齐。</li>
+<li>反馈对齐能成，不是因为随机反馈变对了，而是前向权重在训练中慢慢转过去迁就那套固定反馈。</li>
+<li>放到 ImageNet 级大任务上，反馈对齐这类生物版学习规则明显落后于反向传播。</li>
+<li>预测编码、平衡传播和顶端树突爆发式放电，都把误差折进神经活动，让局部规则近似梯度。</li>
+<li>小脑浦肯野细胞靠爬行纤维接收现成的误差信号，所以真正有争议的只是皮层里跨多层的精细问责。</li>
+<li>反向传播训出的深度网络最能预测视觉皮层反应，说明表征可能更多由任务和结构决定，而非学习规则。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="ce48f37a68ff63a6">// 深入思考</h3>

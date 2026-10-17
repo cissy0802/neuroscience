@@ -59,6 +59,12 @@ pre.skill{background:rgba(10,7,20,0.72);border:1px solid rgba(52,229,224,0.25);b
 .copybtn:hover{background:rgba(52,229,224,0.18);color:#fff;border-color:#34e5e0}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -254,6 +260,21 @@ If I've already been describing something, don't restart — pick up at the firs
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>The classical view holds that each basic emotion has its own face, bodily response, and brain region, like a prewired button the world presses.</li>
+<li>Large meta-analyses find no consistent, emotion-specific bodily or neural signature for any single emotion.</li>
+<li>The amygdala also fires for surprise, novelty, and ambiguous faces, so no brain region is the dedicated home of one emotion.</li>
+<li>Lisa Feldman Barrett's theory of constructed emotion says emotions are not triggered but assembled by the brain in the moment.</li>
+<li>The brain combines body signals, learned emotion concepts, and the current situation to find the best explanation for how the body feels.</li>
+<li>Interoception, the brain's sense of heartbeat, breathing, and glucose, runs mostly on prediction in the service of the body budget.</li>
+<li>Core affect is a two-axis reading of valence and arousal: an unnamed bodily feeling that is not yet an emotion.</li>
+<li>The same high-arousal state becomes fear on a cliff and thrill on a roller-coaster, which is why reappraising anxiety as excitement works.</li>
+<li>People with high emotional granularity regulate emotions better and drink less to cope, and granularity can be trained by learning precise emotion words.</li>
+<li>Buddhism's sequence of vedanā (feeling-tone) before saññā (labeling) is a two-thousand-year-old version of the idea that core affect is not yet emotion.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>If emotion is "constructed," doesn't that make it "fake"? Is my suffering just something I made up?</summary><div>Constructed ≠ fake. Money is constructed (a slip of paper's value rests entirely on social agreement), but the stress when you can't make rent is not the least bit fake; color is constructed by the brain (the world only has light of different wavelengths), but red is utterly real to you. Emotion is the same: it's a real <strong>experience</strong> — only its source isn't a "preinstalled program in your heart" but the brain's real-time interpretation of body signals. Calling it constructed isn't to deny it; it hands you a handle — <strong>what can be constructed can, in principle, be re-constructed</strong> (change the concept, the context, the reading of the body signals). This is exactly where cognitive therapy, mindfulness, and granularity training get their leverage.</div></details>

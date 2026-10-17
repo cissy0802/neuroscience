@@ -58,6 +58,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -210,6 +216,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Hippocampal place cells each fire only when the animal is at one specific spot; together they form a living map of where you are.</li>
+<li>Tolman's 1948 rats took never-tried shortcuts when their usual route was blocked, showing they stored a survey-style cognitive map, not a turn-by-turn route.</li>
+<li>In 2005 the Mosers found grid cells in the entorhinal cortex: a single cell fires at many locations that form a regular hexagonal lattice.</li>
+<li>Grid cells ignore landmarks and mark out space purely by how far and in which direction you have moved, giving place cells a ruler for the room.</li>
+<li>O'Keefe and the Mosers shared the 2014 Nobel Prize in Physiology or Medicine for discovering the brain's positioning system.</li>
+<li>A neural network trained on path estimation in 2018 grew hexagonal grid-like codes on its own, hinting that the grid is the optimal way to encode position on a plane.</li>
+<li>Desert ants use path integration, summing the direction and distance of every step, so they can beeline straight home after a winding foraging trip.</li>
+<li>Head direction cells act as an internal compass, and border cells fire near walls, pinning the drifting internal map to fixed references.</li>
+<li>When people navigate an abstract concept space of birds varying in neck and leg length, the entorhinal cortex shows the same hexagonal grid signal as in walking.</li>
+<li>The successor representation in reinforcement learning stores where you are likely to go next, and hippocampal place cell activity looks like exactly that kind of predictive map.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Going deeper</h3>
 <details><summary>Does leaning on turn-by-turn apps let this inner map waste away?</summary><div>There's a clue worth heeding. Studies found that veteran London cab drivers — the ones who have to cram the whole city into their heads and pass "the Knowledge" exam — have a <strong>markedly larger posterior hippocampus</strong>, and the longer they drive the larger it grows, like a muscle bulked up by use. Run that backwards: when you only stare at an arrow saying "right at the next junction," you're using the memorized-route machinery and barely engaging the map-drawing kind. That doesn't mean navigation apps make you dumb, but it does suggest your <strong>sense of direction is trained</strong> — switching the app off now and then and finding your own way is probably not a loss.</div></details>

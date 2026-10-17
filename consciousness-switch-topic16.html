@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -230,6 +236,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>藏传佛教 · 梦瑜伽</b>：把清醒梦当成一门<b>觉知的功夫</b>来修——先在梦里保持清明，进而追求在无梦深睡中也不失觉知，指向"醒梦一如"。睡眠实验室里那束从梦中发来的眼动暗号，某种意义上是这套千年修法头一回被仪器接住。</li>
 <li><b>佛学 · 唯识</b>：唯识学把梦里不依赖眼耳鼻舌、独自生起的心识叫"<b>独头意识</b>"。这正对上第 3 节那台"拔了感官插头仍在生成"的机器——不靠外境，识自己就能变现一个世界。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>全身麻醉时大量皮层神经元仍在放电，丙泊酚真正切断的是各脑区之间互相通气的整合能力。</li>
+<li>清醒时用 TMS 磁刺激轻推皮层会激起传遍大半个皮层的复杂涟漪，麻醉后同样的刺激只在原地闷响。</li>
+<li>扰动复杂度指数 PCI 量化 TMS 回声有多复杂：清醒时高、深麻醉时低，低于某条线人就失去意识。</li>
+<li>一夜睡眠是浅睡、慢波深睡和 REM 大约每 90 分钟轮转一圈，前半夜深睡多，后半夜 REM 越来越长。</li>
+<li>慢波深睡里皮层神经元同起同落、高度同步，活动不少却几乎不携带信息，意识因此塌下去。</li>
+<li>REM 做梦时身体被麻痹、感官被丘脑关闸，大脑成了一台既无现实纠错也无动作验证的生成机器。</li>
+<li>如果清醒感知是被现实不停纠错的“受控的幻觉”，做梦就是拿掉“受控”、让生成模型脱开现实空转。</li>
+<li>图像生成模型和 DeepDream 断开真实输入照样能生成画面，正对应做梦时生成模型只凭内部先验运转。</li>
+<li>上世纪 80 年代 LaBerge 等人用约定的眼动暗号证明了清醒梦，2021 年实验室已能和做梦者一问一答。</li>
+<li>意识至少有唤醒和觉知两个独立旋钮，植物状态病人有唤醒无觉知，说明意识是一片二维空间而非滑条。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="e6c53dfa61ab34cd">// 深入思考</h3>

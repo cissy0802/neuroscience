@@ -56,6 +56,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -229,6 +235,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>The drift-diffusion model treats a decision as noisy evidence climbing toward two thresholds; whichever bound is hit first wins.</li>
+<li>Hard choices are slower because weak evidence means weak drift, and lowering the threshold buys speed at the cost of accuracy.</li>
+<li>To compare unlike options such as an apple, a nap, and cash, the brain first converts each into a number on a single scale of value.</li>
+<li>Neurons in the orbitofrontal cortex encode not how sweet a juice is, but how much the monkey actually wants it.</li>
+<li>The basal ganglia work like a gate, holding all actions back until one option wins and gets released.</li>
+<li>Dopamine signals not pleasure but reward prediction error: the gap between what happened and what was expected.</li>
+<li>Schultz's classic recordings showed dopamine bursting to surprise juice, shifting to the predictive bell once learned, and dipping below baseline when the juice failed to come.</li>
+<li>Temporal-difference learning in AI derived the prediction-error signal on computers first, and dopamine neurons later turned out to match it closely.</li>
+<li>A key move in the explore-exploit dilemma is to count uncertainty itself as a bonus and turn the exploration knob to fit the situation.</li>
+<li>The readiness signal that precedes a conscious decision in Libet's experiment may, on Schurger's account, be nothing more than noise accumulating to a threshold.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Deeper questions</h3>
 <details><summary>If a "decision" is just noise piling up to a threshold, what's left of "I freely chose"?</summary><div>No settled answer, but you can reframe the question. The drift-diffusion model doesn't deny that "you're choosing" — that evidence-gathering machine <strong>is you</strong>; your experience, preferences, and current state are all poured into the drift direction and the height of the bound. What it denies is only "a you set apart from all causation, deciding out of nowhere." Maybe real freedom lies not in "can you escape the mechanism," but in <strong>can you turn around and tune the machine</strong> — raise the bound to think three more seconds, actively go sample a new piece of evidence, hand yourself a different reference point. That's a thread that returns when we get to meditation and cognitive training.</div></details>

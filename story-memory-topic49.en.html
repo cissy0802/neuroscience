@@ -58,6 +58,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -201,6 +207,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Greek rhetoric · Simonides and the memory palace</b>: legend says the poet Simonides stepped out of a banquet hall just before it collapsed, then identified the bodies by remembering where each guest had sat, and so invented the "method of loci": place what you want to remember in a familiar space and walk the route. It borrows the hippocampus's spatial and episodic framework, the same roots as the cognitive maps of Topic 5.</li>
 <li><b>Philosophy · Hume on causation</b>: Hume argued we never "see" causation, only one thing regularly following another; causation is a habit the mind adds. If he's right, stories stick because they use the strongest glue our minds have, and that glue doesn't necessarily reflect how the world really is. Nassim Taleb later called the urge to force causal stories onto random events the <b>narrative fallacy</b>.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Bower and Clark showed in 1969 that turning lists of unrelated words into little stories lifted recall from 13% to 93%.</li>
+<li>Recall runs on cues: a forgotten isolated fact has nothing to pull it back, while each story event causes the next.</li>
+<li>The hippocampus binds items into a set of relations and completes the whole set from one cue; a story ties those knots in advance.</li>
+<li>A 2021 meta-analysis confirms that narrative texts are understood and remembered better than expository ones, but the edge is moderate, nowhere near the viral twenty-two times.</li>
+<li>Whatever can be predicted can be compressed: language models find causally structured text low in perplexity and random word lists high.</li>
+<li>The brain cuts continuous experience into events wherever predictions fail, which is why walking through a doorway causes more forgetting than walking the same distance within one room.</li>
+<li>The hippocampus spikes at event boundaries like a film editor, and stronger boundary responses predict fuller later recall of that segment.</li>
+<li>Higher brain areas have longer temporal receptive windows; parietal and frontal regions overlapping the default mode network respond reliably only to intact, ordered stories.</li>
+<li>People recalling the same scene show similar default mode network patterns, and listeners whose brains couple more tightly to a storyteller's comprehend better.</li>
+<li>Schemas let new information consolidate fast but rewrite details: retellings of Bartlett's War of the Ghosts kept the gist and rationalised the strange parts.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// Think deeper</h3>

@@ -61,6 +61,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -243,6 +249,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>控制论 · Wiener 与负反馈的延迟</b>：控制论最早关心的就是"带延迟的反馈环会怎么样"——延迟决定固有节律，在那个节律上驱动它，振幅就被放大。血压调节环延迟约 5 秒，共振呼吸踩的就是这个数字。你调的其实不是"心情"，是一个物理回路的相位。</li>
 <li><b>农业史 · 授时</b>：几乎所有古文明都花大力气造历法、立圭表——播种早晚十天就是收成的差别。有意思的是，历局干的事和你视网膜里那撮细胞是同一份工：<b>拿天上的光，给一个自己会走但会走偏的钟对表。</b>一个对的是国家的农时，一个对的是你自己的。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>视网膜里含黑视蛋白的少数神经节细胞不成像，只报整体亮度，对约 480 纳米蓝青光最敏感。</li>
+<li>黑视蛋白细胞拉专线直通下丘脑的视交叉上核，给全身主时钟对表；眼球全失的人作息会每天往后漂。</li>
+<li>人的内在昼夜周期约 24.2 小时，主时钟每天要被晨光拨快十来分钟，才不至于越走越晚。</li>
+<li>生物钟的分子核心是 CLOCK/BMAL1 与 Per/Cry 组成的延迟反馈环，几乎每个细胞里都有一份。</li>
+<li>同一束光的效果看时刻：体温最低点之后见光让钟提前，之前见光让钟推后，熬夜补觉因此越陷越深。</li>
+<li>室内照明只有 100–500 lux，晴天户外超过十万 lux，白天出门见光比晚上少看蓝光管用得多。</li>
+<li>褪黑素是“天黑了”的信号而非安眠药，0.3–0.5 毫克调相位并不比 3–10 毫克差。</li>
+<li>肝脏等外周器官各有自己的钟，肝钟主要听进食时间，倒时差和夜班的难受来自体内各个钟彼此脱节。</li>
+<li>迷走神经约八成纤维是从身体往脑上报的感觉纤维，下行的心脏分支像一脚持续踩着的刹车。</li>
+<li>吸气松开迷走刹车、呼气踩住，所以拉长呼气或把呼吸放慢到每分钟约 6 次能直接调动心率。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="45319058cc790178">// 深入思考</h3>

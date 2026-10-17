@@ -57,6 +57,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -225,6 +231,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>Complex systems · network spreading</b>: pathology moving over the connectome obeys the same equations as rumours over a social network or an epidemic over flight routes. And the brain, for the sake of efficiency, concentrates traffic in a handful of richly connected <b>hubs</b>. The price of that efficiency: hubs get infected earliest and take the most down with them when they fail.</li>
 <li><b>Buddhism · seeds and continuity</b>: Yogācāra describes a thought leaving a seed in the storehouse consciousness; the seed meets conditions, manifests, and perfumes a new seed — continuity without any unchanging thing being carried across. A misfolded protein handing its shape to the next molecule has exactly that structure: <b>nothing persists but a pattern</b>. And once such a continuity has formed, the hard part was never destroying it — it's not feeding it new seeds.</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Aβ and tau in Alzheimer's and α-synuclein in Parkinson's all act as templates, bending healthy copies into the same misfolded shape.</li>
+<li>Aggregation crawls through a long lag while the first seed nucleates, then accelerates — amyloid starts piling up about twenty years before the first symptom.</li>
+<li>Chaperones, the proteasome, autophagy and microglia clear misfolded protein; neurodegeneration is usually a failure of clearance with age, not overproduction.</li>
+<li>The two commonest Parkinson's risk genes, GBA and LRRK2, work on lysosomes and vesicle trafficking — the waste-disposal line, not the production line.</li>
+<li>Plaque load is not severity: mature plaques may be inert landfill, soluble oligomers are the likelier toxin, and tau is what tracks cognitive decline.</li>
+<li>Tau pathology starts in the entorhinal cortex, moves to the hippocampus and then the neocortex, in an order regular enough for Braak staging.</li>
+<li>In Parkinson's, α-synuclein climbs up from the dorsal vagal nucleus and olfactory bulb; by the time tremor appears, over half the nigral dopamine neurons are gone.</li>
+<li>Pathology spreads along neural connections rather than outward like rust, and a diffusion model run on the connectome predicts where atrophy will come next.</li>
+<li>The neurons that die first carry the highest energy bills, like substantia nigra dopamine cells with vast, barely myelinated axons that fire nonstop.</li>
+<li>Levodopa replaces dopamine without saving neurons, and anti-amyloid antibodies only slow decline by a quarter to a third: amyloid is the trigger, tau the bullet.</li>
+</ol>
 </div>
 <div class="thinking">
 <h3>// GOING DEEPER</h3>

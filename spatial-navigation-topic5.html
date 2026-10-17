@@ -59,6 +59,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 <header>
@@ -210,6 +216,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 <li><b>古典记忆术 · 记忆宫殿</b>：古希腊罗马的演说家（西塞罗记述的"位所法"）背长篇演讲，靠的是把一个个要点<b>安放到一座想象建筑的各个房间里</b>，演讲时在心里走一遍就一一取回。他们并不知道海马同时管地图和记忆，却已在无意中<b>借空间地图给记忆当货架</b>——今天的记忆冠军还在用这招。</li>
 <li><b>认知语言学 · 莱考夫《我们赖以生存的隐喻》</b>：留意你怎么谈抽象事——关系"走得近"、地位"高"、心情"低落"、"前"途、陷入"低谷"。莱考夫指出，人几乎离不开<b>空间隐喻</b>来思考抽象概念。这和"概念空间复用了网格坐标"遥相呼应：也许我们用空间的词说思想，正因为大脑本就用空间的<b>回路</b>在处理思想。</li>
 </ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>海马里的位置细胞只在动物走到某个特定地点时放电，一大群位置细胞合起来就是一张“你在哪”的活地图。</li>
+<li>托尔曼 1948 年发现老鼠被堵路后能抄从没走过的近道，说明它脑中存的是俯瞰全局的认知地图而非路线口诀。</li>
+<li>莫泽夫妇 2005 年在内嗅皮层发现网格细胞：同一个细胞在许多地点放电，这些地点排成规整的正六边形网。</li>
+<li>网格细胞不靠地标，只按往哪个方向走了多远给空间打刻度，为位置细胞提供一把量遍全屋的尺。</li>
+<li>奥基夫和莫泽夫妇因发现大脑的定位系统，共同获得 2014 年诺贝尔生理学或医学奖。</li>
+<li>2018 年训练做路径估算的神经网络自发长出了六边形网格编码，暗示网格是高效表示平面位置的最优解。</li>
+<li>撒哈拉沙漠蚁靠路径整合把每一步的方向和距离累加起来，觅食后能走一条直线回窝。</li>
+<li>头朝向细胞像大脑内置的指南针，边界细胞在靠近墙壁时放电，把会漂移的内部地图钉在固定参照上。</li>
+<li>人在由鸟的脖子长和腿长构成的抽象概念空间里思考时，内嗅皮层也会出现和走路时一样的六边形网格信号。</li>
+<li>强化学习的后继表征记录从一处出发接下来会到哪，海马位置细胞的活动恰好像这样一张预测式地图。</li>
+</ol>
 </div>
 <div class="thinking">
 <h3 data-tts="6ffaf7d8a9ec8ef5">// 深入思考</h3>

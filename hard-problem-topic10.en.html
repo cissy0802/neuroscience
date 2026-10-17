@@ -51,6 +51,12 @@ figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;fon
 .refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
 footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
 @media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
 </style></head><body>
 <div class="container">
 
@@ -198,6 +204,21 @@ footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font
 </ul>
 </div>
 
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Chalmers splits consciousness into the “easy problems” of discrimination, integration, report and attention, and one single hard problem.</li>
+<li>The easy problems of consciousness are not simple; they are easy only because we know what an answer looks like: a neural mechanism.</li>
+<li>The hard problem of consciousness asks why the brain’s information processing comes with subjective experience instead of running on in the dark.</li>
+<li>Qualia are what experiences are like from the inside, such as the redness of red; we are certain of them yet cannot hand them to anyone.</li>
+<li>In Frank Jackson’s “Mary’s room,” a color scientist who knows every physical fact sees red for the first time and seems to learn something beyond physics.</li>
+<li>Physicalists answer the Mary argument by saying she learns no new fact, only meets an old fact in a new way: firsthand.</li>
+<li>Joseph Levine’s explanatory gap: even a perfect match between neural states and experiences never explains why that state feels like that.</li>
+<li>“Water is H₂O” explains every property of water, but “pain is neural state X,” however detailed, leaves untouched the question of why it hurts.</li>
+<li>Views on consciousness form a spectrum: illusionism calls qualia an introspective trick, property dualism makes experience a basic fact, panpsychism puts some experience in all matter.</li>
+<li>Nagel’s bat shows that a first-person point of view cannot be derived from third-person facts, which is the hard problem in another form.</li>
+</ol>
+</div>
 <div class="thinking">
 <h3>// Deeper questions</h3>
 <details><summary>An AI says "I feel lonely" and behaves exactly like a person — is anyone home inside? On what grounds would we judge?</summary><div>This is the sharpest edge of the hard problem. Chalmers has a thought experiment, the <strong>philosophical zombie</strong>: imagine something molecule-for-molecule identical to you, its behavior and reactions indistinguishable, that also says "I'm so sad" — but is <strong>utterly dark inside, with no experience at all</strong>. If such a "zombie" is even <strong>conceivable</strong>, then behavior and function <strong>cannot logically pin down experience</strong> — so faced with an AI, any external test (a Turing test, how well it empathizes) <strong>in principle</strong> can't tell whether it truly feels or is a talking zombie. There's a stance called <strong>functionalism</strong>: replicate the functional structure of a mind and the mind is there, silicon or carbon be damned — on which an AI could genuinely be conscious. But the hard problem questions exactly that: "replicate the function, and you've necessarily replicated the light?" This question has no external test now, and maybe never will — and it's no longer only philosophy but an ethical stance we'll sooner or later have to take.</div></details>
