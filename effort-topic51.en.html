@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 51 · The Neuroscience of Effort — Neuroscience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ ref · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 51 · PHASE C SELF-MODULATION</span>
+<h1>The Neuroscience of Effort</h1>
+<h2>Hard things make you want to flee — not because you're lazy, but because your brain is always putting a price on effort</h2>
+<div class="date">2026-10-18 · BigCat</div>
+<p class="pitch">Willpower isn't a tank of fuel that runs dry. It's more like a meter that never stops asking: is this worth it?</p>
+</header>
+<div class="intro">
+<p>There's a report on your desk you're supposed to write. Instead you wash a mug, answer a few messages and tidy your desktop. Afterwards you scold yourself for having no willpower. But look at it another way: your brain was being perfectly rational. It was comparing two bills — <strong>how much "effort" the report will cost, and how much it will pay back</strong>. Washing the mug costs almost nothing, and you get a clean mug right away.</p>
+<p>For decades, "willpower" was pictured as a fuel that gets used up. That picture has nearly collapsed under large-scale replications. What replaced it is more interesting: <strong>effort itself has a price</strong>, a specific part of the brain does the accounting, and a chemical signal decides whether you're willing to work a bit harder for a reward.</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>Effort has a price</h2>
+<p>Start with a simple experiment. In 2010, Wouter Kool and Matthew Botvinick at Princeton let people draw freely from two decks of cards, each card a small puzzle. Both decks paid the same. The only difference: one deck made you switch back and forth between two rules more often, which takes more mental work. Nobody told participants this, yet most of them gradually came to <strong>prefer the easy deck</strong>. With nothing to gain, people spontaneously steer around the mentally demanding option.</p>
+<p>In 2013, Andrew Westbrook and Todd Braver turned that reluctance into money. They used the <strong>n-back task</strong>: letters flash one by one, and you must say whether the current one matches the one n steps back. The bigger n, the harder it is. Then they asked: would you do 3-back for $2, or the easiest 1-back for a bit less? Adjust the price step by step and you find the point where both feel equal. The result: <strong>the harder the task, the less the same reward is worth to you</strong>, and older adults discount more steeply. This is called <strong>effort discounting</strong>.</p>
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ea1" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text x="250" y="24" text-anchor="middle" fill="#d8d3ec" font-size="13" font-weight="600">Same $2 — worth less the harder it gets</text>
+<line x1="70" y1="240" x2="450" y2="240" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#ea1)"/>
+<line x1="70" y1="240" x2="70" y2="44" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#ea1)"/>
+<text x="78" y="54" fill="#8f89ad" font-size="10.5">How much it feels worth</text>
+<text x="62" y="74" text-anchor="end" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">100%</text>
+<text x="62" y="244" text-anchor="end" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">0</text>
+<line x1="72" y1="70" x2="440" y2="70" stroke="#3a3558" stroke-width="1" stroke-dasharray="3 5"/>
+<path d="M100,70 C170,86 230,112 290,132 C340,148 380,158 430,166" fill="none" stroke="#34e5e0" stroke-width="2.6"/>
+<path d="M100,70 C170,100 230,146 290,172 C340,190 380,200 430,208" fill="none" stroke="#e879f9" stroke-width="2.6"/>
+<g fill="#8f89ad" font-size="11" text-anchor="middle" font-family="SF Mono,monospace">
+<text x="100" y="258">1-back</text><text x="210" y="258">2-back</text><text x="320" y="258">3-back</text><text x="430" y="258">4+</text>
+</g>
+<text x="260" y="280" text-anchor="middle" fill="#8f89ad" font-size="10.5">Task difficulty →</text>
+<text x="436" y="140" text-anchor="end" fill="#9fe6e2" font-size="11">Younger adults</text>
+<text x="436" y="226" text-anchor="end" fill="#f0b6f8" font-size="11">Older adults: steeper discount</text>
+</svg>
+<figcaption>Schematic, after Westbrook, Kester &amp; Braver 2013 (COG-ED effort discounting)</figcaption>
+</figure>
+<p>Effort also feels bad. A 2024 meta-analysis pooling 170 samples and more than four thousand people put it bluntly: <strong>the harder people think, the more unpleasant it feels</strong>, across tasks and populations (some researchers object that it measures "the task is hard" more than "thinking deeply").</p>
+<p>So what exactly is this "price"? One intuition says the brain is burning fuel and runs low. But even working flat out, the brain uses only a little more energy than when idling (Topic 41). A more persuasive account comes from Robert Kurzban: <strong>the feeling of effort is an opportunity-cost bill</strong>. The resources that steer attention can only do one thing at a time; spent on the report, they can't be spent elsewhere. "Tired" and "bored" are the brain's way of asking whether this investment is worth it, or whether there's a better place to put it.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>Who keeps the books: the anterior midcingulate</h2>
+<p>On the inner surface of each hemisphere runs an arc of cortex wrapped around the midline, called the <strong>cingulate cortex</strong>. <a class="reflink" href="ref-cingulate.en.html">Cingulate cortex</a> A front-middle stretch of it is the <strong>anterior midcingulate cortex</strong> (aMCC; many older papers call it "dorsal anterior cingulate"). Conflict, mistakes, pain, hard problems — almost all of them light it up. So what is it actually doing?</p>
+<p>In 2013, Amitai Shenhav, Matthew Botvinick and Jonathan Cohen offered a unifying answer: the <strong>expected value of control</strong> (EVC). "Control" here means the push that holds back habits and keeps attention on the task in front of you. In their view, the aMCC keeps estimating three things: how hard to push, how much extra payoff that would bring, and what the push itself costs. It then picks the intensity with the <strong>highest net value</strong> and hands that instruction to the prefrontal cortex to carry out.</p>
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="eb1" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text x="250" y="24" text-anchor="middle" fill="#d8d3ec" font-size="13" font-weight="600">How hard to push? Pick the best net value</text>
+<line x1="60" y1="250" x2="452" y2="250" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#eb1)"/>
+<line x1="60" y1="250" x2="60" y2="44" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#eb1)"/>
+<path d="M66,246 C130,130 200,82 430,64" fill="none" stroke="#34e5e0" stroke-width="2.6"/>
+<path d="M66,246 C200,240 300,210 430,92" fill="none" stroke="#e879f9" stroke-width="2.6"/>
+<path d="M66,246 C130,190 180,168 222,166 C280,166 360,210 430,226" fill="none" stroke="#fbbf24" stroke-width="2.6"/>
+<line x1="222" y1="166" x2="222" y2="248" stroke="#fbbf24" stroke-width="1.2" stroke-dasharray="4 4"/>
+<circle cx="222" cy="166" r="5" fill="#fbbf24"/>
+<line x1="96" y1="46" x2="116" y2="46" stroke="#34e5e0" stroke-width="2.6"/><text x="122" y="50" fill="#9fe6e2" font-size="11">Payoff</text>
+<line x1="186" y1="46" x2="206" y2="46" stroke="#e879f9" stroke-width="2.6"/><text x="212" y="50" fill="#f0b6f8" font-size="11">Cost</text>
+<line x1="276" y1="46" x2="296" y2="46" stroke="#fbbf24" stroke-width="2.6"/><text x="302" y="50" fill="#f6d79a" font-size="11">Net = payoff − cost</text>
+<text x="222" y="152" text-anchor="middle" fill="#fff4da" font-size="11" font-weight="700">Best deal</text>
+<text x="256" y="270" text-anchor="middle" fill="#8f89ad" font-size="10.5">Intensity of effort →</text>
+<text x="222" y="286" text-anchor="middle" fill="#f6d79a" font-size="10.5">Intensity set by aMCC</text>
+</svg>
+<figcaption>Schematic, after Shenhav, Botvinick &amp; Cohen 2013, "The expected value of control"</figcaption>
+</figure>
+<p>This framework explains a lot of daily life: raise the reward and people focus harder at once (the payoff curve rises); when you're tired or sleepy, the same job feels unusually hard (the cost curve gets steeper); and when you know you should do something but keep putting it off, it's often because the payoff is distant and vague, so it looks small on today's ledger.</p>
+<p>The same year brought rare causal evidence. Josef Parvizi's team at Stanford, while implanting electrodes in two epilepsy patients to locate their seizures, gently stimulated a spot in the aMCC. Both described something similar: <strong>a sense that a hard challenge was coming, together with a surge of determination to push through it</strong>, plus a faster heartbeat. Sham stimulation produced nothing, and neither did moving the electrode a few millimeters away. Just two people — but it suggests the feeling of "I'll persevere no matter what" can be evoked directly from this patch of cortex.</p>
+<div class="ai">
+<h4>AI parallel</h4>
+<p>AI faces exactly the same question: <b>how many steps should each problem get?</b> In 2016 Alex Graves proposed <b>Adaptive Computation Time</b> (ACT): a recurrent neural network (a network that processes information step by step) decides for itself how many extra "thinking steps" to take for each input, while every extra step is charged a <b>"ponder cost"</b> that's subtracted during training. The network learned to think longer on hard inputs and shorter on easy ones — the same equation as EVC's "payoff minus cost, choose the best intensity." Today's reasoning models, which "think before answering," face the same trade-off: one more step is more accurate but slower and costlier, and the hard part is judging in advance which problems deserve it.</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>Dopamine: are you willing to work for it?</h2>
+<p>Say <strong>dopamine</strong> and many people think "pleasure chemical." <a class="reflink" href="ref-reward-circuit.en.html">Reward circuit</a> The rat experiments of American psychologist John Salamone paint a different picture. The maze is T-shaped: the left arm holds 2 food pellets, free for the taking; the right arm holds 4, but behind a low wall the rat has to climb. Normal rats almost always go right — a little climbing for double the food is a good deal.</p>
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ec1" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 Z" fill="#c9a8f5"/></marker>
+</defs>
+<rect x="40" y="56" width="400" height="46" rx="8" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.5"/>
+<rect x="215" y="102" width="50" height="118" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.5"/>
+<rect x="216" y="98" width="48" height="8" fill="#0c0a1e"/>
+<rect x="205" y="220" width="70" height="40" rx="8" fill="rgba(52,229,224,0.10)" stroke="#34e5e0" stroke-width="1.5"/>
+<text x="240" y="245" text-anchor="middle" fill="#d6fbf9" font-size="11.5">Start</text>
+<circle cx="64" cy="79" r="5" fill="#fbbf24"/><circle cx="80" cy="79" r="5" fill="#fbbf24"/>
+<text x="80" y="48" text-anchor="middle" fill="#f6d79a" font-size="11">2 pellets, free</text>
+<circle cx="370" cy="79" r="5" fill="#fbbf24"/><circle cx="386" cy="79" r="5" fill="#fbbf24"/><circle cx="402" cy="79" r="5" fill="#fbbf24"/><circle cx="418" cy="79" r="5" fill="#fbbf24"/>
+<rect x="330" y="58" width="9" height="42" fill="#e879f9"/>
+<text x="384" y="48" text-anchor="middle" fill="#f0b6f8" font-size="11">4 pellets, over a wall</text>
+<path d="M232,210 L232,90 L110,90" fill="none" stroke="#c9a8f5" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ec1)"/>
+<path d="M248,210 L248,90 L320,90" fill="none" stroke="#c9a8f5" stroke-width="1.6" marker-end="url(#ec1)"/>
+<text x="112" y="134" text-anchor="middle" fill="#c4b5f5" font-size="11">After accumbens dopamine</text>
+<text x="112" y="150" text-anchor="middle" fill="#c4b5f5" font-size="11">depletion: this way</text>
+<text x="370" y="134" text-anchor="middle" fill="#c4b5f5" font-size="11">Normal rats:</text>
+<text x="370" y="150" text-anchor="middle" fill="#c4b5f5" font-size="11">almost always this way</text>
+<text x="240" y="288" text-anchor="middle" fill="#8f89ad" font-size="10.5">Remove the wall and depleted rats still pick 4: not less hungry, just unwilling to work</text>
+</svg>
+<figcaption>Schematic, after Salamone et al. 1994 T-maze cost/benefit task</figcaption>
+</figure>
+<p>Then the researchers used a drug to deplete dopamine in the rats' <strong>nucleus accumbens</strong> (a key relay station in the reward circuit). These rats switched to the 2 pellets on the left. Had they stopped liking food? No: take the wall away and they still chose the 4-pellet side, and they still ate food put in front of them. Only one thing changed: <strong>they were no longer willing to work for the bigger reward</strong>.</p>
+<p>The same thread shows up in people. In 2020, Westbrook, with Michael Frank, Roshan Cools and colleagues, found that people whose striatum (the input stage of the basal ganglia) synthesizes more dopamine were more willing to take on harder but better-paid mental work. Giving people methylphenidate (the active ingredient of Ritalin), which boosts dopamine signaling, also made them more willing to exert effort, and <strong>the effect was larger in those with lower baseline dopamine</strong>. Modeling showed the drug mainly made people weigh the "benefits" more heavily.</p>
+<p>This also sheds light on a state common in depression (Topic 24): not "I don't want it," but <strong>"the moment I think of the effort, it doesn't seem worth it"</strong> — getting out of bed or replying to a message feels like climbing a wall.</p>
+<div class="ai">
+<h4>AI parallel</h4>
+<p><b>Reinforcement learning</b> is a way for machines to learn by trial, error and reward. One branch, <b>average-reward</b> reinforcement learning, tracks not just how many points each action earns but "how many points per unit of time, on average." In 2007, Yael Niv, Nathaniel Daw and colleagues proposed that the brain's slowly changing <b>background (tonic) dopamine level</b> plays exactly this "average reward rate" role: the richer the environment, the higher the <b>opportunity cost</b> of every second spent dawdling, so the animal moves faster and works harder; with low dopamine the calculation comes out as "take it slow, skipping the effort costs little." That fits what Salamone saw, and gives "the cost of effort" an explanation you can write as an equation.</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>Willpower is not a tank of fuel</h2>
+<p>In 1998, American psychologist Roy Baumeister ran a famous experiment: one group sat in front of fresh-baked cookies but was allowed to eat only radishes; afterwards they worked on a puzzle that was secretly unsolvable, and gave up sooner than those who had eaten cookies. The conclusion was summed up as <strong>"ego depletion"</strong>: self-control is like a muscle that tires with each use; later studies even claimed it burned blood glucose. The idea was popular for over a decade, and a 2010 meta-analysis estimated a medium-to-large effect.</p>
+<figure>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+<text x="240" y="24" text-anchor="middle" fill="#d8d3ec" font-size="13" font-weight="600">Ego-depletion effect size: the more careful the redo, the closer to zero</text>
+<line x1="150" y1="44" x2="150" y2="200" stroke="#5b5678" stroke-width="1.2"/>
+<text x="150" y="216" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">0</text>
+<text x="400" y="216" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">0.62</text>
+<rect x="150" y="56" width="250" height="28" rx="4" fill="#e879f9" opacity="0.8"/>
+<text x="140" y="68" text-anchor="end" fill="#d8d3ec" font-size="11">2010 meta-analysis</text>
+<text x="140" y="81" text-anchor="end" fill="#8f89ad" font-size="9.5">published studies</text>
+<rect x="150" y="106" width="16" height="28" rx="4" fill="#34e5e0" opacity="0.85"/>
+<text x="140" y="118" text-anchor="end" fill="#d8d3ec" font-size="11">2016 multi-lab</text>
+<text x="140" y="131" text-anchor="end" fill="#8f89ad" font-size="9.5">23 labs</text>
+<text x="176" y="124" fill="#9fe6e2" font-size="11" font-family="SF Mono,monospace">0.04</text>
+<rect x="150" y="156" width="24" height="28" rx="4" fill="#34e5e0" opacity="0.85"/>
+<text x="140" y="168" text-anchor="end" fill="#d8d3ec" font-size="11">2021 multi-lab</text>
+<text x="140" y="181" text-anchor="end" fill="#8f89ad" font-size="9.5">36 labs</text>
+<text x="184" y="174" fill="#9fe6e2" font-size="11" font-family="SF Mono,monospace">0.06</text>
+<text x="240" y="242" text-anchor="middle" fill="#8f89ad" font-size="10.5">Effect size d: 0.2 is small, 0.5 is medium</text>
+</svg>
+<figcaption>After Hagger et al. 2010 meta-analysis; Hagger et al. 2016 and Vohs et al. 2021 preregistered multi-lab replications</figcaption>
+</figure>
+<p>Then came the large-scale redos. In 2016, 23 labs followed one preregistered protocol with more than two thousand people, and the effect was essentially zero. In 2021, with Baumeister's own collaborator Kathleen Vohs among the leaders, 36 labs and over 3,500 people found it still vanishingly small. The glucose story doesn't hold up either: the extra energy a straining brain uses is nowhere near enough to drain blood sugar.</p>
+<p>But "tired" isn't all in your head. In 2022, Mathias Pessiglione's team in Paris had people do more than six hours of hard mental work and used magnetic resonance spectroscopy to measure the chemistry of their prefrontal cortex. They found more <strong>glutamate</strong> (a major excitatory neurotransmitter) building up <strong>in the lateral prefrontal cortex</strong>, and these people increasingly favored "easy, get it now" choices. The authors suggest fatigue is the brain raising the "price" of control to keep these substances from piling up. The sample was small and needs replicating, but it fits the "meter" picture: fatigue isn't an empty tank — <strong>the price has been raised</strong>.</p>
+<p>In 2020, Alexandra Touroutoglou, Lisa Feldman Barrett and colleagues described the aMCC as a hub of the "tenacious brain": it is extraordinarily well connected, able to weigh "how much bodily resource this will take" against "what it will bring," then mobilize attention and the body to serve the goal. <a class="reflink" href="ref-body-budget.en.html">Body budget</a> It's the same logic as the body budget: effort spends the budget, so something has to decide whether to spend it.</p>
+<p>From this a popular line spread: "do things you don't want to do and your aMCC grows." That overreaches. The evidence is only cross-sectional correlation: "SuperAgers" with exceptional memory have a thicker cortex in this area, but we can't tell whether persistence thickened it or people with a thicker one persist more; no training study has shown that deliberately doing hard things makes it grow. And its job description is messy: pain, conflict, errors and social rejection all activate it, so it can't simply be called a "willpower center."</p>
+<p>Conversely, effort isn't always a minus. Michael Inzlicht and colleagues called this the <strong>effort paradox</strong> in 2018: people go looking for hardship — climbing mountains, running marathons, assembling their own furniture — and value things more when they worked for them. One explanation: if effort is repeatedly followed by reward, effort itself gradually takes on a bit of reward's flavor. The prices on the meter can be rewritten by experience.</p>
+</div>
+<div class="crossx">
+<h3>🌀 Crossing over · cross-disciplinary links</h3>
+<ul>
+<li><b>Linguistics · Zipf</b>: In 1949 the American linguist George Zipf wrote <i>Human Behavior and the Principle of Least Effort</i>. He noticed that the most frequent words tend to be the shortest, and argued that speaking and acting both minimize effort. Decades later, effort-discounting experiments turned "least effort" from a statistical regularity into a computation with a measurable price and a brain address.</li>
+<li><b>Daoism · wu wei</b>: In <i>Trying Not to Try</i> (2014), sinologist Edward Slingerland reads the effortless precision of Zhuangzi's Cook Ding, carving an ox, alongside research on cognitive control: with mastery, an action shifts from "control" that must be forced into spontaneous flow, and the price of effort falls. Yet Daoist wu wei is more than practice makes perfect; it also holds a paradox — striving for it makes it slip away — that the meter model can't capture.</li>
+<li><b>Philosophy · Camus</b>: Camus ends <i>The Myth of Sisyphus</i> with "One must imagine Sisyphus happy." Rolling a rock uphill forever is, by effort-discounting arithmetic, the worst deal there is. The effort paradox suggests another possibility: when effort itself becomes part of the meaning, the books are no longer simply "payoff minus cost."</li>
+</ul>
+</div>
+<div class="tk">
+<h3>// Ten takeaways</h3>
+<ol class="takeaways">
+<li>Kool and Botvinick (2010) found that, with equal rewards, people increasingly prefer the easy deck that doesn't require switching between rules.</li>
+<li>Effort discounting: measured with n-back tasks, the harder the task, the less the same pay is worth to people, and older adults discount more steeply.</li>
+<li>A 2024 meta-analysis of 170 samples found that the more mental effort people invest, the more unpleasant they report it feels.</li>
+<li>Kurzban argues the feeling of effort is an opportunity-cost bill for tied-up control resources, not fuel running out in the brain.</li>
+<li>The expected-value-of-control theory says the anterior midcingulate (aMCC) weighs the payoff of effort against its cost and picks the most profitable intensity.</li>
+<li>In 2013 Parvizi's team stimulated the aMCC in two patients, evoking a sense of a coming challenge, a will to push through and a faster heartbeat.</li>
+<li>In Salamone's T-maze, rats with depleted nucleus accumbens dopamine stop climbing a wall for 4 pellets but still choose 4 when the wall is gone.</li>
+<li>People with higher striatal dopamine synthesis, or on methylphenidate, take on harder, better-paid mental work, mainly by weighting benefits more.</li>
+<li>Ego depletion shrank to almost nothing in preregistered multi-lab replications in 2016 and 2021, and the blood-glucose fuel story fails too.</li>
+<li>A day of hard mental work raises glutamate in lateral prefrontal cortex and tilts choices toward easy options — fatigue as a higher price for control.</li>
+</ol>
+</div>
+<div class="thinking">
+<h3>// Going deeper</h3>
+<details><summary>If procrastination is the brain doing rational accounting, is it getting the sums wrong?</summary><div>Often the ledger is incomplete. The payoff is weeks away and vague; the cost is now and concrete, so the meter naturally favors the present. Bringing the payoff closer (breaking it into small results you can see today) and lowering the cost (do just five minutes, write the first step down clearly) works better than calling yourself weak-willed.</div></details>
+<details><summary>Does "the harder you push yourself, the stronger you get" hold up?</summary><div>There's little direct evidence. What seems solid is that the subjective price of effort can be rewritten by experience: pair effort with reward often enough and it hurts less. But "deliberate hardship makes the aMCC grow" has no training-study support yet.</div></details>
+<details><summary>If ego depletion didn't replicate, why does everything feel exhausting after work?</summary><div>The tiredness is real; the mechanism may just not be fuel depletion. Opportunity costs, fading interest, sleep pressure, and the changing chemistry of prefrontal cortex after long work can all push up the "price" of control. The difference: a price can be brought down by a bigger reward, rest or switching tasks; an empty tank can't.</div></details>
+<details><summary>Is giving an AI a "ponder cost" the same as a person feeling effort?</summary><div>At the level of the equation they're very close: payoff minus cost, choose the best intensity. But a model's cost is a number its designers wrote in; where the human cost comes from — opportunity cost, metabolism, or a prior left by evolution — is still debated.</div></details>
+</div>
+<div class="refs">
+<h3>// Further reading</h3>
+<ul>
+<li><a href="https://doi.org/10.1037/a0020198" target="_blank">Kool, McGuire, Rosen &amp; Botvinick · Decision making and the avoidance of cognitive demand</a> — Journal of Experimental Psychology: General, 2010</li>
+<li><a href="https://doi.org/10.1371/journal.pone.0068210" target="_blank">Westbrook, Kester &amp; Braver · What is the subjective cost of cognitive effort?</a> — PLoS ONE, 2013</li>
+<li><a href="https://doi.org/10.1037/bul0000443" target="_blank">David, Vassena &amp; Bijleveld · The unpleasantness of thinking</a> — Psychological Bulletin, 2024, meta-analysis</li>
+<li><a href="https://doi.org/10.1017/S0140525X12003196" target="_blank">Kurzban, Duckworth, Kable &amp; Myers · An opportunity cost model of subjective effort and task performance</a> — Behavioral and Brain Sciences, 2013</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2013.07.007" target="_blank">Shenhav, Botvinick &amp; Cohen · The expected value of control</a> — Neuron, 2013</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2013.10.057" target="_blank">Parvizi et al. · The will to persevere induced by electrical stimulation of the human cingulate gyrus</a> — Neuron, 2013</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Salamone+1994+nucleus+accumbens+dopamine+T-maze+cost%2Fbenefit" target="_blank">Salamone et al. · Nucleus accumbens dopamine depletions shift relative response allocation in a T-maze cost/benefit task</a> — Behavioural Brain Research, 1994 (PubMed)</li>
+<li><a href="https://doi.org/10.1126/science.aaz5891" target="_blank">Westbrook et al. · Dopamine promotes cognitive effort by biasing the benefits versus costs of cognitive work</a> — Science, 2020</li>
+<li><a href="https://doi.org/10.1007/s00213-006-0502-4" target="_blank">Niv, Daw, Joel &amp; Dayan · Tonic dopamine: opportunity costs and the control of response vigor</a> — Psychopharmacology, 2007</li>
+<li><a href="https://arxiv.org/abs/1603.08983" target="_blank">Graves · Adaptive Computation Time for Recurrent Neural Networks</a> — arXiv, 2016</li>
+<li><a href="https://doi.org/10.1177/1745691616652873" target="_blank">Hagger et al. · A multilab preregistered replication of the ego-depletion effect</a> — Perspectives on Psychological Science, 2016</li>
+<li><a href="https://doi.org/10.1177/0956797621989733" target="_blank">Vohs et al. · A multisite preregistered paradigmatic test of the ego-depletion effect</a> — Psychological Science, 2021</li>
+<li><a href="https://doi.org/10.1016/j.cub.2022.07.010" target="_blank">Wiehler et al. · A neuro-metabolic account of why daylong cognitive work alters the control of economic decisions</a> — Current Biology, 2022</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7381101/" target="_blank">Touroutoglou, Andreano, Dickerson &amp; Barrett · The tenacious brain</a> — Cortex, 2020 (PMC)</li>
+<li><a href="https://doi.org/10.1016/j.tics.2018.01.007" target="_blank">Inzlicht, Shenhav &amp; Olivola · The effort paradox: effort is both costly and valued</a> — Trends in Cognitive Sciences, 2018</li>
+<li><a href="https://en.wikipedia.org/wiki/Ego_depletion" target="_blank">Ego depletion (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Principle_of_least_effort" target="_blank">Principle of least effort (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/Wu_wei" target="_blank">Wu wei (Wikipedia)</a> · <a href="https://en.wikipedia.org/wiki/The_Myth_of_Sisyphus" target="_blank">The Myth of Sisyphus (Wikipedia)</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 51 · <a href="index.en.html" style="color:#a78bfa">← Index</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>

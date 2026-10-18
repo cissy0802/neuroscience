@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 51 · 努力的神经科学 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 51 · PHASE C 自我调制</span>
+<h1>努力的神经科学</h1>
+<h2>难事让人想逃，不是因为你懒——是大脑一直在给「费劲」标价</h2>
+<div class="date">2026-10-18 · BigCat</div>
+<p class="pitch">意志力不是一缸会用光的油，更像一台不停在算「值不值」的计价器。</p>
+</header>
+<div class="intro">
+<p>桌上摆着一份该写的报告，你却先去洗了杯子、回了几条消息、把桌面整理了一遍。事后你会骂自己「没毅力」。可换个角度看，你刚才的大脑其实非常理性：它在比较两笔账——<strong>写报告要付多少「费劲」，能换回多少好处</strong>；洗杯子几乎不费劲，马上就有个干净的杯子。</p>
+<p>过去几十年，「意志力」常被想象成一种会用光的燃料，用多了就见底。这个说法在大规模重复实验面前几乎塌了。取而代之的图景更有意思：<strong>费劲本身有价格</strong>，大脑里有专门的地方算这笔账，有一种化学信号决定你愿不愿意为奖励多出点力。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>费劲是有价格的</h2>
+<p>先看一个简单的实验。2010 年，普林斯顿的库尔（Wouter Kool）和博特维尼克（Matthew Botvinick）让人从两叠牌里随便抽，每张牌对应一道小题。两叠牌的奖励一样，唯一的区别是：其中一叠要频繁在两种规则之间来回切换，更费脑子。没人告诉受试者这个区别，可大多数人慢慢地<strong>越来越偏爱那叠轻松的</strong>。没有任何好处的情况下，人会自发绕开费脑子的选项。</p>
+<p>2013 年，韦斯特布鲁克（Andrew Westbrook）和布雷弗（Todd Braver）把这份「不情愿」换算成了钱。他们用的是 <strong>n-back 任务</strong>：屏幕上一个个闪字母，你要判断当前这个和往前数第 n 个是否相同。n 越大越难。然后问你：做 3-back 拿 2 美元，还是做最简单的 1-back 拿少一点？一点点调价格，就能找到你觉得「两边一样」的那个点。结果，<strong>任务越难，同样的奖励在你心里就越不值钱</strong>，老年人打的折扣更狠。这叫<strong>努力折扣</strong>。</p>
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ea1" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text x="250" y="24" text-anchor="middle" fill="#d8d3ec" font-size="13" font-weight="600">同样 2 块钱，越难越不值钱</text>
+<line x1="70" y1="240" x2="450" y2="240" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#ea1)"/>
+<line x1="70" y1="240" x2="70" y2="44" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#ea1)"/>
+<text x="78" y="54" fill="#8f89ad" font-size="10.5">心里觉得值多少</text>
+<text x="62" y="74" text-anchor="end" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">100%</text>
+<text x="62" y="244" text-anchor="end" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">0</text>
+<line x1="72" y1="70" x2="440" y2="70" stroke="#3a3558" stroke-width="1" stroke-dasharray="3 5"/>
+<path d="M100,70 C170,86 230,112 290,132 C340,148 380,158 430,166" fill="none" stroke="#34e5e0" stroke-width="2.6"/>
+<path d="M100,70 C170,100 230,146 290,172 C340,190 380,200 430,208" fill="none" stroke="#e879f9" stroke-width="2.6"/>
+<g fill="#8f89ad" font-size="11" text-anchor="middle" font-family="SF Mono,monospace">
+<text x="100" y="258">1-back</text><text x="210" y="258">2-back</text><text x="320" y="258">3-back</text><text x="430" y="258">4+</text>
+</g>
+<text x="260" y="280" text-anchor="middle" fill="#8f89ad" font-size="10.5">任务难度 →</text>
+<text x="436" y="140" text-anchor="end" fill="#9fe6e2" font-size="11">年轻人</text>
+<text x="436" y="226" text-anchor="end" fill="#f0b6f8" font-size="11">老年人：打折更狠</text>
+</svg>
+<figcaption>示意：据 Westbrook, Kester &amp; Braver 2013（COG-ED 努力折扣）</figcaption>
+</figure>
+<p>费劲的感觉还不好受。2024 年一项元分析汇总了 170 个样本、四千多人的数据，结论很直白：<strong>脑子用得越狠，人越觉得不愉快</strong>，跨任务、跨人群都成立（也有学者质疑它测的更像「任务难」而不是「想得深」）。</p>
+<p>那这个「价格」到底是什么？一种直觉是脑子在烧燃料、烧多了不够用。可脑子再使劲，总耗能也只比发呆时多出一点点（Topic 41）。另一种更有说服力的解释来自库尔兹班（Robert Kurzban）：<strong>费劲的感觉是一张机会成本账单</strong>。控制注意的那套资源一次只能干一件事，用来写报告，就没法同时用在别处；「累」和「烦」是大脑在提醒你：这笔投入值不值，要不要换个更划算的去处。</p>
+<p class="en-brief"><b>EN</b> People spontaneously avoid more demanding options even without extra pay (Kool et al. 2010), and discount rewards by how hard the work is — more steeply with age (Westbrook et al. 2013). Mental effort reliably feels unpleasant (David et al. 2024 meta-analysis). Rather than literal fuel depletion, the felt cost of effort may signal the opportunity cost of tying up limited control resources (Kurzban et al. 2013).</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>谁在算账：前中扣带</h2>
+<p>大脑内侧有一条环抱着中线的弧形皮层带，叫<strong>扣带皮层</strong>。<a class="reflink" href="ref-cingulate.html">扣带皮层</a> 它靠前偏中的一段叫<strong>前中扣带</strong>（aMCC，很多老论文叫它「背侧前扣带」）。冲突、犯错、疼痛、难题，几乎都会让它亮起来。它到底在干什么？</p>
+<p>2013 年，申哈夫（Amitai Shenhav）、博特维尼克和科恩（Jonathan Cohen）给出了一个统一的说法：<strong>控制的期望价值</strong>（EVC）。所谓「控制」，就是压住习惯反应、把注意按在眼前任务上的那股劲。他们认为，aMCC 不停地估算三样东西：使多大劲、能多换回多少好处、这份劲本身要付多少代价，然后挑一个<strong>净收益最大</strong>的力度，把指令发给前额叶去执行。</p>
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="eb1" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 Z" fill="#8f89ad"/></marker>
+</defs>
+<text x="250" y="24" text-anchor="middle" fill="#d8d3ec" font-size="13" font-weight="600">使多大劲？挑净收益最高的那一档</text>
+<line x1="60" y1="250" x2="452" y2="250" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#eb1)"/>
+<line x1="60" y1="250" x2="60" y2="44" stroke="#8f89ad" stroke-width="1.4" marker-end="url(#eb1)"/>
+<path d="M66,246 C130,130 200,82 430,64" fill="none" stroke="#34e5e0" stroke-width="2.6"/>
+<path d="M66,246 C200,240 300,210 430,92" fill="none" stroke="#e879f9" stroke-width="2.6"/>
+<path d="M66,246 C130,190 180,168 222,166 C280,166 360,210 430,226" fill="none" stroke="#fbbf24" stroke-width="2.6"/>
+<line x1="222" y1="166" x2="222" y2="248" stroke="#fbbf24" stroke-width="1.2" stroke-dasharray="4 4"/>
+<circle cx="222" cy="166" r="5" fill="#fbbf24"/>
+<line x1="96" y1="46" x2="116" y2="46" stroke="#34e5e0" stroke-width="2.6"/><text x="122" y="50" fill="#9fe6e2" font-size="11">好处</text>
+<line x1="186" y1="46" x2="206" y2="46" stroke="#e879f9" stroke-width="2.6"/><text x="212" y="50" fill="#f0b6f8" font-size="11">代价</text>
+<line x1="276" y1="46" x2="296" y2="46" stroke="#fbbf24" stroke-width="2.6"/><text x="302" y="50" fill="#f6d79a" font-size="11">净收益 = 好处 − 代价</text>
+<text x="222" y="152" text-anchor="middle" fill="#fff4da" font-size="11" font-weight="700">最划算</text>
+<text x="256" y="270" text-anchor="middle" fill="#8f89ad" font-size="10.5">使劲的程度 →</text>
+<text x="222" y="286" text-anchor="middle" fill="#f6d79a" font-size="10.5">aMCC 设定的力度</text>
+</svg>
+<figcaption>示意：据 Shenhav, Botvinick &amp; Cohen 2013「控制的期望价值」</figcaption>
+</figure>
+<p>这个框架顺手解释了很多日常现象：奖励一加码，人立刻更专心（好处那条线抬高了）；累了、困了，同样的事显得格外难（代价那条线变陡了）；明知该做却拖着，往往是好处太远太模糊，在当下的账上显得很小。</p>
+<p>同一年还有一份罕见的因果证据。斯坦福的帕尔维齐（Josef Parvizi）团队给两位癫痫病人植入电极、定位病灶时，轻轻电刺激了 aMCC 的一个点。两人描述的感受很像：<strong>前面有个难关要来了，心里却升起一股非闯过去不可的劲头</strong>，心跳也加快了。假刺激没有这种感觉，电极挪开几毫米也没有。只有两个人，但它提示：「豁出去也要坚持」这种感受，能被这块皮层直接唤起。</p>
+<p class="en-brief"><b>EN</b> The anterior midcingulate cortex (aMCC, often called dorsal ACC) is proposed to compute the "expected value of control": how much benefit a given intensity of control would bring, minus its intrinsic cost, then select the best intensity (Shenhav et al. 2013). Electrical stimulation of aMCC in two patients evoked a sense of an upcoming challenge plus a determination to persevere (Parvizi et al. 2013).</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>AI 里也有一模一样的问题：<b>每道题该算多少步？</b>2016 年格雷夫斯（Alex Graves）提出<b>自适应计算时间</b>（ACT）：让循环神经网络（一种一步步处理信息的网络）自己决定对每个输入「多想几步」，同时给每多想一步记一笔<b>「思考代价」</b>，训练时把它从收益里扣掉。结果网络学会了难题多想、简单题少想——这和 EVC 的「好处减代价、挑最优力度」是同一个算式。今天能「先想一想再回答」的推理模型也面临同一个取舍：多想一步更准，但更慢更贵，难点在于事先判断哪道题值得多想。</p>
+</div>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>多巴胺：愿不愿意为它多出点力</h2>
+<p>说起<strong>多巴胺</strong>，很多人想到「快乐分子」。<a class="reflink" href="ref-reward-circuit.html">奖赏回路</a> 美国心理学家萨拉蒙（John Salamone）的大鼠实验给出了另一幅图。迷宫是个 T 字形：左边放 2 粒食物，随手可得；右边放 4 粒，但挡着一道要爬过去的矮墙。正常大鼠几乎总是选右边——多爬一下，换双倍的饭，划算。</p>
+<figure>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ec1" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 Z" fill="#c9a8f5"/></marker>
+</defs>
+<rect x="40" y="56" width="400" height="46" rx="8" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.5"/>
+<rect x="215" y="102" width="50" height="118" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.5"/>
+<rect x="216" y="98" width="48" height="8" fill="#0c0a1e"/>
+<rect x="205" y="220" width="70" height="40" rx="8" fill="rgba(52,229,224,0.10)" stroke="#34e5e0" stroke-width="1.5"/>
+<text x="240" y="245" text-anchor="middle" fill="#d6fbf9" font-size="11.5">起点</text>
+<circle cx="64" cy="79" r="5" fill="#fbbf24"/><circle cx="80" cy="79" r="5" fill="#fbbf24"/>
+<text x="72" y="48" text-anchor="middle" fill="#f6d79a" font-size="11">2 粒，随手拿</text>
+<circle cx="370" cy="79" r="5" fill="#fbbf24"/><circle cx="386" cy="79" r="5" fill="#fbbf24"/><circle cx="402" cy="79" r="5" fill="#fbbf24"/><circle cx="418" cy="79" r="5" fill="#fbbf24"/>
+<rect x="330" y="58" width="9" height="42" fill="#e879f9"/>
+<text x="394" y="48" text-anchor="middle" fill="#f0b6f8" font-size="11">4 粒，但要翻墙</text>
+<path d="M232,210 L232,90 L110,90" fill="none" stroke="#c9a8f5" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ec1)"/>
+<path d="M248,210 L248,90 L320,90" fill="none" stroke="#c9a8f5" stroke-width="1.6" marker-end="url(#ec1)"/>
+<text x="110" y="134" text-anchor="middle" fill="#c4b5f5" font-size="11">伏隔核多巴胺被耗竭后</text>
+<text x="110" y="150" text-anchor="middle" fill="#c4b5f5" font-size="11">改走这边</text>
+<text x="370" y="134" text-anchor="middle" fill="#c4b5f5" font-size="11">正常大鼠</text>
+<text x="370" y="150" text-anchor="middle" fill="#c4b5f5" font-size="11">几乎总走这边</text>
+<text x="240" y="288" text-anchor="middle" fill="#8f89ad" font-size="10.5">拆掉矮墙后，耗竭的大鼠照样选 4 粒：没变得不爱吃，只是不愿再费劲</text>
+</svg>
+<figcaption>示意：据 Salamone 等 1994 T 迷宫「代价/收益」任务</figcaption>
+</figure>
+<p>然后研究者用药物把大鼠<strong>伏隔核</strong>（奖赏回路里的一个关键中转站）的多巴胺耗掉。这些大鼠开始改选左边的 2 粒。是它们不爱吃了吗？不是：把矮墙拆掉，它们照样挑 4 粒那边，放在面前的食物也照样吃。变的只有一件事：<strong>不再愿意为了更多的奖励去费劲</strong>。</p>
+<p>人身上也看得到这条线索。2020 年韦斯特布鲁克与弗兰克（Michael Frank）、库尔斯（Roshan Cools）等人发现，大脑纹状体（基底节的入口）里多巴胺合成能力越强的人，越愿意接下更难但报酬更高的脑力活；给人服用提高多巴胺信号的哌甲酯（利他林的成分），也能让人更愿意费劲，而且<strong>原本多巴胺水平偏低的人受益更明显</strong>。模型分析显示，药物主要是让人把「好处」看得更重。</p>
+<p>这也帮着理解抑郁里常见的那种状态（Topic 24）：不是不想要，而是<strong>一想到要费劲就觉得不值</strong>，起床、回消息都像爬墙。</p>
+<p class="en-brief"><b>EN</b> In Salamone's T-maze, rats choose 4 pellets behind a barrier over 2 freely available pellets; depleting nucleus accumbens dopamine shifts them to the low-effort arm, yet they still prefer 4 pellets when the barrier is removed. Dopamine governs willingness to work, not liking. In humans, striatal dopamine synthesis capacity and methylphenidate increase willingness to exert cognitive effort by upweighting benefits (Westbrook et al. 2020).</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p><b>强化学习</b>是让机器靠试错和奖励学会做事的方法。其中有一类叫<b>平均回报</b>强化学习：它不只看每次行动得多少分，还追踪「每单位时间平均能得多少分」。2007 年尼夫（Yael Niv）、道（Nathaniel Daw）等人提出，大脑里缓慢变化的<b>背景多巴胺水平</b>恰好扮演这个「平均回报率」：环境越富，每磨蹭一秒的<b>机会成本</b>越高，动物就动得越快、越卖力；多巴胺偏低时，算出来的结果则是「慢慢来、少费劲也不亏」。这和萨拉蒙看到的行为对得上，也给「费劲的代价」补上了一个能写成公式的解释。</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>意志力不是一缸油</h2>
+<p>1998 年，美国心理学家鲍迈斯特（Roy Baumeister）做了一个著名实验：一组人对着刚出炉的饼干，只准吃萝卜；之后去解一道其实无解的谜题，他们比吃了饼干的人放弃得更快。结论被概括成<strong>「自我损耗」</strong>：自控像肌肉，用一次就累一点；后来还有研究说它消耗的是血糖。这个想法流行了十几年，2010 年的元分析还估出了中等偏大的效应。</p>
+<figure>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+<text x="240" y="24" text-anchor="middle" fill="#d8d3ec" font-size="13" font-weight="600">「自我损耗」的效应量：越认真重做，越接近零</text>
+<line x1="150" y1="44" x2="150" y2="200" stroke="#5b5678" stroke-width="1.2"/>
+<text x="150" y="216" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">0</text>
+<text x="400" y="216" text-anchor="middle" fill="#8f89ad" font-size="10" font-family="SF Mono,monospace">0.62</text>
+<rect x="150" y="56" width="250" height="28" rx="4" fill="#e879f9" opacity="0.8"/>
+<text x="140" y="68" text-anchor="end" fill="#d8d3ec" font-size="11">2010 元分析</text>
+<text x="140" y="81" text-anchor="end" fill="#8f89ad" font-size="9.5">已发表研究汇总</text>
+<rect x="150" y="106" width="16" height="28" rx="4" fill="#34e5e0" opacity="0.85"/>
+<text x="140" y="118" text-anchor="end" fill="#d8d3ec" font-size="11">2016 多实验室</text>
+<text x="140" y="131" text-anchor="end" fill="#8f89ad" font-size="9.5">23 个实验室</text>
+<text x="176" y="124" fill="#9fe6e2" font-size="11" font-family="SF Mono,monospace">0.04</text>
+<rect x="150" y="156" width="24" height="28" rx="4" fill="#34e5e0" opacity="0.85"/>
+<text x="140" y="168" text-anchor="end" fill="#d8d3ec" font-size="11">2021 多实验室</text>
+<text x="140" y="181" text-anchor="end" fill="#8f89ad" font-size="9.5">36 个实验室</text>
+<text x="184" y="174" fill="#9fe6e2" font-size="11" font-family="SF Mono,monospace">0.06</text>
+<text x="240" y="242" text-anchor="middle" fill="#8f89ad" font-size="10.5">效应量 d：0.2 算小，0.5 算中等</text>
+</svg>
+<figcaption>据 Hagger 等 2010 元分析；Hagger 等 2016、Vohs 等 2021 预注册多实验室重复</figcaption>
+</figure>
+<p>然后是大规模重做。2016 年 23 个实验室按同一套预先登记的方案、两千多人重做，效应几乎是零；2021 年连鲍迈斯特的合作者沃斯（Kathleen Vohs）都参与牵头，36 个实验室、三千五百多人，结果仍然微乎其微。血糖说也站不住：脑子使劲时多耗的那点能量，远不足以让血糖见底。</p>
+<p>但「累」也不全是心理作用。2022 年法国佩西廖内（Mathias Pessiglione）团队让人连续干六个多小时难的脑力活，用磁共振波谱测前额叶的化学成分，发现<strong>外侧前额叶里的谷氨酸</strong>（一种主要的兴奋性神经递质）积累得更多，这些人也越来越偏向「省事、马上拿」的选择。作者推测：疲劳是大脑为了不让这些物质堆积过多而抬高了控制的「价格」。样本不大，有待重复，但它和「计价器」的说法是兼容的：疲劳不是油箱见底，而是<strong>价格被调高了</strong>。</p>
+<p>2020 年，图鲁图格卢（Alexandra Touroutoglou）与巴雷特（Lisa Feldman Barrett）等人把 aMCC 描述成「坚韧的大脑」的枢纽：它连接极广，能把「预计要花多少身体资源」和「预计能换回什么」放在一起算，再调动注意和身体去支持目标。<a class="reflink" href="ref-body-budget.html">身体预算</a> 这和身体预算是一套逻辑：费劲要花预算，总得有个地方决定花不花。</p>
+<p>由此流行起一句话：「做不想做的事，aMCC 就会长大」。这说过头了。证据只是横断面相关：记忆超常的「超级老人」这一带更厚，可分不清是坚持让它变厚，还是它本来厚的人更能坚持；没有任何训练研究证明刻意吃苦能让它长大。而且它的活儿很杂：疼痛、冲突、犯错、被冷落都会激活它，不能等同于「意志力中枢」。</p>
+<p>反过来，费劲也不总是减分项。因兹利希特（Michael Inzlicht）等人 2018 年称之为<strong>努力悖论</strong>：人会为了爬山、跑马拉松、亲手拼家具专门去找罪受，自己费劲做出来的东西也会被看得更值钱。一种解释是：如果费劲反复伴随着回报，费劲本身就会慢慢带上一点奖励的味道。计价器上的价格，是可以被经验改写的。</p>
+<p class="en-brief"><b>EN</b> "Ego depletion" (Baumeister 1998) collapsed in preregistered multi-lab replications (Hagger 2016, d≈0.04; Vohs 2021, d≈0.06), and the glucose account fails. Yet prolonged hard work raises lateral prefrontal glutamate and biases choices toward easy options (Wiehler et al. 2022) — fatigue as a raised price, not an empty tank. aMCC is a hub of the "tenacious brain" (Touroutoglou et al. 2020), but claims that doing hard things grows it rest on cross-sectional data. Effort can also be valued (the effort paradox).</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<ul>
+<li><b>语言学 · 齐普夫</b>：美国语言学家齐普夫（George Zipf）1949 年写了一本书叫《人类行为与最省力原则》，他发现最常用的词往往最短，认为说话和做事都在尽量省力。几十年后，努力折扣实验把「最省力」从一个统计规律，变成了能测出价格、能定位到脑区的计算。</li>
+<li><b>道家 · 无为</b>：汉学家森舸澜（Edward Slingerland）在《Trying Not to Try》（2014）一书里，把庄子笔下「庖丁解牛」那种不费力却精准的状态，和认知控制研究放在一起读：熟练之后，事情从需要使劲压着的「控制」，变成了顺势流出来的自动反应，费劲的价格自然降了。不过，道家的无为不只是熟能生巧，它还有一层「刻意追求反而得不到」的悖论，这是计价器模型说不清的。</li>
+<li><b>哲学 · 加缪</b>：加缪在《西西弗斯神话》结尾说：「应该想象西西弗斯是幸福的。」推石上山永无尽头，按努力折扣的算法是最亏的买卖。努力悖论提示另一种可能：当费劲本身成了意义的一部分，账就不只是「好处减代价」那么算了。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>库尔和博特维尼克 2010 年发现，奖励相同时，人会自发越来越偏爱不需要来回切换规则的那叠轻松牌。</li>
+<li>努力折扣：用 n-back 实验换算后，任务越难，同样的报酬在人心里越不值钱，老年人打的折扣更狠。</li>
+<li>2024 年一项汇总 170 个样本的元分析发现，脑力投入越大，人报告的不愉快感越强。</li>
+<li>库尔兹班认为，费劲的感觉更像控制资源被占用时的机会成本账单，而不是脑内燃料在耗尽。</li>
+<li>控制的期望价值理论认为，前中扣带 aMCC 估算使劲能换回的好处减去代价，挑出净收益最高的力度。</li>
+<li>帕尔维齐 2013 年电刺激两位病人的 aMCC，唤起了「难关将至、却非闯过去不可」的感受和心跳加快。</li>
+<li>萨拉蒙的 T 迷宫实验中，伏隔核多巴胺被耗竭的大鼠不再愿意翻墙拿 4 粒，但拆墙后仍选 4 粒。</li>
+<li>纹状体多巴胺合成能力更强、或服用哌甲酯的人更愿意接下高难高报酬的脑力活，主要因为把好处看得更重。</li>
+<li>「自我损耗」在 2016 和 2021 年的预注册多实验室重复中效应几乎为零，血糖燃料说也站不住。</li>
+<li>做一整天难的脑力活会让外侧前额叶谷氨酸积累并使人偏向省事选项，疲劳更像控制的价格被调高。</li>
+</ol>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>如果拖延是大脑在理性算账，那它算错了吗？</summary><div>常常是账面不全。好处在几周后、很模糊，代价在此刻、很具体，计价器天然偏向眼前。把好处拉近（拆成今天能看到的小成果）、把代价压低（先只做五分钟、把第一步写清楚），比骂自己「没毅力」更对症。</div></details>
+<details><summary>「越逼自己越强大」有道理吗？</summary><div>直接证据很少。目前能确定的是：费劲的主观价格可以被经验改写，反复让「费劲」与「回报」挨在一起，它会变得没那么难受；但「刻意吃苦能让 aMCC 长大」还没有训练研究支持。</div></details>
+<details><summary>既然自我损耗没被重复出来，为什么下班后还是觉得做什么都累？</summary><div>「累」是真实的，只是机制可能不是燃料耗尽。机会成本、兴趣下降、睡眠压力、长时间工作后前额叶化学环境的变化，都可能让控制的「价格」上涨。区别在于：价格可以被更高的回报、休息或换个任务压下来，油箱见底则不会。</div></details>
+<details><summary>给 AI 一个「思考代价」，和人觉得费劲是一回事吗？</summary><div>在算式层面很像：都是收益减代价、挑最优力度。但模型的代价是设计者写进去的一个数字；人的代价从哪儿来（机会成本、代谢、还是演化留下的先验），至今还在争论。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://doi.org/10.1037/a0020198" target="_blank">Kool, McGuire, Rosen &amp; Botvinick · Decision making and the avoidance of cognitive demand</a> — Journal of Experimental Psychology: General, 2010</li>
+<li><a href="https://doi.org/10.1371/journal.pone.0068210" target="_blank">Westbrook, Kester &amp; Braver · What is the subjective cost of cognitive effort?</a> — PLoS ONE, 2013</li>
+<li><a href="https://doi.org/10.1037/bul0000443" target="_blank">David, Vassena &amp; Bijleveld · The unpleasantness of thinking</a> — Psychological Bulletin, 2024，元分析</li>
+<li><a href="https://doi.org/10.1017/S0140525X12003196" target="_blank">Kurzban, Duckworth, Kable &amp; Myers · An opportunity cost model of subjective effort and task performance</a> — Behavioral and Brain Sciences, 2013</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2013.07.007" target="_blank">Shenhav, Botvinick &amp; Cohen · The expected value of control</a> — Neuron, 2013</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2013.10.057" target="_blank">Parvizi 等 · The will to persevere induced by electrical stimulation of the human cingulate gyrus</a> — Neuron, 2013</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Salamone+1994+nucleus+accumbens+dopamine+T-maze+cost%2Fbenefit" target="_blank">Salamone 等 · Nucleus accumbens dopamine depletions shift relative response allocation in a T-maze cost/benefit task</a> — Behavioural Brain Research, 1994（PubMed）</li>
+<li><a href="https://doi.org/10.1126/science.aaz5891" target="_blank">Westbrook 等 · Dopamine promotes cognitive effort by biasing the benefits versus costs of cognitive work</a> — Science, 2020</li>
+<li><a href="https://doi.org/10.1007/s00213-006-0502-4" target="_blank">Niv, Daw, Joel &amp; Dayan · Tonic dopamine: opportunity costs and the control of response vigor</a> — Psychopharmacology, 2007</li>
+<li><a href="https://arxiv.org/abs/1603.08983" target="_blank">Graves · Adaptive Computation Time for Recurrent Neural Networks</a> — arXiv, 2016</li>
+<li><a href="https://doi.org/10.1177/1745691616652873" target="_blank">Hagger 等 · A multilab preregistered replication of the ego-depletion effect</a> — Perspectives on Psychological Science, 2016</li>
+<li><a href="https://doi.org/10.1177/0956797621989733" target="_blank">Vohs 等 · A multisite preregistered paradigmatic test of the ego-depletion effect</a> — Psychological Science, 2021</li>
+<li><a href="https://doi.org/10.1016/j.cub.2022.07.010" target="_blank">Wiehler 等 · A neuro-metabolic account of why daylong cognitive work alters the control of economic decisions</a> — Current Biology, 2022</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7381101/" target="_blank">Touroutoglou, Andreano, Dickerson &amp; Barrett · The tenacious brain</a> — Cortex, 2020（PMC）</li>
+<li><a href="https://doi.org/10.1016/j.tics.2018.01.007" target="_blank">Inzlicht, Shenhav &amp; Olivola · The effort paradox: effort is both costly and valued</a> — Trends in Cognitive Sciences, 2018</li>
+<li><a href="https://en.wikipedia.org/wiki/Ego_depletion" target="_blank">自我损耗 Ego depletion（维基）</a> · <a href="https://en.wikipedia.org/wiki/Principle_of_least_effort" target="_blank">最省力原则（维基）</a> · <a href="https://en.wikipedia.org/wiki/Wu_wei" target="_blank">无为 Wu wei（维基）</a> · <a href="https://en.wikipedia.org/wiki/The_Myth_of_Sisyphus" target="_blank">西西弗斯神话（维基）</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 51 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
