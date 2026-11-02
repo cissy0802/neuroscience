@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topic 53 · 疼痛的神经科学 — 神经科学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;color:#e8e4f5;line-height:1.85;min-height:100vh;
+  background:radial-gradient(1100px 560px at 12% -5%,rgba(52,229,224,0.09),transparent 60%),radial-gradient(900px 640px at 100% 2%,rgba(232,121,249,0.09),transparent 55%),linear-gradient(165deg,#0a0714 0%,#0c0a1e 45%,#070510 100%);background-attachment:fixed}
+.container{max-width:760px;margin:0 auto;padding:26px 20px 90px}
+header{text-align:center;padding:52px 0 26px}
+.week-tag{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;border:1px solid rgba(52,229,224,0.4);padding:4px 13px;border-radius:20px;margin-bottom:16px;background:rgba(52,229,224,0.05)}
+header h1{font-size:2.15rem;font-weight:800;letter-spacing:1px;line-height:1.25;background:linear-gradient(110deg,#34e5e0 0%,#a78bfa 48%,#e879f9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 20px rgba(167,139,250,0.3))}
+header h2{font-size:1rem;color:#8f89ad;margin-top:10px;font-weight:400;letter-spacing:0.5px}
+header .date{font-size:0.8rem;color:#5b5678;margin-top:14px;font-family:"SF Mono",Menlo,monospace}
+header .pitch{margin-top:20px;font-size:0.97rem;color:#e879f9;font-style:italic}
+.intro{background:rgba(167,139,250,0.07);border-left:3px solid #a78bfa;padding:20px 24px;border-radius:0 10px 10px 0;margin:38px 0;font-size:0.99rem;color:#d8d3ec}
+.intro strong{color:#fff}
+.section{margin:46px 0;background:rgba(255,255,255,0.025);padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+.section .num{display:inline-block;font-size:0.75rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:2px;margin-bottom:8px}
+.section h2{font-size:1.32rem;color:#fff;margin-bottom:16px;font-weight:700;line-height:1.35}
+.section p{margin-bottom:14px;color:#d8d3ec;font-size:0.96rem}
+.section strong{color:#fff}
+.en-brief{margin-top:18px;padding:12px 16px;border-left:2px solid rgba(143,137,173,0.45);background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:0.85rem;color:#9a94bc;line-height:1.62}
+.en-brief b{color:#b0aacb;font-family:"SF Mono",Menlo,monospace;font-size:0.68rem;letter-spacing:1.5px;margin-right:9px;font-weight:700}
+.reflink{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:0.8rem;color:#e879f9;text-decoration:none;border:1px solid rgba(232,121,249,0.35);border-radius:20px;padding:1px 11px;background:rgba(232,121,249,0.06);transition:all 0.15s;white-space:nowrap}
+.reflink:hover{background:rgba(232,121,249,0.16);border-color:#e879f9;color:#fff}
+.reflink::before{content:"→ 参考 · "}
+figure{margin:24px 0}
+figure svg{display:block;width:100%;height:auto;max-width:500px;margin:0 auto}
+figcaption{text-align:center;font-size:0.82rem;color:#8f89ad;margin-top:12px;font-family:"SF Mono",Menlo,monospace}
+.ai{margin:20px 0 4px;background:linear-gradient(135deg,rgba(52,229,224,0.08),rgba(167,139,250,0.06));border:1px solid rgba(52,229,224,0.28);border-radius:12px;padding:16px 20px}
+.ai h4{font-size:0.82rem;color:#34e5e0;font-family:"SF Mono",Menlo,monospace;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ai h4::before{content:"⚡";font-size:0.95rem}
+.ai p{font-size:0.9rem;color:#c6e9e7;margin-bottom:0}
+.ai b{color:#7bf0e8;font-weight:600}
+.crossx{margin:40px 0;background:linear-gradient(135deg,rgba(232,121,249,0.10),rgba(167,139,250,0.07));border:1px solid rgba(232,121,249,0.32);border-radius:14px;padding:22px 26px}
+.crossx h3{color:#e879f9;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.crossx p{color:#ecdcf2;font-size:0.95rem;line-height:1.86;margin:0}
+.crossx b{color:#f5b8fb;font-weight:600}
+.crossx ul{list-style:none;margin:0}
+.crossx li{color:#ecdcf2;font-size:0.93rem;line-height:1.8;margin-bottom:14px;padding-left:20px;position:relative}
+.crossx li:last-child{margin-bottom:0}
+.crossx li::before{content:"◈";position:absolute;left:0;top:0.35em;color:#a78bfa;font-size:0.72rem}
+.thinking{background:linear-gradient(135deg,rgba(52,229,224,0.05),rgba(232,121,249,0.05));border:1px solid rgba(167,139,250,0.22);border-radius:12px;padding:24px 26px;margin:40px 0}
+.thinking h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.thinking details{background:rgba(10,7,20,0.5);border:1px solid rgba(167,139,250,0.18);border-radius:9px;padding:13px 17px;margin:10px 0;transition:all 0.2s}
+.thinking details[open]{background:rgba(52,229,224,0.05);border-color:rgba(52,229,224,0.4)}
+.thinking summary{cursor:pointer;color:#c9a8f5;font-weight:600;font-size:0.93rem;list-style:none;outline:none;line-height:1.55}
+.thinking summary::-webkit-details-marker{display:none}
+.thinking summary::before{content:"▸ ";color:#e879f9}
+.thinking details[open] summary::before{content:"▾ "}
+.thinking summary:hover{color:#fff}
+.thinking details>div{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(167,139,250,0.2);color:#d8d3ec;font-size:0.9rem;line-height:1.8}
+.refs{margin-top:34px}
+.refs h3{color:#a78bfa;font-size:0.85rem;letter-spacing:2px;margin-bottom:12px;font-family:"SF Mono",Menlo,monospace}
+.refs ul{list-style:none}
+.refs li{margin-bottom:9px;font-size:0.88rem;color:#8f89ad}
+.refs a{color:#34e5e0;text-decoration:none;border-bottom:1px dotted rgba(52,229,224,0.4)}
+.refs a:hover{color:#7bf0e8;border-bottom-color:#7bf0e8}
+footer{text-align:center;padding:48px 0 10px;font-size:0.8rem;color:#5b5678;font-family:"SF Mono",Menlo,monospace}
+@media(max-width:600px){header h1{font-size:1.65rem}.section{padding:20px 18px}.section h2{font-size:1.15rem}}
+.tk{margin:40px 0}
+.tk h3{color:#34e5e0;font-size:0.9rem;letter-spacing:2px;margin-bottom:14px;font-family:"SF Mono",Menlo,monospace}
+.takeaways{counter-reset:tk;list-style:none;margin:0;padding:0;border:1px solid rgba(52,229,224,0.28);border-radius:12px;background:rgba(52,229,224,0.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(52,229,224,0.12);font-size:0.93rem;line-height:1.75;color:#e8e4f5}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#34e5e0}
+</style></head><body>
+<div class="container">
+<header>
+<span class="week-tag">TOPIC 53 · PHASE D 临床/前沿</span>
+<h1>疼痛的神经科学</h1>
+<h2>痛不是从伤口直接传上来的读数，而是大脑给出的一个结论</h2>
+<div class="date">2026-11-02 · BigCat</div>
+<p class="pitch">一颗钉子没碰到皮肉，人却痛到要打镇痛药；一颗子弹打穿身体，人却不怎么喊痛。</p>
+</header>
+<div class="intro">
+<p>我们习惯把疼痛想成一根电线：哪里受伤，信号就沿着神经一路传到大脑，伤得越重，痛得越厉害。四百年前笛卡尔就是这么画的：脚碰到火，像拉动一根绳子，脑子里的铃就响了。</p>
+<p>可这根「铃绳」解释不了很多事：截掉的腿还会痛，伤好了几年背还在痛，焦虑时浑身哪儿都不舒服。现代疼痛科学的核心转向是：<strong>痛是大脑在综合了身体信号、过去经验、当下情境和预期之后，给出的一个「需要保护」的结论。</strong>这不是说痛是假的，恰恰相反：它真实到会被情绪、注意和学习深刻地改写。</p>
+</div>
+<!-- 1 -->
+<div class="section">
+<span class="num">// 01</span>
+<h2>伤害信号不等于疼痛</h2>
+<p>神经科学把两件事分开叫。皮肤、肌肉、内脏里的神经末梢检测到「可能造成损伤」的刺激，比如高温、挤压、化学物质，往上送信号，这叫<strong>伤害感受</strong>。<strong>疼痛</strong>则是一种体验。国际疼痛研究协会 2020 年的定义是：一种与实际或潜在的组织损伤相关、或类似这种损伤的，<strong>令人不快的感觉和情绪体验</strong>。注意「情绪」两个字：疼痛从定义上就不只是感觉。</p>
+<p>两者常常对不上。二战时，美国麻醉医生比彻（Henry Beecher）在意大利前线记录了两百多名重伤士兵，发现大约<strong>四分之三</strong>的人疼得不厉害，没有主动要止痛药。对他们来说，受伤意味着能离开战场，活下来了。反过来也有：1995 年《英国医学杂志》报道过一位建筑工人，一颗 15 厘米的钉子扎穿了靴子，他痛得厉害，要用强效镇痛药才能处理；脱下靴子才发现，钉子恰好从脚趾缝间穿过，<strong>皮肤一点没破</strong>。</p>
+<p>最极端的例子是<strong>幻肢痛</strong>：大多数截肢者会感到已经不存在的那条腿在痛，有时痛得很剧烈。没有组织，没有神经末梢，痛却真实存在，因为产生痛的地方本来就在大脑里。</p>
+<p>大脑里没有一个单独的「痛中枢」，而是好几块区域一起工作：体感皮层大致判断痛在哪里、有多强；脑岛把它和身体整体状态放在一起读；前中扣带负责痛的「难受感」，以及「该不该动员起来应对」。<a class="reflink" href="ref-cingulate.html">扣带皮层</a> <a class="reflink" href="ref-insula-interoception.html">岛叶与内感受</a></p>
+<p class="en-brief"><b>EN</b> Nociception (signals about potential tissue damage) is not pain; pain is an unpleasant sensory and emotional experience (IASP 2020). They often diverge: about three-quarters of severely wounded soldiers Beecher studied did not ask for pain relief, while a builder with a nail through his boot — between the toes, skin unbroken — needed strong analgesia (BMJ 1995). Phantom limb pain shows pain is generated by the brain, with somatosensory cortex, insula and aMCC each contributing.</p>
+</div>
+<!-- 2 -->
+<div class="section">
+<span class="num">// 02</span>
+<h2>大脑有一个音量旋钮</h2>
+<p>磕到膝盖，你会下意识去揉，揉一揉真的会好一点。1965 年，梅尔扎克和沃尔（Ronald Melzack、Patrick Wall）提出<strong>闸门控制理论</strong>来解释：在脊髓里伤害信号上行的入口处，有一道「闸门」，触摸、按压这些非痛觉的信号会把闸门关小一些；更重要的是，大脑自己也能从上往下控制这道闸门。</p>
+<figure>
+<svg viewBox="0 0 480 284" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="pa1" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#34e5e0"/></marker>
+<marker id="pa2" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="8" refY="5"><path d="M1,1 L9,5 L1,9 Z" fill="#fbbf24"/></marker>
+</defs>
+<rect fill="rgba(232,121,249,0.10)" height="40" rx="10" stroke="#e879f9" stroke-width="1.4" width="270" x="30" y="18"/>
+<text fill="#fbe3fd" font-size="12.5" font-weight="600" text-anchor="middle" x="165" y="43">大脑：体感皮层 · 脑岛 · 扣带 → 「痛」</text>
+<rect fill="rgba(251,191,36,0.10)" height="36" rx="10" stroke="#fbbf24" stroke-width="1.4" width="180" x="270" y="116"/>
+<text fill="#fff4da" font-size="12" text-anchor="middle" x="360" y="139">脑干：导水管周围灰质等</text>
+<rect fill="rgba(52,229,224,0.10)" height="36" rx="10" stroke="#34e5e0" stroke-width="1.4" width="270" x="30" y="198"/>
+<text fill="#d6fbf9" font-size="12.5" font-weight="600" text-anchor="middle" x="165" y="221">脊髓背角：闸门</text>
+<line marker-end="url(#pa1)" stroke="#34e5e0" stroke-width="2.2" x1="90" x2="90" y1="196" y2="62"/>
+<text fill="#9fe6e2" font-size="11" x="98" y="132">上行：伤害信号</text>
+<path d="M290,60 Q330,78 345,112" fill="none" marker-end="url(#pa2)" stroke="#fbbf24" stroke-width="2"/>
+<path d="M345,154 Q330,182 296,198" fill="none" marker-end="url(#pa2)" stroke="#fbbf24" stroke-width="2"/>
+<text fill="#f6d79a" font-size="11" x="350" y="86">下行调节</text>
+<text fill="#f0b6f8" font-size="11" x="308" y="222">调大：焦虑、盯着它、坏预期</text>
+<text fill="#9fe6e2" font-size="11" x="308" y="240">调小：分心、安全感、安慰剂</text>
+<line marker-end="url(#pa1)" stroke="#34e5e0" stroke-width="2.2" x1="90" x2="90" y1="262" y2="240"/>
+<text fill="#8f89ad" font-size="11" x="100" y="270">伤害感受器（组织）</text>
+</svg>
+<figcaption>示意：伤害信号上行要过脊髓的闸门，大脑经脑干从上往下调节闸门的开合</figcaption>
+</figure>
+<p>这条从上往下的调节通路要经过脑干，核心是中脑的<strong>导水管周围灰质</strong>。<a class="reflink" href="ref-brainstem-arousal.html">脑干与唤醒系统</a> 它能把痛压下去，也能把痛放大。安慰剂止痛就是「压」的一面：1978 年的研究发现，用纳洛酮阻断体内的阿片受体，安慰剂的止痛效果就大幅减弱，说明「相信会好」调动了身体自己的类阿片物质；2009 年的脑成像研究更直接看到，安慰剂能降低<strong>脊髓</strong>层面对疼痛刺激的反应，也就是说，信号在进入大脑之前就被调小了。</p>
+<p>反过来，<strong>反安慰剂</strong>（预期会更痛，结果真的更痛）、焦虑和过度关注，会把旋钮往大拧。Topic 52 讲的焦虑，在这里多了一个后果：同样的身体信号，在一个处于威胁模式的大脑里，被感受成更强的痛。</p>
+<p class="en-brief"><b>EN</b> Gate control theory (Melzack &amp; Wall 1965): a spinal "gate" filters ascending nociceptive signals, touch can partly close it, and the brain controls it from above via descending pathways through the brainstem's periaqueductal grey. Placebo analgesia draws on endogenous opioids (blocked by naloxone, 1978) and can reduce spinal pain responses (2009). Nocebo expectations, anxiety and attention turn the dial up.</p>
+</div>
+<!-- 3 -->
+<div class="section">
+<span class="num">// 03</span>
+<h2>从急性到慢性：疼痛也会「学会」</h2>
+<p>急性痛是一个有用的警报：别再用那只扭伤的脚。麻烦在于，警报系统本身会被经历改变。反复或持续的伤害信号，会让脊髓和大脑里的痛觉神经元变得越来越敏感，这叫<strong>中枢敏化</strong>：原来不痛的触碰也会痛，原来有点痛的变成很痛，痛的范围还会扩大。这时，组织可能早已愈合，报警系统却还在高灵敏度下运转。</p>
+<figure>
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg">
+<path d="M30,150.0 L33,140.0 L36,131.8 L39,126.9 L42,125.7 L45,127.6 L48,131.4 L51,135.4 L54,138.1 L57,138.7 L60,137.3 L63,135.0 L66,133.2 L69,133.5 L72,136.9 L75,143.6 L78,152.6 L81,162.5 L84,171.4 L87,177.3 L90,179.5 L93,177.8 L96,173.1 L99,167.1 L102,161.5 L105,157.6 L108,156.0 L111,156.4 L114,157.6 L117,158.0 L120,156.4 L123,151.9 L126,144.8 L129,136.1 L132,127.6 L135,121.2 L138,118.2 L141,119.4 L144,124.3 L147,131.6 L150,139.5 L153,146.3 L156,150.7 L159,152.5 L162,152.3 L165,151.4 L168,151.4 L171,153.3 L174,157.8 L177,164.2 L180,171.4 L183,177.5 L186,180.9 L189,180.5 L192,176.0 L195,168.3 L198,159.0 L201,150.1 L204,143.1 L207,139.1 L210,138.1 L213,139.1 L216,140.6 L219,141.2 L222,139.9 L225,136.4 L228,131.3 L231,126.3 L234,122.9 L237,122.7 L240,126.3 L243,133.5 L246,143.1 L249,153.2 L252,161.9 L255,167.8 L258,170.2 L261,169.5 L264,166.9 L267,164.0 L270,162.2 L273,162.4 L276,164.6 L279,167.8 L282,170.6 L285,171.4 L288,169.0 L291,163.0 L294,154.2 L297,144.0 L300,134.4 L303,127.2 L306,123.5 L309,123.7 L312,126.9 L315,131.6 L318,136.3 L321,139.4 L324,140.4 L327,139.5 L330,137.7 L333,136.7 L336,137.8 L339,141.9 L342,149.1 L345,158.2 L348,167.6 L351,175.4 L354,180.0 L357,180.6 L360,177.4 L363,171.5 L366,164.6 L369,158.4 L372,154.3 L375,152.6 L378,152.9 L381,153.9 L384,154.0 L387,151.9 L390,147.2 L393,140.1 L396,132.0 L399,124.4 L402,119.4 L405,118.1 L408,120.9 L411,127.2 L414,135.5 L417,143.9 L420,150.8 L423,155.0 L426,156.5 L429,156.1 L432,155.0 L435,154.9 L438,156.8 L441,161.1 L444,167.0 L447,173.4 L450,178.2" fill="none" stroke="#a78bfa" stroke-width="1.8"/>
+<line stroke="#fbbf24" stroke-dasharray="6 4" stroke-width="1.6" x1="30" x2="450" y1="104" y2="160"/>
+<g fill="#e879f9"><circle cx="138" cy="118.2" r="4.5"/><circle cx="231" cy="126.3" r="4.5"/><circle cx="300" cy="134.4" r="4.5"/><circle cx="315" cy="131.6" r="4.5"/><circle cx="330" cy="137.7" r="4.5"/><circle cx="390" cy="147.2" r="4.5"/><circle cx="405" cy="118.1" r="4.5"/><circle cx="420" cy="150.8" r="4.5"/><circle cx="435" cy="154.9" r="4.5"/></g>
+<text fill="#f6d79a" font-size="11.5" x="34" y="94">报警阈值（越来越低）</text>
+<text fill="#c4b5f5" font-size="11.5" x="34" y="200">身体送上来的信号（强度其实没变）</text>
+<text fill="#f0b6f8" font-size="11.5" text-anchor="end" x="450" y="94">● 被判定为「痛」</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="240" y="228">时间 → 同样的信号，越来越常越过门槛</text>
+</svg>
+<figcaption>示意：中枢敏化像报警阈值被慢慢调低，平常的信号也开始触发警报</figcaption>
+</figure>
+<p>大脑这一端的「学习」也看得见。2012 年，巴利基（Marwan Baliki）等人跟踪了一批腰痛才几周的病人一年。一开始就能看出来谁会转成慢性：<strong>伏隔核与内侧前额叶之间的连接越强</strong>，一年后还在痛的可能性越大，而且这一指标的预测力胜过初始的疼痛强度。伏隔核是奖赏与学习回路的一部分。<a class="reflink" href="ref-reward-circuit.html">奖赏回路</a> 这暗示慢性化可能有很大一部分是大脑在「学会」把这个部位的信号当成威胁。这是观察性研究，连接强度和慢性化有关联，但还不能证明是它导致的。</p>
+<p>行为上也会学。腰痛研究里最经典的是<strong>恐惧—回避模型</strong>（Vlaeyen 和 Linton 2000）：把痛想得很严重（比如「我的腰椎坏了，一弯就会更糟」），于是害怕活动，越来越少动；肌肉和体能退化，再动时就更容易痛，痛又印证了恐惧。和 Topic 52 的回避陷阱是同一个结构。</p>
+<p class="en-brief"><b>EN</b> Pain can be learned. Central sensitisation raises the gain of pain pathways so ordinary inputs hurt and pain spreads, even after tissues heal. Baliki et al. (2012) found that stronger nucleus accumbens–medial prefrontal connectivity in subacute back pain predicted persistence a year later, better than initial pain intensity (observational). The fear-avoidance model (Vlaeyen &amp; Linton 2000) describes how catastrophising, fear and disuse sustain pain.</p>
+<div class="ai">
+<h4>AI 对读</h4>
+<p>工程里有一类系统叫<b>异常检测</b>：监控服务器、银行交易或工厂设备，一旦数据偏离「正常」就报警。它的核心难题是<b>阈值</b>放在哪：阈值高，会漏掉真问题；阈值低，会不停<b>误报</b>。如果系统还会根据过去的报警自动调整，比如「最近老出事，那就更敏感一点」，就可能陷入越报越敏感、越敏感越报的循环，最后对正常数据也拉警报。慢性痛很像这种<b>阈值漂移</b>：报警器本身没坏，只是被调得太灵敏。差别在于，机器可以直接改参数，人的「阈值」要靠新的经验，一次次证明「这样动没事」，才能慢慢调回来。</p>
+</div>
+</div>
+<!-- 4 -->
+<div class="section">
+<span class="num">// 04</span>
+<h2>以大脑为靶的治疗，以及几条边界</h2>
+<p>既然慢性痛很大程度上是报警系统被学歪了，那能不能把它学回来？2022 年，阿沙尔（Yoni Ashar）等人在《美国医学会杂志·精神病学》发表了一项随机对照试验，对象是 151 位慢性背痛患者。其中一组接受约四周的<strong>疼痛再加工疗法</strong>：帮病人理解疼痛主要是大脑的「误报」而不是持续的损伤，并在安全的情况下重新做那些害怕的动作。</p>
+<figure>
+<svg viewBox="0 0 480 236" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#4a4468" stroke-width="1.2" x1="60" x2="440" y1="190" y2="190"/>
+<rect fill="#34e5e0" height="132" rx="4" width="70" x="95" y="58"/>
+<rect fill="#a78bfa" height="40" rx="4" width="70" x="215" y="150"/>
+<rect fill="#8f89ad" height="20" rx="4" width="70" x="335" y="170"/>
+<text fill="#d6fbf9" font-size="15" font-weight="700" text-anchor="middle" x="130" y="50">66%</text>
+<text fill="#efe9ff" font-size="15" font-weight="700" text-anchor="middle" x="250" y="142">20%</text>
+<text fill="#e8e4f5" font-size="15" font-weight="700" text-anchor="middle" x="370" y="162">约 10%</text>
+<text fill="#d6fbf9" font-size="12" text-anchor="middle" x="130" y="208">疼痛再加工疗法</text>
+<text fill="#c4b5f5" font-size="12" text-anchor="middle" x="250" y="208">安慰剂注射</text>
+<text fill="#a9a3c7" font-size="12" text-anchor="middle" x="370" y="208">常规治疗</text>
+<text fill="#8f89ad" font-size="11" text-anchor="middle" x="250" y="228">治疗结束时「不痛或几乎不痛」（0–10 分里 ≤ 1 分）的比例</text>
+</svg>
+<figcaption>示意：Ashar 等 2022 的主要结果（151 人，单项研究）</figcaption>
+</figure>
+<p>治疗结束时，这一组有 66% 的人「不痛或几乎不痛」，安慰剂组是 20%，常规治疗组约 10%；一年后效果大体保持。这是单项研究，还需要更多重复，但它说明对很多慢性背痛，大脑这一端是非常有力的着手点。<strong>运动</strong>和针对疼痛的<strong>认知行为治疗</strong>也有较好的证据，两者结合往往效果最好。</p>
+<p>几条边界要说清楚：</p>
+<p><strong>「痛是大脑构建的」不等于「痛是假的」或「是你想出来的」。</strong>所有的痛都是大脑构建的，包括骨折的痛。区别只在于，在一些慢性痛里，报警的主要来源已经从组织转移到了报警系统本身。</p>
+<p><strong>先排除需要医疗处理的情况。</strong>背痛伴随腿麻无力、夜间痛醒、发烧、体重莫名下降、大小便异常，要尽快就医。</p>
+<p><strong>关于筋膜。</strong>腰背部的筋膜里确实有丰富的痛觉神经末梢，它本身可以是痛的来源；筋膜里也有能缓慢收缩的细胞，因此有人提出「压力会让筋膜收紧」的假说（Schleip 2005）。慢性腰痛患者的腰背筋膜被发现更厚、层间滑动更少（Langevin 2011），但这是相关，很可能是少动之后的结果。「焦虑通过收紧筋膜导致背痛」目前还没有直接证据；焦虑导致背痛，更扎实的路径是本期讲的肌肉紧张、下行放大和恐惧—回避。</p>
+<p class="en-brief"><b>EN</b> In a randomised trial of 151 people with chronic back pain, 66% of those receiving pain reprocessing therapy were pain-free or nearly so after treatment, vs 20% with placebo injection and about 10% with usual care, largely maintained at one year (Ashar et al. 2022; single study). Exercise and CBT also have good evidence. "Pain is constructed by the brain" doesn't mean it's imagined. Red flags need medical care. Fascia can generate pain, but "anxiety tightens fascia" remains a hypothesis.</p>
+</div>
+<div class="crossx">
+<h3>🌀 越界 · 跨学科的联想</h3>
+<ul>
+<li><b>哲学 · 笛卡尔的铃绳</b>：笛卡尔在《论人》里画过一个跪在火边的人：火焰扯动脚上的细线，线一路连到大脑，拉开一个小孔，就像拉绳打钟。这幅「直通线路」图主导了疼痛观念三百年，闸门控制理论和幻肢痛研究才把它推翻：线路中途有闸门，终点的大脑还会回头改写信号。</li>
+<li><b>哲学 · 维特根斯坦的盒中甲虫</b>：维特根斯坦用疼痛当「私人体验」的典型例子：每个人都有一个只有自己能看的盒子，里面装着叫「甲虫」的东西，别人永远看不到。疼痛科学的处境正是如此：没有任何仪器能直接读出别人有多痛，至今最可靠的测量仍是病人自己的报告，这也是为什么「痛是真实的」必须从相信病人开始。</li>
+<li><b>人类学 · 兹博罗夫斯基</b>：1952 年，人类学家兹博罗夫斯基（Mark Zborowski）研究纽约一家医院里不同族裔背景的病人，发现人们表达疼痛、理解疼痛意义的方式差异很大：有人大声表达、期待安慰，有人沉默忍耐。后来的研究对他的分类有不少批评，但他提出的核心观点留了下来：痛的意义和表达，是在文化里学会的。</li>
+</ul>
+</div>
+<div class="tk">
+<h3>// 十条要点</h3>
+<ol class="takeaways">
+<li>伤害感受是神经末梢对可能损伤的报告，疼痛则是包含情绪的体验，两者常常对不上。</li>
+<li>比彻发现二战中约四分之三的重伤士兵没有主动要止痛药，受伤的意义改变了痛。</li>
+<li>幻肢痛说明，没有组织和神经末梢，大脑照样能产生真实而剧烈的疼痛。</li>
+<li>梅尔扎克和沃尔的闸门控制理论认为，脊髓里有一道闸门，大脑能从上往下控制它的开合。</li>
+<li>经过脑干导水管周围灰质的下行通路，既能压低疼痛，也能放大疼痛。</li>
+<li>安慰剂止痛会调动身体自己的类阿片物质，甚至能降低脊髓层面的疼痛反应。</li>
+<li>中枢敏化让痛觉通路越来越灵敏，组织愈合后，平常的信号也可能被感受为疼痛。</li>
+<li>巴利基 2012 年发现，伏隔核与内侧前额叶的连接强度能预测亚急性腰痛会否转为慢性。</li>
+<li>阿沙尔 2022 年的试验中，66% 接受疼痛再加工疗法的慢性背痛患者治疗后几乎不痛。</li>
+<li>筋膜可以是痛源，但焦虑通过收紧筋膜导致背痛目前只是假说，缺乏直接证据。</li>
+</ol>
+</div>
+<div class="thinking">
+<h3>// 深入思考</h3>
+<details><summary>如果痛是大脑构建的，为什么有人告诉我「去做检查」？</summary><div>因为大脑构建疼痛时，组织信号依然是重要的输入。急性痛和带有危险信号的痛，首先要找组织原因；只有在排除了需要处理的损伤、痛却持续存在时，「报警系统被调歪了」这个解释才成为主要方向。两种思路不是对立的，而是先后顺序。</div></details>
+<details><summary>知道「慢性痛主要是大脑在误报」，痛就会好吗？</summary><div>知道本身有一点帮助，但通常不够。疼痛再加工疗法的关键，不只是讲道理，还包括在安全的情况下重新做害怕的动作，让大脑获得「这样动没事」的新经验。这和 Topic 52 里暴露疗法的逻辑是一样的：预测要靠新的证据来更新。</div></details>
+<details><summary>止痛药还该不该吃？</summary><div>急性痛该用就用，控制疼痛本身有助于恢复活动。对于慢性痛，很多指南更强调运动和心理治疗等非药物手段，并对长期使用阿片类药物非常谨慎，因为它可能带来依赖，还可能反过来让人对痛更敏感。具体用药要和医生商量。</div></details>
+<details><summary>焦虑和慢性痛，先治哪个？</summary><div>它们常常互相喂养，所以最好一起处理。好消息是，很多方法对两者都有用：规律运动、改善睡眠、慢呼吸、认知行为治疗，以及打破回避。把它们看成同一套威胁系统的两种表现，往往比分开治疗更有效。</div></details>
+</div>
+<div class="refs">
+<h3>// 延伸阅读</h3>
+<ul>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1803463" target="_blank">Beecher · Pain in men wounded in battle</a>：Annals of Surgery，1946</li>
+<li><a href="https://doi.org/10.1126/science.150.3699.971" target="_blank">Melzack &amp; Wall · Pain mechanisms: a new theory</a>：Science，1965，闸门控制理论</li>
+<li><a href="https://doi.org/10.1126/science.1180142" target="_blank">Eippert 等 · Direct evidence for spinal cord involvement in placebo analgesia</a>：Science，2009</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3411898" target="_blank">Baliki 等 · Corticostriatal functional connectivity predicts transition to chronic back pain</a>：Nature Neuroscience，2012</li>
+<li><a href="https://scholar.google.com/scholar?q=Vlaeyen+Linton+2000+Fear-avoidance+and+its+consequences+in+chronic+musculoskeletal+pain" target="_blank">Vlaeyen &amp; Linton · Fear-avoidance and its consequences in chronic musculoskeletal pain</a>：Pain，2000</li>
+<li><a href="https://doi.org/10.1001/jamapsychiatry.2021.2669" target="_blank">Ashar 等 · Effect of pain reprocessing therapy vs placebo and usual care for patients with chronic back pain</a>：JAMA Psychiatry，2022</li>
+<li><a href="https://scholar.google.com/scholar?q=Langevin+2011+Reduced+thoracolumbar+fascia+shear+strain+in+human+chronic+low+back+pain" target="_blank">Langevin 等 · Reduced thoracolumbar fascia shear strain in human chronic low back pain</a>：BMC Musculoskeletal Disorders，2011</li>
+<li><a href="https://en.wikipedia.org/wiki/Gate_control_theory" target="_blank">闸门控制理论（维基）</a> · <a href="https://en.wikipedia.org/wiki/Phantom_limb" target="_blank">幻肢（维基）</a> · <a href="https://en.wikipedia.org/wiki/Central_sensitization" target="_blank">中枢敏化（维基）</a> · <a href="https://en.wikipedia.org/wiki/Periaqueductal_gray" target="_blank">导水管周围灰质（维基）</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Private_language_argument" target="_blank">维特根斯坦的私人语言论证（维基）</a> · <a href="https://en.wikipedia.org/wiki/Anomaly_detection" target="_blank">异常检测（维基）</a></li>
+</ul>
+</div>
+<footer>BigCat · Neuroscience · Topic 53 · <a href="index.html" style="color:#a78bfa">← 目录</a></footer>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body></html>
